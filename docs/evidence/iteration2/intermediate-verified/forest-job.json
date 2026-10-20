@@ -1,0 +1,3981 @@
+{
+  "job": {
+    "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+    "prompt": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
+    "status": "READY",
+    "stage": "READY",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "fixture",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-20T15:19:12.003112+00:00",
+    "updated_at": "2026-10-20T15:19:42.931223+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "game_intent.json",
+      "model_design.json",
+      "requirement_report.json",
+      "game_design.json",
+      "provider.json",
+      "repair_report.json",
+      "final_design.json",
+      "validation.json",
+      "game_ir_v2.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "diagnosis.json",
+      "qa_report.json",
+      "outcome.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 16,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5173/studio/play/8c5638a6-cebf-4ee2-bfb2-6857a3daa602"
+  },
+  "events": [
+    {
+      "id": 806,
+      "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "ts": "2026-10-20T15:19:12.027114+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted fixture generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 807,
+      "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "ts": "2026-10-20T15:19:12.105762+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Building explicitly labeled offline fixture",
+      "attempt": 1,
+      "rationale": "Elapsed 0.08s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 808,
+      "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "ts": "2026-10-20T15:19:12.259155+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Validated typed design; composing sections and registered mechanics",
+      "attempt": 1,
+      "rationale": "Elapsed 0.22s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 809,
+      "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "ts": "2026-10-20T15:19:12.289586+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking jump trajectories, landing margins and objective consistency",
+      "attempt": 1,
+      "rationale": "Elapsed 0.25s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 810,
+      "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "ts": "2026-10-20T15:19:12.533986+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Runtime specification and asset dependencies persisted",
+      "attempt": 1,
+      "rationale": "Elapsed 0.50s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 811,
+      "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "ts": "2026-10-20T15:19:12.571514+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium gameplay checks",
+      "attempt": 1,
+      "rationale": "Elapsed 0.53s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 814,
+      "game_id": "8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "ts": "2026-10-20T15:19:42.910937+00:00",
+      "stage": "READY",
+      "result": "SUCCESS",
+      "detail": "Browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 30.88s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "game_intent.json": {
+      "original_prompt": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
+      "genre": "platformer",
+      "setting": "forest",
+      "requested_mechanics": [
+        {
+          "id": "forest_environment",
+          "source": "forest",
+          "span": [
+            18,
+            24
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "environment_composition"
+        },
+        {
+          "id": "exit_indicator",
+          "source": "glowing shrine",
+          "span": [
+            91,
+            105
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "exit_indicator_animation"
+        },
+        {
+          "id": "collectibles",
+          "source": "collectible",
+          "span": [
+            41,
+            52
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "collectible_overlap"
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            63,
+            73
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "enemy_patrol"
+        }
+      ],
+      "unsupported": [],
+      "interpretation_source": {
+        "provider": "fixture",
+        "model": null,
+        "live": false
+      }
+    },
+    "model_design.json": {
+      "title": "The Verdant Passage",
+      "premise": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
+      "genre": "platformer",
+      "theme": "forest",
+      "difficulty": "balanced",
+      "objective": "collect_and_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": false,
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": false,
+      "exit_indicator": "glow",
+      "collectible": "crystals",
+      "level_count": 1,
+      "topology": "journey",
+      "sections": [
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ]
+    },
+    "requirement_report.json": {
+      "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.",
+      "requirements": [
+        {
+          "id": "forest_environment",
+          "source": "forest",
+          "span": [
+            18,
+            24
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "environment_composition",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "forest_environment",
+            "qa": "environment_composition"
+          }
+        },
+        {
+          "id": "exit_indicator",
+          "source": "glowing shrine",
+          "span": [
+            91,
+            105
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "exit_indicator_animation",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "exit_indicator",
+            "qa": "exit_indicator_animation"
+          }
+        },
+        {
+          "id": "collectibles",
+          "source": "collectible",
+          "span": [
+            41,
+            52
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "collectible_overlap",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "collectibles",
+            "qa": "collectible_overlap"
+          }
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            63,
+            73
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "enemy_patrol",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "patrol",
+            "qa": "enemy_patrol"
+          }
+        }
+      ],
+      "changes": [],
+      "unsupported": [],
+      "overall": "PASS"
+    },
+    "game_design.json": {
+      "title": "The Verdant Passage",
+      "premise": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
+      "genre": "platformer",
+      "theme": "forest",
+      "difficulty": "balanced",
+      "objective": "collect_and_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": false,
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": false,
+      "exit_indicator": "glow",
+      "collectible": "crystals",
+      "level_count": 1,
+      "topology": "journey",
+      "sections": [
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ]
+    },
+    "provider.json": {
+      "provider": "fixture",
+      "model": null,
+      "live": false
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 2
+    },
+    "final_design.json": {
+      "title": "The Verdant Passage",
+      "premise": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
+      "genre": "platformer",
+      "theme": "forest",
+      "difficulty": "balanced",
+      "objective": "collect_and_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": false,
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": false,
+      "exit_indicator": "glow",
+      "collectible": "crystals",
+      "level_count": 1,
+      "topology": "journey",
+      "sections": [
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ]
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_7_8",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    },
+    "game_ir_v2.json": {
+      "title": "The Verdant Passage",
+      "width": 2556,
+      "height": 684,
+      "spawn": {
+        "x": 90.0,
+        "y": 476.0
+      },
+      "objective": {
+        "type": "collect_and_exit",
+        "required": 11,
+        "total": 17
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "journey",
+          "moving": false
+        },
+        {
+          "x": 10,
+          "y": 15,
+          "width": 4,
+          "kind": "meadow",
+          "moving": false
+        },
+        {
+          "x": 16,
+          "y": 15,
+          "width": 5,
+          "kind": "meadow",
+          "moving": false
+        },
+        {
+          "x": 23,
+          "y": 14,
+          "width": 7,
+          "kind": "ruins",
+          "moving": false
+        },
+        {
+          "x": 32,
+          "y": 15,
+          "width": 5,
+          "kind": "meadow",
+          "moving": false
+        },
+        {
+          "x": 39,
+          "y": 15,
+          "width": 7,
+          "kind": "meadow",
+          "moving": false
+        },
+        {
+          "x": 48,
+          "y": 14,
+          "width": 6,
+          "kind": "ruins",
+          "moving": false
+        },
+        {
+          "x": 56,
+          "y": 15,
+          "width": 4,
+          "kind": "meadow",
+          "moving": false
+        },
+        {
+          "x": 62,
+          "y": 15,
+          "width": 7,
+          "kind": "meadow",
+          "moving": false
+        }
+      ],
+      "entities": [
+        {
+          "x": 414.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 630.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 702.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 702.0,
+          "y": 518.0,
+          "kind": "enemy",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 882.0,
+          "y": 440.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 954.0,
+          "y": 440.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1026.0,
+          "y": 440.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 954.0,
+          "y": 494.0,
+          "kind": "spikes",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1206.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1278.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1278.0,
+          "y": 518.0,
+          "kind": "enemy",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1180.8,
+          "y": 510.0,
+          "kind": "checkpoint",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1458.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1530.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1602.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1782.0,
+          "y": 440.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1854.0,
+          "y": 440.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1890.0,
+          "y": 482.0,
+          "kind": "enemy",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1854.0,
+          "y": 494.0,
+          "kind": "spikes",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2070.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2286.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 8,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2358.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 8,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2430.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 8,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2430.0,
+          "y": 518.0,
+          "kind": "enemy",
+          "platform": 8,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2448.0,
+          "y": 504.0,
+          "kind": "exit",
+          "platform": 8,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "schema_version": "2.0",
+      "genre": "platformer",
+      "theme": "forest",
+      "seed": 726278652,
+      "tile_size": 36,
+      "player": {
+        "speed": 250,
+        "jump": 490,
+        "gravity": 1100,
+        "health": 3,
+        "abilities": []
+      },
+      "slippery": false,
+      "exit_indicator": "glow",
+      "collectible": "crystals",
+      "camera_mode": "follow",
+      "levels": [],
+      "requirements": [
+        {
+          "id": "forest_environment",
+          "source": "forest",
+          "span": [
+            18,
+            24
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "environment_composition",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "forest_environment",
+            "qa": "environment_composition"
+          }
+        },
+        {
+          "id": "exit_indicator",
+          "source": "glowing shrine",
+          "span": [
+            91,
+            105
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "exit_indicator_animation",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "exit_indicator",
+            "qa": "exit_indicator_animation"
+          }
+        },
+        {
+          "id": "collectibles",
+          "source": "collectible",
+          "span": [
+            41,
+            52
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "collectible_overlap",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "collectibles",
+            "qa": "collectible_overlap"
+          }
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            63,
+            73
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "enemy_patrol",
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "patrol",
+            "qa": "enemy_patrol"
+          }
+        }
+      ],
+      "asset_pack": "kenney_pixel_platformer"
+    },
+    "asset_manifest.json": {
+      "id": "kenney_pixel_platformer",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "sources": [
+        "https://kenney.nl/assets/pixel-platformer",
+        "https://kenney.nl/assets/pixel-platformer-industrial-expansion"
+      ],
+      "textures": {
+        "terrain": {
+          "url": "/assets/platformer/terrain.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 20
+        },
+        "characters": {
+          "url": "/assets/platformer/characters.png",
+          "frameWidth": 24,
+          "frameHeight": 24,
+          "columns": 9
+        },
+        "industrial": {
+          "url": "/assets/platformer/industrial.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 16
+        }
+      },
+      "backgrounds": {
+        "forest": "/assets/platformer/background-forest.png",
+        "industrial": "/assets/platformer/background-industrial.png",
+        "twilight": "/assets/platformer/background-twilight.png"
+      },
+      "animations": {
+        "idle": [
+          0
+        ],
+        "run": [
+          0,
+          1
+        ],
+        "jump": [
+          0
+        ],
+        "fall": [
+          1
+        ],
+        "damage": "tint and invulnerability blink; no dedicated damage frames in pack"
+      },
+      "roles": {
+        "forest_ground": 0,
+        "forest_fill": 4,
+        "industrial_ground": 0,
+        "industrial_fill": 11,
+        "crystal": 67,
+        "spikes": 68,
+        "checkpoint": 112,
+        "exit": 10,
+        "enemy_forest": [
+          12,
+          13
+        ],
+        "enemy_industrial": [
+          22,
+          23
+        ],
+        "moving_industrial": 25,
+        "moving_forest": 49,
+        "forest_ruins": 129,
+        "forest_props": [
+          124,
+          125,
+          126
+        ],
+        "tree_trunk": 116,
+        "tree_crown": 16,
+        "industrial_prop": 75,
+        "industrial_sign": 41
+      },
+      "files": {
+        "background-forest.png": "f8d264a826b90b85f66ff0eba79b5bc0e5d88a12cb9056b54f427fa3b8bf26a6",
+        "background-industrial.png": "d9c2f01ded10e4b61b59917833c4735d3593673c55406d73afe0be100e08ef6e",
+        "background-twilight.png": "3cdc2da58bd4b6733e78ae0f5be84581cc1c09b232d8c46bcc446b892f42ab20",
+        "characters.png": "22622d54dfc9d85346c9b75b999c8604e6eb336e42c4708bcf8b21094d8a2dad",
+        "industrial.png": "b54ba09f1564228f43921c33e2652f14e168565159d3624a1eb8b68bc633b872",
+        "terrain.png": "a3bbff36594baa36c803a67e9152a20a80f2faeb3c22ca84ac06e0a70f56553d"
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "background-forest.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-twilight.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "characters.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "terrain.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "genre": "platformer",
+      "schema_version": "2.0",
+      "seed": 726278652,
+      "game_url": "http://localhost:5173/studio/play/8c5638a6-cebf-4ee2-bfb2-6857a3daa602",
+      "capabilities": [],
+      "moving_platforms": false
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "canvas_and_assets",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": {
+            "missing": [],
+            "http_failures": []
+          }
+        },
+        {
+          "id": "horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.6045527478795361,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 660.8333333333319,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1236.8333333333362,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1848.8333333333362,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2388.8333333333276,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 3760.5
+            },
+            "after": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.9224792195313523,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 644.5833333333313,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1220.5833333333374,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1832.5833333333374,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2372.5833333333253,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 129.7777777777778,
+              "y": 480,
+              "vx": 250,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 726278652,
+              "time": 4127.2
+            }
+          }
+        },
+        {
+          "id": "jump_gravity_landing",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.8696278922753216,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 688.9999999999995,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1265.000000000001,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1877.000000000001,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2416.999999999998,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 4543.8
+            },
+            "airborne": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.5482902439033853,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 672.749999999999,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1248.750000000002,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1860.750000000002,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2400.749999999996,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 401.6388888888889,
+              "vx": 0,
+              "vy": -251.66666666666688,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 726278652,
+              "time": 4927.2
+            },
+            "landed": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.9871865763502998,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 628.3333333333308,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1204.3333333333385,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1816.3333333333385,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2356.333333333323,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 5860.5
+            }
+          }
+        },
+        {
+          "id": "environment_composition",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "theme": "forest",
+            "method": "Runtime theme/asset witness; screenshots require human visual review"
+          }
+        },
+        {
+          "id": "exit_indicator_animation",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "mode": "glow",
+            "observed_alpha": [
+              0.9975383568761708,
+              0.9788846875710753,
+              0.9100668599594439,
+              0.7913884690460322,
+              0.6622798889325086,
+              0.5579619820381292,
+              0.5074012516297648,
+              0.5100558820327984
+            ]
+          }
+        },
+        {
+          "id": "enemy_patrol",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+            "before": {
+              "behavior": "patrol",
+              "x": 695.4999999999998,
+              "y": 521.3,
+              "vx": -65
+            },
+            "after": {
+              "behavior": "patrol",
+              "x": 668.4166666666655,
+              "y": 521.3,
+              "vx": -65
+            }
+          }
+        },
+        {
+          "id": "enemy_behaviors",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "behaviors": [
+              "patrol"
+            ]
+          }
+        },
+        {
+          "id": "mandatory_route_edges",
+          "passed": true,
+          "critical": true,
+          "category": "level_layout",
+          "details": {
+            "method": "Isolated launch positions; actual keyboard jumps, physics and landing for each destination section, including registered moving alternates. This is not a full autonomous playthrough.",
+            "edges": [
+              {
+                "from": 0,
+                "to": 10,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.910066859959444,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 604.4999999999966,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1180.5000000000068,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1792.5000000000068,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2332.4999999999864,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 5,
+                  "landedPlatforms": [
+                    0,
+                    1
+                  ],
+                  "x": 439.7222222222228,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 9643.7
+                }
+              },
+              {
+                "from": 10,
+                "to": 16,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.8298857681803131,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 610.9999999999968,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1187.0000000000064,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1799.0000000000064,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2338.9999999999873,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 6,
+                  "landedPlatforms": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "x": 647.3888888888883,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 11110.3
+                }
+              },
+              {
+                "from": 16,
+                "to": 23,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.7481520211508863,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 1200.0000000000055,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1749.1666666666765,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2289.166666666647,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 7,
+                  "landedPlatforms": [
+                    0,
+                    2,
+                    3
+                  ],
+                  "x": 902.6111111111094,
+                  "y": 480,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 13343.5
+                }
+              },
+              {
+                "from": 23,
+                "to": 32,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.9316083935040561,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 602.3333333333298,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1178.3333333333403,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1790.3333333333403,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2330.3333333333194,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 8,
+                  "landedPlatforms": [
+                    0,
+                    3,
+                    4
+                  ],
+                  "x": 1227.5555555555584,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 14943.4
+                }
+              },
+              {
+                "from": 32,
+                "to": 39,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.6435551771087318,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 627.2499999999974,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1743.7500000000102,
+                      "y": 485.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2283.7499999999795,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 9,
+                  "landedPlatforms": [
+                    0,
+                    4,
+                    5
+                  ],
+                  "x": 1486.9444444444484,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 17293.3
+                }
+              },
+              {
+                "from": 39,
+                "to": 48,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.9414451019258359,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 605.58333333333,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1181.58333333334,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2305.4166666666492,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 10,
+                  "landedPlatforms": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "x": 1799.3888888888926,
+                  "y": 480,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 19309.9
+                }
+              },
+              {
+                "from": 48,
+                "to": 56,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.6215486222328074,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 631.5833333333309,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1207.5833333333383,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2279.4166666666456,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 11,
+                  "landedPlatforms": [
+                    0,
+                    6,
+                    7
+                  ],
+                  "x": 2090.611111111114,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 21693.2
+                }
+              },
+              {
+                "from": 56,
+                "to": 62,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.8901384944032896,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 606.6666666666633,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1182.6666666666733,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1794.6666666666733,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2334.6666666666533,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 12,
+                  "landedPlatforms": [
+                    0,
+                    7,
+                    8
+                  ],
+                  "x": 2303.388888888882,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 23226.4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "collectible_overlap",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled placement into a real crystal overlap",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.8946947362302734,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 682.4999999999993,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1258.5000000000014,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1870.5000000000014,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2410.4999999999973,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 13,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 414,
+              "y": 492.80555555555554,
+              "vx": 0,
+              "vy": 183.33333333333334,
+              "grounded": false,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 726278652,
+              "time": 23593.1
+            }
+          }
+        },
+        {
+          "id": "checkpoint_respawn",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+            "activated": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.7555435326500295,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 672.749999999999,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1248.750000000002,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1860.750000000002,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2400.749999999996,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 13,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 1180.8,
+              "y": 516,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 23759.7
+            },
+            "respawn": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.5262091771612345,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 652.1666666666649,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1228.1666666666702,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1840.1666666666702,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2380.1666666666597,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 13,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 1180.8,
+              "y": 516,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 24059.7
+            }
+          }
+        },
+        {
+          "id": "locked_exit",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled exit overlap without required crystals",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.9107755359145362,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 684.6666666666661,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1260.6666666666679,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1872.6666666666679,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2412.6666666666642,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 14,
+              "landedPlatforms": [
+                0,
+                8
+              ],
+              "x": 2448,
+              "y": 516,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 24409.7
+            }
+          }
+        },
+        {
+          "id": "win_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled collection and gate overlaps through all stages, not an autonomous completion",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.7131745754863408,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 604.4999999999966,
+                  "y": 521.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1180.5000000000068,
+                  "y": 521.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1768.6666666666752,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2308.6666666666497,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 14,
+              "landedPlatforms": [
+                0,
+                8
+              ],
+              "x": 2448,
+              "y": 504,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 17,
+              "state": "won",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 726278652,
+              "time": 26326.3
+            }
+          }
+        },
+        {
+          "id": "hazard_damage",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap with real hazard or enemy",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.8184157475180207,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 1254.1666666666683,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1866.1666666666683,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2406.1666666666633,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 15,
+              "landedPlatforms": [
+                0,
+                2
+              ],
+              "x": 696.8888888888889,
+              "y": 502.66666666666663,
+              "vx": 0,
+              "vy": -300,
+              "grounded": false,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 726278652,
+              "time": 26776.4
+            }
+          }
+        },
+        {
+          "id": "loss_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Test hook invokes damage to exercise health exhaustion",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.7040626205458573,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 1250.9166666666686,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1862.9166666666686,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2402.916666666663,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 15,
+              "landedPlatforms": [
+                0,
+                2
+              ],
+              "x": 694.7777777777778,
+              "y": 490.5555555555555,
+              "vx": 0,
+              "vy": 0,
+              "grounded": false,
+              "health": 0,
+              "crystals": 1,
+              "state": "lost",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 726278652,
+              "time": 26926.3
+            }
+          }
+        },
+        {
+          "id": "restart_reset",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.9827826793564488,
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 694.4166666666664,
+                "y": 521.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 1270.4166666666672,
+                "y": 521.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 1882.4166666666672,
+                "y": 485.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2422.4166666666656,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 16,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 27143
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "screenshot": "gameplay.png",
+      "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 0
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "canvas_and_assets",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": {
+            "missing": [],
+            "http_failures": []
+          }
+        },
+        {
+          "id": "horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.6045527478795361,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 660.8333333333319,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1236.8333333333362,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1848.8333333333362,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2388.8333333333276,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 3760.5
+            },
+            "after": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.9224792195313523,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 644.5833333333313,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1220.5833333333374,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1832.5833333333374,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2372.5833333333253,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 129.7777777777778,
+              "y": 480,
+              "vx": 250,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 726278652,
+              "time": 4127.2
+            }
+          }
+        },
+        {
+          "id": "jump_gravity_landing",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.8696278922753216,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 688.9999999999995,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1265.000000000001,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1877.000000000001,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2416.999999999998,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 4543.8
+            },
+            "airborne": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.5482902439033853,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 672.749999999999,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1248.750000000002,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1860.750000000002,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2400.749999999996,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 401.6388888888889,
+              "vx": 0,
+              "vy": -251.66666666666688,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 726278652,
+              "time": 4927.2
+            },
+            "landed": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.9871865763502998,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 628.3333333333308,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1204.3333333333385,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1816.3333333333385,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2356.333333333323,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 5860.5
+            }
+          }
+        },
+        {
+          "id": "environment_composition",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "theme": "forest",
+            "method": "Runtime theme/asset witness; screenshots require human visual review"
+          }
+        },
+        {
+          "id": "exit_indicator_animation",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "mode": "glow",
+            "observed_alpha": [
+              0.9975383568761708,
+              0.9788846875710753,
+              0.9100668599594439,
+              0.7913884690460322,
+              0.6622798889325086,
+              0.5579619820381292,
+              0.5074012516297648,
+              0.5100558820327984
+            ]
+          }
+        },
+        {
+          "id": "enemy_patrol",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+            "before": {
+              "behavior": "patrol",
+              "x": 695.4999999999998,
+              "y": 521.3,
+              "vx": -65
+            },
+            "after": {
+              "behavior": "patrol",
+              "x": 668.4166666666655,
+              "y": 521.3,
+              "vx": -65
+            }
+          }
+        },
+        {
+          "id": "enemy_behaviors",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "behaviors": [
+              "patrol"
+            ]
+          }
+        },
+        {
+          "id": "mandatory_route_edges",
+          "passed": true,
+          "critical": true,
+          "category": "level_layout",
+          "details": {
+            "method": "Isolated launch positions; actual keyboard jumps, physics and landing for each destination section, including registered moving alternates. This is not a full autonomous playthrough.",
+            "edges": [
+              {
+                "from": 0,
+                "to": 10,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.910066859959444,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 604.4999999999966,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1180.5000000000068,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1792.5000000000068,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2332.4999999999864,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 5,
+                  "landedPlatforms": [
+                    0,
+                    1
+                  ],
+                  "x": 439.7222222222228,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 9643.7
+                }
+              },
+              {
+                "from": 10,
+                "to": 16,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.8298857681803131,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 610.9999999999968,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1187.0000000000064,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1799.0000000000064,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2338.9999999999873,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 6,
+                  "landedPlatforms": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "x": 647.3888888888883,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 11110.3
+                }
+              },
+              {
+                "from": 16,
+                "to": 23,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.7481520211508863,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 1200.0000000000055,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1749.1666666666765,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2289.166666666647,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 7,
+                  "landedPlatforms": [
+                    0,
+                    2,
+                    3
+                  ],
+                  "x": 902.6111111111094,
+                  "y": 480,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 13343.5
+                }
+              },
+              {
+                "from": 23,
+                "to": 32,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.9316083935040561,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 602.3333333333298,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1178.3333333333403,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1790.3333333333403,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2330.3333333333194,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 8,
+                  "landedPlatforms": [
+                    0,
+                    3,
+                    4
+                  ],
+                  "x": 1227.5555555555584,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 14943.4
+                }
+              },
+              {
+                "from": 32,
+                "to": 39,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.6435551771087318,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 627.2499999999974,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1743.7500000000102,
+                      "y": 485.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2283.7499999999795,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 9,
+                  "landedPlatforms": [
+                    0,
+                    4,
+                    5
+                  ],
+                  "x": 1486.9444444444484,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 17293.3
+                }
+              },
+              {
+                "from": 39,
+                "to": 48,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.9414451019258359,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 605.58333333333,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1181.58333333334,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2305.4166666666492,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 10,
+                  "landedPlatforms": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "x": 1799.3888888888926,
+                  "y": 480,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 19309.9
+                }
+              },
+              {
+                "from": 48,
+                "to": 56,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.6215486222328074,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 631.5833333333309,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1207.5833333333383,
+                      "y": 521.3,
+                      "vx": 65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2279.4166666666456,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 11,
+                  "landedPlatforms": [
+                    0,
+                    6,
+                    7
+                  ],
+                  "x": 2090.611111111114,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 21693.2
+                }
+              },
+              {
+                "from": 56,
+                "to": 62,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "levelIndex": 0,
+                  "levelCount": 1,
+                  "exitAlpha": 0.8901384944032896,
+                  "enemies": [
+                    {
+                      "behavior": "patrol",
+                      "x": 606.6666666666633,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1182.6666666666733,
+                      "y": 521.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 1794.6666666666733,
+                      "y": 485.3,
+                      "vx": -65
+                    },
+                    {
+                      "behavior": "patrol",
+                      "x": 2334.6666666666533,
+                      "y": 521.3,
+                      "vx": -65
+                    }
+                  ],
+                  "icicles": [],
+                  "machines": [],
+                  "movingPlatforms": [],
+                  "shotsFired": 0,
+                  "slippery": false,
+                  "environment": "forest",
+                  "terrainTexture": "terrain",
+                  "generation": 12,
+                  "landedPlatforms": [
+                    0,
+                    7,
+                    8
+                  ],
+                  "x": 2303.388888888882,
+                  "y": 516,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 726278652,
+                  "time": 23226.4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "collectible_overlap",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled placement into a real crystal overlap",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.8946947362302734,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 682.4999999999993,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1258.5000000000014,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1870.5000000000014,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2410.4999999999973,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 13,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 414,
+              "y": 492.80555555555554,
+              "vx": 0,
+              "vy": 183.33333333333334,
+              "grounded": false,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 726278652,
+              "time": 23593.1
+            }
+          }
+        },
+        {
+          "id": "checkpoint_respawn",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+            "activated": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.7555435326500295,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 672.749999999999,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1248.750000000002,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1860.750000000002,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2400.749999999996,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 13,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 1180.8,
+              "y": 516,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 23759.7
+            },
+            "respawn": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.5262091771612345,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 652.1666666666649,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1228.1666666666702,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1840.1666666666702,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2380.1666666666597,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 13,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 1180.8,
+              "y": 516,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 24059.7
+            }
+          }
+        },
+        {
+          "id": "locked_exit",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled exit overlap without required crystals",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.9107755359145362,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 684.6666666666661,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1260.6666666666679,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1872.6666666666679,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2412.6666666666642,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 14,
+              "landedPlatforms": [
+                0,
+                8
+              ],
+              "x": 2448,
+              "y": 516,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 726278652,
+              "time": 24409.7
+            }
+          }
+        },
+        {
+          "id": "win_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled collection and gate overlaps through all stages, not an autonomous completion",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.7131745754863408,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 604.4999999999966,
+                  "y": 521.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1180.5000000000068,
+                  "y": 521.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1768.6666666666752,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2308.6666666666497,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 14,
+              "landedPlatforms": [
+                0,
+                8
+              ],
+              "x": 2448,
+              "y": 504,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 17,
+              "state": "won",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 726278652,
+              "time": 26326.3
+            }
+          }
+        },
+        {
+          "id": "hazard_damage",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap with real hazard or enemy",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.8184157475180207,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 1254.1666666666683,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1866.1666666666683,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2406.1666666666633,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 15,
+              "landedPlatforms": [
+                0,
+                2
+              ],
+              "x": 696.8888888888889,
+              "y": 502.66666666666663,
+              "vx": 0,
+              "vy": -300,
+              "grounded": false,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 726278652,
+              "time": 26776.4
+            }
+          }
+        },
+        {
+          "id": "loss_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Test hook invokes damage to exercise health exhaustion",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.7040626205458573,
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 1250.9166666666686,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1862.9166666666686,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2402.916666666663,
+                  "y": 521.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "forest",
+              "terrainTexture": "terrain",
+              "generation": 15,
+              "landedPlatforms": [
+                0,
+                2
+              ],
+              "x": 694.7777777777778,
+              "y": 490.5555555555555,
+              "vx": 0,
+              "vy": 0,
+              "grounded": false,
+              "health": 0,
+              "crystals": 1,
+              "state": "lost",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 726278652,
+              "time": 26926.3
+            }
+          }
+        },
+        {
+          "id": "restart_reset",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.9827826793564488,
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 694.4166666666664,
+                "y": 521.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 1270.4166666666672,
+                "y": 521.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 1882.4166666666672,
+                "y": 485.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2422.4166666666656,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 16,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 27143
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "screenshot": "gameplay.png",
+      "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+    },
+    "outcome.json": {
+      "status": "READY",
+      "elapsed_seconds": 30.88,
+      "visual_quality": "Requires human screenshot review; functional checks are not an aesthetic score."
+    }
+  }
+}

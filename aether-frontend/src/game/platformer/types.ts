@@ -4,12 +4,17 @@ export interface Platform {
   width: number;
   kind: string;
   moving: boolean;
+  route?: "main" | "optional";
 }
 export interface Entity {
   x: number;
   y: number;
-  kind: "crystal" | "enemy" | "spikes" | "checkpoint" | "exit";
+  kind: "crystal" | "enemy" | "spikes" | "checkpoint" | "exit" | "icicle" | "timed_hazard";
   platform: number;
+  behavior?: "patrol" | "chase" | "shooter";
+  trigger?: "proximity" | "timer";
+  period_ms?: number;
+  radius?: number;
 }
 export interface PlatformerIR {
   schema_version: "2.0";
@@ -31,6 +36,13 @@ export interface PlatformerIR {
   objective: { type: string; required: number; total: number };
   platforms: Platform[];
   entities: Entity[];
+  slippery?: boolean;
+  exit_indicator?: "none" | "glow" | "pulse" | "flash";
+  exit_style?: "shrine" | "gate" | "beacon";
+  collectible?: "crystals" | "relics";
+  camera_mode?: "follow" | "vertical";
+  levels?: Pick<PlatformerIR, "title" | "width" | "height" | "spawn" | "objective" | "platforms" | "entities" | "camera_mode">[];
+  requirements?: { id: string; source: string; status: string; verified?: boolean }[];
 }
 export interface StudioJob {
   job: {

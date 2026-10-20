@@ -13,6 +13,7 @@ from pydantic import BaseModel, Field
 from services import job_store, event_store
 from services.orchestrator import get_artifacts_dir
 from services.platformer import plan, construct, validate_route, enforce_explicit_requirements, validate_assets
+from services.capabilities import extract_requirements, requirement_evidence
 
 router = APIRouter()
 _worker = asyncio.Lock()
@@ -21,7 +22,7 @@ _worker = asyncio.Lock()
 def browser_report(game_url, directory):
     try:
         proc = subprocess.run([sys.executable,"-m","services.platformer_qa",game_url,str(directory)],
-            cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=110)
+            cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=240)
         return json.loads(proc.stdout.strip())
     except Exception as exc:
         return {"overall":"UNAVAILABLE","checks":[],"error":type(exc).__name__,"scope":"Browser verification did not complete; no runtime success is claimed."}
@@ -56,13 +57,15 @@ async def run(gid: str, request: Generate):
             job_store.update_job(gid, artifact_paths=artifacts)
 
         try:
+            artifact("game_intent.json", {"original_prompt": request.prompt, "requirements": extract_requirements(request.prompt),
+                "scope": "Explicit phrases; model interpretation follows. Unrecognized language is not certified."})
             stage("PLANNING", "Interpreting prompt with Gemini" if request.mode=="live" else "Building explicitly labeled offline fixture", "START")
             design, provenance = await asyncio.to_thread(plan, request.prompt, request.mode)
             artifact("model_design.json", design.model_dump())
             requirements = enforce_explicit_requirements(design, request.prompt)
             artifact("requirement_report.json", requirements)
             artifact("game_intent.json", {"original_prompt":request.prompt,"genre":design.genre,"setting":design.theme,
-                "requested_mechanics":design.abilities,"unsupported":design.unsupported,"interpretation_source":provenance})
+                "requested_mechanics":requirements['requirements'],"model_requests":[f.model_dump() for f in design.requested_features],"unsupported":design.unsupported,"interpretation_source":provenance})
             artifact("game_design.json", design.model_dump())
             artifact("provider.json", provenance)
             job_store.update_job(gid, model_id=provenance['model'] or "fixture", limitations=design.unsupported)
@@ -75,19 +78,24 @@ async def run(gid: str, request: Generate):
                 if validation['overall'] == 'PASS':
                     break
                 before = design.model_dump()
+                failed_validation = validation
                 for section in design.sections:
                     section.gap = max(1, section.gap - 1)
                     section.elevation = min(section.elevation, 1)
                 stage("REPAIRING", "Reducing unreachable gaps and rises; rebuilding from the same seed")
                 ir = construct(design, request.prompt, ir.seed)
                 validation = validate_route(ir)
-                repairs.append({"attempt":attempt+1,"category":"level_layout","before":before,"after":design.model_dump(),"validation":validation})
+                repairs.append({"attempt":attempt+1,"category":"level_layout","evidence":failed_validation,"before":before,"after":design.model_dump(),"validation":validation})
             artifact("repair_report.json", {"attempts":repairs,"maximum":2})
             artifact("final_design.json", design.model_dump())
             artifact("validation.json", validation)
             if validation['overall'] != 'PASS':
                 raise ValueError("Route remains unreachable after bounded layout repair")
             artifact("game_ir_v2.json", ir.model_dump())
+            coverage = requirement_evidence(ir, request.prompt, design.unsupported)
+            artifact("requirement_report.json", {**requirements, **coverage})
+            if coverage['overall'] == 'FAIL':
+                raise ValueError("Requested supported capabilities are missing from the constructed specification. Inspect requirement_report.json.")
             public = Path(__file__).resolve().parents[2]/"aether-frontend/public"
             manifest = json.loads((public/"assets/registry.json").read_text())
             artifact("asset_manifest.json", manifest)
@@ -98,7 +106,9 @@ async def run(gid: str, request: Generate):
             game_url = os.getenv("AETHER_FRONTEND_URL", "http://localhost:5173").rstrip('/') + f"/studio/play/{gid}"
             job_store.update_job(gid, spec_json=ir.model_dump_json(), game_url=game_url)
             artifact("build_manifest.json", {"runtime":"Phaser 3 Arcade","genre":ir.genre,"schema_version":ir.schema_version,
-                "seed":ir.seed,"game_url":game_url,"capabilities":design.abilities,"moving_platforms":design.moving_platforms})
+                "seed":ir.seed,"game_url":game_url,"capabilities":[r['id'] for r in coverage['requirements'] if r.get('constructed')],
+                "moving_platforms":design.moving_platforms,"level_count":len(ir.levels) or 1,"topology":design.topology,
+                "exit_style":ir.exit_style,"exit_indicator":ir.exit_indicator})
             stage("BUILDING", "Runtime specification and asset dependencies persisted")
             stage("TESTING", "Running real Chromium gameplay checks", "START")
             # Subprocess timeout bounds QA, including browser startup and every route edge.
@@ -131,12 +141,17 @@ async def run(gid: str, request: Generate):
                 'action':'Needs developer; no arbitrary code or balancing patch applied' if c.get('category')!='level_layout' else 'See bounded route repair history'}
                 for c in report['checks'] if not c['passed']], 'repairs_applied':len(repairs)})
             artifact("qa_report.json", report)
+            coverage = requirement_evidence(ir, request.prompt, design.unsupported, report)
+            artifact("requirement_report.json", {**requirements, **coverage})
+            ir.requirements = coverage['requirements']
+            artifact("game_ir_v2.json", ir.model_dump())
+            job_store.update_job(gid, spec_json=ir.model_dump_json())
             job_store.update_job(gid, latest_qa_json=json.dumps(report), qa_summary={"passed":sum(c['passed'] for c in report['checks']),"failed":sum(not c['passed'] for c in report['checks']),"critical_failed":[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
-            if report['overall']=='FAIL':
+            if report['overall']=='FAIL' or coverage['overall']=='FAIL':
                 final="FAILED"
                 detail="Runtime QA failed; evidence recorded. Runtime/asset defects require a developer, not difficulty patches."
             else:
-                final="READY" if report['overall']=='PASS' and not design.unsupported else "READY_WITH_WARNINGS"
+                final="READY" if report['overall']=='PASS' and coverage['overall']=='PASS' and not design.unsupported else "READY_WITH_WARNINGS"
                 detail="Browser checks passed" if report['overall']=='PASS' else "Specification ready; browser QA unavailable. Runtime remains unverified."
             stage(final, detail)
             artifact("outcome.json", {"status":final,"elapsed_seconds":round(time.monotonic()-started,2),"visual_quality":"Requires human screenshot review; functional checks are not an aesthetic score."})
@@ -189,8 +204,14 @@ async def reverify_job(gid: str):
         attempt=1+sum(name.startswith('qa_retest_') for name in paths)
         report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}')
         name=f'qa_retest_{attempt}.json';save(gid,name,report);paths.append(name)
-        final='FAILED' if report['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
-        job_store.update_job(gid,status=final,stage=final,latest_qa_json=json.dumps(report),artifact_paths=paths,
+        from schemas.platformer import PlatformerIR
+        ir=PlatformerIR.model_validate_json(job['spec_json'])
+        coverage=requirement_evidence(ir,job['prompt'],job['limitations'],report)
+        previous=json.loads((get_artifacts_dir()/gid/'requirement_report.json').read_text(encoding='utf-8'))
+        save(gid,'requirement_report.json',{**previous,**coverage})
+        ir.requirements=coverage['requirements'];save(gid,'game_ir_v2.json',ir.model_dump())
+        final='FAILED' if report['overall']=='FAIL' or coverage['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and coverage['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
+        job_store.update_job(gid,status=final,stage=final,spec_json=ir.model_dump_json(),latest_qa_json=json.dumps(report),artifact_paths=paths,
             qa_summary={'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks']),
                 'critical_failed':[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
         event_store.add_event(gid,stage='TESTING',result='SUCCESS' if report['overall']=='PASS' else 'FAILED',

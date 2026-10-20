@@ -1,245 +1,464 @@
 {
-  "schema_version": "2.0",
-  "genre": "platformer",
   "title": "The Verdant Passage",
-  "theme": "forest",
-  "seed": 2934682564,
-  "tile_size": 36,
-  "width": 2628,
+  "width": 2556,
   "height": 684,
   "spawn": {
     "x": 90.0,
     "y": 476.0
   },
-  "player": {
-    "speed": 250.0,
-    "jump": 490.0,
-    "gravity": 1100.0,
-    "health": 3,
-    "abilities": [
-      "double_jump"
-    ]
-  },
   "objective": {
     "type": "collect_and_exit",
-    "required": 11,
-    "total": 18
+    "required": 12,
+    "total": 19
   },
   "platforms": [
     {
       "x": 0,
       "y": 14,
       "width": 8,
-      "kind": "meadow",
-      "moving": false
+      "kind": "journey",
+      "moving": false,
+      "route": "main"
     },
     {
       "x": 10,
       "y": 15,
-      "width": 5,
+      "width": 4,
       "kind": "meadow",
-      "moving": false
+      "moving": false,
+      "route": "main"
     },
     {
-      "x": 17,
+      "x": 16,
       "y": 15,
       "width": 5,
       "kind": "meadow",
-      "moving": false
+      "moving": false,
+      "route": "main"
     },
     {
-      "x": 24,
-      "y": 14,
-      "width": 8,
-      "kind": "ruins",
-      "moving": false
-    },
-    {
-      "x": 34,
-      "y": 15,
-      "width": 5,
-      "kind": "meadow",
-      "moving": false
-    },
-    {
-      "x": 41,
-      "y": 15,
-      "width": 6,
-      "kind": "meadow",
-      "moving": false
-    },
-    {
-      "x": 49,
+      "x": 23,
       "y": 14,
       "width": 7,
       "kind": "ruins",
-      "moving": false
+      "moving": false,
+      "route": "main"
     },
     {
-      "x": 58,
+      "x": 24,
+      "y": 11,
+      "width": 4,
+      "kind": "bridge",
+      "moving": false,
+      "route": "optional"
+    },
+    {
+      "x": 32,
       "y": 15,
       "width": 5,
       "kind": "meadow",
-      "moving": false
+      "moving": false,
+      "route": "main"
     },
     {
-      "x": 65,
+      "x": 39,
       "y": 15,
-      "width": 6,
+      "width": 7,
       "kind": "meadow",
-      "moving": false
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 48,
+      "y": 14,
+      "width": 6,
+      "kind": "ruins",
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 49,
+      "y": 11,
+      "width": 4,
+      "kind": "bridge",
+      "moving": false,
+      "route": "optional"
+    },
+    {
+      "x": 56,
+      "y": 15,
+      "width": 4,
+      "kind": "meadow",
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 62,
+      "y": 15,
+      "width": 7,
+      "kind": "meadow",
+      "moving": false,
+      "route": "main"
     }
   ],
   "entities": [
     {
       "x": 414.0,
-      "y": 476.0,
+      "y": 474.0,
       "kind": "crystal",
-      "platform": 1
+      "platform": 1,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 486.0,
+      "x": 630.0,
       "y": 476.0,
       "kind": "crystal",
-      "platform": 1
+      "platform": 2,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 666.0,
-      "y": 476.0,
+      "x": 702.0,
+      "y": 468.0,
       "kind": "crystal",
-      "platform": 2
+      "platform": 2,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 738.0,
-      "y": 476.0,
-      "kind": "crystal",
-      "platform": 2
-    },
-    {
-      "x": 738.0,
+      "x": 702.0,
       "y": 518.0,
       "kind": "enemy",
-      "platform": 2
+      "platform": 2,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 918.0,
-      "y": 440.0,
+      "x": 882.0,
+      "y": 442.2857142857143,
       "kind": "crystal",
-      "platform": 3
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 990.0,
-      "y": 440.0,
+      "x": 954.0,
+      "y": 430.85714285714283,
       "kind": "crystal",
-      "platform": 3
-    },
-    {
-      "x": 1062.0,
-      "y": 440.0,
-      "kind": "crystal",
-      "platform": 3
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 1026.0,
+      "y": 436.57142857142856,
+      "kind": "crystal",
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 954.0,
       "y": 494.0,
       "kind": "spikes",
-      "platform": 3
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 936.0,
+      "y": 351.0,
+      "kind": "crystal",
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1206.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 5,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 1278.0,
-      "y": 476.0,
+      "y": 468.0,
       "kind": "crystal",
-      "platform": 4
+      "platform": 5,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1350.0,
-      "y": 476.0,
-      "kind": "crystal",
-      "platform": 4
+      "x": 1278.0,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 5,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1252.8,
+      "x": 1180.8,
       "y": 510.0,
       "kind": "checkpoint",
-      "platform": 4
+      "platform": 5,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1458.0,
+      "y": 478.2857142857143,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 1530.0,
-      "y": 476.0,
+      "y": 466.85714285714283,
       "kind": "crystal",
-      "platform": 5
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 1602.0,
-      "y": 476.0,
+      "y": 472.57142857142856,
       "kind": "crystal",
-      "platform": 5
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1638.0,
-      "y": 518.0,
+      "x": 1782.0,
+      "y": 441.3333333333333,
+      "kind": "crystal",
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1854.0,
+      "y": 428.0,
+      "kind": "crystal",
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1890.0,
+      "y": 482.0,
       "kind": "enemy",
-      "platform": 5
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1818.0,
-      "y": 440.0,
-      "kind": "crystal",
-      "platform": 6
-    },
-    {
-      "x": 1890.0,
-      "y": 440.0,
-      "kind": "crystal",
-      "platform": 6
-    },
-    {
-      "x": 1962.0,
-      "y": 440.0,
-      "kind": "crystal",
-      "platform": 6
-    },
-    {
-      "x": 1890.0,
+      "x": 1854.0,
       "y": 494.0,
       "kind": "spikes",
-      "platform": 6
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 2142.0,
-      "y": 476.0,
+      "x": 1836.0,
+      "y": 351.0,
       "kind": "crystal",
-      "platform": 7
+      "platform": 8,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 2214.0,
-      "y": 476.0,
+      "x": 2070.0,
+      "y": 474.0,
       "kind": "crystal",
-      "platform": 7
+      "platform": 9,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 2394.0,
-      "y": 476.0,
+      "x": 2286.0,
+      "y": 478.2857142857143,
       "kind": "crystal",
-      "platform": 8
+      "platform": 10,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 2466.0,
-      "y": 476.0,
+      "x": 2358.0,
+      "y": 466.85714285714283,
       "kind": "crystal",
-      "platform": 8
+      "platform": 10,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 2502.0,
+      "x": 2430.0,
+      "y": 472.57142857142856,
+      "kind": "crystal",
+      "platform": 10,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 2430.0,
       "y": 518.0,
       "kind": "enemy",
-      "platform": 8
+      "platform": 10,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 2520.0,
+      "x": 2448.0,
       "y": 504.0,
       "kind": "exit",
-      "platform": 8
+      "platform": 10,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    }
+  ],
+  "camera_mode": "follow",
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "theme": "forest",
+  "seed": 726278652,
+  "tile_size": 36,
+  "player": {
+    "speed": 250.0,
+    "jump": 490.0,
+    "gravity": 1100.0,
+    "health": 3,
+    "abilities": []
+  },
+  "slippery": false,
+  "exit_indicator": "glow",
+  "exit_style": "shrine",
+  "collectible": "crystals",
+  "levels": [],
+  "requirements": [
+    {
+      "id": "forest_environment",
+      "source": "forest",
+      "span": [
+        18,
+        24
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "environment_composition",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "forest_environment",
+        "qa": null
+      }
+    },
+    {
+      "id": "exit_indicator",
+      "source": "glowing shrine",
+      "span": [
+        91,
+        105
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "exit_indicator_animation",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "exit_indicator",
+        "qa": null
+      }
+    },
+    {
+      "id": "collectibles",
+      "source": "collectible",
+      "span": [
+        41,
+        52
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "collectible_overlap",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "collectibles",
+        "qa": null
+      }
+    },
+    {
+      "id": "patrol",
+      "source": "patrolling",
+      "span": [
+        63,
+        73
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "enemy_patrol",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "patrol",
+        "qa": null
+      }
     }
   ],
   "asset_pack": "kenney_pixel_platformer"

@@ -1,0 +1,91 @@
+"""Inspectable requirements with source phrases, construction witnesses and runtime checks.
+
+This is a bounded explicit-phrase extractor, not a claim of complete NLP understanding.
+The model's unsupported list is retained for requests outside this vocabulary.
+"""
+import re
+
+FEATURES = {
+    'ice_environment': (r'ice[ -]cavern|frozen|ice terrain', 'ice_composition'),
+    'forest_environment': (r'forest', 'environment_composition'),
+    'factory_environment': (r'industrial|factory', 'environment_composition'),
+    'slippery': (r'slippery|sliding terrain', 'slippery_momentum'),
+    'falling_icicles': (r'falling icicles?|icicle hazards?', 'falling_icicle_cycle'),
+    'exit_indicator': (r'flashing light|flashing.*exit|pulsing.*exit|glowing shrine|glowing.*exit', 'exit_indicator_animation'),
+    'collectibles': (r'collectible|collect.*crystal|collect.*relic', 'collectible_overlap'),
+    'patrol': (r'patrolling|patrol', 'enemy_patrol'),
+    'robots': (r'robotic enemies|robot enemies|robots', 'enemy_behaviors'),
+    'chase': (r'chasing|chase', 'enemy_chase'),
+    'ranged': (r'ranged|shooting|shooters?', 'enemy_shooter'),
+    'moving_platforms': (r'moving platforms?|moving machinery', 'moving_platform_motion'),
+    'timed_hazards': (r'dangerous machinery|timed hazards?', 'timed_hazard_cycle'),
+    'checkpoints': (r'checkpoints?', 'checkpoint_respawn'),
+    'multiple_levels': (r'multiple stages|multiple levels|multi[ -]stage|three levels|two levels', 'level_transitions'),
+    'double_jump': (r'double[ -]jump', 'double_jump'),
+    'dash': (r'\bdash\b', 'dash'),
+}
+
+
+def extract_requirements(prompt):
+    result = []
+    for feature, (pattern, check) in FEATURES.items():
+        match = re.search(pattern, prompt, re.I)
+        if not match:
+            continue
+        prefix = prompt[max(0, match.start()-12):match.start()].lower()
+        if re.search(r'(no|without)\s*$', prefix):
+            continue
+        result.append({'id': feature, 'source': match.group(), 'span': [match.start(), match.end()],
+                       'supported': True, 'status': 'pending', 'runtime_check': check})
+    return result
+
+
+def requirement_evidence(ir, prompt, unsupported=(), qa=None, requested=()):
+    levels = ir.levels or [ir]
+    entities = [e for level in levels for e in level.entities]
+    platforms = [p for level in levels for p in level.platforms]
+    witnesses = {
+        'ice_environment': ir.theme == 'ice', 'forest_environment': ir.theme == 'forest',
+        'factory_environment': ir.theme == 'industrial', 'slippery': ir.slippery,
+        'falling_icicles': any(e.kind == 'icicle' for e in entities),
+        'exit_indicator': ir.exit_indicator != 'none', 'collectibles': any(e.kind == 'crystal' for e in entities),
+        'robots': ir.theme == 'industrial' and any(e.kind == 'enemy' for e in entities),
+        'moving_platforms': any(p.moving for p in platforms),
+        'timed_hazards': any(e.kind == 'timed_hazard' for e in entities),
+        'checkpoints': any(e.kind == 'checkpoint' for e in entities), 'multiple_levels': len(levels) > 1,
+        **{name: any(e.kind == 'enemy' and e.behavior == behavior for e in entities)
+           for name, behavior in [('patrol', 'patrol'), ('chase', 'chase'), ('ranged', 'shooter')]},
+        **{ability: ability in ir.player.abilities for ability in ['double_jump', 'dash']},
+    }
+    checks = {}
+    for check in (qa or {}).get('checks', []):
+        prior = checks.get(check['id'])
+        checks[check['id']] = {**check, 'passed': check['passed'] and (prior is None or prior['passed'])}
+    requirements = extract_requirements(prompt)
+    # Retain model-enumerated requests across construction, polling and re-verification.
+    prior = [dict(r) for r in ir.requirements if r.get('id') != 'unsupported']
+    prior.extend({'id': f.capability, 'source': f.source, 'description': f.description,
+                  'supported': f.capability != 'unsupported',
+                  'runtime_check': FEATURES.get(f.capability, ('', None))[1]}
+                 for f in requested if f.capability != 'unsupported')
+    for requirement in prior:
+        existing = next((r for r in requirements if r['id'] == requirement['id']), None)
+        if existing is None:
+            requirements.append(requirement)
+        else:
+            sources = existing.setdefault('model_sources', [])
+            for source in [requirement['source'], *requirement.get('model_sources', [])]:
+                if source.lower() != existing['source'].lower() and source not in sources:
+                    sources.append(source)
+    for req in requirements:
+        built = bool(witnesses.get(req['id']))
+        check = checks.get(req['runtime_check'])
+        req.update(constructed=built, verified=bool(built and check and check['passed']),
+                   status='construction_failed' if not built else 'verification_failed' if check and not check['passed']
+                   else 'implemented_verified' if check else 'implemented_unverified',
+                   evidence={'spec': req['id'], 'qa': req['runtime_check'] if check else None})
+    for value in unsupported:
+        requirements.append({'id': 'unsupported', 'source': value, 'supported': False, 'status': 'unsupported', 'verified': False})
+    return {'requirements': requirements, 'overall': 'FAIL' if any(r['status'] in ('construction_failed', 'verification_failed') for r in requirements)
+            else 'WARN' if any(not r.get('verified') for r in requirements) else 'PASS',
+            'scope': 'Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.'}

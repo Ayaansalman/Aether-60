@@ -40,3 +40,6 @@ playwright-report/
 *.rar
 Aether_SourceCode.zip
 AETHER.pdf
+
+# Local iteration server output
+aether-backend/iteration2-server*.log

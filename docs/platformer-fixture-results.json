@@ -1,21 +1,27 @@
 [
   {
     "id": "forest",
-    "prompt": "A magical forest platformer where I collect crystals, avoid monsters, double jump across ruins and reach an ancient shrine.",
+    "prompt": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
     "source": "fixture",
     "live": false,
     "design": {
       "title": "The Verdant Passage",
-      "premise": "A magical forest platformer where I collect crystals, avoid monsters, double jump across ruins and reach an ancient shrine.",
+      "premise": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
       "genre": "platformer",
       "theme": "forest",
       "difficulty": "balanced",
       "objective": "collect_and_exit",
-      "abilities": [
-        "double_jump"
-      ],
+      "abilities": [],
       "checkpoints": true,
       "moving_platforms": false,
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": false,
+      "exit_indicator": "glow",
+      "exit_style": "shrine",
+      "collectible": "crystals",
+      "level_count": 1,
+      "topology": "journey",
       "sections": [
         {
           "kind": "meadow",
@@ -23,7 +29,8 @@
           "elevation": -1,
           "gap": 2,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -31,7 +38,8 @@
           "elevation": 0,
           "gap": 2,
           "enemies": true,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ruins",
@@ -39,31 +47,35 @@
           "elevation": 1,
           "gap": 2,
           "enemies": false,
-          "hazards": true
+          "hazards": true,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
           "length": 5,
           "elevation": -1,
           "gap": 2,
-          "enemies": false,
-          "hazards": false
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
           "length": 6,
           "elevation": 0,
           "gap": 2,
-          "enemies": true,
-          "hazards": false
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ruins",
           "length": 7,
           "elevation": 1,
           "gap": 2,
-          "enemies": false,
-          "hazards": true
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -71,7 +83,8 @@
           "elevation": -1,
           "gap": 2,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -79,13 +92,15 @@
           "elevation": 0,
           "gap": 2,
           "enemies": true,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         }
       ],
       "unsupported": [],
       "design_notes": [
         "Offline fixture: keyword interpretation and seeded construction; no model was called."
-      ]
+      ],
+      "requested_features": []
     },
     "validation": {
       "overall": "PASS",
@@ -190,119 +205,112 @@
   },
   {
     "id": "industrial",
-    "prompt": "An industrial platformer with moving machinery, dangerous obstacles, robot enemies, dash and checkpoints.",
+    "prompt": "Create an industrial platformer with robotic enemies, moving platforms, dangerous machinery, and checkpoints across multiple stages.",
     "source": "fixture",
     "live": false,
     "design": {
       "title": "The Copperworks",
-      "premise": "An industrial platformer with moving machinery, dangerous obstacles, robot enemies, dash and checkpoints.",
+      "premise": "Create an industrial platformer with robotic enemies, moving platforms, dangerous machinery, and checkpoints across multiple stages.",
       "genre": "platformer",
       "theme": "industrial",
       "difficulty": "balanced",
       "objective": "reach_exit",
-      "abilities": [
-        "dash"
-      ],
+      "abilities": [],
       "checkpoints": true,
       "moving_platforms": true,
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": true,
+      "exit_indicator": "none",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 3,
+      "topology": "terraces",
       "sections": [
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 5,
           "elevation": -1,
           "gap": 2,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 6,
           "elevation": 0,
           "gap": 2,
           "enemies": true,
-          "hazards": false
+          "hazards": false,
+          "encounter": "chase"
         },
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 7,
           "elevation": 1,
           "gap": 2,
           "enemies": false,
-          "hazards": true
+          "hazards": true,
+          "encounter": "shooter"
         },
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 5,
           "elevation": -1,
           "gap": 2,
-          "enemies": false,
-          "hazards": false
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 6,
           "elevation": 0,
           "gap": 2,
-          "enemies": true,
-          "hazards": false
+          "enemies": false,
+          "hazards": false,
+          "encounter": "chase"
         },
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 7,
           "elevation": 1,
           "gap": 2,
-          "enemies": false,
-          "hazards": true
+          "enemies": true,
+          "hazards": true,
+          "encounter": "shooter"
         },
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 5,
           "elevation": -1,
           "gap": 2,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
-          "kind": "factory",
+          "kind": "terraces",
           "length": 6,
           "elevation": 0,
           "gap": 2,
           "enemies": true,
-          "hazards": false
+          "hazards": false,
+          "encounter": "chase"
         }
       ],
       "unsupported": [],
       "design_notes": [
         "Offline fixture: keyword interpretation and seeded construction; no model was called."
-      ]
+      ],
+      "requested_features": []
     },
     "validation": {
       "overall": "PASS",
       "checks": [
         {
-          "id": "route_0_1",
-          "passed": true,
-          "category": "level_layout",
-          "critical": true,
-          "details": {
-            "gap_with_margin": 108,
-            "safe_range": 203.8,
-            "rise": -36
-          }
-        },
-        {
-          "id": "route_1_2",
-          "passed": true,
-          "category": "level_layout",
-          "critical": true,
-          "details": {
-            "gap_with_margin": 108,
-            "safe_range": 189.3,
-            "rise": 0
-          }
-        },
-        {
-          "id": "route_2_3",
+          "id": "stage_1_route_0_1",
           "passed": true,
           "category": "level_layout",
           "critical": true,
@@ -313,7 +321,18 @@
           }
         },
         {
-          "id": "route_3_4",
+          "id": "stage_1_route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "stage_1_route_2_3",
           "passed": true,
           "category": "level_layout",
           "critical": true,
@@ -324,18 +343,7 @@
           }
         },
         {
-          "id": "route_4_5",
-          "passed": true,
-          "category": "level_layout",
-          "critical": true,
-          "details": {
-            "gap_with_margin": 108,
-            "safe_range": 189.3,
-            "rise": 0
-          }
-        },
-        {
-          "id": "route_5_6",
+          "id": "stage_1_route_3_4",
           "passed": true,
           "category": "level_layout",
           "critical": true,
@@ -346,7 +354,7 @@
           }
         },
         {
-          "id": "route_6_7",
+          "id": "stage_1_route_4_5",
           "passed": true,
           "category": "level_layout",
           "critical": true,
@@ -357,24 +365,167 @@
           }
         },
         {
-          "id": "route_7_8",
+          "id": "stage_1_objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "stage_2_route_0_1",
           "passed": true,
           "category": "level_layout",
           "critical": true,
           "details": {
             "gap_with_margin": 108,
-            "safe_range": 189.3,
-            "rise": 0
+            "safe_range": 172.1,
+            "rise": 36
           }
         },
         {
-          "id": "objective_consistent",
+          "id": "stage_2_route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_2_route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_2_route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_2_route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_2_route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_2_objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "stage_3_route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_3_route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "stage_3_route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "stage_3_route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_3_route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "stage_3_route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "stage_3_route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "stage_3_objective_consistent",
           "passed": true,
           "category": "specification",
           "critical": true
         }
-      ],
-      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+      ]
     }
   },
   {
@@ -394,6 +545,14 @@
       ],
       "checkpoints": true,
       "moving_platforms": true,
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": false,
+      "exit_indicator": "none",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "topology": "ascent",
       "sections": [
         {
           "kind": "ascent",
@@ -401,7 +560,8 @@
           "elevation": 2,
           "gap": 2,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -409,7 +569,8 @@
           "elevation": 2,
           "gap": 3,
           "enemies": true,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -417,7 +578,8 @@
           "elevation": 2,
           "gap": 2,
           "enemies": false,
-          "hazards": true
+          "hazards": true,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -425,7 +587,8 @@
           "elevation": 2,
           "gap": 3,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -433,7 +596,8 @@
           "elevation": 2,
           "gap": 2,
           "enemies": true,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -441,7 +605,8 @@
           "elevation": 2,
           "gap": 3,
           "enemies": false,
-          "hazards": true
+          "hazards": true,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -449,7 +614,8 @@
           "elevation": 2,
           "gap": 2,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -457,7 +623,8 @@
           "elevation": 2,
           "gap": 3,
           "enemies": true,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ascent",
@@ -465,13 +632,15 @@
           "elevation": 2,
           "gap": 2,
           "enemies": false,
-          "hazards": true
+          "hazards": true,
+          "encounter": "patrol"
         }
       ],
       "unsupported": [],
       "design_notes": [
         "Offline fixture: keyword interpretation and seeded construction; no model was called."
-      ]
+      ],
+      "requested_features": []
     },
     "validation": {
       "overall": "PASS",
@@ -600,6 +769,14 @@
       "abilities": [],
       "checkpoints": true,
       "moving_platforms": false,
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": false,
+      "exit_indicator": "none",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "topology": "journey",
       "sections": [
         {
           "kind": "meadow",
@@ -607,7 +784,8 @@
           "elevation": -1,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -615,7 +793,8 @@
           "elevation": 0,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ruins",
@@ -623,7 +802,8 @@
           "elevation": 1,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -631,7 +811,8 @@
           "elevation": -1,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -639,7 +820,8 @@
           "elevation": 0,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "ruins",
@@ -647,7 +829,8 @@
           "elevation": 1,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -655,7 +838,8 @@
           "elevation": -1,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         },
         {
           "kind": "meadow",
@@ -663,13 +847,15 @@
           "elevation": 0,
           "gap": 1,
           "enemies": false,
-          "hazards": false
+          "hazards": false,
+          "encounter": "patrol"
         }
       ],
       "unsupported": [],
       "design_notes": [
         "Offline fixture: keyword interpretation and seeded construction; no model was called."
-      ]
+      ],
+      "requested_features": []
     },
     "validation": {
       "overall": "PASS",
@@ -758,6 +944,210 @@
           "critical": true,
           "details": {
             "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    }
+  },
+  {
+    "id": "ice",
+    "prompt": "Create a frozen underground platformer with slippery terrain, falling icicles, collectible relics, and a flashing light at the exit.",
+    "source": "fixture",
+    "live": false,
+    "design": {
+      "title": "The Frostbound Vault",
+      "premise": "Create a frozen underground platformer with slippery terrain, falling icicles, collectible relics, and a flashing light at the exit.",
+      "genre": "platformer",
+      "theme": "ice",
+      "difficulty": "balanced",
+      "objective": "collect_and_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": false,
+      "slippery": true,
+      "falling_icicles": true,
+      "timed_hazards": false,
+      "exit_indicator": "flash",
+      "exit_style": "beacon",
+      "collectible": "relics",
+      "level_count": 1,
+      "topology": "cavern",
+      "sections": [
+        {
+          "kind": "cavern",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "cavern",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "cavern",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "cavern",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "cavern",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "cavern",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "cavern",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol"
+        },
+        {
+          "kind": "cavern",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ],
+      "requested_features": []
+    },
+    "validation": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_7_8",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
             "safe_range": 189.3,
             "rise": 0
           }

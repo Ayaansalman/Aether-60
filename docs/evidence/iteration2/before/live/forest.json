@@ -1,0 +1,399 @@
+{
+  "prompt": "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
+  "mode": "live",
+  "model_design": {
+    "title": "Crystal Canopy",
+    "premise": "Journey through a vibrant forest canopy to gather luminous crystals and awaken the ancient glowing shrine at the heart of the woods.",
+    "genre": "platformer",
+    "theme": "forest",
+    "difficulty": "balanced",
+    "objective": "collect_and_exit",
+    "abilities": [
+      "double_jump"
+    ],
+    "checkpoints": true,
+    "moving_platforms": false,
+    "sections": [
+      {
+        "kind": "meadow",
+        "length": 6,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "meadow",
+        "length": 8,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "ruins",
+        "length": 6,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": true
+      },
+      {
+        "kind": "ascent",
+        "length": 7,
+        "elevation": 2,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "meadow",
+        "length": 8,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Emphasize colorful forest flora and glowing crystal placement.",
+      "Ensure the final meadow section feels like a peaceful sanctuary around the glowing shrine."
+    ]
+  },
+  "provider": {
+    "provider": "openai_compat",
+    "model": "gemini-3.5-flash-lite",
+    "live": true,
+    "latency_ms": 32151,
+    "fallbacks": []
+  },
+  "requirements": {
+    "scope": "Explicit supported requirements and recognized exclusions; semantic fidelity still requires review.",
+    "changes": [],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "Crystal Canopy",
+    "premise": "Journey through a vibrant forest canopy to gather luminous crystals and awaken the ancient glowing shrine at the heart of the woods.",
+    "genre": "platformer",
+    "theme": "forest",
+    "difficulty": "balanced",
+    "objective": "collect_and_exit",
+    "abilities": [
+      "double_jump"
+    ],
+    "checkpoints": true,
+    "moving_platforms": false,
+    "sections": [
+      {
+        "kind": "meadow",
+        "length": 6,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "meadow",
+        "length": 8,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "ruins",
+        "length": 6,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": true
+      },
+      {
+        "kind": "ascent",
+        "length": 7,
+        "elevation": 2,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "meadow",
+        "length": 8,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Emphasize colorful forest flora and glowing crystal placement.",
+      "Ensure the final meadow section feels like a peaceful sanctuary around the glowing shrine."
+    ]
+  },
+  "game_ir": {
+    "schema_version": "2.0",
+    "genre": "platformer",
+    "title": "Crystal Canopy",
+    "theme": "forest",
+    "seed": 726278652,
+    "tile_size": 36,
+    "width": 1872,
+    "height": 684,
+    "spawn": {
+      "x": 90.0,
+      "y": 476.0
+    },
+    "player": {
+      "speed": 250,
+      "jump": 490,
+      "gravity": 1100,
+      "health": 3,
+      "abilities": [
+        "double_jump"
+      ]
+    },
+    "objective": {
+      "type": "collect_and_exit",
+      "required": 9,
+      "total": 14
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 14,
+        "width": 8,
+        "kind": "meadow",
+        "moving": false
+      },
+      {
+        "x": 9,
+        "y": 14,
+        "width": 5,
+        "kind": "meadow",
+        "moving": false
+      },
+      {
+        "x": 16,
+        "y": 13,
+        "width": 7,
+        "kind": "meadow",
+        "moving": false
+      },
+      {
+        "x": 25,
+        "y": 12,
+        "width": 6,
+        "kind": "ruins",
+        "moving": false
+      },
+      {
+        "x": 33,
+        "y": 10,
+        "width": 7,
+        "kind": "ascent",
+        "moving": false
+      },
+      {
+        "x": 41,
+        "y": 10,
+        "width": 9,
+        "kind": "meadow",
+        "moving": false
+      }
+    ],
+    "entities": [
+      {
+        "x": 378.0,
+        "y": 440.0,
+        "kind": "crystal",
+        "platform": 1
+      },
+      {
+        "x": 450.0,
+        "y": 440.0,
+        "kind": "crystal",
+        "platform": 1
+      },
+      {
+        "x": 630.0,
+        "y": 404.0,
+        "kind": "crystal",
+        "platform": 2
+      },
+      {
+        "x": 702.0,
+        "y": 404.0,
+        "kind": "crystal",
+        "platform": 2
+      },
+      {
+        "x": 774.0,
+        "y": 404.0,
+        "kind": "crystal",
+        "platform": 2
+      },
+      {
+        "x": 774.0,
+        "y": 446.0,
+        "kind": "enemy",
+        "platform": 2
+      },
+      {
+        "x": 604.8000000000001,
+        "y": 438.0,
+        "kind": "checkpoint",
+        "platform": 2
+      },
+      {
+        "x": 954.0,
+        "y": 368.0,
+        "kind": "crystal",
+        "platform": 3
+      },
+      {
+        "x": 1026.0,
+        "y": 368.0,
+        "kind": "crystal",
+        "platform": 3
+      },
+      {
+        "x": 1062.0,
+        "y": 410.0,
+        "kind": "enemy",
+        "platform": 3
+      },
+      {
+        "x": 1026.0,
+        "y": 422.0,
+        "kind": "spikes",
+        "platform": 3
+      },
+      {
+        "x": 1242.0,
+        "y": 296.0,
+        "kind": "crystal",
+        "platform": 4
+      },
+      {
+        "x": 1314.0,
+        "y": 296.0,
+        "kind": "crystal",
+        "platform": 4
+      },
+      {
+        "x": 1386.0,
+        "y": 296.0,
+        "kind": "crystal",
+        "platform": 4
+      },
+      {
+        "x": 1386.0,
+        "y": 338.0,
+        "kind": "enemy",
+        "platform": 4
+      },
+      {
+        "x": 1530.0,
+        "y": 296.0,
+        "kind": "crystal",
+        "platform": 5
+      },
+      {
+        "x": 1602.0,
+        "y": 296.0,
+        "kind": "crystal",
+        "platform": 5
+      },
+      {
+        "x": 1674.0,
+        "y": 296.0,
+        "kind": "crystal",
+        "platform": 5
+      },
+      {
+        "x": 1746.0,
+        "y": 296.0,
+        "kind": "crystal",
+        "platform": 5
+      },
+      {
+        "x": 1764.0,
+        "y": 324.0,
+        "kind": "exit",
+        "platform": 5
+      }
+    ],
+    "asset_pack": "kenney_pixel_platformer"
+  },
+  "validation": {
+    "overall": "PASS",
+    "checks": [
+      {
+        "id": "route_0_1",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 72,
+          "safe_range": 189.3,
+          "rise": 0
+        }
+      },
+      {
+        "id": "route_1_2",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 172.1,
+          "rise": 36
+        }
+      },
+      {
+        "id": "route_2_3",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 172.1,
+          "rise": 36
+        }
+      },
+      {
+        "id": "route_3_4",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 149.9,
+          "rise": 72
+        }
+      },
+      {
+        "id": "route_4_5",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 72,
+          "safe_range": 189.3,
+          "rise": 0
+        }
+      },
+      {
+        "id": "objective_consistent",
+        "passed": true,
+        "category": "specification",
+        "critical": true
+      }
+    ],
+    "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+  }
+}

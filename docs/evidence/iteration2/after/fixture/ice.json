@@ -1,0 +1,831 @@
+{
+  "prompt": "Create a frozen underground platformer with slippery terrain, falling icicles, collectible relics, and a flashing light at the exit.",
+  "mode": "fixture",
+  "model_design": {
+    "title": "The Frostbound Vault",
+    "premise": "Create a frozen underground platformer with slippery terrain, falling icicles, collectible relics, and a flashing light at the exit.",
+    "genre": "platformer",
+    "theme": "ice",
+    "difficulty": "balanced",
+    "objective": "collect_and_exit",
+    "abilities": [],
+    "checkpoints": true,
+    "moving_platforms": false,
+    "slippery": true,
+    "falling_icicles": true,
+    "timed_hazards": false,
+    "exit_indicator": "flash",
+    "exit_style": "gate",
+    "collectible": "relics",
+    "level_count": 1,
+    "topology": "cavern",
+    "sections": [
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "patrol"
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ],
+    "requested_features": []
+  },
+  "provider": {
+    "provider": "fixture",
+    "model": null,
+    "live": false
+  },
+  "requirements": {
+    "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+    "requirements": [
+      {
+        "id": "ice_environment",
+        "source": "frozen",
+        "span": [
+          9,
+          15
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "ice_composition"
+      },
+      {
+        "id": "slippery",
+        "source": "slippery",
+        "span": [
+          44,
+          52
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "slippery_momentum"
+      },
+      {
+        "id": "falling_icicles",
+        "source": "falling icicles",
+        "span": [
+          62,
+          77
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "falling_icicle_cycle"
+      },
+      {
+        "id": "exit_indicator",
+        "source": "flashing light",
+        "span": [
+          105,
+          119
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "exit_indicator_animation"
+      },
+      {
+        "id": "collectibles",
+        "source": "collectible",
+        "span": [
+          79,
+          90
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "collectible_overlap"
+      }
+    ],
+    "changes": [
+      {
+        "field": "exit_style",
+        "before": "gate",
+        "after": "beacon",
+        "reason": "Explicit requested capability"
+      }
+    ],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "The Frostbound Vault",
+    "premise": "Create a frozen underground platformer with slippery terrain, falling icicles, collectible relics, and a flashing light at the exit.",
+    "genre": "platformer",
+    "theme": "ice",
+    "difficulty": "balanced",
+    "objective": "collect_and_exit",
+    "abilities": [],
+    "checkpoints": true,
+    "moving_platforms": false,
+    "slippery": true,
+    "falling_icicles": true,
+    "timed_hazards": false,
+    "exit_indicator": "flash",
+    "exit_style": "beacon",
+    "collectible": "relics",
+    "level_count": 1,
+    "topology": "cavern",
+    "sections": [
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "patrol"
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ],
+    "requested_features": []
+  },
+  "game_ir": {
+    "title": "The Frostbound Vault",
+    "width": 2592,
+    "height": 684,
+    "spawn": {
+      "x": 90.0,
+      "y": 476.0
+    },
+    "objective": {
+      "type": "collect_and_exit",
+      "required": 11,
+      "total": 17
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 14,
+        "width": 8,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 10,
+        "y": 15,
+        "width": 6,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 18,
+        "y": 14,
+        "width": 5,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 25,
+        "y": 14,
+        "width": 8,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 35,
+        "y": 12,
+        "width": 5,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 42,
+        "y": 13,
+        "width": 5,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 49,
+        "y": 14,
+        "width": 6,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 57,
+        "y": 13,
+        "width": 4,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      },
+      {
+        "x": 63,
+        "y": 13,
+        "width": 7,
+        "kind": "cavern",
+        "moving": false,
+        "route": "main"
+      }
+    ],
+    "entities": [
+      {
+        "x": 414.0,
+        "y": 474.0,
+        "kind": "crystal",
+        "platform": 1,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 486.0,
+        "y": 484.0,
+        "kind": "crystal",
+        "platform": 1,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 702.0,
+        "y": 438.0,
+        "kind": "crystal",
+        "platform": 2,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 774.0,
+        "y": 448.0,
+        "kind": "crystal",
+        "platform": 2,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 774.0,
+        "y": 482.0,
+        "kind": "enemy",
+        "platform": 2,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 765.0,
+        "y": 284.0,
+        "kind": "icicle",
+        "platform": 2,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 954.0,
+        "y": 438.0,
+        "kind": "crystal",
+        "platform": 3,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1026.0,
+        "y": 448.0,
+        "kind": "crystal",
+        "platform": 3,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1098.0,
+        "y": 428.0,
+        "kind": "crystal",
+        "platform": 3,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1314.0,
+        "y": 366.0,
+        "kind": "crystal",
+        "platform": 4,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1386.0,
+        "y": 376.0,
+        "kind": "crystal",
+        "platform": 4,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1377.0,
+        "y": 212.0,
+        "kind": "icicle",
+        "platform": 4,
+        "behavior": "patrol",
+        "trigger": "timer",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1288.8,
+        "y": 402.0,
+        "kind": "checkpoint",
+        "platform": 4,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1566.0,
+        "y": 402.0,
+        "kind": "crystal",
+        "platform": 5,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1638.0,
+        "y": 412.0,
+        "kind": "crystal",
+        "platform": 5,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1638.0,
+        "y": 446.0,
+        "kind": "enemy",
+        "platform": 5,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1818.0,
+        "y": 438.0,
+        "kind": "crystal",
+        "platform": 6,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1890.0,
+        "y": 448.0,
+        "kind": "crystal",
+        "platform": 6,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 1904.3999999999999,
+        "y": 284.0,
+        "kind": "icicle",
+        "platform": 6,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 2106.0,
+        "y": 402.0,
+        "kind": "crystal",
+        "platform": 7,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 2322.0,
+        "y": 402.0,
+        "kind": "crystal",
+        "platform": 8,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 2394.0,
+        "y": 412.0,
+        "kind": "crystal",
+        "platform": 8,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 2466.0,
+        "y": 392.0,
+        "kind": "crystal",
+        "platform": 8,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 2466.0,
+        "y": 446.0,
+        "kind": "enemy",
+        "platform": 8,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 2431.7999999999997,
+        "y": 248.0,
+        "kind": "icicle",
+        "platform": 8,
+        "behavior": "patrol",
+        "trigger": "timer",
+        "period_ms": 2200,
+        "radius": 110
+      },
+      {
+        "x": 2484.0,
+        "y": 432.0,
+        "kind": "exit",
+        "platform": 8,
+        "behavior": "patrol",
+        "trigger": "proximity",
+        "period_ms": 2200,
+        "radius": 110
+      }
+    ],
+    "camera_mode": "follow",
+    "schema_version": "2.0",
+    "genre": "platformer",
+    "theme": "ice",
+    "seed": 3064581167,
+    "tile_size": 36,
+    "player": {
+      "speed": 250,
+      "jump": 490,
+      "gravity": 1100,
+      "health": 3,
+      "abilities": []
+    },
+    "slippery": true,
+    "exit_indicator": "flash",
+    "exit_style": "beacon",
+    "collectible": "relics",
+    "levels": [],
+    "requirements": [
+      {
+        "id": "ice_environment",
+        "source": "frozen",
+        "span": [
+          9,
+          15
+        ],
+        "supported": true,
+        "status": "implemented_unverified",
+        "runtime_check": "ice_composition",
+        "constructed": true,
+        "verified": false,
+        "evidence": {
+          "spec": "ice_environment",
+          "qa": null
+        }
+      },
+      {
+        "id": "slippery",
+        "source": "slippery",
+        "span": [
+          44,
+          52
+        ],
+        "supported": true,
+        "status": "implemented_unverified",
+        "runtime_check": "slippery_momentum",
+        "constructed": true,
+        "verified": false,
+        "evidence": {
+          "spec": "slippery",
+          "qa": null
+        }
+      },
+      {
+        "id": "falling_icicles",
+        "source": "falling icicles",
+        "span": [
+          62,
+          77
+        ],
+        "supported": true,
+        "status": "implemented_unverified",
+        "runtime_check": "falling_icicle_cycle",
+        "constructed": true,
+        "verified": false,
+        "evidence": {
+          "spec": "falling_icicles",
+          "qa": null
+        }
+      },
+      {
+        "id": "exit_indicator",
+        "source": "flashing light",
+        "span": [
+          105,
+          119
+        ],
+        "supported": true,
+        "status": "implemented_unverified",
+        "runtime_check": "exit_indicator_animation",
+        "constructed": true,
+        "verified": false,
+        "evidence": {
+          "spec": "exit_indicator",
+          "qa": null
+        }
+      },
+      {
+        "id": "collectibles",
+        "source": "collectible",
+        "span": [
+          79,
+          90
+        ],
+        "supported": true,
+        "status": "implemented_unverified",
+        "runtime_check": "collectible_overlap",
+        "constructed": true,
+        "verified": false,
+        "evidence": {
+          "spec": "collectibles",
+          "qa": null
+        }
+      }
+    ],
+    "asset_pack": "kenney_pixel_platformer"
+  },
+  "validation": {
+    "overall": "PASS",
+    "checks": [
+      {
+        "id": "route_0_1",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 203.8,
+          "rise": -36
+        }
+      },
+      {
+        "id": "route_1_2",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 172.1,
+          "rise": 36
+        }
+      },
+      {
+        "id": "route_2_3",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 189.3,
+          "rise": 0
+        }
+      },
+      {
+        "id": "route_3_4",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 149.9,
+          "rise": 72
+        }
+      },
+      {
+        "id": "route_4_5",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 203.8,
+          "rise": -36
+        }
+      },
+      {
+        "id": "route_5_6",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 203.8,
+          "rise": -36
+        }
+      },
+      {
+        "id": "route_6_7",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 172.1,
+          "rise": 36
+        }
+      },
+      {
+        "id": "route_7_8",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 189.3,
+          "rise": 0
+        }
+      },
+      {
+        "id": "objective_consistent",
+        "passed": true,
+        "category": "specification",
+        "critical": true
+      }
+    ],
+    "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+  }
+}

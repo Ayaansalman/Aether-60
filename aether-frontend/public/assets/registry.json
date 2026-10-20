@@ -84,5 +84,21 @@
     "characters.png": "22622d54dfc9d85346c9b75b999c8604e6eb336e42c4708bcf8b21094d8a2dad",
     "industrial.png": "b54ba09f1564228f43921c33e2652f14e168565159d3624a1eb8b68bc633b872",
     "terrain.png": "a3bbff36594baa36c803a67e9152a20a80f2faeb3c22ca84ac06e0a70f56553d"
+  },
+  "procedural": {
+    "source": "src/game/platformer/PlatformerScene.ts",
+    "author": "Aether project",
+    "license": "Project source terms; not attributed to Kenney",
+    "roles": [
+      "ice terrain",
+      "cavern silhouettes",
+      "ice crystals",
+      "falling icicles",
+      "relic medallion",
+      "shrine exit",
+      "industrial gate",
+      "exit beacon",
+      "animated exit halo"
+    ]
   }
 }

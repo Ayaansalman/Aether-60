@@ -49,12 +49,13 @@ npm run build
 npm run lint
 ```
 
-The milestone has 154 passing backend tests. Four real Gemini results, earlier failures, re-verifications and provenance are exported separately from fixtures in `docs/evidence/live/`. Browser tests use actual keyboard movement/jumping/landings and explicitly labeled controlled state transitions. They do not establish full autonomous playthroughs, aesthetic excellence, or fun.
+Iteration 2 has 164 passing backend tests, five shared runtime behavior tests, and 20 passing creator checks. The three required real Gemini jobs and three separate fixtures pass expanded browser QA. See [Iteration 2 results and limits](docs/ITERATION2_RESULTS.md). The previous milestone's four real Gemini results, earlier failures, re-verifications and provenance are exported separately from fixtures in `docs/evidence/live/`. Browser tests use actual keyboard movement/jumping/landings and explicitly labeled controlled state transitions. They do not establish full autonomous playthroughs, aesthetic excellence, or fun.
 
-- [Evaluation results](docs/PLATFORMER_EVALUATION.md)
+- [Iteration 2 audit and results](docs/ITERATION2_RESULTS.md)
+- [Previous milestone evaluation](docs/PLATFORMER_EVALUATION.md)
 - [Evaluation and startup runbook](docs/PLATFORMER_RUNBOOK.md)
 - [Development progress and boundaries](docs/DEVELOPMENT_PROGRESS.md)
 - [Four live prompt results](docs/evidence/live/summary.json)
 - [Asset sources and dimensions](aether-frontend/public/assets/README.md)
 
-Artwork: Kenney Pixel Platformer and Industrial Expansion, CC0. Licenses and asset registry are bundled. No code has been pushed or deployed.
+Artwork: Kenney Pixel Platformer and Industrial Expansion, CC0; original procedural ice, relic and exit components use project source terms. Licenses and asset registry are bundled. No code has been pushed or deployed.

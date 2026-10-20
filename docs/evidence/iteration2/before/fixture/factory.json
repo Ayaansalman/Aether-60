@@ -1,0 +1,543 @@
+{
+  "prompt": "Create an industrial platformer with robotic enemies, moving platforms, dangerous machinery, and checkpoints across multiple stages.",
+  "mode": "fixture",
+  "model_design": {
+    "title": "The Copperworks",
+    "premise": "Create an industrial platformer with robotic enemies, moving platforms, dangerous machinery, and checkpoints across multiple stages.",
+    "genre": "platformer",
+    "theme": "industrial",
+    "difficulty": "balanced",
+    "objective": "reach_exit",
+    "abilities": [],
+    "checkpoints": true,
+    "moving_platforms": true,
+    "sections": [
+      {
+        "kind": "factory",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true
+      },
+      {
+        "kind": "factory",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true
+      },
+      {
+        "kind": "factory",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ]
+  },
+  "provider": {
+    "provider": "fixture",
+    "model": null,
+    "live": false
+  },
+  "requirements": {
+    "scope": "Explicit supported requirements and recognized exclusions; semantic fidelity still requires review.",
+    "changes": [],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "The Copperworks",
+    "premise": "Create an industrial platformer with robotic enemies, moving platforms, dangerous machinery, and checkpoints across multiple stages.",
+    "genre": "platformer",
+    "theme": "industrial",
+    "difficulty": "balanced",
+    "objective": "reach_exit",
+    "abilities": [],
+    "checkpoints": true,
+    "moving_platforms": true,
+    "sections": [
+      {
+        "kind": "factory",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true
+      },
+      {
+        "kind": "factory",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true
+      },
+      {
+        "kind": "factory",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false
+      },
+      {
+        "kind": "factory",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ]
+  },
+  "game_ir": {
+    "schema_version": "2.0",
+    "genre": "platformer",
+    "title": "The Copperworks",
+    "theme": "industrial",
+    "seed": 3775277847,
+    "tile_size": 36,
+    "width": 2628,
+    "height": 684,
+    "spawn": {
+      "x": 90.0,
+      "y": 476.0
+    },
+    "player": {
+      "speed": 250,
+      "jump": 490,
+      "gravity": 1100,
+      "health": 3,
+      "abilities": []
+    },
+    "objective": {
+      "type": "reach_exit",
+      "required": 0,
+      "total": 17
+    },
+    "platforms": [
+      {
+        "x": 0,
+        "y": 14,
+        "width": 8,
+        "kind": "meadow",
+        "moving": false
+      },
+      {
+        "x": 10,
+        "y": 15,
+        "width": 4,
+        "kind": "factory",
+        "moving": false
+      },
+      {
+        "x": 11,
+        "y": 12,
+        "width": 4,
+        "kind": "factory",
+        "moving": true
+      },
+      {
+        "x": 16,
+        "y": 15,
+        "width": 5,
+        "kind": "factory",
+        "moving": false
+      },
+      {
+        "x": 23,
+        "y": 14,
+        "width": 6,
+        "kind": "factory",
+        "moving": false
+      },
+      {
+        "x": 24,
+        "y": 11,
+        "width": 4,
+        "kind": "factory",
+        "moving": true
+      },
+      {
+        "x": 31,
+        "y": 15,
+        "width": 5,
+        "kind": "factory",
+        "moving": false
+      },
+      {
+        "x": 38,
+        "y": 15,
+        "width": 7,
+        "kind": "factory",
+        "moving": false
+      },
+      {
+        "x": 39,
+        "y": 12,
+        "width": 4,
+        "kind": "factory",
+        "moving": true
+      },
+      {
+        "x": 47,
+        "y": 14,
+        "width": 8,
+        "kind": "factory",
+        "moving": false
+      },
+      {
+        "x": 57,
+        "y": 15,
+        "width": 6,
+        "kind": "factory",
+        "moving": false
+      },
+      {
+        "x": 58,
+        "y": 12,
+        "width": 4,
+        "kind": "factory",
+        "moving": true
+      },
+      {
+        "x": 65,
+        "y": 15,
+        "width": 6,
+        "kind": "factory",
+        "moving": false
+      }
+    ],
+    "entities": [
+      {
+        "x": 414.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 1
+      },
+      {
+        "x": 630.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 3
+      },
+      {
+        "x": 702.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 3
+      },
+      {
+        "x": 702.0,
+        "y": 518.0,
+        "kind": "enemy",
+        "platform": 3
+      },
+      {
+        "x": 882.0,
+        "y": 440.0,
+        "kind": "crystal",
+        "platform": 4
+      },
+      {
+        "x": 954.0,
+        "y": 440.0,
+        "kind": "crystal",
+        "platform": 4
+      },
+      {
+        "x": 954.0,
+        "y": 494.0,
+        "kind": "spikes",
+        "platform": 4
+      },
+      {
+        "x": 1170.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 6
+      },
+      {
+        "x": 1242.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 6
+      },
+      {
+        "x": 1144.8,
+        "y": 510.0,
+        "kind": "checkpoint",
+        "platform": 6
+      },
+      {
+        "x": 1422.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 7
+      },
+      {
+        "x": 1494.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 7
+      },
+      {
+        "x": 1566.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 7
+      },
+      {
+        "x": 1566.0,
+        "y": 518.0,
+        "kind": "enemy",
+        "platform": 7
+      },
+      {
+        "x": 1746.0,
+        "y": 440.0,
+        "kind": "crystal",
+        "platform": 9
+      },
+      {
+        "x": 1818.0,
+        "y": 440.0,
+        "kind": "crystal",
+        "platform": 9
+      },
+      {
+        "x": 1890.0,
+        "y": 440.0,
+        "kind": "crystal",
+        "platform": 9
+      },
+      {
+        "x": 1854.0,
+        "y": 494.0,
+        "kind": "spikes",
+        "platform": 9
+      },
+      {
+        "x": 2106.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 10
+      },
+      {
+        "x": 2178.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 10
+      },
+      {
+        "x": 2394.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 12
+      },
+      {
+        "x": 2466.0,
+        "y": 476.0,
+        "kind": "crystal",
+        "platform": 12
+      },
+      {
+        "x": 2502.0,
+        "y": 518.0,
+        "kind": "enemy",
+        "platform": 12
+      },
+      {
+        "x": 2520.0,
+        "y": 504.0,
+        "kind": "exit",
+        "platform": 12
+      }
+    ],
+    "asset_pack": "kenney_pixel_platformer"
+  },
+  "validation": {
+    "overall": "PASS",
+    "checks": [
+      {
+        "id": "route_0_1",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 203.8,
+          "rise": -36
+        }
+      },
+      {
+        "id": "route_1_2",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 189.3,
+          "rise": 0
+        }
+      },
+      {
+        "id": "route_2_3",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 172.1,
+          "rise": 36
+        }
+      },
+      {
+        "id": "route_3_4",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 203.8,
+          "rise": -36
+        }
+      },
+      {
+        "id": "route_4_5",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 189.3,
+          "rise": 0
+        }
+      },
+      {
+        "id": "route_5_6",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 172.1,
+          "rise": 36
+        }
+      },
+      {
+        "id": "route_6_7",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 203.8,
+          "rise": -36
+        }
+      },
+      {
+        "id": "route_7_8",
+        "passed": true,
+        "category": "level_layout",
+        "critical": true,
+        "details": {
+          "gap_with_margin": 108,
+          "safe_range": 189.3,
+          "rise": 0
+        }
+      },
+      {
+        "id": "objective_consistent",
+        "passed": true,
+        "category": "specification",
+        "critical": true
+      }
+    ],
+    "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+  }
+}

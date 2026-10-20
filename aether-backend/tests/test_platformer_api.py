@@ -42,7 +42,7 @@ def test_targeted_route_repair_preserves_failure_evidence(client,monkeypatch):
     ])
     monkeypatch.setattr(platformer,'browser_report',lambda *args:next(reports))
     gid=submit(client,'Challenging precision tower with double jump');result=client.get(f'/api/v2/games/{gid}').json()
-    assert result['job']['status']=='READY'
+    assert result['job']['status']=='READY_WITH_WARNINGS'  # Stub does not verify requested double jump.
     artifacts=result['artifacts']
     assert artifacts['qa_report_initial.json']['overall']=='FAIL'
     assert artifacts['qa_report.json']['overall']=='PASS'

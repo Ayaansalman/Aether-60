@@ -1,0 +1,26 @@
+{
+  "game_id": "8727ac9a-0de1-439b-9d4e-9ceace6646da",
+  "source": "Actual creator UI submission, explicit offline fixture; real backend and browser QA",
+  "observed_stages": [
+    "TESTING",
+    "READY"
+  ],
+  "event_stages": [
+    "QUEUED",
+    "PLANNING",
+    "DESIGNING",
+    "VALIDATING_SPEC",
+    "BUILDING",
+    "TESTING",
+    "READY"
+  ],
+  "previous_sample_cleared": true,
+  "timer_ms": 1500,
+  "qa": "PASS",
+  "page_errors": [],
+  "reverification": {
+    "overall": "PASS",
+    "checks": 19,
+    "artifact": "qa_retest_1.json"
+  }
+}

@@ -1,0 +1,3727 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "canvas_and_assets",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": {
+        "missing": [],
+        "http_failures": []
+      }
+    },
+    {
+      "id": "horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.5932013888608311,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 694.6666666666652,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1594.6666666666697,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2530.6666666666606,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 2599966387,
+          "time": 3700.8
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.975283854546798,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 678.4166666666646,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1578.4166666666708,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2514.4166666666583,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 129.7777777777778,
+          "y": 480,
+          "vx": 250,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 2599966387,
+          "time": 4067.5
+        }
+      }
+    },
+    {
+      "id": "jump_gravity_landing",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.3106952314242881,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 723.9166666666662,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1623.9166666666677,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2559.9166666666647,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 2599966387,
+          "time": 4467.4
+        },
+        "airborne": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.1639625867516683,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 706.5833333333322,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1606.5833333333355,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2542.583333333329,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 397.75,
+          "vx": 0,
+          "vy": -233.33333333333354,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 2599966387,
+          "time": 4817.4
+        },
+        "landed": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.2174672485467477,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 664.3333333333308,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1564.3333333333385,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2500.333333333323,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "warning",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "warning",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "warning",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "warning",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 2599966387,
+          "time": 5684.1
+        }
+      }
+    },
+    {
+      "id": "environment_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "theme": "ice",
+        "method": "Runtime theme/asset witness; screenshots require human visual review"
+      }
+    },
+    {
+      "id": "ice_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "exitAlpha": 0.16246169986201253,
+        "exitStyle": "beacon",
+        "enemies": [
+          {
+            "behavior": "patrol",
+            "x": 663.2499999999974,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1563.2500000000052,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 2499.2499999999895,
+            "y": 449.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [
+          {
+            "state": "warning",
+            "x": 716.4,
+            "y": 284,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "warning",
+            "x": 1328.3999999999999,
+            "y": 212,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "warning",
+            "x": 1927.8,
+            "y": 284,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "warning",
+            "x": 2539.7999999999997,
+            "y": 248,
+            "activations": 0,
+            "trigger": "timer"
+          }
+        ],
+        "machines": [],
+        "movingPlatforms": [],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 2,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 2599966387,
+        "time": 5700.7
+      }
+    },
+    {
+      "id": "exit_indicator_animation",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "mode": "flash",
+        "style": "beacon",
+        "observed_alpha": [
+          0.15000000000000002,
+          0.7348328310539055,
+          0.8921866157418045,
+          0.15523245524706641,
+          0.6474719318688673,
+          0.9001350265999235,
+          0.15730217843737848,
+          0.671261126155952
+        ]
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 731.4999999999998,
+          "y": 485.3,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 703.3333333333321,
+          "y": 485.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "patrol"
+        ]
+      }
+    },
+    {
+      "id": "falling_icicle_cycle",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Configured timer; real warning, falling physics, terrain collision and player damage",
+        "trigger": "timer",
+        "period_ms": 1500,
+        "states": [
+          "falling",
+          "spent",
+          "waiting",
+          "warning"
+        ],
+        "samples": [
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.24598981547838994,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1530.7500000000075,
+                "y": 449.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2466.749999999985,
+                "y": 449.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "warning",
+                "x": 716.4,
+                "y": 284,
+                "activations": 0,
+                "trigger": "timer"
+              },
+              {
+                "state": "warning",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 0,
+                "trigger": "timer"
+              },
+              {
+                "state": "warning",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 0,
+                "trigger": "timer"
+              },
+              {
+                "state": "warning",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 0,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 711.2888888888889,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 9217.3
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 1,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1518.8333333333417,
+                "y": 449.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2454.8333333333167,
+                "y": 449.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "warning",
+                "x": 716.4,
+                "y": 284,
+                "activations": 0,
+                "trigger": "timer"
+              },
+              {
+                "state": "warning",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 0,
+                "trigger": "timer"
+              },
+              {
+                "state": "warning",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 0,
+                "trigger": "timer"
+              },
+              {
+                "state": "warning",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 0,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 711.2888888888889,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 9400.6
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.2110516621430747,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1506.9166666666758,
+                "y": 449.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2442.9166666666483,
+                "y": 449.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "falling",
+                "x": 716.4,
+                "y": 295.25,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 1328.3999999999999,
+                "y": 223.25,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 1927.8,
+                "y": 295.25,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 2539.7999999999997,
+                "y": 259.25,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 711.2888888888889,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 9567.2
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.7120905847064083,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1496.0833333333433,
+                "y": 449.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2432.0833333333135,
+                "y": 449.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "falling",
+                "x": 716.4,
+                "y": 340.6666666666667,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 1328.3999999999999,
+                "y": 268.66666666666663,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 1927.8,
+                "y": 340.6666666666667,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 2539.7999999999997,
+                "y": 304.6666666666667,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 711.2888888888889,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 9733.9
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.6053191528596724,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1500.4166666666763,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2419.0833333333117,
+                "y": 449.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "falling",
+                "x": 716.4,
+                "y": 435.5,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 1328.3999999999999,
+                "y": 363.49999999999994,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 1927.8,
+                "y": 435.5,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "falling",
+                "x": 2539.7999999999997,
+                "y": 399.5,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 711.2888888888889,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 9933.9
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.3820540376106938,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1511.2500000000089,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2408.249999999977,
+                "y": 449.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 463.75,
+            "vx": 0,
+            "vy": -35,
+            "grounded": false,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "jump",
+            "seed": 2599966387,
+            "time": 10117.2
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.9188322226093518,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1523.1666666666747,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2396.3333333333085,
+                "y": 449.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 477.5,
+            "vx": 0,
+            "vy": 166.66666666666666,
+            "grounded": false,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "fall",
+            "seed": 2599966387,
+            "time": 10300.6
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.15069313083139224,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1536.1666666666738,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2398.4999999999754,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 10483.9
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.9223643056284987,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1547.0000000000064,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2409.3333333333103,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 10667.2
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.4846597519399837,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1558.9166666666722,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2421.2499999999786,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 10833.9
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.39294626407187927,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1569.7500000000048,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2432.0833333333135,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 11000.5
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.9590331199709383,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1580.5833333333374,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2442.9166666666483,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 11167.2
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.1535051004872413,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1592.5000000000032,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2454.8333333333167,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "spent",
+                "x": 716.4,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1328.3999999999999,
+                "y": 404.88888888888886,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 1927.8,
+                "y": 476.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "spent",
+                "x": 2539.7999999999997,
+                "y": 440.8888888888889,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 11350.4
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.9001350265999258,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1604.416666666669,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2466.749999999985,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 11533.8
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.33012648331183114,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1615.2500000000016,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2477.58333333332,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 11717.2
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.5932013888608296,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1628.2500000000007,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2490.5833333333217,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 11917.1
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.8047723474186301,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1640.1666666666665,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2502.49999999999,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 12100.5
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.17471614545320158,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1652.0833333333323,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2514.4166666666583,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 12267.1
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.9996100675249431,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1665.0833333333314,
+                "y": 449.3,
+                "vx": 65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2527.41666666666,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 12467.1
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.2618850164025289,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1675.916666666664,
+                "y": 449.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2538.249999999995,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 12633.8
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.6594009483244405,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1665.0833333333314,
+                "y": 449.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2549.08333333333,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 12800.4
+          },
+          {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "exitAlpha": 0.7005470800359364,
+            "exitStyle": "beacon",
+            "enemies": [
+              {
+                "behavior": "patrol",
+                "x": 1654.2499999999989,
+                "y": 449.3,
+                "vx": -65
+              },
+              {
+                "behavior": "patrol",
+                "x": 2559.9166666666647,
+                "y": 449.3,
+                "vx": 65
+              }
+            ],
+            "icicles": [
+              {
+                "state": "waiting",
+                "x": 716.4,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1328.3999999999999,
+                "y": 212,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 1927.8,
+                "y": 284,
+                "activations": 1,
+                "trigger": "timer"
+              },
+              {
+                "state": "waiting",
+                "x": 2539.7999999999997,
+                "y": 248,
+                "activations": 1,
+                "trigger": "timer"
+              }
+            ],
+            "machines": [],
+            "movingPlatforms": [],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "ice",
+            "terrainTexture": "ice",
+            "generation": 4,
+            "landedPlatforms": [
+              0,
+              2
+            ],
+            "x": 706.1777777777778,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 1,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 2599966387,
+            "time": 13000.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "falling_icicle_reset",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Leave proximity volume after terrain collision and observe cooldown/reset",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 1,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 1497.1666666666765,
+              "y": 449.3,
+              "vx": 65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2495.999999999989,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 2,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 2,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 2,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 2,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 4,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 1,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 2599966387,
+          "time": 15567
+        }
+      }
+    },
+    {
+      "id": "timer_icicle",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "exitAlpha": 0.18840640197432967,
+        "exitStyle": "beacon",
+        "enemies": [
+          {
+            "behavior": "patrol",
+            "x": 606.9166666666621,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1506.9166666666758,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 2442.9166666666483,
+            "y": 449.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [
+          {
+            "state": "falling",
+            "x": 716.4,
+            "y": 289.83333333333337,
+            "activations": 1,
+            "trigger": "timer"
+          },
+          {
+            "state": "falling",
+            "x": 1328.3999999999999,
+            "y": 217.83333333333334,
+            "activations": 1,
+            "trigger": "timer"
+          },
+          {
+            "state": "falling",
+            "x": 1927.8,
+            "y": 289.83333333333337,
+            "activations": 1,
+            "trigger": "timer"
+          },
+          {
+            "state": "falling",
+            "x": 2539.7999999999997,
+            "y": 253.83333333333334,
+            "activations": 1,
+            "trigger": "timer"
+          }
+        ],
+        "machines": [],
+        "movingPlatforms": [],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 5,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 2599966387,
+        "time": 17666.9
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": true,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 10,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.6594009483244418,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 642.6666666666633,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1542.6666666666733,
+                  "y": 449.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2478.6666666666533,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 716.4,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1328.3999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1927.8,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2539.7999999999997,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 7,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 431.38888888888937,
+              "y": 516,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 2599966387,
+              "time": 19716.8
+            }
+          },
+          {
+            "from": 10,
+            "to": 16,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.734832831053905,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 1514.5000000000086,
+                  "y": 449.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2450.4999999999827,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "warning",
+                  "x": 716.4,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "warning",
+                  "x": 1328.3999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "warning",
+                  "x": 1927.8,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "warning",
+                  "x": 2539.7999999999997,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 8,
+              "landedPlatforms": [
+                0,
+                1,
+                2
+              ],
+              "x": 651.555555555555,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 2599966387,
+              "time": 21683.4
+            }
+          },
+          {
+            "from": 16,
+            "to": 24,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.997878476986778,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 1492.8333333333435,
+                  "y": 449.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2428.833333333313,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "falling",
+                  "x": 716.4,
+                  "y": 360.25,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 1328.3999999999999,
+                  "y": 288.24999999999994,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 1927.8,
+                  "y": 360.25,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 2539.7999999999997,
+                  "y": 324.24999999999994,
+                  "activations": 1,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 9,
+              "landedPlatforms": [
+                0,
+                2,
+                3
+              ],
+              "x": 951.1111111111093,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 2599966387,
+              "time": 23983.3
+            }
+          },
+          {
+            "from": 24,
+            "to": 33,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.5145161937338538,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 657.8333333333305,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1557.833333333339,
+                  "y": 449.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2493.833333333322,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 716.4,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1328.3999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1927.8,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2539.7999999999997,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                3,
+                4
+              ],
+              "x": 1267.4444444444484,
+              "y": 408,
+              "vx": 149.99999999999997,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 2599966387,
+              "time": 25299.9
+            }
+          },
+          {
+            "from": 33,
+            "to": 41,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.15000000000000002,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 606.9166666666621,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2442.9166666666483,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "falling",
+                  "x": 716.4,
+                  "y": 295.25,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 1328.3999999999999,
+                  "y": 223.25,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 1927.8,
+                  "y": 295.25,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 2539.7999999999997,
+                  "y": 259.25,
+                  "activations": 1,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 11,
+              "landedPlatforms": [
+                0,
+                4,
+                5
+              ],
+              "x": 1551.5555555555593,
+              "y": 444,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 2599966387,
+              "time": 27383.1
+            }
+          },
+          {
+            "from": 41,
+            "to": 49,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.8711984666785006,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 593.9166666666616,
+                  "y": 485.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2425.5833333333126,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "falling",
+                  "x": 716.4,
+                  "y": 382.58333333333337,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 1328.3999999999999,
+                  "y": 310.58333333333337,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 1927.8,
+                  "y": 382.58333333333337,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "falling",
+                  "x": 2539.7999999999997,
+                  "y": 346.58333333333337,
+                  "activations": 1,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                5,
+                6
+              ],
+              "x": 1821.944444444448,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 2599966387,
+              "time": 29733.1
+            }
+          },
+          {
+            "from": 49,
+            "to": 58,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.9875383001379873,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 651.3333333333303,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1551.3333333333394,
+                  "y": 449.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2487.333333333321,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 716.4,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1328.3999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1927.8,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2539.7999999999997,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 13,
+              "landedPlatforms": [
+                0,
+                6,
+                7
+              ],
+              "x": 2163.5555555555547,
+              "y": 444,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 2599966387,
+              "time": 31133.1
+            }
+          },
+          {
+            "from": 58,
+            "to": 66,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "exitAlpha": 0.7892495513249536,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 645.9166666666634,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1545.916666666673,
+                  "y": 449.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2481.916666666654,
+                  "y": 449.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 716.4,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1328.3999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1927.8,
+                  "y": 284,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2539.7999999999997,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "timer"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 14,
+              "landedPlatforms": [
+                0,
+                7,
+                8
+              ],
+              "x": 2455.722222222215,
+              "y": 444,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 2599966387,
+              "time": 32633
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "collectible_overlap",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled placement into a real crystal overlap",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.23476997260714683,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 718.4999999999993,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1618.5000000000014,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2554.4999999999973,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 15,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 414,
+          "y": 494.16666666666663,
+          "vx": 0,
+          "vy": 201.66666666666669,
+          "grounded": false,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 2599966387,
+          "time": 33016.3
+        }
+      }
+    },
+    {
+      "id": "checkpoint_respawn",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+        "activated": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.9450670827759053,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 706.5833333333322,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1606.5833333333355,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2542.583333333329,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 15,
+          "landedPlatforms": [
+            0,
+            4
+          ],
+          "x": 1216.8,
+          "y": 408,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": 4,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 2599966387,
+          "time": 33232.9
+        },
+        "respawn": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.8047723474186289,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 682.7499999999981,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1582.7500000000039,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2518.7499999999923,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 15,
+          "landedPlatforms": [
+            0,
+            4
+          ],
+          "x": 1216.8,
+          "y": 408,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": 4,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 2599966387,
+          "time": 33566.3
+        }
+      }
+    },
+    {
+      "id": "win_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled collection and gate overlaps through all stages, not an autonomous completion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.8296930082673242,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 618.8333333333292,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1518.8333333333417,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2454.8333333333167,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "warning",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "warning",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "warning",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "warning",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 17,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 2592,
+          "y": 432,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 18,
+          "state": "won",
+          "checkpoint": 4,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 2599966387,
+          "time": 37516.1
+        }
+      }
+    },
+    {
+      "id": "hazard_damage",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap with real hazard or enemy",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.40398697617139623,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 716.3333333333326,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1616.3333333333348,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2552.3333333333303,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 18,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 732.8888888888889,
+          "y": 465.4166666666667,
+          "vx": 0,
+          "vy": 56.66666666666666,
+          "grounded": false,
+          "health": 2,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 2599966387,
+          "time": 37932.7
+        }
+      }
+    },
+    {
+      "id": "loss_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Test hook invokes damage to exercise health exhaustion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "exitAlpha": 0.9996100675249432,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 1612.0000000000018,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2547.9999999999964,
+              "y": 449.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 716.4,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1328.3999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 1927.8,
+              "y": 284,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2539.7999999999997,
+              "y": 248,
+              "activations": 0,
+              "trigger": "timer"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 18,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 730.7777777777778,
+          "y": 454.55555555555554,
+          "vx": 0,
+          "vy": 0,
+          "grounded": false,
+          "health": 0,
+          "crystals": 1,
+          "state": "lost",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 2599966387,
+          "time": 38066.1
+        }
+      }
+    },
+    {
+      "id": "restart_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "exitAlpha": 0.8148883680183769,
+        "exitStyle": "beacon",
+        "enemies": [
+          {
+            "behavior": "patrol",
+            "x": 732.5833333333331,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1632.5833333333337,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 2568.5833333333326,
+            "y": 449.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [
+          {
+            "state": "waiting",
+            "x": 716.4,
+            "y": 284,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "waiting",
+            "x": 1328.3999999999999,
+            "y": 212,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "waiting",
+            "x": 1927.8,
+            "y": 284,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "waiting",
+            "x": 2539.7999999999997,
+            "y": 248,
+            "activations": 0,
+            "trigger": "timer"
+          }
+        ],
+        "machines": [],
+        "movingPlatforms": [],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 19,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 2599966387,
+        "time": 38249.4
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "screenshot": "gameplay.png",
+  "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+}

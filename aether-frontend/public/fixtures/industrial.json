@@ -1,261 +1,1264 @@
 {
-  "schema_version": "2.0",
-  "genre": "platformer",
   "title": "The Copperworks",
-  "theme": "industrial",
-  "seed": 3811983085,
-  "tile_size": 36,
-  "width": 2484,
+  "width": 1692,
   "height": 684,
   "spawn": {
     "x": 90.0,
     "y": 476.0
   },
-  "player": {
-    "speed": 250.0,
-    "jump": 490.0,
-    "gravity": 1100.0,
-    "health": 3,
-    "abilities": [
-      "dash"
-    ]
-  },
   "objective": {
     "type": "reach_exit",
     "required": 0,
-    "total": 16
+    "total": 10
   },
   "platforms": [
     {
       "x": 0,
       "y": 14,
       "width": 8,
-      "kind": "meadow",
-      "moving": false
+      "kind": "terraces",
+      "moving": false,
+      "route": "main"
     },
     {
       "x": 10,
-      "y": 15,
+      "y": 13,
       "width": 4,
-      "kind": "factory",
-      "moving": false
+      "kind": "terraces",
+      "moving": false,
+      "route": "main"
     },
     {
       "x": 11,
-      "y": 12,
+      "y": 10,
       "width": 4,
-      "kind": "factory",
-      "moving": true
+      "kind": "terraces",
+      "moving": true,
+      "route": "main"
     },
     {
       "x": 16,
-      "y": 15,
+      "y": 11,
       "width": 5,
-      "kind": "factory",
-      "moving": false
+      "kind": "terraces",
+      "moving": false,
+      "route": "main"
     },
     {
       "x": 23,
-      "y": 14,
-      "width": 7,
-      "kind": "factory",
-      "moving": false
+      "y": 12,
+      "width": 6,
+      "kind": "terraces",
+      "moving": false,
+      "route": "main"
     },
     {
       "x": 24,
-      "y": 11,
+      "y": 9,
       "width": 4,
-      "kind": "factory",
-      "moving": true
+      "kind": "terraces",
+      "moving": true,
+      "route": "main"
     },
     {
-      "x": 32,
-      "y": 15,
-      "width": 4,
-      "kind": "factory",
-      "moving": false
+      "x": 31,
+      "y": 11,
+      "width": 5,
+      "kind": "terraces",
+      "moving": false,
+      "route": "main"
     },
     {
       "x": 38,
-      "y": 15,
-      "width": 5,
-      "kind": "factory",
-      "moving": false
+      "y": 12,
+      "width": 7,
+      "kind": "terraces",
+      "moving": false,
+      "route": "main"
     },
     {
       "x": 39,
-      "y": 12,
+      "y": 9,
       "width": 4,
-      "kind": "factory",
-      "moving": true
-    },
-    {
-      "x": 45,
-      "y": 14,
-      "width": 8,
-      "kind": "factory",
-      "moving": false
-    },
-    {
-      "x": 55,
-      "y": 15,
-      "width": 5,
-      "kind": "factory",
-      "moving": false
-    },
-    {
-      "x": 56,
-      "y": 12,
-      "width": 4,
-      "kind": "factory",
-      "moving": true
-    },
-    {
-      "x": 62,
-      "y": 15,
-      "width": 5,
-      "kind": "factory",
-      "moving": false
+      "kind": "terraces",
+      "moving": true,
+      "route": "main"
     }
   ],
   "entities": [
     {
       "x": 414.0,
-      "y": 476.0,
+      "y": 402.0,
       "kind": "crystal",
-      "platform": 1
+      "platform": 1,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 630.0,
-      "y": 476.0,
+      "y": 330.0,
       "kind": "crystal",
-      "platform": 3
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 702.0,
-      "y": 476.0,
+      "y": 340.0,
       "kind": "crystal",
-      "platform": 3
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 702.0,
-      "y": 518.0,
+      "y": 374.0,
       "kind": "enemy",
-      "platform": 3
+      "platform": 3,
+      "behavior": "chase",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 604.8000000000001,
+      "y": 366.0,
+      "kind": "checkpoint",
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 882.0,
-      "y": 440.0,
+      "y": 366.0,
       "kind": "crystal",
-      "platform": 4
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 954.0,
-      "y": 440.0,
+      "y": 376.0,
       "kind": "crystal",
-      "platform": 4
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1026.0,
-      "y": 440.0,
+      "x": 968.4,
+      "y": 416.0,
+      "kind": "timed_hazard",
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1170.0,
+      "y": 330.0,
       "kind": "crystal",
-      "platform": 4
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 954.0,
-      "y": 494.0,
-      "kind": "spikes",
-      "platform": 4
-    },
-    {
-      "x": 1206.0,
-      "y": 476.0,
+      "x": 1242.0,
+      "y": 340.0,
       "kind": "crystal",
-      "platform": 6
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1180.8,
-      "y": 510.0,
-      "kind": "checkpoint",
-      "platform": 6
+      "x": 1242.0,
+      "y": 374.0,
+      "kind": "enemy",
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 1422.0,
-      "y": 476.0,
+      "y": 366.0,
       "kind": "crystal",
-      "platform": 7
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
       "x": 1494.0,
-      "y": 476.0,
+      "y": 376.0,
       "kind": "crystal",
-      "platform": 7
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1494.0,
-      "y": 518.0,
-      "kind": "enemy",
-      "platform": 7
-    },
-    {
-      "x": 1674.0,
-      "y": 440.0,
+      "x": 1566.0,
+      "y": 356.0,
       "kind": "crystal",
-      "platform": 9
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
     },
     {
-      "x": 1746.0,
-      "y": 440.0,
-      "kind": "crystal",
-      "platform": 9
-    },
-    {
-      "x": 1818.0,
-      "y": 440.0,
-      "kind": "crystal",
-      "platform": 9
-    },
-    {
-      "x": 1782.0,
-      "y": 494.0,
-      "kind": "spikes",
-      "platform": 9
-    },
-    {
-      "x": 2034.0,
-      "y": 476.0,
-      "kind": "crystal",
-      "platform": 10
-    },
-    {
-      "x": 2106.0,
-      "y": 476.0,
-      "kind": "crystal",
-      "platform": 10
-    },
-    {
-      "x": 2286.0,
-      "y": 476.0,
-      "kind": "crystal",
-      "platform": 12
-    },
-    {
-      "x": 2358.0,
-      "y": 476.0,
-      "kind": "crystal",
-      "platform": 12
-    },
-    {
-      "x": 2358.0,
-      "y": 518.0,
-      "kind": "enemy",
-      "platform": 12
-    },
-    {
-      "x": 2376.0,
-      "y": 504.0,
+      "x": 1584.0,
+      "y": 396.0,
       "kind": "exit",
-      "platform": 12
+      "platform": 7,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    }
+  ],
+  "camera_mode": "follow",
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "theme": "industrial",
+  "seed": 3775277847,
+  "tile_size": 36,
+  "player": {
+    "speed": 250.0,
+    "jump": 490.0,
+    "gravity": 1100.0,
+    "health": 3,
+    "abilities": []
+  },
+  "slippery": false,
+  "exit_indicator": "none",
+  "exit_style": "gate",
+  "collectible": "crystals",
+  "levels": [
+    {
+      "title": "The Copperworks · Stage 1",
+      "width": 1692,
+      "height": 684,
+      "spawn": {
+        "x": 90.0,
+        "y": 476.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 10
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 10,
+          "y": 13,
+          "width": 4,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 16,
+          "y": 11,
+          "width": 5,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 23,
+          "y": 12,
+          "width": 6,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 24,
+          "y": 9,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 31,
+          "y": 11,
+          "width": 5,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 38,
+          "y": 12,
+          "width": 7,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 39,
+          "y": 9,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        }
+      ],
+      "entities": [
+        {
+          "x": 414.0,
+          "y": 402.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 630.0,
+          "y": 330.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 702.0,
+          "y": 340.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 702.0,
+          "y": 374.0,
+          "kind": "enemy",
+          "platform": 3,
+          "behavior": "chase",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 604.8000000000001,
+          "y": 366.0,
+          "kind": "checkpoint",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 882.0,
+          "y": 366.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 954.0,
+          "y": 376.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 968.4,
+          "y": 416.0,
+          "kind": "timed_hazard",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1170.0,
+          "y": 330.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1242.0,
+          "y": 340.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1242.0,
+          "y": 374.0,
+          "kind": "enemy",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1422.0,
+          "y": 366.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1494.0,
+          "y": 376.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1566.0,
+          "y": 356.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1584.0,
+          "y": 396.0,
+          "kind": "exit",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow"
+    },
+    {
+      "title": "The Copperworks · Stage 2",
+      "width": 2052,
+      "height": 756,
+      "spawn": {
+        "x": 90.0,
+        "y": 548.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 14
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 16,
+          "width": 8,
+          "kind": "ascent",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 10,
+          "y": 15,
+          "width": 5,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 11,
+          "y": 12,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 17,
+          "y": 14,
+          "width": 5,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 24,
+          "y": 13,
+          "width": 6,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 25,
+          "y": 10,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 32,
+          "y": 12,
+          "width": 6,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 40,
+          "y": 11,
+          "width": 6,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 41,
+          "y": 8,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 48,
+          "y": 10,
+          "width": 7,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 49,
+          "y": 7,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional"
+        }
+      ],
+      "entities": [
+        {
+          "x": 414.0,
+          "y": 474.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 486.0,
+          "y": 484.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 666.0,
+          "y": 438.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 738.0,
+          "y": 448.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 738.0,
+          "y": 482.0,
+          "kind": "enemy",
+          "platform": 3,
+          "behavior": "shooter",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 918.0,
+          "y": 402.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 990.0,
+          "y": 412.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1004.4,
+          "y": 452.0,
+          "kind": "timed_hazard",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 892.8000000000001,
+          "y": 438.0,
+          "kind": "checkpoint",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1206.0,
+          "y": 366.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1278.0,
+          "y": 376.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1314.0,
+          "y": 410.0,
+          "kind": "enemy",
+          "platform": 6,
+          "behavior": "chase",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1494.0,
+          "y": 330.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1566.0,
+          "y": 340.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1782.0,
+          "y": 294.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1854.0,
+          "y": 304.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1926.0,
+          "y": 284.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1926.0,
+          "y": 338.0,
+          "kind": "enemy",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1891.8,
+          "y": 344.0,
+          "kind": "timed_hazard",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1836.0,
+          "y": 207.0,
+          "kind": "crystal",
+          "platform": 10,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1944.0,
+          "y": 324.0,
+          "kind": "exit",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "vertical"
+    },
+    {
+      "title": "The Copperworks · Stage 3",
+      "width": 2340,
+      "height": 684,
+      "spawn": {
+        "x": 90.0,
+        "y": 476.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 15
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 10,
+          "y": 13,
+          "width": 4,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 16,
+          "y": 11,
+          "width": 6,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 24,
+          "y": 12,
+          "width": 8,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 25,
+          "y": 9,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 34,
+          "y": 11,
+          "width": 6,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 42,
+          "y": 12,
+          "width": 7,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 43,
+          "y": 9,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        },
+        {
+          "x": 51,
+          "y": 11,
+          "width": 6,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 52,
+          "y": 8,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional"
+        },
+        {
+          "x": 59,
+          "y": 9,
+          "width": 4,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 60,
+          "y": 6,
+          "width": 4,
+          "kind": "terraces",
+          "moving": true,
+          "route": "main"
+        }
+      ],
+      "entities": [
+        {
+          "x": 414.0,
+          "y": 402.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 630.0,
+          "y": 330.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 702.0,
+          "y": 340.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 738.0,
+          "y": 374.0,
+          "kind": "enemy",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 918.0,
+          "y": 366.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 990.0,
+          "y": 376.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1062.0,
+          "y": 356.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1051.2,
+          "y": 416.0,
+          "kind": "timed_hazard",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 892.8000000000001,
+          "y": 402.0,
+          "kind": "checkpoint",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1278.0,
+          "y": 330.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1350.0,
+          "y": 340.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1386.0,
+          "y": 374.0,
+          "kind": "enemy",
+          "platform": 6,
+          "behavior": "shooter",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1566.0,
+          "y": 366.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1638.0,
+          "y": 376.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1710.0,
+          "y": 356.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1890.0,
+          "y": 330.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1962.0,
+          "y": 340.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1998.0,
+          "y": 374.0,
+          "kind": "enemy",
+          "platform": 9,
+          "behavior": "chase",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1976.3999999999999,
+          "y": 380.0,
+          "kind": "timed_hazard",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1944.0,
+          "y": 243.0,
+          "kind": "crystal",
+          "platform": 10,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2178.0,
+          "y": 258.0,
+          "kind": "crystal",
+          "platform": 11,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2232.0,
+          "y": 288.0,
+          "kind": "exit",
+          "platform": 11,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "factory_environment",
+      "source": "industrial",
+      "span": [
+        10,
+        20
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "environment_composition",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "factory_environment",
+        "qa": null
+      }
+    },
+    {
+      "id": "robots",
+      "source": "robotic enemies",
+      "span": [
+        37,
+        52
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "enemy_behaviors",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "robots",
+        "qa": null
+      }
+    },
+    {
+      "id": "moving_platforms",
+      "source": "moving platforms",
+      "span": [
+        54,
+        70
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "moving_platform_motion",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "moving_platforms",
+        "qa": null
+      }
+    },
+    {
+      "id": "timed_hazards",
+      "source": "dangerous machinery",
+      "span": [
+        72,
+        91
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "timed_hazard_cycle",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "timed_hazards",
+        "qa": null
+      }
+    },
+    {
+      "id": "checkpoints",
+      "source": "checkpoints",
+      "span": [
+        97,
+        108
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "checkpoint_respawn",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "checkpoints",
+        "qa": null
+      }
+    },
+    {
+      "id": "multiple_levels",
+      "source": "multiple stages",
+      "span": [
+        116,
+        131
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "level_transitions",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "multiple_levels",
+        "qa": null
+      }
     }
   ],
   "asset_pack": "kenney_pixel_platformer"

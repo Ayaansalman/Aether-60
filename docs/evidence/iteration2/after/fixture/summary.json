@@ -1,0 +1,317 @@
+{
+  "results": {
+    "forest": {
+      "game_id": "acc0f99c-2023-4c7d-85c2-b655c9cd5231",
+      "status": "READY",
+      "qa": "PASS",
+      "failed": [],
+      "requirements": {
+        "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.",
+        "requirements": [
+          {
+            "id": "forest_environment",
+            "source": "forest",
+            "span": [
+              18,
+              24
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "environment_composition",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "forest_environment",
+              "qa": "environment_composition"
+            }
+          },
+          {
+            "id": "exit_indicator",
+            "source": "glowing shrine",
+            "span": [
+              91,
+              105
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "exit_indicator_animation",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "exit_indicator",
+              "qa": "exit_indicator_animation"
+            }
+          },
+          {
+            "id": "collectibles",
+            "source": "collectible",
+            "span": [
+              41,
+              52
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "collectible_overlap",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "collectibles",
+              "qa": "collectible_overlap"
+            }
+          },
+          {
+            "id": "patrol",
+            "source": "patrolling",
+            "span": [
+              63,
+              73
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "enemy_patrol",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "patrol",
+              "qa": "enemy_patrol"
+            }
+          }
+        ],
+        "changes": [],
+        "unsupported": [],
+        "overall": "PASS"
+      }
+    },
+    "factory": {
+      "game_id": "dcaef3ab-cf4a-49b2-91af-41873d2a4e26",
+      "status": "READY",
+      "qa": "PASS",
+      "failed": [],
+      "requirements": {
+        "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.",
+        "requirements": [
+          {
+            "id": "factory_environment",
+            "source": "industrial",
+            "span": [
+              10,
+              20
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "environment_composition",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "factory_environment",
+              "qa": "environment_composition"
+            }
+          },
+          {
+            "id": "robots",
+            "source": "robotic enemies",
+            "span": [
+              37,
+              52
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "enemy_behaviors",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "robots",
+              "qa": "enemy_behaviors"
+            }
+          },
+          {
+            "id": "moving_platforms",
+            "source": "moving platforms",
+            "span": [
+              54,
+              70
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "moving_platform_motion",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "moving_platforms",
+              "qa": "moving_platform_motion"
+            }
+          },
+          {
+            "id": "timed_hazards",
+            "source": "dangerous machinery",
+            "span": [
+              72,
+              91
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "timed_hazard_cycle",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "timed_hazards",
+              "qa": "timed_hazard_cycle"
+            }
+          },
+          {
+            "id": "checkpoints",
+            "source": "checkpoints",
+            "span": [
+              97,
+              108
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "checkpoint_respawn",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "checkpoints",
+              "qa": "checkpoint_respawn"
+            }
+          },
+          {
+            "id": "multiple_levels",
+            "source": "multiple stages",
+            "span": [
+              116,
+              131
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "level_transitions",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "multiple_levels",
+              "qa": "level_transitions"
+            }
+          }
+        ],
+        "changes": [],
+        "unsupported": [],
+        "overall": "PASS"
+      }
+    },
+    "ice": {
+      "game_id": "d575aca6-2ead-4269-8c54-adedf357f824",
+      "status": "READY",
+      "qa": "PASS",
+      "failed": [],
+      "requirements": {
+        "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.",
+        "requirements": [
+          {
+            "id": "ice_environment",
+            "source": "frozen",
+            "span": [
+              9,
+              15
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "ice_composition",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "ice_environment",
+              "qa": "ice_composition"
+            }
+          },
+          {
+            "id": "slippery",
+            "source": "slippery",
+            "span": [
+              44,
+              52
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "slippery_momentum",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "slippery",
+              "qa": "slippery_momentum"
+            }
+          },
+          {
+            "id": "falling_icicles",
+            "source": "falling icicles",
+            "span": [
+              62,
+              77
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "falling_icicle_cycle",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "falling_icicles",
+              "qa": "falling_icicle_cycle"
+            }
+          },
+          {
+            "id": "exit_indicator",
+            "source": "flashing light",
+            "span": [
+              105,
+              119
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "exit_indicator_animation",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "exit_indicator",
+              "qa": "exit_indicator_animation"
+            }
+          },
+          {
+            "id": "collectibles",
+            "source": "collectible",
+            "span": [
+              79,
+              90
+            ],
+            "supported": true,
+            "status": "implemented_verified",
+            "runtime_check": "collectible_overlap",
+            "model_sources": [],
+            "constructed": true,
+            "verified": true,
+            "evidence": {
+              "spec": "collectibles",
+              "qa": "collectible_overlap"
+            }
+          }
+        ],
+        "changes": [],
+        "unsupported": [],
+        "overall": "PASS"
+      }
+    }
+  },
+  "unfinished": []
+}

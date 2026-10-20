@@ -1,0 +1,17 @@
+
+> aether-frontend@0.0.0 test:behaviors
+> node --experimental-strip-types --test tests/platformer-behaviors.test.mjs
+
+✔ proximity icicle warns before falling and only resets after collision cooldown (8.5187ms)
+✔ timer icicle triggers without a nearby player at its configured period (0.5152ms)
+✔ patrol reverses at boundaries; chase reacts to player; shooter holds position and fires in lane (0.6023ms)
+✔ structured exit animation distinguishes flashing from glowing and disabled indicators (2.9899ms)
+✔ exit collection gate precedes transition; only last level completes campaign (2.1501ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1085.6246

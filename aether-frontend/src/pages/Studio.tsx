@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Route, Routes, useParams } from "react-router-dom";
+import { Link, Route, Routes, useParams, useNavigate } from "react-router-dom";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -26,13 +26,13 @@ const PROMPTS = [
   [
     "01",
     "The Verdant Passage",
-    "A magical forest platformer where I collect crystals, avoid monsters, double jump across ruins and reach an ancient shrine.",
+    "Create a colorful forest platformer with collectible crystals, patrolling creatures, and a glowing shrine at the end.",
     "forest",
   ],
   [
     "02",
     "The Copperworks",
-    "An industrial platformer with moving machinery, dangerous obstacles, robot enemies, dash and checkpoints.",
+    "Create an industrial platformer with robotic enemies, moving platforms, dangerous machinery, and checkpoints across multiple stages.",
     "industrial",
   ],
   [
@@ -41,6 +41,7 @@ const PROMPTS = [
     "A challenging precision jumping platformer with moving platforms, double jump and an ascent to the top of a tower.",
     "tower",
   ],
+  ["05", "The Frostbound Vault", "Create a frozen underground platformer with slippery terrain, falling icicles, collectible relics, and a flashing light at the exit.", "ice"],
   [
     "04",
     "A Quiet Discovery",
@@ -225,9 +226,10 @@ function Landing() {
 
 function Workspace() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const query = new URLSearchParams(location.search).get("example");
   const initial = PROMPTS.find((p) => p[3] === query) || PROMPTS[0];
-  const [prompt, setPrompt] = useState(initial[2]);
+  const [prompt, setPrompt] = useState(query ? initial[2] : "");
   const [mode, setMode] = useState(
     new URLSearchParams(location.search).get("mode") === "fixture"
       ? "fixture"
@@ -238,10 +240,11 @@ function Workspace() {
   const [activeId, setActiveId] = useState(id || "");
   const [busy, setBusy] = useState(false),
     [error, setError] = useState("");
+  const [pollVersion, setPollVersion] = useState(0);
   const [inspector, setInspector] = useState(false),
     [artifact, setArtifact] = useState("game_design.json");
   const [restart, setRestart] = useState(0),
-    [preview, setPreview] = useState(!id);
+    [preview, setPreview] = useState(!!query && !id);
   const [tab, setTab] = useState("game");
   const [expanded, setExpanded] = useState(false);
   const [recent, setRecent] = useState<string[]>(() => {
@@ -266,7 +269,7 @@ function Workspace() {
     };
   }, [expanded]);
   useEffect(() => {
-    if (id) return;
+    if (id || !query) return;
     let current = true;
     request<PlatformerIR>(`/fixtures/${initial[3]}.json`)
       .then((s) => {
@@ -281,7 +284,7 @@ function Workspace() {
     return () => {
       current = false;
     };
-  }, [id, initial]);
+  }, [id, initial, query]);
   useEffect(() => {
     if (!activeId) return;
     let current = true;
@@ -325,12 +328,25 @@ function Workspace() {
       current = false;
       clearTimeout(timer);
     };
-  }, [activeId]);
+  }, [activeId, pollVersion]);
+  async function reverify() {
+    if (!activeId || busy) return;
+    setBusy(true); setError("");
+    try {
+      await request(`/api/v2/games/${activeId}/verify`, {method:"POST"});
+      setPollVersion(v=>v+1);
+    } catch(e) {
+      setError(e instanceof Error ? e.message : String(e)); setBusy(false);
+    }
+  }
   async function generate() {
     if (busy || prompt.trim().length < 10) return;
     setBusy(true);
     setError("");
     setJob(null);
+    setSpec(null);
+    setActiveId("");
+    setPreview(false);
     try {
       const result = await request<{ game_id: string }>("/api/v2/games", {
         method: "POST",
@@ -358,7 +374,7 @@ function Workspace() {
   }
   const status = job?.job.status;
   return (
-    <div className="workspace studio-theme">
+    <div className={`workspace studio-theme ${spec ? "has-game" : ""}`}>
       <header className="studio-header">
         <Brand />
         <div className="project-name">
@@ -378,10 +394,11 @@ function Workspace() {
               <Sparkles size={15} /> Create a world
             </span>
             <button
-              aria-label="Clear prompt"
+              title="Start a new game"
+              aria-label="Start a new game"
               className="icon-button"
               onClick={() => {
-                if (!busy) setPrompt("");
+                if (!busy) { setPrompt(""); setSpec(null); setJob(null); setActiveId(""); setPreview(false); setError(""); navigate('/studio'); }
               }}
               disabled={busy}
             >
@@ -405,6 +422,7 @@ function Workspace() {
               id="game-prompt"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
+              placeholder="Describe the setting, mechanics, enemies, and goal…"
               maxLength={3000}
               disabled={busy}
             />
@@ -438,7 +456,7 @@ function Workspace() {
               {!busy && <ArrowRight size={16} />}
             </button>
             <p className="source-note">
-              {mode === "live"
+              {(job?.job.model_id ? job.job.model_id !== "fixture" : mode === "live")
                 ? "A real model designs the game. Levels are constructed and checked by deterministic services."
                 : "Offline fixtures use keyword rules and a seed. No language model is called."}
             </p>
@@ -454,7 +472,7 @@ function Workspace() {
               {PROMPTS.map((p) => (
                 <button key={p[0]} onClick={() => example(p)} disabled={busy}>
                   <span className={`theme-dot ${p[3]}`} />
-                  <span>{p[1]}</span>
+                  <span>{p[1]} <small>Sample</small></span>
                   <ArrowUpRight size={14} />
                 </button>
               ))}
@@ -462,9 +480,7 @@ function Workspace() {
             <details className="capabilities">
               <summary>What can Aether build?</summary>
               <p>
-                Forest, industrial and twilight platformers. Crystals, patrol
-                enemies, spikes, checkpoints, moving platforms, double jump and
-                dash. Other genres and custom mechanics are not available yet;
+                Forest, industrial, ice cavern and twilight platformers. Crystals or relics, patrol, chase and ranged enemies, icicles, slippery terrain, timed machinery, animated exits, checkpoints, moving platforms, double jump, dash and up to three stages. Other genres and custom mechanics are not available yet;
                 requested unsupported features appear in the Inspector.
               </p>
             </details>
@@ -507,6 +523,7 @@ function Workspace() {
             <div className="toolbar-actions">
               <button
                 className="icon-button"
+                title="Restart game (R)"
                 aria-label="Restart game"
                 onClick={() => setRestart((v) => v + 1)}
                 disabled={!spec}
@@ -515,6 +532,7 @@ function Workspace() {
               </button>
               <button
                 className="icon-button"
+                title="Expand game preview"
                 aria-label="Expand game"
                 onClick={() => {
                   setTab("game");
@@ -538,17 +556,21 @@ function Workspace() {
                 <div className="eyebrow">
                   {preview
                     ? "EXPLORE A STARTING POINT"
-                    : "YOUR GENERATED WORLD"}
+                    : busy ? "GENERATION IN PROGRESS" : !spec ? "YOUR CREATOR WORKSPACE" : "YOUR GENERATED WORLD"}
                 </div>
-                <h2>{spec?.title || "A world is taking shape"}</h2>
+                <h2>{spec?.title || (busy ? "Building your world" : error ? "Generation needs attention" : "Start with an idea")}</h2>
               </div>
               <span className="game-badge">
                 <span className="status-dot" />
                 {preview
                   ? "Offline example"
-                  : status?.replaceAll("_", " ").toLowerCase() || "Preparing"}
+                  : status?.replaceAll("_", " ").toLowerCase() || (busy ? "Preparing" : "Ready for your idea")}
               </span>
             </div>
+            {busy && <div className="build-progress" role="status" aria-live="polite">
+              <Loader2 size={16} className="spin" />
+              <span><strong>{job?.events.at(-1)?.stage.replaceAll("_", " ") || "QUEUED"}</strong> · {job?.events.at(-1)?.detail || "Sending your idea to the backend…"}</span>
+            </div>}
             {tab === "game" ? (
               <>
                 <div
@@ -571,7 +593,8 @@ function Workspace() {
                   ) : (
                     <div className="empty-preview">
                       <Gamepad2 size={40} />
-                      <p>Your next world belongs here.</p>
+                      <h3>{busy ? job?.events.at(-1)?.stage.replaceAll("_", " ") || "QUEUED" : error ? "Your game could not be built" : "Your next world belongs here."}</h3>
+                      <p role="status" aria-live="polite">{busy ? job?.events.at(-1)?.detail || "Waiting for backend progress…" : error ? "Review the message beside your prompt, then retry. The Inspector contains recorded diagnostics." : "Describe a 2D platformer, then select Generate game. Inspiration buttons open clearly labeled sample games."}</p>
                     </div>
                   )}
                   <div className="preview-frame-footer">
@@ -587,7 +610,7 @@ function Workspace() {
                     </span>
                   </div>
                 </div>
-                <div className="game-controls">
+                {spec && <div className="game-controls">
                   <div>
                     <kbd>←</kbd>
                     <kbd>→</kbd>
@@ -612,8 +635,8 @@ function Workspace() {
                     <kbd>R</kbd>
                     <span>Restart</span>
                   </div>
-                  <span className="focus-hint">Click game to focus</span>
-                </div>
+                  <span className="focus-hint">Click game to focus · Jump on creatures · Avoid projectiles and traps</span>
+                </div>}
               </>
             ) : (
               <div className="design-view">
@@ -621,6 +644,7 @@ function Workspace() {
                 {spec ? (
                   <>
                     <p>
+                      {spec.levels?.length || 1} connected stage{(spec.levels?.length || 1)>1?'s':''} · {" "}
                       {spec.platforms.filter((p) => !p.moving).length} connected
                       terrain sections · Seed {spec.seed}
                     </p>
@@ -646,7 +670,7 @@ function Workspace() {
                       <dt>Objective</dt>
                       <dd>
                         {spec.objective.required
-                          ? `Collect ${spec.objective.required} crystals, then reach the exit`
+                          ? `Collect ${spec.objective.required} ${spec.collectible || "crystals"}, then reach the exit`
                           : "Reach the exit"}
                       </dd>
                       <dt>Artwork</dt>
@@ -674,7 +698,7 @@ function Workspace() {
                       ? "A starting point for your imagination."
                       : status === "FAILED"
                         ? "The pipeline needs attention."
-                        : "Your world, with the process included."}
+                        : !spec ? "Describe it. Generate it. Play it." : "Your world, with the process included."}
                 </strong>
                 <p>
                   {busy
@@ -682,13 +706,18 @@ function Workspace() {
                       "Request accepted. Waiting for the backend."
                     : preview
                       ? "This is a saved deterministic example. Generate a game to create your own design."
-                      : "Open the Inspector for actual events, specifications, validation and QA evidence."}
+                      : !spec ? "No game has been generated. Choose an example or enter your own idea." : "Open the Inspector for actual events, specifications, validation and QA evidence."}
                 </p>
               </div>
               <button onClick={() => setInspector(true)} className="text-link">
                 View process <ArrowRight size={15} />
               </button>
             </div>
+            {spec?.requirements?.length ? <details className="capabilities requirement-coverage">
+              <summary>Requested features · {spec.requirements.length} tracked</summary>
+              {spec.requirements.map((req,i)=><p key={i}><strong>{req.source}</strong> — {req.status.replaceAll("_"," ")}</p>)}
+              <p>Construction and browser verification are separate. See requirement_report.json for evidence and extraction scope.</p>
+            </details> : null}
             {job?.job.limitations?.length ? (
               <div className="warnings">
                 <strong>Design limitations reported</strong>
@@ -714,6 +743,7 @@ function Workspace() {
               <button
                 className="icon-button"
                 onClick={() => setInspector(false)}
+                title="Close Engineering Inspector"
                 aria-label="Close inspector"
               >
                 <X size={17} />
@@ -743,7 +773,7 @@ function Workspace() {
                         className={`event ${e.result === "FAILED" ? "failed" : ""}`}
                       >
                         <span className="event-marker">
-                          {e.result === "START" ? (
+                          {e.result === "FAILED" ? <X size={11} /> : e.result === "START" ? (
                             <span />
                           ) : (
                             <Check size={11} />
@@ -780,6 +810,14 @@ function Workspace() {
                   </pre>
                   <button
                     className="button secondary"
+                    disabled={busy || !spec}
+                    onClick={reverify}
+                    title="Run browser QA again without making a model request; original evidence is retained"
+                  >
+                    <Check size={14} /> Recheck game
+                  </button>
+                  <button
+                    className="button secondary"
                     onClick={() => {
                       const blob = new Blob([JSON.stringify(job, null, 2)], {
                         type: "application/json",
@@ -800,7 +838,7 @@ function Workspace() {
                   <Code2 size={26} />
                   <h3>No generation has run yet.</h3>
                   <p>
-                    The preview is an offline fixture. Submit your idea to see
+                    Submit your idea to see
                     real persisted events here.
                   </p>
                 </div>

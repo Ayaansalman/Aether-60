@@ -10,7 +10,7 @@ def main():
     parser.add_argument('--url',default='http://127.0.0.1:5173')
     parser.add_argument('--game-id')
     args=parser.parse_args()
-    evidence=Path(__file__).resolve().parents[1]/'docs/evidence'
+    evidence=Path(__file__).resolve().parents[1]/'docs/evidence/iteration2/ui'
     evidence.mkdir(parents=True,exist_ok=True)
     results=[]
     with sync_playwright() as w:
@@ -19,7 +19,9 @@ def main():
             p=browser.new_page(viewport={'width':width,'height':height})
             errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
             p.goto(args.url+'/studio?test=1',wait_until='domcontentloaded')
-            p.wait_for_function('window.__AETHER_PLATFORMER__?.snapshot().ready')
+            p.get_by_role('heading',name='Your next world belongs here.').wait_for()
+            results.append({'id':name+'_empty','passed':p.locator('canvas').count()==0 and p.locator('#game-prompt').input_value()==''})
+            p.screenshot(path=str(evidence/(name+'-empty.png')),full_page=True)
             p.locator('#game-prompt').fill('A quiet forest with crystals')
             p.keyboard.type(' and space')
             results.append({'id':name+'_typing','passed':p.locator('#game-prompt').input_value().endswith(' and space')})
@@ -31,6 +33,17 @@ def main():
             p.get_by_role('button',name='Close inspector',exact=True).click()
             results.append({'id':name+'_overflow','passed':p.evaluate('document.documentElement.scrollWidth<=innerWidth')})
             if width==390:
+                results.append({'id':'mobile_document_scroll','passed':p.evaluate('getComputedStyle(document.body).overflowY==="visible" && document.body.clientHeight>=document.querySelector("#root").clientHeight')})
+            p.route('**/api/v2/games',lambda route:route.fulfill(status=503,content_type='application/json',body=json.dumps({'detail':'Seeded UI test: generation service unavailable. Retry generation.'})))
+            p.get_by_role('button',name='Generate game',exact=True).click()
+            p.get_by_role('alert').wait_for()
+            results.append({'id':name+'_error_recovery','passed':p.locator('canvas').count()==0 and p.get_by_role('button',name='Generate game',exact=True).is_enabled(),
+                            'method':'Intentionally seeded 503 response; real UI error/recovery state, no backend/provider result claimed'})
+            p.screenshot(path=str(evidence/(name+'-error.png')),full_page=True)
+            p.unroute('**/api/v2/games')
+            if width==390:
+                p.get_by_role('button',name='The Verdant Passage Sample').click()
+                p.wait_for_function('window.__AETHER_PLATFORMER__?.snapshot().ready')
                 button=p.get_by_role('button',name='Game right',exact=True)
                 button.scroll_into_view_if_needed()
                 p.wait_for_function('window.__AETHER_PLATFORMER__?.snapshot().ready')
@@ -38,6 +51,7 @@ def main():
                 button.dispatch_event('pointerdown',{'pointerId':1});p.wait_for_timeout(280);button.dispatch_event('pointerup',{'pointerId':1})
                 results.append({'id':'touch_move','passed':p.evaluate('window.__AETHER_PLATFORMER__.snapshot().x')>before+15})
             results.append({'id':name+'_exceptions','passed':not errors,'errors':errors})
+            p.screenshot(path=str(evidence/(name+'-studio.png')),full_page=True)
             p.close()
         if args.game_id:
             p=browser.new_page(viewport={'width':1440,'height':1000})

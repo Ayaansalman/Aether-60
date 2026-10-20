@@ -1,0 +1,26 @@
+
+> aether-frontend@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 2179 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               0.76 kB │ gzip:   0.43 kB
+dist/assets/Studio-CCyoZbFm.css              22.24 kB │ gzip:   5.73 kB
+dist/assets/index-CmgB0WSH.css               40.14 kB │ gzip:   7.35 kB
+dist/assets/rolldown-runtime-BWaJ3C7D.js      0.91 kB │ gzip:   0.51 kB
+dist/assets/x-CWbFHYoG.js                     3.07 kB │ gzip:   1.53 kB
+dist/assets/PlatformerScene-D7mr1tzc.js      19.10 kB │ gzip:   7.20 kB
+dist/assets/Studio-CzcNNash.js               25.93 kB │ gzip:   8.73 kB
+dist/assets/index-E_kougr4.js               230.13 kB │ gzip:  73.86 kB
+dist/assets/LegacyApp-CWYNPFx6.js           296.35 kB │ gzip:  83.29 kB
+dist/assets/phaser-DZh4-moK.js            1,196.46 kB │ gzip: 318.59 kB
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.31s

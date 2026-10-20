@@ -1,0 +1,714 @@
+{
+  "live": {
+    "forest": {
+      "game_id": "952eebbe-72a1-42cd-b7f1-d8c417f5cd82",
+      "model": "gemini-3.5-flash-lite",
+      "status": "READY",
+      "qa_checks": 16,
+      "qa_failed": [],
+      "requirements": [
+        {
+          "id": "forest_environment",
+          "source": "forest",
+          "model_sources": [
+            "colorful forest platformer"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "exit_indicator",
+          "source": "glowing shrine",
+          "model_sources": [
+            "glowing shrine at the end"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "collectibles",
+          "source": "collectible",
+          "model_sources": [
+            "collectible crystals"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "model_sources": [
+            "patrolling creatures"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        }
+      ],
+      "theme": "forest",
+      "slippery": false,
+      "exit_indicator": "glow",
+      "exit_style": "shrine",
+      "collectible": "crystals",
+      "level_count": 1,
+      "geometry_sha256": "29500dfc265673d9f14747ce7d778d872d94657ee266bb1a653916df822b6251",
+      "levels": [
+        {
+          "title": "Crystal Canopy Journey",
+          "width": 1692,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 6,
+          "moving": 0,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            14,
+            13,
+            13,
+            12,
+            12
+          ],
+          "entity_counts": {
+            "crystal": 11,
+            "enemy": 2,
+            "checkpoint": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "patrol"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 7,
+            "total": 11
+          }
+        }
+      ]
+    },
+    "factory": {
+      "game_id": "64482a4d-ae7a-4233-9d71-4f54f5ce3d03",
+      "model": "gemini-3.5-flash-lite",
+      "status": "READY",
+      "qa_checks": 31,
+      "qa_failed": [],
+      "requirements": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "robots",
+          "source": "robotic enemies",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving platforms",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "timed_hazards",
+          "source": "dangerous machinery",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "checkpoints",
+          "source": "checkpoints",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "multiple_levels",
+          "source": "multiple stages",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        }
+      ],
+      "theme": "industrial",
+      "slippery": false,
+      "exit_indicator": "pulse",
+      "exit_style": "gate",
+      "collectible": "relics",
+      "level_count": 3,
+      "geometry_sha256": "40dc3606d54568d48aa9e50dfb3312193d9e2ebc8ade9bbb5e5d3fa976862360",
+      "levels": [
+        {
+          "title": "Factory Floor Overdrive \u00b7 Stage 1",
+          "width": 1872,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 6,
+          "moving": 3,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            13,
+            11,
+            12,
+            11,
+            12
+          ],
+          "entity_counts": {
+            "crystal": 10,
+            "enemy": 2,
+            "checkpoint": 1,
+            "timed_hazard": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "chase",
+            "patrol"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 10
+          }
+        },
+        {
+          "title": "Factory Floor Overdrive \u00b7 Stage 2",
+          "width": 1908,
+          "height": 684,
+          "camera": "vertical",
+          "main_platforms": 6,
+          "moving": 3,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            13,
+            12,
+            11,
+            9,
+            8
+          ],
+          "entity_counts": {
+            "crystal": 9,
+            "enemy": 2,
+            "checkpoint": 1,
+            "timed_hazard": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "chase",
+            "shooter"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 9
+          }
+        },
+        {
+          "title": "Factory Floor Overdrive \u00b7 Stage 3",
+          "width": 2016,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 6,
+          "moving": 3,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            13,
+            11,
+            12,
+            11,
+            12
+          ],
+          "entity_counts": {
+            "crystal": 11,
+            "enemy": 2,
+            "checkpoint": 1,
+            "timed_hazard": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "patrol",
+            "shooter"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 7,
+            "total": 11
+          }
+        }
+      ]
+    },
+    "ice": {
+      "game_id": "7d40950f-5bff-40c9-86dd-45d0b7961d23",
+      "model": "gemini-3.5-flash-lite",
+      "status": "READY",
+      "qa_checks": 34,
+      "qa_failed": [],
+      "requirements": [
+        {
+          "id": "ice_environment",
+          "source": "frozen",
+          "model_sources": [
+            "frozen underground"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "slippery",
+          "source": "slippery",
+          "model_sources": [
+            "slippery terrain"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "falling_icicles",
+          "source": "falling icicles",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "exit_indicator",
+          "source": "flashing light",
+          "model_sources": [
+            "flashing light at the exit"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "collectibles",
+          "source": "collectible",
+          "model_sources": [
+            "collectible relics"
+          ],
+          "status": "implemented_verified",
+          "verified": true
+        }
+      ],
+      "theme": "ice",
+      "slippery": true,
+      "exit_indicator": "flash",
+      "exit_style": "beacon",
+      "collectible": "relics",
+      "level_count": 2,
+      "geometry_sha256": "3256394e557e1365142169d0f30098e61a9175ddf7c40a52af11721b0fa7f56f",
+      "levels": [
+        {
+          "title": "Frozen Depths \u00b7 Stage 1",
+          "width": 1908,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 6,
+          "moving": 3,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            15,
+            14,
+            14,
+            12,
+            13
+          ],
+          "entity_counts": {
+            "crystal": 10,
+            "enemy": 3,
+            "icicle": 2,
+            "checkpoint": 1,
+            "timed_hazard": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 10
+          }
+        },
+        {
+          "title": "Frozen Depths \u00b7 Stage 2",
+          "width": 1944,
+          "height": 684,
+          "camera": "vertical",
+          "main_platforms": 6,
+          "moving": 3,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            13,
+            12,
+            10,
+            9,
+            8
+          ],
+          "entity_counts": {
+            "crystal": 10,
+            "enemy": 3,
+            "icicle": 2,
+            "checkpoint": 1,
+            "timed_hazard": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 10
+          }
+        }
+      ]
+    }
+  },
+  "fixture": {
+    "forest": {
+      "game_id": "acc0f99c-2023-4c7d-85c2-b655c9cd5231",
+      "model": null,
+      "status": "READY",
+      "qa_checks": 16,
+      "qa_failed": [],
+      "requirements": [
+        {
+          "id": "forest_environment",
+          "source": "forest",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "exit_indicator",
+          "source": "glowing shrine",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "collectibles",
+          "source": "collectible",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        }
+      ],
+      "theme": "forest",
+      "slippery": false,
+      "exit_indicator": "glow",
+      "exit_style": "shrine",
+      "collectible": "crystals",
+      "level_count": 1,
+      "geometry_sha256": "022343f23ab2c8b854f4b70d50e864947b4f1ab604b078ec5c0772cffe18940e",
+      "levels": [
+        {
+          "title": "The Verdant Passage",
+          "width": 2556,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 9,
+          "moving": 0,
+          "optional_shelves": 2,
+          "elevations": [
+            14,
+            15,
+            15,
+            14,
+            15,
+            15,
+            14,
+            15,
+            15
+          ],
+          "entity_counts": {
+            "crystal": 19,
+            "enemy": 4,
+            "spikes": 2,
+            "checkpoint": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "patrol"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 12,
+            "total": 19
+          }
+        }
+      ]
+    },
+    "factory": {
+      "game_id": "dcaef3ab-cf4a-49b2-91af-41873d2a4e26",
+      "model": null,
+      "status": "READY",
+      "qa_checks": 29,
+      "qa_failed": [],
+      "requirements": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "robots",
+          "source": "robotic enemies",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving platforms",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "timed_hazards",
+          "source": "dangerous machinery",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "checkpoints",
+          "source": "checkpoints",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "multiple_levels",
+          "source": "multiple stages",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        }
+      ],
+      "theme": "industrial",
+      "slippery": false,
+      "exit_indicator": "none",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 3,
+      "geometry_sha256": "eee55fc3038452874a5780dc55367572e98ea10b712bbf29b54759efeaca4f69",
+      "levels": [
+        {
+          "title": "The Copperworks \u00b7 Stage 1",
+          "width": 1512,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 6,
+          "moving": 3,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            13,
+            11,
+            12,
+            11,
+            12
+          ],
+          "entity_counts": {
+            "crystal": 10,
+            "enemy": 2,
+            "checkpoint": 1,
+            "timed_hazard": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "chase",
+            "patrol"
+          ],
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 10
+          }
+        },
+        {
+          "title": "The Copperworks \u00b7 Stage 2",
+          "width": 1836,
+          "height": 756,
+          "camera": "vertical",
+          "main_platforms": 7,
+          "moving": 3,
+          "optional_shelves": 1,
+          "elevations": [
+            16,
+            15,
+            14,
+            13,
+            12,
+            11,
+            10
+          ],
+          "entity_counts": {
+            "crystal": 14,
+            "enemy": 3,
+            "timed_hazard": 2,
+            "checkpoint": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          }
+        },
+        {
+          "title": "The Copperworks \u00b7 Stage 3",
+          "width": 2088,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 8,
+          "moving": 4,
+          "optional_shelves": 1,
+          "elevations": [
+            14,
+            13,
+            11,
+            12,
+            11,
+            12,
+            11,
+            9
+          ],
+          "entity_counts": {
+            "crystal": 15,
+            "enemy": 3,
+            "timed_hazard": 2,
+            "checkpoint": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 15
+          }
+        }
+      ]
+    },
+    "ice": {
+      "game_id": "d575aca6-2ead-4269-8c54-adedf357f824",
+      "model": null,
+      "status": "READY",
+      "qa_checks": 21,
+      "qa_failed": [],
+      "requirements": [
+        {
+          "id": "ice_environment",
+          "source": "frozen",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "slippery",
+          "source": "slippery",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "falling_icicles",
+          "source": "falling icicles",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "exit_indicator",
+          "source": "flashing light",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        },
+        {
+          "id": "collectibles",
+          "source": "collectible",
+          "model_sources": [],
+          "status": "implemented_verified",
+          "verified": true
+        }
+      ],
+      "theme": "ice",
+      "slippery": true,
+      "exit_indicator": "flash",
+      "exit_style": "beacon",
+      "collectible": "relics",
+      "level_count": 1,
+      "geometry_sha256": "9b72bd493e191be5568c6dfb635b41c5087551a4358f68da9a0790eb054db631",
+      "levels": [
+        {
+          "title": "The Frostbound Vault",
+          "width": 2592,
+          "height": 684,
+          "camera": "follow",
+          "main_platforms": 9,
+          "moving": 0,
+          "optional_shelves": 0,
+          "elevations": [
+            14,
+            15,
+            14,
+            14,
+            12,
+            13,
+            14,
+            13,
+            13
+          ],
+          "entity_counts": {
+            "crystal": 17,
+            "enemy": 3,
+            "icicle": 4,
+            "checkpoint": 1,
+            "exit": 1
+          },
+          "enemy_behaviors": [
+            "patrol"
+          ],
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 11,
+            "total": 17
+          }
+        }
+      ]
+    }
+  }
+}
