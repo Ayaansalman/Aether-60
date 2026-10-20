@@ -1,0 +1,180 @@
+{
+  "url": "http://localhost:5173/play/699db4c8-4d87-44af-a287-a34c57fbe7a4?test=1",
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "canvas_visible",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "hook_ready",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "no_page_errors",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "player_present",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "player_moves",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "movement_speed_consistent",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": "",
+      "measured": {
+        "d_straight": 80.0,
+        "dt_straight": 0.387,
+        "v_straight": 206.91,
+        "d_diagonal": 73.54,
+        "dt_diagonal": 0.367,
+        "v_diagonal": 200.58,
+        "diag_diff_pct": 3.1,
+        "diag_pass": true,
+        "right_wall": {
+          "d_along": 73,
+          "v_along": 199.1,
+          "diff_pct": 3.8,
+          "passed": true
+        },
+        "left_wall": {
+          "d_along": 76,
+          "v_along": 198.27,
+          "diff_pct": 4.2,
+          "passed": true
+        },
+        "bottom_wall": {
+          "d_along": 73,
+          "v_along": 199.09,
+          "diff_pct": 3.8,
+          "passed": true
+        },
+        "top_wall": {
+          "d_along": 73,
+          "v_along": 199.1,
+          "diff_pct": 3.8,
+          "passed": true
+        }
+      }
+    },
+    {
+      "id": "attack_responds",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "hud_consistent",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "win_reachable",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "no_actions_after_end",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "restart_resets_after_win",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "lose_reachable",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "restart_resets_after_lose",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "no_duplicate_enemies_after_restart",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "screenshot_captured",
+      "critical": true,
+      "patchable": false,
+      "passed": true,
+      "message": ""
+    },
+    {
+      "id": "idle_survival_min_seconds",
+      "critical": true,
+      "patchable": true,
+      "passed": true,
+      "message": "",
+      "measured": {
+        "survived_seconds": 3.0,
+        "died": false,
+        "min_required_seconds": 3.0,
+        "window_seconds": 15.0,
+        "hp_start": 3,
+        "hp_end": 2,
+        "enemy_count": 8
+      }
+    },
+    {
+      "id": "flee_bot_survives",
+      "critical": true,
+      "patchable": true,
+      "passed": true,
+      "message": "",
+      "measured": {
+        "survived_seconds": 12.0,
+        "required_seconds": 12.0,
+        "died": false,
+        "hp_start": 3,
+        "hp_end": 2,
+        "enemy_count": 8,
+        "min_enemy_distance_px": 5.4
+      }
+    }
+  ],
+  "page_errors": [],
+  "screenshot_path": "artifacts/699db4c8-4d87-44af-a287-a34c57fbe7a4/play_699db4c8-4d87-44af-a287-a34c57fbe7a4.png",
+  "repair_recommended": false
+}

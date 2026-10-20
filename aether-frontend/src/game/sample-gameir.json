@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "title": "Wizard Crystal Rush",
+  "genre": "arena_survival",
+  "premise": "Collect crystals while ghosts chase the player.",
+  "theme": "spooky",
+  "player": {
+    "move_speed": 220,
+    "max_health": 3,
+    "attack_mode": "projectile"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 5,
+      "speed": 75
+    }
+  ],
+  "collectibles": [
+    {
+      "type": "crystal",
+      "count": 10
+    }
+  ],
+  "objective": {
+    "type": "collect_count",
+    "target": 8
+  },
+  "difficulty": 2,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": "Space"
+  },
+  "seed": 23
+}

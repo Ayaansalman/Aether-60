@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "title": "Invader Bullet Bastion",
+  "genre": "arena_survival",
+  "premise": "Evade sniper volleys behind solid pillars while returning fire.",
+  "theme": "spooky",
+  "arena_layout": "pillars",
+  "player": {
+    "move_speed": 220.0,
+    "max_health": 3,
+    "attack_mode": "projectile"
+  },
+  "enemies": [
+    {
+      "type": "shooter",
+      "count": 3,
+      "speed": 60.0
+    }
+  ],
+  "collectibles": [],
+  "objective": {
+    "type": "survive_seconds",
+    "target": 30
+  },
+  "visual_overrides": {
+    "player_label": "WIZARD",
+    "enemy_label": "SHOOTER",
+    "player_shape": "triangle",
+    "enemy_shape": "circle",
+    "accent_hex": "#f59e0b"
+  },
+  "difficulty": 3,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": "Space to fire magic missile"
+  },
+  "seed": 42
+}

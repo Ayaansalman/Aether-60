@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "title": "Wizard Crystal Rush (Melee)",
+  "genre": "arena_survival",
+  "premise": "Collect crystals and slash nearby ghosts with melee strikes.",
+  "theme": "spooky",
+  "player": {
+    "move_speed": 220,
+    "max_health": 3,
+    "attack_mode": "melee"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 5,
+      "speed": 75
+    }
+  ],
+  "collectibles": [
+    {
+      "type": "crystal",
+      "count": 10
+    }
+  ],
+  "objective": {
+    "type": "collect_count",
+    "target": 8
+  },
+  "difficulty": 2,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": "Space (Melee strike)"
+  },
+  "seed": 23
+}

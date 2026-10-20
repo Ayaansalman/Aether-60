@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fallback-spooky",
+    "slug": "spooky",
+    "title": "Spooky Crystal Dungeon",
+    "prompt": "a spooky wizard collecting glowing crystals in a dark dungeon while ghosts chase me",
+    "model_label": "gemini-3.5-flash-lite (Run A)",
+    "provider": "openai_compat",
+    "is_repaired": false
+  },
+  {
+    "id": "fallback-pirate",
+    "slug": "pirate",
+    "title": "Pirate Cove Treasure Hunt",
+    "prompt": "a pirate captain collecting gold treasure chests while rival skeleton ships pursue",
+    "model_label": "gemini-3.5-flash-lite (Run A)",
+    "provider": "openai_compat",
+    "is_repaired": false
+  },
+  {
+    "id": "fallback-repaired",
+    "slug": "repaired",
+    "title": "Shadow Pursuit (Repaired)",
+    "prompt": "an impossible bullet-hell arena with 50 pursuers moving twice the player's speed, zero recovery, and 1 hit point",
+    "model_label": "gemini-3.5-flash-lite (Run A2 Real Repair)",
+    "provider": "openai_compat",
+    "is_repaired": true
+  }
+]

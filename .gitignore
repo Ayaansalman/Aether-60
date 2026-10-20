@@ -1,0 +1,45 @@
+# dependencies
+node_modules/
+venv/
+.venv/
+
+# secrets (the example file stays tracked)
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# build output
+dist/
+build/
+
+# editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# generated at runtime (jobs, QA artifacts, databases)
+artifacts/
+runs/
+data/
+*.db
+*.db*
+*.sqlite
+
+# playwright
+test-results/
+playwright-report/
+
+# backups
+*.zip
+*.rar
+Aether_SourceCode.zip
+AETHER.pdf
+
+# Local iteration server output
+aether-backend/iteration2-server*.log

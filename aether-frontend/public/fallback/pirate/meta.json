@@ -1,0 +1,17 @@
+{
+  "id": "fallback-pirate",
+  "slug": "pirate",
+  "title": "Pirate Cove Treasure Hunt",
+  "prompt": "a pirate captain collecting gold treasure chests while rival skeleton ships pursue",
+  "model_label": "gemini-3.5-flash-lite (Run A)",
+  "provider": "openai_compat",
+  "status": "READY",
+  "is_repaired": false,
+  "limitations": [
+    "Adapted pirate ship mechanics to 2D arena survival character movement.",
+    "Represents treasure chests as collectible coins."
+  ],
+  "repair_rationale": null,
+  "repair_diff": null,
+  "source_game_id": "fd80dc0f-68bb-4936-b839-c06bb99d86c7"
+}

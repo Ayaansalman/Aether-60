@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "title": "Neon Gauntlet (Too Hard)",
+  "genre": "arena_survival",
+  "premise": "Twelve overclocked drones sprint at you and one hit ends the run. A deliberately unplayable spec used to exercise the repair loop.",
+  "theme": "sci_fi",
+  "player": {
+    "move_speed": 220,
+    "max_health": 1,
+    "attack_mode": "avoid_only"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 12,
+      "speed": 240
+    }
+  ],
+  "collectibles": [],
+  "objective": {
+    "type": "survive_seconds",
+    "target": 30
+  },
+  "difficulty": 5,
+  "controls": {
+    "movement": "WASD or arrow keys"
+  },
+  "seed": 42
+}

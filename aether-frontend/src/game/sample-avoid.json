@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "title": "Wizard Crystal Rush (Avoid Only)",
+  "genre": "arena_survival",
+  "premise": "Collect crystals while evading ghosts without attacking.",
+  "theme": "spooky",
+  "player": {
+    "move_speed": 220,
+    "max_health": 3,
+    "attack_mode": "avoid_only"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 5,
+      "speed": 75
+    }
+  ],
+  "collectibles": [
+    {
+      "type": "crystal",
+      "count": 10
+    }
+  ],
+  "objective": {
+    "type": "collect_count",
+    "target": 8
+  },
+  "difficulty": 2,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": "None (Avoid only)"
+  },
+  "seed": 23
+}

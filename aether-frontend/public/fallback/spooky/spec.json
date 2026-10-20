@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "title": "Spooky Wizard Crystal Hunt",
+  "genre": "arena_survival",
+  "premise": "Collect glowing crystals in a dark dungeon while relentless ghosts chase the wizard.",
+  "theme": "spooky",
+  "player": {
+    "move_speed": 200.0,
+    "max_health": 3,
+    "attack_mode": "projectile"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 8,
+      "speed": 80.0
+    }
+  ],
+  "collectibles": [
+    {
+      "type": "crystal",
+      "count": 10
+    }
+  ],
+  "objective": {
+    "type": "collect_count",
+    "target": 10
+  },
+  "difficulty": 2,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": "Space"
+  },
+  "seed": 1337
+}

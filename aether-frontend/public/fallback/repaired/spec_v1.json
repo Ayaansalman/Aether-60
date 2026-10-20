@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "title": "Shadow Escape",
+  "genre": "arena_survival",
+  "premise": "Survive the relentless pursuit of shadows in a high-tension spooky arena.",
+  "theme": "spooky",
+  "player": {
+    "move_speed": 150.0,
+    "max_health": 1,
+    "attack_mode": "avoid_only"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 50,
+      "speed": 250.0
+    }
+  ],
+  "collectibles": [],
+  "objective": {
+    "type": "survive_seconds",
+    "target": 30
+  },
+  "difficulty": 5,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": null
+  },
+  "seed": 1337
+}
