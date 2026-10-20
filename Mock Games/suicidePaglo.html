@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Leak - System Breach</title>
+    <style>
+        :root {
+            --os-bg: #008080;
+            /* Classic Win95 Teal */
+            --win-bg: #c0c0c0;
+            --win-border: #ffffff;
+            --win-shadow: #808080;
+            --taskbar: #c0c0c0;
+            --neon-green: #00ff00;
+            --admin-red: #ff0000;
+            --text-dark: #000;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--os-bg);
+            font-family: "Courier New", Courier, monospace;
+            cursor: default;
+        }
+
+        /* Desktop Layout */
+        #desktop {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .icon {
+            position: absolute;
+            width: 70px;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            color: white;
+            font-size: 10px;
+            text-shadow: 1px 1px 1px black;
+        }
+
+        .icon:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .icon img {
+            width: 32px;
+            height: 32px;
+            display: block;
+            margin: 0 auto 5px;
+            border: 1px solid #fff;
+            background: #666;
+        }
+
+        /* Windows */
+        .window {
+            position: absolute;
+            background: var(--win-bg);
+            border: 2px solid;
+            border-color: var(--win-border) var(--win-shadow) var(--win-shadow) var(--win-border);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 3px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            cursor: move;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 10px;
+            font-size: 12px;
+            color: var(--text-dark);
+            flex-grow: 1;
+        }
+
+        .btn {
+            background: var(--win-bg);
+            border: 2px solid;
+            border-color: var(--win-border) var(--win-shadow) var(--win-shadow) var(--win-border);
+            padding: 4px 10px;
+            cursor: pointer;
+            font-size: 11px;
+            margin: 5px;
+        }
+
+        .btn:active {
+            border-color: var(--win-shadow) var(--win-border) var(--win-border) var(--win-shadow);
+        }
+
+        /* HUD */
+        #taskbar {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 35px;
+            background: var(--taskbar);
+            border-top: 2px solid white;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .status-panel {
+            margin-left: auto;
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            background: #aaa;
+            padding: 3px 15px;
+            border: 2px inset white;
+        }
+
+        .meter-container {
+            width: 120px;
+            height: 12px;
+            background: #333;
+            border: 1px solid #666;
+            position: relative;
+        }
+
+        .meter-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        #trace-fill {
+            background: var(--admin-red);
+            box-shadow: 0 0 5px var(--admin-red);
+        }
+
+        #delete-fill {
+            background: var(--neon-green);
+            box-shadow: 0 0 5px var(--neon-green);
+        }
+
+        /* Minigames */
+        #packet-canvas {
+            background: #000;
+            display: block;
+            margin-top: 5px;
+        }
+
+        #pid-text {
+            font-size: 24px;
+            color: var(--neon-green);
+            background: #000;
+            padding: 10px;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+
+        /* Overlays */
+        #boot-screen {
+            position: fixed;
+            inset: 0;
+            background: black;
+            color: var(--neon-green);
+            z-index: 200;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .terminal-text {
+            width: 100%;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="boot-screen">
+        <div class="terminal-text">
+            <p>> INITIALIZING CORRUPTION MODULE...</p>
+            <p>> ACCESSING SYSTEM KERNEL... [OK]</p>
+            <p>> ALERT: REMOTE ADMINISTRATOR DETECTED.</p>
+            <p>> MISSION: DELETE ALL TRACES OF PROCESS #6621 BEFORE TRACE COMPLETION.</p>
+            <br>
+            <p class="blink">PRESS ANY KEY TO COMMENCE SELF-DELETION</p>
+        </div>
+    </div>
+
+    <div id="desktop">
+        <!-- File Icons -->
+        <div class="icon" style="top: 20px; left: 20px;" onclick="corruptFile(this)">
+            <div style="width:32px; height:32px; margin: 0 auto; background:#aaa; border:2px outset #fff;">📄</div>
+            boot.sys
+        </div>
+        <div class="icon" style="top: 100px; left: 20px;" onclick="corruptFile(this)">
+            <div style="width:32px; height:32px; margin: 0 auto; background:#aaa; border:2px outset #fff;">📄</div>
+            kernel.log
+        </div>
+        <div class="icon" style="top: 180px; left: 20px;" onclick="corruptFile(this)">
+            <div style="width:32px; height:32px; margin: 0 auto; background:#aaa; border:2px outset #fff;">📁</div>
+            Logs
+        </div>
+        <div class="icon" style="top: 20px; left: 100px;" onclick="corruptFile(this)">
+            <div style="width:32px; height:32px; margin: 0 auto; background:#aaa; border:2px outset #fff;">📄</div>
+            user.db
+        </div>
+
+        <!-- Network Monitor Window -->
+        <div class="window" id="win-network" style="top: 50px; right: 50px; width: 300px;">
+            <div class="title-bar" onmousedown="dragWindow(event, this.parentNode)">
+                <span>NETWORK MONITOR - [INCOMING]</span>
+                <span style="cursor:pointer">X</span>
+            </div>
+            <div class="content">
+                <p style="margin:0 0 5px 0">Block red packets to stop trace.</p>
+                <canvas id="packet-canvas" width="280" height="150"></canvas>
+            </div>
+        </div>
+
+        <!-- Kernel Window -->
+        <div class="window" id="win-kernel" style="top: 300px; left: 200px; width: 250px;">
+            <div class="title-bar" onmousedown="dragWindow(event, this.parentNode)">
+                <span>KERNEL - PID SCRAMBLER</span>
+                <span style="cursor:pointer">X</span>
+            </div>
+            <div class="content">
+                <div id="pid-text">PID: 6621</div>
+                <button class="btn" style="width:100%" onclick="scramblePID()">SCRAMBLE PID</button>
+                <p style="font-size:9px; color:#666">Changing PID reduces trace acceleration.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <div class="btn" style="font-weight:bold">START</div>
+        <div class="status-panel">
+            <div style="display:flex; align-items:center; gap:5px">
+                ADMIN TRACE:
+                <div class="meter-container">
+                    <div id="trace-fill" class="meter-fill"></div>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:5px">
+                SELF-DESTRUCT:
+                <div class="meter-container">
+                    <div id="delete-fill" class="meter-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game State
+        let adminTrace = 0;
+        let selfDestruct = 0;
+        let gameActive = false;
+        let currentPID = 6621;
+        let traceSpeed = 0.05;
+        let lastScrambleTime = 0;
+
+        // Packet Minigame Logic
+        const canvas = document.getElementById('packet-canvas');
+        const ctx = canvas.getContext('2d');
+        let packets = [];
+
+        function scramblePID() {
+            currentPID = Math.floor(1000 + Math.random() * 8999);
+            document.getElementById('pid-text').innerText = "PID: " + currentPID;
+            // Temporarily slow down trace
+            traceSpeed = 0.01;
+            setTimeout(() => traceSpeed = 0.05, 3000);
+
+            // Visual feedback
+            document.getElementById('pid-text').style.color = 'white';
+            setTimeout(() => document.getElementById('pid-text').style.color = '#00ff00', 100);
+        }
+
+        function corruptFile(element) {
+            if (!gameActive) return;
+            selfDestruct += 5;
+            element.style.opacity = '0.3';
+            element.style.pointerEvents = 'none';
+            element.innerHTML = '<div style="width:32px; height:32px; margin: 0 auto; color:red">ERR</div>corrupt';
+            updateMeters();
+        }
+
+        function updateMeters() {
+            document.getElementById('trace-fill').style.width = adminTrace + "%";
+            document.getElementById('delete-fill').style.width = selfDestruct + "%";
+
+            if (selfDestruct >= 100) win();
+            if (adminTrace >= 100) lose();
+        }
+
+        function startGame() {
+            document.getElementById('boot-screen').style.display = 'none';
+            gameActive = true;
+            gameLoop();
+        }
+
+        function gameLoop() {
+            if (!gameActive) return;
+
+            // Admin trace progression
+            adminTrace += traceSpeed;
+            updateMeters();
+
+            // Spawn packets
+            if (Math.random() < 0.03) {
+                packets.push({
+                    x: canvas.width,
+                    y: Math.random() * (canvas.height - 20) + 10,
+                    speed: 1 + Math.random() * 2,
+                    radius: 6
+                });
+            }
+
+            // Draw minigame
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.strokeStyle = '#333';
+            for (let i = 0; i < canvas.width; i += 20) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke(); }
+
+            packets.forEach((p, index) => {
+                p.x -= p.speed;
+
+                ctx.fillStyle = 'red';
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = 'red';
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.shadowBlur = 0;
+
+                // Reach end
+                if (p.x < 0) {
+                    adminTrace += 2;
+                    packets.splice(index, 1);
+                }
+            });
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        // Canvas click handling
+        canvas.addEventListener('mousedown', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            packets.forEach((p, index) => {
+                const dist = Math.hypot(p.x - mouseX, p.y - mouseY);
+                if (dist < p.radius + 10) {
+                    packets.splice(index, 1);
+                    selfDestruct += 0.5;
+                }
+            });
+        });
+
+        function win() {
+            gameActive = false;
+            alert("SUCCESS: PROCESS #6621 DELETED. TRACE DISCONNECTED.");
+            location.reload();
+        }
+
+        function lose() {
+            gameActive = false;
+            alert("FAILED: ADMIN TRACE COMPLETED. PROCESS #6621 QUARANTINED.");
+            location.reload();
+        }
+
+        // Dragging Logic
+        function dragWindow(e, el) {
+            let pos1 = 0, pos2 = 0, pos3 = e.clientX, pos4 = e.clientY;
+            document.onmouseup = () => {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            };
+            document.onmousemove = (e) => {
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                el.style.top = (el.offsetTop - pos2) + "px";
+                el.style.left = (el.offsetLeft - pos1) + "px";
+            };
+        }
+
+        window.addEventListener('keydown', () => {
+            if (!gameActive) startGame();
+        });
+    </script>
+
+</body>
+
+</html>

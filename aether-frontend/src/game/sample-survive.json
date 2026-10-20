@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "title": "Neon Void Survival",
+  "genre": "arena_survival",
+  "premise": "Survive the relentless void swarm for 30 seconds.",
+  "theme": "sci_fi",
+  "player": {
+    "move_speed": 220,
+    "max_health": 3,
+    "attack_mode": "avoid_only"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 6,
+      "speed": 85
+    }
+  ],
+  "collectibles": [],
+  "objective": {
+    "type": "survive_seconds",
+    "target": 30
+  },
+  "difficulty": 2,
+  "controls": {
+    "movement": "WASD or arrow keys"
+  },
+  "seed": 42
+}

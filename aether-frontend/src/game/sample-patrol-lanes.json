@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "title": "Crossy Patrol Lanes",
+  "genre": "arena_survival",
+  "premise": "Cross guarded horizontal lanes to collect harvest berries.",
+  "theme": "cozy",
+  "arena_layout": "lanes",
+  "player": {
+    "move_speed": 200.0,
+    "max_health": 3,
+    "attack_mode": "avoid_only"
+  },
+  "enemies": [
+    {
+      "type": "patroller",
+      "count": 4,
+      "speed": 70.0
+    }
+  ],
+  "collectibles": [
+    {
+      "type": "star",
+      "count": 10
+    }
+  ],
+  "objective": {
+    "type": "collect_count",
+    "target": 8
+  },
+  "visual_overrides": {
+    "player_label": "FROGGER",
+    "enemy_label": "PATROL",
+    "collectible_label": "BERRY",
+    "player_shape": "circle",
+    "enemy_shape": "square",
+    "accent_hex": "#10b981"
+  },
+  "difficulty": 3,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": null
+  },
+  "seed": 42
+}

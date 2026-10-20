@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "title": "Maze Crystal Runner",
+  "genre": "arena_survival",
+  "premise": "Navigate wide corridors to collect pirate doubloons.",
+  "theme": "pirate",
+  "arena_layout": "maze",
+  "player": {
+    "move_speed": 200.0,
+    "max_health": 3,
+    "attack_mode": "avoid_only"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 3,
+      "speed": 65.0
+    }
+  ],
+  "collectibles": [
+    {
+      "type": "coin",
+      "count": 10
+    }
+  ],
+  "objective": {
+    "type": "collect_count",
+    "target": 6
+  },
+  "visual_overrides": {
+    "player_label": "CAPTAIN",
+    "enemy_label": "GHOST",
+    "collectible_label": "DOUBLOON",
+    "player_shape": "diamond",
+    "enemy_shape": "square",
+    "accent_hex": "#eab308"
+  },
+  "difficulty": 3,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": null
+  },
+  "seed": 42
+}

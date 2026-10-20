@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync-State Duelist</title>
+    <style>
+        :root {
+            --p1-color: #00d4ff;
+            --p2-color: #ff3344;
+            --bg-dark: #0a0a0f;
+            --ui-white: #e0e0e0;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-dark);
+            font-family: 'Monaco', 'Consolas', monospace;
+            color: var(--ui-white);
+            user-select: none;
+        }
+
+        #game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            background: radial-gradient(circle at center, #161625 0%, #0a0a0f 100%);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
+        }
+
+        #ui {
+            position: absolute;
+            top: 40px;
+            width: 80%;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .health-containers {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .health-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-bottom: 4px solid white;
+            min-width: 150px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.1s, background-color 0.1s;
+        }
+
+        #p1-health-box {
+            border-color: var(--p1-color);
+        }
+
+        #p2-health-box {
+            border-color: var(--p2-color);
+            text-align: right;
+        }
+
+        .hit-flash {
+            background-color: rgba(255, 255, 255, 0.3) !important;
+            transform: scale(1.1);
+        }
+
+        .sync-bar-container {
+            width: 600px;
+            height: 30px;
+            background: #222;
+            position: relative;
+            border: 2px solid #444;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        #sync-needle {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: white;
+            box-shadow: 0 0 15px white;
+            z-index: 5;
+            transition: left 0.1s ease-out;
+        }
+
+        #sync-fill {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, var(--p1-color) 0%, #222 50%, var(--p2-color) 100%);
+        }
+
+        #overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 4px;
+            color: #fff;
+        }
+
+        #win-msg {
+            font-size: 2rem;
+            margin-top: 10px;
+            color: #ffcc00;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .control-set {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .p1-t {
+            color: var(--p1-color);
+        }
+
+        .p2-t {
+            color: var(--p2-color);
+        }
+
+        .btn {
+            background: white;
+            color: black;
+            border: none;
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 40px;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #ccc;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="ui">
+            <div class="health-containers">
+                <div class="health-box" id="p1-health-box">
+                    <div style="font-size: 0.8rem; color: var(--p1-color);">PLAYER 1 CORE</div>
+                    <div id="p1-hp" style="font-size: 1.5rem; font-weight: bold;">100%</div>
+                </div>
+                <div class="health-box" id="p2-health-box">
+                    <div style="font-size: 0.8rem; color: var(--p2-color);">PLAYER 2 CORE</div>
+                    <div id="p2-hp" style="font-size: 1.5rem; font-weight: bold;">100%</div>
+                </div>
+            </div>
+
+            <div style="font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 5px;">SYNC STATE</div>
+            <div class="sync-bar-container">
+                <div id="sync-fill"></div>
+                <div id="sync-needle"></div>
+            </div>
+            <div id="warning-text"
+                style="color: #ffcc00; font-size: 0.8rem; margin-top: 10px; opacity: 0; font-weight: bold;">OVERCHARGE
+                IMMINENT</div>
+        </div>
+
+        <div id="overlay">
+            <h1 id="main-title">SYNC-STATE DUELIST</h1>
+            <div id="win-msg"></div>
+            <div class="controls-grid" id="controls-view">
+                <div class="control-set">
+                    <h3 class="p1-t">PLAYER 1</h3>
+                    <p>Move: WASD</p>
+                    <p>Burst: SPACE</p>
+                </div>
+                <div class="control-set">
+                    <h3 class="p2-t">PLAYER 2</h3>
+                    <p>Move: ARROWS</p>
+                    <p>Burst: ENTER</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; color: #888; max-width: 500px;" id="desc-view">
+                Knock the opponent to push the needle. Danger zones (outer edges) drain health.<br>
+                <b>WARNING:</b> 100% Overcharge deals 25% damage to the AGGRESSOR.
+            </p>
+            <button class="btn" id="start-btn" onclick="startGame()">Commence Duel</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Config
+        const CANVAS_W = 1000;
+        const CANVAS_H = 600;
+        const P_RADIUS = 20;
+        const TETHER_MAX = 350;
+        const TETHER_STIFFNESS = 0.05;
+        const REGEN_SPEED = 0.05;
+        const DRAIN_STRENGTH = 0.4; // BUFFED from 0.15
+        const BURST_COOLDOWN = 60;
+        const BURST_IMMEDIATE_DMG = 5; // NEW: Hit damage
+        const OVERCHARGE_PENALTY = 25;
+
+        // State
+        let gameActive = false;
+        let syncValue = 50;
+        let keys = {};
+        let particles = [];
+
+        class Player {
+            constructor(x, y, color, controls, id) {
+                this.startX = x;
+                this.startY = y;
+                this.x = x;
+                this.y = y;
+                this.vx = 0;
+                this.vy = 0;
+                this.color = color;
+                this.controls = controls;
+                this.id = id;
+                this.hp = 100;
+                this.burstCd = 0;
+                this.burstActive = 0;
+                this.flashTimer = 0;
+            }
+
+            reset() {
+                this.x = this.startX;
+                this.y = this.startY;
+                this.vx = 0;
+                this.vy = 0;
+                this.hp = 100;
+                this.burstCd = 0;
+                this.burstActive = 0;
+                this.flashTimer = 0;
+            }
+
+            takeDamage(amt) {
+                this.hp -= amt;
+                this.flashTimer = 10; // Trigger UI flash
+                if (this.hp < 0) this.hp = 0;
+            }
+
+            update() {
+                if (this.burstCd > 0) this.burstCd--;
+                if (this.burstActive > 0) this.burstActive--;
+                if (this.flashTimer > 0) this.flashTimer--;
+
+                // Move
+                const acc = 0.6;
+                const fric = 0.92;
+                if (keys[this.controls.up]) this.vy -= acc;
+                if (keys[this.controls.down]) this.vy += acc;
+                if (keys[this.controls.left]) this.vx -= acc;
+                if (keys[this.controls.right]) this.vx += acc;
+
+                this.vx *= fric;
+                this.vy *= fric;
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounds
+                if (this.x < P_RADIUS) { this.x = P_RADIUS; this.vx *= -0.5; }
+                if (this.x > CANVAS_W - P_RADIUS) { this.x = CANVAS_W - P_RADIUS; this.vx *= -0.5; }
+                if (this.y < P_RADIUS) { this.y = P_RADIUS; this.vy *= -0.5; }
+                if (this.y > CANVAS_H - P_RADIUS) { this.y = CANVAS_H - P_RADIUS; this.vy *= -0.5; }
+
+                // Burst
+                if (keys[this.controls.burst] && this.burstCd === 0) {
+                    this.burstCd = BURST_COOLDOWN;
+                    this.burstActive = 10;
+                    createExplosion(this.x, this.y, this.color, 15);
+                    checkBurstHit(this);
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.shadowBlur = this.flashTimer > 0 ? 30 : 15;
+                ctx.shadowColor = this.flashTimer > 0 ? 'white' : this.color;
+                ctx.fillStyle = this.flashTimer > 0 ? 'white' : this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, P_RADIUS, 0, Math.PI * 2);
+                ctx.fill();
+
+                if (this.burstActive > 0) {
+                    ctx.strokeStyle = 'white';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, P_RADIUS + (10 - this.burstActive) * 10, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+
+                if (this.burstCd > 0) {
+                    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, P_RADIUS + 5, -Math.PI / 2, (-Math.PI / 2) + (Math.PI * 2 * (this.burstCd / BURST_COOLDOWN)));
+                    ctx.stroke();
+                }
+                ctx.restore();
+            }
+        }
+
+        const p1 = new Player(300, 300, '#00d4ff', { up: 'KeyW', down: 'KeyS', left: 'KeyA', right: 'KeyD', burst: 'Space' }, 1);
+        const p2 = new Player(700, 300, '#ff3344', { up: 'ArrowUp', down: 'ArrowDown', left: 'ArrowLeft', right: 'ArrowRight', burst: 'Enter' }, 2);
+
+        function checkBurstHit(attacker) {
+            const victim = (attacker.id === 1) ? p2 : p1;
+            const dist = Math.hypot(attacker.x - victim.x, attacker.y - victim.y);
+
+            if (dist < 120) {
+                const angle = Math.atan2(victim.y - attacker.y, victim.x - attacker.x);
+                victim.vx += Math.cos(angle) * 18;
+                victim.vy += Math.sin(angle) * 18;
+
+                // Immediate Health Damage
+                victim.takeDamage(BURST_IMMEDIATE_DMG);
+
+                // Shift Sync Bar
+                const shift = 15;
+                if (attacker.id === 1) syncValue += shift;
+                else syncValue -= shift;
+                createExplosion(victim.x, victim.y, '#fff', 12);
+            }
+        }
+
+        function update() {
+            if (!gameActive) return;
+
+            p1.update();
+            p2.update();
+
+            // Tether
+            const dx = p2.x - p1.x;
+            const dy = p2.y - p1.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist > TETHER_MAX) {
+                const over = dist - TETHER_MAX;
+                const angle = Math.atan2(dy, dx);
+                const fx = Math.cos(angle) * over * TETHER_STIFFNESS;
+                const fy = Math.sin(angle) * over * TETHER_STIFFNESS;
+                p1.vx += fx; p1.vy += fy;
+                p2.vx -= fx; p2.vy -= fy;
+            }
+
+            // Needle Logic
+            if (syncValue > 50) syncValue -= REGEN_SPEED;
+            if (syncValue < 50) syncValue += REGEN_SPEED;
+
+            // Drain Logic (Buffed)
+            if (syncValue > 70) {
+                const drain = DRAIN_STRENGTH * ((syncValue - 70) / 30);
+                p2.takeDamage(drain);
+            } else if (syncValue < 30) {
+                const drain = DRAIN_STRENGTH * ((30 - syncValue) / 30);
+                p1.takeDamage(drain);
+            }
+
+            // Overcharge logic
+            if (syncValue >= 100) {
+                p1.takeDamage(OVERCHARGE_PENALTY); // Aggressor (P1) is punished for 100%
+                syncValue = 50;
+                createExplosion(p1.x, p1.y, '#fff', 30);
+            } else if (syncValue <= 0) {
+                p2.takeDamage(OVERCHARGE_PENALTY); // Aggressor (P2) is punished for 0%
+                syncValue = 50;
+                createExplosion(p2.x, p2.y, '#fff', 30);
+            }
+
+            const warning = document.getElementById('warning-text');
+            warning.style.opacity = (syncValue > 85 || syncValue < 15) ? 1 : 0;
+
+            // Win Condition
+            if (p1.hp <= 0 || p2.hp <= 0) endGame();
+
+            // UI Updates
+            const p1HpEl = document.getElementById('p1-hp');
+            const p2HpEl = document.getElementById('p2-hp');
+            const p1Box = document.getElementById('p1-health-box');
+            const p2Box = document.getElementById('p2-health-box');
+
+            p1HpEl.innerText = Math.ceil(p1.hp) + "%";
+            p2HpEl.innerText = Math.ceil(p2.hp) + "%";
+
+            if (p1.flashTimer > 0) p1Box.classList.add('hit-flash');
+            else p1Box.classList.remove('hit-flash');
+
+            if (p2.flashTimer > 0) p2Box.classList.add('hit-flash');
+            else p2Box.classList.remove('hit-flash');
+
+            document.getElementById('sync-needle').style.left = syncValue + "%";
+
+            particles.forEach((p, i) => {
+                p.x += p.vx; p.y += p.vy; p.life -= 0.02;
+                if (p.life <= 0) particles.splice(i, 1);
+            });
+        }
+
+        function createExplosion(x, y, color, count) {
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x, y, vx: (Math.random() - 0.5) * 12, vy: (Math.random() - 0.5) * 12, life: 1.0, color: color
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
+            ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < CANVAS_W; i += 50) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, CANVAS_H); ctx.stroke(); }
+            for (let i = 0; i < CANVAS_H; i += 50) { ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(CANVAS_W, i); ctx.stroke(); }
+
+            const dist = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+            ctx.beginPath();
+            ctx.lineWidth = 2 + (dist / TETHER_MAX) * 6;
+            const grad = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
+            grad.addColorStop(0, p1.color); grad.addColorStop(1, p2.color);
+            ctx.strokeStyle = grad;
+            if (dist > TETHER_MAX * 0.9) ctx.setLineDash([5, 5]);
+            ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            p1.draw(); p2.draw();
+            particles.forEach(p => {
+                ctx.globalAlpha = p.life; ctx.fillStyle = p.color;
+                ctx.fillRect(p.x, p.y, 4, 4);
+            });
+            ctx.globalAlpha = 1.0;
+        }
+
+        function startGame() {
+            document.getElementById('overlay').style.display = 'none';
+            canvas.width = CANVAS_W;
+            canvas.height = CANVAS_H;
+            p1.reset();
+            p2.reset();
+            syncValue = 50;
+            gameActive = true;
+            requestAnimationFrame(loop);
+        }
+
+        function endGame() {
+            gameActive = false;
+            const winner = p1.hp > p2.hp ? "PLAYER 1 (BLUE)" : "PLAYER 2 (RED)";
+            const winColor = p1.hp > p2.hp ? "var(--p1-color)" : "var(--p2-color)";
+
+            const winMsg = document.getElementById('win-msg');
+            winMsg.innerText = winner + " HAS DOMINATED THE LINK";
+            winMsg.style.color = winColor;
+
+            document.getElementById('main-title').innerText = "DUEL CONCLUDED";
+            document.getElementById('controls-view').style.display = 'none';
+            document.getElementById('desc-view').style.display = 'none';
+            document.getElementById('start-btn').innerText = "Restart Duel";
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        window.addEventListener('keydown', e => keys[e.code] = true);
+        window.addEventListener('keyup', e => keys[e.code] = false);
+
+        function loop() {
+            if (!gameActive) return;
+            update();
+            draw();
+            requestAnimationFrame(loop);
+        }
+    </script>
+</body>
+
+</html>

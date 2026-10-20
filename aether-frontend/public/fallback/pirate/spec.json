@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "title": "Pirate Captain Gold Chase",
+  "genre": "arena_survival",
+  "premise": "Collect gold coins while rival skeleton pirates pursue you across the arena.",
+  "theme": "pirate",
+  "player": {
+    "move_speed": 210.0,
+    "max_health": 3,
+    "attack_mode": "projectile"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 6,
+      "speed": 90.0
+    }
+  ],
+  "collectibles": [
+    {
+      "type": "coin",
+      "count": 10
+    }
+  ],
+  "objective": {
+    "type": "collect_count",
+    "target": 10
+  },
+  "difficulty": 2,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": "Space"
+  },
+  "seed": 123
+}

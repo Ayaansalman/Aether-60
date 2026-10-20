@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "title": "Dasher Duel Arena",
+  "genre": "arena_survival",
+  "premise": "Stalk and strike lunging dashers with precision melee blows.",
+  "theme": "fantasy",
+  "arena_layout": "open",
+  "player": {
+    "move_speed": 220.0,
+    "max_health": 4,
+    "attack_mode": "melee"
+  },
+  "enemies": [
+    {
+      "type": "dasher",
+      "count": 4,
+      "speed": 70.0
+    }
+  ],
+  "collectibles": [],
+  "objective": {
+    "type": "defeat_enemies",
+    "target": 5
+  },
+  "visual_overrides": {
+    "player_label": "KNIGHT",
+    "enemy_label": "DASHER",
+    "player_shape": "diamond",
+    "enemy_shape": "triangle",
+    "accent_hex": "#8b5cf6"
+  },
+  "difficulty": 3,
+  "controls": {
+    "movement": "WASD or arrow keys",
+    "attack": "Space to melee swing"
+  },
+  "seed": 42
+}

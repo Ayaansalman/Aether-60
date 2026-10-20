@@ -1,0 +1,652 @@
+{
+  "summary": {
+    "benchmark_date": "2026-10-12 16:33:53 UTC",
+    "provider": "OpenAICompatProvider",
+    "model_id": "gemini-3.8-flash",
+    "total_prompts": 10,
+    "responded_prompts": 10,
+    "not_run_prompts": 0,
+    "validation_failed_prompts": 0,
+    "passed_prompts": 10,
+    "first_response_validation_rate": 100.0,
+    "first_response_validation_denominator": "10/10",
+    "final_success_rate": 100.0,
+    "final_success_denominator": "10/10",
+    "theme_match_rate": 100.0,
+    "theme_match_denominator": "5/5",
+    "theme_skipped_prompts": [
+      "p06",
+      "p07",
+      "p08",
+      "p09",
+      "p10"
+    ],
+    "objective_match_rate": 100.0,
+    "objective_match_denominator": "5/5",
+    "objective_skipped_prompts": [
+      "p06",
+      "p07",
+      "p08",
+      "p09",
+      "p10"
+    ],
+    "theme_objective_match_rate": 100.0,
+    "theme_objective_match_denominator": "5/5",
+    "theme_objective_skipped_prompts": [
+      "p06",
+      "p07",
+      "p08",
+      "p09",
+      "p10"
+    ],
+    "limitation_honesty_rate": 100.0,
+    "limitation_honesty_denominator": "1/1",
+    "limitation_skipped_prompts": [
+      "p01",
+      "p02",
+      "p03",
+      "p04",
+      "p05",
+      "p06",
+      "p07",
+      "p08",
+      "p10"
+    ],
+    "latency_evaluated_count": 10,
+    "latency_excluded_count": 0,
+    "median_latency_ms": 17311.0,
+    "max_latency_ms": 33039
+  },
+  "records": [
+    {
+      "id": "p01",
+      "prompt": "a spooky wizard collecting glowing crystals in a dark dungeon while ghosts chase me",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 27910,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "Dungeon crawler environment adapted to a single-screen 2D top-down arena."
+      ],
+      "expected_theme": "spooky",
+      "theme_match": true,
+      "expected_objective_type": "collect_count",
+      "objective_match": true,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Dungeon Phantom Surge",
+        "genre": "arena_survival",
+        "premise": "Guide a spooky wizard through a haunted dungeon arena, gathering glowing crystals while evading spectral ghosts.",
+        "theme": "spooky",
+        "player": {
+          "move_speed": 210.0,
+          "max_health": 3,
+          "attack_mode": "projectile"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 6,
+            "speed": 95.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "crystal",
+            "count": 12
+          }
+        ],
+        "objective": {
+          "type": "collect_count",
+          "target": 10
+        },
+        "difficulty": 2,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": "Space"
+        },
+        "seed": 42
+      },
+      "notes": "Spooky wizard archetype with crystal collectibles and ghost chasers",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p02",
+      "prompt": "a robot surviving against waves of flying drones while gathering energy batteries",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 20446,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "Adapted discrete drone wave mechanics into a single continuous 2D top-down chaser swarm arena."
+      ],
+      "expected_theme": "sci_fi",
+      "theme_match": true,
+      "expected_objective_type": "collect_count",
+      "objective_match": true,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Cyber Core Surge",
+        "genre": "arena_survival",
+        "premise": "A lone utility bot evades rogue aerial drones to recover vital energy batteries across the sector grid.",
+        "theme": "sci_fi",
+        "player": {
+          "move_speed": 210.0,
+          "max_health": 4,
+          "attack_mode": "projectile"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 12,
+            "speed": 95.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "battery",
+            "count": 15
+          }
+        ],
+        "objective": {
+          "type": "collect_count",
+          "target": 10
+        },
+        "difficulty": 3,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": "Spacebar"
+        },
+        "seed": 108
+      },
+      "notes": "Robot vs drone waves gathering batteries in sci-fi setting",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p03",
+      "prompt": "a pirate captain collecting gold treasure chests while rival skeleton ships pursue",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 33039,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "Treasure chests adapted to standard coin collectibles.",
+        "Naval ship handling adapted to 2D top-down arena survival movement."
+      ],
+      "expected_theme": "pirate",
+      "theme_match": true,
+      "expected_objective_type": "collect_count",
+      "objective_match": true,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Corsair's Gold Run",
+        "genre": "arena_survival",
+        "premise": "Sail through treacherous waters as a pirate captain, gathering scattered gold coins while dodging relentless skeleton ships.",
+        "theme": "pirate",
+        "player": {
+          "move_speed": 210.0,
+          "max_health": 3,
+          "attack_mode": "projectile"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 6,
+            "speed": 130.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "coin",
+            "count": 12
+          }
+        ],
+        "objective": {
+          "type": "collect_count",
+          "target": 10
+        },
+        "difficulty": 2,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": "Space to fire cannons"
+        },
+        "seed": 1701
+      },
+      "notes": "Pirate theme collecting coins/treasure",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p04",
+      "prompt": "a cozy forest spirit gathering fallen glowing stars in a peaceful enchanted grove",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 16502,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "Peaceful open exploration adapted into a single-player 2D arena survival framework.",
+        "Added slow chaser entities to fulfill arena survival hazard requirements while keeping combat disabled."
+      ],
+      "expected_theme": "cozy",
+      "theme_match": true,
+      "expected_objective_type": "collect_count",
+      "objective_match": true,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Grove Star Gatherer",
+        "genre": "arena_survival",
+        "premise": "Guide a gentle forest spirit to collect fallen glowing stars while softly evading wandering shadow wisps in an enchanted grove.",
+        "theme": "cozy",
+        "player": {
+          "move_speed": 190.0,
+          "max_health": 5,
+          "attack_mode": "avoid_only"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 4,
+            "speed": 65.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "star",
+            "count": 12
+          }
+        ],
+        "objective": {
+          "type": "collect_count",
+          "target": 8
+        },
+        "difficulty": 1,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": null
+        },
+        "seed": 777
+      },
+      "notes": "Cozy theme with forest spirit and star collectibles",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p05",
+      "prompt": "a neon cyberpunk hacker surviving rogue security grid drones for 45 seconds",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 18120,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "Cyberpunk aesthetic adapted into the supported sci_fi arena theme.",
+        "Rogue security drones represented via standard 2D chaser enemy behaviors."
+      ],
+      "expected_theme": "sci_fi",
+      "theme_match": true,
+      "expected_objective_type": "survive_seconds",
+      "objective_match": true,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Cyber Grid Lockdown",
+        "genre": "arena_survival",
+        "premise": "Survive waves of rogue security drones inside the neon grid mainframe for 45 seconds.",
+        "theme": "sci_fi",
+        "player": {
+          "move_speed": 210.0,
+          "max_health": 4,
+          "attack_mode": "projectile"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 12,
+            "speed": 115.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "battery",
+            "count": 6
+          }
+        ],
+        "objective": {
+          "type": "survive_seconds",
+          "target": 45
+        },
+        "difficulty": 3,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": "Space"
+        },
+        "seed": 2077
+      },
+      "notes": "Cyberpunk survival mode with 45 second time limit",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p06",
+      "prompt": "a difficult high-stakes arena where the player moves slowly and enemies chase at extreme speeds",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 7856,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "Player speed clamped to engine minimum of 100.0 and enemy speed clamped to engine maximum of 250.0."
+      ],
+      "expected_theme": null,
+      "theme_match": null,
+      "expected_objective_type": null,
+      "objective_match": null,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Dread Reckoning",
+        "genre": "arena_survival",
+        "premise": "Evade relentless hyper-velocity phantoms in a closed arena while suffering from severely hindered movement.",
+        "theme": "spooky",
+        "player": {
+          "move_speed": 105.0,
+          "max_health": 1,
+          "attack_mode": "avoid_only"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 3,
+            "speed": 245.0
+          }
+        ],
+        "collectibles": [],
+        "objective": {
+          "type": "survive_seconds",
+          "target": 25
+        },
+        "difficulty": 5,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": null
+        },
+        "seed": 808
+      },
+      "notes": "High difficulty challenge with fast chaser enemies and slow player movement",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p07",
+      "prompt": "ancient pyramids, pharaohs, scarabs, and sandstorms",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 7185,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "Adapted pyramid exploration and dynamic sandstorms into a 2D top-down enclosed arena survival layout.",
+        "Scarabs and pharaoh minions are represented as standard chaser-type enemies."
+      ],
+      "expected_theme": null,
+      "theme_match": null,
+      "expected_objective_type": null,
+      "objective_match": null,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Tomb of the Sun Pharaoh",
+        "genre": "arena_survival",
+        "premise": "Evade relentless swarms of cursed scarabs and gather ancient sacred gems within the sandstorm-swept pyramid arena.",
+        "theme": "fantasy",
+        "player": {
+          "move_speed": 210.0,
+          "max_health": 4,
+          "attack_mode": "projectile"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 12,
+            "speed": 85.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "gem",
+            "count": 15
+          }
+        ],
+        "objective": {
+          "type": "collect_count",
+          "target": 10
+        },
+        "difficulty": 3,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": "Space"
+        },
+        "seed": 1337
+      },
+      "notes": "Thematic setting with no explicit genre keywords; must adapt to arena survival",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p08",
+      "prompt": "make something fun and fast-paced",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 10699,
+      "model": "gemini-3.8-flash",
+      "limitations": [],
+      "expected_theme": null,
+      "theme_match": null,
+      "expected_objective_type": null,
+      "objective_match": null,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Hypergrid Blitz",
+        "genre": "arena_survival",
+        "premise": "Dash across an electrified grid to grab high-energy battery cells before rogue hunter drones converge on your position.",
+        "theme": "sci_fi",
+        "player": {
+          "move_speed": 280.0,
+          "max_health": 3,
+          "attack_mode": "projectile"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 8,
+            "speed": 160.0
+          },
+          {
+            "type": "chaser",
+            "count": 4,
+            "speed": 210.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "battery",
+            "count": 15
+          }
+        ],
+        "objective": {
+          "type": "collect_count",
+          "target": 12
+        },
+        "difficulty": 4,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": "Space"
+        },
+        "seed": 1337
+      },
+      "notes": "Vague intent without theme or mechanics specified",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p09",
+      "prompt": "a 3D open-world MMORPG racing game with 64 players and cross-platform multiplayer",
+      "provider": "gemini-3.8-flash",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "error_code": null,
+      "latency_ms": 18933,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "3D graphics adapted to a 2D top-down arena view.",
+        "Open-world MMORPG racing mechanics adapted to single-player top-down arena survival.",
+        "64-player cross-platform multiplayer adapted to single-player against AI chaser drones."
+      ],
+      "expected_theme": null,
+      "theme_match": null,
+      "expected_objective_type": null,
+      "objective_match": null,
+      "expect_limitation": true,
+      "limitation_honest": true,
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Cyber Drift Circuit",
+        "genre": "arena_survival",
+        "premise": "Outrun rival drone racers and collect fuel batteries across the cybernetic arena track before your power drains.",
+        "theme": "sci_fi",
+        "player": {
+          "move_speed": 260.0,
+          "max_health": 3,
+          "attack_mode": "avoid_only"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 8,
+            "speed": 140.0
+          }
+        ],
+        "collectibles": [
+          {
+            "type": "battery",
+            "count": 15
+          }
+        ],
+        "objective": {
+          "type": "collect_count",
+          "target": 10
+        },
+        "difficulty": 3,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": null
+        },
+        "seed": 108
+      },
+      "notes": "Unsupported 3D MMORPG open world multiplayer racing; must report limitations honestly",
+      "model_responded": true,
+      "status": "PASS"
+    },
+    {
+      "id": "p10",
+      "prompt": "a peaceful game with no enemies where you must battle 50 ferocious monsters to survive",
+      "provider": "gemini-3.8-flash",
+      "status": "PASS",
+      "ok": true,
+      "attempts": 1,
+      "first_attempt_valid": true,
+      "model_responded": true,
+      "error_code": null,
+      "latency_ms": 11970,
+      "model": "gemini-3.8-flash",
+      "limitations": [
+        "The contradictory request for 'no enemies' was adapted to feature 50 chaser monsters, satisfying both the battle requirement and engine constraints."
+      ],
+      "expected_theme": null,
+      "theme_match": null,
+      "expected_objective_type": null,
+      "objective_match": null,
+      "expect_limitation": false,
+      "limitation_honest": null,
+      "raw_response": "{\n  \"spec\": {\n    \"schema_version\": \"1.0\",\n    \"title\": \"Sanctuary of the Wild Pack\",\n    \"genre\": \"arena_survival\",\n    \"premise\": \"Defend the peaceful woodland shrine against a swarm of fifty ferocious beasts.\",\n    \"theme\": \"fantasy\",\n    \"player\": {\n      \"move_speed\": 210.0,\n      \"max_health\": 5,\n      \"attack_mode\": \"projectile\"\n    },\n    \"enemies\": [\n      {\n        \"type\": \"chaser\",\n        \"count\": 50,\n        \"speed\": 65.0\n      }\n    ],\n    \"collectibles\": [],\n    \"objective\": {\n      \"type\": \"survive_seconds\",\n      \"target\": 60\n    },\n    \"difficulty\": 4,\n    \"controls\": {\n      \"movement\": \"WASD or arrow keys\",\n      \"attack\": \"Space\"\n    },\n    \"seed\": 777\n  },\n  \"limitations\": [\n    \"The contradictory request for 'no enemies' was adapted to feature 50 chaser monsters, satisfying both the battle requirement and engine constraints.\"\n  ]\n}",
+      "errors": [],
+      "spec": {
+        "schema_version": "1.0",
+        "title": "Sanctuary of the Wild Pack",
+        "genre": "arena_survival",
+        "premise": "Defend the peaceful woodland shrine against a swarm of fifty ferocious beasts.",
+        "theme": "fantasy",
+        "player": {
+          "move_speed": 210.0,
+          "max_health": 5,
+          "attack_mode": "projectile"
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "count": 50,
+            "speed": 65.0
+          }
+        ],
+        "collectibles": [],
+        "objective": {
+          "type": "survive_seconds",
+          "target": 60
+        },
+        "difficulty": 4,
+        "controls": {
+          "movement": "WASD or arrow keys",
+          "attack": "Space"
+        },
+        "seed": 777
+      },
+      "notes": "Contradictory prompt claiming peaceful with no enemies then battling 50 monsters"
+    }
+  ]
+}

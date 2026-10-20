@@ -1,0 +1,14 @@
+{
+  "id": "fallback-spooky",
+  "slug": "spooky",
+  "title": "Spooky Crystal Dungeon",
+  "prompt": "a spooky wizard collecting glowing crystals in a dark dungeon while ghosts chase me",
+  "model_label": "gemini-3.5-flash-lite (Run A)",
+  "provider": "openai_compat",
+  "status": "READY",
+  "is_repaired": false,
+  "limitations": [],
+  "repair_rationale": null,
+  "repair_diff": null,
+  "source_game_id": "699db4c8-4d87-44af-a287-a34c57fbe7a4"
+}

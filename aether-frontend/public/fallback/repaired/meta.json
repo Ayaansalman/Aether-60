@@ -1,0 +1,33 @@
+{
+  "id": "fallback-repaired",
+  "slug": "repaired",
+  "title": "Shadow Pursuit (Repaired)",
+  "prompt": "an impossible bullet-hell arena with 50 pursuers moving twice the player's speed, zero recovery, and 1 hit point",
+  "model_label": "gemini-3.5-flash-lite (Run A2 Real Repair)",
+  "provider": "openai_compat",
+  "status": "READY",
+  "is_repaired": true,
+  "limitations": [
+    "Adapted bullet-hell mechanics to single-player 2D arena survival with chaser enemies.",
+    "Clamped maximum enemy count and speed to supported engine limits.",
+    "Adjusted player health and recovery to fit standard engine rules."
+  ],
+  "repair_rationale": "Decreased enemy count to 8 and speed multiplier to 0.4 while increasing player move speed to 280.0 and max health to 8, allowing the player to easily evade pursuers and exceed survival thresholds.",
+  "repair_diff": {
+    "before": {
+      "difficulty": 5,
+      "enemies[0].count": 50,
+      "enemies[0].speed": 250.0,
+      "player.max_health": 1,
+      "player.move_speed": 150.0
+    },
+    "after": {
+      "difficulty": 2,
+      "enemies[0].count": 8,
+      "enemies[0].speed": 100.0,
+      "player.max_health": 8,
+      "player.move_speed": 280.0
+    }
+  },
+  "source_game_id": "54a6fdce-eea5-446f-a47f-66a844259b09"
+}

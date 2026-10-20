@@ -1,0 +1,82 @@
+[
+  {
+    "id": "p01",
+    "prompt": "a spooky wizard collecting glowing crystals in a dark dungeon while ghosts chase me",
+    "expected_theme": "spooky",
+    "expected_objective_type": "collect_count",
+    "expect_limitation": false,
+    "notes": "Spooky wizard archetype with crystal collectibles and ghost chasers"
+  },
+  {
+    "id": "p02",
+    "prompt": "a robot surviving against waves of flying drones while gathering energy batteries",
+    "expected_theme": "sci_fi",
+    "expected_objective_type": "collect_count",
+    "expect_limitation": false,
+    "notes": "Robot vs drone waves gathering batteries in sci-fi setting"
+  },
+  {
+    "id": "p03",
+    "prompt": "a pirate captain collecting gold treasure chests while rival skeleton ships pursue",
+    "expected_theme": "pirate",
+    "expected_objective_type": "collect_count",
+    "expect_limitation": false,
+    "notes": "Pirate theme collecting coins/treasure"
+  },
+  {
+    "id": "p04",
+    "prompt": "a cozy forest spirit gathering fallen glowing stars in a peaceful enchanted grove",
+    "expected_theme": "cozy",
+    "expected_objective_type": "collect_count",
+    "expect_limitation": false,
+    "notes": "Cozy theme with forest spirit and star collectibles"
+  },
+  {
+    "id": "p05",
+    "prompt": "a neon cyberpunk hacker surviving rogue security grid drones for 45 seconds",
+    "expected_theme": "sci_fi",
+    "expected_objective_type": "survive_seconds",
+    "expect_limitation": false,
+    "notes": "Cyberpunk survival mode with 45 second time limit"
+  },
+  {
+    "id": "p06",
+    "prompt": "a difficult high-stakes arena where the player moves slowly and enemies chase at extreme speeds",
+    "expected_theme": null,
+    "expected_objective_type": null,
+    "expect_limitation": false,
+    "notes": "High difficulty challenge with fast chaser enemies and slow player movement"
+  },
+  {
+    "id": "p07",
+    "prompt": "ancient pyramids, pharaohs, scarabs, and sandstorms",
+    "expected_theme": null,
+    "expected_objective_type": null,
+    "expect_limitation": false,
+    "notes": "Thematic setting with no explicit genre keywords; must adapt to arena survival"
+  },
+  {
+    "id": "p08",
+    "prompt": "make something fun and fast-paced",
+    "expected_theme": null,
+    "expected_objective_type": null,
+    "expect_limitation": false,
+    "notes": "Vague intent without theme or mechanics specified"
+  },
+  {
+    "id": "p09",
+    "prompt": "a 3D open-world MMORPG racing game with 64 players and cross-platform multiplayer",
+    "expected_theme": null,
+    "expected_objective_type": null,
+    "expect_limitation": true,
+    "notes": "Unsupported 3D MMORPG open world multiplayer racing; must report limitations honestly"
+  },
+  {
+    "id": "p10",
+    "prompt": "a peaceful game with no enemies where you must battle 50 ferocious monsters to survive",
+    "expected_theme": null,
+    "expected_objective_type": null,
+    "expect_limitation": false,
+    "notes": "Contradictory prompt claiming peaceful with no enemies then battling 50 monsters"
+  }
+]

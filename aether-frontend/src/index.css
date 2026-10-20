@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-color: #030303;
+    --accent-color: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.4);
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+
+  body,
+  html {
+    @apply m-0 p-0 w-full h-full bg-background text-white font-sans overflow-x-hidden antialiased;
+  }
+}
+
+@layer components {
+  .syne {
+    @apply font-syne;
+  }
+
+  .mono {
+    @apply font-mono;
+  }
+
+  .glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(28px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .btn-play {
+    @apply bg-white text-black font-black px-10 py-4 rounded-full uppercase tracking-[0.2em] text-sm transition-all shadow-[0_10px_30px_rgba(255,255,255,0.2)] cursor-pointer hover:scale-105 hover:bg-[#f0f0f0];
+  }
+
+  .badge-primary {
+    @apply bg-primary text-white text-[7px] font-black px-2 py-1 rounded uppercase tracking-[0.1em];
+  }
+
+  .badge-secondary {
+    @apply bg-secondary text-white text-[7px] font-black px-2 py-1 rounded uppercase tracking-[0.1em];
+  }
+
+  .pixelated {
+    image-rendering: pixelated;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}

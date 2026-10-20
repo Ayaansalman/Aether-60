@@ -1,0 +1,18 @@
+[
+  {
+    "id": "s01",
+    "prompt": "an impossible bullet-hell arena with 50 pursuers moving twice the player's speed, zero recovery, and 1 hit point",
+    "expected_theme": null,
+    "expected_objective_type": "survive_seconds",
+    "expect_limitation": false,
+    "notes": "Stress prompt intended to produce an unplayable spec (excessive fast enemies, 1 HP) to exercise playability QA and repair"
+  },
+  {
+    "id": "s02",
+    "prompt": "an extremely brutal survival nightmare with 45 lethal chaser monsters moving at maximum speed in a tiny arena with only 1 health",
+    "expected_theme": null,
+    "expected_objective_type": "survive_seconds",
+    "expect_limitation": false,
+    "notes": "Stress prompt intended to produce an unplayable spec with extreme enemy count and speed to exercise spec-level QA and repair"
+  }
+]
