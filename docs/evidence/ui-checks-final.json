@@ -1,0 +1,64 @@
+[
+  {
+    "id": "desktop_typing",
+    "passed": true
+  },
+  {
+    "id": "desktop_design",
+    "passed": true
+  },
+  {
+    "id": "desktop_honest_inspector",
+    "passed": true
+  },
+  {
+    "id": "desktop_overflow",
+    "passed": true
+  },
+  {
+    "id": "desktop_exceptions",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "id": "mobile_typing",
+    "passed": true
+  },
+  {
+    "id": "mobile_design",
+    "passed": true
+  },
+  {
+    "id": "mobile_honest_inspector",
+    "passed": true
+  },
+  {
+    "id": "mobile_overflow",
+    "passed": true
+  },
+  {
+    "id": "touch_move",
+    "passed": true
+  },
+  {
+    "id": "mobile_exceptions",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "id": "keyboard_restart",
+    "passed": true
+  },
+  {
+    "id": "expand_preview",
+    "passed": true
+  },
+  {
+    "id": "export_evidence",
+    "passed": true
+  },
+  {
+    "id": "toolbar_restart",
+    "passed": true
+  }
+]

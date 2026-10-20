@@ -1,0 +1,88 @@
+{
+  "id": "kenney_pixel_platformer",
+  "license": "CC0-1.0",
+  "author": "Kenney",
+  "sources": [
+    "https://kenney.nl/assets/pixel-platformer",
+    "https://kenney.nl/assets/pixel-platformer-industrial-expansion"
+  ],
+  "textures": {
+    "terrain": {
+      "url": "/assets/platformer/terrain.png",
+      "frameWidth": 18,
+      "frameHeight": 18,
+      "columns": 20
+    },
+    "characters": {
+      "url": "/assets/platformer/characters.png",
+      "frameWidth": 24,
+      "frameHeight": 24,
+      "columns": 9
+    },
+    "industrial": {
+      "url": "/assets/platformer/industrial.png",
+      "frameWidth": 18,
+      "frameHeight": 18,
+      "columns": 16
+    }
+  },
+  "backgrounds": {
+    "forest": "/assets/platformer/background-forest.png",
+    "industrial": "/assets/platformer/background-industrial.png",
+    "twilight": "/assets/platformer/background-twilight.png"
+  },
+  "animations": {
+    "idle": [
+      0
+    ],
+    "run": [
+      0,
+      1
+    ],
+    "jump": [
+      0
+    ],
+    "fall": [
+      1
+    ],
+    "damage": "tint and invulnerability blink; no dedicated damage frames in pack"
+  },
+  "roles": {
+    "forest_ground": 0,
+    "forest_fill": 4,
+    "industrial_ground": 0,
+    "industrial_fill": 11,
+    "crystal": 67,
+    "spikes": 68,
+    "checkpoint": 112,
+    "exit": 10,
+    "enemy_forest": [
+      12,
+      13
+    ],
+    "enemy_industrial": [
+      22,
+      23
+    ],
+    "moving_industrial": 25,
+    "moving_forest": 49,
+    "forest_ruins": 129,
+    "forest_props": [
+      124,
+      125,
+      126
+    ],
+    "tree_trunk": 116,
+    "tree_crown": 16,
+    "industrial_prop": 75,
+    "industrial_sign": 41
+  },
+  "files": {
+    "background-forest.png": "f8d264a826b90b85f66ff0eba79b5bc0e5d88a12cb9056b54f427fa3b8bf26a6",
+    "background-industrial.png": "d9c2f01ded10e4b61b59917833c4735d3593673c55406d73afe0be100e08ef6e",
+    "background-twilight.png": "3cdc2da58bd4b6733e78ae0f5be84581cc1c09b232d8c46bcc446b892f42ab20",
+    "characters.png": "22622d54dfc9d85346c9b75b999c8604e6eb336e42c4708bcf8b21094d8a2dad",
+    "industrial.png": "b54ba09f1564228f43921c33e2652f14e168565159d3624a1eb8b68bc633b872",
+    "terrain.png": "a3bbff36594baa36c803a67e9152a20a80f2faeb3c22ca84ac06e0a70f56553d"
+  }
+}

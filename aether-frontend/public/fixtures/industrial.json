@@ -1,0 +1,262 @@
+{
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "title": "The Copperworks",
+  "theme": "industrial",
+  "seed": 3811983085,
+  "tile_size": 36,
+  "width": 2484,
+  "height": 684,
+  "spawn": {
+    "x": 90.0,
+    "y": 476.0
+  },
+  "player": {
+    "speed": 250.0,
+    "jump": 490.0,
+    "gravity": 1100.0,
+    "health": 3,
+    "abilities": [
+      "dash"
+    ]
+  },
+  "objective": {
+    "type": "reach_exit",
+    "required": 0,
+    "total": 16
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 14,
+      "width": 8,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 10,
+      "y": 15,
+      "width": 4,
+      "kind": "factory",
+      "moving": false
+    },
+    {
+      "x": 11,
+      "y": 12,
+      "width": 4,
+      "kind": "factory",
+      "moving": true
+    },
+    {
+      "x": 16,
+      "y": 15,
+      "width": 5,
+      "kind": "factory",
+      "moving": false
+    },
+    {
+      "x": 23,
+      "y": 14,
+      "width": 7,
+      "kind": "factory",
+      "moving": false
+    },
+    {
+      "x": 24,
+      "y": 11,
+      "width": 4,
+      "kind": "factory",
+      "moving": true
+    },
+    {
+      "x": 32,
+      "y": 15,
+      "width": 4,
+      "kind": "factory",
+      "moving": false
+    },
+    {
+      "x": 38,
+      "y": 15,
+      "width": 5,
+      "kind": "factory",
+      "moving": false
+    },
+    {
+      "x": 39,
+      "y": 12,
+      "width": 4,
+      "kind": "factory",
+      "moving": true
+    },
+    {
+      "x": 45,
+      "y": 14,
+      "width": 8,
+      "kind": "factory",
+      "moving": false
+    },
+    {
+      "x": 55,
+      "y": 15,
+      "width": 5,
+      "kind": "factory",
+      "moving": false
+    },
+    {
+      "x": 56,
+      "y": 12,
+      "width": 4,
+      "kind": "factory",
+      "moving": true
+    },
+    {
+      "x": 62,
+      "y": 15,
+      "width": 5,
+      "kind": "factory",
+      "moving": false
+    }
+  ],
+  "entities": [
+    {
+      "x": 414.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 1
+    },
+    {
+      "x": 630.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 702.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 702.0,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 3
+    },
+    {
+      "x": 882.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 4
+    },
+    {
+      "x": 954.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 4
+    },
+    {
+      "x": 1026.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 4
+    },
+    {
+      "x": 954.0,
+      "y": 494.0,
+      "kind": "spikes",
+      "platform": 4
+    },
+    {
+      "x": 1206.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 6
+    },
+    {
+      "x": 1180.8,
+      "y": 510.0,
+      "kind": "checkpoint",
+      "platform": 6
+    },
+    {
+      "x": 1422.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 7
+    },
+    {
+      "x": 1494.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 7
+    },
+    {
+      "x": 1494.0,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 7
+    },
+    {
+      "x": 1674.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 9
+    },
+    {
+      "x": 1746.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 9
+    },
+    {
+      "x": 1818.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 9
+    },
+    {
+      "x": 1782.0,
+      "y": 494.0,
+      "kind": "spikes",
+      "platform": 9
+    },
+    {
+      "x": 2034.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 10
+    },
+    {
+      "x": 2106.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 10
+    },
+    {
+      "x": 2286.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 12
+    },
+    {
+      "x": 2358.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 12
+    },
+    {
+      "x": 2358.0,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 12
+    },
+    {
+      "x": 2376.0,
+      "y": 504.0,
+      "kind": "exit",
+      "platform": 12
+    }
+  ],
+  "asset_pack": "kenney_pixel_platformer"
+}

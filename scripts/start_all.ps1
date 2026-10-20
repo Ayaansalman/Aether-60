@@ -66,12 +66,12 @@ Write-Host "[1/3] Starting backend server on port 8000..." -ForegroundColor Gray
 if ($Provider -eq "mock") {
     $env:MODEL_PROVIDER = "mock"
 }
-$BackendProcess = Start-Process -FilePath $PythonExe -ArgumentList "-m","uvicorn","main:app","--host","127.0.0.1","--port","8000" -WorkingDirectory $BackendDir -PassThru -WindowStyle Minimized
+$BackendProcess = Start-Process -FilePath $PythonExe -ArgumentList "-m","uvicorn","main:app","--host","127.0.0.1","--port","8000" -WorkingDirectory $BackendDir -PassThru -WindowStyle Hidden
 
 # Start frontend in Vite dev server process directly
 Write-Host "[2/3] Starting Vite dev server on port 5173..." -ForegroundColor Gray
 $NpmCmd = if (Test-Path "C:\Program Files\nodejs\npm.cmd") { "C:\Program Files\nodejs\npm.cmd" } else { "npm.cmd" }
-$FrontendProcess = Start-Process -FilePath $NpmCmd -ArgumentList "run","dev","--","--host","127.0.0.1","--port","5173" -WorkingDirectory $FrontendDir -PassThru -WindowStyle Minimized
+$FrontendProcess = Start-Process -FilePath $NpmCmd -ArgumentList "run","dev","--","--host","127.0.0.1","--port","5173" -WorkingDirectory $FrontendDir -PassThru -WindowStyle Hidden
 
 # Wait for backend health
 Write-Host "[3/3] Waiting for backend health check (http://127.0.0.1:8000/api/v1/health)..." -ForegroundColor Gray
@@ -99,7 +99,7 @@ if ($Healthy) {
 }
 
 # Open browser to Forge
-$ForgeUrl = "http://localhost:5173/forge"
+$ForgeUrl = if ($Mock) { "http://127.0.0.1:5173/studio?mode=fixture" } else { "http://127.0.0.1:5173/studio" }
 Write-Host "Opening browser to $ForgeUrl..." -ForegroundColor Green
 Start-Process $ForgeUrl
 

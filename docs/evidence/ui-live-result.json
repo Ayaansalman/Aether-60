@@ -1,0 +1,3303 @@
+{
+  "job": {
+    "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+    "prompt": "Create an industrial platformer with moving machinery, dash, robot enemies, dangerous obstacles, crystals and checkpoints. Reach the factory exit.",
+    "status": "READY_WITH_WARNINGS",
+    "stage": "READY_WITH_WARNINGS",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "gemini-3.5-flash-lite",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-20T13:47:51.813826+00:00",
+    "updated_at": "2026-10-20T13:49:00.424769+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "model_design.json",
+      "requirement_report.json",
+      "game_intent.json",
+      "game_design.json",
+      "provider.json",
+      "repair_report.json",
+      "final_design.json",
+      "validation.json",
+      "game_ir_v2.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "qa_repair_1.json",
+      "diagnosis.json",
+      "qa_report.json",
+      "outcome.json"
+    ],
+    "limitations": [
+      "combat mechanics beyond dodging enemies",
+      "complex inventory systems"
+    ],
+    "qa_summary": {
+      "passed": 12,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5173/studio/play/e5737bfe-2946-4c54-a844-0a2918d0ba99"
+  },
+  "events": [
+    {
+      "id": 391,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:47:51.844621+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 392,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:47:51.891723+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting prompt with Gemini",
+      "attempt": 1,
+      "rationale": "Elapsed 0.03s; language model",
+      "diff": null
+    },
+    {
+      "id": 393,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:47:55.730180+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Validated typed design; composing sections and registered mechanics",
+      "attempt": 1,
+      "rationale": "Elapsed 3.88s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 394,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:47:55.773500+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking jump trajectories, landing margins and objective consistency",
+      "attempt": 1,
+      "rationale": "Elapsed 3.92s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 395,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:47:56.134918+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Runtime specification and asset dependencies persisted",
+      "attempt": 1,
+      "rationale": "Elapsed 4.28s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 396,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:47:56.189168+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium gameplay checks",
+      "attempt": 1,
+      "rationale": "Elapsed 4.33s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 397,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:48:31.116493+00:00",
+      "stage": "REPAIRING",
+      "result": "SUCCESS",
+      "detail": "Browser evidence identified a level route failure; reducing only gaps and elevation",
+      "attempt": 1,
+      "rationale": "Elapsed 39.27s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 398,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:48:31.225584+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Retesting targeted route repair 1",
+      "attempt": 1,
+      "rationale": "Elapsed 39.38s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 399,
+      "game_id": "e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "ts": "2026-10-20T13:49:00.394680+00:00",
+      "stage": "READY_WITH_WARNINGS",
+      "result": "SUCCESS",
+      "detail": "Browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 68.53s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "model_design.json": {
+      "title": "Clockwork Core Escape",
+      "premise": "Navigate the hazardous industrial foundry, evade rogue patrol robots, and utilize the dash ability to escape the automated factory before the core overloads.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "challenging",
+      "objective": "reach_exit",
+      "abilities": [
+        "dash"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 8,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "factory",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "gauntlet",
+          "length": 6,
+          "elevation": 2,
+          "gap": 3,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "ascent",
+          "length": 8,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        }
+      ],
+      "unsupported": [
+        "combat mechanics beyond dodging enemies",
+        "complex inventory systems"
+      ],
+      "design_notes": [
+        "Used moving platforms to simulate active factory machinery.",
+        "Combined dash ability with wider gaps in the gauntlet section for high-speed momentum challenges.",
+        "Integrated crystal collectibles via thematic placement on industrial hazards."
+      ]
+    },
+    "requirement_report.json": {
+      "scope": "Explicit supported requirements and recognized exclusions; semantic fidelity still requires review.",
+      "changes": [],
+      "unsupported": [
+        "combat mechanics beyond dodging enemies",
+        "complex inventory systems"
+      ],
+      "overall": "WARN"
+    },
+    "game_intent.json": {
+      "original_prompt": "Create an industrial platformer with moving machinery, dash, robot enemies, dangerous obstacles, crystals and checkpoints. Reach the factory exit.",
+      "genre": "platformer",
+      "setting": "industrial",
+      "requested_mechanics": [
+        "dash"
+      ],
+      "unsupported": [
+        "combat mechanics beyond dodging enemies",
+        "complex inventory systems"
+      ],
+      "interpretation_source": {
+        "provider": "openai_compat",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 3603,
+        "fallbacks": []
+      }
+    },
+    "game_design.json": {
+      "title": "Clockwork Core Escape",
+      "premise": "Navigate the hazardous industrial foundry, evade rogue patrol robots, and utilize the dash ability to escape the automated factory before the core overloads.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "challenging",
+      "objective": "reach_exit",
+      "abilities": [
+        "dash"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 8,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "factory",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "gauntlet",
+          "length": 6,
+          "elevation": 2,
+          "gap": 3,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "ascent",
+          "length": 8,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        }
+      ],
+      "unsupported": [
+        "combat mechanics beyond dodging enemies",
+        "complex inventory systems"
+      ],
+      "design_notes": [
+        "Used moving platforms to simulate active factory machinery.",
+        "Combined dash ability with wider gaps in the gauntlet section for high-speed momentum challenges.",
+        "Integrated crystal collectibles via thematic placement on industrial hazards."
+      ]
+    },
+    "provider.json": {
+      "provider": "openai_compat",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "latency_ms": 3603,
+      "fallbacks": []
+    },
+    "repair_report.json": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "category": "level_layout",
+          "evidence": [
+            {
+              "id": "mandatory_route_edges",
+              "passed": false,
+              "critical": true,
+              "category": "level_layout",
+              "details": {
+                "method": "Isolated launch positions; actual keyboard jumps, physics and landing for each destination section, including registered moving alternates. This is not a full autonomous playthrough.",
+                "edges": [
+                  {
+                    "from": 0,
+                    "to": 9,
+                    "landed": true,
+                    "route": "static floor",
+                    "snapshot": {
+                      "ready": true,
+                      "generation": 4,
+                      "landedPlatforms": [
+                        0,
+                        1
+                      ],
+                      "x": 393.8888888888892,
+                      "y": 480,
+                      "vx": 0,
+                      "vy": 0,
+                      "grounded": true,
+                      "health": 3,
+                      "crystals": 1,
+                      "state": "playing",
+                      "checkpoint": -1,
+                      "missingAssets": [],
+                      "animation": "idle",
+                      "seed": 1646880574,
+                      "time": 9173.3
+                    }
+                  },
+                  {
+                    "from": 9,
+                    "to": 17,
+                    "landed": true,
+                    "route": "static floor",
+                    "snapshot": {
+                      "ready": true,
+                      "generation": 5,
+                      "landedPlatforms": [
+                        0,
+                        1,
+                        3
+                      ],
+                      "x": 704.2222222222211,
+                      "y": 444,
+                      "vx": 0,
+                      "vy": 0,
+                      "grounded": true,
+                      "health": 3,
+                      "crystals": 1,
+                      "state": "playing",
+                      "checkpoint": -1,
+                      "missingAssets": [],
+                      "animation": "idle",
+                      "seed": 1646880574,
+                      "time": 10756.6
+                    }
+                  },
+                  {
+                    "from": 17,
+                    "to": 27,
+                    "landed": false,
+                    "route": "static floor",
+                    "snapshot": {
+                      "ready": true,
+                      "generation": 6,
+                      "landedPlatforms": [
+                        0
+                      ],
+                      "x": 217.80555555555546,
+                      "y": 684.7777777777778,
+                      "vx": 0,
+                      "vy": 0,
+                      "grounded": false,
+                      "health": 0,
+                      "crystals": 1,
+                      "state": "lost",
+                      "checkpoint": -1,
+                      "missingAssets": [],
+                      "animation": "fall",
+                      "seed": 1646880574,
+                      "time": 19473
+                    }
+                  },
+                  {
+                    "from": 27,
+                    "to": 36,
+                    "landed": true,
+                    "route": "static floor",
+                    "snapshot": {
+                      "ready": true,
+                      "generation": 7,
+                      "landedPlatforms": [
+                        0,
+                        4,
+                        6
+                      ],
+                      "x": 1380.4444444444491,
+                      "y": 336,
+                      "vx": 0,
+                      "vy": 0,
+                      "grounded": true,
+                      "health": 2,
+                      "crystals": 2,
+                      "state": "playing",
+                      "checkpoint": -1,
+                      "missingAssets": [],
+                      "animation": "idle",
+                      "seed": 1646880574,
+                      "time": 22272.9
+                    }
+                  },
+                  {
+                    "from": 36,
+                    "to": 45,
+                    "landed": true,
+                    "route": "static floor",
+                    "snapshot": {
+                      "ready": true,
+                      "generation": 8,
+                      "landedPlatforms": [
+                        0,
+                        6,
+                        7
+                      ],
+                      "x": 1698.7777777777817,
+                      "y": 264,
+                      "vx": 0,
+                      "vy": 0,
+                      "grounded": true,
+                      "health": 2,
+                      "crystals": 1,
+                      "state": "playing",
+                      "checkpoint": -1,
+                      "missingAssets": [],
+                      "animation": "idle",
+                      "seed": 1646880574,
+                      "time": 25039.4
+                    }
+                  },
+                  {
+                    "from": 45,
+                    "to": 55,
+                    "landed": true,
+                    "route": "static floor",
+                    "snapshot": {
+                      "ready": true,
+                      "generation": 9,
+                      "landedPlatforms": [
+                        0,
+                        7,
+                        9
+                      ],
+                      "x": 2062.0000000000036,
+                      "y": 300,
+                      "vx": 0,
+                      "vy": 0,
+                      "grounded": true,
+                      "health": 1,
+                      "crystals": 2,
+                      "state": "playing",
+                      "checkpoint": -1,
+                      "missingAssets": [],
+                      "animation": "idle",
+                      "seed": 1646880574,
+                      "time": 27939.2
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "before": {
+            "schema_version": "2.0",
+            "genre": "platformer",
+            "title": "Clockwork Core Escape",
+            "theme": "industrial",
+            "seed": 1646880574,
+            "tile_size": 36,
+            "width": 2232,
+            "height": 684,
+            "spawn": {
+              "x": 90.0,
+              "y": 476.0
+            },
+            "player": {
+              "speed": 250,
+              "jump": 490,
+              "gravity": 1100,
+              "health": 3,
+              "abilities": [
+                "dash"
+              ]
+            },
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 15
+            },
+            "platforms": [
+              {
+                "x": 0,
+                "y": 14,
+                "width": 8,
+                "kind": "meadow",
+                "moving": false
+              },
+              {
+                "x": 9,
+                "y": 14,
+                "width": 6,
+                "kind": "factory",
+                "moving": false
+              },
+              {
+                "x": 10,
+                "y": 11,
+                "width": 4,
+                "kind": "factory",
+                "moving": true
+              },
+              {
+                "x": 17,
+                "y": 13,
+                "width": 8,
+                "kind": "factory",
+                "moving": false
+              },
+              {
+                "x": 27,
+                "y": 12,
+                "width": 6,
+                "kind": "factory",
+                "moving": false
+              },
+              {
+                "x": 28,
+                "y": 9,
+                "width": 4,
+                "kind": "factory",
+                "moving": true
+              },
+              {
+                "x": 36,
+                "y": 10,
+                "width": 7,
+                "kind": "gauntlet",
+                "moving": false
+              },
+              {
+                "x": 45,
+                "y": 8,
+                "width": 8,
+                "kind": "ascent",
+                "moving": false
+              },
+              {
+                "x": 46,
+                "y": 5,
+                "width": 4,
+                "kind": "ascent",
+                "moving": true
+              },
+              {
+                "x": 55,
+                "y": 9,
+                "width": 5,
+                "kind": "factory",
+                "moving": false
+              }
+            ],
+            "entities": [
+              {
+                "x": 378.0,
+                "y": 440.0,
+                "kind": "crystal",
+                "platform": 1
+              },
+              {
+                "x": 450.0,
+                "y": 440.0,
+                "kind": "crystal",
+                "platform": 1
+              },
+              {
+                "x": 666.0,
+                "y": 404.0,
+                "kind": "crystal",
+                "platform": 3
+              },
+              {
+                "x": 738.0,
+                "y": 404.0,
+                "kind": "crystal",
+                "platform": 3
+              },
+              {
+                "x": 810.0,
+                "y": 404.0,
+                "kind": "crystal",
+                "platform": 3
+              },
+              {
+                "x": 846.0,
+                "y": 446.0,
+                "kind": "enemy",
+                "platform": 3
+              },
+              {
+                "x": 774.0,
+                "y": 458.0,
+                "kind": "spikes",
+                "platform": 3
+              },
+              {
+                "x": 1026.0,
+                "y": 368.0,
+                "kind": "crystal",
+                "platform": 4
+              },
+              {
+                "x": 1098.0,
+                "y": 368.0,
+                "kind": "crystal",
+                "platform": 4
+              },
+              {
+                "x": 1134.0,
+                "y": 410.0,
+                "kind": "enemy",
+                "platform": 4
+              },
+              {
+                "x": 1098.0,
+                "y": 422.0,
+                "kind": "spikes",
+                "platform": 4
+              },
+              {
+                "x": 1000.8000000000001,
+                "y": 402.0,
+                "kind": "checkpoint",
+                "platform": 4
+              },
+              {
+                "x": 1350.0,
+                "y": 296.0,
+                "kind": "crystal",
+                "platform": 6
+              },
+              {
+                "x": 1422.0,
+                "y": 296.0,
+                "kind": "crystal",
+                "platform": 6
+              },
+              {
+                "x": 1494.0,
+                "y": 296.0,
+                "kind": "crystal",
+                "platform": 6
+              },
+              {
+                "x": 1494.0,
+                "y": 338.0,
+                "kind": "enemy",
+                "platform": 6
+              },
+              {
+                "x": 1422.0,
+                "y": 350.0,
+                "kind": "spikes",
+                "platform": 6
+              },
+              {
+                "x": 1674.0,
+                "y": 224.0,
+                "kind": "crystal",
+                "platform": 7
+              },
+              {
+                "x": 1746.0,
+                "y": 224.0,
+                "kind": "crystal",
+                "platform": 7
+              },
+              {
+                "x": 1818.0,
+                "y": 224.0,
+                "kind": "crystal",
+                "platform": 7
+              },
+              {
+                "x": 1854.0,
+                "y": 266.0,
+                "kind": "enemy",
+                "platform": 7
+              },
+              {
+                "x": 2034.0,
+                "y": 260.0,
+                "kind": "crystal",
+                "platform": 9
+              },
+              {
+                "x": 2106.0,
+                "y": 260.0,
+                "kind": "crystal",
+                "platform": 9
+              },
+              {
+                "x": 2070.0,
+                "y": 314.0,
+                "kind": "spikes",
+                "platform": 9
+              },
+              {
+                "x": 2124.0,
+                "y": 288.0,
+                "kind": "exit",
+                "platform": 9
+              }
+            ],
+            "asset_pack": "kenney_pixel_platformer"
+          },
+          "after": {
+            "schema_version": "2.0",
+            "genre": "platformer",
+            "title": "Clockwork Core Escape",
+            "theme": "industrial",
+            "seed": 1646880574,
+            "tile_size": 36,
+            "width": 2016,
+            "height": 684,
+            "spawn": {
+              "x": 90.0,
+              "y": 476.0
+            },
+            "player": {
+              "speed": 250,
+              "jump": 490,
+              "gravity": 1100,
+              "health": 3,
+              "abilities": [
+                "dash"
+              ]
+            },
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 15
+            },
+            "platforms": [
+              {
+                "x": 0,
+                "y": 14,
+                "width": 8,
+                "kind": "meadow",
+                "moving": false
+              },
+              {
+                "x": 9,
+                "y": 14,
+                "width": 6,
+                "kind": "factory",
+                "moving": false
+              },
+              {
+                "x": 10,
+                "y": 11,
+                "width": 4,
+                "kind": "factory",
+                "moving": true
+              },
+              {
+                "x": 16,
+                "y": 13,
+                "width": 8,
+                "kind": "factory",
+                "moving": false
+              },
+              {
+                "x": 25,
+                "y": 12,
+                "width": 6,
+                "kind": "factory",
+                "moving": false
+              },
+              {
+                "x": 26,
+                "y": 9,
+                "width": 4,
+                "kind": "factory",
+                "moving": true
+              },
+              {
+                "x": 32,
+                "y": 11,
+                "width": 7,
+                "kind": "gauntlet",
+                "moving": false
+              },
+              {
+                "x": 40,
+                "y": 10,
+                "width": 8,
+                "kind": "ascent",
+                "moving": false
+              },
+              {
+                "x": 41,
+                "y": 7,
+                "width": 4,
+                "kind": "ascent",
+                "moving": true
+              },
+              {
+                "x": 49,
+                "y": 11,
+                "width": 5,
+                "kind": "factory",
+                "moving": false
+              }
+            ],
+            "entities": [
+              {
+                "x": 378.0,
+                "y": 440.0,
+                "kind": "crystal",
+                "platform": 1
+              },
+              {
+                "x": 450.0,
+                "y": 440.0,
+                "kind": "crystal",
+                "platform": 1
+              },
+              {
+                "x": 630.0,
+                "y": 404.0,
+                "kind": "crystal",
+                "platform": 3
+              },
+              {
+                "x": 702.0,
+                "y": 404.0,
+                "kind": "crystal",
+                "platform": 3
+              },
+              {
+                "x": 774.0,
+                "y": 404.0,
+                "kind": "crystal",
+                "platform": 3
+              },
+              {
+                "x": 810.0,
+                "y": 446.0,
+                "kind": "enemy",
+                "platform": 3
+              },
+              {
+                "x": 738.0,
+                "y": 458.0,
+                "kind": "spikes",
+                "platform": 3
+              },
+              {
+                "x": 954.0,
+                "y": 368.0,
+                "kind": "crystal",
+                "platform": 4
+              },
+              {
+                "x": 1026.0,
+                "y": 368.0,
+                "kind": "crystal",
+                "platform": 4
+              },
+              {
+                "x": 1062.0,
+                "y": 410.0,
+                "kind": "enemy",
+                "platform": 4
+              },
+              {
+                "x": 1026.0,
+                "y": 422.0,
+                "kind": "spikes",
+                "platform": 4
+              },
+              {
+                "x": 928.8000000000001,
+                "y": 402.0,
+                "kind": "checkpoint",
+                "platform": 4
+              },
+              {
+                "x": 1206.0,
+                "y": 332.0,
+                "kind": "crystal",
+                "platform": 6
+              },
+              {
+                "x": 1278.0,
+                "y": 332.0,
+                "kind": "crystal",
+                "platform": 6
+              },
+              {
+                "x": 1350.0,
+                "y": 332.0,
+                "kind": "crystal",
+                "platform": 6
+              },
+              {
+                "x": 1350.0,
+                "y": 374.0,
+                "kind": "enemy",
+                "platform": 6
+              },
+              {
+                "x": 1278.0,
+                "y": 386.0,
+                "kind": "spikes",
+                "platform": 6
+              },
+              {
+                "x": 1494.0,
+                "y": 296.0,
+                "kind": "crystal",
+                "platform": 7
+              },
+              {
+                "x": 1566.0,
+                "y": 296.0,
+                "kind": "crystal",
+                "platform": 7
+              },
+              {
+                "x": 1638.0,
+                "y": 296.0,
+                "kind": "crystal",
+                "platform": 7
+              },
+              {
+                "x": 1674.0,
+                "y": 338.0,
+                "kind": "enemy",
+                "platform": 7
+              },
+              {
+                "x": 1818.0,
+                "y": 332.0,
+                "kind": "crystal",
+                "platform": 9
+              },
+              {
+                "x": 1890.0,
+                "y": 332.0,
+                "kind": "crystal",
+                "platform": 9
+              },
+              {
+                "x": 1854.0,
+                "y": 386.0,
+                "kind": "spikes",
+                "platform": 9
+              },
+              {
+                "x": 1908.0,
+                "y": 360.0,
+                "kind": "exit",
+                "platform": 9
+              }
+            ],
+            "asset_pack": "kenney_pixel_platformer"
+          }
+        }
+      ],
+      "maximum": 2
+    },
+    "final_design.json": {
+      "title": "Clockwork Core Escape",
+      "premise": "Navigate the hazardous industrial foundry, evade rogue patrol robots, and utilize the dash ability to escape the automated factory before the core overloads.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "challenging",
+      "objective": "reach_exit",
+      "abilities": [
+        "dash"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 8,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "factory",
+          "length": 7,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "gauntlet",
+          "length": 6,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": true,
+          "hazards": true
+        },
+        {
+          "kind": "ascent",
+          "length": 8,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": -1,
+          "gap": 1,
+          "enemies": false,
+          "hazards": true
+        }
+      ],
+      "unsupported": [
+        "combat mechanics beyond dodging enemies",
+        "complex inventory systems"
+      ],
+      "design_notes": [
+        "Used moving platforms to simulate active factory machinery.",
+        "Combined dash ability with wider gaps in the gauntlet section for high-speed momentum challenges.",
+        "Integrated crystal collectibles via thematic placement on industrial hazards."
+      ]
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    },
+    "game_ir_v2.json": {
+      "schema_version": "2.0",
+      "genre": "platformer",
+      "title": "Clockwork Core Escape",
+      "theme": "industrial",
+      "seed": 1646880574,
+      "tile_size": 36,
+      "width": 2016,
+      "height": 684,
+      "spawn": {
+        "x": 90.0,
+        "y": 476.0
+      },
+      "player": {
+        "speed": 250,
+        "jump": 490,
+        "gravity": 1100,
+        "health": 3,
+        "abilities": [
+          "dash"
+        ]
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 15
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "meadow",
+          "moving": false
+        },
+        {
+          "x": 9,
+          "y": 14,
+          "width": 6,
+          "kind": "factory",
+          "moving": false
+        },
+        {
+          "x": 10,
+          "y": 11,
+          "width": 4,
+          "kind": "factory",
+          "moving": true
+        },
+        {
+          "x": 16,
+          "y": 13,
+          "width": 8,
+          "kind": "factory",
+          "moving": false
+        },
+        {
+          "x": 25,
+          "y": 12,
+          "width": 6,
+          "kind": "factory",
+          "moving": false
+        },
+        {
+          "x": 26,
+          "y": 9,
+          "width": 4,
+          "kind": "factory",
+          "moving": true
+        },
+        {
+          "x": 32,
+          "y": 11,
+          "width": 7,
+          "kind": "gauntlet",
+          "moving": false
+        },
+        {
+          "x": 40,
+          "y": 10,
+          "width": 8,
+          "kind": "ascent",
+          "moving": false
+        },
+        {
+          "x": 41,
+          "y": 7,
+          "width": 4,
+          "kind": "ascent",
+          "moving": true
+        },
+        {
+          "x": 49,
+          "y": 11,
+          "width": 5,
+          "kind": "factory",
+          "moving": false
+        }
+      ],
+      "entities": [
+        {
+          "x": 378.0,
+          "y": 440.0,
+          "kind": "crystal",
+          "platform": 1
+        },
+        {
+          "x": 450.0,
+          "y": 440.0,
+          "kind": "crystal",
+          "platform": 1
+        },
+        {
+          "x": 630.0,
+          "y": 404.0,
+          "kind": "crystal",
+          "platform": 3
+        },
+        {
+          "x": 702.0,
+          "y": 404.0,
+          "kind": "crystal",
+          "platform": 3
+        },
+        {
+          "x": 774.0,
+          "y": 404.0,
+          "kind": "crystal",
+          "platform": 3
+        },
+        {
+          "x": 810.0,
+          "y": 446.0,
+          "kind": "enemy",
+          "platform": 3
+        },
+        {
+          "x": 738.0,
+          "y": 458.0,
+          "kind": "spikes",
+          "platform": 3
+        },
+        {
+          "x": 954.0,
+          "y": 368.0,
+          "kind": "crystal",
+          "platform": 4
+        },
+        {
+          "x": 1026.0,
+          "y": 368.0,
+          "kind": "crystal",
+          "platform": 4
+        },
+        {
+          "x": 1062.0,
+          "y": 410.0,
+          "kind": "enemy",
+          "platform": 4
+        },
+        {
+          "x": 1026.0,
+          "y": 422.0,
+          "kind": "spikes",
+          "platform": 4
+        },
+        {
+          "x": 928.8000000000001,
+          "y": 402.0,
+          "kind": "checkpoint",
+          "platform": 4
+        },
+        {
+          "x": 1206.0,
+          "y": 332.0,
+          "kind": "crystal",
+          "platform": 6
+        },
+        {
+          "x": 1278.0,
+          "y": 332.0,
+          "kind": "crystal",
+          "platform": 6
+        },
+        {
+          "x": 1350.0,
+          "y": 332.0,
+          "kind": "crystal",
+          "platform": 6
+        },
+        {
+          "x": 1350.0,
+          "y": 374.0,
+          "kind": "enemy",
+          "platform": 6
+        },
+        {
+          "x": 1278.0,
+          "y": 386.0,
+          "kind": "spikes",
+          "platform": 6
+        },
+        {
+          "x": 1494.0,
+          "y": 296.0,
+          "kind": "crystal",
+          "platform": 7
+        },
+        {
+          "x": 1566.0,
+          "y": 296.0,
+          "kind": "crystal",
+          "platform": 7
+        },
+        {
+          "x": 1638.0,
+          "y": 296.0,
+          "kind": "crystal",
+          "platform": 7
+        },
+        {
+          "x": 1674.0,
+          "y": 338.0,
+          "kind": "enemy",
+          "platform": 7
+        },
+        {
+          "x": 1818.0,
+          "y": 332.0,
+          "kind": "crystal",
+          "platform": 9
+        },
+        {
+          "x": 1890.0,
+          "y": 332.0,
+          "kind": "crystal",
+          "platform": 9
+        },
+        {
+          "x": 1854.0,
+          "y": 386.0,
+          "kind": "spikes",
+          "platform": 9
+        },
+        {
+          "x": 1908.0,
+          "y": 360.0,
+          "kind": "exit",
+          "platform": 9
+        }
+      ],
+      "asset_pack": "kenney_pixel_platformer"
+    },
+    "asset_manifest.json": {
+      "id": "kenney_pixel_platformer",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "sources": [
+        "https://kenney.nl/assets/pixel-platformer",
+        "https://kenney.nl/assets/pixel-platformer-industrial-expansion"
+      ],
+      "textures": {
+        "terrain": {
+          "url": "/assets/platformer/terrain.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 20
+        },
+        "characters": {
+          "url": "/assets/platformer/characters.png",
+          "frameWidth": 24,
+          "frameHeight": 24,
+          "columns": 9
+        },
+        "industrial": {
+          "url": "/assets/platformer/industrial.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 16
+        }
+      },
+      "backgrounds": {
+        "forest": "/assets/platformer/background-forest.png",
+        "industrial": "/assets/platformer/background-industrial.png",
+        "twilight": "/assets/platformer/background-twilight.png"
+      },
+      "animations": {
+        "idle": [
+          0
+        ],
+        "run": [
+          0,
+          1
+        ],
+        "jump": [
+          0
+        ],
+        "fall": [
+          1
+        ],
+        "damage": "tint and invulnerability blink; no dedicated damage frames in pack"
+      },
+      "roles": {
+        "forest_ground": 0,
+        "forest_fill": 4,
+        "industrial_ground": 0,
+        "industrial_fill": 11,
+        "crystal": 67,
+        "spikes": 68,
+        "checkpoint": 112,
+        "exit": 10,
+        "enemy_forest": [
+          12,
+          13
+        ],
+        "enemy_industrial": [
+          22,
+          23
+        ]
+      },
+      "files": {
+        "background-forest.png": "f8d264a826b90b85f66ff0eba79b5bc0e5d88a12cb9056b54f427fa3b8bf26a6",
+        "background-industrial.png": "d9c2f01ded10e4b61b59917833c4735d3593673c55406d73afe0be100e08ef6e",
+        "background-twilight.png": "3cdc2da58bd4b6733e78ae0f5be84581cc1c09b232d8c46bcc446b892f42ab20",
+        "characters.png": "22622d54dfc9d85346c9b75b999c8604e6eb336e42c4708bcf8b21094d8a2dad",
+        "industrial.png": "b54ba09f1564228f43921c33e2652f14e168565159d3624a1eb8b68bc633b872",
+        "terrain.png": "a3bbff36594baa36c803a67e9152a20a80f2faeb3c22ca84ac06e0a70f56553d"
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "background-forest.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-twilight.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "characters.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "terrain.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "genre": "platformer",
+      "schema_version": "2.0",
+      "seed": 1646880574,
+      "game_url": "http://localhost:5173/studio/play/e5737bfe-2946-4c54-a844-0a2918d0ba99",
+      "capabilities": [
+        "dash"
+      ],
+      "moving_platforms": true
+    },
+    "qa_report_initial.json": {
+      "overall": "FAIL",
+      "checks": [
+        {
+          "id": "canvas_and_assets",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": {
+            "missing": [],
+            "http_failures": []
+          }
+        },
+        {
+          "id": "horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 3840.2
+            },
+            "after": {
+              "ready": true,
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 113.11111111111111,
+              "y": 480,
+              "vx": 250,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 1646880574,
+              "time": 4240.2
+            }
+          }
+        },
+        {
+          "id": "jump_gravity_landing",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 4706.9
+            },
+            "airborne": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 425.6666666666667,
+              "vx": 0,
+              "vy": -343.3333333333335,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 5106.9
+            },
+            "landed": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 6773.5
+            }
+          }
+        },
+        {
+          "id": "dash",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 6840.1
+            },
+            "peak": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 110.66666666666666,
+              "y": 480,
+              "vx": 620,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 1646880574,
+              "time": 6990.1
+            },
+            "after": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 159.44444444444443,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 7340.1
+            }
+          }
+        },
+        {
+          "id": "mandatory_route_edges",
+          "passed": false,
+          "critical": true,
+          "category": "level_layout",
+          "details": {
+            "method": "Isolated launch positions; actual keyboard jumps, physics and landing for each destination section, including registered moving alternates. This is not a full autonomous playthrough.",
+            "edges": [
+              {
+                "from": 0,
+                "to": 9,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 4,
+                  "landedPlatforms": [
+                    0,
+                    1
+                  ],
+                  "x": 393.8888888888892,
+                  "y": 480,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 9173.3
+                }
+              },
+              {
+                "from": 9,
+                "to": 17,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 5,
+                  "landedPlatforms": [
+                    0,
+                    1,
+                    3
+                  ],
+                  "x": 704.2222222222211,
+                  "y": 444,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 10756.6
+                }
+              },
+              {
+                "from": 17,
+                "to": 27,
+                "landed": false,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 6,
+                  "landedPlatforms": [
+                    0
+                  ],
+                  "x": 217.80555555555546,
+                  "y": 684.7777777777778,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": false,
+                  "health": 0,
+                  "crystals": 1,
+                  "state": "lost",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "fall",
+                  "seed": 1646880574,
+                  "time": 19473
+                }
+              },
+              {
+                "from": 27,
+                "to": 36,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 7,
+                  "landedPlatforms": [
+                    0,
+                    4,
+                    6
+                  ],
+                  "x": 1380.4444444444491,
+                  "y": 336,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 22272.9
+                }
+              },
+              {
+                "from": 36,
+                "to": 45,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 8,
+                  "landedPlatforms": [
+                    0,
+                    6,
+                    7
+                  ],
+                  "x": 1698.7777777777817,
+                  "y": 264,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 25039.4
+                }
+              },
+              {
+                "from": 45,
+                "to": 55,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 9,
+                  "landedPlatforms": [
+                    0,
+                    7,
+                    9
+                  ],
+                  "x": 2062.0000000000036,
+                  "y": 300,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 1,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 27939.2
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "collectible_overlap",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled placement into a real crystal overlap",
+            "snapshot": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 378,
+              "y": 463.8333333333333,
+              "vx": 0,
+              "vy": 220.00000000000003,
+              "grounded": false,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 1646880574,
+              "time": 28389.2
+            }
+          }
+        },
+        {
+          "id": "checkpoint_respawn",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+            "activated": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 1000.8000000000001,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 28589.3
+            },
+            "respawn": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 1000.8000000000001,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 28905.9
+            }
+          }
+        },
+        {
+          "id": "win_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled collection and gate overlaps, not an autonomous completion",
+            "snapshot": {
+              "ready": true,
+              "generation": 11,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 2124,
+              "y": 288,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 15,
+              "state": "won",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 1646880574,
+              "time": 30639.1
+            }
+          }
+        },
+        {
+          "id": "hazard_damage",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap with real hazard or enemy",
+            "snapshot": {
+              "ready": true,
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 840.8888888888889,
+              "y": 425.97222222222223,
+              "vx": 0,
+              "vy": -281.6666666666667,
+              "grounded": false,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 31172.5
+            }
+          }
+        },
+        {
+          "id": "loss_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Test hook invokes damage to exercise health exhaustion",
+            "snapshot": {
+              "ready": true,
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 837.2222222222223,
+              "y": 411.75,
+              "vx": 0,
+              "vy": 0,
+              "grounded": false,
+              "health": 0,
+              "crystals": 1,
+              "state": "lost",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 31355.8
+            }
+          }
+        },
+        {
+          "id": "restart_reset",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "generation": 13,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 1646880574,
+            "time": 31572.5
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "screenshot": "gameplay.png",
+      "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+    },
+    "qa_repair_1.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "canvas_and_assets",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": {
+            "missing": [],
+            "http_failures": []
+          }
+        },
+        {
+          "id": "horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 3844.5
+            },
+            "after": {
+              "ready": true,
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 117.27777777777779,
+              "y": 480,
+              "vx": 250,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 1646880574,
+              "time": 4277.8
+            }
+          }
+        },
+        {
+          "id": "jump_gravity_landing",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 4794.5
+            },
+            "airborne": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 410.33333333333337,
+              "vx": 0,
+              "vy": -288.33333333333354,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 5227.8
+            },
+            "landed": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 6711
+            }
+          }
+        },
+        {
+          "id": "dash",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 6761
+            },
+            "peak": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 120.99999999999999,
+              "y": 480,
+              "vx": 620,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 1646880574,
+              "time": 6894.3
+            },
+            "after": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 190.44444444444446,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 7211
+            }
+          }
+        },
+        {
+          "id": "mandatory_route_edges",
+          "passed": true,
+          "critical": true,
+          "category": "level_layout",
+          "details": {
+            "method": "Isolated launch positions; actual keyboard jumps, physics and landing for each destination section, including registered moving alternates. This is not a full autonomous playthrough.",
+            "edges": [
+              {
+                "from": 0,
+                "to": 9,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 4,
+                  "landedPlatforms": [
+                    0,
+                    1
+                  ],
+                  "x": 402.22222222222257,
+                  "y": 480,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 9110.9
+                }
+              },
+              {
+                "from": 9,
+                "to": 16,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 5,
+                  "landedPlatforms": [
+                    0,
+                    1,
+                    3
+                  ],
+                  "x": 662.5555555555547,
+                  "y": 444,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 10660.8
+                }
+              },
+              {
+                "from": 16,
+                "to": 25,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 6,
+                  "landedPlatforms": [
+                    0,
+                    3,
+                    4
+                  ],
+                  "x": 977.2777777777764,
+                  "y": 408,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": 4,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 13010.7
+                }
+              },
+              {
+                "from": 25,
+                "to": 32,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 7,
+                  "landedPlatforms": [
+                    0,
+                    4,
+                    6
+                  ],
+                  "x": 1225.1111111111145,
+                  "y": 372,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 15877.4
+                }
+              },
+              {
+                "from": 32,
+                "to": 40,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 8,
+                  "landedPlatforms": [
+                    0,
+                    6,
+                    7
+                  ],
+                  "x": 1529.7777777777812,
+                  "y": 336,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 18727.2
+                }
+              },
+              {
+                "from": 40,
+                "to": 49,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 9,
+                  "landedPlatforms": [
+                    0,
+                    7,
+                    9
+                  ],
+                  "x": 1840.3333333333367,
+                  "y": 372,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 1,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 21677
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "collectible_overlap",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled placement into a real crystal overlap",
+            "snapshot": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 378,
+              "y": 472.0833333333333,
+              "vx": 0,
+              "vy": 256.6666666666667,
+              "grounded": false,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 1646880574,
+              "time": 22093.7
+            }
+          }
+        },
+        {
+          "id": "checkpoint_respawn",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+            "activated": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 928.8000000000001,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 22277
+            },
+            "respawn": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 928.8000000000001,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 22627.1
+            }
+          }
+        },
+        {
+          "id": "win_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled collection and gate overlaps, not an autonomous completion",
+            "snapshot": {
+              "ready": true,
+              "generation": 11,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 1908,
+              "y": 360,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 15,
+              "state": "won",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 1646880574,
+              "time": 24660.3
+            }
+          }
+        },
+        {
+          "id": "hazard_damage",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap with real hazard or enemy",
+            "snapshot": {
+              "ready": true,
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 804.8888888888889,
+              "y": 421.5833333333333,
+              "vx": 0,
+              "vy": -263.33333333333337,
+              "grounded": false,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 25260.2
+            }
+          }
+        },
+        {
+          "id": "loss_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Test hook invokes damage to exercise health exhaustion",
+            "snapshot": {
+              "ready": true,
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 801.2222222222223,
+              "y": 407.97222222222223,
+              "vx": 0,
+              "vy": 0,
+              "grounded": false,
+              "health": 0,
+              "crystals": 1,
+              "state": "lost",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 25427
+            }
+          }
+        },
+        {
+          "id": "restart_reset",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "generation": 13,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 1646880574,
+            "time": 25726.9
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "screenshot": "gameplay.png",
+      "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 1
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "canvas_and_assets",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": {
+            "missing": [],
+            "http_failures": []
+          }
+        },
+        {
+          "id": "horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 3844.5
+            },
+            "after": {
+              "ready": true,
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 117.27777777777779,
+              "y": 480,
+              "vx": 250,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 1646880574,
+              "time": 4277.8
+            }
+          }
+        },
+        {
+          "id": "jump_gravity_landing",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 4794.5
+            },
+            "airborne": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 410.33333333333337,
+              "vx": 0,
+              "vy": -288.33333333333354,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 5227.8
+            },
+            "landed": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 6711
+            }
+          }
+        },
+        {
+          "id": "dash",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 6761
+            },
+            "peak": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 120.99999999999999,
+              "y": 480,
+              "vx": 620,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 1646880574,
+              "time": 6894.3
+            },
+            "after": {
+              "ready": true,
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 190.44444444444446,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 7211
+            }
+          }
+        },
+        {
+          "id": "mandatory_route_edges",
+          "passed": true,
+          "critical": true,
+          "category": "level_layout",
+          "details": {
+            "method": "Isolated launch positions; actual keyboard jumps, physics and landing for each destination section, including registered moving alternates. This is not a full autonomous playthrough.",
+            "edges": [
+              {
+                "from": 0,
+                "to": 9,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 4,
+                  "landedPlatforms": [
+                    0,
+                    1
+                  ],
+                  "x": 402.22222222222257,
+                  "y": 480,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 9110.9
+                }
+              },
+              {
+                "from": 9,
+                "to": 16,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 5,
+                  "landedPlatforms": [
+                    0,
+                    1,
+                    3
+                  ],
+                  "x": 662.5555555555547,
+                  "y": 444,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 3,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 10660.8
+                }
+              },
+              {
+                "from": 16,
+                "to": 25,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 6,
+                  "landedPlatforms": [
+                    0,
+                    3,
+                    4
+                  ],
+                  "x": 977.2777777777764,
+                  "y": 408,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": 4,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 13010.7
+                }
+              },
+              {
+                "from": 25,
+                "to": 32,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 7,
+                  "landedPlatforms": [
+                    0,
+                    4,
+                    6
+                  ],
+                  "x": 1225.1111111111145,
+                  "y": 372,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 15877.4
+                }
+              },
+              {
+                "from": 32,
+                "to": 40,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 8,
+                  "landedPlatforms": [
+                    0,
+                    6,
+                    7
+                  ],
+                  "x": 1529.7777777777812,
+                  "y": 336,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 2,
+                  "crystals": 1,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 18727.2
+                }
+              },
+              {
+                "from": 40,
+                "to": 49,
+                "landed": true,
+                "route": "static floor",
+                "snapshot": {
+                  "ready": true,
+                  "generation": 9,
+                  "landedPlatforms": [
+                    0,
+                    7,
+                    9
+                  ],
+                  "x": 1840.3333333333367,
+                  "y": 372,
+                  "vx": 0,
+                  "vy": 0,
+                  "grounded": true,
+                  "health": 1,
+                  "crystals": 2,
+                  "state": "playing",
+                  "checkpoint": -1,
+                  "missingAssets": [],
+                  "animation": "idle",
+                  "seed": 1646880574,
+                  "time": 21677
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "collectible_overlap",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled placement into a real crystal overlap",
+            "snapshot": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 378,
+              "y": 472.0833333333333,
+              "vx": 0,
+              "vy": 256.6666666666667,
+              "grounded": false,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 1646880574,
+              "time": 22093.7
+            }
+          }
+        },
+        {
+          "id": "checkpoint_respawn",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+            "activated": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 928.8000000000001,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 22277
+            },
+            "respawn": {
+              "ready": true,
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 928.8000000000001,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 1646880574,
+              "time": 22627.1
+            }
+          }
+        },
+        {
+          "id": "win_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled collection and gate overlaps, not an autonomous completion",
+            "snapshot": {
+              "ready": true,
+              "generation": 11,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 1908,
+              "y": 360,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 15,
+              "state": "won",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 1646880574,
+              "time": 24660.3
+            }
+          }
+        },
+        {
+          "id": "hazard_damage",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Controlled overlap with real hazard or enemy",
+            "snapshot": {
+              "ready": true,
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 804.8888888888889,
+              "y": 421.5833333333333,
+              "vx": 0,
+              "vy": -263.33333333333337,
+              "grounded": false,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 25260.2
+            }
+          }
+        },
+        {
+          "id": "loss_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "method": "Test hook invokes damage to exercise health exhaustion",
+            "snapshot": {
+              "ready": true,
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 801.2222222222223,
+              "y": 407.97222222222223,
+              "vx": 0,
+              "vy": 0,
+              "grounded": false,
+              "health": 0,
+              "crystals": 1,
+              "state": "lost",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 1646880574,
+              "time": 25427
+            }
+          }
+        },
+        {
+          "id": "restart_reset",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "generation": 13,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 1646880574,
+            "time": 25726.9
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "screenshot": "gameplay.png",
+      "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+    },
+    "outcome.json": {
+      "status": "READY_WITH_WARNINGS",
+      "elapsed_seconds": 68.55,
+      "visual_quality": "Requires human screenshot review; functional checks are not an aesthetic score."
+    }
+  }
+}

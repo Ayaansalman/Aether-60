@@ -1,0 +1,214 @@
+{
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "title": "The Verdant Passage",
+  "theme": "forest",
+  "seed": 3791054245,
+  "tile_size": 36,
+  "width": 2340,
+  "height": 684,
+  "spawn": {
+    "x": 90.0,
+    "y": 476.0
+  },
+  "player": {
+    "speed": 250.0,
+    "jump": 490.0,
+    "gravity": 1100.0,
+    "health": 5,
+    "abilities": []
+  },
+  "objective": {
+    "type": "collect_and_exit",
+    "required": 11,
+    "total": 18
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 14,
+      "width": 8,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 9,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 15,
+      "y": 15,
+      "width": 6,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 22,
+      "y": 14,
+      "width": 7,
+      "kind": "ruins",
+      "moving": false
+    },
+    {
+      "x": 30,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 36,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 42,
+      "y": 14,
+      "width": 8,
+      "kind": "ruins",
+      "moving": false
+    },
+    {
+      "x": 51,
+      "y": 15,
+      "width": 6,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 58,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    }
+  ],
+  "entities": [
+    {
+      "x": 378.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 1
+    },
+    {
+      "x": 450.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 1
+    },
+    {
+      "x": 594.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 2
+    },
+    {
+      "x": 666.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 2
+    },
+    {
+      "x": 846.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 918.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 990.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 1134.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 4
+    },
+    {
+      "x": 1206.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 4
+    },
+    {
+      "x": 1108.8,
+      "y": 510.0,
+      "kind": "checkpoint",
+      "platform": 4
+    },
+    {
+      "x": 1350.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 5
+    },
+    {
+      "x": 1422.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 5
+    },
+    {
+      "x": 1566.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 6
+    },
+    {
+      "x": 1638.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 6
+    },
+    {
+      "x": 1710.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 6
+    },
+    {
+      "x": 1890.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 7
+    },
+    {
+      "x": 1962.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 7
+    },
+    {
+      "x": 2142.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 8
+    },
+    {
+      "x": 2214.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 8
+    },
+    {
+      "x": 2232.0,
+      "y": 504.0,
+      "kind": "exit",
+      "platform": 8
+    }
+  ],
+  "asset_pack": "kenney_pixel_platformer"
+}

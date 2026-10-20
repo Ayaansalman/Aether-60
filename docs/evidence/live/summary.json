@@ -1,0 +1,123 @@
+{
+  "mode": "live",
+  "results": {
+    "forest": {
+      "game_id": "91bc808b-f1a6-4392-b1ee-285474af4327",
+      "status": "READY",
+      "source": {
+        "provider": "openai_compat",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 12927,
+        "fallbacks": []
+      },
+      "title": "Shrine of the Whispering Woods",
+      "theme": "forest",
+      "seed": 2934682564,
+      "sections": 7,
+      "moving_platforms": 3,
+      "objective": {
+        "type": "collect_and_exit",
+        "required": 9,
+        "total": 15
+      },
+      "abilities": [
+        "double_jump",
+        "dash"
+      ],
+      "qa": "PASS",
+      "passed": 14,
+      "failed": [],
+      "limitations": []
+    },
+    "peaceful": {
+      "game_id": "a2caeafd-ef0f-4a68-9d46-973d9ac4b503",
+      "status": "READY",
+      "source": {
+        "provider": "openai_compat",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 2662,
+        "fallbacks": []
+      },
+      "title": "Whispering Woods",
+      "theme": "forest",
+      "seed": 3791054245,
+      "sections": 6,
+      "moving_platforms": 0,
+      "objective": {
+        "type": "collect_and_exit",
+        "required": 8,
+        "total": 12
+      },
+      "abilities": [
+        "double_jump"
+      ],
+      "qa": "PASS",
+      "passed": 12,
+      "failed": [],
+      "limitations": []
+    },
+    "tower": {
+      "game_id": "4e1ff0d8-286a-41ca-a7f0-5510575877d7",
+      "status": "READY_WITH_WARNINGS",
+      "source": {
+        "provider": "openai_compat",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 17686,
+        "fallbacks": []
+      },
+      "title": "Tower of the Sky",
+      "theme": "industrial",
+      "seed": 684486263,
+      "sections": 6,
+      "moving_platforms": 3,
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 15
+      },
+      "abilities": [
+        "double_jump"
+      ],
+      "qa": "PASS",
+      "passed": 12,
+      "failed": [],
+      "limitations": [
+        "dash"
+      ]
+    },
+    "industrial": {
+      "game_id": "9674ee4b-02e8-49af-93c9-efb0234aee25",
+      "status": "READY",
+      "source": {
+        "provider": "openai_compat",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 2612,
+        "fallbacks": []
+      },
+      "title": "Factory Floor 42",
+      "theme": "industrial",
+      "seed": 3811983085,
+      "sections": 7,
+      "moving_platforms": 3,
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 15
+      },
+      "abilities": [
+        "dash",
+        "double_jump"
+      ],
+      "qa": "PASS",
+      "passed": 13,
+      "failed": [],
+      "limitations": []
+    }
+  },
+  "unfinished": [],
+  "scope": "Browser checks use disclosed controlled state injection for objectives and isolated launches for route edges. Not an aesthetic score or full autonomous playthrough."
+}

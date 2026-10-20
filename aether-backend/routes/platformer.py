@@ -1,0 +1,213 @@
+"""V2 generation API: persisted jobs, honest stage events and bounded layout repair."""
+import asyncio
+import json
+import os
+import subprocess
+import sys
+import time
+import uuid
+from pathlib import Path
+from typing import Literal
+from fastapi import APIRouter, BackgroundTasks, HTTPException
+from pydantic import BaseModel, Field
+from services import job_store, event_store
+from services.orchestrator import get_artifacts_dir
+from services.platformer import plan, construct, validate_route, enforce_explicit_requirements, validate_assets
+
+router = APIRouter()
+_worker = asyncio.Lock()
+
+
+def browser_report(game_url, directory):
+    try:
+        proc = subprocess.run([sys.executable,"-m","services.platformer_qa",game_url,str(directory)],
+            cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=110)
+        return json.loads(proc.stdout.strip())
+    except Exception as exc:
+        return {"overall":"UNAVAILABLE","checks":[],"error":type(exc).__name__,"scope":"Browser verification did not complete; no runtime success is claimed."}
+
+
+class Generate(BaseModel):
+    prompt: str = Field(min_length=10, max_length=3000)
+    mode: Literal["live", "fixture"] = "live"
+    seed: int | None = Field(default=None, ge=0, le=4294967295)
+
+
+def save(gid, name, data):
+    directory = get_artifacts_dir() / gid
+    directory.mkdir(parents=True, exist_ok=True)
+    (directory / name).write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+
+async def run(gid: str, request: Generate):
+    async with _worker:
+        started = time.monotonic()
+        artifacts = []
+
+        def stage(name, detail, result="SUCCESS"):
+            job_store.update_job(gid, status=name, stage=name)
+            event_store.add_event(gid, stage=name, result=result, detail=detail,
+                rationale=f"Elapsed {time.monotonic()-started:.2f}s; " + ("language model" if name=="PLANNING" and request.mode=="live" else "deterministic service"))
+
+        def artifact(name, value):
+            save(gid, name, value)
+            if name not in artifacts:
+                artifacts.append(name)
+            job_store.update_job(gid, artifact_paths=artifacts)
+
+        try:
+            stage("PLANNING", "Interpreting prompt with Gemini" if request.mode=="live" else "Building explicitly labeled offline fixture", "START")
+            design, provenance = await asyncio.to_thread(plan, request.prompt, request.mode)
+            artifact("model_design.json", design.model_dump())
+            requirements = enforce_explicit_requirements(design, request.prompt)
+            artifact("requirement_report.json", requirements)
+            artifact("game_intent.json", {"original_prompt":request.prompt,"genre":design.genre,"setting":design.theme,
+                "requested_mechanics":design.abilities,"unsupported":design.unsupported,"interpretation_source":provenance})
+            artifact("game_design.json", design.model_dump())
+            artifact("provider.json", provenance)
+            job_store.update_job(gid, model_id=provenance['model'] or "fixture", limitations=design.unsupported)
+            stage("DESIGNING", "Validated typed design; composing sections and registered mechanics")
+            ir = construct(design, request.prompt, request.seed)
+            stage("VALIDATING_SPEC", "Checking jump trajectories, landing margins and objective consistency")
+            validation = validate_route(ir)
+            repairs = []
+            for attempt in range(2):
+                if validation['overall'] == 'PASS':
+                    break
+                before = design.model_dump()
+                for section in design.sections:
+                    section.gap = max(1, section.gap - 1)
+                    section.elevation = min(section.elevation, 1)
+                stage("REPAIRING", "Reducing unreachable gaps and rises; rebuilding from the same seed")
+                ir = construct(design, request.prompt, ir.seed)
+                validation = validate_route(ir)
+                repairs.append({"attempt":attempt+1,"category":"level_layout","before":before,"after":design.model_dump(),"validation":validation})
+            artifact("repair_report.json", {"attempts":repairs,"maximum":2})
+            artifact("final_design.json", design.model_dump())
+            artifact("validation.json", validation)
+            if validation['overall'] != 'PASS':
+                raise ValueError("Route remains unreachable after bounded layout repair")
+            artifact("game_ir_v2.json", ir.model_dump())
+            public = Path(__file__).resolve().parents[2]/"aether-frontend/public"
+            manifest = json.loads((public/"assets/registry.json").read_text())
+            artifact("asset_manifest.json", manifest)
+            asset_validation = validate_assets(manifest, public)
+            artifact("asset_validation.json", asset_validation)
+            if asset_validation['overall'] != 'PASS':
+                raise ValueError("Registered artwork is missing or has an invalid checksum. Inspect asset_validation.json.")
+            game_url = os.getenv("AETHER_FRONTEND_URL", "http://localhost:5173").rstrip('/') + f"/studio/play/{gid}"
+            job_store.update_job(gid, spec_json=ir.model_dump_json(), game_url=game_url)
+            artifact("build_manifest.json", {"runtime":"Phaser 3 Arcade","genre":ir.genre,"schema_version":ir.schema_version,
+                "seed":ir.seed,"game_url":game_url,"capabilities":design.abilities,"moving_platforms":design.moving_platforms})
+            stage("BUILDING", "Runtime specification and asset dependencies persisted")
+            stage("TESTING", "Running real Chromium gameplay checks", "START")
+            # Subprocess timeout bounds QA, including browser startup and every route edge.
+            report = await asyncio.to_thread(browser_report,game_url,get_artifacts_dir()/gid)
+            artifact("qa_report_initial.json", report)
+            while report['overall']=='FAIL' and len(repairs)<2:
+                failed=[c for c in report['checks'] if not c['passed'] and c.get('critical',True)]
+                if not failed or any(c['id']!='mandatory_route_edges' for c in failed):
+                    break
+                before=ir.model_dump()
+                for section in design.sections:
+                    section.gap=1;section.elevation=min(section.elevation,1)
+                ir=construct(design,request.prompt,ir.seed)
+                if ir.model_dump()==before:
+                    break
+                stage('REPAIRING','Browser evidence identified a level route failure; reducing only gaps and elevation')
+                repaired_validation=validate_route(ir)
+                if repaired_validation['overall']!='PASS':
+                    break
+                repairs.append({'attempt':len(repairs)+1,'category':'level_layout','evidence':failed,'before':before,'after':ir.model_dump()})
+                artifact('repair_report.json',{'attempts':repairs,'maximum':2})
+                save(gid,'game_ir_v2.json',ir.model_dump())
+                save(gid,'final_design.json',design.model_dump())
+                save(gid,'validation.json',repaired_validation)
+                job_store.update_job(gid,spec_json=ir.model_dump_json())
+                stage('TESTING',f'Retesting targeted route repair {len(repairs)}','START')
+                report=await asyncio.to_thread(browser_report,game_url,get_artifacts_dir()/gid/f'repair-{len(repairs)}')
+                artifact(f'qa_repair_{len(repairs)}.json',report)
+            artifact('diagnosis.json',{'failures':[{'check':c['id'],'subsystem':c.get('category','runtime'),
+                'action':'Needs developer; no arbitrary code or balancing patch applied' if c.get('category')!='level_layout' else 'See bounded route repair history'}
+                for c in report['checks'] if not c['passed']], 'repairs_applied':len(repairs)})
+            artifact("qa_report.json", report)
+            job_store.update_job(gid, latest_qa_json=json.dumps(report), qa_summary={"passed":sum(c['passed'] for c in report['checks']),"failed":sum(not c['passed'] for c in report['checks']),"critical_failed":[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
+            if report['overall']=='FAIL':
+                final="FAILED"
+                detail="Runtime QA failed; evidence recorded. Runtime/asset defects require a developer, not difficulty patches."
+            else:
+                final="READY" if report['overall']=='PASS' and not design.unsupported else "READY_WITH_WARNINGS"
+                detail="Browser checks passed" if report['overall']=='PASS' else "Specification ready; browser QA unavailable. Runtime remains unverified."
+            stage(final, detail)
+            artifact("outcome.json", {"status":final,"elapsed_seconds":round(time.monotonic()-started,2),"visual_quality":"Requires human screenshot review; functional checks are not an aesthetic score."})
+        except Exception as exc:
+            # Never persist raw provider messages: upstream errors can echo credentials/request content.
+            code = getattr(exc, 'code', 'GENERATION_FAILED')
+            safe = str(exc)[:500] if isinstance(exc, ValueError) else f"{code}: {type(exc).__name__}. Check provider configuration or retry later."
+            event_store.add_event(gid, stage="FAILED", result="FAILED", detail=safe)
+            job_store.update_job(gid, status="FAILED", stage="FAILED", error_code=code)
+
+
+@router.post("/games", status_code=202)
+async def generate(request: Generate, background: BackgroundTasks):
+    if not request.prompt.strip() or len(request.prompt.strip()) < 10:
+        raise HTTPException(422, "Describe your game in at least 10 characters")
+    gid = str(uuid.uuid4())
+    job_store.create_job(gid, request.prompt.strip(), prompt_version="2.0")
+    event_store.add_event(gid, stage="QUEUED", result="START", detail=f"Accepted {request.mode} generation request")
+    background.add_task(run, gid, request)
+    return {"game_id":gid,"status":"QUEUED"}
+
+
+@router.get("/games/{gid}")
+async def inspect(gid: str):
+    job = job_store.get_job(gid)
+    if not job or job['prompt_version'] != '2.0':
+        raise HTTPException(404, "V2 game not found")
+    artifacts = {}
+    for name in job['artifact_paths']:
+        # Paths are server-authored, but still confine reads to known JSON artifacts.
+        if Path(name).name == name and name.endswith('.json'):
+            path = get_artifacts_dir()/gid/name
+            if path.is_file():
+                artifacts[name] = json.loads(path.read_text(encoding='utf-8'))
+    return {"job":{k:v for k,v in job.items() if k not in ('spec_json','latest_qa_json')},"events":event_store.get_events(gid),"artifacts":artifacts}
+
+
+@router.get("/games/{gid}/spec")
+async def spec(gid: str):
+    job = job_store.get_job(gid)
+    if not job or job['prompt_version'] != '2.0' or not job['spec_json']:
+        raise HTTPException(404, "Specification not available yet")
+    return json.loads(job['spec_json'])
+
+
+async def reverify_job(gid: str):
+    async with _worker:
+        job=job_store.get_job(gid)
+        paths=job['artifact_paths']
+        attempt=1+sum(name.startswith('qa_retest_') for name in paths)
+        report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}')
+        name=f'qa_retest_{attempt}.json';save(gid,name,report);paths.append(name)
+        final='FAILED' if report['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
+        job_store.update_job(gid,status=final,stage=final,latest_qa_json=json.dumps(report),artifact_paths=paths,
+            qa_summary={'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks']),
+                'critical_failed':[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
+        event_store.add_event(gid,stage='TESTING',result='SUCCESS' if report['overall']=='PASS' else 'FAILED',
+            detail=f"Runtime re-verification {attempt}: {report['overall']}. Original report preserved; no new model call.",attempt=attempt+1)
+        save(gid,'outcome.json',{'status':final,'verification':attempt,'visual_quality':'Requires screenshot review; QA is functional evidence.'})
+
+
+@router.post('/games/{gid}/verify',status_code=202)
+async def reverify(gid: str,background: BackgroundTasks):
+    job=job_store.get_job(gid)
+    if not job or job['prompt_version']!='2.0' or not job['spec_json']:
+        raise HTTPException(404,'A built V2 game is required')
+    if job['status'] not in ('READY','READY_WITH_WARNINGS','FAILED'):
+        raise HTTPException(409,'A job is already running')
+    if sum(name.startswith('qa_retest_') for name in job['artifact_paths'])>=3:
+        raise HTTPException(409,'Maximum three explicit re-verifications reached')
+    job_store.update_job(gid,status='TESTING',stage='TESTING')
+    event_store.add_event(gid,stage='TESTING',result='START',detail='Explicit browser re-verification requested; original evidence preserved.')
+    background.add_task(reverify_job,gid)
+    return {'game_id':gid,'status':'TESTING'}

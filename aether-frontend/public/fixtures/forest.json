@@ -1,0 +1,246 @@
+{
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "title": "The Verdant Passage",
+  "theme": "forest",
+  "seed": 2934682564,
+  "tile_size": 36,
+  "width": 2628,
+  "height": 684,
+  "spawn": {
+    "x": 90.0,
+    "y": 476.0
+  },
+  "player": {
+    "speed": 250.0,
+    "jump": 490.0,
+    "gravity": 1100.0,
+    "health": 3,
+    "abilities": [
+      "double_jump"
+    ]
+  },
+  "objective": {
+    "type": "collect_and_exit",
+    "required": 11,
+    "total": 18
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 14,
+      "width": 8,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 10,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 17,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 24,
+      "y": 14,
+      "width": 8,
+      "kind": "ruins",
+      "moving": false
+    },
+    {
+      "x": 34,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 41,
+      "y": 15,
+      "width": 6,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 49,
+      "y": 14,
+      "width": 7,
+      "kind": "ruins",
+      "moving": false
+    },
+    {
+      "x": 58,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false
+    },
+    {
+      "x": 65,
+      "y": 15,
+      "width": 6,
+      "kind": "meadow",
+      "moving": false
+    }
+  ],
+  "entities": [
+    {
+      "x": 414.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 1
+    },
+    {
+      "x": 486.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 1
+    },
+    {
+      "x": 666.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 2
+    },
+    {
+      "x": 738.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 2
+    },
+    {
+      "x": 738.0,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 2
+    },
+    {
+      "x": 918.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 990.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 1062.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 3
+    },
+    {
+      "x": 1026.0,
+      "y": 494.0,
+      "kind": "spikes",
+      "platform": 3
+    },
+    {
+      "x": 1278.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 4
+    },
+    {
+      "x": 1350.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 4
+    },
+    {
+      "x": 1252.8,
+      "y": 510.0,
+      "kind": "checkpoint",
+      "platform": 4
+    },
+    {
+      "x": 1530.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 5
+    },
+    {
+      "x": 1602.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 5
+    },
+    {
+      "x": 1638.0,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 5
+    },
+    {
+      "x": 1818.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 6
+    },
+    {
+      "x": 1890.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 6
+    },
+    {
+      "x": 1962.0,
+      "y": 440.0,
+      "kind": "crystal",
+      "platform": 6
+    },
+    {
+      "x": 1890.0,
+      "y": 494.0,
+      "kind": "spikes",
+      "platform": 6
+    },
+    {
+      "x": 2142.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 7
+    },
+    {
+      "x": 2214.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 7
+    },
+    {
+      "x": 2394.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 8
+    },
+    {
+      "x": 2466.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 8
+    },
+    {
+      "x": 2502.0,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 8
+    },
+    {
+      "x": 2520.0,
+      "y": 504.0,
+      "kind": "exit",
+      "platform": 8
+    }
+  ],
+  "asset_pack": "kenney_pixel_platformer"
+}

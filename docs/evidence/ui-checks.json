@@ -1,0 +1,48 @@
+[
+  {
+    "id": "desktop_prompt_typing",
+    "passed": true
+  },
+  {
+    "id": "desktop_design_tab",
+    "passed": true
+  },
+  {
+    "id": "desktop_inspector_empty_honest",
+    "passed": true
+  },
+  {
+    "id": "desktop_no_horizontal_overflow",
+    "passed": true
+  },
+  {
+    "id": "desktop_no_exceptions",
+    "passed": true,
+    "errors": []
+  },
+  {
+    "id": "mobile_prompt_typing",
+    "passed": true
+  },
+  {
+    "id": "mobile_design_tab",
+    "passed": true
+  },
+  {
+    "id": "mobile_inspector_empty_honest",
+    "passed": true
+  },
+  {
+    "id": "mobile_no_horizontal_overflow",
+    "passed": true
+  },
+  {
+    "id": "touch_move",
+    "passed": true
+  },
+  {
+    "id": "mobile_no_exceptions",
+    "passed": true,
+    "errors": []
+  }
+]

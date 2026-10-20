@@ -1,0 +1,775 @@
+[
+  {
+    "id": "forest",
+    "prompt": "A magical forest platformer where I collect crystals, avoid monsters, double jump across ruins and reach an ancient shrine.",
+    "source": "fixture",
+    "live": false,
+    "design": {
+      "title": "The Verdant Passage",
+      "premise": "A magical forest platformer where I collect crystals, avoid monsters, double jump across ruins and reach an ancient shrine.",
+      "genre": "platformer",
+      "theme": "forest",
+      "difficulty": "balanced",
+      "objective": "collect_and_exit",
+      "abilities": [
+        "double_jump"
+      ],
+      "checkpoints": true,
+      "moving_platforms": false,
+      "sections": [
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ]
+    },
+    "validation": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_7_8",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    }
+  },
+  {
+    "id": "industrial",
+    "prompt": "An industrial platformer with moving machinery, dangerous obstacles, robot enemies, dash and checkpoints.",
+    "source": "fixture",
+    "live": false,
+    "design": {
+      "title": "The Copperworks",
+      "premise": "An industrial platformer with moving machinery, dangerous obstacles, robot enemies, dash and checkpoints.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "balanced",
+      "objective": "reach_exit",
+      "abilities": [
+        "dash"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        },
+        {
+          "kind": "factory",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        },
+        {
+          "kind": "factory",
+          "length": 5,
+          "elevation": -1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ]
+    },
+    "validation": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_7_8",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    }
+  },
+  {
+    "id": "tower",
+    "prompt": "A challenging precision jumping platformer with moving platforms, double jump and an ascent to the top of a tower.",
+    "source": "fixture",
+    "live": false,
+    "design": {
+      "title": "Stairway to the Stars",
+      "premise": "A challenging precision jumping platformer with moving platforms, double jump and an ascent to the top of a tower.",
+      "genre": "platformer",
+      "theme": "twilight",
+      "difficulty": "challenging",
+      "objective": "reach_exit",
+      "abilities": [
+        "double_jump"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "sections": [
+        {
+          "kind": "ascent",
+          "length": 5,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "ascent",
+          "length": 6,
+          "elevation": 2,
+          "gap": 3,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "ascent",
+          "length": 7,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        },
+        {
+          "kind": "ascent",
+          "length": 5,
+          "elevation": 2,
+          "gap": 3,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "ascent",
+          "length": 6,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "ascent",
+          "length": 7,
+          "elevation": 2,
+          "gap": 3,
+          "enemies": false,
+          "hazards": true
+        },
+        {
+          "kind": "ascent",
+          "length": 5,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "ascent",
+          "length": 6,
+          "elevation": 2,
+          "gap": 3,
+          "enemies": true,
+          "hazards": false
+        },
+        {
+          "kind": "ascent",
+          "length": 7,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ]
+    },
+    "validation": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 144,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 144,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 144,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_7_8",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 144,
+            "safe_range": 149.9,
+            "rise": 72
+          }
+        },
+        {
+          "id": "route_8_9",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    }
+  },
+  {
+    "id": "peaceful",
+    "prompt": "A peaceful easy forest platformer with no enemies, no hazards, crystals and checkpoints.",
+    "source": "fixture",
+    "live": false,
+    "design": {
+      "title": "The Verdant Passage",
+      "premise": "A peaceful easy forest platformer with no enemies, no hazards, crystals and checkpoints.",
+      "genre": "platformer",
+      "theme": "forest",
+      "difficulty": "relaxed",
+      "objective": "collect_and_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": false,
+      "sections": [
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "ruins",
+          "length": 7,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 5,
+          "elevation": -1,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        },
+        {
+          "kind": "meadow",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Offline fixture: keyword interpretation and seeded construction; no model was called."
+      ]
+    },
+    "validation": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 203.8,
+            "rise": -36
+          }
+        },
+        {
+          "id": "route_7_8",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    }
+  }
+]

@@ -160,7 +160,7 @@ def get_next_queued_job(db_path: Optional[Path] = None) -> Optional[Dict[str, An
     init_job_store(db_path)
     with get_connection(db_path) as conn:
         cursor = conn.execute(
-            "SELECT * FROM games WHERE status = 'QUEUED' ORDER BY created_at ASC LIMIT 1"
+            "SELECT * FROM games WHERE status = 'QUEUED' AND prompt_version != '2.0' ORDER BY created_at ASC LIMIT 1"
         )
         row = cursor.fetchone()
         if not row:
