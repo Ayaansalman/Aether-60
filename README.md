@@ -4,6 +4,8 @@ Aether is a no-code game creation studio. It generates sprite-based 2D platforme
 
 The active product is **`aether-frontend`**: an original landing page, creator workspace, playable preview, touch/keyboard controls, and Engineering Inspector backed by persisted events and artifacts. The separate `aether-web` Next starter is not required. Original arena routes and v1 APIs remain available.
 
+**What can it create?** See the [current engine capabilities](docs/ENGINE_CAPABILITIES.md) for both genres, supported mechanics, example prompts, controls and current limits.
+
 ```text
 Prompt → genre routing → Gemini design → validated genre-specific GameIR
        → route/connectivity checks → CC0 assets → Phaser genre adapter
@@ -62,7 +64,7 @@ Iteration 2 has 164 passing backend tests, five shared runtime behavior tests, a
 - [Four live prompt results](docs/evidence/live/summary.json)
 - [Asset sources and dimensions](aether-frontend/public/assets/README.md)
 
-Artwork: Kenney Pixel Platformer and Industrial Expansion, CC0; original procedural ice, relic and exit components use project source terms. Licenses and asset registry are bundled. No code has been pushed or deployed.
+Artwork: Kenney Pixel Platformer and Industrial Expansion, CC0; original procedural ice, relic and exit components use project source terms. Adventure assets and their original CC0 licenses are also bundled. See the asset-library documentation for provenance. Pushing source to a testing repository does not deploy or host the application.
 
 
 Adventure world design and the playable healer/crypt acceptance cases: [Iteration 6 results, verification and reproduction](docs/ITERATION6_RESULTS.md).
