@@ -1,0 +1,14 @@
+{
+  "genre": "runner",
+  "loop": "Deterministic fixture interpretation",
+  "control": "flap",
+  "requirements": [],
+  "arcade": {
+    "difficulty": "easy",
+    "progression": "gradual",
+    "theme": "sky",
+    "player": "bird",
+    "endless": true,
+    "exclusions": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "A": {
+    "speed": 210,
+    "max_speed": 280,
+    "gap_height": null,
+    "mean_width": 22.927179245099367,
+    "mean_spacing": 583.1236023438729,
+    "patterns": [
+      "mixed",
+      "rhythm",
+      "recovery",
+      "escalation",
+      "single"
+    ],
+    "repairs": 0
+  },
+  "B": {
+    "speed": 390,
+    "max_speed": 500,
+    "gap_height": null,
+    "mean_width": 145.21530717901504,
+    "mean_spacing": 523.4659152673422,
+    "patterns": [
+      "mixed",
+      "rhythm",
+      "escalation",
+      "single",
+      "recovery"
+    ],
+    "repairs": 0
+  },
+  "C": {
+    "speed": 210,
+    "max_speed": 280,
+    "gap_height": 240,
+    "mean_width": 48.1,
+    "mean_spacing": 722.4141490804586,
+    "patterns": [
+      "single",
+      "ascending",
+      "recovery",
+      "corridor",
+      "descending",
+      "alternating"
+    ],
+    "repairs": 0
+  },
+  "D": {
+    "speed": 390,
+    "max_speed": 500,
+    "gap_height": 112,
+    "mean_width": 46.975,
+    "mean_spacing": 558.4983517425034,
+    "patterns": [
+      "single",
+      "ascending",
+      "corridor",
+      "descending",
+      "alternating",
+      "recovery"
+    ],
+    "repairs": 0
+  }
+}

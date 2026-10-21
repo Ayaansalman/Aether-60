@@ -1,0 +1,27 @@
+{
+  "game_id": "908a1c6e-b131-4e79-8d2c-f1acfd509b1e",
+  "status": "READY",
+  "difficulty": "extreme",
+  "theme": "factory",
+  "speed": 390.0,
+  "challenge": {
+    "patterns": [
+      "single",
+      "rhythm",
+      "escalation",
+      "mixed",
+      "recovery"
+    ],
+    "recovery": 0.1,
+    "spacing": 0.95,
+    "precision": 0.82,
+    "transition": 155.0,
+    "sequence_length": 6,
+    "rest_every": 6
+  },
+  "qa": {
+    "passed": 7,
+    "failed": 0
+  },
+  "scope": "Actual local HTTP API, offline fixture, seed 7; real browser QA in backend subprocess. No provider calls."
+}

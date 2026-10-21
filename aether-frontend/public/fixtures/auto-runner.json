@@ -4,6 +4,25 @@
   "mode": "ground",
   "theme": "neon",
   "player": "robot",
+  "visual_style": "pixel",
+  "difficulty": "hard",
+  "progression": "gradual",
+  "challenge": {
+    "patterns": [
+      "single",
+      "rhythm",
+      "escalation",
+      "mixed",
+      "recovery"
+    ],
+    "recovery": 0.22,
+    "spacing": 1.2,
+    "precision": 0.68,
+    "transition": 110.0,
+    "sequence_length": 5,
+    "rest_every": 5
+  },
+  "exclusions": [],
   "endless": true,
   "finish_distance": 3000.0,
   "speed": 340.0,

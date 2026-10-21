@@ -1,0 +1,50 @@
+{
+  "genre": "runner",
+  "title": "Mosslight Sprint",
+  "mode": "ground",
+  "theme": "forest",
+  "player": "creature",
+  "visual_style": "pixel",
+  "difficulty": "easy",
+  "progression": "gradual",
+  "challenge": {
+    "patterns": [
+      "single",
+      "rhythm",
+      "escalation",
+      "mixed",
+      "recovery"
+    ],
+    "recovery": 0.9,
+    "spacing": 2.1,
+    "precision": 0.3,
+    "transition": 30.0,
+    "sequence_length": 3,
+    "rest_every": 2
+  },
+  "exclusions": [],
+  "endless": true,
+  "finish_distance": 3000.0,
+  "speed": 210.0,
+  "max_speed": 280.0,
+  "acceleration": 0.5,
+  "gravity": 1500.0,
+  "jump_impulse": 590.0,
+  "flap_impulse": 310.0,
+  "gap_height": 240.0,
+  "obstacles": [
+    "spike",
+    "gap",
+    "barrier"
+  ],
+  "scoring": "distance",
+  "unsupported": [],
+  "schema_version": "2.2",
+  "seed": 7,
+  "requirements": [
+    {
+      "source": "Runner control, procedural obstacles, score and restart",
+      "status": "constructed_unverified"
+    }
+  ]
+}

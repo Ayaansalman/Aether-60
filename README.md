@@ -68,3 +68,5 @@ Artwork: Kenney Pixel Platformer and Industrial Expansion, CC0; original procedu
 
 
 Adventure world design and the playable healer/crypt acceptance cases: [Iteration 6 results, verification and reproduction](docs/ITERATION6_RESULTS.md).
+
+Arcade difficulty, structured procedural challenges, physics checks and theme-specific presentation: [Iteration 8 results and reproduction](docs/ITERATION8_RESULTS.md).

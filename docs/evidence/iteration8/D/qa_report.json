@@ -1,0 +1,111 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "runner_input",
+      "passed": true,
+      "critical": true,
+      "details": [
+        {
+          "mode": "flap",
+          "state": "playing",
+          "score": 0,
+          "distance": 6.500416666666666,
+          "y": 250.3125,
+          "vy": 25,
+          "active": 1,
+          "serial": 1,
+          "generation": 2
+        },
+        {
+          "mode": "flap",
+          "state": "playing",
+          "score": 0,
+          "distance": 61.77638888888888,
+          "y": 222.33333333333334,
+          "vy": -97.5,
+          "active": 1,
+          "serial": 1,
+          "generation": 2
+        }
+      ]
+    },
+    {
+      "id": "repeatable_flap",
+      "passed": true,
+      "critical": true,
+      "details": "Real keyboard airborne flap"
+    },
+    {
+      "id": "pointer_flap",
+      "passed": true,
+      "critical": true,
+      "details": "Pointer event applies impulse"
+    },
+    {
+      "id": "bounds_death",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "mode": "flap",
+        "state": "lost",
+        "score": 0,
+        "distance": 3.250138888888889,
+        "y": 10.104166666666666,
+        "vy": 12.5,
+        "active": 0,
+        "serial": 1,
+        "generation": 3
+      }
+    },
+    {
+      "id": "rapid_restart",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "mode": "flap",
+        "state": "playing",
+        "score": 0,
+        "distance": 3.250138888888889,
+        "y": 250.10416666666666,
+        "vy": 12.5,
+        "active": 1,
+        "serial": 1,
+        "generation": 4
+      }
+    },
+    {
+      "id": "score_once",
+      "passed": true,
+      "critical": true,
+      "details": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": "obstacle_collision",
+      "passed": true,
+      "critical": true,
+      "details": "lost"
+    },
+    {
+      "id": "endless_bounded_state",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "active": 1,
+        "serial": 1714,
+        "endless": true,
+        "pending": 0
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "details": []
+    }
+  ],
+  "scope": "Real keyboard/pointer input plus disclosed controlled state for collision/scoring and accelerated generation; not autonomous survival."
+}

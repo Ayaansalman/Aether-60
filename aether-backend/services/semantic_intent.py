@@ -15,24 +15,39 @@ class Requirement(BaseModel):
     count: int | None = Field(default=None,ge=0,le=100)
     scope: Literal['game','same_level','separate_levels']='game'
 
+class ArcadeIntent(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    difficulty: Literal['easy','medium','hard','extreme'] | None = None
+    progression: Literal['stable','gradual','surge'] | None = None
+    theme: Literal['neon','factory','forest','sky','ice'] | None = None
+    player: Literal['robot','creature','bird','cube'] | None = None
+    endless: bool | None = None
+    exclusions: list[Literal['spike','gap','laser','barrier']] | None = None
+
 class Intent(BaseModel):
     model_config=ConfigDict(extra='forbid')
     genre: Literal['platformer','adventure','runner','unsupported']
     loop: str
     control: Literal['platform','top_down','auto_jump','flap','unsupported']
     requirements: list[Requirement]=Field(default_factory=list)
+    arcade: ArcadeIntent | None = None
 
 def interpret(prompt, mode):
     if mode=='fixture':
         from services.game_factory import genre_for_prompt
         genre=genre_for_prompt(prompt)
         flap=bool(re.search(r'flap|tap.*(?:fly|airborne)|flying.*(?:tap|space)',prompt,re.I))
-        return Intent(genre=genre,loop='Deterministic fixture interpretation',control='flap' if flap else 'auto_jump' if genre=='runner' else 'top_down' if genre=='adventure' else 'platform'), {'provider':'fixture','live':False}
+        arcade=None
+        if genre=='runner':
+            from services.runner import fixture_design
+            d=fixture_design(prompt)
+            arcade=ArcadeIntent(**{k:getattr(d,k) for k in ArcadeIntent.model_fields})
+        return Intent(genre=genre,loop='Deterministic fixture interpretation',control='flap' if flap else 'auto_jump' if genre=='runner' else 'top_down' if genre=='adventure' else 'platform',arcade=arcade), {'provider':'fixture','live':False}
     from providers.factory import get_provider
     from providers.mock import MockModelProvider
     provider=get_provider()
     if isinstance(provider,MockModelProvider): raise ValueError('Live interpretation requires configured provider')
-    result=provider.complete('Interpret the requested game semantically. Return JSON only, no code. Select platformer for manual run/jump or boss arenas; adventure for top-down exploration/quests; runner for automatic horizontal scrolling survival, including gravity plus flap impulse. Unsupported genres must be explicit. Enumerate important constraints with verbatim source substrings, intended meaning, runtime capability, dependencies, and concrete verification. Preserve exact counts in count, biome names in biomes, and same_level versus separate_levels in scope. Preserve exclusions, win conditions, control model and environmental physics. For adventure requests use quest_collect for keys/items, quest_activate for switches, quest_unlock for doors, adventure_combat for monsters, and treasure_finish for final treasure. quest_delivery is ONLY an item return to an NPC; finite_finish is ONLY a finite runner. Dark and flower garden regions use dark/garden biome IDs. Sword combat is approximated by platformer projectiles; never claim implemented melee. Schema: '+json.dumps(Intent.model_json_schema()),prompt)
+    result=provider.complete('Interpret the requested game semantically. Return JSON only, no code. Select platformer for manual run/jump or boss arenas; adventure for top-down exploration/quests; runner for automatic horizontal scrolling survival, including gravity plus flap impulse. Unsupported genres must be explicit. Enumerate important constraints with verbatim source substrings, intended meaning, runtime capability, dependencies, and concrete verification. Preserve exact counts in count, biome names in biomes, and same_level versus separate_levels in scope. Preserve exclusions, win conditions, control model and environmental physics. For runner requests also fill arcade with explicitly requested difficulty (very difficult means extreme), progression, theme (industrial factory versus neon city), player, endless and exclusions; leave unspecified fields null. These constraints bind the designer and fidelity report. For adventure requests use quest_collect for keys/items, quest_activate for switches, quest_unlock for doors, adventure_combat for monsters, and treasure_finish for final treasure. quest_delivery is ONLY an item return to an NPC; finite_finish is ONLY a finite runner. Dark and flower garden regions use dark/garden biome IDs. Sword combat is approximated by platformer projectiles; never claim implemented melee. Schema: '+json.dumps(Intent.model_json_schema()),prompt)
     intent=Intent.model_validate_json(re.sub(r'^```(?:json)?\s*|\s*```$','',result.text.strip()))
     if any(r.source.lower() not in prompt.lower() for r in intent.requirements): raise ValueError('Intent sources must quote original prompt')
     return intent, {'provider':type(provider).__name__,'model':result.model,'live':True}
@@ -94,6 +109,8 @@ def fidelity(ir, intent, qa=None):
     witnesses['treasure_finish']=genre=='adventure' and any(q['kind']=='collect' and any(a['id']==q['target'] and a['kind']=='treasure' for a in actors) for q in data.get('quests',[]))
     expected_control='flap' if genre=='runner' and data['mode']=='flap' else 'auto_jump' if genre=='runner' else 'top_down' if genre=='adventure' else 'platform'
     root_ok=intent.get('genre',genre)==genre and intent.get('control',expected_control)==expected_control
+    arcade_checks={k:{'requested':v,'actual':data.get(k),'preserved':data.get(k)==v} for k,v in (intent.get('arcade') or {}).items() if v is not None}
+    root_ok=root_ok and all(c['preserved'] for c in arcade_checks.values())
     checks={c['id']:c['passed'] for c in (qa or {}).get('checks',[])}
     result=[]
     for req in intent.get('requirements',[]):
@@ -122,4 +139,4 @@ def fidelity(ir, intent, qa=None):
         status='unsupported' if cap=='unsupported' or req.get('status')=='unsupported' else 'failed' if not built else 'approximated' if cap in ('sword_melee','visual_theme') or req.get('status')=='approximated' else 'verified' if check and checks.get(check) else 'constructed_unverified' if check else 'validated_constraint'
         if check in checks and not checks[check]:status='failed'
         result.append({**req,'requested_capability':req['capability'],'capability':cap,'bound_biomes':sorted(requested_biomes),'constructed':built,'status':status,'ir_path':path,'runtime_check':check,'runtime_verified':bool(check and checks.get(check))})
-    return {'control_preserved':root_ok,'overall':'FAIL' if not root_ok or any(r['status']=='failed' for r in result) else 'WARN' if any(r['status'] in ('approximated','unsupported','constructed_unverified') for r in result) else 'PASS','requirements':result,'scope':'Structured construction witnesses plus specific runtime checks; visual style needs human review.'}
+    return {'control_preserved':root_ok,'arcade_constraints':arcade_checks,'overall':'FAIL' if not root_ok or any(r['status']=='failed' for r in result) else 'WARN' if any(r['status'] in ('approximated','unsupported','constructed_unverified') for r in result) else 'PASS','requirements':result,'scope':'Structured construction witnesses plus specific runtime checks; visual style needs human review.'}

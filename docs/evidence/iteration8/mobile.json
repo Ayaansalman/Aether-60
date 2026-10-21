@@ -1,0 +1,32 @@
+[
+  {
+    "case": "A",
+    "input": {
+      "mode": "ground",
+      "state": "playing",
+      "score": 4,
+      "distance": 40.259583333333325,
+      "y": 372.1041666666667,
+      "vy": -415,
+      "active": 1,
+      "serial": 4,
+      "generation": 2
+    },
+    "passed": true
+  },
+  {
+    "case": "D",
+    "input": {
+      "mode": "flap",
+      "state": "playing",
+      "score": 0,
+      "distance": 78.04166666666666,
+      "y": 235.25,
+      "vy": -160,
+      "active": 1,
+      "serial": 1,
+      "generation": 2
+    },
+    "passed": true
+  }
+]

@@ -1,0 +1,89 @@
+{
+  "seconds": 12.203999999999724,
+  "final": {
+    "mode": "ground",
+    "state": "playing",
+    "score": 489,
+    "distance": 4896.582083333335,
+    "y": 430,
+    "vy": 0,
+    "active": 2,
+    "serial": 12,
+    "generation": 2
+  },
+  "errors": [],
+  "assets_loaded": [
+    "industrial.png",
+    "characters.png",
+    "background-industrial.png"
+  ],
+  "samples": [
+    {
+      "distance": 6.500416666666666,
+      "score": 0,
+      "y": 430,
+      "speed": 390.03333333333336
+    },
+    {
+      "distance": 433.487638888889,
+      "score": 43,
+      "y": 430,
+      "speed": 392.21666666666664
+    },
+    {
+      "distance": 866.145138888889,
+      "score": 86,
+      "y": 396.8541666666667,
+      "speed": 394.41666666666663
+    },
+    {
+      "distance": 1321.056388888889,
+      "score": 132,
+      "y": 394.4166666666667,
+      "speed": 396.71666666666664
+    },
+    {
+      "distance": 1745.3675,
+      "score": 174,
+      "y": 430,
+      "speed": 398.85
+    },
+    {
+      "distance": 2192.00625,
+      "score": 219,
+      "y": 320.3541666666667,
+      "speed": 401.0833333333335
+    },
+    {
+      "distance": 2627.6958333333337,
+      "score": 262,
+      "y": 430,
+      "speed": 403.2500000000002
+    },
+    {
+      "distance": 3072.4900000000002,
+      "score": 307,
+      "y": 374.1666666666667,
+      "speed": 405.45000000000033
+    },
+    {
+      "distance": 3512.9101388888894,
+      "score": 351,
+      "y": 430,
+      "speed": 407.61666666666696
+    },
+    {
+      "distance": 3996.666666666668,
+      "score": 399,
+      "y": 430,
+      "speed": 409.98333333333346
+    },
+    {
+      "distance": 4441.997916666667,
+      "score": 444,
+      "y": 320.3541666666667,
+      "speed": 412.15000000000003
+    }
+  ],
+  "scope": "Real Space keyboard events selected from read-only world telemetry; no position, collision or velocity overrides. Scripted controller, not human enjoyment testing."
+}

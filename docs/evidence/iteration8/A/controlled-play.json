@@ -1,0 +1,94 @@
+{
+  "seconds": 12.218999999999141,
+  "final": {
+    "mode": "ground",
+    "state": "playing",
+    "score": 259,
+    "distance": 2597.434583333333,
+    "y": 430,
+    "vy": 0,
+    "active": 3,
+    "serial": 7,
+    "generation": 2
+  },
+  "errors": [],
+  "assets_loaded": [
+    "terrain.png",
+    "background-forest.png"
+  ],
+  "samples": [
+    {
+      "distance": 1.7500347222222221,
+      "score": 0,
+      "y": 430,
+      "speed": 210.00416666666666
+    },
+    {
+      "distance": 226.0411458333333,
+      "score": 22,
+      "y": 430,
+      "speed": 210.5375
+    },
+    {
+      "distance": 464.9737847222222,
+      "score": 46,
+      "y": 430,
+      "speed": 211.10416666666666
+    },
+    {
+      "distance": 697.4931597222223,
+      "score": 69,
+      "y": 319.1875,
+      "speed": 211.65416666666667
+    },
+    {
+      "distance": 923.5442708333334,
+      "score": 92,
+      "y": 430,
+      "speed": 212.1875
+    },
+    {
+      "distance": 1150.1642708333331,
+      "score": 115,
+      "y": 430,
+      "speed": 212.72083333333336
+    },
+    {
+      "distance": 1384.4619791666667,
+      "score": 138,
+      "y": 430,
+      "speed": 213.2708333333334
+    },
+    {
+      "distance": 1608.6741666666667,
+      "score": 160,
+      "y": 430,
+      "speed": 213.7958333333334
+    },
+    {
+      "distance": 1847.7269097222227,
+      "score": 184,
+      "y": 317.875,
+      "speed": 214.35416666666674
+    },
+    {
+      "distance": 2083.821284722222,
+      "score": 208,
+      "y": 430,
+      "speed": 214.9041666666667
+    },
+    {
+      "distance": 2316.9297916666665,
+      "score": 231,
+      "y": 430,
+      "speed": 215.44583333333335
+    },
+    {
+      "distance": 2536.226909722222,
+      "score": 253,
+      "y": 430,
+      "speed": 215.95416666666665
+    }
+  ],
+  "scope": "Real Space keyboard events selected from read-only world telemetry; no position, collision or velocity overrides. Scripted controller, not human enjoyment testing."
+}

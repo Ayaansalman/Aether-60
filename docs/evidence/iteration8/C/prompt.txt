@@ -1,0 +1,1 @@
+Create a friendly colorful flying game for beginners. I control a little bird by tapping to stay airborne. Include large obstacle gaps, slow scrolling, gentle height changes, and forgiving difficulty.

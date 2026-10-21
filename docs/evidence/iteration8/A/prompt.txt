@@ -1,0 +1,1 @@
+Create an easy endless runner through an enchanted forest. The player is a small woodland creature that automatically runs forward. Include gentle jumps, widely spaced obstacles, charming forest scenery, and gradual difficulty progression.

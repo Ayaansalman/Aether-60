@@ -1,0 +1,38 @@
+{
+  "control_preserved": true,
+  "arcade_constraints": {
+    "difficulty": {
+      "requested": "easy",
+      "actual": "easy",
+      "preserved": true
+    },
+    "progression": {
+      "requested": "gradual",
+      "actual": "gradual",
+      "preserved": true
+    },
+    "theme": {
+      "requested": "sky",
+      "actual": "sky",
+      "preserved": true
+    },
+    "player": {
+      "requested": "bird",
+      "actual": "bird",
+      "preserved": true
+    },
+    "endless": {
+      "requested": true,
+      "actual": true,
+      "preserved": true
+    },
+    "exclusions": {
+      "requested": [],
+      "actual": [],
+      "preserved": true
+    }
+  },
+  "overall": "PASS",
+  "requirements": [],
+  "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+}

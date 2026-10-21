@@ -7,6 +7,8 @@ Kenney Pixel Platformer 1.2 and Industrial Expansion, CC0.
 
 Original licenses are in `platformer/`. Atlases are packed (no spacing): terrain 360×162, industrial 288×126, characters 216×72. Environment frames are 18×18; character frames are 24×24. Repeating 48×72 backgrounds are crops from the original background atlas. No redundant individual tiles are bundled.
 
+Iteration 8 arcade presentation reuses these same CC0 atlases and backgrounds through `src/game/runner/presentation.ts`, selecting forest terrain or factory/neon industrial surfaces and the matching parallax background. No new asset files were downloaded. Arcade bird/woodland-fox animation, ice cavern shapes, clouds, lighting and effects are original pixel primitives under project source terms, not attributed to Kenney. Pixel sampling is nearest-neighbor; environment tiles use 18px source frames at 2x scale. Ice terrain uses original frost geometry rather than reusing brown dirt tiles.
+
 `registry.json` records sources, dimensions, semantic roles, animations and SHA-256 checksums. Update checksums when intentionally replacing art. The backend validates dependencies before building. Two green player frames provide idle/run/jump/fall presentation; damage uses blinking because the pack has no dedicated damage animation.
 # Iteration 2 procedural environment components
 

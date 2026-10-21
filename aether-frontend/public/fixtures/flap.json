@@ -4,6 +4,26 @@
   "mode": "flap",
   "theme": "sky",
   "player": "creature",
+  "visual_style": "pixel",
+  "difficulty": "medium",
+  "progression": "gradual",
+  "challenge": {
+    "patterns": [
+      "single",
+      "alternating",
+      "ascending",
+      "descending",
+      "corridor",
+      "recovery"
+    ],
+    "recovery": 0.4,
+    "spacing": 1.5,
+    "precision": 0.5,
+    "transition": 65.0,
+    "sequence_length": 4,
+    "rest_every": 4
+  },
+  "exclusions": [],
   "endless": true,
   "finish_distance": 3000.0,
   "speed": 280.0,

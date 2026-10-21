@@ -1,0 +1,1 @@
+Create an extremely difficult endless runner through a dangerous futuristic factory. The player automatically sprints forward and must perform precision jumps across gaps, spikes, and rapid obstacle sequences. Make the game fast, intense, and increasingly challenging.

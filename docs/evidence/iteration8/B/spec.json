@@ -1,0 +1,49 @@
+{
+  "genre": "runner",
+  "title": "Foundry Sprint",
+  "mode": "ground",
+  "theme": "factory",
+  "player": "robot",
+  "visual_style": "pixel",
+  "difficulty": "extreme",
+  "progression": "gradual",
+  "challenge": {
+    "patterns": [
+      "single",
+      "rhythm",
+      "escalation",
+      "mixed",
+      "recovery"
+    ],
+    "recovery": 0.1,
+    "spacing": 0.95,
+    "precision": 0.82,
+    "transition": 155.0,
+    "sequence_length": 6,
+    "rest_every": 6
+  },
+  "exclusions": [],
+  "endless": true,
+  "finish_distance": 3000.0,
+  "speed": 390.0,
+  "max_speed": 500.0,
+  "acceleration": 2.0,
+  "gravity": 1500.0,
+  "jump_impulse": 590.0,
+  "flap_impulse": 310.0,
+  "gap_height": 112.0,
+  "obstacles": [
+    "spike",
+    "gap"
+  ],
+  "scoring": "distance",
+  "unsupported": [],
+  "schema_version": "2.2",
+  "seed": 7,
+  "requirements": [
+    {
+      "source": "Runner control, procedural obstacles, score and restart",
+      "status": "constructed_unverified"
+    }
+  ]
+}

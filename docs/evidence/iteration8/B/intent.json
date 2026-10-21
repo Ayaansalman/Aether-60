@@ -1,0 +1,14 @@
+{
+  "genre": "runner",
+  "loop": "Deterministic fixture interpretation",
+  "control": "auto_jump",
+  "requirements": [],
+  "arcade": {
+    "difficulty": "extreme",
+    "progression": "gradual",
+    "theme": "factory",
+    "player": "robot",
+    "endless": true,
+    "exclusions": []
+  }
+}

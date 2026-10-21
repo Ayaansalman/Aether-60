@@ -1,0 +1,87 @@
+{
+  "seconds": 12.186999999999898,
+  "final": {
+    "mode": "flap",
+    "state": "playing",
+    "score": 3,
+    "distance": 2597.434583333333,
+    "y": 253.7083333333331,
+    "vy": 290,
+    "active": 2,
+    "serial": 5,
+    "generation": 2
+  },
+  "errors": [],
+  "assets_loaded": [
+    "terrain.png"
+  ],
+  "samples": [
+    {
+      "distance": 3.5001041666666666,
+      "score": 0,
+      "y": 250.3125,
+      "speed": 210.00833333333333
+    },
+    {
+      "distance": 236.56874999999997,
+      "score": 0,
+      "y": 246.97916666666663,
+      "speed": 210.5625
+    },
+    {
+      "distance": 468.4922916666667,
+      "score": 0,
+      "y": 251.91666666666657,
+      "speed": 211.1125
+    },
+    {
+      "distance": 701.0208333333335,
+      "score": 0,
+      "y": 255.29166666666657,
+      "speed": 211.6625
+    },
+    {
+      "distance": 923.5442708333334,
+      "score": 1,
+      "y": 237.39583333333317,
+      "speed": 212.1875
+    },
+    {
+      "distance": 1160.8010416666666,
+      "score": 1,
+      "y": 246.74999999999983,
+      "speed": 212.74583333333337
+    },
+    {
+      "distance": 1388.0165972222223,
+      "score": 2,
+      "y": 255.66666666666646,
+      "speed": 213.27916666666673
+    },
+    {
+      "distance": 1622.9284722222224,
+      "score": 2,
+      "y": 227.79166666666643,
+      "speed": 213.82916666666677
+    },
+    {
+      "distance": 1862.0184375000003,
+      "score": 2,
+      "y": 230.4791666666664,
+      "speed": 214.38750000000007
+    },
+    {
+      "distance": 2105.314409722222,
+      "score": 2,
+      "y": 231.22916666666643,
+      "speed": 214.9541666666667
+    },
+    {
+      "distance": 2345.660625,
+      "score": 3,
+      "y": 230.58333333333312,
+      "speed": 215.51250000000002
+    }
+  ],
+  "scope": "Real Space keyboard events selected from read-only world telemetry; no position, collision or velocity overrides. Scripted controller, not human enjoyment testing."
+}
