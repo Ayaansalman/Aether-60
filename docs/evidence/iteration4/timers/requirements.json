@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "id": "forest_environment",
+      "source": "forest",
+      "span": [
+        11,
+        17
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "environment_composition",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "forest_environment",
+        "qa": "environment_composition"
+      }
+    },
+    {
+      "id": "timed_objective",
+      "source": "within 45 seconds",
+      "span": [
+        71,
+        88
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "timed_objective",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "timed_objective",
+        "qa": "timed_objective"
+      }
+    },
+    {
+      "id": "survival_objective",
+      "source": "Survive for 2 seconds",
+      "span": [
+        30,
+        51
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "survival_objective",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "survival_objective",
+        "qa": "survival_objective"
+      }
+    }
+  ],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

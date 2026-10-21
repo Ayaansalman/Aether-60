@@ -5,13 +5,21 @@ export interface Platform {
   kind: string;
   moving: boolean;
   route?: "main" | "optional";
+  motion?: Motion;
 }
+export interface Motion { axis: 'horizontal' | 'vertical'; pattern: 'sine' | 'ping_pong'; distance: number; period_ms: number }
+export interface EnemyConfig { health: number; cooldown_ms: number; telegraph_ms: number; radius: number }
+export interface Goal { id: string; kind: 'defeat' | 'activate' | 'unlock' | 'collect' | 'survive' | 'time_limit'; count: number; seconds: number; targets: string[]; enemy_behavior?: Entity['behavior'] | null }
+export interface BehaviorLink { sources: string[]; target: string; condition: 'all' | 'any'; action: 'open_door' }
 export interface Entity {
+  id?: string;
   x: number;
   y: number;
-  kind: "crystal" | "enemy" | "spikes" | "checkpoint" | "exit" | "icicle" | "timed_hazard";
+  kind: "crystal" | "enemy" | "spikes" | "checkpoint" | "exit" | "icicle" | "timed_hazard" | 'switch' | 'pressure_plate' | 'door';
   platform: number;
-  behavior?: "patrol" | "chase" | "shooter";
+  behavior?: "patrol" | "chase" | "shooter" | 'turret' | 'ambusher';
+  ai?: EnemyConfig;
+  activation?: 'interact' | 'touch' | 'pressure' | 'proximity' | 'projectile';
   trigger?: "proximity" | "timer";
   period_ms?: number;
   radius?: number;
@@ -44,8 +52,12 @@ export interface PlatformerIR {
   difficulty?: "relaxed" | "balanced" | "challenging";
   briefing?: string;
   topology?: "journey" | "ascent" | "terraces" | "cavern";
+  player_attack?: 'stomp' | 'projectile';
+  goals?: Goal[];
+  links?: BehaviorLink[];
+  campaign_goals?: Goal[];
   levels?: (Pick<PlatformerIR, "title" | "width" | "height" | "spawn" | "objective" | "platforms" | "entities" | "camera_mode"> &
-    Partial<Pick<PlatformerIR, "theme" | "slippery" | "exit_style" | "exit_indicator" | "collectible" | "difficulty" | "briefing" | "topology">>)[];
+    Partial<Pick<PlatformerIR, "theme" | "slippery" | "exit_style" | "exit_indicator" | "collectible" | "difficulty" | "briefing" | "topology" | 'player_attack' | 'goals' | 'links'>> )[];
   requirements?: { id: string; source: string; status: string; verified?: boolean }[];
 }
 export interface StudioJob {

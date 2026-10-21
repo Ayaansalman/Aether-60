@@ -1,0 +1,4993 @@
+{
+  "overall": "FAIL",
+  "checks": [
+    {
+      "id": "horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L1_enemy_5",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 705.5333333333325,
+              "y": 521.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 3266.9
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L1_enemy_5",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 688.1999999999986,
+              "y": 521.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 128.11111111111114,
+          "y": 480,
+          "vx": 183.33333333333331,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 4242,
+          "time": 3983.5
+        }
+      }
+    },
+    {
+      "id": "jump",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L1_enemy_5",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 720.6999999999997,
+              "y": 521.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 4383.4
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L1_enemy_5",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 707.6999999999992,
+              "y": 521.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 415.1388888888889,
+          "vx": 0,
+          "vy": -306.66666666666686,
+          "grounded": false,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 4242,
+          "time": 4866.7
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "method": "Actual decision state, motion or telegraphed projectile attack; controlled player placement",
+        "before": {
+          "id": "L1_enemy_5",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 721.7833333333331,
+          "y": 521.3,
+          "vx": -65
+        },
+        "after": {
+          "id": "L1_enemy_5",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 710.9499999999994,
+          "y": 521.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "closed_door_collision",
+      "passed": false,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": [
+              "L1_crystal_8",
+              "L1_crystal_9"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L1_enemy_5",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 709.866666666666,
+              "y": 521.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 4,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 1091.9166666666667,
+          "y": 430.80555555555554,
+          "vx": 188.33333333333331,
+          "vy": 183.33333333333334,
+          "grounded": false,
+          "health": 5,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 4242,
+          "time": 6650
+        }
+      }
+    },
+    {
+      "id": "pressure_plate",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "method": "Actual pressure/contact/proximity/key or projectile activation and linked door body removal",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_8",
+              "L1_crystal_9"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L1_enemy_5",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 702.2833333333324,
+              "y": 521.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 4,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 399.59999999999997,
+          "y": 516,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 6966.7
+        }
+      }
+    },
+    {
+      "id": "open_door_passage",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_8",
+              "L1_crystal_9"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 1152,
+            "y": 449
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L1_enemy_5",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 663.283333333331,
+              "y": 521.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 4,
+          "landedPlatforms": [
+            0,
+            1,
+            3
+          ],
+          "x": 1193.7777777777796,
+          "y": 480,
+          "vx": 149.99999999999997,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": 3,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 4242,
+          "time": 7966.7
+        }
+      }
+    },
+    {
+      "id": "enemy_ambusher",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "method": "Actual decision state, motion or telegraphed projectile attack; controlled player placement",
+        "before": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "windup",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 568.2
+            },
+            {
+              "x": 1188,
+              "y": 532.2
+            },
+            {
+              "x": 1908,
+              "y": 568.2
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 5,
+          "landedPlatforms": [
+            0,
+            6
+          ],
+          "x": 1640.2,
+          "y": 588,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 8550
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "recover",
+              "health": 1,
+              "x": 1629.866666666668,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 565
+            },
+            {
+              "x": 1188,
+              "y": 529
+            },
+            {
+              "x": 1908,
+              "y": 565
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 5,
+          "landedPlatforms": [
+            0,
+            6
+          ],
+          "x": 1635.088888888889,
+          "y": 575.9166666666667,
+          "vx": 0,
+          "vy": -108.33333333333331,
+          "grounded": false,
+          "health": 4,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 4242,
+          "time": 9316.6
+        }
+      }
+    },
+    {
+      "id": "enemy_shooter",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "method": "Actual decision state, motion or telegraphed projectile attack; controlled player placement",
+        "before": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "windup",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 570.6
+            },
+            {
+              "x": 1188,
+              "y": 534.6
+            },
+            {
+              "x": 1908,
+              "y": 570.6
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 6,
+          "landedPlatforms": [
+            0,
+            9
+          ],
+          "x": 2360.2000000000003,
+          "y": 552,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 9916.6
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "recover",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 562.6
+            },
+            {
+              "x": 1188,
+              "y": 526.6
+            },
+            {
+              "x": 1908,
+              "y": 562.6
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 1,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 6,
+          "landedPlatforms": [
+            0,
+            9
+          ],
+          "x": 2356.5333333333333,
+          "y": 546.25,
+          "vx": -93.33333333333331,
+          "vy": -163.33333333333331,
+          "grounded": true,
+          "health": 4,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 4242,
+          "time": 10666.5
+        }
+      }
+    },
+    {
+      "id": "enemy_turret",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "method": "Actual decision state, motion or telegraphed projectile attack; controlled player placement",
+        "before": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "windup",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 577.8
+            },
+            {
+              "x": 1188,
+              "y": 541.8
+            },
+            {
+              "x": 1908,
+              "y": 577.8
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 7,
+          "landedPlatforms": [
+            0,
+            3
+          ],
+          "x": 920.1999999999999,
+          "y": 588,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 11433.2
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "recover",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 557
+            },
+            {
+              "x": 1188,
+              "y": 521
+            },
+            {
+              "x": 1908,
+              "y": 557
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 1,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 7,
+          "landedPlatforms": [
+            0,
+            3
+          ],
+          "x": 920.1999999999999,
+          "y": 588,
+          "vx": -160,
+          "vy": -200,
+          "grounded": true,
+          "health": 4,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 4242,
+          "time": 12149.9
+        }
+      }
+    },
+    {
+      "id": "moving_platform_motion",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "before": [
+          {
+            "x": 468,
+            "y": 561
+          },
+          {
+            "x": 1188,
+            "y": 525
+          },
+          {
+            "x": 1908,
+            "y": 561
+          },
+          {
+            "x": 2268,
+            "y": 513
+          }
+        ],
+        "after": [
+          {
+            "x": 468,
+            "y": 576.2
+          },
+          {
+            "x": 1188,
+            "y": 540.2
+          },
+          {
+            "x": 1908,
+            "y": 576.2
+          },
+          {
+            "x": 2268,
+            "y": 513
+          }
+        ]
+      }
+    },
+    {
+      "id": "vertical_platform_ride",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "samples": [
+          {
+            "ready": true,
+            "levelIndex": 1,
+            "levelCount": 2,
+            "levelTitle": "Security summit",
+            "topology": "journey",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 19
+            },
+            "goals": [
+              {
+                "id": "L2_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 3,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_doors_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "campaign_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 4,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L2_crystal_1"
+              ]
+            },
+            "triggers": [
+              {
+                "id": "L2_trigger_0",
+                "activation": "projectile",
+                "x": 435.59999999999997,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L2_door_0",
+                "x": 1314,
+                "y": 486,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "playerShotsFired": 0,
+            "playerAttack": "projectile",
+            "respawn": {
+              "x": 90,
+              "y": 548
+            },
+            "exitAlpha": 1,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L2_enemy_6",
+                "behavior": "turret",
+                "phase": "idle",
+                "health": 2,
+                "x": 835.1999999999999,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_15",
+                "behavior": "ambusher",
+                "phase": "idle",
+                "health": 1,
+                "x": 1555.2,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_23",
+                "behavior": "shooter",
+                "phase": "idle",
+                "health": 1,
+                "x": 2275.2000000000003,
+                "y": 557.3000000000001,
+                "vx": 0
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 468,
+                "y": 571.4
+              },
+              {
+                "x": 1188,
+                "y": 535.4
+              },
+              {
+                "x": 1908,
+                "y": 571.4
+              },
+              {
+                "x": 2268,
+                "y": 513
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 9,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 468,
+            "y": 538.4,
+            "vx": 0,
+            "vy": 47.99999999999727,
+            "grounded": true,
+            "health": 5,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 4242,
+            "time": 13966.4
+          },
+          {
+            "ready": true,
+            "levelIndex": 1,
+            "levelCount": 2,
+            "levelTitle": "Security summit",
+            "topology": "journey",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 19
+            },
+            "goals": [
+              {
+                "id": "L2_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 3,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_doors_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "campaign_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 4,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L2_crystal_1"
+              ]
+            },
+            "triggers": [
+              {
+                "id": "L2_trigger_0",
+                "activation": "projectile",
+                "x": 435.59999999999997,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L2_door_0",
+                "x": 1314,
+                "y": 486,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "playerShotsFired": 0,
+            "playerAttack": "projectile",
+            "respawn": {
+              "x": 90,
+              "y": 548
+            },
+            "exitAlpha": 1,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L2_enemy_6",
+                "behavior": "turret",
+                "phase": "idle",
+                "health": 2,
+                "x": 835.1999999999999,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_15",
+                "behavior": "ambusher",
+                "phase": "idle",
+                "health": 1,
+                "x": 1555.2,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_23",
+                "behavior": "shooter",
+                "phase": "idle",
+                "health": 1,
+                "x": 2275.2000000000003,
+                "y": 557.3000000000001,
+                "vx": 0
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 468,
+                "y": 583.4
+              },
+              {
+                "x": 1188,
+                "y": 547.4
+              },
+              {
+                "x": 1908,
+                "y": 583.4
+              },
+              {
+                "x": 2268,
+                "y": 513
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 9,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 468,
+            "y": 550.4,
+            "vx": 0,
+            "vy": -48.00000000000409,
+            "grounded": true,
+            "health": 5,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 4242,
+            "time": 14266.4
+          },
+          {
+            "ready": true,
+            "levelIndex": 1,
+            "levelCount": 2,
+            "levelTitle": "Security summit",
+            "topology": "journey",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 19
+            },
+            "goals": [
+              {
+                "id": "L2_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 3,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_doors_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "campaign_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 4,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L2_crystal_1"
+              ]
+            },
+            "triggers": [
+              {
+                "id": "L2_trigger_0",
+                "activation": "projectile",
+                "x": 435.59999999999997,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L2_door_0",
+                "x": 1314,
+                "y": 486,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "playerShotsFired": 0,
+            "playerAttack": "projectile",
+            "respawn": {
+              "x": 90,
+              "y": 548
+            },
+            "exitAlpha": 1,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L2_enemy_6",
+                "behavior": "turret",
+                "phase": "idle",
+                "health": 2,
+                "x": 835.1999999999999,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_15",
+                "behavior": "ambusher",
+                "phase": "idle",
+                "health": 1,
+                "x": 1555.2,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_23",
+                "behavior": "shooter",
+                "phase": "idle",
+                "health": 1,
+                "x": 2275.2000000000003,
+                "y": 557.3000000000001,
+                "vx": 0
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 468,
+                "y": 569
+              },
+              {
+                "x": 1188,
+                "y": 533
+              },
+              {
+                "x": 1908,
+                "y": 569
+              },
+              {
+                "x": 2268,
+                "y": 513
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 9,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 468,
+            "y": 536,
+            "vx": 0,
+            "vy": -48.00000000000409,
+            "grounded": true,
+            "health": 5,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 4242,
+            "time": 14583.1
+          },
+          {
+            "ready": true,
+            "levelIndex": 1,
+            "levelCount": 2,
+            "levelTitle": "Security summit",
+            "topology": "journey",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 19
+            },
+            "goals": [
+              {
+                "id": "L2_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 3,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_doors_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "campaign_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 4,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L2_crystal_1"
+              ]
+            },
+            "triggers": [
+              {
+                "id": "L2_trigger_0",
+                "activation": "projectile",
+                "x": 435.59999999999997,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L2_door_0",
+                "x": 1314,
+                "y": 486,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "playerShotsFired": 0,
+            "playerAttack": "projectile",
+            "respawn": {
+              "x": 90,
+              "y": 548
+            },
+            "exitAlpha": 1,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L2_enemy_6",
+                "behavior": "turret",
+                "phase": "idle",
+                "health": 2,
+                "x": 835.1999999999999,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_15",
+                "behavior": "ambusher",
+                "phase": "idle",
+                "health": 1,
+                "x": 1555.2,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_23",
+                "behavior": "shooter",
+                "phase": "idle",
+                "health": 1,
+                "x": 2275.2000000000003,
+                "y": 557.3000000000001,
+                "vx": 0
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 468,
+                "y": 556.1999999999999
+              },
+              {
+                "x": 1188,
+                "y": 520.1999999999999
+              },
+              {
+                "x": 1908,
+                "y": 556.1999999999999
+              },
+              {
+                "x": 2268,
+                "y": 513
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 9,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 468,
+            "y": 523.1999999999999,
+            "vx": 0,
+            "vy": -48.00000000000409,
+            "grounded": true,
+            "health": 5,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 4242,
+            "time": 14849.7
+          },
+          {
+            "ready": true,
+            "levelIndex": 1,
+            "levelCount": 2,
+            "levelTitle": "Security summit",
+            "topology": "journey",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 19
+            },
+            "goals": [
+              {
+                "id": "L2_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 3,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L2_doors_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "campaign_goal_0",
+                "kind": "defeat",
+                "amount": 0,
+                "needed": 4,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L2_crystal_1"
+              ]
+            },
+            "triggers": [
+              {
+                "id": "L2_trigger_0",
+                "activation": "projectile",
+                "x": 435.59999999999997,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L2_door_0",
+                "x": 1314,
+                "y": 486,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "playerShotsFired": 0,
+            "playerAttack": "projectile",
+            "respawn": {
+              "x": 90,
+              "y": 548
+            },
+            "exitAlpha": 1,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L2_enemy_6",
+                "behavior": "turret",
+                "phase": "idle",
+                "health": 2,
+                "x": 835.1999999999999,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_15",
+                "behavior": "ambusher",
+                "phase": "idle",
+                "health": 1,
+                "x": 1555.2,
+                "y": 593.3000000000001,
+                "vx": 0
+              },
+              {
+                "id": "L2_enemy_23",
+                "behavior": "shooter",
+                "phase": "idle",
+                "health": 1,
+                "x": 2275.2000000000003,
+                "y": 557.3000000000001,
+                "vx": 0
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 468,
+                "y": 540.9999999999999
+              },
+              {
+                "x": 1188,
+                "y": 504.99999999999994
+              },
+              {
+                "x": 1908,
+                "y": 540.9999999999999
+              },
+              {
+                "x": 2268,
+                "y": 513
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 9,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 468,
+            "y": 507.9999999999999,
+            "vx": 0,
+            "vy": -48.00000000000409,
+            "grounded": true,
+            "health": 5,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 4242,
+            "time": 15149.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "jump_from_vertical_platform",
+      "passed": false,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": [
+              "L2_crystal_1"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 540.9999999999999
+            },
+            {
+              "x": 1188,
+              "y": 504.99999999999994
+            },
+            {
+              "x": 1908,
+              "y": 540.9999999999999
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 9,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 468,
+          "y": 507.9999999999999,
+          "vx": 0,
+          "vy": -48.00000000000409,
+          "grounded": true,
+          "health": 5,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 15149.7
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": [
+              "L2_crystal_1"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 513.8
+            },
+            {
+              "x": 1188,
+              "y": 477.7999999999999
+            },
+            {
+              "x": 1908,
+              "y": 513.8
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 9,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 468,
+          "y": 396.5166666666666,
+          "vx": 0,
+          "vy": -13.33333333333352,
+          "grounded": false,
+          "health": 5,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 4242,
+          "time": 15699.7
+        }
+      }
+    },
+    {
+      "id": "enemy_damage_reaction",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 1,
+        "levelCount": 2,
+        "levelTitle": "Security summit",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L2_goal_0",
+            "kind": "defeat",
+            "amount": 0,
+            "needed": 3,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L2_goal_1",
+            "kind": "activate",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L2_doors_goal_0",
+            "kind": "unlock",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "campaign_goal_0",
+            "kind": "defeat",
+            "amount": 0,
+            "needed": 4,
+            "complete": false,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [
+          {
+            "id": "L2_trigger_0",
+            "activation": "projectile",
+            "x": 435.59999999999997,
+            "y": 588,
+            "active": false
+          }
+        ],
+        "doors": [
+          {
+            "id": "L2_door_0",
+            "x": 1314,
+            "y": 486,
+            "open": false,
+            "collidable": true
+          }
+        ],
+        "playerShotsFired": 1,
+        "playerAttack": "projectile",
+        "respawn": {
+          "x": 90,
+          "y": 548
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "id": "L2_enemy_6",
+            "behavior": "turret",
+            "phase": "recover",
+            "health": 1,
+            "x": 835.1999999999999,
+            "y": 593.3000000000001,
+            "vx": 0
+          },
+          {
+            "id": "L2_enemy_15",
+            "behavior": "ambusher",
+            "phase": "idle",
+            "health": 1,
+            "x": 1555.2,
+            "y": 593.3000000000001,
+            "vx": 0
+          },
+          {
+            "id": "L2_enemy_23",
+            "behavior": "shooter",
+            "phase": "idle",
+            "health": 1,
+            "x": 2275.2000000000003,
+            "y": 557.3000000000001,
+            "vx": 0
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 468,
+            "y": 582.6
+          },
+          {
+            "x": 1188,
+            "y": 546.6
+          },
+          {
+            "x": 1908,
+            "y": 582.6
+          },
+          {
+            "x": 2268,
+            "y": 513
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 10,
+        "landedPlatforms": [
+          0,
+          3
+        ],
+        "x": 742,
+        "y": 588,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 16616.3
+      }
+    },
+    {
+      "id": "player_projectile",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 1,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 1,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [
+              "L2_enemy_6"
+            ],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 2,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 533.7999999999998
+            },
+            {
+              "x": 1188,
+              "y": 497.7999999999999
+            },
+            {
+              "x": 1908,
+              "y": 533.7999999999998
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 10,
+          "landedPlatforms": [
+            0,
+            3
+          ],
+          "x": 742,
+          "y": 588,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 17716.3
+        }
+      }
+    },
+    {
+      "id": "closed_door_collision",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": [
+              "L2_crystal_10"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 584.2
+            },
+            {
+              "x": 1188,
+              "y": 548.2
+            },
+            {
+              "x": 1908,
+              "y": 584.2
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 11,
+          "landedPlatforms": [
+            0,
+            4
+          ],
+          "x": 1287,
+          "y": 552,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 18599.5
+        }
+      }
+    },
+    {
+      "id": "projectile_switch",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "method": "Actual pressure/contact/proximity/key or projectile activation and linked door body removal",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [
+              "L2_trigger_0"
+            ],
+            "unlock": [
+              "L2_door_0"
+            ],
+            "collect": [
+              "L2_crystal_10"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 1,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 559.4
+            },
+            {
+              "x": 1188,
+              "y": 523.4
+            },
+            {
+              "x": 1908,
+              "y": 559.4
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 11,
+          "landedPlatforms": [
+            0,
+            4,
+            1
+          ],
+          "x": 380,
+          "y": 588,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 19166.2
+        }
+      }
+    },
+    {
+      "id": "open_door_passage",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [
+              "L2_trigger_0"
+            ],
+            "unlock": [
+              "L2_door_0"
+            ],
+            "collect": [
+              "L2_crystal_10"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 1,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 1332,
+            "y": 521
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 593.3000000000001,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 557.3000000000001,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 525.7999999999998
+            },
+            {
+              "x": 1188,
+              "y": 489.79999999999984
+            },
+            {
+              "x": 1908,
+              "y": 525.7999999999998
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 11,
+          "landedPlatforms": [
+            0,
+            4,
+            1
+          ],
+          "x": 1369.611111111113,
+          "y": 552,
+          "vx": 149.99999999999997,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": 4,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 4242,
+          "time": 19832.8
+        }
+      }
+    },
+    {
+      "id": "objective_locked_exit",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 2,
+        "levelTitle": "Pressure passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 13
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "activate",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_doors_goal_0",
+            "kind": "unlock",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [
+          {
+            "id": "L1_trigger_0",
+            "activation": "pressure",
+            "x": 399.59999999999997,
+            "y": 534,
+            "active": false
+          }
+        ],
+        "doors": [
+          {
+            "id": "L1_door_0",
+            "x": 1134,
+            "y": 414,
+            "open": false,
+            "collidable": true
+          }
+        ],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "id": "L1_enemy_5",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 702.2833333333324,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 1080,
+            "y": 441
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 12,
+        "landedPlatforms": [
+          0,
+          6
+        ],
+        "x": 1800,
+        "y": 516,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 20349.5
+      }
+    },
+    {
+      "id": "objective_conditions",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [
+              "L1_enemy_5"
+            ],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_0",
+              "L1_crystal_1",
+              "L1_crystal_2",
+              "L1_crystal_3",
+              "L1_crystal_4",
+              "L1_crystal_7",
+              "L1_crystal_8",
+              "L1_crystal_9",
+              "L1_crystal_10",
+              "L1_crystal_11",
+              "L1_crystal_12",
+              "L1_crystal_14",
+              "L1_crystal_15"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 504,
+            "y": 485
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 12,
+          "landedPlatforms": [
+            0,
+            6,
+            1
+          ],
+          "x": 399.59999999999997,
+          "y": 516,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 13,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 22532.7
+        }
+      }
+    },
+    {
+      "id": "level_transitions",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "Pressure passage",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 13
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L1_doors_goal_0",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [
+              "L1_enemy_5"
+            ],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_0",
+              "L1_crystal_1",
+              "L1_crystal_2",
+              "L1_crystal_3",
+              "L1_crystal_4",
+              "L1_crystal_7",
+              "L1_crystal_8",
+              "L1_crystal_9",
+              "L1_crystal_10",
+              "L1_crystal_11",
+              "L1_crystal_12",
+              "L1_crystal_14",
+              "L1_crystal_15"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "pressure",
+              "x": 399.59999999999997,
+              "y": 534,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1134,
+              "y": 414,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 504,
+            "y": 485
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 12,
+          "landedPlatforms": [
+            0,
+            6,
+            1
+          ],
+          "x": 399.59999999999997,
+          "y": 516,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 13,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 22532.7
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 3,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 1,
+              "needed": 4,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [
+              "L1_enemy_5"
+            ],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_0",
+              "L1_crystal_1",
+              "L1_crystal_2",
+              "L1_crystal_3",
+              "L1_crystal_4",
+              "L1_crystal_7",
+              "L1_crystal_8",
+              "L1_crystal_9",
+              "L1_crystal_10",
+              "L1_crystal_11",
+              "L1_crystal_12",
+              "L1_crystal_14",
+              "L1_crystal_15"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "L2_enemy_6",
+              "behavior": "turret",
+              "phase": "idle",
+              "health": 2,
+              "x": 835.1999999999999,
+              "y": 590.3055555555555,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_15",
+              "behavior": "ambusher",
+              "phase": "idle",
+              "health": 1,
+              "x": 1555.2,
+              "y": 590.3055555555555,
+              "vx": 0
+            },
+            {
+              "id": "L2_enemy_23",
+              "behavior": "shooter",
+              "phase": "idle",
+              "health": 1,
+              "x": 2275.2000000000003,
+              "y": 554.3055555555555,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 549
+            },
+            {
+              "x": 1188,
+              "y": 513
+            },
+            {
+              "x": 1908,
+              "y": 549
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 13,
+          "landedPlatforms": [],
+          "x": 90,
+          "y": 548.3055555555555,
+          "vx": 0,
+          "vy": 18.333333333333332,
+          "grounded": false,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 4242,
+          "time": 23249.4
+        }
+      }
+    },
+    {
+      "id": "objective_locked_exit",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 1,
+        "levelCount": 2,
+        "levelTitle": "Security summit",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L2_goal_0",
+            "kind": "defeat",
+            "amount": 0,
+            "needed": 3,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L2_goal_1",
+            "kind": "activate",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L2_doors_goal_0",
+            "kind": "unlock",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "campaign_goal_0",
+            "kind": "defeat",
+            "amount": 1,
+            "needed": 4,
+            "complete": false,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [
+            "L1_enemy_5"
+          ],
+          "activate": [
+            "L1_trigger_0"
+          ],
+          "unlock": [
+            "L1_door_0"
+          ],
+          "collect": [
+            "L1_crystal_0",
+            "L1_crystal_1",
+            "L1_crystal_2",
+            "L1_crystal_3",
+            "L1_crystal_4",
+            "L1_crystal_7",
+            "L1_crystal_8",
+            "L1_crystal_9",
+            "L1_crystal_10",
+            "L1_crystal_11",
+            "L1_crystal_12",
+            "L1_crystal_14",
+            "L1_crystal_15"
+          ]
+        },
+        "triggers": [
+          {
+            "id": "L2_trigger_0",
+            "activation": "projectile",
+            "x": 435.59999999999997,
+            "y": 588,
+            "active": false
+          }
+        ],
+        "doors": [
+          {
+            "id": "L2_door_0",
+            "x": 1314,
+            "y": 486,
+            "open": false,
+            "collidable": true
+          }
+        ],
+        "playerShotsFired": 0,
+        "playerAttack": "projectile",
+        "respawn": {
+          "x": 90,
+          "y": 548
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "id": "L2_enemy_6",
+            "behavior": "turret",
+            "phase": "idle",
+            "health": 2,
+            "x": 835.1999999999999,
+            "y": 593.3000000000001,
+            "vx": 0
+          },
+          {
+            "id": "L2_enemy_15",
+            "behavior": "ambusher",
+            "phase": "idle",
+            "health": 1,
+            "x": 1555.2,
+            "y": 593.3000000000001,
+            "vx": 0
+          },
+          {
+            "id": "L2_enemy_23",
+            "behavior": "shooter",
+            "phase": "windup",
+            "health": 1,
+            "x": 2275.2000000000003,
+            "y": 557.3000000000001,
+            "vx": 0
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 468,
+            "y": 562.6
+          },
+          {
+            "x": 1188,
+            "y": 526.6
+          },
+          {
+            "x": 1908,
+            "y": 562.6
+          },
+          {
+            "x": 2268,
+            "y": 513
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 13,
+        "landedPlatforms": [
+          0,
+          9
+        ],
+        "x": 2412,
+        "y": 552,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 23549.4
+      }
+    },
+    {
+      "id": "objective_conditions",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "Security summit",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L2_goal_0",
+              "kind": "defeat",
+              "amount": 3,
+              "needed": 3,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L2_goal_1",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L2_doors_goal_0",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "campaign_goal_0",
+              "kind": "defeat",
+              "amount": 4,
+              "needed": 4,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [
+              "L1_enemy_5",
+              "L2_enemy_6",
+              "L2_enemy_15",
+              "L2_enemy_23"
+            ],
+            "activate": [
+              "L1_trigger_0",
+              "L2_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0",
+              "L2_door_0"
+            ],
+            "collect": [
+              "L1_crystal_0",
+              "L1_crystal_1",
+              "L1_crystal_2",
+              "L1_crystal_3",
+              "L1_crystal_4",
+              "L1_crystal_7",
+              "L1_crystal_8",
+              "L1_crystal_9",
+              "L1_crystal_10",
+              "L1_crystal_11",
+              "L1_crystal_12",
+              "L1_crystal_14",
+              "L1_crystal_15",
+              "L2_crystal_0",
+              "L2_crystal_1",
+              "L2_crystal_2",
+              "L2_crystal_3",
+              "L2_crystal_4",
+              "L2_crystal_5",
+              "L2_crystal_8",
+              "L2_crystal_9",
+              "L2_crystal_10",
+              "L2_crystal_12",
+              "L2_crystal_13",
+              "L2_crystal_14",
+              "L2_crystal_17",
+              "L2_crystal_18",
+              "L2_crystal_19",
+              "L2_crystal_20",
+              "L2_crystal_21",
+              "L2_crystal_22",
+              "L2_crystal_25"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L2_trigger_0",
+              "activation": "projectile",
+              "x": 435.59999999999997,
+              "y": 588,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L2_door_0",
+              "x": 1314,
+              "y": 486,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 5,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 468,
+              "y": 533.8000000000006
+            },
+            {
+              "x": 1188,
+              "y": 497.8000000000007
+            },
+            {
+              "x": 1908,
+              "y": 533.8000000000006
+            },
+            {
+              "x": 2268,
+              "y": 513
+            }
+          ],
+          "shotsFired": 3,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 13,
+          "landedPlatforms": [
+            0,
+            9,
+            3,
+            6,
+            1
+          ],
+          "x": 380,
+          "y": 588,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 19,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 28932.5
+        }
+      }
+    },
+    {
+      "id": "combat_objective",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "ready": true,
+        "levelIndex": 1,
+        "levelCount": 2,
+        "levelTitle": "Security summit",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L2_goal_0",
+            "kind": "defeat",
+            "amount": 3,
+            "needed": 3,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "L2_goal_1",
+            "kind": "activate",
+            "amount": 1,
+            "needed": 1,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "L2_doors_goal_0",
+            "kind": "unlock",
+            "amount": 1,
+            "needed": 1,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "campaign_goal_0",
+            "kind": "defeat",
+            "amount": 4,
+            "needed": 4,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [
+            "L1_enemy_5",
+            "L2_enemy_6",
+            "L2_enemy_15",
+            "L2_enemy_23"
+          ],
+          "activate": [
+            "L1_trigger_0",
+            "L2_trigger_0"
+          ],
+          "unlock": [
+            "L1_door_0",
+            "L2_door_0"
+          ],
+          "collect": [
+            "L1_crystal_0",
+            "L1_crystal_1",
+            "L1_crystal_2",
+            "L1_crystal_3",
+            "L1_crystal_4",
+            "L1_crystal_7",
+            "L1_crystal_8",
+            "L1_crystal_9",
+            "L1_crystal_10",
+            "L1_crystal_11",
+            "L1_crystal_12",
+            "L1_crystal_14",
+            "L1_crystal_15",
+            "L2_crystal_0",
+            "L2_crystal_1",
+            "L2_crystal_2",
+            "L2_crystal_3",
+            "L2_crystal_4",
+            "L2_crystal_5",
+            "L2_crystal_8",
+            "L2_crystal_9",
+            "L2_crystal_10",
+            "L2_crystal_12",
+            "L2_crystal_13",
+            "L2_crystal_14",
+            "L2_crystal_17",
+            "L2_crystal_18",
+            "L2_crystal_19",
+            "L2_crystal_20",
+            "L2_crystal_21",
+            "L2_crystal_22",
+            "L2_crystal_25"
+          ]
+        },
+        "triggers": [
+          {
+            "id": "L2_trigger_0",
+            "activation": "projectile",
+            "x": 435.59999999999997,
+            "y": 588,
+            "active": true
+          }
+        ],
+        "doors": [
+          {
+            "id": "L2_door_0",
+            "x": 1314,
+            "y": 486,
+            "open": true,
+            "collidable": false
+          }
+        ],
+        "playerShotsFired": 5,
+        "playerAttack": "projectile",
+        "respawn": {
+          "x": 90,
+          "y": 548
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 468,
+            "y": 533.8000000000006
+          },
+          {
+            "x": 1188,
+            "y": 497.8000000000007
+          },
+          {
+            "x": 1908,
+            "y": 533.8000000000006
+          },
+          {
+            "x": 2268,
+            "y": 513
+          }
+        ],
+        "shotsFired": 3,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 13,
+        "landedPlatforms": [
+          0,
+          9,
+          3,
+          6,
+          1
+        ],
+        "x": 380,
+        "y": 588,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 19,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 28932.5
+      }
+    },
+    {
+      "id": "win_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 1,
+        "levelCount": 2,
+        "levelTitle": "Security summit",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L2_goal_0",
+            "kind": "defeat",
+            "amount": 3,
+            "needed": 3,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "L2_goal_1",
+            "kind": "activate",
+            "amount": 1,
+            "needed": 1,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "L2_doors_goal_0",
+            "kind": "unlock",
+            "amount": 1,
+            "needed": 1,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "campaign_goal_0",
+            "kind": "defeat",
+            "amount": 4,
+            "needed": 4,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [
+            "L1_enemy_5",
+            "L2_enemy_6",
+            "L2_enemy_15",
+            "L2_enemy_23"
+          ],
+          "activate": [
+            "L1_trigger_0",
+            "L2_trigger_0"
+          ],
+          "unlock": [
+            "L1_door_0",
+            "L2_door_0"
+          ],
+          "collect": [
+            "L1_crystal_0",
+            "L1_crystal_1",
+            "L1_crystal_2",
+            "L1_crystal_3",
+            "L1_crystal_4",
+            "L1_crystal_7",
+            "L1_crystal_8",
+            "L1_crystal_9",
+            "L1_crystal_10",
+            "L1_crystal_11",
+            "L1_crystal_12",
+            "L1_crystal_14",
+            "L1_crystal_15",
+            "L2_crystal_0",
+            "L2_crystal_1",
+            "L2_crystal_2",
+            "L2_crystal_3",
+            "L2_crystal_4",
+            "L2_crystal_5",
+            "L2_crystal_8",
+            "L2_crystal_9",
+            "L2_crystal_10",
+            "L2_crystal_12",
+            "L2_crystal_13",
+            "L2_crystal_14",
+            "L2_crystal_17",
+            "L2_crystal_18",
+            "L2_crystal_19",
+            "L2_crystal_20",
+            "L2_crystal_21",
+            "L2_crystal_22",
+            "L2_crystal_25"
+          ]
+        },
+        "triggers": [
+          {
+            "id": "L2_trigger_0",
+            "activation": "projectile",
+            "x": 435.59999999999997,
+            "y": 588,
+            "active": true
+          }
+        ],
+        "doors": [
+          {
+            "id": "L2_door_0",
+            "x": 1314,
+            "y": 486,
+            "open": true,
+            "collidable": false
+          }
+        ],
+        "playerShotsFired": 5,
+        "playerAttack": "projectile",
+        "respawn": {
+          "x": 90,
+          "y": 548
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 468,
+            "y": 556.2000000000011
+          },
+          {
+            "x": 1188,
+            "y": 520.2000000000011
+          },
+          {
+            "x": 1908,
+            "y": 556.2000000000011
+          },
+          {
+            "x": 2268,
+            "y": 513
+          }
+        ],
+        "shotsFired": 3,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 13,
+        "landedPlatforms": [
+          0,
+          9,
+          3,
+          6,
+          1
+        ],
+        "x": 2412,
+        "y": 540.6111111111111,
+        "vx": 0,
+        "vy": 18.333333333333332,
+        "grounded": false,
+        "health": 3,
+        "crystals": 19,
+        "state": "won",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 29432.4
+      }
+    },
+    {
+      "id": "restart_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 2,
+        "levelTitle": "Pressure passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 13
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "activate",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_doors_goal_0",
+            "kind": "unlock",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [
+          {
+            "id": "L1_trigger_0",
+            "activation": "pressure",
+            "x": 399.59999999999997,
+            "y": 534,
+            "active": false
+          }
+        ],
+        "doors": [
+          {
+            "id": "L1_door_0",
+            "x": 1134,
+            "y": 414,
+            "open": false,
+            "collidable": true
+          }
+        ],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "id": "L1_enemy_5",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 718.533333333333,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 1080,
+            "y": 441
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 14,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 29682.5
+      }
+    },
+    {
+      "id": "canvas_and_assets",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": {
+        "missing": [],
+        "http_failures": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "screenshot": "gameplay.png",
+  "scope": "Controlled-position functional browser verification, not autonomous completion or enjoyment assessment."
+}

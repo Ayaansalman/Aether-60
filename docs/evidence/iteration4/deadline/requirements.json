@@ -1,0 +1,5 @@
+{
+  "requirements": [],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

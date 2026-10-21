@@ -1,0 +1,78 @@
+{
+  "requirements": [
+    {
+      "id": "ice_environment",
+      "source": "ice",
+      "span": [
+        19,
+        22
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "ice_composition",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "ice_environment",
+        "qa": "ice_composition"
+      }
+    },
+    {
+      "id": "slippery",
+      "source": "slippery",
+      "span": [
+        39,
+        47
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "slippery_momentum",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "slippery",
+        "qa": "slippery_momentum"
+      }
+    },
+    {
+      "id": "falling_icicles",
+      "source": "falling hazards",
+      "span": [
+        57,
+        72
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "falling_icicle_cycle",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "falling_icicles",
+        "qa": "falling_icicle_cycle"
+      }
+    },
+    {
+      "id": "ranged",
+      "source": "ranged",
+      "span": [
+        78,
+        84
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "enemy_shooter",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "ranged",
+        "qa": "enemy_shooter"
+      }
+    }
+  ],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

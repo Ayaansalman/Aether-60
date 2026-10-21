@@ -1,0 +1,86 @@
+{
+  "title": "The Verdant Passage",
+  "width": 960,
+  "height": 900,
+  "spawn": {
+    "x": 90.0,
+    "y": 692.0
+  },
+  "objective": {
+    "type": "reach_exit",
+    "required": 0,
+    "total": 0
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 20,
+      "width": 8,
+      "kind": "journey",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    }
+  ],
+  "entities": [
+    {
+      "id": "L1_exit",
+      "x": 190.0,
+      "y": 684.0,
+      "kind": "exit",
+      "platform": 0,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    }
+  ],
+  "camera_mode": "follow",
+  "theme": "forest",
+  "slippery": false,
+  "exit_style": "gate",
+  "exit_indicator": "none",
+  "collectible": "crystals",
+  "difficulty": "relaxed",
+  "briefing": "",
+  "topology": "journey",
+  "goals": [
+    {
+      "kind": "time_limit",
+      "count": 0,
+      "seconds": 2,
+      "enemy_behavior": null,
+      "id": "L1_goal_0",
+      "targets": []
+    }
+  ],
+  "links": [],
+  "player_attack": "stomp",
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "seed": 4242,
+  "tile_size": 36,
+  "player": {
+    "speed": 250.0,
+    "jump": 490.0,
+    "gravity": 1100.0,
+    "health": 5,
+    "abilities": []
+  },
+  "levels": [],
+  "campaign_goals": [],
+  "requirements": [],
+  "asset_pack": "kenney_pixel_platformer"
+}

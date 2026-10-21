@@ -1,0 +1,222 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "stage_1_goal_L1_goal_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_1_goal_L1_doors_goal_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_1_link_L1_door_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_1_route_0_1",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 203.8,
+        "rise": -36
+      }
+    },
+    {
+      "id": "stage_1_route_1_2",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "stage_1_route_2_3",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 172.1,
+        "rise": 36
+      }
+    },
+    {
+      "id": "stage_1_route_3_4",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 203.8,
+        "rise": -36
+      }
+    },
+    {
+      "id": "stage_1_route_4_5",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "stage_1_objective_consistent",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_1_objective_on_main_route",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_1_entry_exit",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_1_entity_supports",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_goal_L2_goal_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_goal_L2_goal_1",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_goal_L2_doors_goal_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_link_L2_door_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_route_0_1",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 203.8,
+        "rise": -36
+      }
+    },
+    {
+      "id": "stage_2_route_1_2",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "stage_2_route_2_3",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 172.1,
+        "rise": 36
+      }
+    },
+    {
+      "id": "stage_2_route_3_4",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 203.8,
+        "rise": -36
+      }
+    },
+    {
+      "id": "stage_2_route_4_5",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "stage_2_route_5_6",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 172.1,
+        "rise": 36
+      }
+    },
+    {
+      "id": "stage_2_objective_consistent",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_objective_on_main_route",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_entry_exit",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "stage_2_entity_supports",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "goal_campaign_goal_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    }
+  ]
+}

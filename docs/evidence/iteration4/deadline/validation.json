@@ -1,0 +1,48 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "goal_L1_goal_0",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "compatible_timers",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "deadline_travel_budget",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "objective_consistent",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "objective_on_main_route",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "entry_exit",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "entity_supports",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    }
+  ],
+  "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+}

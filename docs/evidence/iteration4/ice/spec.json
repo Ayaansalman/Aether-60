@@ -1,0 +1,726 @@
+{
+  "title": "The Frostbound Vault",
+  "width": 2592,
+  "height": 900,
+  "spawn": {
+    "x": 90.0,
+    "y": 692.0
+  },
+  "objective": {
+    "type": "reach_exit",
+    "required": 0,
+    "total": 17
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 20,
+      "width": 8,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 10,
+      "y": 21,
+      "width": 5,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 17,
+      "y": 21,
+      "width": 5,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 24,
+      "y": 20,
+      "width": 6,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 32,
+      "y": 21,
+      "width": 6,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 40,
+      "y": 21,
+      "width": 6,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 48,
+      "y": 20,
+      "width": 7,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 57,
+      "y": 21,
+      "width": 5,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 64,
+      "y": 21,
+      "width": 6,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    }
+  ],
+  "entities": [
+    {
+      "id": "L1_crystal_0",
+      "x": 414.0,
+      "y": 690.0,
+      "kind": "crystal",
+      "platform": 1,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_1",
+      "x": 486.0,
+      "y": 700.0,
+      "kind": "crystal",
+      "platform": 1,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_2",
+      "x": 666.0,
+      "y": 690.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_3",
+      "x": 738.0,
+      "y": 700.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_enemy_4",
+      "x": 684.0,
+      "y": 734.0,
+      "kind": "enemy",
+      "platform": 2,
+      "behavior": "shooter",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_icicle_5",
+      "x": 729.0,
+      "y": 536.0,
+      "kind": "icicle",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_6",
+      "x": 918.0,
+      "y": 654.0,
+      "kind": "crystal",
+      "platform": 3,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_7",
+      "x": 990.0,
+      "y": 664.0,
+      "kind": "crystal",
+      "platform": 3,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_8",
+      "x": 1206.0,
+      "y": 690.0,
+      "kind": "crystal",
+      "platform": 4,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_9",
+      "x": 1278.0,
+      "y": 700.0,
+      "kind": "crystal",
+      "platform": 4,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_enemy_10",
+      "x": 1238.3999999999999,
+      "y": 734.0,
+      "kind": "enemy",
+      "platform": 4,
+      "behavior": "shooter",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_icicle_11",
+      "x": 1292.3999999999999,
+      "y": 536.0,
+      "kind": "icicle",
+      "platform": 4,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "timer",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_checkpoint_12",
+      "x": 1044.0,
+      "y": 690.0,
+      "kind": "checkpoint",
+      "platform": 3,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_13",
+      "x": 1494.0,
+      "y": 690.0,
+      "kind": "crystal",
+      "platform": 5,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_14",
+      "x": 1566.0,
+      "y": 700.0,
+      "kind": "crystal",
+      "platform": 5,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_15",
+      "x": 1782.0,
+      "y": 654.0,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_16",
+      "x": 1854.0,
+      "y": 664.0,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_17",
+      "x": 1926.0,
+      "y": 644.0,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_enemy_18",
+      "x": 1828.8,
+      "y": 698.0,
+      "kind": "enemy",
+      "platform": 6,
+      "behavior": "shooter",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_icicle_19",
+      "x": 1891.8,
+      "y": 500.0,
+      "kind": "icicle",
+      "platform": 6,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_20",
+      "x": 2106.0,
+      "y": 690.0,
+      "kind": "crystal",
+      "platform": 7,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_21",
+      "x": 2178.0,
+      "y": 700.0,
+      "kind": "crystal",
+      "platform": 7,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_22",
+      "x": 2358.0,
+      "y": 690.0,
+      "kind": "crystal",
+      "platform": 8,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_23",
+      "x": 2430.0,
+      "y": 700.0,
+      "kind": "crystal",
+      "platform": 8,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_enemy_24",
+      "x": 2390.4,
+      "y": 734.0,
+      "kind": "enemy",
+      "platform": 8,
+      "behavior": "shooter",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_icicle_25",
+      "x": 2444.4,
+      "y": 536.0,
+      "kind": "icicle",
+      "platform": 8,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "timer",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_exit_26",
+      "x": 2484.0,
+      "y": 720.0,
+      "kind": "exit",
+      "platform": 8,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    }
+  ],
+  "camera_mode": "follow",
+  "theme": "ice",
+  "slippery": true,
+  "exit_style": "gate",
+  "exit_indicator": "none",
+  "collectible": "crystals",
+  "difficulty": "balanced",
+  "briefing": "",
+  "topology": "cavern",
+  "goals": [],
+  "links": [],
+  "player_attack": "stomp",
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "seed": 4242,
+  "tile_size": 36,
+  "player": {
+    "speed": 250,
+    "jump": 490,
+    "gravity": 1100,
+    "health": 3,
+    "abilities": []
+  },
+  "levels": [],
+  "campaign_goals": [],
+  "requirements": [
+    {
+      "id": "ice_environment",
+      "source": "ice",
+      "span": [
+        19,
+        22
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "ice_composition",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "ice_environment",
+        "qa": null
+      }
+    },
+    {
+      "id": "slippery",
+      "source": "slippery",
+      "span": [
+        39,
+        47
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "slippery_momentum",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "slippery",
+        "qa": null
+      }
+    },
+    {
+      "id": "falling_icicles",
+      "source": "falling hazards",
+      "span": [
+        57,
+        72
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "falling_icicle_cycle",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "falling_icicles",
+        "qa": null
+      }
+    },
+    {
+      "id": "ranged",
+      "source": "ranged",
+      "span": [
+        78,
+        84
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "enemy_shooter",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "ranged",
+        "qa": null
+      }
+    }
+  ],
+  "asset_pack": "kenney_pixel_platformer"
+}

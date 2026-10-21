@@ -1,0 +1,146 @@
+{
+  "ready": true,
+  "levelIndex": 1,
+  "levelCount": 2,
+  "levelTitle": "Security summit",
+  "topology": "journey",
+  "objective": {
+    "type": "reach_exit",
+    "required": 0,
+    "total": 19
+  },
+  "goals": [
+    {
+      "id": "L2_goal_0",
+      "kind": "defeat",
+      "amount": 0,
+      "needed": 3,
+      "complete": false,
+      "failed": false
+    },
+    {
+      "id": "L2_goal_1",
+      "kind": "activate",
+      "amount": 0,
+      "needed": 1,
+      "complete": false,
+      "failed": false
+    },
+    {
+      "id": "L2_doors_goal_0",
+      "kind": "unlock",
+      "amount": 0,
+      "needed": 1,
+      "complete": false,
+      "failed": false
+    },
+    {
+      "id": "campaign_goal_0",
+      "kind": "defeat",
+      "amount": 0,
+      "needed": 4,
+      "complete": false,
+      "failed": false
+    }
+  ],
+  "progress": {
+    "defeat": [],
+    "activate": [],
+    "unlock": [],
+    "collect": []
+  },
+  "triggers": [
+    {
+      "id": "L2_trigger_0",
+      "activation": "projectile",
+      "x": 435.59999999999997,
+      "y": 588,
+      "active": false
+    }
+  ],
+  "doors": [
+    {
+      "id": "L2_door_0",
+      "x": 1314,
+      "y": 486,
+      "open": false,
+      "collidable": true
+    }
+  ],
+  "playerShotsFired": 0,
+  "playerAttack": "projectile",
+  "respawn": {
+    "x": 90,
+    "y": 548
+  },
+  "exitAlpha": 1,
+  "exitStyle": "gate",
+  "enemies": [
+    {
+      "id": "L2_enemy_6",
+      "behavior": "turret",
+      "phase": "windup",
+      "health": 2,
+      "x": 835.1999999999999,
+      "y": 593.3000000000001,
+      "vx": 0
+    },
+    {
+      "id": "L2_enemy_15",
+      "behavior": "ambusher",
+      "phase": "idle",
+      "health": 1,
+      "x": 1555.2,
+      "y": 593.3000000000001,
+      "vx": 0
+    },
+    {
+      "id": "L2_enemy_23",
+      "behavior": "shooter",
+      "phase": "idle",
+      "health": 1,
+      "x": 2275.2000000000003,
+      "y": 557.3000000000001,
+      "vx": 0
+    }
+  ],
+  "icicles": [],
+  "machines": [],
+  "movingPlatforms": [
+    {
+      "x": 468,
+      "y": 552.2
+    },
+    {
+      "x": 1188,
+      "y": 516.2
+    },
+    {
+      "x": 1908,
+      "y": 552.2
+    },
+    {
+      "x": 2268,
+      "y": 513
+    }
+  ],
+  "shotsFired": 0,
+  "slippery": false,
+  "environment": "forest",
+  "terrainTexture": "terrain",
+  "generation": 2,
+  "landedPlatforms": [],
+  "x": 920.1999999999999,
+  "y": 585.8333333333333,
+  "vx": 0,
+  "vy": 55,
+  "grounded": false,
+  "health": 5,
+  "crystals": 0,
+  "state": "playing",
+  "checkpoint": -1,
+  "missingAssets": [],
+  "animation": "fall",
+  "seed": 4242,
+  "time": 2351.7
+}

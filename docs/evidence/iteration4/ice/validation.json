@@ -1,0 +1,118 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "route_0_1",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 203.8,
+        "rise": -36
+      }
+    },
+    {
+      "id": "route_1_2",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "route_2_3",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 172.1,
+        "rise": 36
+      }
+    },
+    {
+      "id": "route_3_4",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 203.8,
+        "rise": -36
+      }
+    },
+    {
+      "id": "route_4_5",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "route_5_6",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 172.1,
+        "rise": 36
+      }
+    },
+    {
+      "id": "route_6_7",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 203.8,
+        "rise": -36
+      }
+    },
+    {
+      "id": "route_7_8",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 108,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "objective_consistent",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "objective_on_main_route",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "entry_exit",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "entity_supports",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    }
+  ],
+  "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+}

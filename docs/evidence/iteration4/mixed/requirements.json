@@ -1,0 +1,114 @@
+{
+  "requirements": [
+    {
+      "id": "multiple_levels",
+      "source": "two-level",
+      "span": [
+        14,
+        23
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "level_transitions",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "multiple_levels",
+        "qa": "level_transitions"
+      }
+    },
+    {
+      "id": "switches",
+      "source": "switches",
+      "span": [
+        83,
+        91
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "switch_door",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "switches",
+        "qa": "projectile_switch"
+      }
+    },
+    {
+      "id": "pressure_plates",
+      "source": "pressure plates",
+      "span": [
+        55,
+        70
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "pressure_plate",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "pressure_plates",
+        "qa": "pressure_plate"
+      }
+    },
+    {
+      "id": "projectile_switches",
+      "source": "projectile switch",
+      "span": [
+        72,
+        89
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "projectile_switch",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "projectile_switches",
+        "qa": "projectile_switch"
+      }
+    },
+    {
+      "id": "turret",
+      "source": "turrets",
+      "span": [
+        101,
+        108
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "enemy_turret",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "turret",
+        "qa": "enemy_turret"
+      }
+    },
+    {
+      "id": "ambusher",
+      "source": "ambush",
+      "span": [
+        110,
+        116
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "enemy_ambusher",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "ambusher",
+        "qa": "enemy_ambusher"
+      }
+    }
+  ],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

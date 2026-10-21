@@ -1,0 +1,42 @@
+{
+  "requirements": [
+    {
+      "id": "factory_environment",
+      "source": "factory",
+      "span": [
+        9,
+        16
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "environment_composition",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "factory_environment",
+        "qa": "environment_composition"
+      }
+    },
+    {
+      "id": "switches",
+      "source": "switches",
+      "span": [
+        50,
+        58
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "switch_door",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "switches",
+        "qa": "switch_door"
+      }
+    }
+  ],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

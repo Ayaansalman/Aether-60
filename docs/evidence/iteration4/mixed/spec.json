@@ -1,0 +1,1881 @@
+{
+  "title": "The Verdant Passage",
+  "width": 1908,
+  "height": 684,
+  "spawn": {
+    "x": 90.0,
+    "y": 476.0
+  },
+  "objective": {
+    "type": "reach_exit",
+    "required": 0,
+    "total": 13
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 14,
+      "width": 8,
+      "kind": "journey",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 10,
+      "y": 15,
+      "width": 5,
+      "kind": "meadow",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 17,
+      "y": 15,
+      "width": 8,
+      "kind": "meadow",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 27,
+      "y": 14,
+      "width": 6,
+      "kind": "ruins",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 28,
+      "y": 12,
+      "width": 4,
+      "kind": "bridge",
+      "moving": false,
+      "route": "optional",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 35,
+      "y": 15,
+      "width": 8,
+      "kind": "meadow",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "x": 45,
+      "y": 15,
+      "width": 6,
+      "kind": "meadow",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    }
+  ],
+  "entities": [
+    {
+      "id": "L1_crystal_0",
+      "x": 414.0,
+      "y": 476.0,
+      "kind": "crystal",
+      "platform": 1,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_1",
+      "x": 486.0,
+      "y": 468.0,
+      "kind": "crystal",
+      "platform": 1,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_2",
+      "x": 666.0,
+      "y": 479.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_3",
+      "x": 738.0,
+      "y": 469.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_4",
+      "x": 810.0,
+      "y": 469.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_enemy_5",
+      "x": 727.1999999999999,
+      "y": 518.0,
+      "kind": "enemy",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_checkpoint_6",
+      "x": 504.0,
+      "y": 510.0,
+      "kind": "checkpoint",
+      "platform": 1,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_7",
+      "x": 1026.0,
+      "y": 441.3333333333333,
+      "kind": "crystal",
+      "platform": 3,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_8",
+      "x": 1098.0,
+      "y": 428.0,
+      "kind": "crystal",
+      "platform": 3,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_9",
+      "x": 1080.0,
+      "y": 387.0,
+      "kind": "crystal",
+      "platform": 4,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_10",
+      "x": 1314.0,
+      "y": 479.0,
+      "kind": "crystal",
+      "platform": 5,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_11",
+      "x": 1386.0,
+      "y": 469.0,
+      "kind": "crystal",
+      "platform": 5,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_12",
+      "x": 1458.0,
+      "y": 469.0,
+      "kind": "crystal",
+      "platform": 5,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_checkpoint_13",
+      "x": 1152.0,
+      "y": 474.0,
+      "kind": "checkpoint",
+      "platform": 3,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_14",
+      "x": 1674.0,
+      "y": 477.3333333333333,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_crystal_15",
+      "x": 1746.0,
+      "y": 464.0,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_exit_16",
+      "x": 1800.0,
+      "y": 504.0,
+      "kind": "exit",
+      "platform": 6,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_trigger_0",
+      "x": 399.59999999999997,
+      "y": 534.0,
+      "kind": "pressure_plate",
+      "platform": 1,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "pressure",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "id": "L1_door_0",
+      "x": 1134.0,
+      "y": 414.0,
+      "kind": "door",
+      "platform": 3,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    }
+  ],
+  "camera_mode": "follow",
+  "theme": "forest",
+  "slippery": false,
+  "exit_style": "gate",
+  "exit_indicator": "none",
+  "collectible": "crystals",
+  "difficulty": "relaxed",
+  "briefing": "",
+  "topology": "journey",
+  "goals": [
+    {
+      "kind": "activate",
+      "count": 0,
+      "seconds": 30,
+      "enemy_behavior": null,
+      "id": "L1_goal_0",
+      "targets": [
+        "L1_trigger_0"
+      ]
+    },
+    {
+      "kind": "unlock",
+      "count": 0,
+      "seconds": 30,
+      "enemy_behavior": null,
+      "id": "L1_doors_goal_0",
+      "targets": [
+        "L1_door_0"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "sources": [
+        "L1_trigger_0"
+      ],
+      "target": "L1_door_0",
+      "condition": "all",
+      "action": "open_door"
+    }
+  ],
+  "player_attack": "stomp",
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "seed": 4242,
+  "tile_size": 36,
+  "player": {
+    "speed": 250,
+    "jump": 490,
+    "gravity": 1100,
+    "health": 5,
+    "abilities": []
+  },
+  "levels": [
+    {
+      "title": "Pressure passage",
+      "width": 1908,
+      "height": 684,
+      "spawn": {
+        "x": 90.0,
+        "y": 476.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 13
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "journey",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 10,
+          "y": 15,
+          "width": 5,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 17,
+          "y": 15,
+          "width": 8,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 27,
+          "y": 14,
+          "width": 6,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 28,
+          "y": 12,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 35,
+          "y": 15,
+          "width": 8,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 45,
+          "y": 15,
+          "width": 6,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        }
+      ],
+      "entities": [
+        {
+          "id": "L1_crystal_0",
+          "x": 414.0,
+          "y": 476.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_1",
+          "x": 486.0,
+          "y": 468.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_2",
+          "x": 666.0,
+          "y": 479.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_3",
+          "x": 738.0,
+          "y": 469.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_4",
+          "x": 810.0,
+          "y": 469.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_enemy_5",
+          "x": 727.1999999999999,
+          "y": 518.0,
+          "kind": "enemy",
+          "platform": 2,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_checkpoint_6",
+          "x": 504.0,
+          "y": 510.0,
+          "kind": "checkpoint",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_7",
+          "x": 1026.0,
+          "y": 441.3333333333333,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_8",
+          "x": 1098.0,
+          "y": 428.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_9",
+          "x": 1080.0,
+          "y": 387.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_10",
+          "x": 1314.0,
+          "y": 479.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_11",
+          "x": 1386.0,
+          "y": 469.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_12",
+          "x": 1458.0,
+          "y": 469.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_checkpoint_13",
+          "x": 1152.0,
+          "y": 474.0,
+          "kind": "checkpoint",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_14",
+          "x": 1674.0,
+          "y": 477.3333333333333,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_crystal_15",
+          "x": 1746.0,
+          "y": 464.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_exit_16",
+          "x": 1800.0,
+          "y": 504.0,
+          "kind": "exit",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_trigger_0",
+          "x": 399.59999999999997,
+          "y": 534.0,
+          "kind": "pressure_plate",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "pressure",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L1_door_0",
+          "x": 1134.0,
+          "y": 414.0,
+          "kind": "door",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow",
+      "theme": "forest",
+      "slippery": false,
+      "exit_style": "gate",
+      "exit_indicator": "none",
+      "collectible": "crystals",
+      "difficulty": "relaxed",
+      "briefing": "",
+      "topology": "journey",
+      "goals": [
+        {
+          "kind": "activate",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L1_goal_0",
+          "targets": [
+            "L1_trigger_0"
+          ]
+        },
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L1_doors_goal_0",
+          "targets": [
+            "L1_door_0"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "sources": [
+            "L1_trigger_0"
+          ],
+          "target": "L1_door_0",
+          "condition": "all",
+          "action": "open_door"
+        }
+      ],
+      "player_attack": "stomp"
+    },
+    {
+      "title": "Security summit",
+      "width": 2520,
+      "height": 756,
+      "spawn": {
+        "x": 90.0,
+        "y": 548.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 19
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 16,
+          "width": 8,
+          "kind": "journey",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 10,
+          "y": 17,
+          "width": 8,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 11,
+          "y": 15,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "vertical",
+            "pattern": "ping_pong",
+            "distance": 36,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 20,
+          "y": 17,
+          "width": 8,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 30,
+          "y": 16,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 31,
+          "y": 14,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "vertical",
+            "pattern": "ping_pong",
+            "distance": 36,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 40,
+          "y": 17,
+          "width": 8,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 50,
+          "y": 17,
+          "width": 8,
+          "kind": "meadow",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 51,
+          "y": 15,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "vertical",
+            "pattern": "ping_pong",
+            "distance": 36,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 60,
+          "y": 16,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 61,
+          "y": 14,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        }
+      ],
+      "entities": [
+        {
+          "id": "L2_crystal_0",
+          "x": 414.0,
+          "y": 551.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_1",
+          "x": 486.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_2",
+          "x": 558.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_3",
+          "x": 774.0,
+          "y": 551.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_4",
+          "x": 846.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_5",
+          "x": 918.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_enemy_6",
+          "x": 835.1999999999999,
+          "y": 590.0,
+          "kind": "enemy",
+          "platform": 3,
+          "behavior": "turret",
+          "ai": {
+            "health": 2,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_checkpoint_7",
+          "x": 612.0,
+          "y": 582.0,
+          "kind": "checkpoint",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_8",
+          "x": 1134.0,
+          "y": 515.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_9",
+          "x": 1206.0,
+          "y": 505.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_10",
+          "x": 1278.0,
+          "y": 505.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_checkpoint_11",
+          "x": 972.0,
+          "y": 582.0,
+          "kind": "checkpoint",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_12",
+          "x": 1494.0,
+          "y": 551.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_13",
+          "x": 1566.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_14",
+          "x": 1638.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_enemy_15",
+          "x": 1555.2,
+          "y": 590.0,
+          "kind": "enemy",
+          "platform": 6,
+          "behavior": "ambusher",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_checkpoint_16",
+          "x": 1332.0,
+          "y": 546.0,
+          "kind": "checkpoint",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_17",
+          "x": 1854.0,
+          "y": 551.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_18",
+          "x": 1926.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_19",
+          "x": 1998.0,
+          "y": 541.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_20",
+          "x": 2214.0,
+          "y": 515.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_21",
+          "x": 2286.0,
+          "y": 505.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_22",
+          "x": 2358.0,
+          "y": 505.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_enemy_23",
+          "x": 2275.2000000000003,
+          "y": 554.0,
+          "kind": "enemy",
+          "platform": 9,
+          "behavior": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_checkpoint_24",
+          "x": 2052.0,
+          "y": 582.0,
+          "kind": "checkpoint",
+          "platform": 7,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_crystal_25",
+          "x": 2268.0,
+          "y": 459.0,
+          "kind": "crystal",
+          "platform": 10,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_exit_26",
+          "x": 2412.0,
+          "y": 540.0,
+          "kind": "exit",
+          "platform": 9,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_trigger_0",
+          "x": 435.59999999999997,
+          "y": 588.0,
+          "kind": "switch",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "projectile",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "id": "L2_door_0",
+          "x": 1314.0,
+          "y": 486.0,
+          "kind": "door",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow",
+      "theme": "forest",
+      "slippery": false,
+      "exit_style": "gate",
+      "exit_indicator": "none",
+      "collectible": "crystals",
+      "difficulty": "relaxed",
+      "briefing": "",
+      "topology": "journey",
+      "goals": [
+        {
+          "kind": "defeat",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L2_goal_0",
+          "targets": [
+            "L2_enemy_6",
+            "L2_enemy_15",
+            "L2_enemy_23"
+          ]
+        },
+        {
+          "kind": "activate",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L2_goal_1",
+          "targets": [
+            "L2_trigger_0"
+          ]
+        },
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L2_doors_goal_0",
+          "targets": [
+            "L2_door_0"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "sources": [
+            "L2_trigger_0"
+          ],
+          "target": "L2_door_0",
+          "condition": "all",
+          "action": "open_door"
+        }
+      ],
+      "player_attack": "projectile"
+    }
+  ],
+  "campaign_goals": [
+    {
+      "kind": "defeat",
+      "count": 0,
+      "seconds": 30,
+      "enemy_behavior": null,
+      "id": "campaign_goal_0",
+      "targets": [
+        "L1_enemy_5",
+        "L2_enemy_6",
+        "L2_enemy_15",
+        "L2_enemy_23"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "multiple_levels",
+      "source": "two-level",
+      "span": [
+        14,
+        23
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "level_transitions",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "multiple_levels",
+        "qa": null
+      }
+    },
+    {
+      "id": "switches",
+      "source": "switches",
+      "span": [
+        83,
+        91
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "switch_door",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "switches",
+        "qa": null
+      }
+    },
+    {
+      "id": "pressure_plates",
+      "source": "pressure plates",
+      "span": [
+        55,
+        70
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "pressure_plate",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "pressure_plates",
+        "qa": null
+      }
+    },
+    {
+      "id": "projectile_switches",
+      "source": "projectile switch",
+      "span": [
+        72,
+        89
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "projectile_switch",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "projectile_switches",
+        "qa": null
+      }
+    },
+    {
+      "id": "turret",
+      "source": "turrets",
+      "span": [
+        101,
+        108
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "enemy_turret",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "turret",
+        "qa": null
+      }
+    },
+    {
+      "id": "ambusher",
+      "source": "ambush",
+      "span": [
+        110,
+        116
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "enemy_ambusher",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "ambusher",
+        "qa": null
+      }
+    }
+  ],
+  "asset_pack": "kenney_pixel_platformer"
+}

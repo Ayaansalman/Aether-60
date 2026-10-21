@@ -1,13 +1,25 @@
 import Phaser from "phaser";
 import type { PlatformerIR, Platform, Entity } from "./types";
-import { iciclePhase, enemyDecision, indicatorAnimation, exitDecision, resolveLevel } from "./behaviors";
+import { iciclePhase, indicatorAnimation, exitDecision, resolveLevel } from "./behaviors";
 import type { IcicleState } from "./behaviors";
+import { Gameplay, triggerReady, enemyStep, platformPosition } from './gameplay';
+import type { Progress, EnemyMemory } from './gameplay';
 import registry from "../../../public/assets/registry.json";
 
 export class PlatformerScene extends Phaser.Scene {
   spec!: PlatformerIR;
   campaign!: PlatformerIR;
   levelIndex = 0;
+  gameplay!: Gameplay;
+  levelStartedAt = 0;
+  campaignElapsed = 0;
+  platformElapsed = 0;
+  triggers: {spec:Entity; sprite:Phaser.Physics.Arcade.Sprite}[] = [];
+  doors: {spec:Entity; sprite:Phaser.Physics.Arcade.Sprite; open:boolean}[] = [];
+  playerProjectiles: Phaser.Physics.Arcade.Group | undefined;
+  playerShotAt = -2000;
+  playerShotsFired = 0;
+  exitBlockedMessage = false;
   exits: Phaser.GameObjects.Sprite[] = [];
   traps: { sprite: Phaser.Physics.Arcade.Sprite; spec: Entity; state: IcicleState; at: number; activations: number }[] = [];
   machines: { sprite: Phaser.Physics.Arcade.Sprite; spec: Entity; active: boolean }[] = [];
@@ -35,8 +47,11 @@ export class PlatformerScene extends Phaser.Scene {
     direction: number;
     behavior: string;
     shotAt: number;
+    spec: Entity;
+    memory: EnemyMemory;
+    health: number;
   }[] = [];
-  moving: { sprite: Phaser.Physics.Arcade.Sprite; x: number; phase: number; motion: boolean }[] =
+  moving: { sprite: Phaser.Physics.Arcade.Sprite; x: number; y: number; spec: Platform; motion: boolean }[] =
     [];
   missingAssets: string[] = [];
   touch: Record<string, boolean> = {
@@ -50,10 +65,16 @@ export class PlatformerScene extends Phaser.Scene {
   constructor() {
     super("Platformer");
   }
-  init(data: { spec: PlatformerIR; levelIndex?: number }) {
+  init(data: { spec: PlatformerIR; levelIndex?: number; progress?: Progress; campaignElapsed?: number }) {
     this.campaign = data.spec;
     this.levelIndex = data.levelIndex || 0;
     this.spec = resolveLevel(data.spec, this.levelIndex);
+    this.gameplay = new Gameplay(this.spec.links || [], data.progress);
+    this.campaignElapsed = data.campaignElapsed || 0;
+    this.platformElapsed = 0;
+    this.triggers = []; this.doors = [];
+    this.playerShotAt = -2000; this.playerShotsFired = 0;
+    this.exitBlockedMessage = false;
     this.exits = [];
     this.traps = [];
     this.machines = [];
@@ -91,6 +112,11 @@ export class PlatformerScene extends Phaser.Scene {
   }
   create() {
     this.physics.resume();
+    this.levelStartedAt = this.time.now;
+    const stepPlatforms=(delta:number)=>this.stepPlatforms(delta);
+    const platformWorld=this.physics.world;
+    platformWorld.on(Phaser.Physics.Arcade.Events.WORLD_STEP,stepPlatforms);
+    this.events.once('shutdown',()=>platformWorld.off(Phaser.Physics.Arcade.Events.WORLD_STEP,stepPlatforms));
     const s = this.spec,
       industrial = s.theme === "industrial",
       ice = s.theme === "ice",
@@ -175,11 +201,12 @@ export class PlatformerScene extends Phaser.Scene {
           )
           .setDisplaySize(p.width * 36, 18);
         obj.setImmovable(true).setGravityY(-s.player.gravity);
+        (obj.body as Phaser.Physics.Arcade.Body).friction.set(1,1);
         (obj.body as Phaser.Physics.Arcade.Body).checkCollision.up = true;
         (obj.body as Phaser.Physics.Arcade.Body).checkCollision.down = false;
         (obj.body as Phaser.Physics.Arcade.Body).checkCollision.left = false;
         (obj.body as Phaser.Physics.Arcade.Body).checkCollision.right = false;
-        this.moving.push({ sprite: obj, x: obj.x, phase: p.x, motion: p.moving });
+        this.moving.push({ sprite: obj, x: obj.x, y: obj.y, spec: p, motion: p.moving });
         continue;
       }
       for (let x = p.x; x < p.x + p.width; x++) {
@@ -280,9 +307,17 @@ export class PlatformerScene extends Phaser.Scene {
         });
     }
     this.projectiles = this.physics.add.group({allowGravity:false});
-    this.physics.add.collider(this.projectiles, layer, (bullet) => bullet.destroy());
+    this.playerProjectiles = this.physics.add.group({allowGravity:false});
+    for (const group of [this.projectiles, this.playerProjectiles]) this.physics.add.collider(group, layer, (bullet) => {
+      const sprite = bullet as Phaser.Physics.Arcade.Sprite; this.burst(sprite.x,sprite.y,0xffca83); sprite.destroy();
+    });
     this.physics.add.overlap(this.hero, this.projectiles, (_hero, bullet) => {this.damage(); bullet.destroy();});
-    for (const e of s.entities) {
+    for (const [entityIndex, original] of s.entities.entries()) {
+      const e = {...original, id: original.id || `L${this.levelIndex+1}_${original.kind}_${entityIndex}`};
+      if (['switch', 'pressure_plate', 'door'].includes(e.kind)) {
+        this.createInteraction(e);
+        continue;
+      }
       if (e.kind === "icicle") {
         const obj = this.physics.add.sprite(e.x,e.y,"icicle");
         const body = obj.body as Phaser.Physics.Arcade.Body;
@@ -320,16 +355,24 @@ export class PlatformerScene extends Phaser.Scene {
           direction: -1,
           behavior: e.behavior || "patrol",
           shotAt: this.time.now,
+          spec: e,
+          health: e.ai?.health || 1,
+          memory: {phase:'idle', at:this.time.now, direction:-1},
         });
         if (e.behavior === "shooter") obj.setTint(0xffb56a);
         if (e.behavior === "chase") obj.setTint(0xeaa0db);
+        const actor = this.enemies[this.enemies.length-1];
+        this.physics.add.overlap(this.playerProjectiles, obj, (_enemy, _bullet) => {
+          const bullet = (_enemy === obj ? _bullet : _enemy) as Phaser.Physics.Arcade.Sprite;
+          if (bullet.active) { this.hitEnemy(actor); bullet.destroy(); }
+        });
         this.physics.add.overlap(this.hero, obj, () => {
+          if (this.state !== 'playing' || actor.memory.phase === 'hurt') return;
           const body = this.hero.body as Phaser.Physics.Arcade.Body;
           if (body.velocity.y > 70 && this.hero.y < obj.y - 12) {
-            obj.destroy();
+            this.hitEnemy(actor);
             this.hero.setVelocityY(-300);
-            this.burst(obj.x, obj.y, 0xf7ca72);
-          } else this.damage();
+          } else if (e.behavior!=='ambusher' || actor.memory.phase==='attack') this.damage();
         });
         continue;
       }
@@ -367,6 +410,7 @@ export class PlatformerScene extends Phaser.Scene {
         if (this.state !== "playing") return;
         if (e.kind === "crystal") {
           this.crystals++;
+          this.gameplay.emit('collect', e.id);
           this.burst(obj.x, obj.y, 0x7ee1ef);
           obj.destroy();
         } else if (e.kind === "spikes") this.damage();
@@ -376,22 +420,24 @@ export class PlatformerScene extends Phaser.Scene {
           obj.setTint(0x8effb2);
           this.burst(e.x, e.y, 0x91efb8);
         } else if (e.kind === "exit") {
-          const action=exitDecision(this.levelIndex,this.campaign.levels?.length || 1,this.crystals,s.objective.required);
+          const action=this.goalStates().every(goal=>goal.complete) ? exitDecision(this.levelIndex,this.campaign.levels?.length || 1,this.crystals,s.objective.required) : 'locked';
           if (action !== "locked") {
             if (action === "next") {
               this.state = "transitioning";
+              this.updateHUD();
               this.hero.setVelocity(0);
               this.physics.pause();
               this.message.setText(`Level ${this.levelIndex+1} complete!\nNext: ${this.campaign.levels?.[this.levelIndex+1].title}`).setVisible(true);
               this.cameras.main.fadeOut(250);
-              this.time.delayedCall(260,()=>this.scene.restart({spec:this.campaign,levelIndex:this.levelIndex+1}));
+              this.time.delayedCall(260,()=>this.scene.restart({spec:this.campaign,levelIndex:this.levelIndex+1,progress:this.gameplay.progress,campaignElapsed:this.campaignElapsed+this.time.now-this.levelStartedAt}));
             } else this.finish("won");
           }
           else {
+            this.exitBlockedMessage=true;
             this.messageUntil=this.time.now+2200;
             this.message
               .setText(
-                `Find ${s.objective.required - this.crystals} more ${s.collectible || "crystals"} to open the gate`,
+                this.goalStates().some(goal=>!goal.complete) ? 'Complete the objectives shown in the HUD to unlock this exit.' : `Find ${s.objective.required - this.crystals} more ${s.collectible || "crystals"} to open the gate`,
               )
               .setVisible(true);
           }
@@ -399,7 +445,7 @@ export class PlatformerScene extends Phaser.Scene {
       });
     }
     this.keys = this.input.keyboard!.addKeys(
-      "LEFT,RIGHT,UP,A,D,W,SPACE,SHIFT,R",
+      "LEFT,RIGHT,UP,A,D,W,SPACE,SHIFT,R,E,F,X",
     ) as Record<string, Phaser.Input.Keyboard.Key>;
     this.events.on("touch-control", (key: string, pressed: boolean) => {
       this.touch[key] = pressed;
@@ -410,7 +456,7 @@ export class PlatformerScene extends Phaser.Scene {
       Math.max(1, 960 / (this.game.canvas.parentElement?.clientWidth || 960)),
     );
     this.add
-      .rectangle(18, 18, 360 * hudScale, 96 * hudScale, 0x162d37, 0.9)
+      .rectangle(18, 18, 360 * hudScale, ((s.goals?.length || this.campaign.campaign_goals?.length) ? 124 : 96) * hudScale, 0x162d37, 0.9)
       .setOrigin(0)
       .setScrollFactor(0)
       .setDepth(50);
@@ -437,7 +483,7 @@ export class PlatformerScene extends Phaser.Scene {
       .setScrollFactor(0)
       .setDepth(60)
       .setVisible(false);
-    this.message.setText(`Level ${this.levelIndex+1}: ${s.title}\n${s.briefing || (s.objective.required ? `Collect ${s.objective.required} ${s.collectible || 'crystals'}, then find the exit.` : 'Find the exit.')}`).setVisible(true);
+    this.message.setText(`Level ${this.levelIndex+1}: ${s.title}\n${s.briefing || (s.goals?.length ? 'Complete your objectives, then find the exit.' : s.objective.required ? `Collect ${s.objective.required} ${s.collectible || 'crystals'}, then find the exit.` : 'Find the exit.')}`).setVisible(true);
     this.messageUntil = this.time.now + 2400;
     camera.fadeIn(250);
     camera.startFollow(this.hero, true, 0.1, 0.1, s.camera_mode === "vertical" ? 0 : -150, 55);
@@ -465,6 +511,115 @@ export class PlatformerScene extends Phaser.Scene {
         .__AETHER_PLATFORMER__;
     });
   }
+  goalStates() {
+    const elapsed = this.time.now-this.levelStartedAt;
+    const local = this.gameplay.conditions(this.spec.goals || [], elapsed);
+    return this.levelIndex+1 === (this.campaign.levels?.length || 1) ?
+      [...local, ...this.gameplay.conditions(this.campaign.campaign_goals || [], elapsed+this.campaignElapsed)] : local;
+  }
+  updateHUD() {
+    if (!this.hud) return;
+    const goals=this.goalStates(), pending=goals.find(goal=>!goal.complete) || goals.find(goal=>goal.kind==='time_limit');
+    const ready=goals.every(goal=>goal.complete) && this.crystals>=this.spec.objective.required;
+    if (goals.length) for (const exit of this.exits) exit.setTint(ready ? 0x9affb2 : 0xffbd61);
+    if (ready && this.exitBlockedMessage && this.state==='playing') {
+      this.message.setText('Exit unlocked!').setVisible(true);
+      this.messageUntil=this.time.now+1000; this.exitBlockedMessage=false;
+    }
+    const hint=pending ? pending.kind==='time_limit' ? `Time left: ${Math.max(0,Math.ceil(pending.needed-pending.amount))}s` : `${pending.kind}: ${Math.min(pending.needed,Math.floor(pending.amount))}/${pending.needed}${pending.kind==='survive'?'s':''}` : 'Reach the exit';
+    this.hud.setText(
+      `${"♥ ".repeat(Math.max(0, this.health))}  Level ${this.levelIndex+1}/${this.campaign.levels?.length || 1}\n${this.crystals} collected · ${this.spec.objective.required} needed · ${this.spec.objective.total} ${this.spec.collectible || "crystals"}\n${goals.length?`${goals.filter(goal=>goal.complete).length}/${goals.length} objectives · ${hint}`:this.crystals < this.spec.objective.required ? "Collect items, then reach the exit" : "Reach the exit"}${this.checkpoint >= 0 ? " · Saved" : ""}`,
+    );
+  }
+  isGrounded(body: Phaser.Physics.Arcade.Body) {
+    return body.blocked.down || body.touching.down && (Math.abs(body.velocity.y)<1 || this.moving.some(platform=>{
+      const support=platform.sprite.body as Phaser.Physics.Arcade.Body;
+      return Math.abs(body.bottom-support.top)<7 && body.right>support.left && body.left<support.right && Math.abs(body.velocity.y-support.velocity.y)<35;
+    }));
+  }
+  stepPlatforms(delta: number) {
+    this.platformElapsed += delta*1000;
+    for (const platform of this.moving) {
+      if (!platform.motion) continue;
+      const body=platform.sprite.body as Phaser.Physics.Arcade.Body;
+      const target=platformPosition(platform.x,platform.y,platform.spec.motion || {axis:'horizontal',pattern:'sine',distance:54,period_ms:3000},this.platformElapsed);
+      // Arcade can take several fixed physics steps per render. Use body centers
+      // and the actual step duration; render-time feedback can amplify velocity.
+      body.setVelocity((target.x-body.center.x)/delta,(target.y-body.center.y)/delta);
+    }
+  }
+  hitEnemy(enemy: PlatformerScene['enemies'][number]) {
+    if (!enemy.sprite.active || enemy.memory.phase === 'hurt' || this.state !== 'playing') return;
+    enemy.health--;
+    this.burst(enemy.sprite.x,enemy.sprite.y,0xf7ca72);
+    if (enemy.health <= 0) {
+      this.gameplay.emit('defeat',enemy.spec.id || '');
+      enemy.sprite.destroy();
+    } else {
+      enemy.memory = {...enemy.memory,phase:'hurt',at:this.time.now};
+      enemy.sprite.setTint(0xffffff).setVelocityX(0);
+    }
+  }
+  shootPlayer() {
+    if (this.spec.player_attack !== 'projectile' || this.time.now-this.playerShotAt < 350 || this.state !== 'playing') return;
+    this.playerShotAt = this.time.now; this.playerShotsFired++;
+    const bullet=this.playerProjectiles!.create(this.hero.x+this.facing*22,this.hero.y-3,'terrain',registry.roles.crystal) as Phaser.Physics.Arcade.Sprite;
+    bullet.setScale(.7).setTint(0x9affd0).setVelocityX(this.facing*460);
+    this.time.delayedCall(1600,()=>{if(bullet.active)bullet.destroy();});
+  }
+  activateTrigger(trigger: PlatformerScene['triggers'][number]) {
+    if (this.state !== 'playing' || this.gameplay.progress.activate.includes(trigger.spec.id || '')) return;
+    const opened = this.gameplay.emit('activate',trigger.spec.id || '');
+    trigger.sprite.setTint(0x83ffb0);
+    this.burst(trigger.sprite.x,trigger.sprite.y,0x83ffb0);
+    for (const id of opened) {
+      const door = this.doors.find(d=>d.spec.id===id);
+      if (!door) continue;
+      door.open = true;
+      (door.sprite.body as Phaser.Physics.Arcade.StaticBody).enable = false;
+      this.tweens.add({targets:door.sprite,alpha:.2,scaleX:.2,duration:300});
+      this.burst(door.sprite.x,door.sprite.y,0x83ffb0);
+    }
+  }
+  createInteraction(spec: Entity) {
+    const texture = `component-${spec.kind}`;
+    if (!this.textures.exists(texture)) {
+      const art = this.make.graphics({x:0,y:0});
+      if (spec.kind === 'door') {
+        art.fillStyle(0x465a71).fillRect(0,0,30,180);
+        art.fillStyle(0xe6b449);
+        for(let y=4;y<180;y+=24) art.fillRect(3,y,24,8);
+      } else if (spec.kind === 'pressure_plate') {
+        art.fillStyle(0x536477).fillRect(0,5,40,7);
+        art.fillStyle(0xf7b25c).fillRect(4,0,32,5);
+      } else {
+        art.fillStyle(0x44586b).fillRect(0,0,26,32);
+        art.fillStyle(0xffbd61).fillRect(5,6,16,8);
+        art.lineStyle(4,0xe7f2ee).lineBetween(13,24,21,13);
+      }
+      art.generateTexture(texture,spec.kind==='door'?30:40,spec.kind==='door'?180:spec.kind==='pressure_plate'?12:32);
+      art.destroy();
+    }
+    const sprite = this.physics.add.staticSprite(spec.x,spec.y,texture);
+    if (spec.kind === 'door') {
+      this.doors.push({spec,sprite,open:false});
+      this.physics.add.collider(this.hero,sprite);
+      for (const enemy of this.enemies) this.physics.add.collider(enemy.sprite,sprite);
+      for(const group of [this.projectiles!,this.playerProjectiles!]) this.physics.add.collider(group,sprite,(bullet)=>{
+        const shot=bullet as Phaser.Physics.Arcade.Sprite; this.burst(shot.x,shot.y,0xffd087); shot.destroy();
+      });
+    } else {
+      const trigger={spec,sprite};
+      this.triggers.push(trigger);
+      this.add.text(spec.x,spec.y-30,spec.activation==='interact'?'E · Switch':spec.activation==='projectile'?'Shoot':spec.activation==='pressure'?'Stand':'Trigger',
+        {fontSize:'12px',color:'#ffffff',backgroundColor:'#18333e'}).setOrigin(.5);
+      this.physics.add.overlap(this.playerProjectiles!,sprite,(_first,_second)=>{
+        const bullet=_first===sprite?_second:_first;
+        if (triggerReady(spec.activation,{near:false,contact:false,grounded:false,interact:false,projectile:true})) this.activateTrigger(trigger);
+        bullet.destroy();
+      });
+    }
+  }
   burst(x: number, y: number, color: number) {
     for (let i = 0; i < 7; i++) {
       const p = this.add
@@ -489,15 +644,16 @@ export class PlatformerScene extends Phaser.Scene {
     this.cameras.main.shake(100, 0.004);
     if (this.health <= 0) this.finish("lost");
   }
-  finish(state: string) {
+  finish(state: string, reason = '') {
     this.state = state;
+    this.updateHUD();
     this.hero.setVelocity(0);
     this.physics.pause();
     this.message
       .setText(
         state === "won"
           ? `All ${this.campaign.levels?.length || 1} levels complete!\nPress R to play again`
-          : `Journey ended at level ${this.levelIndex+1}\nPress R to restart the journey`,
+          : `${reason ? reason+'\n' : ''}Journey ended at level ${this.levelIndex+1}\nPress R to restart the journey`,
       )
       .setVisible(true);
   }
@@ -511,10 +667,16 @@ export class PlatformerScene extends Phaser.Scene {
       levelTitle: this.spec.title,
       topology: this.spec.topology,
       objective: this.spec.objective,
+      goals: this.goalStates(),
+      progress: this.gameplay.progress,
+      triggers: this.triggers.map(t=>({id:t.spec.id,activation:t.spec.activation,x:t.sprite.x,y:t.sprite.y,active:this.gameplay.progress.activate.includes(t.spec.id || '')})),
+      doors: this.doors.map(d=>({id:d.spec.id,x:d.sprite.x,y:d.sprite.y,open:d.open,collidable:(d.sprite.body as Phaser.Physics.Arcade.StaticBody).enable})),
+      playerShotsFired: this.playerShotsFired,
+      playerAttack: this.spec.player_attack || 'stomp',
       respawn: this.spawn,
       exitAlpha: this.exits[0]?.alpha,
       exitStyle: this.spec.exit_style || "gate",
-      enemies: this.enemies.filter(e=>e.sprite.active).map(e=>({behavior:e.behavior,x:e.sprite.x,y:e.sprite.y,vx:(e.sprite.body as Phaser.Physics.Arcade.Body).velocity.x})),
+      enemies: this.enemies.filter(e=>e.sprite.active).map(e=>({id:e.spec.id,behavior:e.behavior,phase:e.memory.phase,health:e.health,x:e.sprite.x,y:e.sprite.y,vx:(e.sprite.body as Phaser.Physics.Arcade.Body).velocity.x})),
       icicles: this.traps.map(t=>({state:t.state,x:t.sprite.x,y:t.sprite.y,activations:t.activations,trigger:t.spec.trigger})),
       machines: this.machines.map(m=>({active:m.active,x:m.sprite.x,y:m.sprite.y})),
       movingPlatforms: this.moving.map(p=>({x:p.sprite.x,y:p.sprite.y})),
@@ -528,8 +690,7 @@ export class PlatformerScene extends Phaser.Scene {
       y: this.hero.y,
       vx: b.velocity.x,
       vy: b.velocity.y,
-      grounded:
-        b.blocked.down || (b.touching.down && Math.abs(b.velocity.y) < 1),
+      grounded: this.isGrounded(b),
       health: this.health,
       crystals: this.crystals,
       state: this.state,
@@ -557,9 +718,18 @@ export class PlatformerScene extends Phaser.Scene {
       return;
     }
     if (this.state !== "playing") return;
+    if (this.goalStates().some(goal=>goal.failed)) { this.finish('lost','Time ran out!'); return; }
     const b = this.hero.body as Phaser.Physics.Arcade.Body;
-    const grounded =
-      b.blocked.down || (b.touching.down && Math.abs(b.velocity.y) < 1);
+    const grounded = this.isGrounded(b);
+    const interact=Phaser.Input.Keyboard.JustDown(this.keys.E) || !!this.touch.interact;
+    this.touch.interact=false;
+    if (Phaser.Input.Keyboard.JustDown(this.keys.F) || Phaser.Input.Keyboard.JustDown(this.keys.X) || this.touch.attack) this.shootPlayer();
+    this.touch.attack=false;
+    for(const trigger of this.triggers) {
+      const dx=Math.abs(this.hero.x-trigger.spec.x), dy=Math.abs(this.hero.y-trigger.spec.y);
+      const contact=trigger.spec.activation==='pressure' ? dx<32 && Math.abs(b.bottom-trigger.spec.y)<18 : dx<30 && dy<40;
+      if(triggerReady(trigger.spec.activation,{near:dx<(trigger.spec.activation==='proximity'?(trigger.spec.radius || 110):60)&&dy<75,contact,grounded,interact,projectile:false})) this.activateTrigger(trigger);
+    }
     if (b.blocked.down)
       this.spec.platforms.forEach((p, i) => {
         if (
@@ -634,9 +804,12 @@ export class PlatformerScene extends Phaser.Scene {
       if (!e.sprite.active) continue;
       const low = (e.platform.x + 0.5) * 36,
         high = (e.platform.x + e.platform.width - 0.5) * 36;
-      const decision=enemyDecision(e.behavior,e.sprite.x,e.sprite.y,low,high,e.direction,this.hero.x,this.hero.y,time-e.shotAt);
-      e.direction=decision.direction;
+      const decision=enemyStep(e.behavior,e.memory,{x:e.sprite.x,y:e.sprite.y,low,high,playerX:this.hero.x,playerY:this.hero.y},time,
+        e.spec.ai || {health:1,cooldown_ms:1400,telegraph_ms:450,radius:300});
+      e.memory=decision.memory;
+      e.direction=decision.memory.direction;
       e.sprite.setVelocityX(decision.vx);
+      e.sprite.setTint(e.memory.phase==='windup' ? (Math.floor(time/80)%2?0xffffff:0xff6755) : e.memory.phase==='hurt'?0xffffff:e.behavior==='turret'?0xffb56a:e.behavior==='ambusher'?0xeaa0db:0xffffff);
       if (decision.fire) {
         e.shotAt=time; this.shotsFired++;
         const bullet=this.projectiles!.create(e.sprite.x,e.sprite.y,"terrain",registry.roles.crystal) as Phaser.Physics.Arcade.Sprite;
@@ -668,13 +841,11 @@ export class PlatformerScene extends Phaser.Scene {
       }
     }
     for(const machine of this.machines){
-      machine.active=(time % (machine.spec.period_ms || 2200))<(machine.spec.period_ms || 2200)*.5;
+      machine.active=((time-this.levelStartedAt) % (machine.spec.period_ms || 2200))<(machine.spec.period_ms || 2200)*.5;
       machine.sprite.setTint(machine.active?0xff6655:0x668899).setAlpha(machine.active?1:.4);
       if(machine.active)machine.sprite.rotation=time/100;
     }
     if(this.messageUntil && time>this.messageUntil){this.message.setVisible(false);this.messageUntil=0;}
-    for (const p of this.moving)
-      p.sprite.setVelocityX(p.motion ? Math.cos(time / 850 + p.phase) * 65 : 0);
     if (this.hero.y > this.spec.height - 20) {
       this.hurtAt = -2000;
       this.damage();
@@ -685,8 +856,6 @@ export class PlatformerScene extends Phaser.Scene {
         this.groundedAt = -1000;
       }
     }
-    this.hud.setText(
-      `${"♥ ".repeat(Math.max(0, this.health))}  Level ${this.levelIndex+1}/${this.campaign.levels?.length || 1}\n${this.crystals} collected · ${this.spec.objective.required} needed · ${this.spec.objective.total} ${this.spec.collectible || "crystals"}\n${this.crystals < this.spec.objective.required ? "Collect items, then reach the exit" : this.levelIndex+1 < (this.campaign.levels?.length || 1) ? "Reach the exit to the next level" : "Reach the exit"}${this.checkpoint >= 0 ? " · Saved" : ""}`,
-    );
+    this.updateHUD();
   }
 }

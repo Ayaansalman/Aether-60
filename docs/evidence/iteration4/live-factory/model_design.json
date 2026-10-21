@@ -1,0 +1,525 @@
+{
+  "title": "Automated Facility Alpha",
+  "premise": "Navigate the heavily automated industrial facility, activate master control switches to unlock security blast doors, and bypass dangerous moving factory machinery.",
+  "genre": "platformer",
+  "theme": "industrial",
+  "difficulty": "balanced",
+  "objective": "collect_and_exit",
+  "abilities": [
+    "double_jump"
+  ],
+  "checkpoints": true,
+  "moving_platforms": true,
+  "platform_motion": {
+    "axis": "horizontal",
+    "pattern": "sine",
+    "distance": 48,
+    "period_ms": 3000
+  },
+  "player_attack": "stomp",
+  "interactions": [
+    {
+      "trigger": "interact",
+      "section": 2,
+      "door_section": 5
+    },
+    {
+      "trigger": "pressure",
+      "section": 6,
+      "door_section": 9
+    }
+  ],
+  "objectives": [
+    {
+      "kind": "activate",
+      "count": 2,
+      "seconds": 30
+    },
+    {
+      "kind": "collect",
+      "count": 5,
+      "seconds": 30
+    }
+  ],
+  "campaign_objectives": [],
+  "slippery": false,
+  "falling_icicles": false,
+  "icicle_trigger": "mixed",
+  "hazard_period_ms": 2000,
+  "timed_hazards": true,
+  "exit_indicator": "glow",
+  "exit_style": "gate",
+  "collectible": "relics",
+  "level_count": 2,
+  "levels": [
+    {
+      "title": "Assembly Line Lower",
+      "theme": "industrial",
+      "topology": "journey",
+      "difficulty": "balanced",
+      "objective": "collect_and_exit",
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 40,
+        "period_ms": 3000
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "trigger": "interact",
+          "section": 2,
+          "door_section": 6
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "activate",
+          "count": 1,
+          "seconds": 30
+        }
+      ],
+      "checkpoints": true,
+      "icicle_trigger": null,
+      "hazard_period_ms": 2200,
+      "exit_style": "gate",
+      "exit_indicator": "glow",
+      "collectible": "relics",
+      "briefing": "Infiltrate the lower assembly floor and activate the primary terminal switch to unseal the sector bulkhead.",
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "turret",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "bridge",
+          "length": 5,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "gauntlet",
+          "length": 7,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "chase",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "bridge",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        }
+      ]
+    },
+    {
+      "title": "Core Processing Upper",
+      "theme": "industrial",
+      "topology": "ascent",
+      "difficulty": "challenging",
+      "objective": "collect_and_exit",
+      "slippery": false,
+      "falling_icicles": false,
+      "timed_hazards": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "vertical",
+        "pattern": "ping_pong",
+        "distance": 60,
+        "period_ms": 2500
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "trigger": "pressure",
+          "section": 1,
+          "door_section": 5
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "activate",
+          "count": 1,
+          "seconds": 30
+        },
+        {
+          "kind": "collect",
+          "count": 3,
+          "seconds": 30
+        }
+      ],
+      "checkpoints": true,
+      "icicle_trigger": null,
+      "hazard_period_ms": 1800,
+      "exit_style": "beacon",
+      "exit_indicator": "pulse",
+      "collectible": "relics",
+      "briefing": "Ascend through heavy crushing machinery and pressure-plate chambers to reach the core exit.",
+      "sections": [
+        {
+          "kind": "ascent",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "ambusher",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "precision"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "gauntlet",
+          "length": 7,
+          "elevation": 1,
+          "gap": 3,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ascent",
+          "length": 6,
+          "elevation": 2,
+          "gap": 2,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "bridge",
+          "length": 5,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "chase",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        }
+      ]
+    }
+  ],
+  "topology": "journey",
+  "sections": [
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 0,
+      "gap": 1,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": true,
+      "hazards": true,
+      "encounter": "turret",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "hazards"
+    },
+    {
+      "kind": "bridge",
+      "length": 5,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "exploration"
+    },
+    {
+      "kind": "gauntlet",
+      "length": 7,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": true,
+      "hazards": true,
+      "encounter": "chase",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "moving"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 0,
+      "gap": 1,
+      "enemies": false,
+      "hazards": true,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "hazards"
+    },
+    {
+      "kind": "bridge",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "combat"
+    },
+    {
+      "kind": "ascent",
+      "length": 6,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": true,
+      "hazards": true,
+      "encounter": "ambusher",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "precision"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": true,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "moving"
+    },
+    {
+      "kind": "gauntlet",
+      "length": 7,
+      "elevation": 1,
+      "gap": 3,
+      "enemies": true,
+      "hazards": true,
+      "encounter": "shooter",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "combat"
+    },
+    {
+      "kind": "ascent",
+      "length": 6,
+      "elevation": 2,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    }
+  ],
+  "unsupported": [],
+  "design_notes": [
+    "Industrial machinery hazards and timed traps create high tension in factory sections.",
+    "Switches and pressure plates directly tie to security door unlocking mechanics."
+  ],
+  "requested_features": [
+    {
+      "source": "factory",
+      "capability": "factory_environment",
+      "description": "Industrial factory setting with automated components."
+    },
+    {
+      "source": "activate switches",
+      "capability": "switches",
+      "description": "Interactable switches to trigger level mechanisms."
+    },
+    {
+      "source": "open security doors",
+      "capability": "switches",
+      "description": "Latched security doors controlled by triggers."
+    },
+    {
+      "source": "avoiding machinery",
+      "capability": "timed_hazards",
+      "description": "Hazardous industrial machinery operating on timed cycles."
+    }
+  ]
+}

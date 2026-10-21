@@ -1,0 +1,229 @@
+{
+  "prompt": "A peaceful forest platformer. Survive for 2 seconds and reach the exit within 45 seconds.",
+  "provenance": {
+    "provider": "fixture",
+    "model": null,
+    "live": false
+  },
+  "guard": {
+    "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+    "requirements": [
+      {
+        "id": "forest_environment",
+        "source": "forest",
+        "span": [
+          11,
+          17
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "environment_composition"
+      },
+      {
+        "id": "timed_objective",
+        "source": "within 45 seconds",
+        "span": [
+          71,
+          88
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "timed_objective"
+      },
+      {
+        "id": "survival_objective",
+        "source": "Survive for 2 seconds",
+        "span": [
+          30,
+          51
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "survival_objective"
+      }
+    ],
+    "changes": [],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "The Verdant Passage",
+    "premise": "A peaceful forest platformer. Survive for 2 seconds and reach the exit within 45 seconds.",
+    "genre": "platformer",
+    "theme": "forest",
+    "difficulty": "relaxed",
+    "objective": "reach_exit",
+    "abilities": [],
+    "checkpoints": true,
+    "moving_platforms": false,
+    "platform_motion": {
+      "axis": "horizontal",
+      "pattern": "sine",
+      "distance": 54,
+      "period_ms": 3000
+    },
+    "player_attack": "stomp",
+    "interactions": [],
+    "objectives": [
+      {
+        "kind": "survive",
+        "count": 0,
+        "seconds": 2,
+        "enemy_behavior": null
+      },
+      {
+        "kind": "time_limit",
+        "count": 0,
+        "seconds": 45,
+        "enemy_behavior": null
+      }
+    ],
+    "campaign_objectives": [],
+    "slippery": false,
+    "falling_icicles": false,
+    "icicle_trigger": "mixed",
+    "hazard_period_ms": 2200,
+    "timed_hazards": false,
+    "exit_indicator": "none",
+    "exit_style": "gate",
+    "collectible": "crystals",
+    "level_count": 1,
+    "levels": [],
+    "topology": "journey",
+    "sections": [
+      {
+        "kind": "meadow",
+        "length": 5,
+        "elevation": -1,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "meadow",
+        "length": 6,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "ruins",
+        "length": 7,
+        "elevation": 1,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "meadow",
+        "length": 5,
+        "elevation": -1,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "meadow",
+        "length": 6,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "ruins",
+        "length": 7,
+        "elevation": 1,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "meadow",
+        "length": 5,
+        "elevation": -1,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "meadow",
+        "length": 6,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ],
+    "requested_features": []
+  }
+}

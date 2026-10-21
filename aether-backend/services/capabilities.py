@@ -10,7 +10,7 @@ FEATURES = {
     'forest_environment': (r'forest', 'environment_composition'),
     'factory_environment': (r'industrial|factory', 'environment_composition'),
     'slippery': (r'slippery|sliding terrain', 'slippery_momentum'),
-    'falling_icicles': (r'falling icicles?|icicle hazards?', 'falling_icicle_cycle'),
+    'falling_icicles': (r'falling icicles?|icicle hazards?|falling (?:ice )?hazards?', 'falling_icicle_cycle'),
     'exit_indicator': (r'flashing light|flashing.*exit|pulsing.*exit|glowing shrine|glowing.*exit', 'exit_indicator_animation'),
     'collectibles': (r'collectible|collect.*crystal|collect.*relic', 'collectible_overlap'),
     'patrol': (r'patrolling|patrol', 'enemy_patrol'),
@@ -23,6 +23,15 @@ FEATURES = {
     'multiple_levels': (r'(?:multiple|multi|three|two|2|3)[ -]+(?:(?:connected|ice|forest|industrial|twilight|platformer)[ -]+)*(?:levels?|stages?)', 'level_transitions'),
     'double_jump': (r'double[ -]jump', 'double_jump'),
     'dash': (r'\bdash\b', 'dash'),
+    'switches': (r'\bswitch(?:es)?\b', 'switch_door'),
+    'pressure_plates': (r'pressure plates?', 'pressure_plate'),
+    'projectile_switches': (r'(?:shoot|projectile).*switch|switch.*(?:shoot|projectile)', 'projectile_switch'),
+    'combat_objective': (r'\b(?:defeat|kill|eliminate)\b.*\b(?:enemies|creatures|guards|monsters|turrets?|ambushers?)\b', 'combat_objective'),
+    'timed_objective': (r'(?:within|under)\s+\d+\s*seconds?', 'timed_objective'),
+    'survival_objective': (r'survive(?: for)?\s+\d+\s*seconds?', 'survival_objective'),
+    'turret': (r'\bturrets?\b', 'enemy_turret'),
+    'ambusher': (r'ambush|proximity.triggered attack', 'enemy_ambusher'),
+    'player_projectiles': (r'player.*(?:shoot|projectile)|blaster|fireballs?|shoot.*(?:enemies|creatures)', 'player_projectile'),
 }
 
 
@@ -44,6 +53,7 @@ def requirement_evidence(ir, prompt, unsupported=(), qa=None, requested=()):
     levels = ir.levels or [ir]
     entities = [e for level in levels for e in level.entities]
     platforms = [p for level in levels for p in level.platforms]
+    goals = [goal for level in levels for goal in level.goals] + ir.campaign_goals
     witnesses = {
         'ice_environment': any((level.theme or ir.theme) == 'ice' for level in levels), 'forest_environment': any((level.theme or ir.theme) == 'forest' for level in levels),
         'factory_environment': any((level.theme or ir.theme) == 'industrial' for level in levels), 'slippery': any(level.slippery if level.slippery is not None else ir.slippery for level in levels),
@@ -53,8 +63,15 @@ def requirement_evidence(ir, prompt, unsupported=(), qa=None, requested=()):
         'moving_platforms': any(p.moving for p in platforms),
         'timed_hazards': any(e.kind == 'timed_hazard' for e in entities),
         'checkpoints': any(e.kind == 'checkpoint' for e in entities), 'multiple_levels': len(levels) > 1,
+        'switches': any(e.kind=='switch' for e in entities) and any(level.links for level in levels),
+        'pressure_plates': any(e.kind=='pressure_plate' for e in entities),
+        'projectile_switches': any(e.kind=='switch' and e.activation=='projectile' for e in entities) and any(level.player_attack=='projectile' for level in levels),
+        'combat_objective': any(goal.kind=='defeat' for goal in goals),
+        'timed_objective': any(goal.kind=='time_limit' for goal in goals),
+        'survival_objective': any(goal.kind=='survive' for goal in goals),
+        'player_projectiles': any(level.player_attack=='projectile' for level in levels),
         **{name: any(e.kind == 'enemy' and e.behavior == behavior for e in entities)
-           for name, behavior in [('patrol', 'patrol'), ('chase', 'chase'), ('ranged', 'shooter')]},
+           for name, behavior in [('patrol', 'patrol'), ('chase', 'chase'), ('ranged', 'shooter'), ('turret','turret'), ('ambusher','ambusher')]},
         **{ability: ability in ir.player.abilities for ability in ['double_jump', 'dash']},
     }
     checks = {}
@@ -80,10 +97,12 @@ def requirement_evidence(ir, prompt, unsupported=(), qa=None, requested=()):
     for req in requirements:
         built = bool(witnesses.get(req['id']))
         check = checks.get(req['runtime_check'])
+        if check is None and req['runtime_check']=='switch_door':
+            check=checks.get('projectile_switch')  # A physically opened projectile-linked door also verifies a switch/door interaction.
         req.update(constructed=built, verified=bool(built and check and check['passed']),
                    status='construction_failed' if not built else 'verification_failed' if check and not check['passed']
                    else 'implemented_verified' if check else 'implemented_unverified',
-                   evidence={'spec': req['id'], 'qa': req['runtime_check'] if check else None})
+                   evidence={'spec': req['id'], 'qa': check['id'] if check else None})
     for value in unsupported:
         requirements.append({'id': 'unsupported', 'source': value, 'supported': False, 'status': 'unsupported', 'verified': False})
     return {'requirements': requirements, 'overall': 'FAIL' if any(r['status'] in ('construction_failed', 'verification_failed') for r in requirements)

@@ -65,6 +65,9 @@ async def run(gid: str, request: Generate):
             requirements = enforce_explicit_requirements(design, request.prompt)
             artifact("requirement_report.json", requirements)
             artifact("game_intent.json", {"original_prompt":request.prompt,"genre":design.genre,"setting":design.theme,
+                "gameplay": {"objectives":[goal.model_dump() for goal in design.objectives],
+                    "campaign_objectives":[goal.model_dump() for goal in design.campaign_objectives],
+                    "interactions":[item.model_dump() for item in design.interactions],"player_attack":design.player_attack},
                 "level_count": design.level_count, "progression": [level.model_dump(exclude_none=True) for level in design.levels],
                 "requested_mechanics":requirements['requirements'],"model_requests":[f.model_dump() for f in design.requested_features],"unsupported":design.unsupported,"interpretation_source":provenance})
             artifact("game_design.json", design.model_dump())

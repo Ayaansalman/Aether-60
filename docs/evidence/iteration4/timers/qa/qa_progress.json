@@ -1,0 +1,1043 @@
+[
+  {
+    "id": "horizontal_movement",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "before": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "survive",
+            "amount": 1.7166000000000003,
+            "needed": 2,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "time_limit",
+            "amount": 1.7166000000000003,
+            "needed": 45,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 864,
+            "y": 657
+          },
+          {
+            "x": 1620,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 1,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 696,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 5587.1
+      },
+      "after": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "survive",
+            "amount": 2.6665,
+            "needed": 2,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "time_limit",
+            "amount": 2.6665,
+            "needed": 45,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 864,
+            "y": 657
+          },
+          {
+            "x": 1620,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 1,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 136.44444444444446,
+        "y": 696,
+        "vx": 183.33333333333331,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "run",
+        "seed": 4242,
+        "time": 6537
+      }
+    }
+  },
+  {
+    "id": "jump",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "before": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "survive",
+            "amount": 0.28330000000000016,
+            "needed": 2,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "time_limit",
+            "amount": 0.28330000000000016,
+            "needed": 45,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 864,
+            "y": 657
+          },
+          {
+            "x": 1620,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 2,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 696,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 6953.7
+      },
+      "after": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "survive",
+            "amount": 0.7832000000000007,
+            "needed": 2,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "time_limit",
+            "amount": 0.7832000000000007,
+            "needed": 45,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 864,
+            "y": 657
+          },
+          {
+            "x": 1620,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 2,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 631.1388888888889,
+        "vx": 0,
+        "vy": -306.66666666666686,
+        "grounded": false,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "jump",
+        "seed": 4242,
+        "time": 7453.6
+      }
+    }
+  },
+  {
+    "id": "environment_composition",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "stage": 0,
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "survive",
+            "amount": 0.38339999999999963,
+            "needed": 2,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "time_limit",
+            "amount": 0.38339999999999963,
+            "needed": 45,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 864,
+            "y": 657
+          },
+          {
+            "x": 1620,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 3,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 696,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 7937
+      }
+    }
+  },
+  {
+    "id": "objective_locked_exit",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "ready": true,
+      "levelIndex": 0,
+      "levelCount": 1,
+      "levelTitle": "The Verdant Passage",
+      "topology": "journey",
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 19
+      },
+      "goals": [
+        {
+          "id": "L1_goal_0",
+          "kind": "survive",
+          "amount": 0.5666999999999999,
+          "needed": 2,
+          "complete": false,
+          "failed": false
+        },
+        {
+          "id": "L1_goal_1",
+          "kind": "time_limit",
+          "amount": 0.5666999999999999,
+          "needed": 45,
+          "complete": true,
+          "failed": false
+        }
+      ],
+      "progress": {
+        "defeat": [],
+        "activate": [],
+        "unlock": [],
+        "collect": []
+      },
+      "triggers": [],
+      "doors": [],
+      "playerShotsFired": 0,
+      "playerAttack": "stomp",
+      "respawn": {
+        "x": 90,
+        "y": 692
+      },
+      "exitAlpha": 1,
+      "exitStyle": "gate",
+      "enemies": [],
+      "icicles": [],
+      "machines": [],
+      "movingPlatforms": [
+        {
+          "x": 864,
+          "y": 657
+        },
+        {
+          "x": 1620,
+          "y": 657
+        }
+      ],
+      "shotsFired": 0,
+      "slippery": false,
+      "environment": "forest",
+      "terrainTexture": "terrain",
+      "generation": 4,
+      "landedPlatforms": [
+        0
+      ],
+      "x": 2196,
+      "y": 726.4166666666666,
+      "vx": 0,
+      "vy": 109.99999999999999,
+      "grounded": false,
+      "health": 5,
+      "crystals": 0,
+      "state": "playing",
+      "checkpoint": -1,
+      "missingAssets": [],
+      "animation": "fall",
+      "seed": 4242,
+      "time": 8587
+    }
+  },
+  {
+    "id": "survival_objective",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "ready": true,
+      "levelIndex": 0,
+      "levelCount": 1,
+      "levelTitle": "The Verdant Passage",
+      "topology": "journey",
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 19
+      },
+      "goals": [
+        {
+          "id": "L1_goal_0",
+          "kind": "survive",
+          "amount": 3.0665999999999993,
+          "needed": 2,
+          "complete": true,
+          "failed": false
+        },
+        {
+          "id": "L1_goal_1",
+          "kind": "time_limit",
+          "amount": 3.0665999999999993,
+          "needed": 45,
+          "complete": true,
+          "failed": false
+        }
+      ],
+      "progress": {
+        "defeat": [],
+        "activate": [],
+        "unlock": [],
+        "collect": [
+          "L1_crystal_0",
+          "L1_crystal_1",
+          "L1_crystal_2",
+          "L1_crystal_3",
+          "L1_crystal_4",
+          "L1_crystal_5",
+          "L1_crystal_6",
+          "L1_crystal_7",
+          "L1_crystal_8",
+          "L1_crystal_10",
+          "L1_crystal_11",
+          "L1_crystal_12",
+          "L1_crystal_13",
+          "L1_crystal_14",
+          "L1_crystal_15",
+          "L1_crystal_16",
+          "L1_crystal_17",
+          "L1_crystal_18",
+          "L1_crystal_19"
+        ]
+      },
+      "triggers": [],
+      "doors": [],
+      "playerShotsFired": 0,
+      "playerAttack": "stomp",
+      "respawn": {
+        "x": 90,
+        "y": 692
+      },
+      "exitAlpha": 1,
+      "exitStyle": "gate",
+      "enemies": [],
+      "icicles": [],
+      "machines": [],
+      "movingPlatforms": [
+        {
+          "x": 864,
+          "y": 657
+        },
+        {
+          "x": 1620,
+          "y": 657
+        }
+      ],
+      "shotsFired": 0,
+      "slippery": false,
+      "environment": "forest",
+      "terrainTexture": "terrain",
+      "generation": 4,
+      "landedPlatforms": [
+        0
+      ],
+      "x": 90,
+      "y": 696,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "health": 5,
+      "crystals": 19,
+      "state": "playing",
+      "checkpoint": -1,
+      "missingAssets": [],
+      "animation": "idle",
+      "seed": 4242,
+      "time": 11086.9
+    }
+  },
+  {
+    "id": "objective_conditions",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "stage": 0,
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "survive",
+            "amount": 3.116499999999999,
+            "needed": 2,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "time_limit",
+            "amount": 3.116499999999999,
+            "needed": 45,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": [
+            "L1_crystal_0",
+            "L1_crystal_1",
+            "L1_crystal_2",
+            "L1_crystal_3",
+            "L1_crystal_4",
+            "L1_crystal_5",
+            "L1_crystal_6",
+            "L1_crystal_7",
+            "L1_crystal_8",
+            "L1_crystal_10",
+            "L1_crystal_11",
+            "L1_crystal_12",
+            "L1_crystal_13",
+            "L1_crystal_14",
+            "L1_crystal_15",
+            "L1_crystal_16",
+            "L1_crystal_17",
+            "L1_crystal_18",
+            "L1_crystal_19"
+          ]
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 864,
+            "y": 657
+          },
+          {
+            "x": 1620,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 4,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 696,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 5,
+        "crystals": 19,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 11136.8
+      }
+    }
+  },
+  {
+    "id": "timed_objective",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "ready": true,
+      "levelIndex": 0,
+      "levelCount": 1,
+      "levelTitle": "The Verdant Passage",
+      "topology": "journey",
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 19
+      },
+      "goals": [
+        {
+          "id": "L1_goal_0",
+          "kind": "survive",
+          "amount": 3.116499999999999,
+          "needed": 2,
+          "complete": true,
+          "failed": false
+        },
+        {
+          "id": "L1_goal_1",
+          "kind": "time_limit",
+          "amount": 3.116499999999999,
+          "needed": 45,
+          "complete": true,
+          "failed": false
+        }
+      ],
+      "progress": {
+        "defeat": [],
+        "activate": [],
+        "unlock": [],
+        "collect": [
+          "L1_crystal_0",
+          "L1_crystal_1",
+          "L1_crystal_2",
+          "L1_crystal_3",
+          "L1_crystal_4",
+          "L1_crystal_5",
+          "L1_crystal_6",
+          "L1_crystal_7",
+          "L1_crystal_8",
+          "L1_crystal_10",
+          "L1_crystal_11",
+          "L1_crystal_12",
+          "L1_crystal_13",
+          "L1_crystal_14",
+          "L1_crystal_15",
+          "L1_crystal_16",
+          "L1_crystal_17",
+          "L1_crystal_18",
+          "L1_crystal_19"
+        ]
+      },
+      "triggers": [],
+      "doors": [],
+      "playerShotsFired": 0,
+      "playerAttack": "stomp",
+      "respawn": {
+        "x": 90,
+        "y": 692
+      },
+      "exitAlpha": 1,
+      "exitStyle": "gate",
+      "enemies": [],
+      "icicles": [],
+      "machines": [],
+      "movingPlatforms": [
+        {
+          "x": 864,
+          "y": 657
+        },
+        {
+          "x": 1620,
+          "y": 657
+        }
+      ],
+      "shotsFired": 0,
+      "slippery": false,
+      "environment": "forest",
+      "terrainTexture": "terrain",
+      "generation": 4,
+      "landedPlatforms": [
+        0
+      ],
+      "x": 90,
+      "y": 696,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "health": 5,
+      "crystals": 19,
+      "state": "playing",
+      "checkpoint": -1,
+      "missingAssets": [],
+      "animation": "idle",
+      "seed": 4242,
+      "time": 11136.8
+    }
+  },
+  {
+    "id": "win_condition",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "ready": true,
+      "levelIndex": 0,
+      "levelCount": 1,
+      "levelTitle": "The Verdant Passage",
+      "topology": "journey",
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 19
+      },
+      "goals": [
+        {
+          "id": "L1_goal_0",
+          "kind": "survive",
+          "amount": 3.8331999999999997,
+          "needed": 2,
+          "complete": true,
+          "failed": false
+        },
+        {
+          "id": "L1_goal_1",
+          "kind": "time_limit",
+          "amount": 3.8331999999999997,
+          "needed": 45,
+          "complete": true,
+          "failed": false
+        }
+      ],
+      "progress": {
+        "defeat": [],
+        "activate": [],
+        "unlock": [],
+        "collect": [
+          "L1_crystal_0",
+          "L1_crystal_1",
+          "L1_crystal_2",
+          "L1_crystal_3",
+          "L1_crystal_4",
+          "L1_crystal_5",
+          "L1_crystal_6",
+          "L1_crystal_7",
+          "L1_crystal_8",
+          "L1_crystal_10",
+          "L1_crystal_11",
+          "L1_crystal_12",
+          "L1_crystal_13",
+          "L1_crystal_14",
+          "L1_crystal_15",
+          "L1_crystal_16",
+          "L1_crystal_17",
+          "L1_crystal_18",
+          "L1_crystal_19"
+        ]
+      },
+      "triggers": [],
+      "doors": [],
+      "playerShotsFired": 0,
+      "playerAttack": "stomp",
+      "respawn": {
+        "x": 90,
+        "y": 692
+      },
+      "exitAlpha": 1,
+      "exitStyle": "gate",
+      "enemies": [],
+      "icicles": [],
+      "machines": [],
+      "movingPlatforms": [
+        {
+          "x": 864,
+          "y": 657
+        },
+        {
+          "x": 1620,
+          "y": 657
+        }
+      ],
+      "shotsFired": 0,
+      "slippery": false,
+      "environment": "forest",
+      "terrainTexture": "terrain",
+      "generation": 4,
+      "landedPlatforms": [
+        0
+      ],
+      "x": 2196,
+      "y": 720.6111111111111,
+      "vx": 0,
+      "vy": 18.333333333333332,
+      "grounded": false,
+      "health": 5,
+      "crystals": 19,
+      "state": "won",
+      "checkpoint": -1,
+      "missingAssets": [],
+      "animation": "idle",
+      "seed": 4242,
+      "time": 11853.5
+    }
+  },
+  {
+    "id": "restart_reset",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "ready": true,
+      "levelIndex": 0,
+      "levelCount": 1,
+      "levelTitle": "The Verdant Passage",
+      "topology": "journey",
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 19
+      },
+      "goals": [
+        {
+          "id": "L1_goal_0",
+          "kind": "survive",
+          "amount": 0.23340000000000147,
+          "needed": 2,
+          "complete": false,
+          "failed": false
+        },
+        {
+          "id": "L1_goal_1",
+          "kind": "time_limit",
+          "amount": 0.23340000000000147,
+          "needed": 45,
+          "complete": true,
+          "failed": false
+        }
+      ],
+      "progress": {
+        "defeat": [],
+        "activate": [],
+        "unlock": [],
+        "collect": []
+      },
+      "triggers": [],
+      "doors": [],
+      "playerShotsFired": 0,
+      "playerAttack": "stomp",
+      "respawn": {
+        "x": 90,
+        "y": 692
+      },
+      "exitAlpha": 1,
+      "exitStyle": "gate",
+      "enemies": [],
+      "icicles": [],
+      "machines": [],
+      "movingPlatforms": [
+        {
+          "x": 864,
+          "y": 657
+        },
+        {
+          "x": 1620,
+          "y": 657
+        }
+      ],
+      "shotsFired": 0,
+      "slippery": false,
+      "environment": "forest",
+      "terrainTexture": "terrain",
+      "generation": 5,
+      "landedPlatforms": [
+        0
+      ],
+      "x": 90,
+      "y": 696,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "health": 5,
+      "crystals": 0,
+      "state": "playing",
+      "checkpoint": -1,
+      "missingAssets": [],
+      "animation": "idle",
+      "seed": 4242,
+      "time": 12220.2
+    }
+  },
+  {
+    "id": "canvas_and_assets",
+    "passed": true,
+    "critical": true,
+    "category": "runtime",
+    "details": {
+      "missing": [],
+      "http_failures": []
+    }
+  },
+  {
+    "id": "no_runtime_exceptions",
+    "passed": true,
+    "critical": true,
+    "category": "runtime",
+    "details": []
+  }
+]

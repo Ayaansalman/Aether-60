@@ -1,0 +1,42 @@
+{
+  "requirements": [
+    {
+      "id": "forest_environment",
+      "source": "forest",
+      "span": [
+        9,
+        15
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "environment_composition",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "forest_environment",
+        "qa": "environment_composition"
+      }
+    },
+    {
+      "id": "combat_objective",
+      "source": "defeat creatures",
+      "span": [
+        40,
+        56
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "combat_objective",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "combat_objective",
+        "qa": "combat_objective"
+      }
+    }
+  ],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

@@ -95,3 +95,14 @@ def test_browser_repair_updates_level_sections(client,monkeypatch):
     artifacts=result['artifacts']
     assert len(artifacts['repair_report.json']['attempts'])==1
     assert all(section['gap']==1 for level in artifacts['final_design.json']['levels'] for section in level['sections'])
+
+
+def test_gameplay_intent_links_and_objectives_persist_through_api(client,monkeypatch):
+    monkeypatch.setattr(platformer,'browser_report',lambda *args:{'overall':'UNAVAILABLE','checks':[]})
+    gid=submit(client,'Create a factory where I activate switches to open security doors while avoiding machinery')
+    result=client.get(f'/api/v2/games/{gid}').json()
+    assert result['job']['status']=='READY_WITH_WARNINGS'
+    assert result['artifacts']['game_intent.json']['gameplay']['interactions']
+    spec=client.get(f'/api/v2/games/{gid}/spec').json()
+    assert spec['links'] and {goal['kind'] for goal in spec['goals']}=={'activate','unlock'}
+    assert result['artifacts']['validation.json']['overall']=='PASS'

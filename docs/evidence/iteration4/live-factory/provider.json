@@ -1,0 +1,7 @@
+{
+  "provider": "openai_compat",
+  "model": "gemini-3.5-flash-lite",
+  "live": true,
+  "latency_ms": 7503,
+  "fallbacks": []
+}

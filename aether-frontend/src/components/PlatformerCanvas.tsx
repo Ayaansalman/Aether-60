@@ -74,7 +74,7 @@ export function PlatformerCanvas({
         ref={container}
         tabIndex={0}
         onPointerDown={(e) => e.currentTarget.focus()}
-        aria-label="Playable game. Arrow keys to move, Space to jump, Shift to dash, R to restart"
+        aria-label="Playable game. Arrow keys to move, Space to jump, E to interact, F or X to shoot when equipped, R to restart"
       >
         {error && <p role="alert">Game failed to load: {error}</p>}
       </div>
@@ -84,6 +84,8 @@ export function PlatformerCanvas({
           ["right", "→"],
           ["jump", "Jump"],
           ...(spec.player.abilities.includes("dash") ? [["dash", "Dash"]] : []),
+          ...([spec,...(spec.levels || [])].some(level=>level.player_attack==='projectile') ? [['attack','Shoot']] : []),
+          ...([spec,...(spec.levels || [])].some(level=>level.entities.some(entity=>entity.activation==='interact' && entity.kind==='switch')) ? [['interact','Use']] : []),
         ].map(([key, label]) => (
           <button
             key={key}

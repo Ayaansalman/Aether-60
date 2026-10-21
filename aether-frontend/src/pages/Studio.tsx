@@ -480,7 +480,7 @@ function Workspace() {
             <details className="capabilities">
               <summary>What can Aether build?</summary>
               <p>
-                Forest, industrial, ice cavern and twilight platformers. Crystals or relics, patrol, chase and ranged enemies, icicles, slippery terrain, timed machinery, animated exits, checkpoints, moving platforms, double jump, dash and up to three stages. Other genres and custom mechanics are not available yet;
+                Forest, industrial, ice cavern and twilight platformers with up to three levels. Patrol, chase, ranged enemies, turrets and ambushers; icicles, slippery terrain, timed machinery, bounded moving platforms, checkpoints, double jump and dash. Switches, latched pressure plates and projectile switches open linked doors. Objectives can combine defeating guards, collecting objects, activating controls, unlocking paths, survival time and deadlines. Other genres and custom mechanics are not available yet;
                 requested unsupported features appear in the Inspector.
               </p>
             </details>
@@ -635,7 +635,7 @@ function Workspace() {
                     <kbd>R</kbd>
                     <span>Restart</span>
                   </div>
-                  <span className="focus-hint">Click game to focus · Jump on creatures · Avoid projectiles and traps</span>
+                  <span className="focus-hint">Click game to focus · Jump on creatures · E: use switches · F/X: shoot when equipped</span>
                 </div>}
               </>
             ) : (

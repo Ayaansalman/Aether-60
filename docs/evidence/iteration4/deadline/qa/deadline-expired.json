@@ -1,0 +1,63 @@
+{
+  "ready": true,
+  "levelIndex": 0,
+  "levelCount": 1,
+  "levelTitle": "The Verdant Passage",
+  "topology": "journey",
+  "objective": {
+    "type": "reach_exit",
+    "required": 0,
+    "total": 0
+  },
+  "goals": [
+    {
+      "id": "L1_goal_0",
+      "kind": "time_limit",
+      "amount": 2.0666,
+      "needed": 2,
+      "complete": false,
+      "failed": true
+    }
+  ],
+  "progress": {
+    "defeat": [],
+    "activate": [],
+    "unlock": [],
+    "collect": []
+  },
+  "triggers": [],
+  "doors": [],
+  "playerShotsFired": 0,
+  "playerAttack": "stomp",
+  "respawn": {
+    "x": 90,
+    "y": 692
+  },
+  "exitAlpha": 1,
+  "exitStyle": "gate",
+  "enemies": [],
+  "icicles": [],
+  "machines": [],
+  "movingPlatforms": [],
+  "shotsFired": 0,
+  "slippery": false,
+  "environment": "forest",
+  "terrainTexture": "terrain",
+  "generation": 1,
+  "landedPlatforms": [
+    0
+  ],
+  "x": 90,
+  "y": 696,
+  "vx": 0,
+  "vy": 0,
+  "grounded": true,
+  "health": 5,
+  "crystals": 0,
+  "state": "lost",
+  "checkpoint": -1,
+  "missingAssets": [],
+  "animation": "idle",
+  "seed": 4242,
+  "time": 7122.5
+}

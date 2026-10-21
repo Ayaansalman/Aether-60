@@ -1,0 +1,220 @@
+{
+  "backend_targeted_tests": 72,
+  "frontend_component_tests": 12,
+  "frontend_build": "PASS",
+  "frontend_lint": "PASS",
+  "backend_module_compilation": "PASS",
+  "live_planning_invocations": 1,
+  "provider": {
+    "provider": "openai_compat",
+    "model": "gemini-3.5-flash-lite",
+    "live": true,
+    "latency_ms": 7503,
+    "fallbacks": []
+  },
+  "browser_checks": 126,
+  "cases": [
+    {
+      "case": "combat",
+      "runtime": "PASS",
+      "checks": 11,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "The Verdant Passage",
+          "theme": "forest",
+          "enemy_behaviors": [
+            "chase"
+          ],
+          "interactions": [],
+          "objectives": [
+            "defeat"
+          ]
+        }
+      ],
+      "campaign_goals": []
+    },
+    {
+      "case": "factory",
+      "runtime": "PASS",
+      "checks": 13,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "The Copperworks",
+          "theme": "industrial",
+          "enemy_behaviors": [],
+          "interactions": [
+            {
+              "id": "L1_trigger_0",
+              "kind": "switch",
+              "activation": "interact"
+            }
+          ],
+          "objectives": [
+            "activate",
+            "unlock"
+          ]
+        }
+      ],
+      "campaign_goals": []
+    },
+    {
+      "case": "ice",
+      "runtime": "PASS",
+      "checks": 21,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "The Frostbound Vault",
+          "theme": "ice",
+          "enemy_behaviors": [
+            "shooter"
+          ],
+          "interactions": [],
+          "objectives": []
+        }
+      ],
+      "campaign_goals": []
+    },
+    {
+      "case": "mixed",
+      "runtime": "PASS",
+      "checks": 29,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "Pressure passage",
+          "theme": "forest",
+          "enemy_behaviors": [
+            "patrol"
+          ],
+          "interactions": [
+            {
+              "id": "L1_trigger_0",
+              "kind": "pressure_plate",
+              "activation": "pressure"
+            }
+          ],
+          "objectives": [
+            "activate",
+            "unlock"
+          ]
+        },
+        {
+          "title": "Security summit",
+          "theme": "forest",
+          "enemy_behaviors": [
+            "ambusher",
+            "shooter",
+            "turret"
+          ],
+          "interactions": [
+            {
+              "id": "L2_trigger_0",
+              "kind": "switch",
+              "activation": "projectile"
+            }
+          ],
+          "objectives": [
+            "defeat",
+            "activate",
+            "unlock"
+          ]
+        }
+      ],
+      "campaign_goals": [
+        "defeat"
+      ]
+    },
+    {
+      "case": "timers",
+      "runtime": "PASS",
+      "checks": 11,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "The Verdant Passage",
+          "theme": "forest",
+          "enemy_behaviors": [],
+          "interactions": [],
+          "objectives": [
+            "survive",
+            "time_limit"
+          ]
+        }
+      ],
+      "campaign_goals": []
+    },
+    {
+      "case": "deadline",
+      "runtime": "PASS",
+      "checks": 11,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "The Verdant Passage",
+          "theme": "forest",
+          "enemy_behaviors": [],
+          "interactions": [],
+          "objectives": [
+            "time_limit"
+          ]
+        }
+      ],
+      "campaign_goals": []
+    },
+    {
+      "case": "live-factory",
+      "runtime": "PASS",
+      "checks": 30,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "Assembly Line Lower",
+          "theme": "industrial",
+          "enemy_behaviors": [
+            "chase",
+            "patrol",
+            "turret"
+          ],
+          "interactions": [
+            {
+              "id": "L1_trigger_0",
+              "kind": "switch",
+              "activation": "interact"
+            }
+          ],
+          "objectives": [
+            "activate",
+            "unlock"
+          ]
+        },
+        {
+          "title": "Core Processing Upper",
+          "theme": "industrial",
+          "enemy_behaviors": [
+            "ambusher",
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "interactions": [
+            {
+              "id": "L2_trigger_0",
+              "kind": "pressure_plate",
+              "activation": "pressure"
+            }
+          ],
+          "objectives": [
+            "activate",
+            "collect",
+            "unlock"
+          ]
+        }
+      ],
+      "campaign_goals": []
+    }
+  ],
+  "scope": "Controlled-position real input/collision/state verification. Not autonomous playthroughs or enjoyment/visual-quality certification."
+}

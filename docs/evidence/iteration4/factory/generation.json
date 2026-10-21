@@ -1,0 +1,224 @@
+{
+  "prompt": "Create a factory platformer where I must activate switches to open security doors while avoiding machinery.",
+  "provenance": {
+    "provider": "fixture",
+    "model": null,
+    "live": false
+  },
+  "guard": {
+    "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+    "requirements": [
+      {
+        "id": "factory_environment",
+        "source": "factory",
+        "span": [
+          9,
+          16
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "environment_composition"
+      },
+      {
+        "id": "switches",
+        "source": "switches",
+        "span": [
+          50,
+          58
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "switch_door"
+      }
+    ],
+    "changes": [],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "The Copperworks",
+    "premise": "Create a factory platformer where I must activate switches to open security doors while avoiding machinery.",
+    "genre": "platformer",
+    "theme": "industrial",
+    "difficulty": "balanced",
+    "objective": "reach_exit",
+    "abilities": [],
+    "checkpoints": true,
+    "moving_platforms": false,
+    "platform_motion": {
+      "axis": "horizontal",
+      "pattern": "sine",
+      "distance": 54,
+      "period_ms": 3000
+    },
+    "player_attack": "stomp",
+    "interactions": [
+      {
+        "trigger": "interact",
+        "section": 0,
+        "door_section": 2
+      }
+    ],
+    "objectives": [
+      {
+        "kind": "activate",
+        "count": 0,
+        "seconds": 30,
+        "enemy_behavior": null
+      },
+      {
+        "kind": "unlock",
+        "count": 0,
+        "seconds": 30,
+        "enemy_behavior": null
+      }
+    ],
+    "campaign_objectives": [],
+    "slippery": false,
+    "falling_icicles": false,
+    "icicle_trigger": "mixed",
+    "hazard_period_ms": 2200,
+    "timed_hazards": true,
+    "exit_indicator": "none",
+    "exit_style": "gate",
+    "collectible": "crystals",
+    "level_count": 1,
+    "levels": [],
+    "topology": "terraces",
+    "sections": [
+      {
+        "kind": "terraces",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "chase",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "shooter",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "chase",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "shooter",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "chase",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "traversal"
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ],
+    "requested_features": []
+  }
+}

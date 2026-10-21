@@ -1,0 +1,1487 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": true,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 696,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 2396.8
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": false,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": false,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 141.72222222222226,
+          "y": 696,
+          "vx": 216.66666666666666,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 4242,
+          "time": 2913.5
+        }
+      }
+    },
+    {
+      "id": "jump",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": true,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 696,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 3163.4
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": true,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 631.1388888888889,
+          "vx": 0,
+          "vy": -306.66666666666686,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 4242,
+          "time": 3530
+        }
+      }
+    },
+    {
+      "id": "environment_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": true,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 3,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 696,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 3846.7
+        }
+      }
+    },
+    {
+      "id": "timed_hazard_cycle",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "active_samples": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "id": "closed_door_collision",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": [
+              "L1_crystal_5",
+              "L1_crystal_7"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": false
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": false,
+              "collidable": true
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": true,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 5,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 999,
+          "y": 650.3055555555555,
+          "vx": 0,
+          "vy": 93.33333333333331,
+          "grounded": false,
+          "health": 2,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 4242,
+          "time": 8079.8
+        }
+      }
+    },
+    {
+      "id": "switch_door",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "method": "Actual pressure/contact/proximity/key or projectile activation and linked door body removal",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_5",
+              "L1_crystal_7"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": true,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 5,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 399.59999999999997,
+          "y": 732,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 8496.5
+        }
+      }
+    },
+    {
+      "id": "open_door_passage",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_5",
+              "L1_crystal_7"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 1044,
+            "y": 665
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": false,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": false,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 5,
+          "landedPlatforms": [
+            0,
+            1,
+            3
+          ],
+          "x": 1074.9444444444446,
+          "y": 696,
+          "vx": 183.33333333333331,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": 3,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 4242,
+          "time": 9079.8
+        }
+      }
+    },
+    {
+      "id": "objective_locked_exit",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Copperworks",
+        "topology": "terraces",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "activate",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "unlock",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [
+          {
+            "id": "L1_trigger_0",
+            "activation": "interact",
+            "x": 399.59999999999997,
+            "y": 732,
+            "active": false
+          }
+        ],
+        "doors": [
+          {
+            "id": "L1_door_0",
+            "x": 1026,
+            "y": 630,
+            "open": false,
+            "collidable": true
+          }
+        ],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [
+          {
+            "active": true,
+            "x": 1004.4,
+            "y": 704
+          },
+          {
+            "active": true,
+            "x": 1891.8,
+            "y": 704
+          }
+        ],
+        "movingPlatforms": [
+          {
+            "x": 972,
+            "y": 657
+          },
+          {
+            "x": 1836,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "industrial",
+        "terrainTexture": "industrial",
+        "generation": 6,
+        "landedPlatforms": [
+          0,
+          10
+        ],
+        "x": 2484,
+        "y": 732,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 9563.2
+      }
+    },
+    {
+      "id": "objective_conditions",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "The Copperworks",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 19
+          },
+          "goals": [
+            {
+              "id": "L1_goal_0",
+              "kind": "activate",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            },
+            {
+              "id": "L1_goal_1",
+              "kind": "unlock",
+              "amount": 1,
+              "needed": 1,
+              "complete": true,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [
+              "L1_trigger_0"
+            ],
+            "unlock": [
+              "L1_door_0"
+            ],
+            "collect": [
+              "L1_crystal_0",
+              "L1_crystal_1",
+              "L1_crystal_2",
+              "L1_crystal_3",
+              "L1_crystal_4",
+              "L1_crystal_5",
+              "L1_crystal_7",
+              "L1_crystal_8",
+              "L1_crystal_9",
+              "L1_crystal_11",
+              "L1_crystal_12",
+              "L1_crystal_13",
+              "L1_crystal_14",
+              "L1_crystal_15",
+              "L1_crystal_17",
+              "L1_crystal_18",
+              "L1_crystal_19",
+              "L1_crystal_20",
+              "L1_crystal_21"
+            ]
+          },
+          "triggers": [
+            {
+              "id": "L1_trigger_0",
+              "activation": "interact",
+              "x": 399.59999999999997,
+              "y": 732,
+              "active": true
+            }
+          ],
+          "doors": [
+            {
+              "id": "L1_door_0",
+              "x": 1026,
+              "y": 630,
+              "open": true,
+              "collidable": false
+            }
+          ],
+          "playerShotsFired": 0,
+          "playerAttack": "stomp",
+          "respawn": {
+            "x": 90,
+            "y": 692
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1004.4,
+              "y": 704
+            },
+            {
+              "active": true,
+              "x": 1891.8,
+              "y": 704
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 972,
+              "y": 657
+            },
+            {
+              "x": 1836,
+              "y": 657
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 6,
+          "landedPlatforms": [
+            0,
+            10,
+            1
+          ],
+          "x": 399.59999999999997,
+          "y": 732,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 19,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 4242,
+          "time": 11913
+        }
+      }
+    },
+    {
+      "id": "win_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Copperworks",
+        "topology": "terraces",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "activate",
+            "amount": 1,
+            "needed": 1,
+            "complete": true,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "unlock",
+            "amount": 1,
+            "needed": 1,
+            "complete": true,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [
+            "L1_trigger_0"
+          ],
+          "unlock": [
+            "L1_door_0"
+          ],
+          "collect": [
+            "L1_crystal_0",
+            "L1_crystal_1",
+            "L1_crystal_2",
+            "L1_crystal_3",
+            "L1_crystal_4",
+            "L1_crystal_5",
+            "L1_crystal_7",
+            "L1_crystal_8",
+            "L1_crystal_9",
+            "L1_crystal_11",
+            "L1_crystal_12",
+            "L1_crystal_13",
+            "L1_crystal_14",
+            "L1_crystal_15",
+            "L1_crystal_17",
+            "L1_crystal_18",
+            "L1_crystal_19",
+            "L1_crystal_20",
+            "L1_crystal_21"
+          ]
+        },
+        "triggers": [
+          {
+            "id": "L1_trigger_0",
+            "activation": "interact",
+            "x": 399.59999999999997,
+            "y": 732,
+            "active": true
+          }
+        ],
+        "doors": [
+          {
+            "id": "L1_door_0",
+            "x": 1026,
+            "y": 630,
+            "open": true,
+            "collidable": false
+          }
+        ],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [
+          {
+            "active": true,
+            "x": 1004.4,
+            "y": 704
+          },
+          {
+            "active": true,
+            "x": 1891.8,
+            "y": 704
+          }
+        ],
+        "movingPlatforms": [
+          {
+            "x": 972,
+            "y": 657
+          },
+          {
+            "x": 1836,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "industrial",
+        "terrainTexture": "industrial",
+        "generation": 6,
+        "landedPlatforms": [
+          0,
+          10,
+          1
+        ],
+        "x": 2484,
+        "y": 720.6111111111111,
+        "vx": 0,
+        "vy": 18.333333333333332,
+        "grounded": false,
+        "health": 2,
+        "crystals": 19,
+        "state": "won",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 12396.4
+      }
+    },
+    {
+      "id": "restart_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Copperworks",
+        "topology": "terraces",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 19
+        },
+        "goals": [
+          {
+            "id": "L1_goal_0",
+            "kind": "activate",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          },
+          {
+            "id": "L1_goal_1",
+            "kind": "unlock",
+            "amount": 0,
+            "needed": 1,
+            "complete": false,
+            "failed": false
+          }
+        ],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [
+          {
+            "id": "L1_trigger_0",
+            "activation": "interact",
+            "x": 399.59999999999997,
+            "y": 732,
+            "active": false
+          }
+        ],
+        "doors": [
+          {
+            "id": "L1_door_0",
+            "x": 1026,
+            "y": 630,
+            "open": false,
+            "collidable": true
+          }
+        ],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 692
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [],
+        "icicles": [],
+        "machines": [
+          {
+            "active": true,
+            "x": 1004.4,
+            "y": 704
+          },
+          {
+            "active": true,
+            "x": 1891.8,
+            "y": 704
+          }
+        ],
+        "movingPlatforms": [
+          {
+            "x": 972,
+            "y": 657
+          },
+          {
+            "x": 1836,
+            "y": 657
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "industrial",
+        "terrainTexture": "industrial",
+        "generation": 7,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 696,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 4242,
+        "time": 12729.7
+      }
+    },
+    {
+      "id": "canvas_and_assets",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": {
+        "missing": [],
+        "http_failures": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "screenshot": "gameplay.png",
+  "scope": "Controlled-position functional browser verification, not autonomous completion or enjoyment assessment."
+}

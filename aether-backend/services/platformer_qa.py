@@ -10,6 +10,11 @@ def run_browser_qa(url: str, directory: Path, fixture: dict | None = None) -> di
     def record(name, passed, detail, category="gameplay", critical=True):
         checks.append({"id":name,"passed":bool(passed),"critical":critical,"category":category,"details":detail})
         (directory/'qa_progress.json').write_text(json.dumps(checks,indent=2),encoding='utf-8')
+    def finish_report():
+        report={'overall':'PASS' if checks and all(c['passed'] for c in checks if c['critical']) else 'FAIL','checks':checks,
+                'page_errors':errors,'screenshot':'gameplay.png','scope':'Controlled-position functional browser verification, not autonomous completion or enjoyment assessment.'}
+        (directory/'qa_report.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+        return report
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True)
         page = browser.new_page(viewport={"width":1440,"height":1000}, device_scale_factor=1)
@@ -39,6 +44,12 @@ def run_browser_qa(url: str, directory: Path, fixture: dict | None = None) -> di
                 from urllib.parse import parse_qs,urlparse
                 name=parse_qs(urlparse(url).query).get('example',['forest'])[0]
                 spec=page.evaluate('(name)=>fetch(`/fixtures/${name}.json`).then(r=>r.json())',name)
+            from services.gameplay_qa import uses_components, verify_gameplay
+            if uses_components(spec):
+                verify_gameplay(page,spec,directory,record)
+                record('canvas_and_assets',not snap()['missingAssets'] and not failed_assets,{'missing':snap()['missingAssets'],'http_failures':failed_assets},'runtime')
+                record('no_runtime_exceptions',not errors,errors,'runtime')
+                return finish_report()
             page.locator('canvas').click()
             page.wait_for_timeout(400)
             record('canvas_and_assets',not snap()['missingAssets'] and not failed_assets,{'missing':snap()['missingAssets'],'http_failures':failed_assets},'runtime')
@@ -270,14 +281,13 @@ def run_browser_qa(url: str, directory: Path, fixture: dict | None = None) -> di
             page.screenshot(path=str(directory/'gameplay.png'),full_page=True)
             record('no_runtime_exceptions',not errors,errors,'runtime')
         except Exception as exc:
-            record('browser_execution',False,type(exc).__name__+': '+str(exc)[:500],'runtime')
+            try: failure_state=page.evaluate('window.__AETHER_PLATFORMER__?.snapshot() || null')
+            except Exception: failure_state=None
+            record('browser_execution',False,{'error':type(exc).__name__+': '+str(exc)[:500],'snapshot':failure_state},'runtime')
             page.screenshot(path=str(directory/'failure.png'),full_page=True)
         finally:
             browser.close()
-    report = {'overall':'PASS' if checks and all(c['passed'] for c in checks if c['critical']) else 'FAIL','checks':checks,
-        'page_errors':errors,'screenshot':'gameplay.png','scope':'Functional browser verification; visual coherence and game quality require screenshot/play review.'}
-    (directory/'qa_report.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
-    return report
+    return finish_report()
 
 
 if __name__=='__main__':
