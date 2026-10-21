@@ -29,6 +29,8 @@ import "./studio.css";
 type GeneratedIR = PlatformerIR | AdventureIR | RunnerIR;
 
 const PROMPTS = [
+  ["09", "Neon Overdrive", "Create a fast-paced endless 2D runner in a neon cyberpunk city. My character should automatically run forward while I jump over spikes, gaps, and laser obstacles. Make the course become gradually faster and more challenging. Track my distance, and let me instantly restart after crashing.", "auto-runner"],
+  ["10", "Cloudwing", "Create a colorful arcade game where I control a small flying creature. The world scrolls from right to left, and pressing Space or tapping the screen makes the creature flap upward against gravity. I must fly between gaps in obstacles, earn points for each gap passed, and survive as long as possible.", "flap"],
   ["06", "The Woodland Remedy", "Create a cozy top-down fantasy adventure in a woodland village. A village healer needs three magical herbs from the nearby forest. Let me explore the village, talk to the healer, collect the herbs, and return to complete the quest. Include charming buildings, paths, trees, friendly villagers, and colorful environments. No combat.", "village"],
   ["07", "The Forgotten Crypt", "Create a dark top-down dungeon adventure where I explore an ancient crypt, fight skeleton guards, discover a hidden key, unlock a sealed chamber, and claim a magical relic. Include multiple connected rooms, dungeon decorations, treasure, and a clear final objective.", "crypt"],
   [

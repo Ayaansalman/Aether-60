@@ -1562,3 +1562,10 @@ html:has(.studio-theme) { overflow-x:clip; overflow-y:auto; }
   .adventure-mobile-status span { font-size: 12px; }
   .adventure-mobile-status p { white-space: pre-line; margin: 4px 0 0; border-top: 1px solid #536655; padding-top: 8px; }
 }
+
+.theme-dot.auto-runner { background: #dc4b96; }
+.theme-dot.flap { background: #65c8e0; }
+.auto-runner .world-art { background: repeating-linear-gradient(90deg, transparent 0 38px, #302b60 38px 82px), #10112d; }
+.flap .world-art { background: radial-gradient(ellipse at 25% 24%, #ffffffcc 0 12%, transparent 13%), #8ed9ef; }
+.auto-runner .pixel-ground { background: #24d9c5; border-color: #44f1dd; }
+.flap .pixel-ground { background: #9abf77; border-color: #d4e5aa; }
