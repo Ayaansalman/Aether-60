@@ -1,0 +1,57 @@
+{
+  "id": "kenney_tiny_adventure",
+  "license": "CC0-1.0",
+  "author": "Kenney",
+  "sources": [
+    "https://kenney.nl/assets/tiny-town",
+    "https://kenney.nl/assets/tiny-dungeon"
+  ],
+  "textures": {
+    "tiny-town": {
+      "url": "/assets/adventure/tiny-town.png",
+      "frameWidth": 16,
+      "frameHeight": 16,
+      "columns": 12,
+      "width": 192,
+      "height": 176,
+      "sha256": "3a54d99ecde790d4fdea207a3644cf130fc56fa838f1beb1507c185a95b8e902"
+    },
+    "tiny-dungeon": {
+      "url": "/assets/adventure/tiny-dungeon.png",
+      "frameWidth": 16,
+      "frameHeight": 16,
+      "columns": 12,
+      "width": 192,
+      "height": 176,
+      "sha256": "d24e60a41e4ac7a745c0304dfde121143688557f40215f23221c29cfe683825f"
+    }
+  },
+  "roles": {
+    "player": 96,
+    "npc": 84,
+    "enemy_patrol": 110,
+    "enemy_chase": 121,
+    "key": {
+      "texture": "tiny-town",
+      "frame": 117
+    },
+    "herb": {
+      "texture": "tiny-town",
+      "frame": 2
+    },
+    "treasure": 89,
+    "door": 45,
+    "switch": 32,
+    "landmark": 20,
+    "floor_dungeon": 48,
+    "wall_dungeon": 14,
+    "floor_town": 0,
+    "path_town": 25,
+    "tree": 4,
+    "flowers": 2
+  },
+  "animations": {
+    "walk": "directional flip, step bob and stride tilt using authored single-frame top-down sprites",
+    "limitation": "Packs do not include directional walk frames; no authored eight-direction animation is claimed."
+  }
+}

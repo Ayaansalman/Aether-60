@@ -1,0 +1,56 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "prompt_routes_to_adventure",
+      "passed": true
+    },
+    {
+      "id": "adventure_blueprint",
+      "passed": true
+    },
+    {
+      "id": "inspector_real_adventure_ir",
+      "passed": true
+    },
+    {
+      "id": "typing_does_not_control_game",
+      "passed": true
+    },
+    {
+      "id": "toolbar_restart",
+      "passed": true
+    },
+    {
+      "id": "expanded_preview",
+      "passed": true
+    },
+    {
+      "id": "escape_closes_expanded",
+      "passed": true
+    },
+    {
+      "id": "mobile_touch_movement",
+      "passed": true
+    },
+    {
+      "id": "mobile_readable_objective",
+      "passed": true
+    },
+    {
+      "id": "mobile_readable_dialogue",
+      "passed": true
+    },
+    {
+      "id": "mobile_no_horizontal_overflow",
+      "passed": true
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "game_id": "7b49cf50-c7ad-4374-9f72-f1cadcf06be7",
+  "source": "Actual creator submission in explicit fixture mode; no language model call"
+}

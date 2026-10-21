@@ -18,11 +18,17 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+import { AdventureCanvas } from "../components/AdventureCanvas";
+import type { AdventureIR } from "../game/adventure/types";
 import { PlatformerCanvas } from "../components/PlatformerCanvas";
 import type { PlatformerIR, StudioJob } from "../game/platformer/types";
 import "./studio.css";
 
+type GeneratedIR = PlatformerIR | AdventureIR;
+
 const PROMPTS = [
+  ["06", "The Woodland Remedy", "Create a cozy top-down fantasy adventure in a woodland village. A village healer needs three magical herbs from the nearby forest. Let me explore the village, talk to the healer, collect the herbs, and return to complete the quest. Include charming buildings, paths, trees, friendly villagers, and colorful environments. No combat.", "village"],
+  ["07", "The Forgotten Crypt", "Create a dark top-down dungeon adventure where I explore an ancient crypt, fight skeleton guards, discover a hidden key, unlock a sealed chamber, and claim a magical relic. Include multiple connected rooms, dungeon decorations, treasure, and a clear final objective.", "crypt"],
   [
     "01",
     "The Verdant Passage",
@@ -48,6 +54,7 @@ const PROMPTS = [
     "A peaceful easy forest platformer with no enemies, no hazards, crystals and checkpoints.",
     "peaceful",
   ],
+  ["08", "The Amber Grove", "Create an Ansimuz Tiny RPG top-down forest adventure. Explore a mysterious grove, fight monsters, and collect a gem.", "rpg-forest"],
 ];
 
 async function request<T>(url: string, options?: RequestInit): Promise<T> {
@@ -112,7 +119,7 @@ function Landing() {
         <div className="hero-caption">
           <span>BUILT FOR YOUR IMAGINATION</span>
           <span>NO CODE REQUIRED</span>
-          <span>2D PLATFORMERS · EARLY ACCESS</span>
+          <span>PLATFORMERS & ADVENTURES · EARLY ACCESS</span>
         </div>
       </section>
       <section id="possibilities" className="worlds">
@@ -175,7 +182,7 @@ function Landing() {
             Aether builds the path.
           </h2>
           <p>
-            Our first chapter is 2D platformers. Thoughtful level generation,
+            Build 2D platformers and top-down adventures. Seeded worlds,
             real pixel artwork, and a workflow you can look inside.
           </p>
           <Link to="/studio" className="text-link">
@@ -235,7 +242,7 @@ function Workspace() {
       ? "fixture"
       : "live",
   );
-  const [spec, setSpec] = useState<PlatformerIR | null>(null);
+  const [spec, setSpec] = useState<GeneratedIR | null>(null);
   const [job, setJob] = useState<StudioJob | null>(null);
   const [activeId, setActiveId] = useState(id || "");
   const [busy, setBusy] = useState(false),
@@ -271,7 +278,7 @@ function Workspace() {
   useEffect(() => {
     if (id || !query) return;
     let current = true;
-    request<PlatformerIR>(`/fixtures/${initial[3]}.json`)
+    request<GeneratedIR>(`/fixtures/${initial[3]}.json`)
       .then((s) => {
         if (current) setSpec(s);
       })
@@ -296,7 +303,7 @@ function Workspace() {
         setJob(data);
         setPrompt(data.job.prompt);
         const ir = data.artifacts["game_ir_v2.json"] as
-          | PlatformerIR
+          | GeneratedIR
           | undefined;
         if (ir) {
           setSpec((old) =>
@@ -368,7 +375,7 @@ function Workspace() {
     setJob(null);
     setPreview(true);
     setError("");
-    request<PlatformerIR>(`/fixtures/${p[3]}.json`)
+    request<GeneratedIR>(`/fixtures/${p[3]}.json`)
       .then(setSpec)
       .catch((e) => setError(String(e)));
   }
@@ -427,7 +434,7 @@ function Workspace() {
               disabled={busy}
             />
             <div className="prompt-meta">
-              <span>2D platformer</span>
+              <span>Platformer / top-down adventure</span>
               <span>{prompt.length}/3000</span>
             </div>
             <label htmlFor="provider-mode" className="mode-label">
@@ -480,7 +487,7 @@ function Workspace() {
             <details className="capabilities">
               <summary>What can Aether build?</summary>
               <p>
-                Forest, industrial, ice cavern and twilight platformers with up to three levels. Patrol, chase, ranged enemies, turrets and ambushers; icicles, slippery terrain, timed machinery, bounded moving platforms, checkpoints, double jump and dash. Switches, latched pressure plates and projectile switches open linked doors. Objectives can combine defeating guards, collecting objects, activating controls, unlocking paths, survival time and deadlines. Other genres and custom mechanics are not available yet;
+                Forest, industrial, ice cavern and twilight platformers with up to three levels. Patrol, chase, ranged enemies, turrets and ambushers; icicles, slippery terrain, timed machinery, bounded moving platforms, checkpoints, double jump and dash. Switches, latched pressure plates and projectile switches open linked doors. Objectives can combine defeating guards, collecting objects, activating controls, unlocking paths, survival time and deadlines. Top-down adventures support connected villages, forests and dungeons, NPC dialogue, inventory, keys, switches, sequential quests and optional combat. Custom mechanics remain limited;
                 requested unsupported features appear in the Inspector.
               </p>
             </details>
@@ -500,7 +507,7 @@ function Workspace() {
             )}
           </div>
           <div className="panel-bottom">
-            <span className="status-dot" /> PLATFORMER ENGINE v2{" "}
+            <span className="status-dot" /> MULTI-GENRE ENGINE v2{" "}
             <span>EARLY ACCESS</span>
           </div>
         </aside>
@@ -589,12 +596,12 @@ function Workspace() {
                     </button>
                   )}
                   {spec ? (
-                    <PlatformerCanvas spec={spec} restart={restart} />
+                    spec.genre === "adventure" ? <AdventureCanvas spec={spec} restart={restart} /> : <PlatformerCanvas spec={spec} restart={restart} />
                   ) : (
                     <div className="empty-preview">
                       <Gamepad2 size={40} />
                       <h3>{busy ? job?.events.at(-1)?.stage.replaceAll("_", " ") || "QUEUED" : error ? "Your game could not be built" : "Your next world belongs here."}</h3>
-                      <p role="status" aria-live="polite">{busy ? job?.events.at(-1)?.detail || "Waiting for backend progress…" : error ? "Review the message beside your prompt, then retry. The Inspector contains recorded diagnostics." : "Describe a 2D platformer, then select Generate game. Inspiration buttons open clearly labeled sample games."}</p>
+                      <p role="status" aria-live="polite">{busy ? job?.events.at(-1)?.detail || "Waiting for backend progress…" : error ? "Review the message beside your prompt, then retry. The Inspector contains recorded diagnostics." : "Describe a platformer or top-down adventure, then select Generate game. Inspiration buttons open clearly labeled sample games."}</p>
                     </div>
                   )}
                   <div className="preview-frame-footer">
@@ -614,18 +621,19 @@ function Workspace() {
                   <div>
                     <kbd>←</kbd>
                     <kbd>→</kbd>
+                    {spec.genre === 'adventure' && <><kbd>↑</kbd><kbd>↓</kbd></>}
                     <span>Move</span>
                   </div>
                   <div>
-                    <kbd>SPACE</kbd>
+                    <kbd>{spec.genre === "adventure" ? "E" : "SPACE"}</kbd>
                     <span>
-                      Jump
-                      {spec?.player.abilities.includes("double_jump")
+                      {spec.genre === "adventure" ? "Interact (E)" : "Jump"}
+                      {(spec?.genre === "platformer" ? spec.player.abilities : []).includes("double_jump")
                         ? " / double jump"
                         : ""}
                     </span>
                   </div>
-                  {spec?.player.abilities.includes("dash") && (
+                  {(spec?.genre === "platformer" ? spec.player.abilities : []).includes("dash") && (
                     <div>
                       <kbd>SHIFT</kbd>
                       <span>Dash</span>
@@ -635,13 +643,13 @@ function Workspace() {
                     <kbd>R</kbd>
                     <span>Restart</span>
                   </div>
-                  <span className="focus-hint">Click game to focus · Jump on creatures · E: use switches · F/X: shoot when equipped</span>
+                  <span className="focus-hint">Click game to focus · WASD / arrows: move · E: interact · F/X: attack when equipped</span>
                 </div>}
               </>
             ) : (
               <div className="design-view">
                 <h3>World blueprint</h3>
-                {spec ? (
+                {spec?.genre === "adventure" ? <><p>{spec.areas.length} connected areas · Seed {spec.seed}</p><p>{spec.areas.map(a=>`${a.name} (${a.environment})`).join(" → ")}</p><ol>{spec.quests.map((q,i)=><li key={i}>{q.text}</li>)}</ol><p>{spec.art?.pack_id || 'Kenney Tiny Town & Tiny Dungeon'} · CC0</p></> : spec ? (
                   <>
                     <p>
                       {spec.levels?.length || 1} connected stage{(spec.levels?.length || 1)>1?'s':''} · {" "}
@@ -853,9 +861,9 @@ function Workspace() {
         </span>
         <span>
           {busy ? "GENERATION IN PROGRESS" : "READY TO EXPLORE"}{" "}
-          <span className="footer-divider">/</span> 2D PLATFORMER
+          <span className="footer-divider">/</span> PLATFORMER / ADVENTURE
         </span>
-        <span>Artwork by Kenney · CC0</span>
+        <span>Artwork · {spec?.genre==='adventure' && spec.art ? spec.art.pack_id==='ninja_adventure' ? 'Pixel-Boy & AAA' : 'Ansimuz' : 'Kenney'} · CC0</span>
       </div>
     </div>
   );

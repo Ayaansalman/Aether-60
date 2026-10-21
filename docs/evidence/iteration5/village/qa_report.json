@@ -1,0 +1,435 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 112,
+          "y": 432,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Talk to the healer",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "guide",
+              "kind": "npc",
+              "x": 816,
+              "y": 240,
+              "health": 2
+            },
+            {
+              "id": "villager",
+              "kind": "npc",
+              "x": 400,
+              "y": 368,
+              "health": 2
+            },
+            {
+              "id": "herbs",
+              "kind": "item",
+              "x": 304,
+              "y": 240,
+              "health": 2
+            },
+            {
+              "id": "herbs",
+              "kind": "item",
+              "x": 336,
+              "y": 240,
+              "health": 2
+            },
+            {
+              "id": "herbs",
+              "kind": "item",
+              "x": 368,
+              "y": 240,
+              "health": 2
+            }
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 112,
+        "after": 140.4166666666666
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 80,
+        "after_y": 54.16666666666666
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          1,
+          1,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          42,
+          48
+        ]
+      }
+    },
+    {
+      "id": "dialogue_0",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Mira the Healer\nWelcome! I need your help.",
+        "Follow the objective above to help our settlement."
+      ]
+    },
+    {
+      "id": "quest_0_talk",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 783,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Find 3 magical herbs",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guide",
+            "kind": "npc",
+            "x": 816,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          },
+          {
+            "id": "herbs",
+            "kind": "item",
+            "x": 304,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "herbs",
+            "kind": "item",
+            "x": 336,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "herbs",
+            "kind": "item",
+            "x": 368,
+            "y": 240,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_1",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "herb": 3
+      }
+    },
+    {
+      "id": "quest_1_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 368,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "herb": 3
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Return 3 herbs to the healer",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guide",
+            "kind": "npc",
+            "x": 816,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "dialogue_2",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Mira the Healer\nYou brought everything back. Thank you, traveler!"
+      ]
+    },
+    {
+      "id": "quest_2_deliver",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 783,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "herb": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guide",
+            "kind": "npc",
+            "x": 816,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "adventure_completion",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1104,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "herb": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 5,
+        "won": true,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guide",
+            "kind": "npc",
+            "x": 816,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 112,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Talk to the healer",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guide",
+            "kind": "npc",
+            "x": 816,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          },
+          {
+            "id": "herbs",
+            "kind": "item",
+            "x": 304,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "herbs",
+            "kind": "item",
+            "x": 336,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "herbs",
+            "kind": "item",
+            "x": 368,
+            "y": 240,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

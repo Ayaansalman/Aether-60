@@ -1,0 +1,282 @@
+{
+  "date": "2026-10-21",
+  "scope": "Official freely offered archives; no paid expansion, demo code execution, CraftPix resources or model calls",
+  "packs": {
+    "ninja_adventure": {
+      "id": "ninja_adventure",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "author": "Pixel-Boy and AAA",
+      "license": "CC0-1.0",
+      "redistributable": true,
+      "style_family": "ninja_adventure",
+      "license_files": [
+        "/assets/adventure/library/ninja_adventure/LICENSE.txt"
+      ],
+      "archive_sha256": "95a06f4fdcfd1882f061a45ff313b7c905dbe2de1e8512b281d7937df62a7b15",
+      "categories": {
+        "environment": [
+          "ninja_terrain"
+        ],
+        "character": [
+          "ninja_ninjablue",
+          "ninja_ninjagreen",
+          "ninja_knight",
+          "ninja_hunter",
+          "ninja_sorcererorange",
+          "ninja_cavegirl"
+        ],
+        "npc": [
+          "ninja_woman",
+          "ninja_oldwoman",
+          "ninja_oldman",
+          "ninja_master",
+          "ninja_monk",
+          "ninja_monk2",
+          "ninja_princess",
+          "ninja_boy",
+          "ninja_noble",
+          "ninja_samurai",
+          "ninja_ninjamageblack",
+          "ninja_caveman",
+          "ninja_eskimo",
+          "ninja_ninjared"
+        ],
+        "enemy": [
+          "ninja_slime",
+          "ninja_slime2",
+          "ninja_skull",
+          "ninja_skullblue",
+          "ninja_mushroom",
+          "ninja_mole",
+          "ninja_bluebat",
+          "ninja_snake",
+          "ninja_beast",
+          "ninja_spirit",
+          "ninja_bamboo",
+          "ninja_cyclope"
+        ],
+        "collectible": [
+          "ninja_herb",
+          "ninja_key",
+          "ninja_gem"
+        ],
+        "interactive_object": [
+          "ninja_chest"
+        ],
+        "vfx": [
+          "ninja_projectile",
+          "ninja_smoke"
+        ],
+        "ui": [
+          "ninja_hearts"
+        ],
+        "decoration": [
+          "ninja_tree"
+        ]
+      },
+      "source_file_count": 2234,
+      "selection_notes": "A game uses one style family; no cross-pack fallback inside a selected game.",
+      "terrain": {
+        "texture": "ninja_terrain",
+        "ground": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "path": 2,
+        "edges": {
+          "ul": 3,
+          "u": 4,
+          "ur": 5,
+          "l": 6,
+          "r": 7,
+          "dl": 8,
+          "d": 9,
+          "dr": 10
+        },
+        "solid": 11,
+        "decoration": 12,
+        "indoor_ground": 13,
+        "wall": 14,
+        "debris": 15,
+        "buildings": [
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ]
+        ]
+      },
+      "roles": {
+        "door": {
+          "asset": "ninja_terrain",
+          "frame": 34,
+          "open_frame": 35
+        },
+        "switch": {
+          "asset": "ninja_terrain",
+          "frame": 36,
+          "open_frame": 37
+        },
+        "exit": {
+          "asset": "ninja_terrain",
+          "frame": 38,
+          "open_frame": null
+        },
+        "landmark": {
+          "asset": "ninja_terrain",
+          "frame": 39,
+          "open_frame": null
+        },
+        "herb": {
+          "asset": "ninja_herb",
+          "frame": 0
+        },
+        "key": {
+          "asset": "ninja_key",
+          "frame": 0
+        },
+        "item": {
+          "asset": "ninja_gem",
+          "frame": 0
+        },
+        "treasure": {
+          "asset": "ninja_chest",
+          "frame": 0,
+          "open_frame": 1
+        },
+        "projectile": {
+          "asset": "ninja_projectile",
+          "frame": 0
+        },
+        "vfx": {
+          "asset": "ninja_smoke",
+          "frame": 0
+        },
+        "health": {
+          "asset": "ninja_hearts",
+          "frame": 0
+        },
+        "tree": {
+          "asset": "ninja_tree",
+          "frame": 0
+        }
+      },
+      "archive_entry_count": 2674,
+      "archive_bytes": 94022790
+    },
+    "tiny_rpg_forest": {
+      "id": "tiny_rpg_forest",
+      "source": "https://ansimuz.itch.io/tiny-rpg-forest",
+      "author": "Luis Zuno (Ansimuz)",
+      "license": "CC0-1.0",
+      "redistributable": true,
+      "style_family": "tiny_rpg_forest",
+      "license_files": [
+        "/assets/adventure/library/tiny_rpg_forest/public-license.pdf"
+      ],
+      "archive_sha256": "84543133ce250c2123e4e536be8c6f8e467549f8be2f533af137abeee90154b6",
+      "categories": {
+        "character": [
+          "tiny_hero"
+        ],
+        "enemy": [
+          "tiny_mole",
+          "tiny_treant"
+        ],
+        "environment": [
+          "tiny_terrain"
+        ],
+        "collectible": [
+          "tiny_gem",
+          "tiny_coin",
+          "tiny_bush"
+        ],
+        "vfx": [
+          "tiny_projectile",
+          "tiny_smoke"
+        ],
+        "decoration": [
+          "tiny_monument",
+          "tiny_tree"
+        ]
+      },
+      "source_file_count": 230,
+      "selection_notes": "A game uses one style family; no cross-pack fallback inside a selected game.",
+      "terrain": {
+        "texture": "tiny_terrain",
+        "ground": [
+          0,
+          1
+        ],
+        "path": 2,
+        "edges": {},
+        "solid": 11,
+        "decoration": 12,
+        "indoor_ground": 13,
+        "wall": 14,
+        "debris": 15,
+        "buildings": []
+      },
+      "roles": {
+        "item": {
+          "asset": "tiny_gem",
+          "frame": 0
+        },
+        "herb": {
+          "asset": "tiny_bush",
+          "frame": 0
+        },
+        "landmark": {
+          "asset": "tiny_monument",
+          "frame": 0
+        },
+        "exit": {
+          "asset": "tiny_monument",
+          "frame": 0
+        },
+        "projectile": {
+          "asset": "tiny_projectile",
+          "frame": 0
+        },
+        "vfx": {
+          "asset": "tiny_smoke",
+          "frame": 0
+        },
+        "tree": {
+          "asset": "tiny_tree",
+          "frame": 0
+        }
+      },
+      "supported_environments": [
+        "forest"
+      ],
+      "unsupported_actor_kinds": [
+        "npc",
+        "door",
+        "switch",
+        "treasure"
+      ],
+      "archive_entry_count": 632,
+      "archive_bytes": 8151132
+    }
+  }
+}

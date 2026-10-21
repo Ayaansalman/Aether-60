@@ -1,0 +1,5086 @@
+{
+  "job": {
+    "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+    "prompt": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+    "status": "READY_WITH_WARNINGS",
+    "stage": "READY_WITH_WARNINGS",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "gemini-3.5-flash-lite",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T05:58:28.806910+00:00",
+    "updated_at": "2026-10-21T05:59:17.618214+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "game_intent.json",
+      "model_design.json",
+      "provider.json",
+      "game_design.json",
+      "final_design.json",
+      "validation.json",
+      "repair_report.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "qa_report.json",
+      "diagnosis.json",
+      "requirement_report.json",
+      "outcome.json"
+    ],
+    "limitations": [
+      "Complex inventory management",
+      "Equipment stats"
+    ],
+    "qa_summary": {
+      "passed": 18,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5174/studio/play/1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4"
+  },
+  "events": [
+    {
+      "id": 3,
+      "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "ts": "2026-10-21T05:58:28.824099+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 9,
+      "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "ts": "2026-10-21T05:58:51.026602+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning top-down adventure with configured provider",
+      "attempt": 1,
+      "rationale": "Elapsed 0.08s; language model",
+      "diff": null
+    },
+    {
+      "id": 10,
+      "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "ts": "2026-10-21T05:58:55.251553+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Composing seeded connected areas, NPCs, inventory and event-driven quests",
+      "attempt": 1,
+      "rationale": "Elapsed 4.30s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 11,
+      "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "ts": "2026-10-21T05:58:55.323517+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking destination connectivity, dialogue references and quest prerequisites",
+      "attempt": 1,
+      "rationale": "Elapsed 4.38s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 12,
+      "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "ts": "2026-10-21T05:58:55.522397+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Adventure Phaser adapter and licensed tilemaps ready",
+      "attempt": 1,
+      "rationale": "Elapsed 4.58s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 13,
+      "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "ts": "2026-10-21T05:58:55.624452+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium adventure interaction checks",
+      "attempt": 1,
+      "rationale": "Elapsed 4.67s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 14,
+      "game_id": "1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "ts": "2026-10-21T05:59:17.587110+00:00",
+      "stage": "READY_WITH_WARNINGS",
+      "result": "SUCCESS",
+      "detail": "Adventure browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 26.64s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "game_intent.json": {
+      "original_prompt": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+      "genre": "adventure",
+      "setting": "dark",
+      "gameplay": {
+        "combat": true,
+        "quests": [
+          {
+            "kind": "talk",
+            "target": "hermit",
+            "count": 1,
+            "text": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+            "item": ""
+          },
+          {
+            "kind": "defeat",
+            "target": "shadow_fiend",
+            "count": 1,
+            "text": "Defeat the Shadow Fiend guarding the outer ruins.",
+            "item": ""
+          },
+          {
+            "kind": "collect",
+            "target": "dungeon_key",
+            "count": 1,
+            "text": "Collect the Ancient Key from the ruins floor.",
+            "item": "dungeon_key"
+          },
+          {
+            "kind": "explore",
+            "target": "portal_landmark",
+            "count": 1,
+            "text": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+            "item": ""
+          },
+          {
+            "kind": "activate",
+            "target": "magic_switch",
+            "count": 1,
+            "text": "Activate the Runed Switch in the inner chamber.",
+            "item": ""
+          },
+          {
+            "kind": "unlock",
+            "target": "inner_door",
+            "count": 1,
+            "text": "Unlock the Vault Door using the key and activated switch.",
+            "item": ""
+          },
+          {
+            "kind": "collect",
+            "target": "golden_chalice",
+            "count": 1,
+            "text": "Claim the Golden Chalice from the final chamber.",
+            "item": "golden_chalice"
+          }
+        ]
+      },
+      "areas": [
+        {
+          "name": "Ruined Antechamber",
+          "environment": "ruins"
+        },
+        {
+          "name": "Inner Sanctuary",
+          "environment": "dungeon"
+        }
+      ],
+      "unsupported": [
+        "Complex inventory management",
+        "Equipment stats"
+      ],
+      "interpretation_source": {
+        "provider": "OpenAICompatProvider",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 3985
+      }
+    },
+    "model_design.json": {
+      "genre": "adventure",
+      "title": "Depths of the Ancient Ruins",
+      "premise": "Venture into dark, forgotten ruins, defeat lurking monsters, secure the dungeon key, activate the seal, and unlock the final chamber for the hidden treasure.",
+      "theme": "dark",
+      "areas": [
+        {
+          "name": "Ruined Antechamber",
+          "environment": "ruins"
+        },
+        {
+          "name": "Inner Sanctuary",
+          "environment": "dungeon"
+        }
+      ],
+      "actors": [
+        {
+          "id": "hermit",
+          "kind": "npc",
+          "name": "Eldrin",
+          "area": 0,
+          "role": "Ruins Guide",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Beware the shadows in these ruins, traveler.",
+              "Seek the key and activate the switch if you wish to proceed."
+            ],
+            "active": [
+              "Have you found the dungeon key yet?"
+            ],
+            "completed": [
+              "You have proven your valor. The inner sanctum awaits."
+            ]
+          }
+        },
+        {
+          "id": "shadow_fiend",
+          "kind": "enemy",
+          "name": "Shadow Fiend",
+          "area": 0,
+          "role": "Monster",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "dungeon_key",
+          "kind": "item",
+          "name": "Ancient Key",
+          "area": 0,
+          "role": "Key",
+          "item": "dungeon_key",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "magic_switch",
+          "kind": "switch",
+          "name": "Runed Switch",
+          "area": 1,
+          "role": "Mechanism",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "portal_landmark",
+          "kind": "landmark",
+          "name": "Sanctuary Gate",
+          "area": 0,
+          "role": "Portal",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "inner_door",
+          "kind": "door",
+          "name": "Vault Door",
+          "area": 1,
+          "role": "Locked Door",
+          "item": "",
+          "quantity": 1,
+          "requires": [
+            "dungeon_key",
+            "magic_switch"
+          ],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "golden_chalice",
+          "kind": "treasure",
+          "name": "Golden Chalice",
+          "area": 1,
+          "role": "Final Treasure",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "hermit",
+          "count": 1,
+          "text": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+          "item": ""
+        },
+        {
+          "kind": "defeat",
+          "target": "shadow_fiend",
+          "count": 1,
+          "text": "Defeat the Shadow Fiend guarding the outer ruins.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "dungeon_key",
+          "count": 1,
+          "text": "Collect the Ancient Key from the ruins floor.",
+          "item": "dungeon_key"
+        },
+        {
+          "kind": "explore",
+          "target": "portal_landmark",
+          "count": 1,
+          "text": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+          "item": ""
+        },
+        {
+          "kind": "activate",
+          "target": "magic_switch",
+          "count": 1,
+          "text": "Activate the Runed Switch in the inner chamber.",
+          "item": ""
+        },
+        {
+          "kind": "unlock",
+          "target": "inner_door",
+          "count": 1,
+          "text": "Unlock the Vault Door using the key and activated switch.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "golden_chalice",
+          "count": 1,
+          "text": "Claim the Golden Chalice from the final chamber.",
+          "item": "golden_chalice"
+        }
+      ],
+      "combat": true,
+      "unsupported": [
+        "Complex inventory management",
+        "Equipment stats"
+      ]
+    },
+    "provider.json": {
+      "provider": "OpenAICompatProvider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "latency_ms": 3985
+    },
+    "game_design.json": {
+      "genre": "adventure",
+      "title": "Depths of the Ancient Ruins",
+      "premise": "Venture into dark, forgotten ruins, defeat lurking monsters, secure the dungeon key, activate the seal, and unlock the final chamber for the hidden treasure.",
+      "theme": "dark",
+      "areas": [
+        {
+          "name": "Ruined Antechamber",
+          "environment": "ruins"
+        },
+        {
+          "name": "Inner Sanctuary",
+          "environment": "dungeon"
+        }
+      ],
+      "actors": [
+        {
+          "id": "hermit",
+          "kind": "npc",
+          "name": "Eldrin",
+          "area": 0,
+          "role": "Ruins Guide",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Beware the shadows in these ruins, traveler.",
+              "Seek the key and activate the switch if you wish to proceed."
+            ],
+            "active": [
+              "Have you found the dungeon key yet?"
+            ],
+            "completed": [
+              "You have proven your valor. The inner sanctum awaits."
+            ]
+          }
+        },
+        {
+          "id": "shadow_fiend",
+          "kind": "enemy",
+          "name": "Shadow Fiend",
+          "area": 0,
+          "role": "Monster",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "dungeon_key",
+          "kind": "item",
+          "name": "Ancient Key",
+          "area": 0,
+          "role": "Key",
+          "item": "dungeon_key",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "magic_switch",
+          "kind": "switch",
+          "name": "Runed Switch",
+          "area": 1,
+          "role": "Mechanism",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "portal_landmark",
+          "kind": "landmark",
+          "name": "Sanctuary Gate",
+          "area": 0,
+          "role": "Portal",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "inner_door",
+          "kind": "door",
+          "name": "Vault Door",
+          "area": 1,
+          "role": "Locked Door",
+          "item": "",
+          "quantity": 1,
+          "requires": [
+            "dungeon_key",
+            "magic_switch"
+          ],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "golden_chalice",
+          "kind": "treasure",
+          "name": "Golden Chalice",
+          "area": 1,
+          "role": "Final Treasure",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "hermit",
+          "count": 1,
+          "text": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+          "item": ""
+        },
+        {
+          "kind": "defeat",
+          "target": "shadow_fiend",
+          "count": 1,
+          "text": "Defeat the Shadow Fiend guarding the outer ruins.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "dungeon_key",
+          "count": 1,
+          "text": "Collect the Ancient Key from the ruins floor.",
+          "item": "dungeon_key"
+        },
+        {
+          "kind": "explore",
+          "target": "portal_landmark",
+          "count": 1,
+          "text": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+          "item": ""
+        },
+        {
+          "kind": "activate",
+          "target": "magic_switch",
+          "count": 1,
+          "text": "Activate the Runed Switch in the inner chamber.",
+          "item": ""
+        },
+        {
+          "kind": "unlock",
+          "target": "inner_door",
+          "count": 1,
+          "text": "Unlock the Vault Door using the key and activated switch.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "golden_chalice",
+          "count": 1,
+          "text": "Claim the Golden Chalice from the final chamber.",
+          "item": "golden_chalice"
+        }
+      ],
+      "combat": true,
+      "unsupported": [
+        "Complex inventory management",
+        "Equipment stats"
+      ]
+    },
+    "final_design.json": {
+      "genre": "adventure",
+      "title": "Depths of the Ancient Ruins",
+      "premise": "Venture into dark, forgotten ruins, defeat lurking monsters, secure the dungeon key, activate the seal, and unlock the final chamber for the hidden treasure.",
+      "theme": "dark",
+      "areas": [
+        {
+          "name": "Ruined Antechamber",
+          "environment": "ruins"
+        },
+        {
+          "name": "Inner Sanctuary",
+          "environment": "dungeon"
+        }
+      ],
+      "actors": [
+        {
+          "id": "hermit",
+          "kind": "npc",
+          "name": "Eldrin",
+          "area": 0,
+          "role": "Ruins Guide",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Beware the shadows in these ruins, traveler.",
+              "Seek the key and activate the switch if you wish to proceed."
+            ],
+            "active": [
+              "Have you found the dungeon key yet?"
+            ],
+            "completed": [
+              "You have proven your valor. The inner sanctum awaits."
+            ]
+          }
+        },
+        {
+          "id": "shadow_fiend",
+          "kind": "enemy",
+          "name": "Shadow Fiend",
+          "area": 0,
+          "role": "Monster",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "dungeon_key",
+          "kind": "item",
+          "name": "Ancient Key",
+          "area": 0,
+          "role": "Key",
+          "item": "dungeon_key",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "magic_switch",
+          "kind": "switch",
+          "name": "Runed Switch",
+          "area": 1,
+          "role": "Mechanism",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "portal_landmark",
+          "kind": "landmark",
+          "name": "Sanctuary Gate",
+          "area": 0,
+          "role": "Portal",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "inner_door",
+          "kind": "door",
+          "name": "Vault Door",
+          "area": 1,
+          "role": "Locked Door",
+          "item": "",
+          "quantity": 1,
+          "requires": [
+            "dungeon_key",
+            "magic_switch"
+          ],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "golden_chalice",
+          "kind": "treasure",
+          "name": "Golden Chalice",
+          "area": 1,
+          "role": "Final Treasure",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "hermit",
+          "count": 1,
+          "text": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+          "item": ""
+        },
+        {
+          "kind": "defeat",
+          "target": "shadow_fiend",
+          "count": 1,
+          "text": "Defeat the Shadow Fiend guarding the outer ruins.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "dungeon_key",
+          "count": 1,
+          "text": "Collect the Ancient Key from the ruins floor.",
+          "item": "dungeon_key"
+        },
+        {
+          "kind": "explore",
+          "target": "portal_landmark",
+          "count": 1,
+          "text": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+          "item": ""
+        },
+        {
+          "kind": "activate",
+          "target": "magic_switch",
+          "count": 1,
+          "text": "Activate the Runed Switch in the inner chamber.",
+          "item": ""
+        },
+        {
+          "kind": "unlock",
+          "target": "inner_door",
+          "count": 1,
+          "text": "Unlock the Vault Door using the key and activated switch.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "golden_chalice",
+          "count": 1,
+          "text": "Claim the Golden Chalice from the final chamber.",
+          "item": "golden_chalice"
+        }
+      ],
+      "combat": true,
+      "unsupported": [
+        "Complex inventory management",
+        "Equipment stats"
+      ]
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "Ruined Antechamber",
+          "passed": true,
+          "reachable_tiles": 307,
+          "destinations": 6
+        },
+        {
+          "id": "Inner Sanctuary",
+          "passed": true,
+          "reachable_tiles": 311,
+          "destinations": 4
+        },
+        {
+          "id": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+          "passed": true
+        },
+        {
+          "id": "Defeat the Shadow Fiend guarding the outer ruins.",
+          "passed": true
+        },
+        {
+          "id": "Collect the Ancient Key from the ruins floor.",
+          "passed": true
+        },
+        {
+          "id": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+          "passed": true
+        },
+        {
+          "id": "Activate the Runed Switch in the inner chamber.",
+          "passed": true
+        },
+        {
+          "id": "Unlock the Vault Door using the key and activated switch.",
+          "passed": true
+        },
+        {
+          "id": "Claim the Golden Chalice from the final chamber.",
+          "passed": true
+        }
+      ],
+      "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 0,
+      "scope": "Connected paths are constructed directly. Invalid resource/quest designs fail validation; no speculative runtime repair."
+    },
+    "asset_manifest.json": {
+      "id": "kenney_tiny_adventure",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "sources": [
+        "https://kenney.nl/assets/tiny-town",
+        "https://kenney.nl/assets/tiny-dungeon"
+      ],
+      "textures": {
+        "tiny-town": {
+          "url": "/assets/adventure/tiny-town.png",
+          "frameWidth": 16,
+          "frameHeight": 16,
+          "columns": 12,
+          "width": 192,
+          "height": 176,
+          "sha256": "3a54d99ecde790d4fdea207a3644cf130fc56fa838f1beb1507c185a95b8e902"
+        },
+        "tiny-dungeon": {
+          "url": "/assets/adventure/tiny-dungeon.png",
+          "frameWidth": 16,
+          "frameHeight": 16,
+          "columns": 12,
+          "width": 192,
+          "height": 176,
+          "sha256": "d24e60a41e4ac7a745c0304dfde121143688557f40215f23221c29cfe683825f"
+        }
+      },
+      "roles": {
+        "player": 96,
+        "npc": 84,
+        "enemy_patrol": 110,
+        "enemy_chase": 121,
+        "key": 117,
+        "herb": 113,
+        "treasure": 89,
+        "door": 45,
+        "switch": 32,
+        "landmark": 20,
+        "floor_dungeon": 48,
+        "wall_dungeon": 14,
+        "floor_town": 0,
+        "path_town": 25,
+        "tree": 4,
+        "flowers": 2
+      },
+      "animations": {
+        "walk": "directional flip, step bob and stride tilt using authored single-frame top-down sprites",
+        "limitation": "Packs do not include directional walk frames; no authored eight-direction animation is claimed."
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "tiny-town",
+          "passed": true
+        },
+        {
+          "id": "tiny-dungeon",
+          "passed": true
+        }
+      ]
+    },
+    "game_ir_v2.json": {
+      "schema_version": "2.1",
+      "genre": "adventure",
+      "title": "Depths of the Ancient Ruins",
+      "premise": "Venture into dark, forgotten ruins, defeat lurking monsters, secure the dungeon key, activate the seal, and unlock the final chamber for the hidden treasure.",
+      "theme": "dark",
+      "seed": 42,
+      "tile_size": 32,
+      "combat": true,
+      "areas": [
+        {
+          "name": "Ruined Antechamber",
+          "environment": "ruins",
+          "width": 34,
+          "height": 29,
+          "tiles": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              2,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              3,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "spawn": {
+            "x": 3,
+            "y": 14
+          },
+          "exit": {
+            "x": 30,
+            "y": 14
+          },
+          "actors": [
+            {
+              "id": "hermit",
+              "kind": "npc",
+              "name": "Eldrin",
+              "area": 0,
+              "role": "Ruins Guide",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Beware the shadows in these ruins, traveler.",
+                  "Seek the key and activate the switch if you wish to proceed."
+                ],
+                "active": [
+                  "Have you found the dungeon key yet?"
+                ],
+                "completed": [
+                  "You have proven your valor. The inner sanctum awaits."
+                ]
+              },
+              "x": 25,
+              "y": 7
+            },
+            {
+              "id": "shadow_fiend",
+              "kind": "enemy",
+              "name": "Shadow Fiend",
+              "area": 0,
+              "role": "Monster",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 12,
+              "y": 11
+            },
+            {
+              "id": "dungeon_key",
+              "kind": "item",
+              "name": "Ancient Key",
+              "area": 0,
+              "role": "Key",
+              "item": "dungeon_key",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 9,
+              "y": 7
+            },
+            {
+              "id": "portal_landmark",
+              "kind": "landmark",
+              "name": "Sanctuary Gate",
+              "area": 0,
+              "role": "Portal",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 26,
+              "y": 21
+            }
+          ]
+        },
+        {
+          "name": "Inner Sanctuary",
+          "environment": "dungeon",
+          "width": 34,
+          "height": 29,
+          "tiles": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "spawn": {
+            "x": 3,
+            "y": 14
+          },
+          "exit": {
+            "x": 30,
+            "y": 14
+          },
+          "actors": [
+            {
+              "id": "magic_switch",
+              "kind": "switch",
+              "name": "Runed Switch",
+              "area": 1,
+              "role": "Mechanism",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 6,
+              "y": 24
+            },
+            {
+              "id": "inner_door",
+              "kind": "door",
+              "name": "Vault Door",
+              "area": 1,
+              "role": "Locked Door",
+              "item": "",
+              "quantity": 1,
+              "requires": [
+                "dungeon_key",
+                "magic_switch"
+              ],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 25,
+              "y": 7
+            },
+            {
+              "id": "golden_chalice",
+              "kind": "treasure",
+              "name": "Golden Chalice",
+              "area": 1,
+              "role": "Final Treasure",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 6,
+              "y": 16
+            }
+          ]
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "hermit",
+          "count": 1,
+          "text": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+          "item": ""
+        },
+        {
+          "kind": "defeat",
+          "target": "shadow_fiend",
+          "count": 1,
+          "text": "Defeat the Shadow Fiend guarding the outer ruins.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "dungeon_key",
+          "count": 1,
+          "text": "Collect the Ancient Key from the ruins floor.",
+          "item": "dungeon_key"
+        },
+        {
+          "kind": "explore",
+          "target": "portal_landmark",
+          "count": 1,
+          "text": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+          "item": ""
+        },
+        {
+          "kind": "activate",
+          "target": "magic_switch",
+          "count": 1,
+          "text": "Activate the Runed Switch in the inner chamber.",
+          "item": ""
+        },
+        {
+          "kind": "unlock",
+          "target": "inner_door",
+          "count": 1,
+          "text": "Unlock the Vault Door using the key and activated switch.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "golden_chalice",
+          "count": 1,
+          "text": "Claim the Golden Chalice from the final chamber.",
+          "item": "golden_chalice"
+        }
+      ],
+      "unsupported": [
+        "Complex inventory management",
+        "Equipment stats"
+      ],
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Defeat the Shadow Fiend guarding the outer ruins.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Collect the Ancient Key from the ruins floor.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_3",
+          "source": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_4",
+          "source": "Activate the Runed Switch in the inner chamber.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_5",
+          "source": "Unlock the Vault Door using the key and activated switch.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_6",
+          "source": "Claim the Golden Chalice from the final chamber.",
+          "constructed": true,
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "adapter": "AdventureScene",
+      "genre": "adventure",
+      "schema_version": "2.1",
+      "seed": 42,
+      "game_url": "http://localhost:5174/studio/play/1fdc15eb-df61-430f-9cc1-ce0e5c0c4ba4",
+      "area_count": 2,
+      "combat": true,
+      "gravity": 0
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 464,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "hermit",
+                  "kind": "npc",
+                  "x": 816,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "shadow_fiend",
+                  "kind": "enemy",
+                  "x": 400,
+                  "y": 368,
+                  "health": 2
+                },
+                {
+                  "id": "dungeon_key",
+                  "kind": "item",
+                  "x": 304,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "portal_landmark",
+                  "kind": "landmark",
+                  "x": 848,
+                  "y": 688,
+                  "health": 2
+                }
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 132.66666666666663
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 208,
+            "after_y": 187.33333333333326
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              6,
+              5,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              202,
+              176
+            ]
+          }
+        },
+        {
+          "id": "dialogue_0",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Eldrin\nBeware the shadows in these ruins, traveler.",
+            "Seek the key and activate the switch if you wish to proceed."
+          ]
+        },
+        {
+          "id": "quest_0_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 783,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the Shadow Fiend guarding the outer ruins.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "shadow_fiend",
+                "kind": "enemy",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "combat_shadow_fiend",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 313.699999999999,
+            "y": 368,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Collect the Ancient Key from the ruins floor.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_1_defeat",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 313.699999999999,
+            "y": 368,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Collect the Ancient Key from the ruins floor.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "dungeon_key": 1
+          }
+        },
+        {
+          "id": "quest_2_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 304,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_3_explore",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 815,
+            "y": 688,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Activate the Runed Switch in the inner chamber.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "area_transition",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Activate the Runed Switch in the inner chamber.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "golden_chalice",
+                "kind": "treasure",
+                "x": 208,
+                "y": 528,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_4_activate",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 175,
+            "y": 784,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Unlock the Vault Door using the key and activated switch.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "golden_chalice",
+                "kind": "treasure",
+                "x": 208,
+                "y": 528,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_5_unlock",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 783,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Claim the Golden Chalice from the final chamber.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "inner_door"
+            ],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "golden_chalice",
+                "kind": "treasure",
+                "x": 208,
+                "y": 528,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_6_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 175,
+            "y": 528,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "inner_door"
+            ],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 976,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 4,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "inner_door"
+            ],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 4,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "shadow_fiend",
+                "kind": "enemy",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 464,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "hermit",
+                  "kind": "npc",
+                  "x": 816,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "shadow_fiend",
+                  "kind": "enemy",
+                  "x": 400,
+                  "y": 368,
+                  "health": 2
+                },
+                {
+                  "id": "dungeon_key",
+                  "kind": "item",
+                  "x": 304,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "portal_landmark",
+                  "kind": "landmark",
+                  "x": 848,
+                  "y": 688,
+                  "health": 2
+                }
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 132.66666666666663
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 208,
+            "after_y": 187.33333333333326
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              6,
+              5,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              202,
+              176
+            ]
+          }
+        },
+        {
+          "id": "dialogue_0",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Eldrin\nBeware the shadows in these ruins, traveler.",
+            "Seek the key and activate the switch if you wish to proceed."
+          ]
+        },
+        {
+          "id": "quest_0_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 783,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the Shadow Fiend guarding the outer ruins.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "shadow_fiend",
+                "kind": "enemy",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "combat_shadow_fiend",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 313.699999999999,
+            "y": 368,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Collect the Ancient Key from the ruins floor.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_1_defeat",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 313.699999999999,
+            "y": 368,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Collect the Ancient Key from the ruins floor.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "dungeon_key": 1
+          }
+        },
+        {
+          "id": "quest_2_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 304,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_3_explore",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 815,
+            "y": 688,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Activate the Runed Switch in the inner chamber.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "area_transition",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Activate the Runed Switch in the inner chamber.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "golden_chalice",
+                "kind": "treasure",
+                "x": 208,
+                "y": 528,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_4_activate",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 175,
+            "y": 784,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Unlock the Vault Door using the key and activated switch.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "golden_chalice",
+                "kind": "treasure",
+                "x": 208,
+                "y": 528,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_5_unlock",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 783,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Claim the Golden Chalice from the final chamber.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "inner_door"
+            ],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "golden_chalice",
+                "kind": "treasure",
+                "x": 208,
+                "y": 528,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_6_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 175,
+            "y": 528,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 4,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "inner_door"
+            ],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 976,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "dungeon_key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 4,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "inner_door"
+            ],
+            "activated": [
+              "magic_switch"
+            ],
+            "actors": [
+              {
+                "id": "magic_switch",
+                "kind": "switch",
+                "x": 208,
+                "y": 784,
+                "health": 2
+              },
+              {
+                "id": "inner_door",
+                "kind": "door",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 4,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "hermit",
+                "kind": "npc",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "shadow_fiend",
+                "kind": "enemy",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "dungeon_key",
+                "kind": "item",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "portal_landmark",
+                "kind": "landmark",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 0
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Speak with Eldrin the hermit to learn of the dungeon's perils.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Defeat the Shadow Fiend guarding the outer ruins.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Collect the Ancient Key from the ruins floor.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_3",
+          "source": "Explore the Sanctuary Gate to enter the Inner Sanctuary.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_4",
+          "source": "Activate the Runed Switch in the inner chamber.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_5",
+          "source": "Unlock the Vault Door using the key and activated switch.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_6",
+          "source": "Claim the Golden Chalice from the final chamber.",
+          "constructed": true,
+          "status": "verified"
+        }
+      ],
+      "scope": "Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.",
+      "unsupported": [
+        "Complex inventory management",
+        "Equipment stats"
+      ]
+    },
+    "outcome.json": {
+      "status": "READY_WITH_WARNINGS",
+      "visual_quality": "Screenshot review required; functional QA does not certify aesthetics."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+Acknowledgements
+I would like to express my sincere gratitude to everyone who has made this project
+possible. I thank individuals for their ongoing support and contributions.
+License
+All assets included in this package are licensed under the Creative Commons Zero (CC0)
+license, which means you can use them freely in any project, whether personal or
+commercial, without the need for attribution. There are no restrictions on use,
+modification, or redistribution of these assets.
+Luis Zuno aka Ansimuz
+Discover My Other Assets
+Explore my full collection of game development assets, spanning fantasy, sci-fi, and
+RPG genres, and discover how I can help bring your ideas to life.
+Visit my ansimuz.com to view all my available assets.
+Follow Me on Social Media
+Connect with me on my social media channels to stay updated on the latest news,
+new releases, and game development tips!
+Twitter: @ansimuz
+Instagram: @ansimuz
+Youtube: @ansimuz

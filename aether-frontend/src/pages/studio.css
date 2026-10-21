@@ -1556,3 +1556,9 @@ html:has(.studio-theme) { overflow-x:clip; overflow-y:auto; }
   .workspace.has-game .canvas-area { padding-top: 12px; }
   .game-controls { flex-wrap: wrap; gap: 10px; }
 }
+.adventure-mobile-status { display: none; }
+@media (max-width: 760px) {
+  .adventure-mobile-status { display: grid; gap: 6px; background: #172231; color: #fff4d9; padding: 12px; font-size: 13px; line-height: 1.5; }
+  .adventure-mobile-status span { font-size: 12px; }
+  .adventure-mobile-status p { white-space: pre-line; margin: 4px 0 0; border-top: 1px solid #536655; padding-top: 8px; }
+}

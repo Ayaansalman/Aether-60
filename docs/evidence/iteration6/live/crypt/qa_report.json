@@ -1,0 +1,1476 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 272,
+          "y": 752,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Defeat the skeleton guard patrolling the outer crypt.",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "skeleton_guard_1",
+              "kind": "enemy",
+              "x": 304,
+              "y": 240,
+              "health": 2,
+              "body": {
+                "x": 294,
+                "y": 230,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            },
+            {
+              "id": "skeleton_guard_2",
+              "kind": "enemy",
+              "x": 688,
+              "y": 304,
+              "health": 2,
+              "body": {
+                "x": 678,
+                "y": 294,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            },
+            {
+              "id": "crypt_key",
+              "kind": "item",
+              "x": 752,
+              "y": 272,
+              "health": 2,
+              "body": {
+                "x": 740,
+                "y": 264,
+                "width": 24,
+                "height": 16,
+                "enabled": true
+              }
+            },
+            {
+              "id": "sealed_chamber_door",
+              "kind": "door",
+              "x": 1008,
+              "y": 752,
+              "health": 2,
+              "body": {
+                "x": 992,
+                "y": 736,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjablue",
+          "playerFrame": 0,
+          "animation": "ninja_ninjablue:down:idle",
+          "selectedAssets": [
+            "ninja_chest",
+            "ninja_gem",
+            "ninja_hearts",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjablue",
+            "ninja_projectile",
+            "ninja_skull",
+            "ninja_smoke",
+            "ninja_terrain"
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 272,
+        "after": 292.6666666666665
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 176,
+        "after_y": 155.33333333333326
+      }
+    },
+    {
+      "id": "registered_animation_frames",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "observed_frames": [
+          7,
+          11,
+          7,
+          15,
+          7,
+          15,
+          11
+        ],
+        "asset": "ninja_ninjablue"
+      }
+    },
+    {
+      "id": "directional_art_and_pack",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "directions": [
+          "ninja_ninjablue:left:idle",
+          "ninja_ninjablue:up:idle",
+          "ninja_ninjablue:down:idle"
+        ],
+        "selected_assets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ]
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          5,
+          4,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          170,
+          144
+        ]
+      }
+    },
+    {
+      "id": "enemy_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": {
+          "id": "skeleton_guard_1",
+          "kind": "enemy",
+          "x": 304,
+          "y": 240,
+          "health": 2,
+          "body": {
+            "x": 294,
+            "y": 230,
+            "width": 20,
+            "height": 20,
+            "enabled": true
+          }
+        },
+        "after": {
+          "id": "skeleton_guard_1",
+          "kind": "enemy",
+          "x": 270.9999999999993,
+          "y": 240,
+          "health": 2,
+          "body": {
+            "x": 260.9999999999993,
+            "y": 230,
+            "width": 20,
+            "height": 20,
+            "enabled": true
+          }
+        }
+      }
+    },
+    {
+      "id": "combat_health_loss",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 267.69999999999925,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard patrolling the outer crypt.",
+        "health": 0,
+        "won": false,
+        "lost": true,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "skeleton_guard_1",
+            "kind": "enemy",
+            "x": 268.7999999999993,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 258.7999999999993,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "skeleton_guard_2",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "restart_after_loss",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard patrolling the outer crypt.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "skeleton_guard_1",
+            "kind": "enemy",
+            "x": 304,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 294,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "skeleton_guard_2",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "locked_door_requires_resources",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 974,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard patrolling the outer crypt.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [
+          "Sealed Chamber Door\nSealed Chamber Door is sealed. Requires: crypt_key."
+        ],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "skeleton_guard_1",
+            "kind": "enemy",
+            "x": 304,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 294,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "skeleton_guard_2",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_skeleton_guard_1",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 215.49999999999926,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton elite guarding the crypt.",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "skeleton_guard_2",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_0_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 215.49999999999926,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton elite guarding the crypt.",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "skeleton_guard_2",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_skeleton_guard_2",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 593.2833333333325,
+        "y": 304,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Discover the hidden crypt key. (0/1)",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_1_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 593.2833333333325,
+        "y": 304,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Discover the hidden crypt key. (0/1)",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_2",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "crypt_key": 1
+      }
+    },
+    {
+      "id": "quest_2_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 752,
+        "y": 272,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crypt_key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Unlock the sealed chamber door using the crypt key.",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "sealed_passage_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 984,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crypt_key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Unlock the sealed chamber door using the crypt key.",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "unlocked_passage_traversal",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1060.2500000000002,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crypt_key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Claim the magical relic from the inner sanctuary. (0/1)",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "sealed_chamber_door"
+        ],
+        "activated": [],
+        "actors": [
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": false
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_3_unlock",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1060.2500000000002,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crypt_key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Claim the magical relic from the inner sanctuary. (0/1)",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "sealed_chamber_door"
+        ],
+        "activated": [],
+        "actors": [
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": false
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "area_transition",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 4,
+        "genre": "adventure",
+        "area": 1,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crypt_key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Claim the magical relic from the inner sanctuary. (0/1)",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "sealed_chamber_door"
+        ],
+        "activated": [],
+        "actors": [
+          {
+            "id": "magical_relic",
+            "kind": "treasure",
+            "x": 1264,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 1248,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_4_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 4,
+        "genre": "adventure",
+        "area": 1,
+        "x": 1231,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crypt_key": 1,
+          "magical_relic": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "sealed_chamber_door"
+        ],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "adventure_completion",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 4,
+        "genre": "adventure",
+        "area": 1,
+        "x": 1392,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crypt_key": 1,
+          "magical_relic": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 3,
+        "won": true,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "sealed_chamber_door"
+        ],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 5,
+        "genre": "adventure",
+        "area": 0,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard patrolling the outer crypt.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "skeleton_guard_1",
+            "kind": "enemy",
+            "x": 304,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 294,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "skeleton_guard_2",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crypt_key",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "sealed_chamber_door",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

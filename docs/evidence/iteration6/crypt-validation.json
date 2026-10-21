@@ -1,0 +1,38 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "Forgotten Crypt",
+      "passed": true,
+      "reachable_tiles": 426,
+      "destinations": 6
+    },
+    {
+      "id": "Treasure Chamber",
+      "passed": true,
+      "reachable_tiles": 264,
+      "destinations": 2
+    },
+    {
+      "id": "Defeat the skeleton guard",
+      "passed": true
+    },
+    {
+      "id": "Defeat the skeleton sentinel",
+      "passed": true
+    },
+    {
+      "id": "Find the ancient key",
+      "passed": true
+    },
+    {
+      "id": "Unlock the ancient passage",
+      "passed": true
+    },
+    {
+      "id": "Claim the magical relic",
+      "passed": true
+    }
+  ],
+  "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+}

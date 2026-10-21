@@ -1,0 +1,36 @@
+{
+  "backend_tests": 87,
+  "frontend_tests": 17,
+  "catalog_checks": 77,
+  "geometry_seeds_per_acceptance_case": 40,
+  "provider_calls": 3,
+  "successful_live_designs": 2,
+  "browser": {
+    "village\\qa_report.json": {
+      "overall": "PASS",
+      "passed": 16,
+      "total": 16
+    },
+    "crypt\\qa_report.json": {
+      "overall": "PASS",
+      "passed": 24,
+      "total": 24
+    },
+    "platformer\\qa_report.json": {
+      "overall": "PASS",
+      "passed": 18,
+      "total": 18
+    },
+    "live\\village\\qa_report.json": {
+      "overall": "PASS",
+      "passed": 21,
+      "total": 21
+    },
+    "live\\crypt\\qa_report.json": {
+      "overall": "PASS",
+      "passed": 24,
+      "total": 24
+    }
+  },
+  "scope": "Desktop Chromium, controlled positions with real keyboard/physics; screenshots manually inspected. No autonomous navigation, mobile retest, aesthetic scoring or arbitrary prompt coverage claimed."
+}

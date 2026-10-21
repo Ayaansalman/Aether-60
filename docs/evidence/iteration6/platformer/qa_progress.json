@@ -1,0 +1,2552 @@
+[
+  {
+    "id": "canvas_and_assets",
+    "passed": true,
+    "critical": true,
+    "category": "runtime",
+    "details": {
+      "missing": [],
+      "http_failures": []
+    }
+  },
+  {
+    "id": "horizontal_movement",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "before": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.9128883477193548,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 659.7499999999985,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1235.750000000003,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1847.750000000003,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2387.749999999994,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 1,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 726278652,
+        "time": 8013
+      },
+      "after": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.5055273220324723,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 642.4166666666646,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1218.4166666666708,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1830.4166666666708,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2370.4166666666583,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 1,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 129.22222222222223,
+        "y": 480,
+        "vx": 216.66666666666666,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "run",
+        "seed": 726278652,
+        "time": 8579.7
+      }
+    }
+  },
+  {
+    "id": "jump_gravity_landing",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "before": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.8316346782100208,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 691.1666666666663,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1267.1666666666674,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1879.1666666666674,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2419.166666666665,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 2,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 726278652,
+        "time": 9146.3
+      },
+      "airborne": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.5,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 675.9999999999991,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1252.0000000000018,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1864.0000000000018,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2403.9999999999964,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 2,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 405.83333333333337,
+        "vx": 0,
+        "vy": -270.0000000000002,
+        "grounded": false,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "jump",
+        "seed": 726278652,
+        "time": 9662.9
+      },
+      "landed": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.9114820156216968,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 625.0833333333306,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1201.0833333333387,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1813.0833333333387,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2353.0833333333226,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 2,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 726278652,
+        "time": 10746.2
+      }
+    }
+  },
+  {
+    "id": "environment_composition",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "theme": "forest",
+      "method": "Runtime theme/asset witness; screenshots require human visual review"
+    }
+  },
+  {
+    "id": "exit_indicator_animation",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "mode": "glow",
+      "style": "shrine",
+      "observed_alpha": [
+        0.7527719367186112,
+        0.6015626552911789,
+        0.5044281873178278,
+        0.5230125858582201,
+        0.6271399182759645,
+        0.7758257840350373,
+        0.913588180898882,
+        0.9930384505813737
+      ]
+    }
+  },
+  {
+    "id": "enemy_patrol",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+      "before": {
+        "id": "L1_enemy_3",
+        "behavior": "patrol",
+        "phase": "idle",
+        "health": 1,
+        "x": 690.0833333333329,
+        "y": 521.3,
+        "vx": -65
+      },
+      "after": {
+        "id": "L1_enemy_3",
+        "behavior": "patrol",
+        "phase": "idle",
+        "health": 1,
+        "x": 659.7499999999985,
+        "y": 521.3,
+        "vx": -65
+      }
+    }
+  },
+  {
+    "id": "enemy_behaviors",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "behaviors": [
+        "patrol"
+      ]
+    }
+  },
+  {
+    "id": "mandatory_route_edges",
+    "passed": true,
+    "critical": true,
+    "category": "level_layout",
+    "details": {
+      "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+      "edges": [
+        {
+          "from": 0,
+          "to": 10,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L1_crystal_0"
+              ]
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.9971351070364043,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_3",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 591.4999999999961,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_11",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1167.5000000000077,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_18",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1779.5000000000077,
+                "y": 485.3,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2319.4999999999845,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 5,
+            "landedPlatforms": [
+              0,
+              1
+            ],
+            "x": 427.2222222222227,
+            "y": 516,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 15796.1
+          }
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L1_crystal_2"
+              ]
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.9919143479904337,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_3",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 595.8333333333296,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_11",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1171.8333333333408,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_18",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1770.8333333333417,
+                "y": 485.3,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2310.8333333333167,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 6,
+            "landedPlatforms": [
+              0,
+              1,
+              2
+            ],
+            "x": 684.888888888888,
+            "y": 516,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 17846
+          }
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [
+                "L1_enemy_3"
+              ],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L1_crystal_4"
+              ]
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.563391685898964,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_11",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1211.9166666666713,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_18",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1750.2500000000098,
+                "y": 485.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2272.9166666666447,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 7,
+            "landedPlatforms": [
+              0,
+              2,
+              3
+            ],
+            "x": 923.4444444444425,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 20462.6
+          }
+        },
+        {
+          "from": 23,
+          "to": 32,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": []
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.9796217464364807,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_3",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 600.1666666666631,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_11",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1176.1666666666738,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_18",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1768.6666666666752,
+                "y": 485.3,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2308.6666666666497,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 8,
+            "landedPlatforms": [
+              0,
+              3,
+              5
+            ],
+            "x": 1240.0555555555588,
+            "y": 516,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 22512.4
+          }
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [
+                "L1_enemy_11"
+              ],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L1_crystal_14"
+              ]
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.5253915762025592,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_3",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 640.2499999999978,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_18",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1756.7500000000093,
+                "y": 485.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2268.5833333333107,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 9,
+            "landedPlatforms": [
+              0,
+              5,
+              6
+            ],
+            "x": 1520.2777777777824,
+            "y": 516,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 25245.6
+          }
+        },
+        {
+          "from": 39,
+          "to": 48,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L1_crystal_16"
+              ]
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.9923739247808896,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_3",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 591.4999999999961,
+                "y": 521.3,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_11",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1167.5000000000077,
+                "y": 521.3,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_18",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1779.5000000000077,
+                "y": 485.3,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2319.4999999999845,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 10,
+            "landedPlatforms": [
+              0,
+              6,
+              7
+            ],
+            "x": 1816.0555555555595,
+            "y": 480,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 27112.2
+          }
+        },
+        {
+          "from": 48,
+          "to": 56,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [
+                "L1_enemy_18"
+              ],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L1_crystal_17",
+                "L1_crystal_21"
+              ]
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.5097980950003642,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_3",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 653.2499999999983,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_11",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1229.2500000000034,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2255.583333333309,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 11,
+            "landedPlatforms": [
+              0,
+              7,
+              9
+            ],
+            "x": 2098.9444444444475,
+            "y": 516,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 2,
+            "crystals": 2,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 29978.8
+          }
+        },
+        {
+          "from": 56,
+          "to": 62,
+          "landed": true,
+          "route": "static floor",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": null,
+            "objective": {
+              "type": "collect_and_exit",
+              "required": 12,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": [
+                "L1_crystal_23"
+              ]
+            },
+            "triggers": [],
+            "doors": [],
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 476
+            },
+            "exitAlpha": 0.9807037970892476,
+            "exitStyle": "shrine",
+            "enemies": [
+              {
+                "id": "L1_enemy_3",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 597.9999999999964,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_11",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1174.0000000000073,
+                "y": 521.3,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_18",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1768.6666666666752,
+                "y": 485.3,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_25",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2308.6666666666497,
+                "y": 521.3,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 936,
+                "y": 405
+              },
+              {
+                "x": 1836,
+                "y": 405
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 12,
+            "landedPlatforms": [
+              0,
+              9,
+              10
+            ],
+            "x": 2365.8888888888796,
+            "y": 516,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 1,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 726278652,
+            "time": 31978.7
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "collectible_overlap",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "method": "Controlled placement into a real crystal overlap",
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": [
+            "L1_crystal_0"
+          ]
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.6553972374894225,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 662.9999999999986,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1239.0000000000027,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1851.0000000000027,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2390.9999999999945,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 13,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 414,
+        "y": 515.5555555555555,
+        "vx": 0,
+        "vy": 293.3333333333333,
+        "grounded": false,
+        "health": 3,
+        "crystals": 1,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "fall",
+        "seed": 726278652,
+        "time": 32828.7
+      }
+    }
+  },
+  {
+    "id": "checkpoint_respawn",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+      "activated": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": [
+            "L1_crystal_0"
+          ]
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 1180.8,
+          "y": 485
+        },
+        "exitAlpha": 0.500493317892932,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 643.499999999998,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1219.500000000004,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1831.500000000004,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2371.499999999992,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 13,
+        "landedPlatforms": [
+          0,
+          1,
+          5
+        ],
+        "x": 1180.8,
+        "y": 516,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 1,
+        "state": "playing",
+        "checkpoint": 5,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 726278652,
+        "time": 33145.3
+      },
+      "respawn": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [
+            "L1_enemy_11"
+          ],
+          "activate": [],
+          "unlock": [],
+          "collect": [
+            "L1_crystal_0",
+            "L1_crystal_9"
+          ]
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 1180.8,
+          "y": 485
+        },
+        "exitAlpha": 0.8420311381711696,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 609.9166666666634,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1797.916666666673,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2337.916666666654,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 13,
+        "landedPlatforms": [
+          0,
+          1,
+          5
+        ],
+        "x": 1180.8,
+        "y": 453.1666666666666,
+        "vx": 0,
+        "vy": 11.666666666666668,
+        "grounded": false,
+        "health": 2,
+        "crystals": 2,
+        "state": "playing",
+        "checkpoint": 5,
+        "missingAssets": [],
+        "animation": "fall",
+        "seed": 726278652,
+        "time": 33678.7
+      }
+    }
+  },
+  {
+    "id": "locked_exit",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "method": "Controlled exit overlap without required crystals",
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.7058803890791632,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 665.1666666666654,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1241.1666666666692,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1853.1666666666692,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2393.1666666666615,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 15,
+        "landedPlatforms": [
+          0,
+          10
+        ],
+        "x": 2448,
+        "y": 516,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 726278652,
+        "time": 37245.2
+      }
+    }
+  },
+  {
+    "id": "level_settings",
+    "passed": true,
+    "critical": true,
+    "category": "fidelity",
+    "details": {
+      "stage": 0,
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.8471627562057252,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 678.1666666666658,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1254.1666666666683,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1866.1666666666683,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2406.1666666666633,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 16,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 726278652,
+        "time": 37911.8
+      }
+    }
+  },
+  {
+    "id": "win_condition",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "method": "Controlled collection and gate overlaps through all stages, not an autonomous completion",
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [
+            "L1_enemy_3",
+            "L1_enemy_11",
+            "L1_enemy_18"
+          ],
+          "activate": [],
+          "unlock": [],
+          "collect": [
+            "L1_crystal_0",
+            "L1_crystal_1",
+            "L1_crystal_2",
+            "L1_crystal_4",
+            "L1_crystal_5",
+            "L1_crystal_6",
+            "L1_crystal_8",
+            "L1_crystal_9",
+            "L1_crystal_10",
+            "L1_crystal_13",
+            "L1_crystal_14",
+            "L1_crystal_15",
+            "L1_crystal_16",
+            "L1_crystal_17",
+            "L1_crystal_20",
+            "L1_crystal_21",
+            "L1_crystal_22",
+            "L1_crystal_23",
+            "L1_crystal_24"
+          ]
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 1180.8,
+          "y": 485
+        },
+        "exitAlpha": 0.6008201759443502,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2396.416666666662,
+            "y": 521.3,
+            "vx": 65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 16,
+        "landedPlatforms": [
+          0,
+          4,
+          6,
+          8
+        ],
+        "x": 2448,
+        "y": 504,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 2,
+        "crystals": 19,
+        "state": "won",
+        "checkpoint": 5,
+        "missingAssets": [],
+        "animation": "fall",
+        "seed": 726278652,
+        "time": 43278.3
+      }
+    }
+  },
+  {
+    "id": "restart_after_victory",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "ready": true,
+      "levelIndex": 0,
+      "levelCount": 1,
+      "levelTitle": "The Verdant Passage",
+      "topology": null,
+      "objective": {
+        "type": "collect_and_exit",
+        "required": 12,
+        "total": 19
+      },
+      "goals": [],
+      "progress": {
+        "defeat": [],
+        "activate": [],
+        "unlock": [],
+        "collect": []
+      },
+      "triggers": [],
+      "doors": [],
+      "playerShotsFired": 0,
+      "playerAttack": "stomp",
+      "respawn": {
+        "x": 90,
+        "y": 476
+      },
+      "exitAlpha": 0.5709513811370797,
+      "exitStyle": "shrine",
+      "enemies": [
+        {
+          "id": "L1_enemy_3",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 654.3333333333317,
+          "y": 521.3,
+          "vx": -65
+        },
+        {
+          "id": "L1_enemy_11",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 1230.3333333333367,
+          "y": 521.3,
+          "vx": -65
+        },
+        {
+          "id": "L1_enemy_18",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 1842.3333333333367,
+          "y": 485.3,
+          "vx": -65
+        },
+        {
+          "id": "L1_enemy_25",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 2382.3333333333267,
+          "y": 521.3,
+          "vx": -65
+        }
+      ],
+      "icicles": [],
+      "machines": [],
+      "movingPlatforms": [
+        {
+          "x": 936,
+          "y": 405
+        },
+        {
+          "x": 1836,
+          "y": 405
+        }
+      ],
+      "shotsFired": 0,
+      "slippery": false,
+      "environment": "forest",
+      "terrainTexture": "terrain",
+      "generation": 17,
+      "landedPlatforms": [
+        0
+      ],
+      "x": 90,
+      "y": 480,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "health": 3,
+      "crystals": 0,
+      "state": "playing",
+      "checkpoint": -1,
+      "missingAssets": [],
+      "animation": "idle",
+      "seed": 726278652,
+      "time": 44228.2
+    }
+  },
+  {
+    "id": "hazard_damage",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "method": "Controlled overlap with real hazard or enemy",
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.6060597562387129,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 658.6666666666652,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1234.6666666666697,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1846.6666666666697,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2386.6666666666606,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 18,
+        "landedPlatforms": [
+          0,
+          2
+        ],
+        "x": 696.8888888888889,
+        "y": 516,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 2,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 726278652,
+        "time": 45194.9
+      }
+    }
+  },
+  {
+    "id": "loss_condition",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "method": "Test hook invokes damage on final level to exercise health exhaustion",
+      "snapshot": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 1,
+        "levelTitle": "The Verdant Passage",
+        "topology": null,
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 12,
+          "total": 19
+        },
+        "goals": [],
+        "progress": {
+          "defeat": [],
+          "activate": [],
+          "unlock": [],
+          "collect": []
+        },
+        "triggers": [],
+        "doors": [],
+        "playerShotsFired": 0,
+        "playerAttack": "stomp",
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.7904769410708208,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "id": "L1_enemy_3",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 683.5833333333327,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_11",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1259.5833333333346,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_18",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 1871.5833333333346,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "id": "L1_enemy_25",
+            "behavior": "patrol",
+            "phase": "idle",
+            "health": 1,
+            "x": 2411.5833333333308,
+            "y": 521.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 405
+          },
+          {
+            "x": 1836,
+            "y": 405
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "forest",
+        "terrainTexture": "terrain",
+        "generation": 19,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 81.22222222222221,
+        "y": 463.97222222222223,
+        "vx": 0,
+        "vy": 0,
+        "grounded": false,
+        "health": 0,
+        "crystals": 0,
+        "state": "lost",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "jump",
+        "seed": 726278652,
+        "time": 45744.8
+      }
+    }
+  },
+  {
+    "id": "restart_reset",
+    "passed": true,
+    "critical": true,
+    "category": "gameplay",
+    "details": {
+      "ready": true,
+      "levelIndex": 0,
+      "levelCount": 1,
+      "levelTitle": "The Verdant Passage",
+      "topology": null,
+      "objective": {
+        "type": "collect_and_exit",
+        "required": 12,
+        "total": 19
+      },
+      "goals": [],
+      "progress": {
+        "defeat": [],
+        "activate": [],
+        "unlock": [],
+        "collect": []
+      },
+      "triggers": [],
+      "doors": [],
+      "playerShotsFired": 0,
+      "playerAttack": "stomp",
+      "respawn": {
+        "x": 90,
+        "y": 476
+      },
+      "exitAlpha": 0.8901384944032895,
+      "exitStyle": "shrine",
+      "enemies": [
+        {
+          "id": "L1_enemy_3",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 682.4999999999993,
+          "y": 521.3,
+          "vx": -65
+        },
+        {
+          "id": "L1_enemy_11",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 1258.5000000000014,
+          "y": 521.3,
+          "vx": -65
+        },
+        {
+          "id": "L1_enemy_18",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 1870.5000000000014,
+          "y": 485.3,
+          "vx": -65
+        },
+        {
+          "id": "L1_enemy_25",
+          "behavior": "patrol",
+          "phase": "idle",
+          "health": 1,
+          "x": 2410.4999999999973,
+          "y": 521.3,
+          "vx": -65
+        }
+      ],
+      "icicles": [],
+      "machines": [],
+      "movingPlatforms": [
+        {
+          "x": 936,
+          "y": 405
+        },
+        {
+          "x": 1836,
+          "y": 405
+        }
+      ],
+      "shotsFired": 0,
+      "slippery": false,
+      "environment": "forest",
+      "terrainTexture": "terrain",
+      "generation": 20,
+      "landedPlatforms": [
+        0
+      ],
+      "x": 90,
+      "y": 480,
+      "vx": 0,
+      "vy": 0,
+      "grounded": true,
+      "health": 3,
+      "crystals": 0,
+      "state": "playing",
+      "checkpoint": -1,
+      "missingAssets": [],
+      "animation": "idle",
+      "seed": 726278652,
+      "time": 46261.5
+    }
+  },
+  {
+    "id": "no_runtime_exceptions",
+    "passed": true,
+    "critical": true,
+    "category": "runtime",
+    "details": []
+  }
+]

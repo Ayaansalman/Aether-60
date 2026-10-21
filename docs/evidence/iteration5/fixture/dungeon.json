@@ -1,0 +1,5010 @@
+{
+  "job": {
+    "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+    "prompt": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+    "status": "READY",
+    "stage": "READY",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "fixture",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T06:04:13.020611+00:00",
+    "updated_at": "2026-10-21T06:04:41.564898+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "game_intent.json",
+      "model_design.json",
+      "provider.json",
+      "interpretation_guard.json",
+      "game_design.json",
+      "final_design.json",
+      "validation.json",
+      "repair_report.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "qa_report.json",
+      "diagnosis.json",
+      "requirement_report.json",
+      "outcome.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 18,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5174/studio/play/220400e2-e278-4f2a-9e55-f030ef54824d"
+  },
+  "events": [
+    {
+      "id": 27,
+      "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+      "ts": "2026-10-21T06:04:13.038779+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted fixture generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 29,
+      "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+      "ts": "2026-10-21T06:04:25.059564+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning labeled deterministic adventure fixture",
+      "attempt": 1,
+      "rationale": "Elapsed 0.03s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 30,
+      "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+      "ts": "2026-10-21T06:04:25.235070+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Composing seeded connected areas, NPCs, inventory and event-driven quests",
+      "attempt": 1,
+      "rationale": "Elapsed 0.20s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 31,
+      "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+      "ts": "2026-10-21T06:04:25.266887+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking destination connectivity, dialogue references and quest prerequisites",
+      "attempt": 1,
+      "rationale": "Elapsed 0.23s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 32,
+      "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+      "ts": "2026-10-21T06:04:25.431708+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Adventure Phaser adapter and licensed tilemaps ready",
+      "attempt": 1,
+      "rationale": "Elapsed 0.41s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 33,
+      "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+      "ts": "2026-10-21T06:04:25.496464+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium adventure interaction checks",
+      "attempt": 1,
+      "rationale": "Elapsed 0.47s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 34,
+      "game_id": "220400e2-e278-4f2a-9e55-f030ef54824d",
+      "ts": "2026-10-21T06:04:41.550348+00:00",
+      "stage": "READY",
+      "result": "SUCCESS",
+      "detail": "Adventure browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 16.52s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "game_intent.json": {
+      "original_prompt": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+      "genre": "adventure",
+      "setting": "dark",
+      "gameplay": {
+        "combat": true,
+        "quests": [
+          {
+            "kind": "defeat",
+            "target": "guardian",
+            "count": 1,
+            "text": "Defeat the patrolling guardian",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "defeat",
+            "target": "stalker",
+            "count": 1,
+            "text": "Defeat the stalking monster",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "collect",
+            "target": "relic",
+            "count": 1,
+            "text": "Find the ancient key",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "activate",
+            "target": "rune",
+            "count": 1,
+            "text": "Activate the magical switch",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "unlock",
+            "target": "seal",
+            "count": 1,
+            "text": "Unlock the ancient passage",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "collect",
+            "target": "treasure",
+            "count": 1,
+            "text": "Open the treasure in the final chamber",
+            "item": "",
+            "delivery_items": {}
+          }
+        ]
+      },
+      "areas": [
+        {
+          "name": "Ancient Ruins",
+          "environment": "dungeon"
+        },
+        {
+          "name": "Treasure Chamber",
+          "environment": "dungeon"
+        }
+      ],
+      "unsupported": [],
+      "interpretation_source": {
+        "provider": "fixture",
+        "model": null,
+        "live": false
+      }
+    },
+    "model_design.json": {
+      "genre": "adventure",
+      "title": "The Sealed Depths",
+      "premise": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+      "theme": "dark",
+      "areas": [
+        {
+          "name": "Ancient Ruins",
+          "environment": "dungeon"
+        },
+        {
+          "name": "Treasure Chamber",
+          "environment": "dungeon"
+        }
+      ],
+      "actors": [
+        {
+          "id": "guardian",
+          "kind": "enemy",
+          "name": "Ruins Guardian",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "patrol",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "name": "Cave Stalker",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "name": "Ancient Key",
+          "area": 0,
+          "role": "",
+          "item": "key",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "name": "Runic Switch",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "name": "Ancient Seal",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [
+            "key",
+            "rune"
+          ],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "treasure",
+          "kind": "treasure",
+          "name": "Ancient Treasure",
+          "area": 1,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "defeat",
+          "target": "guardian",
+          "count": 1,
+          "text": "Defeat the patrolling guardian",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "defeat",
+          "target": "stalker",
+          "count": 1,
+          "text": "Defeat the stalking monster",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "relic",
+          "count": 1,
+          "text": "Find the ancient key",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "activate",
+          "target": "rune",
+          "count": 1,
+          "text": "Activate the magical switch",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "unlock",
+          "target": "seal",
+          "count": 1,
+          "text": "Unlock the ancient passage",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "treasure",
+          "count": 1,
+          "text": "Open the treasure in the final chamber",
+          "item": "",
+          "delivery_items": {}
+        }
+      ],
+      "combat": true,
+      "unsupported": []
+    },
+    "provider.json": {
+      "provider": "fixture",
+      "model": null,
+      "live": false
+    },
+    "interpretation_guard.json": {
+      "changes": [],
+      "scope": "Bounded explicit feature/resource guards, not general semantic fidelity certification"
+    },
+    "game_design.json": {
+      "genre": "adventure",
+      "title": "The Sealed Depths",
+      "premise": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+      "theme": "dark",
+      "areas": [
+        {
+          "name": "Ancient Ruins",
+          "environment": "dungeon"
+        },
+        {
+          "name": "Treasure Chamber",
+          "environment": "dungeon"
+        }
+      ],
+      "actors": [
+        {
+          "id": "guardian",
+          "kind": "enemy",
+          "name": "Ruins Guardian",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "patrol",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "name": "Cave Stalker",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "name": "Ancient Key",
+          "area": 0,
+          "role": "",
+          "item": "key",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "name": "Runic Switch",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "name": "Ancient Seal",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [
+            "key",
+            "rune"
+          ],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "treasure",
+          "kind": "treasure",
+          "name": "Ancient Treasure",
+          "area": 1,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "defeat",
+          "target": "guardian",
+          "count": 1,
+          "text": "Defeat the patrolling guardian",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "defeat",
+          "target": "stalker",
+          "count": 1,
+          "text": "Defeat the stalking monster",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "relic",
+          "count": 1,
+          "text": "Find the ancient key",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "activate",
+          "target": "rune",
+          "count": 1,
+          "text": "Activate the magical switch",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "unlock",
+          "target": "seal",
+          "count": 1,
+          "text": "Unlock the ancient passage",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "treasure",
+          "count": 1,
+          "text": "Open the treasure in the final chamber",
+          "item": "",
+          "delivery_items": {}
+        }
+      ],
+      "combat": true,
+      "unsupported": []
+    },
+    "final_design.json": {
+      "genre": "adventure",
+      "title": "The Sealed Depths",
+      "premise": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+      "theme": "dark",
+      "areas": [
+        {
+          "name": "Ancient Ruins",
+          "environment": "dungeon"
+        },
+        {
+          "name": "Treasure Chamber",
+          "environment": "dungeon"
+        }
+      ],
+      "actors": [
+        {
+          "id": "guardian",
+          "kind": "enemy",
+          "name": "Ruins Guardian",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "patrol",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "name": "Cave Stalker",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "name": "Ancient Key",
+          "area": 0,
+          "role": "",
+          "item": "key",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "name": "Runic Switch",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "name": "Ancient Seal",
+          "area": 0,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [
+            "key",
+            "rune"
+          ],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "treasure",
+          "kind": "treasure",
+          "name": "Ancient Treasure",
+          "area": 1,
+          "role": "",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "defeat",
+          "target": "guardian",
+          "count": 1,
+          "text": "Defeat the patrolling guardian",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "defeat",
+          "target": "stalker",
+          "count": 1,
+          "text": "Defeat the stalking monster",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "relic",
+          "count": 1,
+          "text": "Find the ancient key",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "activate",
+          "target": "rune",
+          "count": 1,
+          "text": "Activate the magical switch",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "unlock",
+          "target": "seal",
+          "count": 1,
+          "text": "Unlock the ancient passage",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "treasure",
+          "count": 1,
+          "text": "Open the treasure in the final chamber",
+          "item": "",
+          "delivery_items": {}
+        }
+      ],
+      "combat": true,
+      "unsupported": []
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "Ancient Ruins",
+          "passed": true,
+          "reachable_tiles": 299,
+          "destinations": 7
+        },
+        {
+          "id": "Treasure Chamber",
+          "passed": true,
+          "reachable_tiles": 164,
+          "destinations": 2
+        },
+        {
+          "id": "Defeat the patrolling guardian",
+          "passed": true
+        },
+        {
+          "id": "Defeat the stalking monster",
+          "passed": true
+        },
+        {
+          "id": "Find the ancient key",
+          "passed": true
+        },
+        {
+          "id": "Activate the magical switch",
+          "passed": true
+        },
+        {
+          "id": "Unlock the ancient passage",
+          "passed": true
+        },
+        {
+          "id": "Open the treasure in the final chamber",
+          "passed": true
+        }
+      ],
+      "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 0,
+      "scope": "Connected paths are constructed directly. Invalid resource/quest designs fail validation; no speculative runtime repair."
+    },
+    "asset_manifest.json": {
+      "id": "kenney_tiny_adventure",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "sources": [
+        "https://kenney.nl/assets/tiny-town",
+        "https://kenney.nl/assets/tiny-dungeon"
+      ],
+      "textures": {
+        "tiny-town": {
+          "url": "/assets/adventure/tiny-town.png",
+          "frameWidth": 16,
+          "frameHeight": 16,
+          "columns": 12,
+          "width": 192,
+          "height": 176,
+          "sha256": "3a54d99ecde790d4fdea207a3644cf130fc56fa838f1beb1507c185a95b8e902"
+        },
+        "tiny-dungeon": {
+          "url": "/assets/adventure/tiny-dungeon.png",
+          "frameWidth": 16,
+          "frameHeight": 16,
+          "columns": 12,
+          "width": 192,
+          "height": 176,
+          "sha256": "d24e60a41e4ac7a745c0304dfde121143688557f40215f23221c29cfe683825f"
+        }
+      },
+      "roles": {
+        "player": 96,
+        "npc": 84,
+        "enemy_patrol": 110,
+        "enemy_chase": 121,
+        "key": 117,
+        "herb": 113,
+        "treasure": 89,
+        "door": 45,
+        "switch": 32,
+        "landmark": 20,
+        "floor_dungeon": 48,
+        "wall_dungeon": 14,
+        "floor_town": 0,
+        "path_town": 25,
+        "tree": 4,
+        "flowers": 2
+      },
+      "animations": {
+        "walk": "directional flip, step bob and stride tilt using authored single-frame top-down sprites",
+        "limitation": "Packs do not include directional walk frames; no authored eight-direction animation is claimed."
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "tiny-town",
+          "passed": true
+        },
+        {
+          "id": "tiny-dungeon",
+          "passed": true
+        }
+      ]
+    },
+    "game_ir_v2.json": {
+      "schema_version": "2.1",
+      "genre": "adventure",
+      "title": "The Sealed Depths",
+      "premise": "Create a dark top-down dungeon adventure where I explore ancient ruins, fight monsters, collect a key, activate a magical switch, and unlock the final chamber containing a treasure.",
+      "theme": "dark",
+      "seed": 42,
+      "tile_size": 32,
+      "combat": true,
+      "areas": [
+        {
+          "name": "Ancient Ruins",
+          "environment": "dungeon",
+          "width": 34,
+          "height": 29,
+          "tiles": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              3,
+              3,
+              1,
+              0,
+              3,
+              0,
+              1,
+              1,
+              1,
+              1,
+              3,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              1,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              3,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              2,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              1,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "spawn": {
+            "x": 3,
+            "y": 14
+          },
+          "exit": {
+            "x": 30,
+            "y": 14
+          },
+          "actors": [
+            {
+              "id": "guardian",
+              "kind": "enemy",
+              "name": "Ruins Guardian",
+              "area": 0,
+              "role": "",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "patrol",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 9,
+              "y": 4,
+              "pickups": []
+            },
+            {
+              "id": "stalker",
+              "kind": "enemy",
+              "name": "Cave Stalker",
+              "area": 0,
+              "role": "",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 3,
+              "y": 5,
+              "pickups": []
+            },
+            {
+              "id": "relic",
+              "kind": "item",
+              "name": "Ancient Key",
+              "area": 0,
+              "role": "",
+              "item": "key",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 6,
+              "y": 10,
+              "pickups": [
+                {
+                  "x": 6,
+                  "y": 10
+                }
+              ]
+            },
+            {
+              "id": "rune",
+              "kind": "switch",
+              "name": "Runic Switch",
+              "area": 0,
+              "role": "",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 11,
+              "y": 22,
+              "pickups": []
+            },
+            {
+              "id": "seal",
+              "kind": "door",
+              "name": "Ancient Seal",
+              "area": 0,
+              "role": "",
+              "item": "",
+              "quantity": 1,
+              "requires": [
+                "key",
+                "rune"
+              ],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 19,
+              "y": 14,
+              "pickups": []
+            }
+          ]
+        },
+        {
+          "name": "Treasure Chamber",
+          "environment": "dungeon",
+          "width": 34,
+          "height": 29,
+          "tiles": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              1
+            ],
+            [
+              1,
+              1,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "spawn": {
+            "x": 3,
+            "y": 14
+          },
+          "exit": {
+            "x": 30,
+            "y": 14
+          },
+          "actors": [
+            {
+              "id": "treasure",
+              "kind": "treasure",
+              "name": "Ancient Treasure",
+              "area": 1,
+              "role": "",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 23,
+              "y": 7,
+              "pickups": []
+            }
+          ]
+        }
+      ],
+      "quests": [
+        {
+          "kind": "defeat",
+          "target": "guardian",
+          "count": 1,
+          "text": "Defeat the patrolling guardian",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "defeat",
+          "target": "stalker",
+          "count": 1,
+          "text": "Defeat the stalking monster",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "relic",
+          "count": 1,
+          "text": "Find the ancient key",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "activate",
+          "target": "rune",
+          "count": 1,
+          "text": "Activate the magical switch",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "unlock",
+          "target": "seal",
+          "count": 1,
+          "text": "Unlock the ancient passage",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "treasure",
+          "count": 1,
+          "text": "Open the treasure in the final chamber",
+          "item": "",
+          "delivery_items": {}
+        }
+      ],
+      "unsupported": [],
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Defeat the patrolling guardian",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Defeat the stalking monster",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Find the ancient key",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_3",
+          "source": "Activate the magical switch",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_4",
+          "source": "Unlock the ancient passage",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_5",
+          "source": "Open the treasure in the final chamber",
+          "constructed": true,
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "adapter": "AdventureScene",
+      "genre": "adventure",
+      "schema_version": "2.1",
+      "seed": 42,
+      "game_url": "http://localhost:5174/studio/play/220400e2-e278-4f2a-9e55-f030ef54824d",
+      "area_count": 2,
+      "combat": true,
+      "gravity": 0
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 464,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Defeat the patrolling guardian",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "guardian",
+                  "kind": "enemy",
+                  "x": 308.0000000000001,
+                  "y": 144,
+                  "health": 2
+                },
+                {
+                  "id": "stalker",
+                  "kind": "enemy",
+                  "x": 112,
+                  "y": 176,
+                  "health": 2
+                },
+                {
+                  "id": "relic",
+                  "kind": "item",
+                  "x": 208,
+                  "y": 336,
+                  "health": 2
+                },
+                {
+                  "id": "rune",
+                  "kind": "switch",
+                  "x": 368,
+                  "y": 720,
+                  "health": 2
+                },
+                {
+                  "id": "seal",
+                  "kind": "door",
+                  "x": 624,
+                  "y": 464,
+                  "health": 2
+                }
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 137.83333333333326
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 112,
+            "after_y": 88.75000000000004
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              6,
+              2,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              202,
+              80
+            ]
+          }
+        },
+        {
+          "id": "locked_door_requires_resources",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 590,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the patrolling guardian",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [
+              "Ancient Seal\nAncient Seal is sealed. Requires: key, rune."
+            ],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guardian",
+                "kind": "enemy",
+                "x": 311.33333333333354,
+                "y": 144,
+                "health": 2
+              },
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 112,
+                "y": 176,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "combat_guardian",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 208.94999999999933,
+            "y": 144,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the stalking monster",
+            "health": 3,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 211.61297153931991,
+                "y": 142.87115667114458,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_0_defeat",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 208.94999999999933,
+            "y": 144,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the stalking monster",
+            "health": 3,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 207.56191843108323,
+                "y": 144.58841282974353,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "combat_stalker",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112.5497361576416,
+            "y": 144.54184827592948,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the ancient key",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_1_defeat",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112.5497361576416,
+            "y": 144.54184827592948,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the ancient key",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "key": 1
+          }
+        },
+        {
+          "id": "quest_2_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 208,
+            "y": 336,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Activate the magical switch",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_3_activate",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 335,
+            "y": 720,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Unlock the ancient passage",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [
+              "rune"
+            ],
+            "actors": [
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_4_unlock",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 591,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Open the treasure in the final chamber",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "area_transition",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Open the treasure in the final chamber",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [
+              {
+                "id": "treasure",
+                "kind": "treasure",
+                "x": 752,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_5_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 719,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 976,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 2,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 4,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the patrolling guardian",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guardian",
+                "kind": "enemy",
+                "x": 317.3333333333337,
+                "y": 144,
+                "health": 2
+              },
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 112,
+                "y": 176,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 464,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Defeat the patrolling guardian",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "guardian",
+                  "kind": "enemy",
+                  "x": 308.0000000000001,
+                  "y": 144,
+                  "health": 2
+                },
+                {
+                  "id": "stalker",
+                  "kind": "enemy",
+                  "x": 112,
+                  "y": 176,
+                  "health": 2
+                },
+                {
+                  "id": "relic",
+                  "kind": "item",
+                  "x": 208,
+                  "y": 336,
+                  "health": 2
+                },
+                {
+                  "id": "rune",
+                  "kind": "switch",
+                  "x": 368,
+                  "y": 720,
+                  "health": 2
+                },
+                {
+                  "id": "seal",
+                  "kind": "door",
+                  "x": 624,
+                  "y": 464,
+                  "health": 2
+                }
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 137.83333333333326
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 112,
+            "after_y": 88.75000000000004
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              6,
+              2,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              202,
+              80
+            ]
+          }
+        },
+        {
+          "id": "locked_door_requires_resources",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 590,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the patrolling guardian",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [
+              "Ancient Seal\nAncient Seal is sealed. Requires: key, rune."
+            ],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guardian",
+                "kind": "enemy",
+                "x": 311.33333333333354,
+                "y": 144,
+                "health": 2
+              },
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 112,
+                "y": 176,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "combat_guardian",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 208.94999999999933,
+            "y": 144,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the stalking monster",
+            "health": 3,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 211.61297153931991,
+                "y": 142.87115667114458,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_0_defeat",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 208.94999999999933,
+            "y": 144,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the stalking monster",
+            "health": 3,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 207.56191843108323,
+                "y": 144.58841282974353,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "combat_stalker",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112.5497361576416,
+            "y": 144.54184827592948,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the ancient key",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_1_defeat",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112.5497361576416,
+            "y": 144.54184827592948,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the ancient key",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "key": 1
+          }
+        },
+        {
+          "id": "quest_2_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 208,
+            "y": 336,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Activate the magical switch",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_3_activate",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 335,
+            "y": 720,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Unlock the ancient passage",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [
+              "rune"
+            ],
+            "actors": [
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_4_unlock",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 591,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Open the treasure in the final chamber",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "area_transition",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Open the treasure in the final chamber",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [
+              {
+                "id": "treasure",
+                "kind": "treasure",
+                "x": 752,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "quest_5_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 719,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 2,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 1,
+            "x": 976,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "key": 1,
+              "": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 2,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [
+              "seal"
+            ],
+            "activated": [
+              "rune"
+            ],
+            "actors": [],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 4,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 464,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Defeat the patrolling guardian",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guardian",
+                "kind": "enemy",
+                "x": 317.3333333333337,
+                "y": 144,
+                "health": 2
+              },
+              {
+                "id": "stalker",
+                "kind": "enemy",
+                "x": 112,
+                "y": 176,
+                "health": 2
+              },
+              {
+                "id": "relic",
+                "kind": "item",
+                "x": 208,
+                "y": 336,
+                "health": 2
+              },
+              {
+                "id": "rune",
+                "kind": "switch",
+                "x": 368,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "seal",
+                "kind": "door",
+                "x": 624,
+                "y": 464,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 0
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Defeat the patrolling guardian",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Defeat the stalking monster",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Find the ancient key",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_3",
+          "source": "Activate the magical switch",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_4",
+          "source": "Unlock the ancient passage",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_5",
+          "source": "Open the treasure in the final chamber",
+          "constructed": true,
+          "status": "verified"
+        }
+      ],
+      "scope": "Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.",
+      "unsupported": []
+    },
+    "outcome.json": {
+      "status": "READY",
+      "visual_quality": "Screenshot review required; functional QA does not certify aesthetics."
+    }
+  }
+}

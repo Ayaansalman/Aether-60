@@ -1,0 +1,1086 @@
+[
+  {
+    "id": "genre_assets_gravity",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "snapshot": {
+        "ready": true,
+        "generation": 1,
+        "genre": "adventure",
+        "area": 0,
+        "x": 112,
+        "y": 464,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the patrolling guardian",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 307.3333333333334,
+            "y": 144,
+            "health": 2
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 112,
+            "y": 176,
+            "health": 2
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 208,
+            "y": 336,
+            "health": 2
+          },
+          {
+            "id": "rune",
+            "kind": "switch",
+            "x": 368,
+            "y": 720,
+            "health": 2
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 624,
+            "y": 464,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      },
+      "asset_http_failures": []
+    }
+  },
+  {
+    "id": "top_down_horizontal_movement",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "before": 112,
+      "after": 140.4166666666666
+    }
+  },
+  {
+    "id": "top_down_vertical_movement",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "before_y": 112,
+      "after_y": 88.75000000000004
+    }
+  },
+  {
+    "id": "environment_collision",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "adjacent_wall": [
+        6,
+        2,
+        -1,
+        0,
+        "ArrowLeft"
+      ],
+      "after": [
+        202,
+        80
+      ]
+    }
+  },
+  {
+    "id": "enemy_movement",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "before": {
+        "id": "guardian",
+        "kind": "enemy",
+        "x": 310.00000000000017,
+        "y": 144,
+        "health": 2
+      },
+      "after": {
+        "id": "guardian",
+        "kind": "enemy",
+        "x": 290.4333333333331,
+        "y": 144,
+        "health": 2
+      }
+    }
+  },
+  {
+    "id": "combat_health_loss",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 2,
+      "genre": "adventure",
+      "area": 0,
+      "x": 290.4333333333331,
+      "y": 144,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Defeat the patrolling guardian",
+      "health": 0,
+      "won": false,
+      "lost": true,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 291.53333333333313,
+          "y": 144,
+          "health": 2
+        },
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "x": 291.5662523809998,
+          "y": 144.289358826168,
+          "health": 2
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "restart_after_loss",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 112,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Defeat the patrolling guardian",
+      "health": 5,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 306.66666666666674,
+          "y": 144,
+          "health": 2
+        },
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "x": 112,
+          "y": 176,
+          "health": 2
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "locked_door_requires_resources",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 590,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Defeat the patrolling guardian",
+      "health": 5,
+      "won": false,
+      "lost": false,
+      "dialogue": [
+        "Ancient Seal\nAncient Seal is sealed. Requires: key, rune."
+      ],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 310.66666666666686,
+          "y": 144,
+          "health": 2
+        },
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "x": 112,
+          "y": 176,
+          "health": 2
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "combat_guardian",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 220.86666666666616,
+      "y": 144,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "COMPLETED",
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Defeat the stalking monster",
+      "health": 3,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "x": 219.239164320995,
+          "y": 144.62574456974104,
+          "health": 2
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "quest_0_defeat",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 220.86666666666616,
+      "y": 144,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "COMPLETED",
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Defeat the stalking monster",
+      "health": 3,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "x": 222.31934295505238,
+          "y": 143.44147281786292,
+          "health": 2
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "combat_stalker",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 129.04892706119358,
+      "y": 144.52846169213194,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Find the ancient key",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "quest_1_defeat",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 129.04892706119358,
+      "y": 144.52846169213194,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Find the ancient key",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "inventory_2",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "key": 1
+    }
+  },
+  {
+    "id": "quest_2_collect",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 208,
+      "y": 336,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Activate the magical switch",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "quest_3_activate",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 335,
+      "y": 720,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE",
+        "NOT_STARTED"
+      ],
+      "objective": "Unlock the ancient passage",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [
+        "rune"
+      ],
+      "actors": [
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "sealed_passage_collision",
+    "passed": false,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 656.3333333333344,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE",
+        "NOT_STARTED"
+      ],
+      "objective": "Unlock the ancient passage",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [
+        "rune"
+      ],
+      "actors": [
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "unlocked_passage_traversal",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 684.0000000000014,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE"
+      ],
+      "objective": "Open the treasure in the final chamber",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [
+        "seal"
+      ],
+      "activated": [
+        "rune"
+      ],
+      "actors": [
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "quest_4_unlock",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 3,
+      "genre": "adventure",
+      "area": 0,
+      "x": 684.0000000000014,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE"
+      ],
+      "objective": "Open the treasure in the final chamber",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [
+        "seal"
+      ],
+      "activated": [
+        "rune"
+      ],
+      "actors": [
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "area_transition",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 4,
+      "genre": "adventure",
+      "area": 1,
+      "x": 112,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "ACTIVE"
+      ],
+      "objective": "Open the treasure in the final chamber",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [
+        "seal"
+      ],
+      "activated": [
+        "rune"
+      ],
+      "actors": [
+        {
+          "id": "treasure",
+          "kind": "treasure",
+          "x": 752,
+          "y": 240,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "quest_5_collect",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 4,
+      "genre": "adventure",
+      "area": 1,
+      "x": 719,
+      "y": 240,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1,
+        "": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED"
+      ],
+      "objective": "All quests complete \u2014 use the glowing exit.",
+      "health": 2,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [
+        "seal"
+      ],
+      "activated": [
+        "rune"
+      ],
+      "actors": [],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "adventure_completion",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 4,
+      "genre": "adventure",
+      "area": 1,
+      "x": 976,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {
+        "key": 1,
+        "": 1
+      },
+      "quests": [
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED",
+        "COMPLETED"
+      ],
+      "objective": "All quests complete \u2014 use the glowing exit.",
+      "health": 2,
+      "won": true,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [
+        "seal"
+      ],
+      "activated": [
+        "rune"
+      ],
+      "actors": [],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "whole_game_restart",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": {
+      "ready": true,
+      "generation": 5,
+      "genre": "adventure",
+      "area": 0,
+      "x": 112,
+      "y": 464,
+      "vx": 0,
+      "vy": 0,
+      "gravity": 0,
+      "inventory": {},
+      "quests": [
+        "ACTIVE",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED",
+        "NOT_STARTED"
+      ],
+      "objective": "Defeat the patrolling guardian",
+      "health": 5,
+      "won": false,
+      "lost": false,
+      "dialogue": [],
+      "unlocked": [],
+      "activated": [],
+      "actors": [
+        {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 290.6666666666663,
+          "y": 144,
+          "health": 2
+        },
+        {
+          "id": "stalker",
+          "kind": "enemy",
+          "x": 112,
+          "y": 176,
+          "health": 2
+        },
+        {
+          "id": "relic",
+          "kind": "item",
+          "x": 208,
+          "y": 336,
+          "health": 2
+        },
+        {
+          "id": "rune",
+          "kind": "switch",
+          "x": 368,
+          "y": 720,
+          "health": 2
+        },
+        {
+          "id": "seal",
+          "kind": "door",
+          "x": 624,
+          "y": 464,
+          "health": 2
+        }
+      ],
+      "missingAssets": []
+    }
+  },
+  {
+    "id": "no_runtime_exceptions",
+    "passed": true,
+    "critical": true,
+    "category": "adventure",
+    "details": []
+  }
+]

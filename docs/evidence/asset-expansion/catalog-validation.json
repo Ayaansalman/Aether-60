@@ -1,0 +1,573 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "ninja_adventure_license",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_license_file",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_terrain_roles",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_door",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_switch",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_exit",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_landmark",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_herb",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_key",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_item",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_treasure",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_projectile",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_vfx",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_health",
+      "passed": true
+    },
+    {
+      "id": "ninja_adventure_tree",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_license",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_license_file",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_terrain_roles",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_item",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_herb",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_landmark",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_exit",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_projectile",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_vfx",
+      "passed": true
+    },
+    {
+      "id": "tiny_rpg_forest_tree",
+      "passed": true
+    },
+    {
+      "id": "ninja_terrain",
+      "passed": true,
+      "dimensions": [
+        128,
+        80
+      ],
+      "frames": 40
+    },
+    {
+      "id": "ninja_ninjablue",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_ninjagreen",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_knight",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_hunter",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_woman",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_oldwoman",
+      "passed": true,
+      "dimensions": [
+        64,
+        32
+      ],
+      "frames": 8
+    },
+    {
+      "id": "ninja_oldman",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_master",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_monk",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_monk2",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_princess",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_boy",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_noble",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_samurai",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_sorcererorange",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_ninjamageblack",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_caveman",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_cavegirl",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_eskimo",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_ninjared",
+      "passed": true,
+      "dimensions": [
+        64,
+        112
+      ],
+      "frames": 28
+    },
+    {
+      "id": "ninja_slime",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_slime2",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_skull",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_skullblue",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_mushroom",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_mole",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_bluebat",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_snake",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_beast",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_spirit",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_bamboo",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_cyclope",
+      "passed": true,
+      "dimensions": [
+        64,
+        64
+      ],
+      "frames": 16
+    },
+    {
+      "id": "ninja_herb",
+      "passed": true,
+      "dimensions": [
+        16,
+        16
+      ],
+      "frames": 1
+    },
+    {
+      "id": "ninja_key",
+      "passed": true,
+      "dimensions": [
+        12,
+        8
+      ],
+      "frames": 1
+    },
+    {
+      "id": "ninja_gem",
+      "passed": true,
+      "dimensions": [
+        16,
+        16
+      ],
+      "frames": 1
+    },
+    {
+      "id": "ninja_chest",
+      "passed": true,
+      "dimensions": [
+        32,
+        16
+      ],
+      "frames": 2
+    },
+    {
+      "id": "ninja_projectile",
+      "passed": true,
+      "dimensions": [
+        16,
+        16
+      ],
+      "frames": 1
+    },
+    {
+      "id": "ninja_smoke",
+      "passed": true,
+      "dimensions": [
+        192,
+        32
+      ],
+      "frames": 6
+    },
+    {
+      "id": "ninja_hearts",
+      "passed": true,
+      "dimensions": [
+        80,
+        16
+      ],
+      "frames": 5
+    },
+    {
+      "id": "ninja_tree",
+      "passed": true,
+      "dimensions": [
+        32,
+        32
+      ],
+      "frames": 1
+    },
+    {
+      "id": "tiny_hero",
+      "passed": true,
+      "dimensions": [
+        192,
+        160
+      ],
+      "frames": 30
+    },
+    {
+      "id": "tiny_mole",
+      "passed": true,
+      "dimensions": [
+        144,
+        120
+      ],
+      "frames": 30
+    },
+    {
+      "id": "tiny_treant",
+      "passed": true,
+      "dimensions": [
+        186,
+        175
+      ],
+      "frames": 30
+    },
+    {
+      "id": "tiny_terrain",
+      "passed": true,
+      "dimensions": [
+        128,
+        80
+      ],
+      "frames": 40
+    },
+    {
+      "id": "tiny_gem",
+      "passed": true,
+      "dimensions": [
+        28,
+        7
+      ],
+      "frames": 4
+    },
+    {
+      "id": "tiny_coin",
+      "passed": true,
+      "dimensions": [
+        20,
+        7
+      ],
+      "frames": 4
+    },
+    {
+      "id": "tiny_projectile",
+      "passed": true,
+      "dimensions": [
+        5,
+        19
+      ],
+      "frames": 1
+    },
+    {
+      "id": "tiny_smoke",
+      "passed": true,
+      "dimensions": [
+        180,
+        32
+      ],
+      "frames": 6
+    },
+    {
+      "id": "tiny_monument",
+      "passed": true,
+      "dimensions": [
+        101,
+        90
+      ],
+      "frames": 1
+    },
+    {
+      "id": "tiny_tree",
+      "passed": true,
+      "dimensions": [
+        67,
+        80
+      ],
+      "frames": 1
+    },
+    {
+      "id": "tiny_bush",
+      "passed": true,
+      "dimensions": [
+        29,
+        24
+      ],
+      "frames": 1
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "job": {
+    "game_id": "ab0dd4af-c4c9-4e13-ab17-0bc80bbb02c2",
+    "prompt": "Create a cozy top-down fantasy adventure in a woodland village. A village healer needs three magical herbs from the nearby forest. Let me explore the village, talk to the healer, collect the herbs, and return to complete the quest. Include charming buildings, paths, trees, friendly villagers, and colorful environments. No combat.",
+    "status": "FAILED",
+    "stage": "FAILED",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T12:00:57.629219+00:00",
+    "updated_at": "2026-10-21T12:01:05.293142+00:00",
+    "error_code": "GENERATION_FAILED",
+    "artifact_paths": [
+      "game_intent.json"
+    ],
+    "limitations": [],
+    "qa_summary": null,
+    "game_url": null
+  },
+  "events": [
+    {
+      "id": 1,
+      "game_id": "ab0dd4af-c4c9-4e13-ab17-0bc80bbb02c2",
+      "ts": "2026-10-21T12:00:57.663943+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 2,
+      "game_id": "ab0dd4af-c4c9-4e13-ab17-0bc80bbb02c2",
+      "ts": "2026-10-21T12:00:57.853270+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning top-down adventure with configured provider",
+      "attempt": 1,
+      "rationale": "Elapsed 0.17s; language model",
+      "diff": null
+    },
+    {
+      "id": 3,
+      "game_id": "ab0dd4af-c4c9-4e13-ab17-0bc80bbb02c2",
+      "ts": "2026-10-21T12:01:05.263909+00:00",
+      "stage": "FAILED",
+      "result": "FAILED",
+      "detail": "1 validation error for AdventureDesign\n  Value error, Quest sequence must follow area order [type=value_error, input_value={'genre': 'adventure', 't...alse, 'unsupported': []}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.7/v/value_error",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "game_intent.json": {
+      "original_prompt": "Create a cozy top-down fantasy adventure in a woodland village. A village healer needs three magical herbs from the nearby forest. Let me explore the village, talk to the healer, collect the herbs, and return to complete the quest. Include charming buildings, paths, trees, friendly villagers, and colorful environments. No combat.",
+      "genre": "adventure",
+      "routing": "Explicit genre/interaction phrases; separate adventure adapter"
+    }
+  }
+}

@@ -1,0 +1,5160 @@
+{
+  "job": {
+    "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+    "prompt": "Create a cozy top-down woodland village adventure, talk to villagers, find three magical herbs and return them to a healer. Peaceful, no combat.",
+    "status": "READY",
+    "stage": "READY",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "fixture",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T11:17:22.100253+00:00",
+    "updated_at": "2026-10-21T11:18:21.224508+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "game_intent.json",
+      "model_design.json",
+      "provider.json",
+      "interpretation_guard.json",
+      "game_design.json",
+      "final_design.json",
+      "validation.json",
+      "repair_report.json",
+      "asset_selection.json",
+      "asset_export_manifest.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "qa_report.json",
+      "diagnosis.json",
+      "requirement_report.json",
+      "outcome.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 16,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5174/studio/play/b2a6c428-b532-46ba-89e4-ba2a93b22d35"
+  },
+  "events": [
+    {
+      "id": 63,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:17:22.119401+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted fixture generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 67,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:18:04.773033+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning labeled deterministic adventure fixture",
+      "attempt": 1,
+      "rationale": "Elapsed 0.06s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 68,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:18:04.958078+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Composing seeded connected areas, NPCs, inventory and event-driven quests",
+      "attempt": 1,
+      "rationale": "Elapsed 0.25s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 69,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:18:04.991190+00:00",
+      "stage": "SELECTING_ASSETS",
+      "result": "SUCCESS",
+      "detail": "Selecting one coherent registered visual family and semantic actor/quest resources",
+      "attempt": 1,
+      "rationale": "Elapsed 0.28s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 70,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:18:05.037255+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking destination connectivity, dialogue references and quest prerequisites",
+      "attempt": 1,
+      "rationale": "Elapsed 0.33s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 71,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:18:05.313085+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Adventure Phaser adapter and licensed tilemaps ready",
+      "attempt": 1,
+      "rationale": "Elapsed 0.59s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 72,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:18:05.372349+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium adventure interaction checks",
+      "attempt": 1,
+      "rationale": "Elapsed 0.66s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 73,
+      "game_id": "b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "ts": "2026-10-21T11:18:21.202441+00:00",
+      "stage": "READY",
+      "result": "SUCCESS",
+      "detail": "Adventure browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 16.48s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "game_intent.json": {
+      "original_prompt": "Create a cozy top-down woodland village adventure, talk to villagers, find three magical herbs and return them to a healer. Peaceful, no combat.",
+      "genre": "adventure",
+      "setting": "woodland",
+      "gameplay": {
+        "combat": false,
+        "quests": [
+          {
+            "kind": "talk",
+            "target": "guide",
+            "count": 1,
+            "text": "Talk to the healer",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "collect",
+            "target": "herbs",
+            "count": 3,
+            "text": "Find 3 magical herbs",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "deliver",
+            "target": "guide",
+            "count": 3,
+            "text": "Return 3 herbs to the healer",
+            "item": "herb",
+            "delivery_items": {}
+          }
+        ]
+      },
+      "areas": [
+        {
+          "name": "Woodland Village",
+          "environment": "village"
+        }
+      ],
+      "unsupported": [],
+      "interpretation_source": {
+        "provider": "fixture",
+        "model": null,
+        "live": false
+      }
+    },
+    "model_design.json": {
+      "genre": "adventure",
+      "title": "The Woodland Remedy",
+      "premise": "Create a cozy top-down woodland village adventure, talk to villagers, find three magical herbs and return them to a healer. Peaceful, no combat.",
+      "theme": "woodland",
+      "art_style": "auto",
+      "areas": [
+        {
+          "name": "Woodland Village",
+          "environment": "village"
+        }
+      ],
+      "actors": [
+        {
+          "id": "guide",
+          "kind": "npc",
+          "name": "Mira the Healer",
+          "area": 0,
+          "role": "healer",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome! I need your help.",
+              "Follow the objective above to help our settlement."
+            ],
+            "active": [
+              "The objective above marks what we need next."
+            ],
+            "completed": [
+              "You brought everything back. Thank you, traveler!"
+            ]
+          }
+        },
+        {
+          "id": "villager",
+          "kind": "npc",
+          "name": "Jun the Gardener",
+          "area": 0,
+          "role": "villager",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "The paths lead to every corner of our home."
+            ],
+            "active": [
+              "Try exploring beyond the houses."
+            ],
+            "completed": [
+              "Our village feels brighter today."
+            ]
+          }
+        },
+        {
+          "id": "herbs",
+          "kind": "item",
+          "name": "Magical Herb",
+          "area": 0,
+          "role": "",
+          "item": "herb",
+          "quantity": 3,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "guide",
+          "count": 1,
+          "text": "Talk to the healer",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "herbs",
+          "count": 3,
+          "text": "Find 3 magical herbs",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "deliver",
+          "target": "guide",
+          "count": 3,
+          "text": "Return 3 herbs to the healer",
+          "item": "herb",
+          "delivery_items": {}
+        }
+      ],
+      "combat": false,
+      "unsupported": []
+    },
+    "provider.json": {
+      "provider": "fixture",
+      "model": null,
+      "live": false
+    },
+    "interpretation_guard.json": {
+      "changes": [],
+      "scope": "Bounded explicit feature/resource guards, not general semantic fidelity certification"
+    },
+    "game_design.json": {
+      "genre": "adventure",
+      "title": "The Woodland Remedy",
+      "premise": "Create a cozy top-down woodland village adventure, talk to villagers, find three magical herbs and return them to a healer. Peaceful, no combat.",
+      "theme": "woodland",
+      "art_style": "auto",
+      "areas": [
+        {
+          "name": "Woodland Village",
+          "environment": "village"
+        }
+      ],
+      "actors": [
+        {
+          "id": "guide",
+          "kind": "npc",
+          "name": "Mira the Healer",
+          "area": 0,
+          "role": "healer",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome! I need your help.",
+              "Follow the objective above to help our settlement."
+            ],
+            "active": [
+              "The objective above marks what we need next."
+            ],
+            "completed": [
+              "You brought everything back. Thank you, traveler!"
+            ]
+          }
+        },
+        {
+          "id": "villager",
+          "kind": "npc",
+          "name": "Jun the Gardener",
+          "area": 0,
+          "role": "villager",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "The paths lead to every corner of our home."
+            ],
+            "active": [
+              "Try exploring beyond the houses."
+            ],
+            "completed": [
+              "Our village feels brighter today."
+            ]
+          }
+        },
+        {
+          "id": "herbs",
+          "kind": "item",
+          "name": "Magical Herb",
+          "area": 0,
+          "role": "",
+          "item": "herb",
+          "quantity": 3,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "guide",
+          "count": 1,
+          "text": "Talk to the healer",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "herbs",
+          "count": 3,
+          "text": "Find 3 magical herbs",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "deliver",
+          "target": "guide",
+          "count": 3,
+          "text": "Return 3 herbs to the healer",
+          "item": "herb",
+          "delivery_items": {}
+        }
+      ],
+      "combat": false,
+      "unsupported": []
+    },
+    "final_design.json": {
+      "genre": "adventure",
+      "title": "The Woodland Remedy",
+      "premise": "Create a cozy top-down woodland village adventure, talk to villagers, find three magical herbs and return them to a healer. Peaceful, no combat.",
+      "theme": "woodland",
+      "art_style": "auto",
+      "areas": [
+        {
+          "name": "Woodland Village",
+          "environment": "village"
+        }
+      ],
+      "actors": [
+        {
+          "id": "guide",
+          "kind": "npc",
+          "name": "Mira the Healer",
+          "area": 0,
+          "role": "healer",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome! I need your help.",
+              "Follow the objective above to help our settlement."
+            ],
+            "active": [
+              "The objective above marks what we need next."
+            ],
+            "completed": [
+              "You brought everything back. Thank you, traveler!"
+            ]
+          }
+        },
+        {
+          "id": "villager",
+          "kind": "npc",
+          "name": "Jun the Gardener",
+          "area": 0,
+          "role": "villager",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "The paths lead to every corner of our home."
+            ],
+            "active": [
+              "Try exploring beyond the houses."
+            ],
+            "completed": [
+              "Our village feels brighter today."
+            ]
+          }
+        },
+        {
+          "id": "herbs",
+          "kind": "item",
+          "name": "Magical Herb",
+          "area": 0,
+          "role": "",
+          "item": "herb",
+          "quantity": 3,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "guide",
+          "count": 1,
+          "text": "Talk to the healer",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "herbs",
+          "count": 3,
+          "text": "Find 3 magical herbs",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "deliver",
+          "target": "guide",
+          "count": 3,
+          "text": "Return 3 herbs to the healer",
+          "item": "herb",
+          "delivery_items": {}
+        }
+      ],
+      "combat": false,
+      "unsupported": []
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "Woodland Village",
+          "passed": true,
+          "reachable_tiles": 821,
+          "destinations": 7
+        },
+        {
+          "id": "Talk to the healer",
+          "passed": true
+        },
+        {
+          "id": "Find 3 magical herbs",
+          "passed": true
+        },
+        {
+          "id": "Return 3 herbs to the healer",
+          "passed": true
+        }
+      ],
+      "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 0,
+      "scope": "Connected paths are constructed directly. Invalid resource/quest designs fail validation; no speculative runtime repair."
+    },
+    "asset_selection.json": {
+      "pack_id": "ninja_adventure",
+      "style_family": "ninja_adventure",
+      "catalog_version": "1.0",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "license": "CC0-1.0",
+      "license_files": [
+        "/assets/adventure/library/ninja_adventure/LICENSE.txt"
+      ],
+      "selection_reason": "Selected registered style from prompt/design; default primary family is Ninja Adventure.",
+      "player": "ninja_ninjagreen",
+      "actors": {
+        "guide": "ninja_woman",
+        "villager": "ninja_princess",
+        "herbs": "ninja_herb"
+      },
+      "assets": {
+        "ninja_gem": {
+          "id": "ninja_gem",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/GemGreen.png"
+        },
+        "ninja_herb": {
+          "id": "ninja_herb",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/Grass.png"
+        },
+        "ninja_key": {
+          "id": "ninja_key",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+          "width": 12,
+          "height": 8,
+          "frame_width": 12,
+          "frame_height": 8,
+          "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Treasure/GoldKey.png"
+        },
+        "ninja_ninjagreen": {
+          "id": "ninja_ninjagreen",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "character",
+          "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjagreen.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "c99c8142f4813562a4e76e96d93bbe8e0b04c22e0625c98b75cf564c99e36358",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/NinjaGreen/SpriteSheet.png"
+        },
+        "ninja_princess": {
+          "id": "ninja_princess",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "npc",
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_princess.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "e9028fd04c481e0e5bd1cf63b044d023d9ecf7f621593d6e18e2a1b6a46b3ba6",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/Princess/SpriteSheet.png"
+        },
+        "ninja_terrain": {
+          "id": "ninja_terrain",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "environment",
+          "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+          "width": 128,
+          "height": 80,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "3201e6e06c8f3cd8f69f45c80b77cec88a4fbb64cfe165663f58b7f934bfb433",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetField.png"
+        },
+        "ninja_tree": {
+          "id": "ninja_tree",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "decoration",
+          "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+          "width": 32,
+          "height": 32,
+          "frame_width": 32,
+          "frame_height": 32,
+          "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 1.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+        },
+        "ninja_woman": {
+          "id": "ninja_woman",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "npc",
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_woman.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "223c09c46ea77d50c3c2cdaaa1d285836d679f5faedb742b5081a1d2b5f8f4d0",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/Woman/SpriteSheet.png"
+        }
+      },
+      "roles": {
+        "exit": {
+          "asset": "ninja_terrain",
+          "frame": 38,
+          "open_frame": null
+        },
+        "herb": {
+          "asset": "ninja_herb",
+          "frame": 0,
+          "open_frame": null
+        },
+        "key": {
+          "asset": "ninja_key",
+          "frame": 0,
+          "open_frame": null
+        },
+        "item": {
+          "asset": "ninja_gem",
+          "frame": 0,
+          "open_frame": null
+        },
+        "tree": {
+          "asset": "ninja_tree",
+          "frame": 0,
+          "open_frame": null
+        }
+      },
+      "terrain": {
+        "texture": "ninja_terrain",
+        "ground": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "path": 2,
+        "edges": {
+          "ul": 3,
+          "u": 4,
+          "ur": 5,
+          "l": 6,
+          "r": 7,
+          "dl": 8,
+          "d": 9,
+          "dr": 10
+        },
+        "solid": 11,
+        "decoration": 12,
+        "indoor_ground": 13,
+        "wall": 14,
+        "debris": 15,
+        "buildings": [
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ]
+        ]
+      }
+    },
+    "asset_export_manifest.json": {
+      "pack_id": "ninja_adventure",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "redistribution": "CC0 allowlist; excludes raw downloads, demo source and unreviewed resources",
+      "files": [
+        {
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+          "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+          "license": "CC0-1.0",
+          "source_path": "Items/Resource/GemGreen.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+          "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+          "license": "CC0-1.0",
+          "source_path": "Items/Resource/Grass.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+          "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+          "license": "CC0-1.0",
+          "source_path": "Items/Treasure/GoldKey.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjagreen.png",
+          "sha256": "c99c8142f4813562a4e76e96d93bbe8e0b04c22e0625c98b75cf564c99e36358",
+          "license": "CC0-1.0",
+          "source_path": "Actor/Character/NinjaGreen/SpriteSheet.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_princess.png",
+          "sha256": "e9028fd04c481e0e5bd1cf63b044d023d9ecf7f621593d6e18e2a1b6a46b3ba6",
+          "license": "CC0-1.0",
+          "source_path": "Actor/Character/Princess/SpriteSheet.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+          "sha256": "3201e6e06c8f3cd8f69f45c80b77cec88a4fbb64cfe165663f58b7f934bfb433",
+          "license": "CC0-1.0",
+          "source_path": "Backgrounds/Tilesets/TilesetField.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+          "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+          "license": "CC0-1.0",
+          "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_woman.png",
+          "sha256": "223c09c46ea77d50c3c2cdaaa1d285836d679f5faedb742b5081a1d2b5f8f4d0",
+          "license": "CC0-1.0",
+          "source_path": "Actor/Character/Woman/SpriteSheet.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/LICENSE.txt",
+          "license": "CC0-1.0",
+          "sha256": "9bc2cd77030dd73fd2497c5729556a11524fa04099d8351bc527fd4d4c31b916"
+        }
+      ]
+    },
+    "asset_manifest.json": {
+      "pack_id": "ninja_adventure",
+      "style_family": "ninja_adventure",
+      "catalog_version": "1.0",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "license": "CC0-1.0",
+      "license_files": [
+        "/assets/adventure/library/ninja_adventure/LICENSE.txt"
+      ],
+      "selection_reason": "Selected registered style from prompt/design; default primary family is Ninja Adventure.",
+      "player": "ninja_ninjagreen",
+      "actors": {
+        "guide": "ninja_woman",
+        "villager": "ninja_princess",
+        "herbs": "ninja_herb"
+      },
+      "assets": {
+        "ninja_gem": {
+          "id": "ninja_gem",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/GemGreen.png"
+        },
+        "ninja_herb": {
+          "id": "ninja_herb",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/Grass.png"
+        },
+        "ninja_key": {
+          "id": "ninja_key",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+          "width": 12,
+          "height": 8,
+          "frame_width": 12,
+          "frame_height": 8,
+          "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Treasure/GoldKey.png"
+        },
+        "ninja_ninjagreen": {
+          "id": "ninja_ninjagreen",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "character",
+          "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjagreen.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "c99c8142f4813562a4e76e96d93bbe8e0b04c22e0625c98b75cf564c99e36358",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/NinjaGreen/SpriteSheet.png"
+        },
+        "ninja_princess": {
+          "id": "ninja_princess",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "npc",
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_princess.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "e9028fd04c481e0e5bd1cf63b044d023d9ecf7f621593d6e18e2a1b6a46b3ba6",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/Princess/SpriteSheet.png"
+        },
+        "ninja_terrain": {
+          "id": "ninja_terrain",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "environment",
+          "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+          "width": 128,
+          "height": 80,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "3201e6e06c8f3cd8f69f45c80b77cec88a4fbb64cfe165663f58b7f934bfb433",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetField.png"
+        },
+        "ninja_tree": {
+          "id": "ninja_tree",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "decoration",
+          "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+          "width": 32,
+          "height": 32,
+          "frame_width": 32,
+          "frame_height": 32,
+          "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 1.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+        },
+        "ninja_woman": {
+          "id": "ninja_woman",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "npc",
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_woman.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "223c09c46ea77d50c3c2cdaaa1d285836d679f5faedb742b5081a1d2b5f8f4d0",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/Woman/SpriteSheet.png"
+        }
+      },
+      "roles": {
+        "exit": {
+          "asset": "ninja_terrain",
+          "frame": 38,
+          "open_frame": null
+        },
+        "herb": {
+          "asset": "ninja_herb",
+          "frame": 0,
+          "open_frame": null
+        },
+        "key": {
+          "asset": "ninja_key",
+          "frame": 0,
+          "open_frame": null
+        },
+        "item": {
+          "asset": "ninja_gem",
+          "frame": 0,
+          "open_frame": null
+        },
+        "tree": {
+          "asset": "ninja_tree",
+          "frame": 0,
+          "open_frame": null
+        }
+      },
+      "terrain": {
+        "texture": "ninja_terrain",
+        "ground": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "path": 2,
+        "edges": {
+          "ul": 3,
+          "u": 4,
+          "ur": 5,
+          "l": 6,
+          "r": 7,
+          "dl": 8,
+          "d": 9,
+          "dr": 10
+        },
+        "solid": 11,
+        "decoration": 12,
+        "indoor_ground": 13,
+        "wall": 14,
+        "debris": 15,
+        "buildings": [
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ]
+        ]
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "tiny-town",
+          "passed": true,
+          "dimensions": [
+            192,
+            176
+          ]
+        },
+        {
+          "id": "tiny-dungeon",
+          "passed": true,
+          "dimensions": [
+            192,
+            176
+          ]
+        },
+        {
+          "id": "ninja_adventure_license",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_license_file",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_terrain_roles",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_door",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_switch",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_exit",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_landmark",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_herb",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_key",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_item",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_treasure",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_projectile",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_vfx",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_health",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_tree",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_license",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_license_file",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_terrain_roles",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_item",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_herb",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_landmark",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_exit",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_projectile",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_vfx",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_tree",
+          "passed": true
+        },
+        {
+          "id": "ninja_terrain",
+          "passed": true,
+          "dimensions": [
+            128,
+            80
+          ],
+          "frames": 40
+        },
+        {
+          "id": "ninja_ninjablue",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_ninjagreen",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_knight",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_hunter",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_woman",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_oldwoman",
+          "passed": true,
+          "dimensions": [
+            64,
+            32
+          ],
+          "frames": 8
+        },
+        {
+          "id": "ninja_oldman",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_master",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_monk",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_monk2",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_princess",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_boy",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_noble",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_samurai",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_sorcererorange",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_ninjamageblack",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_caveman",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_cavegirl",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_eskimo",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_ninjared",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_slime",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_slime2",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_skull",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_skullblue",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_mushroom",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_mole",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_bluebat",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_snake",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_beast",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_spirit",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_bamboo",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_cyclope",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_herb",
+          "passed": true,
+          "dimensions": [
+            16,
+            16
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_key",
+          "passed": true,
+          "dimensions": [
+            12,
+            8
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_gem",
+          "passed": true,
+          "dimensions": [
+            16,
+            16
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_chest",
+          "passed": true,
+          "dimensions": [
+            32,
+            16
+          ],
+          "frames": 2
+        },
+        {
+          "id": "ninja_projectile",
+          "passed": true,
+          "dimensions": [
+            16,
+            16
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_smoke",
+          "passed": true,
+          "dimensions": [
+            192,
+            32
+          ],
+          "frames": 6
+        },
+        {
+          "id": "ninja_hearts",
+          "passed": true,
+          "dimensions": [
+            80,
+            16
+          ],
+          "frames": 5
+        },
+        {
+          "id": "ninja_tree",
+          "passed": true,
+          "dimensions": [
+            32,
+            32
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_hero",
+          "passed": true,
+          "dimensions": [
+            192,
+            160
+          ],
+          "frames": 30
+        },
+        {
+          "id": "tiny_mole",
+          "passed": true,
+          "dimensions": [
+            144,
+            120
+          ],
+          "frames": 30
+        },
+        {
+          "id": "tiny_treant",
+          "passed": true,
+          "dimensions": [
+            186,
+            175
+          ],
+          "frames": 30
+        },
+        {
+          "id": "tiny_terrain",
+          "passed": true,
+          "dimensions": [
+            128,
+            80
+          ],
+          "frames": 40
+        },
+        {
+          "id": "tiny_gem",
+          "passed": true,
+          "dimensions": [
+            28,
+            7
+          ],
+          "frames": 4
+        },
+        {
+          "id": "tiny_coin",
+          "passed": true,
+          "dimensions": [
+            20,
+            7
+          ],
+          "frames": 4
+        },
+        {
+          "id": "tiny_projectile",
+          "passed": true,
+          "dimensions": [
+            5,
+            19
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_smoke",
+          "passed": true,
+          "dimensions": [
+            180,
+            32
+          ],
+          "frames": 5
+        },
+        {
+          "id": "tiny_monument",
+          "passed": true,
+          "dimensions": [
+            101,
+            90
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_tree",
+          "passed": true,
+          "dimensions": [
+            67,
+            80
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_bush",
+          "passed": true,
+          "dimensions": [
+            29,
+            24
+          ],
+          "frames": 1
+        }
+      ]
+    },
+    "game_ir_v2.json": {
+      "schema_version": "2.1",
+      "genre": "adventure",
+      "title": "The Woodland Remedy",
+      "premise": "Create a cozy top-down woodland village adventure, talk to villagers, find three magical herbs and return them to a healer. Peaceful, no combat.",
+      "theme": "woodland",
+      "seed": 256,
+      "tile_size": 32,
+      "combat": false,
+      "art": {
+        "pack_id": "ninja_adventure",
+        "style_family": "ninja_adventure",
+        "catalog_version": "1.0",
+        "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+        "license": "CC0-1.0",
+        "license_files": [
+          "/assets/adventure/library/ninja_adventure/LICENSE.txt"
+        ],
+        "selection_reason": "Selected registered style from prompt/design; default primary family is Ninja Adventure.",
+        "player": "ninja_ninjagreen",
+        "actors": {
+          "guide": "ninja_woman",
+          "villager": "ninja_princess",
+          "herbs": "ninja_herb"
+        },
+        "assets": {
+          "ninja_gem": {
+            "id": "ninja_gem",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "collectible",
+            "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+            "width": 16,
+            "height": 16,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Items/Resource/GemGreen.png"
+          },
+          "ninja_herb": {
+            "id": "ninja_herb",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "collectible",
+            "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+            "width": 16,
+            "height": 16,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Items/Resource/Grass.png"
+          },
+          "ninja_key": {
+            "id": "ninja_key",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "collectible",
+            "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+            "width": 12,
+            "height": 8,
+            "frame_width": 12,
+            "frame_height": 8,
+            "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Items/Treasure/GoldKey.png"
+          },
+          "ninja_ninjagreen": {
+            "id": "ninja_ninjagreen",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "character",
+            "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjagreen.png",
+            "width": 64,
+            "height": 112,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "c99c8142f4813562a4e76e96d93bbe8e0b04c22e0625c98b75cf564c99e36358",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {
+              "down": {
+                "idle": [
+                  0
+                ],
+                "walk": [
+                  4,
+                  8,
+                  12
+                ],
+                "attack": [
+                  16
+                ]
+              },
+              "up": {
+                "idle": [
+                  1
+                ],
+                "walk": [
+                  5,
+                  9,
+                  13
+                ],
+                "attack": [
+                  17
+                ]
+              },
+              "left": {
+                "idle": [
+                  2
+                ],
+                "walk": [
+                  6,
+                  10,
+                  14
+                ],
+                "attack": [
+                  18
+                ]
+              },
+              "right": {
+                "idle": [
+                  3
+                ],
+                "walk": [
+                  7,
+                  11,
+                  15
+                ],
+                "attack": [
+                  19
+                ]
+              }
+            },
+            "body": {
+              "width": 9,
+              "height": 9,
+              "offset_x": 3,
+              "offset_y": 6
+            },
+            "source_path": "Actor/Character/NinjaGreen/SpriteSheet.png"
+          },
+          "ninja_princess": {
+            "id": "ninja_princess",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "npc",
+            "url": "/assets/adventure/library/ninja_adventure/npc/ninja_princess.png",
+            "width": 64,
+            "height": 112,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "e9028fd04c481e0e5bd1cf63b044d023d9ecf7f621593d6e18e2a1b6a46b3ba6",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {
+              "down": {
+                "idle": [
+                  0
+                ],
+                "walk": [
+                  4,
+                  8,
+                  12
+                ],
+                "attack": [
+                  16
+                ]
+              },
+              "up": {
+                "idle": [
+                  1
+                ],
+                "walk": [
+                  5,
+                  9,
+                  13
+                ],
+                "attack": [
+                  17
+                ]
+              },
+              "left": {
+                "idle": [
+                  2
+                ],
+                "walk": [
+                  6,
+                  10,
+                  14
+                ],
+                "attack": [
+                  18
+                ]
+              },
+              "right": {
+                "idle": [
+                  3
+                ],
+                "walk": [
+                  7,
+                  11,
+                  15
+                ],
+                "attack": [
+                  19
+                ]
+              }
+            },
+            "body": {
+              "width": 9,
+              "height": 9,
+              "offset_x": 3,
+              "offset_y": 6
+            },
+            "source_path": "Actor/Character/Princess/SpriteSheet.png"
+          },
+          "ninja_terrain": {
+            "id": "ninja_terrain",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "environment",
+            "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+            "width": 128,
+            "height": 80,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "3201e6e06c8f3cd8f69f45c80b77cec88a4fbb64cfe165663f58b7f934bfb433",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Backgrounds/Tilesets/TilesetField.png"
+          },
+          "ninja_tree": {
+            "id": "ninja_tree",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "decoration",
+            "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+            "width": 32,
+            "height": 32,
+            "frame_width": 32,
+            "frame_height": 32,
+            "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 1.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+          },
+          "ninja_woman": {
+            "id": "ninja_woman",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "npc",
+            "url": "/assets/adventure/library/ninja_adventure/npc/ninja_woman.png",
+            "width": 64,
+            "height": 112,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "223c09c46ea77d50c3c2cdaaa1d285836d679f5faedb742b5081a1d2b5f8f4d0",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {
+              "down": {
+                "idle": [
+                  0
+                ],
+                "walk": [
+                  4,
+                  8,
+                  12
+                ],
+                "attack": [
+                  16
+                ]
+              },
+              "up": {
+                "idle": [
+                  1
+                ],
+                "walk": [
+                  5,
+                  9,
+                  13
+                ],
+                "attack": [
+                  17
+                ]
+              },
+              "left": {
+                "idle": [
+                  2
+                ],
+                "walk": [
+                  6,
+                  10,
+                  14
+                ],
+                "attack": [
+                  18
+                ]
+              },
+              "right": {
+                "idle": [
+                  3
+                ],
+                "walk": [
+                  7,
+                  11,
+                  15
+                ],
+                "attack": [
+                  19
+                ]
+              }
+            },
+            "body": {
+              "width": 9,
+              "height": 9,
+              "offset_x": 3,
+              "offset_y": 6
+            },
+            "source_path": "Actor/Character/Woman/SpriteSheet.png"
+          }
+        },
+        "roles": {
+          "exit": {
+            "asset": "ninja_terrain",
+            "frame": 38,
+            "open_frame": null
+          },
+          "herb": {
+            "asset": "ninja_herb",
+            "frame": 0,
+            "open_frame": null
+          },
+          "key": {
+            "asset": "ninja_key",
+            "frame": 0,
+            "open_frame": null
+          },
+          "item": {
+            "asset": "ninja_gem",
+            "frame": 0,
+            "open_frame": null
+          },
+          "tree": {
+            "asset": "ninja_tree",
+            "frame": 0,
+            "open_frame": null
+          }
+        },
+        "terrain": {
+          "texture": "ninja_terrain",
+          "ground": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "path": 2,
+          "edges": {
+            "ul": 3,
+            "u": 4,
+            "ur": 5,
+            "l": 6,
+            "r": 7,
+            "dl": 8,
+            "d": 9,
+            "dr": 10
+          },
+          "solid": 11,
+          "decoration": 12,
+          "indoor_ground": 13,
+          "wall": 14,
+          "debris": 15,
+          "buildings": [
+            [
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            [
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ]
+          ]
+        }
+      },
+      "areas": [
+        {
+          "name": "Woodland Village",
+          "environment": "village",
+          "width": 38,
+          "height": 27,
+          "tiles": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              10,
+              11,
+              12,
+              0,
+              0,
+              0,
+              1,
+              1,
+              3,
+              3,
+              0,
+              0,
+              3,
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              1,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              13,
+              14,
+              15,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              16,
+              17,
+              18,
+              1,
+              0,
+              3,
+              0,
+              1,
+              0,
+              0,
+              3,
+              0,
+              3,
+              1,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              10,
+              11,
+              12,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              3,
+              3,
+              0,
+              1,
+              0,
+              3,
+              0,
+              10,
+              11,
+              12,
+              1,
+              0,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              13,
+              14,
+              15,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              0,
+              13,
+              14,
+              15,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              16,
+              17,
+              18,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              16,
+              17,
+              18,
+              0,
+              3,
+              0,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              3,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              3,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              3,
+              0,
+              0,
+              3,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              3,
+              1,
+              0,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              3,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              0,
+              3,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              1,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              3,
+              0,
+              0,
+              3,
+              10,
+              11,
+              12,
+              0,
+              3,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              13,
+              14,
+              15,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              16,
+              17,
+              18,
+              0,
+              3,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              1,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              3,
+              3,
+              0,
+              3,
+              3,
+              10,
+              11,
+              12,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              1,
+              1,
+              13,
+              14,
+              15,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              3,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              3,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              16,
+              17,
+              18,
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              3,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              3,
+              0,
+              3,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              1,
+              0,
+              3,
+              0,
+              3,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              3,
+              0,
+              1,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              3,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "spawn": {
+            "x": 3,
+            "y": 13
+          },
+          "exit": {
+            "x": 34,
+            "y": 13
+          },
+          "actors": [
+            {
+              "id": "guide",
+              "kind": "npc",
+              "name": "Mira the Healer",
+              "area": 0,
+              "role": "healer",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome! I need your help.",
+                  "Follow the objective above to help our settlement."
+                ],
+                "active": [
+                  "The objective above marks what we need next."
+                ],
+                "completed": [
+                  "You brought everything back. Thank you, traveler!"
+                ]
+              },
+              "x": 20,
+              "y": 13,
+              "pickups": []
+            },
+            {
+              "id": "villager",
+              "kind": "npc",
+              "name": "Jun the Gardener",
+              "area": 0,
+              "role": "villager",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "The paths lead to every corner of our home."
+                ],
+                "active": [
+                  "Try exploring beyond the houses."
+                ],
+                "completed": [
+                  "Our village feels brighter today."
+                ]
+              },
+              "x": 17,
+              "y": 5,
+              "pickups": []
+            },
+            {
+              "id": "herbs",
+              "kind": "item",
+              "name": "Magical Herb",
+              "area": 0,
+              "role": "",
+              "item": "herb",
+              "quantity": 3,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 19,
+              "y": 17,
+              "pickups": [
+                {
+                  "x": 19,
+                  "y": 17
+                },
+                {
+                  "x": 27,
+                  "y": 11
+                },
+                {
+                  "x": 14,
+                  "y": 23
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "guide",
+          "count": 1,
+          "text": "Talk to the healer",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "herbs",
+          "count": 3,
+          "text": "Find 3 magical herbs",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "deliver",
+          "target": "guide",
+          "count": 3,
+          "text": "Return 3 herbs to the healer",
+          "item": "herb",
+          "delivery_items": {}
+        }
+      ],
+      "unsupported": [],
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Talk to the healer",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Find 3 magical herbs",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Return 3 herbs to the healer",
+          "constructed": true,
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "adapter": "AdventureScene",
+      "genre": "adventure",
+      "schema_version": "2.1",
+      "seed": 256,
+      "game_url": "http://localhost:5174/studio/play/b2a6c428-b532-46ba-89e4-ba2a93b22d35",
+      "area_count": 1,
+      "combat": false,
+      "gravity": 0,
+      "asset_pack": "ninja_adventure"
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 432,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Talk to the healer",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "guide",
+                  "kind": "npc",
+                  "x": 656,
+                  "y": 432,
+                  "health": 2,
+                  "body": {
+                    "x": 646,
+                    "y": 423,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 560,
+                  "y": 176,
+                  "health": 2,
+                  "body": {
+                    "x": 550,
+                    "y": 167,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "herbs",
+                  "kind": "item",
+                  "x": 624,
+                  "y": 560,
+                  "health": 2,
+                  "body": {
+                    "x": 608,
+                    "y": 544,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "herbs",
+                  "kind": "item",
+                  "x": 880,
+                  "y": 368,
+                  "health": 2,
+                  "body": {
+                    "x": 864,
+                    "y": 352,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "herbs",
+                  "kind": "item",
+                  "x": 464,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 448,
+                    "y": 736,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjagreen",
+              "playerFrame": 0,
+              "animation": "ninja_ninjagreen:down:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjagreen",
+                "ninja_princess",
+                "ninja_terrain",
+                "ninja_tree",
+                "ninja_woman"
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 137.83333333333326
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 80,
+            "after_y": 54.16666666666663
+          }
+        },
+        {
+          "id": "registered_animation_frames",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "observed_frames": [
+              7,
+              11,
+              15,
+              15,
+              7,
+              11,
+              11
+            ],
+            "asset": "ninja_ninjagreen"
+          }
+        },
+        {
+          "id": "directional_art_and_pack",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "directions": [
+              "ninja_ninjagreen:left:idle",
+              "ninja_ninjagreen:up:idle",
+              "ninja_ninjagreen:down:idle"
+            ],
+            "selected_assets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ]
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              1,
+              1,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              42,
+              48
+            ]
+          }
+        },
+        {
+          "id": "dialogue_0",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Mira the Healer\nWelcome! I need your help.",
+            "Follow the objective above to help our settlement."
+          ]
+        },
+        {
+          "id": "quest_0_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 623,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Find 3 magical herbs",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 624,
+                "y": 560,
+                "health": 2,
+                "body": {
+                  "x": 608,
+                  "y": 544,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 880,
+                "y": 368,
+                "health": 2,
+                "body": {
+                  "x": 864,
+                  "y": 352,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 464,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 448,
+                  "y": 736,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_1",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "herb": 3
+          }
+        },
+        {
+          "id": "quest_1_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 464,
+            "y": 752,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "herb": 3
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Return 3 herbs to the healer",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Mira the Healer\nYou brought everything back. Thank you, traveler!"
+          ]
+        },
+        {
+          "id": "inventory_delivery_consumed",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "herb": 0
+          }
+        },
+        {
+          "id": "quest_2_deliver",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 623,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "herb": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1104,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "herb": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Talk to the healer",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 624,
+                "y": 560,
+                "health": 2,
+                "body": {
+                  "x": 608,
+                  "y": 544,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 880,
+                "y": 368,
+                "health": 2,
+                "body": {
+                  "x": 864,
+                  "y": 352,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 464,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 448,
+                  "y": 736,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 432,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Talk to the healer",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "guide",
+                  "kind": "npc",
+                  "x": 656,
+                  "y": 432,
+                  "health": 2,
+                  "body": {
+                    "x": 646,
+                    "y": 423,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 560,
+                  "y": 176,
+                  "health": 2,
+                  "body": {
+                    "x": 550,
+                    "y": 167,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "herbs",
+                  "kind": "item",
+                  "x": 624,
+                  "y": 560,
+                  "health": 2,
+                  "body": {
+                    "x": 608,
+                    "y": 544,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "herbs",
+                  "kind": "item",
+                  "x": 880,
+                  "y": 368,
+                  "health": 2,
+                  "body": {
+                    "x": 864,
+                    "y": 352,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "herbs",
+                  "kind": "item",
+                  "x": 464,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 448,
+                    "y": 736,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjagreen",
+              "playerFrame": 0,
+              "animation": "ninja_ninjagreen:down:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjagreen",
+                "ninja_princess",
+                "ninja_terrain",
+                "ninja_tree",
+                "ninja_woman"
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 137.83333333333326
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 80,
+            "after_y": 54.16666666666663
+          }
+        },
+        {
+          "id": "registered_animation_frames",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "observed_frames": [
+              7,
+              11,
+              15,
+              15,
+              7,
+              11,
+              11
+            ],
+            "asset": "ninja_ninjagreen"
+          }
+        },
+        {
+          "id": "directional_art_and_pack",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "directions": [
+              "ninja_ninjagreen:left:idle",
+              "ninja_ninjagreen:up:idle",
+              "ninja_ninjagreen:down:idle"
+            ],
+            "selected_assets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ]
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              1,
+              1,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              42,
+              48
+            ]
+          }
+        },
+        {
+          "id": "dialogue_0",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Mira the Healer\nWelcome! I need your help.",
+            "Follow the objective above to help our settlement."
+          ]
+        },
+        {
+          "id": "quest_0_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 623,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Find 3 magical herbs",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 624,
+                "y": 560,
+                "health": 2,
+                "body": {
+                  "x": 608,
+                  "y": 544,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 880,
+                "y": 368,
+                "health": 2,
+                "body": {
+                  "x": 864,
+                  "y": 352,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 464,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 448,
+                  "y": 736,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_1",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "herb": 3
+          }
+        },
+        {
+          "id": "quest_1_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 464,
+            "y": 752,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "herb": 3
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Return 3 herbs to the healer",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Mira the Healer\nYou brought everything back. Thank you, traveler!"
+          ]
+        },
+        {
+          "id": "inventory_delivery_consumed",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "herb": 0
+          }
+        },
+        {
+          "id": "quest_2_deliver",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 623,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "herb": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1104,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "herb": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Talk to the healer",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "guide",
+                "kind": "npc",
+                "x": 656,
+                "y": 432,
+                "health": 2,
+                "body": {
+                  "x": 646,
+                  "y": 423,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 560,
+                "y": 176,
+                "health": 2,
+                "body": {
+                  "x": 550,
+                  "y": 167,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 624,
+                "y": 560,
+                "health": 2,
+                "body": {
+                  "x": 608,
+                  "y": 544,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 880,
+                "y": 368,
+                "health": 2,
+                "body": {
+                  "x": 864,
+                  "y": 352,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "herbs",
+                "kind": "item",
+                "x": 464,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 448,
+                  "y": 736,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjagreen",
+            "playerFrame": 0,
+            "animation": "ninja_ninjagreen:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjagreen",
+              "ninja_princess",
+              "ninja_terrain",
+              "ninja_tree",
+              "ninja_woman"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 0
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Talk to the healer",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Find 3 magical herbs",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Return 3 herbs to the healer",
+          "constructed": true,
+          "status": "verified"
+        }
+      ],
+      "scope": "Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.",
+      "unsupported": []
+    },
+    "outcome.json": {
+      "status": "READY",
+      "visual_quality": "Screenshot review required; functional QA does not certify aesthetics."
+    }
+  }
+}

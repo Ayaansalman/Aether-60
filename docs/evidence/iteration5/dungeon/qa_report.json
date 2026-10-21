@@ -1,0 +1,445 @@
+{
+  "overall": "FAIL",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 112,
+          "y": 464,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Defeat the patrolling guardian",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "guardian",
+              "kind": "enemy",
+              "x": 819.3333333333331,
+              "y": 240,
+              "health": 2
+            },
+            {
+              "id": "stalker",
+              "kind": "enemy",
+              "x": 400,
+              "y": 368,
+              "health": 2
+            },
+            {
+              "id": "relic",
+              "kind": "item",
+              "x": 304,
+              "y": 240,
+              "health": 2
+            },
+            {
+              "id": "rune",
+              "kind": "switch",
+              "x": 848,
+              "y": 688,
+              "health": 2
+            },
+            {
+              "id": "seal",
+              "kind": "door",
+              "x": 240,
+              "y": 720,
+              "health": 2
+            }
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 112,
+        "after": 142.99999999999994
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 208,
+        "after_y": 184.74999999999991
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          6,
+          5,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          202,
+          176
+        ]
+      }
+    },
+    {
+      "id": "locked_door_requires_resources",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 206,
+        "y": 720,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the patrolling guardian",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [
+          "Ancient Seal\nAncient Seal is sealed. Requires: key, rune."
+        ],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 822.6666666666663,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 304,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "rune",
+            "kind": "switch",
+            "x": 848,
+            "y": 688,
+            "health": 2
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 240,
+            "y": 720,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_guardian",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 716.8333333333325,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the stalking monster",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 304,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "rune",
+            "kind": "switch",
+            "x": 848,
+            "y": 688,
+            "health": 2
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 240,
+            "y": 720,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_0_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 716.8333333333325,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the stalking monster",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 400,
+            "y": 368,
+            "health": 2
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 304,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "rune",
+            "kind": "switch",
+            "x": 848,
+            "y": 688,
+            "health": 2
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 240,
+            "y": 720,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_stalker",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 304.51666666666557,
+        "y": 368,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Find the ancient key",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 304,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "rune",
+            "kind": "switch",
+            "x": 848,
+            "y": 688,
+            "health": 2
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 240,
+            "y": 720,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_1_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 304.51666666666557,
+        "y": 368,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Find the ancient key",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 304,
+            "y": 240,
+            "health": 2
+          },
+          {
+            "id": "rune",
+            "kind": "switch",
+            "x": 848,
+            "y": 688,
+            "health": 2
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 240,
+            "y": 720,
+            "health": 2
+          }
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "browser_execution",
+      "passed": false,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "error": "Page.evaluate: Execution context was destroyed, most likely because of a navigation",
+        "page_errors": []
+      }
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

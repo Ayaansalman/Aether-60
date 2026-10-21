@@ -2,7 +2,7 @@
 
 Branch: `codex/platformer-overhaul`. Started 2026-10-20.
 
-Current status: Iteration 2 implemented and verified locally on the existing branch. Detailed results: docs/ITERATION2_RESULTS.md. The earlier milestone history below is preserved.
+Current status: Iteration 5 and its adventure asset-library expansion are implemented and verified locally: platformer and top-down adventure generation. Detailed results: docs/ITERATION5_RESULTS.md and docs/ASSET_LIBRARY_EXPANSION.md. Earlier milestone history is preserved below; older limitations describe those checkpoints.
 
 Implementation baseline: commit `8658bb94a4e0193d7740e91f96c082342b7a828e`. This checkpoint updates documentation while preserving that completed implementation and its evidence. No push or deployment is authorized by this checkpoint request.
 
@@ -111,3 +111,36 @@ Extended the platformer with typed, reusable event/trigger/link/objective compon
 Targeted verification: 72 backend tests and changed-module compilation pass; frontend build/lint and 12 shared component tests pass. Seven Chromium cases pass 126 checks: the three requested prompt families, a two-level mixed campaign with persistent defeat goals, survival/deadline constraints, timeout/restart and a saved two-level Gemini factory design. Final requirement reports pass for all cases. One live planning invocation; a recorded one-based index correction preserves the original design, and rebuilds use no further calls. Initial failures, final reports and screenshots are retained. Tests use controlled positions and real collisions/inputs, not autonomous completion or enjoyment certification. The unrelated project-wide suites were not rerun.
 
 Full report, precise counts, supported semantics and reproduction: docs/ITERATION4_RESULTS.md. Evidence: docs/evidence/iteration4/. No new dependencies, genre, asset downloads, push or deployment.
+
+## Iteration 5 — multi-genre adventures
+
+Added separate AdventureDesign/AdventureIR contracts, v2 genre factory dispatch, provider-independent adventure planning, seeded connected-world construction and validation, and an independent zero-gravity Phaser adventure scene. Existing jobs/events, generation stages, Inspector, QA subprocess lifecycle and re-verification are reused; platformer generation and its runtime remain operational.
+
+Playable adventures include eight-direction movement, tilemap collision, camera/bounds, buildings and scenery, named NPCs with contextual structured dialogue, seven event-driven goal types, explicit quest states, scattered pickups, quantities, atomic multi-item delivery, retained keys, switches, physically sealed passages, area transitions, optional patrol/chase projectile combat, health/loss, victory and restart. Gold objective markers and a compass guide exploration. Mobile controls have an adjacent readable objective, inventory and dialogue panel. Added matching Kenney Tiny Town/Tiny Dungeon CC0 atlases with original licenses, sources, dimensions and SHA-256 checks.
+
+Verification: baseline 31 existing backend tests passed; final targeted backend suite 75 passed; shared frontend behavior/state suite 17 passed; production build and ESLint pass. Existing platformer Chromium regression passes 18/18. Two real Gemini planning calls produced distinct village/dungeon designs; reviewed saved-design rebuilds made no additional model calls. Final live browser checks pass 21/21 and 23/23, offline API cases pass 14/14 and 23/23, and creator checks pass 12/12 including actual submission, blueprint/Inspector, typing isolation, toolbar restart, expanded preview, touch movement and readable mobile objectives/dialogue.
+
+Original model output, developer corrections/rebuilds, initial failures and all retests are preserved. Tests found and corrected invalid inactive-touch velocity, a Phaser body-group collision mismatch, and stale test hooks during canvas recreation. Browser checks use disclosed controlled positioning with real inputs/collisions, not autonomous navigation or aesthetic scoring. Specs validate references, resources and ordered access through locked passages. Unknown prose semantics are not universally certified; guards and fixture scope are explicit.
+
+Limits: linear quest/area progression, one sealed passage per area, stationary NPCs, local enemy pursuit, no equipment/crafting/save-game service or branching dialogue. Characters have authored single frames animated through stride/bob/mirroring, rather than authored directional walk cycles. Asset replacement with a different atlas layout requires frame mapping updates. Detailed reproduction and evidence: docs/ITERATION5_RESULTS.md and docs/evidence/iteration5/. No deployment, push, unrelated redesign or dependency migration.
+
+## Adventure asset-library expansion — 2026-10-21
+
+Downloaded the official free Ninja Adventure and Tiny RPG Forest archives and independently verified their included CC0 licenses. Curated 52 resources into a semantic, versioned catalog with original license documents, source/archive hashes, image/frame geometry, authored directional animation sequences, collision-body alignment and category/style metadata. Ninja Adventure is the default family; Ansimuz is a separate forest-only family. The old Kenney renderer and platformer assets remain compatible. Remaining raw resources, paid expansions and downloaded demo code are not public/export dependencies; no CraftPix resource was used.
+
+Added deterministic specification-driven asset selection to GameIR and real generation stages/Inspector evidence, plus a CC0 resource-export allowlist that rejects restricted or mixed-family bundles. Phaser uses registered terrain edge rules, actor resources, authored directional player/enemy animation, pickups, door/switch states, props, projectiles and defeat VFX. The two existing Gemini games received preserved-history, art-only upgrades with every non-art IR field asserted unchanged. No additional provider request or fixed authored demo map was used.
+
+Verification: 77 catalog checks, 38 targeted backend tests, 17 frontend behavior/state tests, 83 API-browser checks and 12 actual creator UI checks pass; production build and ESLint pass. Fresh Ninja and Ansimuz fixture jobs and both upgraded Gemini jobs are READY. Corrected short-sheet animation bounds, empty animation sequences, transparent terrain selection, a six-frame VFX slice width and padded-frame pickup alignment during integration. Initial evidence is retained. Actual authored directional animation replaces the earlier single-frame limitation for the new families; Kenney compatibility retains its previous animation behavior.
+
+Details, provenance, constraints, screenshots and reproduction: docs/ASSET_LIBRARY_EXPANSION.md and docs/evidence/asset-expansion/. The library does not add boss AI, shops, equipment, crafting, music behavior or a full game-source export feature. No deployment, push, unrelated refactor or dependency migration.
+
+
+## Iteration 6 — adventure world quality, 2026-10-21
+
+Replaced scatter-first maps with seeded settlement/woodland zones and connected dungeon room graphs. Added reserved approaches, purposeful house fronts and forest clearings, guarded key routes, physically sealed sanctums, smaller final chambers and settlement-aware landmark placement. Fixed tree proportions, roof/canopy depth ordering, NPC collision, dungeon floor atlas mapping and coherent interior decoration. Added pickup messages, collection counters and a compact opening HUD. The exact healer and crypt prompts are the first two Studio examples; peaceful delivery and key/unlock/relic adventures retain distinct mechanics.
+
+Live testing exposed a model-generated cross-area return loop incompatible with forward-only portals. Added explicit planner instructions and a bounded, recorded outdoor-area normalization while preserving raw model JSON. Also stopped symbolic validation from granting inaccessible/later-area keys. Three Gemini calls total: one preserved invalid design and two successful live adventures. Saved-design rebuilds and final retests made no further calls.
+
+Verification: 87 targeted backend tests, 17 frontend tests, 77 catalog checks, production build and ESLint pass. Geometry invariants pass across 40 seeds per acceptance prompt. Chromium fixture checks pass 16/16 (healer) and 24/24 (crypt), live checks 21/21 and 24/24, and platformer regression 18/18. Final rendered village, woodland, dialogue, crypt and completion screenshots were inspected. Browser tests use controlled placement with real input/physics, not autonomous navigation; mobile QA was not rerun.
+
+Full implementation, reproduction, provenance and limitations: docs/ITERATION6_RESULTS.md. Evidence: docs/evidence/iteration6/. Local Git checkpoint includes the existing uncommitted Iteration 5 dependencies. No push, deployment, new asset pack, genre or agent.

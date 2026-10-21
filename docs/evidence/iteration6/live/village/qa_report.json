@@ -1,0 +1,1211 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 400,
+          "y": 560,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Explore the charming village square and take in the sights.",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "healer_elena",
+              "kind": "npc",
+              "x": 656,
+              "y": 464,
+              "health": 2,
+              "body": {
+                "x": 646,
+                "y": 455,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "villager_bram",
+              "kind": "npc",
+              "x": 528,
+              "y": 528,
+              "health": 2,
+              "body": {
+                "x": 518,
+                "y": 519,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "village_square",
+              "kind": "landmark",
+              "x": 432,
+              "y": 496,
+              "health": 2,
+              "body": {
+                "x": 416,
+                "y": 480,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            },
+            {
+              "id": "herb_one",
+              "kind": "item",
+              "x": 1136,
+              "y": 272,
+              "health": 2,
+              "body": {
+                "x": 1120,
+                "y": 256,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            },
+            {
+              "id": "herb_two",
+              "kind": "item",
+              "x": 1168,
+              "y": 560,
+              "health": 2,
+              "body": {
+                "x": 1152,
+                "y": 544,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            },
+            {
+              "id": "herb_three",
+              "kind": "item",
+              "x": 1168,
+              "y": 816,
+              "health": 2,
+              "body": {
+                "x": 1152,
+                "y": 800,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjagreen",
+          "playerFrame": 0,
+          "animation": "ninja_ninjagreen:down:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjagreen",
+            "ninja_oldwoman",
+            "ninja_terrain",
+            "ninja_tree",
+            "ninja_woman"
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 400,
+        "after": 420.6666666666665
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 80,
+        "after_y": 59.3333333333333
+      }
+    },
+    {
+      "id": "registered_animation_frames",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "observed_frames": [
+          11,
+          15,
+          11,
+          11,
+          7,
+          11,
+          7
+        ],
+        "asset": "ninja_ninjagreen"
+      }
+    },
+    {
+      "id": "directional_art_and_pack",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "directions": [
+          "ninja_ninjagreen:left:idle",
+          "ninja_ninjagreen:up:idle",
+          "ninja_ninjagreen:down:idle"
+        ],
+        "selected_assets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ]
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          1,
+          1,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          42,
+          48
+        ]
+      }
+    },
+    {
+      "id": "quest_0_explore",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 399,
+        "y": 496,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Speak with Elena the healer to learn about the missing herbs.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_one",
+            "kind": "item",
+            "x": 1136,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 1120,
+              "y": 256,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_two",
+            "kind": "item",
+            "x": 1168,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 544,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_three",
+            "kind": "item",
+            "x": 1168,
+            "y": 816,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 800,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "dialogue_1",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Elena\nHello, traveler! Could you help me gather some rare herbs?"
+      ]
+    },
+    {
+      "id": "quest_1_talk",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 623,
+        "y": 464,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Collect the Moonleaf from the nearby forest. (0/1)",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_one",
+            "kind": "item",
+            "x": 1136,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 1120,
+              "y": 256,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_two",
+            "kind": "item",
+            "x": 1168,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 544,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_three",
+            "kind": "item",
+            "x": 1168,
+            "y": 816,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 800,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_2",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "moonleaf": 1
+      }
+    },
+    {
+      "id": "quest_2_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1136,
+        "y": 272,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "moonleaf": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Collect the Sunpetal from the nearby forest. (0/1)",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_two",
+            "kind": "item",
+            "x": 1168,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 544,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_three",
+            "kind": "item",
+            "x": 1168,
+            "y": 816,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 800,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_3",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "moonleaf": 1,
+        "sunpetal": 1
+      }
+    },
+    {
+      "id": "quest_3_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1168,
+        "y": 560,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "moonleaf": 1,
+          "sunpetal": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Collect the Starbloom from the nearby forest. (0/1)",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_three",
+            "kind": "item",
+            "x": 1168,
+            "y": 816,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 800,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_4",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "moonleaf": 1,
+        "sunpetal": 1,
+        "starbloom": 1
+      }
+    },
+    {
+      "id": "quest_4_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1168,
+        "y": 816,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "moonleaf": 1,
+          "sunpetal": 1,
+          "starbloom": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Return all three magical herbs to Elena in the village.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "dialogue_5",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Elena\nThank you so much! The village is safe thanks to you."
+      ]
+    },
+    {
+      "id": "inventory_delivery_consumed",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "moonleaf": 0,
+        "sunpetal": 0,
+        "starbloom": 0
+      }
+    },
+    {
+      "id": "quest_5_deliver",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 623,
+        "y": 464,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "moonleaf": 0,
+          "sunpetal": 0,
+          "starbloom": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "adventure_completion",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1392,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "moonleaf": 0,
+          "sunpetal": 0,
+          "starbloom": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 5,
+        "won": true,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 400,
+        "y": 560,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Explore the charming village square and take in the sights.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 656,
+            "y": 464,
+            "health": 2,
+            "body": {
+              "x": 646,
+              "y": 455,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "villager_bram",
+            "kind": "npc",
+            "x": 528,
+            "y": 528,
+            "health": 2,
+            "body": {
+              "x": 518,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "village_square",
+            "kind": "landmark",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "body": {
+              "x": 416,
+              "y": 480,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_one",
+            "kind": "item",
+            "x": 1136,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 1120,
+              "y": 256,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_two",
+            "kind": "item",
+            "x": 1168,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 544,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "herb_three",
+            "kind": "item",
+            "x": 1168,
+            "y": 816,
+            "health": 2,
+            "body": {
+              "x": 1152,
+              "y": 800,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_oldwoman",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

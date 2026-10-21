@@ -1,0 +1,24 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "Woodland Village",
+      "passed": true,
+      "reachable_tiles": 1269,
+      "destinations": 7
+    },
+    {
+      "id": "Talk to the healer",
+      "passed": true
+    },
+    {
+      "id": "Find 3 magical herbs",
+      "passed": true
+    },
+    {
+      "id": "Return 3 herbs to the healer",
+      "passed": true
+    }
+  ],
+  "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+}

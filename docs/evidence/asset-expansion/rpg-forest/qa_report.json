@@ -1,0 +1,1099 @@
+{
+  "overall": "FAIL",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 112,
+          "y": 432,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Defeat the patrolling guardian",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "guardian",
+              "kind": "enemy",
+              "x": 659.9999999999998,
+              "y": 432,
+              "health": 2,
+              "body": {
+                "x": 648.9999999999998,
+                "y": 445,
+                "width": 20,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "stalker",
+              "kind": "enemy",
+              "x": 560,
+              "y": 176,
+              "health": 2,
+              "body": {
+                "x": 550,
+                "y": 178,
+                "width": 20,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "relic",
+              "kind": "item",
+              "x": 624,
+              "y": 560,
+              "health": 2,
+              "body": {
+                "x": 617,
+                "y": 553,
+                "width": 14,
+                "height": 14,
+                "enabled": true
+              }
+            },
+            {
+              "id": "vista",
+              "kind": "landmark",
+              "x": 400,
+              "y": 656,
+              "health": 2,
+              "body": {
+                "x": 367.175,
+                "y": 626.75,
+                "width": 65.65,
+                "height": 58.5,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "tiny_rpg_forest",
+          "playerTexture": "tiny_hero",
+          "playerFrame": 24,
+          "animation": "tiny_hero:down:idle",
+          "selectedAssets": [
+            "tiny_bush",
+            "tiny_gem",
+            "tiny_hero",
+            "tiny_mole",
+            "tiny_monument",
+            "tiny_projectile",
+            "tiny_smoke",
+            "tiny_terrain",
+            "tiny_treant",
+            "tiny_tree"
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 112,
+        "after": 142.99999999999994
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 80,
+        "after_y": 56.75000000000004
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          1,
+          1,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          42,
+          48
+        ]
+      }
+    },
+    {
+      "id": "enemy_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 661.333333333333,
+          "y": 432,
+          "health": 2,
+          "body": {
+            "x": 650.333333333333,
+            "y": 445,
+            "width": 20,
+            "height": 18,
+            "enabled": true
+          }
+        },
+        "after": {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 642.8666666666659,
+          "y": 432,
+          "health": 2,
+          "body": {
+            "x": 631.8666666666659,
+            "y": 445,
+            "width": 20,
+            "height": 18,
+            "enabled": true
+          }
+        }
+      }
+    },
+    {
+      "id": "combat_health_loss",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 643.9666666666659,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the patrolling guardian",
+        "health": 0,
+        "won": false,
+        "lost": true,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 646.166666666666,
+            "y": 432,
+            "health": 2,
+            "body": {
+              "x": 635.166666666666,
+              "y": 445,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 560,
+            "y": 176,
+            "health": 2,
+            "body": {
+              "x": 550,
+              "y": 178,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 24,
+        "animation": "tiny_hero:down:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "restart_after_loss",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 112,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the patrolling guardian",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 660.6666666666664,
+            "y": 432,
+            "health": 2,
+            "body": {
+              "x": 649.6666666666664,
+              "y": 445,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 560,
+            "y": 176,
+            "health": 2,
+            "body": {
+              "x": 550,
+              "y": 178,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 24,
+        "animation": "tiny_hero:down:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_guardian",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 564.833333333332,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the stalking monster",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 560,
+            "y": 176,
+            "health": 2,
+            "body": {
+              "x": 550,
+              "y": 178,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 27,
+        "animation": "tiny_hero:right:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_0_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 564.833333333332,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the stalking monster",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 560,
+            "y": 176,
+            "health": 2,
+            "body": {
+              "x": 550,
+              "y": 178,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 27,
+        "animation": "tiny_hero:right:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_stalker",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 470,
+        "y": 176,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Recover the lost artifact",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 27,
+        "animation": "tiny_hero:right:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_1_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 470,
+        "y": 176,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Recover the lost artifact",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 27,
+        "animation": "tiny_hero:right:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_2",
+      "passed": false,
+      "critical": true,
+      "category": "adventure",
+      "details": {}
+    },
+    {
+      "id": "quest_2_collect",
+      "passed": false,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 624,
+        "y": 560,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Recover the lost artifact",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 27,
+        "animation": "tiny_hero:right:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_3_explore",
+      "passed": false,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 367,
+        "y": 656,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Recover the lost artifact",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 27,
+        "animation": "tiny_hero:right:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "adventure_completion",
+      "passed": false,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1104,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Recover the lost artifact",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [
+          "Complete the objectives in this area before leaving."
+        ],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 27,
+        "animation": "tiny_hero:right:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 4,
+        "genre": "adventure",
+        "area": 0,
+        "x": 112,
+        "y": 432,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the patrolling guardian",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 643.333333333334,
+            "y": 432,
+            "health": 2,
+            "body": {
+              "x": 632.333333333334,
+              "y": 445,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 560,
+            "y": 176,
+            "health": 2,
+            "body": {
+              "x": 550,
+              "y": 178,
+              "width": 20,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 624,
+            "y": 560,
+            "health": 2,
+            "body": {
+              "x": 617,
+              "y": 553,
+              "width": 14,
+              "height": 14,
+              "enabled": true
+            }
+          },
+          {
+            "id": "vista",
+            "kind": "landmark",
+            "x": 400,
+            "y": 656,
+            "health": 2,
+            "body": {
+              "x": 367.175,
+              "y": 626.75,
+              "width": 65.65,
+              "height": 58.5,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "tiny_rpg_forest",
+        "playerTexture": "tiny_hero",
+        "playerFrame": 24,
+        "animation": "tiny_hero:down:idle",
+        "selectedAssets": [
+          "tiny_bush",
+          "tiny_gem",
+          "tiny_hero",
+          "tiny_mole",
+          "tiny_monument",
+          "tiny_projectile",
+          "tiny_smoke",
+          "tiny_terrain",
+          "tiny_treant",
+          "tiny_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

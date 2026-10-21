@@ -1,0 +1,4016 @@
+{
+  "job": {
+    "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+    "prompt": "Create a cozy top-down fantasy adventure in a small woodland village. Explore, talk to villagers, find three missing magical herbs, and return them to a healer. Make it peaceful, colorful, focused on exploration rather than combat.",
+    "status": "READY_WITH_WARNINGS",
+    "stage": "READY_WITH_WARNINGS",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "gemini-3.5-flash-lite",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T05:58:28.667012+00:00",
+    "updated_at": "2026-10-21T05:58:50.930752+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "game_intent.json",
+      "model_design.json",
+      "provider.json",
+      "game_design.json",
+      "final_design.json",
+      "validation.json",
+      "repair_report.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "qa_report.json",
+      "diagnosis.json",
+      "requirement_report.json",
+      "outcome.json"
+    ],
+    "limitations": [
+      "Cozy non-combat gameplay mechanics beyond basic adventure goals",
+      "Time of day transitions"
+    ],
+    "qa_summary": {
+      "passed": 20,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5174/studio/play/a6ed2959-515e-4b56-b601-30a9bce305ae"
+  },
+  "events": [
+    {
+      "id": 1,
+      "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "ts": "2026-10-21T05:58:28.692007+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 2,
+      "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "ts": "2026-10-21T05:58:28.783028+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning top-down adventure with configured provider",
+      "attempt": 1,
+      "rationale": "Elapsed 0.06s; language model",
+      "diff": null
+    },
+    {
+      "id": 4,
+      "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "ts": "2026-10-21T05:58:32.758697+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Composing seeded connected areas, NPCs, inventory and event-driven quests",
+      "attempt": 1,
+      "rationale": "Elapsed 4.05s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 5,
+      "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "ts": "2026-10-21T05:58:32.795789+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking destination connectivity, dialogue references and quest prerequisites",
+      "attempt": 1,
+      "rationale": "Elapsed 4.08s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 6,
+      "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "ts": "2026-10-21T05:58:32.945962+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Adventure Phaser adapter and licensed tilemaps ready",
+      "attempt": 1,
+      "rationale": "Elapsed 4.23s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 7,
+      "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "ts": "2026-10-21T05:58:32.998563+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium adventure interaction checks",
+      "attempt": 1,
+      "rationale": "Elapsed 4.28s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 8,
+      "game_id": "a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "ts": "2026-10-21T05:58:50.884450+00:00",
+      "stage": "READY_WITH_WARNINGS",
+      "result": "SUCCESS",
+      "detail": "Adventure browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 22.17s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "game_intent.json": {
+      "original_prompt": "Create a cozy top-down fantasy adventure in a small woodland village. Explore, talk to villagers, find three missing magical herbs, and return them to a healer. Make it peaceful, colorful, focused on exploration rather than combat.",
+      "genre": "adventure",
+      "setting": "woodland",
+      "gameplay": {
+        "combat": false,
+        "quests": [
+          {
+            "kind": "explore",
+            "target": "village_square",
+            "count": 1,
+            "text": "Explore the cozy Village Square.",
+            "item": ""
+          },
+          {
+            "kind": "talk",
+            "target": "piper",
+            "count": 1,
+            "text": "Chat with Piper the baker about the village.",
+            "item": ""
+          },
+          {
+            "kind": "talk",
+            "target": "eliza",
+            "count": 1,
+            "text": "Speak with Eliza the healer to learn about the missing herbs.",
+            "item": ""
+          },
+          {
+            "kind": "collect",
+            "target": "herb_one",
+            "count": 1,
+            "text": "Find the Sunpetal Leaf near the gardens.",
+            "item": "sunpetal"
+          },
+          {
+            "kind": "collect",
+            "target": "herb_two",
+            "count": 1,
+            "text": "Find the Moonmint Sprig by the stream.",
+            "item": "moonmint"
+          },
+          {
+            "kind": "collect",
+            "target": "herb_three",
+            "count": 1,
+            "text": "Find the Stardrop Blossom under the old oak tree.",
+            "item": "stardrop"
+          },
+          {
+            "kind": "deliver",
+            "target": "eliza",
+            "count": 1,
+            "text": "Deliver the magical herbs to Eliza the healer.",
+            "item": "sunpetal"
+          }
+        ]
+      },
+      "areas": [
+        {
+          "name": "Willowbrook Village",
+          "environment": "village"
+        }
+      ],
+      "unsupported": [
+        "Cozy non-combat gameplay mechanics beyond basic adventure goals",
+        "Time of day transitions"
+      ],
+      "interpretation_source": {
+        "provider": "OpenAICompatProvider",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 3823
+      }
+    },
+    "model_design.json": {
+      "genre": "adventure",
+      "title": "The Healer's Herbs",
+      "premise": "Explore the peaceful woodland village, chat with the villagers, find three missing magical herbs, and return them to the local healer.",
+      "theme": "woodland",
+      "areas": [
+        {
+          "name": "Willowbrook Village",
+          "environment": "village"
+        }
+      ],
+      "actors": [
+        {
+          "id": "village_square",
+          "kind": "landmark",
+          "name": "Village Square",
+          "area": 0,
+          "role": "Central gathering place",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "piper",
+          "kind": "npc",
+          "name": "Piper",
+          "area": 0,
+          "role": "Village Baker",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Hello there, traveler! Enjoying the sunny village breeze?"
+            ],
+            "active": [
+              "Have you checked near the gardens for the lost herbs?"
+            ],
+            "completed": [
+              "Thank you for helping our healer! The village appreciates you."
+            ]
+          }
+        },
+        {
+          "id": "eliza",
+          "kind": "npc",
+          "name": "Eliza",
+          "area": 0,
+          "role": "Village Healer",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, friend. I am in dire need of three magical herbs for my remedies."
+            ],
+            "active": [
+              "Please bring back all three magical herbs so I can prepare the medicine."
+            ],
+            "completed": [
+              "Wonderful! These herbs are fresh and full of magic. Thank you so much!"
+            ]
+          }
+        },
+        {
+          "id": "herb_one",
+          "kind": "item",
+          "name": "Sunpetal Leaf",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "sunpetal",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "herb_two",
+          "kind": "item",
+          "name": "Moonmint Sprig",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "moonmint",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "herb_three",
+          "kind": "item",
+          "name": "Stardrop Blossom",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "stardrop",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "explore",
+          "target": "village_square",
+          "count": 1,
+          "text": "Explore the cozy Village Square.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "piper",
+          "count": 1,
+          "text": "Chat with Piper the baker about the village.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "eliza",
+          "count": 1,
+          "text": "Speak with Eliza the healer to learn about the missing herbs.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "herb_one",
+          "count": 1,
+          "text": "Find the Sunpetal Leaf near the gardens.",
+          "item": "sunpetal"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_two",
+          "count": 1,
+          "text": "Find the Moonmint Sprig by the stream.",
+          "item": "moonmint"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_three",
+          "count": 1,
+          "text": "Find the Stardrop Blossom under the old oak tree.",
+          "item": "stardrop"
+        },
+        {
+          "kind": "deliver",
+          "target": "eliza",
+          "count": 1,
+          "text": "Deliver the magical herbs to Eliza the healer.",
+          "item": "sunpetal"
+        }
+      ],
+      "combat": false,
+      "unsupported": [
+        "Cozy non-combat gameplay mechanics beyond basic adventure goals",
+        "Time of day transitions"
+      ]
+    },
+    "provider.json": {
+      "provider": "OpenAICompatProvider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "latency_ms": 3823
+    },
+    "game_design.json": {
+      "genre": "adventure",
+      "title": "The Healer's Herbs",
+      "premise": "Explore the peaceful woodland village, chat with the villagers, find three missing magical herbs, and return them to the local healer.",
+      "theme": "woodland",
+      "areas": [
+        {
+          "name": "Willowbrook Village",
+          "environment": "village"
+        }
+      ],
+      "actors": [
+        {
+          "id": "village_square",
+          "kind": "landmark",
+          "name": "Village Square",
+          "area": 0,
+          "role": "Central gathering place",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "piper",
+          "kind": "npc",
+          "name": "Piper",
+          "area": 0,
+          "role": "Village Baker",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Hello there, traveler! Enjoying the sunny village breeze?"
+            ],
+            "active": [
+              "Have you checked near the gardens for the lost herbs?"
+            ],
+            "completed": [
+              "Thank you for helping our healer! The village appreciates you."
+            ]
+          }
+        },
+        {
+          "id": "eliza",
+          "kind": "npc",
+          "name": "Eliza",
+          "area": 0,
+          "role": "Village Healer",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, friend. I am in dire need of three magical herbs for my remedies."
+            ],
+            "active": [
+              "Please bring back all three magical herbs so I can prepare the medicine."
+            ],
+            "completed": [
+              "Wonderful! These herbs are fresh and full of magic. Thank you so much!"
+            ]
+          }
+        },
+        {
+          "id": "herb_one",
+          "kind": "item",
+          "name": "Sunpetal Leaf",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "sunpetal",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "herb_two",
+          "kind": "item",
+          "name": "Moonmint Sprig",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "moonmint",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "herb_three",
+          "kind": "item",
+          "name": "Stardrop Blossom",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "stardrop",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "explore",
+          "target": "village_square",
+          "count": 1,
+          "text": "Explore the cozy Village Square.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "piper",
+          "count": 1,
+          "text": "Chat with Piper the baker about the village.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "eliza",
+          "count": 1,
+          "text": "Speak with Eliza the healer to learn about the missing herbs.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "herb_one",
+          "count": 1,
+          "text": "Find the Sunpetal Leaf near the gardens.",
+          "item": "sunpetal"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_two",
+          "count": 1,
+          "text": "Find the Moonmint Sprig by the stream.",
+          "item": "moonmint"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_three",
+          "count": 1,
+          "text": "Find the Stardrop Blossom under the old oak tree.",
+          "item": "stardrop"
+        },
+        {
+          "kind": "deliver",
+          "target": "eliza",
+          "count": 1,
+          "text": "Deliver the magical herbs to Eliza the healer.",
+          "item": "sunpetal"
+        }
+      ],
+      "combat": false,
+      "unsupported": [
+        "Cozy non-combat gameplay mechanics beyond basic adventure goals",
+        "Time of day transitions"
+      ]
+    },
+    "final_design.json": {
+      "genre": "adventure",
+      "title": "The Healer's Herbs",
+      "premise": "Explore the peaceful woodland village, chat with the villagers, find three missing magical herbs, and return them to the local healer.",
+      "theme": "woodland",
+      "areas": [
+        {
+          "name": "Willowbrook Village",
+          "environment": "village"
+        }
+      ],
+      "actors": [
+        {
+          "id": "village_square",
+          "kind": "landmark",
+          "name": "Village Square",
+          "area": 0,
+          "role": "Central gathering place",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "piper",
+          "kind": "npc",
+          "name": "Piper",
+          "area": 0,
+          "role": "Village Baker",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Hello there, traveler! Enjoying the sunny village breeze?"
+            ],
+            "active": [
+              "Have you checked near the gardens for the lost herbs?"
+            ],
+            "completed": [
+              "Thank you for helping our healer! The village appreciates you."
+            ]
+          }
+        },
+        {
+          "id": "eliza",
+          "kind": "npc",
+          "name": "Eliza",
+          "area": 0,
+          "role": "Village Healer",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, friend. I am in dire need of three magical herbs for my remedies."
+            ],
+            "active": [
+              "Please bring back all three magical herbs so I can prepare the medicine."
+            ],
+            "completed": [
+              "Wonderful! These herbs are fresh and full of magic. Thank you so much!"
+            ]
+          }
+        },
+        {
+          "id": "herb_one",
+          "kind": "item",
+          "name": "Sunpetal Leaf",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "sunpetal",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "herb_two",
+          "kind": "item",
+          "name": "Moonmint Sprig",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "moonmint",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        },
+        {
+          "id": "herb_three",
+          "kind": "item",
+          "name": "Stardrop Blossom",
+          "area": 0,
+          "role": "Magical Herb",
+          "item": "stardrop",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "explore",
+          "target": "village_square",
+          "count": 1,
+          "text": "Explore the cozy Village Square.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "piper",
+          "count": 1,
+          "text": "Chat with Piper the baker about the village.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "eliza",
+          "count": 1,
+          "text": "Speak with Eliza the healer to learn about the missing herbs.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "herb_one",
+          "count": 1,
+          "text": "Find the Sunpetal Leaf near the gardens.",
+          "item": "sunpetal"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_two",
+          "count": 1,
+          "text": "Find the Moonmint Sprig by the stream.",
+          "item": "moonmint"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_three",
+          "count": 1,
+          "text": "Find the Stardrop Blossom under the old oak tree.",
+          "item": "stardrop"
+        },
+        {
+          "kind": "deliver",
+          "target": "eliza",
+          "count": 1,
+          "text": "Deliver the magical herbs to Eliza the healer.",
+          "item": "sunpetal"
+        }
+      ],
+      "combat": false,
+      "unsupported": [
+        "Cozy non-combat gameplay mechanics beyond basic adventure goals",
+        "Time of day transitions"
+      ]
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "Willowbrook Village",
+          "passed": true,
+          "reachable_tiles": 841,
+          "destinations": 10
+        },
+        {
+          "id": "Explore the cozy Village Square.",
+          "passed": true
+        },
+        {
+          "id": "Chat with Piper the baker about the village.",
+          "passed": true
+        },
+        {
+          "id": "Speak with Eliza the healer to learn about the missing herbs.",
+          "passed": true
+        },
+        {
+          "id": "Find the Sunpetal Leaf near the gardens.",
+          "passed": true
+        },
+        {
+          "id": "Find the Moonmint Sprig by the stream.",
+          "passed": true
+        },
+        {
+          "id": "Find the Stardrop Blossom under the old oak tree.",
+          "passed": true
+        },
+        {
+          "id": "Deliver the magical herbs to Eliza the healer.",
+          "passed": true
+        }
+      ],
+      "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 0,
+      "scope": "Connected paths are constructed directly. Invalid resource/quest designs fail validation; no speculative runtime repair."
+    },
+    "asset_manifest.json": {
+      "id": "kenney_tiny_adventure",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "sources": [
+        "https://kenney.nl/assets/tiny-town",
+        "https://kenney.nl/assets/tiny-dungeon"
+      ],
+      "textures": {
+        "tiny-town": {
+          "url": "/assets/adventure/tiny-town.png",
+          "frameWidth": 16,
+          "frameHeight": 16,
+          "columns": 12,
+          "width": 192,
+          "height": 176,
+          "sha256": "3a54d99ecde790d4fdea207a3644cf130fc56fa838f1beb1507c185a95b8e902"
+        },
+        "tiny-dungeon": {
+          "url": "/assets/adventure/tiny-dungeon.png",
+          "frameWidth": 16,
+          "frameHeight": 16,
+          "columns": 12,
+          "width": 192,
+          "height": 176,
+          "sha256": "d24e60a41e4ac7a745c0304dfde121143688557f40215f23221c29cfe683825f"
+        }
+      },
+      "roles": {
+        "player": 96,
+        "npc": 84,
+        "enemy_patrol": 110,
+        "enemy_chase": 121,
+        "key": 117,
+        "herb": 113,
+        "treasure": 89,
+        "door": 45,
+        "switch": 32,
+        "landmark": 20,
+        "floor_dungeon": 48,
+        "wall_dungeon": 14,
+        "floor_town": 0,
+        "path_town": 25,
+        "tree": 4,
+        "flowers": 2
+      },
+      "animations": {
+        "walk": "directional flip, step bob and stride tilt using authored single-frame top-down sprites",
+        "limitation": "Packs do not include directional walk frames; no authored eight-direction animation is claimed."
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "tiny-town",
+          "passed": true
+        },
+        {
+          "id": "tiny-dungeon",
+          "passed": true
+        }
+      ]
+    },
+    "game_ir_v2.json": {
+      "schema_version": "2.1",
+      "genre": "adventure",
+      "title": "The Healer's Herbs",
+      "premise": "Explore the peaceful woodland village, chat with the villagers, find three missing magical herbs, and return them to the local healer.",
+      "theme": "woodland",
+      "seed": 42,
+      "tile_size": 32,
+      "combat": false,
+      "areas": [
+        {
+          "name": "Willowbrook Village",
+          "environment": "village",
+          "width": 38,
+          "height": 27,
+          "tiles": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              3,
+              0,
+              3,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              10,
+              11,
+              12,
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              13,
+              14,
+              15,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              16,
+              17,
+              18,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              3,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              0,
+              0,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              3,
+              3,
+              3,
+              0,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              2,
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              0,
+              0,
+              0,
+              0,
+              10,
+              11,
+              12,
+              0,
+              0,
+              0,
+              3,
+              0,
+              3,
+              0,
+              10,
+              11,
+              12,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              10,
+              11,
+              12,
+              0,
+              13,
+              14,
+              15,
+              0,
+              3,
+              3,
+              0,
+              0,
+              3,
+              3,
+              13,
+              14,
+              15,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              13,
+              14,
+              15,
+              0,
+              16,
+              17,
+              18,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              16,
+              17,
+              18,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              16,
+              17,
+              18,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              3,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              10,
+              11,
+              12,
+              1,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              13,
+              14,
+              15,
+              0,
+              3,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              16,
+              17,
+              18,
+              3,
+              0,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "spawn": {
+            "x": 3,
+            "y": 13
+          },
+          "exit": {
+            "x": 34,
+            "y": 13
+          },
+          "actors": [
+            {
+              "id": "village_square",
+              "kind": "landmark",
+              "name": "Village Square",
+              "area": 0,
+              "role": "Central gathering place",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 25,
+              "y": 7
+            },
+            {
+              "id": "piper",
+              "kind": "npc",
+              "name": "Piper",
+              "area": 0,
+              "role": "Village Baker",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Hello there, traveler! Enjoying the sunny village breeze?"
+                ],
+                "active": [
+                  "Have you checked near the gardens for the lost herbs?"
+                ],
+                "completed": [
+                  "Thank you for helping our healer! The village appreciates you."
+                ]
+              },
+              "x": 12,
+              "y": 11
+            },
+            {
+              "id": "eliza",
+              "kind": "npc",
+              "name": "Eliza",
+              "area": 0,
+              "role": "Village Healer",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, friend. I am in dire need of three magical herbs for my remedies."
+                ],
+                "active": [
+                  "Please bring back all three magical herbs so I can prepare the medicine."
+                ],
+                "completed": [
+                  "Wonderful! These herbs are fresh and full of magic. Thank you so much!"
+                ]
+              },
+              "x": 9,
+              "y": 7
+            },
+            {
+              "id": "herb_one",
+              "kind": "item",
+              "name": "Sunpetal Leaf",
+              "area": 0,
+              "role": "Magical Herb",
+              "item": "sunpetal",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 26,
+              "y": 21
+            },
+            {
+              "id": "herb_two",
+              "kind": "item",
+              "name": "Moonmint Sprig",
+              "area": 0,
+              "role": "Magical Herb",
+              "item": "moonmint",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 7,
+              "y": 22
+            },
+            {
+              "id": "herb_three",
+              "kind": "item",
+              "name": "Stardrop Blossom",
+              "area": 0,
+              "role": "Magical Herb",
+              "item": "stardrop",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 18,
+              "y": 5
+            }
+          ]
+        }
+      ],
+      "quests": [
+        {
+          "kind": "explore",
+          "target": "village_square",
+          "count": 1,
+          "text": "Explore the cozy Village Square.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "piper",
+          "count": 1,
+          "text": "Chat with Piper the baker about the village.",
+          "item": ""
+        },
+        {
+          "kind": "talk",
+          "target": "eliza",
+          "count": 1,
+          "text": "Speak with Eliza the healer to learn about the missing herbs.",
+          "item": ""
+        },
+        {
+          "kind": "collect",
+          "target": "herb_one",
+          "count": 1,
+          "text": "Find the Sunpetal Leaf near the gardens.",
+          "item": "sunpetal"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_two",
+          "count": 1,
+          "text": "Find the Moonmint Sprig by the stream.",
+          "item": "moonmint"
+        },
+        {
+          "kind": "collect",
+          "target": "herb_three",
+          "count": 1,
+          "text": "Find the Stardrop Blossom under the old oak tree.",
+          "item": "stardrop"
+        },
+        {
+          "kind": "deliver",
+          "target": "eliza",
+          "count": 1,
+          "text": "Deliver the magical herbs to Eliza the healer.",
+          "item": "sunpetal"
+        }
+      ],
+      "unsupported": [
+        "Cozy non-combat gameplay mechanics beyond basic adventure goals",
+        "Time of day transitions"
+      ],
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Explore the cozy Village Square.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Chat with Piper the baker about the village.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Speak with Eliza the healer to learn about the missing herbs.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_3",
+          "source": "Find the Sunpetal Leaf near the gardens.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_4",
+          "source": "Find the Moonmint Sprig by the stream.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_5",
+          "source": "Find the Stardrop Blossom under the old oak tree.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_6",
+          "source": "Deliver the magical herbs to Eliza the healer.",
+          "constructed": true,
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "adapter": "AdventureScene",
+      "genre": "adventure",
+      "schema_version": "2.1",
+      "seed": 42,
+      "game_url": "http://localhost:5174/studio/play/a6ed2959-515e-4b56-b601-30a9bce305ae",
+      "area_count": 1,
+      "combat": false,
+      "gravity": 0
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 432,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Explore the cozy Village Square.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "village_square",
+                  "kind": "landmark",
+                  "x": 816,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "piper",
+                  "kind": "npc",
+                  "x": 400,
+                  "y": 368,
+                  "health": 2
+                },
+                {
+                  "id": "eliza",
+                  "kind": "npc",
+                  "x": 304,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "herb_one",
+                  "kind": "item",
+                  "x": 848,
+                  "y": 688,
+                  "health": 2
+                },
+                {
+                  "id": "herb_two",
+                  "kind": "item",
+                  "x": 240,
+                  "y": 720,
+                  "health": 2
+                },
+                {
+                  "id": "herb_three",
+                  "kind": "item",
+                  "x": 592,
+                  "y": 176,
+                  "health": 2
+                }
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 140.4166666666666
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 80,
+            "after_y": 54.16666666666666
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              1,
+              1,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              42,
+              48
+            ]
+          }
+        },
+        {
+          "id": "quest_0_explore",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 783,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Chat with Piper the baker about the village.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_1",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Piper\nHello there, traveler! Enjoying the sunny village breeze?"
+          ]
+        },
+        {
+          "id": "quest_1_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 367,
+            "y": 368,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Speak with Eliza the healer to learn about the missing herbs.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Eliza\nWelcome, friend. I am in dire need of three magical herbs for my remedies."
+          ]
+        },
+        {
+          "id": "quest_2_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 271,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the Sunpetal Leaf near the gardens.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_3",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "sunpetal": 1
+          }
+        },
+        {
+          "id": "quest_3_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 848,
+            "y": 688,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the Moonmint Sprig by the stream.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_4",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "sunpetal": 1,
+            "moonmint": 1
+          }
+        },
+        {
+          "id": "quest_4_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 240,
+            "y": 720,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 1,
+              "moonmint": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the Stardrop Blossom under the old oak tree.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_5",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "sunpetal": 1,
+            "moonmint": 1,
+            "stardrop": 1
+          }
+        },
+        {
+          "id": "quest_5_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 592,
+            "y": 176,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 1,
+              "moonmint": 1,
+              "stardrop": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Deliver the magical herbs to Eliza the healer.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_6",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Eliza\nWonderful! These herbs are fresh and full of magic. Thank you so much!"
+          ]
+        },
+        {
+          "id": "quest_6_deliver",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 271,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 0,
+              "moonmint": 1,
+              "stardrop": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1104,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 0,
+              "moonmint": 1,
+              "stardrop": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Explore the cozy Village Square.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 112,
+              "y": 432,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Explore the cozy Village Square.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "village_square",
+                  "kind": "landmark",
+                  "x": 816,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "piper",
+                  "kind": "npc",
+                  "x": 400,
+                  "y": 368,
+                  "health": 2
+                },
+                {
+                  "id": "eliza",
+                  "kind": "npc",
+                  "x": 304,
+                  "y": 240,
+                  "health": 2
+                },
+                {
+                  "id": "herb_one",
+                  "kind": "item",
+                  "x": 848,
+                  "y": 688,
+                  "health": 2
+                },
+                {
+                  "id": "herb_two",
+                  "kind": "item",
+                  "x": 240,
+                  "y": 720,
+                  "health": 2
+                },
+                {
+                  "id": "herb_three",
+                  "kind": "item",
+                  "x": 592,
+                  "y": 176,
+                  "health": 2
+                }
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 112,
+            "after": 140.4166666666666
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 80,
+            "after_y": 54.16666666666666
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              1,
+              1,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              42,
+              48
+            ]
+          }
+        },
+        {
+          "id": "quest_0_explore",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 783,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Chat with Piper the baker about the village.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_1",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Piper\nHello there, traveler! Enjoying the sunny village breeze?"
+          ]
+        },
+        {
+          "id": "quest_1_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 367,
+            "y": 368,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Speak with Eliza the healer to learn about the missing herbs.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Eliza\nWelcome, friend. I am in dire need of three magical herbs for my remedies."
+          ]
+        },
+        {
+          "id": "quest_2_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 271,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the Sunpetal Leaf near the gardens.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_3",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "sunpetal": 1
+          }
+        },
+        {
+          "id": "quest_3_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 848,
+            "y": 688,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the Moonmint Sprig by the stream.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_4",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "sunpetal": 1,
+            "moonmint": 1
+          }
+        },
+        {
+          "id": "quest_4_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 240,
+            "y": 720,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 1,
+              "moonmint": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Find the Stardrop Blossom under the old oak tree.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_5",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "sunpetal": 1,
+            "moonmint": 1,
+            "stardrop": 1
+          }
+        },
+        {
+          "id": "quest_5_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 592,
+            "y": 176,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 1,
+              "moonmint": 1,
+              "stardrop": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Deliver the magical herbs to Eliza the healer.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_6",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Eliza\nWonderful! These herbs are fresh and full of magic. Thank you so much!"
+          ]
+        },
+        {
+          "id": "quest_6_deliver",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 271,
+            "y": 240,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 0,
+              "moonmint": 1,
+              "stardrop": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1104,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "sunpetal": 0,
+              "moonmint": 1,
+              "stardrop": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 0,
+            "x": 112,
+            "y": 432,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Explore the cozy Village Square.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "village_square",
+                "kind": "landmark",
+                "x": 816,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "piper",
+                "kind": "npc",
+                "x": 400,
+                "y": 368,
+                "health": 2
+              },
+              {
+                "id": "eliza",
+                "kind": "npc",
+                "x": 304,
+                "y": 240,
+                "health": 2
+              },
+              {
+                "id": "herb_one",
+                "kind": "item",
+                "x": 848,
+                "y": 688,
+                "health": 2
+              },
+              {
+                "id": "herb_two",
+                "kind": "item",
+                "x": 240,
+                "y": 720,
+                "health": 2
+              },
+              {
+                "id": "herb_three",
+                "kind": "item",
+                "x": 592,
+                "y": 176,
+                "health": 2
+              }
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 0
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Explore the cozy Village Square.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Chat with Piper the baker about the village.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Speak with Eliza the healer to learn about the missing herbs.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_3",
+          "source": "Find the Sunpetal Leaf near the gardens.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_4",
+          "source": "Find the Moonmint Sprig by the stream.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_5",
+          "source": "Find the Stardrop Blossom under the old oak tree.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_6",
+          "source": "Deliver the magical herbs to Eliza the healer.",
+          "constructed": true,
+          "status": "verified"
+        }
+      ],
+      "scope": "Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.",
+      "unsupported": [
+        "Cozy non-combat gameplay mechanics beyond basic adventure goals",
+        "Time of day transitions"
+      ]
+    },
+    "outcome.json": {
+      "status": "READY_WITH_WARNINGS",
+      "visual_quality": "Screenshot review required; functional QA does not certify aesthetics."
+    }
+  }
+}

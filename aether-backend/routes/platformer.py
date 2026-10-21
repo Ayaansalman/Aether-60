@@ -19,9 +19,9 @@ router = APIRouter()
 _worker = asyncio.Lock()
 
 
-def browser_report(game_url, directory):
+def browser_report(game_url, directory, genre="platformer"):
     try:
-        proc = subprocess.run([sys.executable,"-m","services.platformer_qa",game_url,str(directory)],
+        proc = subprocess.run([sys.executable,"-m",("services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
             cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=240)
         return json.loads(proc.stdout.strip())
     except Exception as exc:
@@ -57,6 +57,11 @@ async def run(gid: str, request: Generate):
             job_store.update_job(gid, artifact_paths=artifacts)
 
         try:
+            from services.game_factory import genre_for_prompt
+            if genre_for_prompt(request.prompt)=="adventure":
+                from services.adventure_pipeline import run_adventure
+                await run_adventure(gid,request,artifact,stage,browser_report)
+                return
             artifact("game_intent.json", {"original_prompt": request.prompt, "requirements": extract_requirements(request.prompt),
                 "scope": "Explicit phrases; model interpretation follows. Unrecognized language is not certified."})
             stage("PLANNING", "Interpreting prompt with Gemini" if request.mode=="live" else "Building explicitly labeled offline fixture", "START")
@@ -206,11 +211,19 @@ async def reverify_job(gid: str):
         job=job_store.get_job(gid)
         paths=job['artifact_paths']
         attempt=1+sum(name.startswith('qa_retest_') for name in paths)
-        report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}')
+        genre=json.loads(job['spec_json']).get('genre','platformer')
+        report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}',genre)
         name=f'qa_retest_{attempt}.json';save(gid,name,report);paths.append(name)
-        from schemas.platformer import PlatformerIR
-        ir=PlatformerIR.model_validate_json(job['spec_json'])
-        coverage=requirement_evidence(ir,job['prompt'],job['limitations'],report)
+        from services.game_factory import parse_ir
+        ir=parse_ir(json.loads(job['spec_json']))
+        if genre=='adventure':
+            from services import adventure
+            save(gid,'asset_manifest.json',adventure.asset_manifest(ir.art))
+            save(gid,'asset_validation.json',adventure.validate_assets())
+            save(gid,'validation.json',adventure.validate_world(ir))
+            coverage={'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED', 'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
+        else:
+            coverage=requirement_evidence(ir,job['prompt'],job['limitations'],report)
         previous=json.loads((get_artifacts_dir()/gid/'requirement_report.json').read_text(encoding='utf-8'))
         save(gid,'requirement_report.json',{**previous,**coverage})
         ir.requirements=coverage['requirements'];save(gid,'game_ir_v2.json',ir.model_dump())

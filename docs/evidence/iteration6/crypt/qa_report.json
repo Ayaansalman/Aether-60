@@ -1,0 +1,1474 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 272,
+          "y": 752,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Defeat the skeleton guard",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "guardian",
+              "kind": "enemy",
+              "x": 308.6666666666668,
+              "y": 240,
+              "health": 2,
+              "body": {
+                "x": 298.6666666666668,
+                "y": 230,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            },
+            {
+              "id": "stalker",
+              "kind": "enemy",
+              "x": 688,
+              "y": 304,
+              "health": 2,
+              "body": {
+                "x": 678,
+                "y": 294,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            },
+            {
+              "id": "relic",
+              "kind": "item",
+              "x": 752,
+              "y": 272,
+              "health": 2,
+              "body": {
+                "x": 740,
+                "y": 264,
+                "width": 24,
+                "height": 16,
+                "enabled": true
+              }
+            },
+            {
+              "id": "seal",
+              "kind": "door",
+              "x": 1008,
+              "y": 752,
+              "health": 2,
+              "body": {
+                "x": 992,
+                "y": 736,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjablue",
+          "playerFrame": 0,
+          "animation": "ninja_ninjablue:down:idle",
+          "selectedAssets": [
+            "ninja_chest",
+            "ninja_gem",
+            "ninja_hearts",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjablue",
+            "ninja_projectile",
+            "ninja_skull",
+            "ninja_smoke",
+            "ninja_terrain"
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 272,
+        "after": 302.9999999999998
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 176,
+        "after_y": 152.74999999999991
+      }
+    },
+    {
+      "id": "registered_animation_frames",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "observed_frames": [
+          7,
+          11,
+          15,
+          15,
+          7,
+          11,
+          15
+        ],
+        "asset": "ninja_ninjablue"
+      }
+    },
+    {
+      "id": "directional_art_and_pack",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "directions": [
+          "ninja_ninjablue:left:idle",
+          "ninja_ninjablue:up:idle",
+          "ninja_ninjablue:down:idle"
+        ],
+        "selected_assets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ]
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          5,
+          4,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          170,
+          144
+        ]
+      }
+    },
+    {
+      "id": "enemy_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 291.99999999999966,
+          "y": 240,
+          "health": 2,
+          "body": {
+            "x": 281.99999999999966,
+            "y": 230,
+            "width": 20,
+            "height": 20,
+            "enabled": true
+          }
+        },
+        "after": {
+          "id": "guardian",
+          "kind": "enemy",
+          "x": 257.8666666666659,
+          "y": 240,
+          "health": 2,
+          "body": {
+            "x": 247.86666666666585,
+            "y": 230,
+            "width": 20,
+            "height": 20,
+            "enabled": true
+          }
+        }
+      }
+    },
+    {
+      "id": "combat_health_loss",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 253.46666666666587,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard",
+        "health": 0,
+        "won": false,
+        "lost": true,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 252.36666666666588,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 242.36666666666588,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "restart_after_loss",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 298.6666666666665,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 288.6666666666665,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "locked_door_requires_resources",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 974,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [
+          "Ancient Seal\nAncient Seal is sealed. Requires: key."
+        ],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 290.6666666666663,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 280.6666666666663,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_guardian",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 195.3666666666658,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton sentinel",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_0_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 195.3666666666658,
+        "y": 240,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton sentinel",
+        "health": 4,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "combat_stalker",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 604.9999999999994,
+        "y": 304,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Find the ancient key (0/1)",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_1_defeat",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 604.9999999999994,
+        "y": 304,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Find the ancient key (0/1)",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_2",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "key": 1
+      }
+    },
+    {
+      "id": "quest_2_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 752,
+        "y": 272,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Unlock the ancient passage",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "sealed_passage_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 984,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Unlock the ancient passage",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "unlocked_passage_traversal",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1067.9999999999998,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Claim the magical relic (0/1)",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "seal"
+        ],
+        "activated": [],
+        "actors": [
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": false
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_3_unlock",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1067.9999999999998,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Claim the magical relic (0/1)",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "seal"
+        ],
+        "activated": [],
+        "actors": [
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": false
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "area_transition",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 4,
+        "genre": "adventure",
+        "area": 1,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Claim the magical relic (0/1)",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "seal"
+        ],
+        "activated": [],
+        "actors": [
+          {
+            "id": "treasure",
+            "kind": "treasure",
+            "x": 1264,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 1248,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_4_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 4,
+        "genre": "adventure",
+        "area": 1,
+        "x": 1231,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 2,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "seal"
+        ],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "adventure_completion",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 4,
+        "genre": "adventure",
+        "area": 1,
+        "x": 1392,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "key": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 2,
+        "won": true,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [
+          "seal"
+        ],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "ready": true,
+        "generation": 5,
+        "genre": "adventure",
+        "area": 0,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Defeat the skeleton guard",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "guardian",
+            "kind": "enemy",
+            "x": 288.66666666666623,
+            "y": 240,
+            "health": 2,
+            "body": {
+              "x": 278.66666666666623,
+              "y": 230,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "stalker",
+            "kind": "enemy",
+            "x": 688,
+            "y": 304,
+            "health": 2,
+            "body": {
+              "x": 678,
+              "y": 294,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "relic",
+            "kind": "item",
+            "x": 752,
+            "y": 272,
+            "health": 2,
+            "body": {
+              "x": 740,
+              "y": 264,
+              "width": 24,
+              "height": 16,
+              "enabled": true
+            }
+          },
+          {
+            "id": "seal",
+            "kind": "door",
+            "x": 1008,
+            "y": 752,
+            "health": 2,
+            "body": {
+              "x": 992,
+              "y": 736,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_chest",
+          "ninja_gem",
+          "ninja_hearts",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

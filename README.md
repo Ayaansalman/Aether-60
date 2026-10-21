@@ -1,16 +1,20 @@
 # Aether — from an idea to a playable world
 
-Aether is a no-code game creation studio. This milestone generates sprite-based 2D platformers from natural-language prompts using Gemini, typed design contracts, deterministic level composition, Phaser, and real browser QA.
+Aether is a no-code game creation studio. It generates sprite-based 2D platformers and top-down adventures from natural-language prompts using Gemini, genre-specific design contracts, seeded world construction, Phaser, and real browser QA.
 
 The active product is **`aether-frontend`**: an original landing page, creator workspace, playable preview, touch/keyboard controls, and Engineering Inspector backed by persisted events and artifacts. The separate `aether-web` Next starter is not required. Original arena routes and v1 APIs remain available.
 
 ```text
-Prompt → Gemini GameDesign → capability checks → seeded GameIR v2
-       → ballistic validation → CC0 assets → Phaser runtime
-       → Chromium QA → bounded targeted layout repair → result
+Prompt → genre routing → Gemini design → validated genre-specific GameIR
+       → route/connectivity checks → CC0 assets → Phaser genre adapter
+       → Chromium QA → diagnosis / supported targeted repair → result
 ```
 
 Supported: accelerating movement, buffered/coyote-time jumping, double jump, dash, tilemap terrain, ascending routes, moving platforms, animated sprites, patrol enemies, stomping, hazards, crystals, checkpoints, health, win/loss and restart. Unsupported mechanics are reported.
+
+Top-down adventures add explorable villages/forests/ruins/dungeons, NPC dialogue, sequential event-based quests, inventory and multi-item deliveries, keys, switches, solid locked passages, area transitions and optional projectile combat. Natural-language prompts select the runtime automatically. Try the Village and Dungeon samples in the creator. See [Iteration 5 results, limits and reproduction](docs/ITERATION5_RESULTS.md).
+
+Adventure artwork now defaults to a semantic Ninja Adventure catalog with authored directional animations. Ansimuz Tiny RPG Forest is a separate selectable forest family; legacy Kenney artwork remains compatible. Original CC0 licenses, frame/hash validation and resource-export allowlists are included. See [asset library expansion and verification](docs/ASSET_LIBRARY_EXPANSION.md).
 
 ## Run
 
@@ -59,3 +63,6 @@ Iteration 2 has 164 passing backend tests, five shared runtime behavior tests, a
 - [Asset sources and dimensions](aether-frontend/public/assets/README.md)
 
 Artwork: Kenney Pixel Platformer and Industrial Expansion, CC0; original procedural ice, relic and exit components use project source terms. Licenses and asset registry are bundled. No code has been pushed or deployed.
+
+
+Adventure world design and the playable healer/crypt acceptance cases: [Iteration 6 results, verification and reproduction](docs/ITERATION6_RESULTS.md).
