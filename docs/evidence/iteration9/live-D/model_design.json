@@ -1,0 +1,219 @@
+{
+  "boss": null,
+  "collectibles_enabled": false,
+  "title": "Industrial Infiltration",
+  "premise": "Navigate a high-security industrial facility, bypass patrolling guards, ride moving machinery, and flip two control switches to unlock the exit gate.",
+  "genre": "platformer",
+  "theme": "industrial",
+  "difficulty": "balanced",
+  "objective": "reach_exit",
+  "abilities": [
+    "double_jump"
+  ],
+  "checkpoints": true,
+  "moving_platforms": true,
+  "platform_motion": {
+    "axis": "horizontal",
+    "pattern": "sine",
+    "distance": 60,
+    "period_ms": 3000
+  },
+  "player_attack": "stomp",
+  "interactions": [
+    {
+      "trigger": "interact",
+      "section": 2,
+      "door_section": 7,
+      "gate": "sec_gate"
+    },
+    {
+      "trigger": "interact",
+      "section": 5,
+      "door_section": 7,
+      "gate": "sec_gate"
+    }
+  ],
+  "objectives": [
+    {
+      "kind": "unlock",
+      "count": 2,
+      "seconds": 30,
+      "enemy_behavior": null
+    }
+  ],
+  "campaign_objectives": [],
+  "slippery": false,
+  "falling_icicles": false,
+  "icicle_trigger": "mixed",
+  "hazard_period_ms": 2200,
+  "timed_hazards": true,
+  "exit_indicator": "glow",
+  "exit_style": "gate",
+  "collectible": "crystals",
+  "level_count": 1,
+  "levels": [],
+  "topology": "journey",
+  "sections": [
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 0,
+      "gap": 1,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": true,
+      "hazards": true,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "moving"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 0,
+      "gap": 1,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "exploration"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": true,
+      "hazards": true,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "moving"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "combat"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 1,
+      "gap": 1,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "exploration"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": true,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "hazards"
+    },
+    {
+      "kind": "factory",
+      "length": 6,
+      "elevation": 0,
+      "gap": 1,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    }
+  ],
+  "unsupported": [],
+  "design_notes": [
+    "Switches in sections 2 and 5 share the gate ID 'sec_gate' linked to the security door in section 7, ensuring both must be activated before the exit unlocks.",
+    "Moving machinery is represented via moving platforms across factory sections.",
+    "Patrolling guards use standard stomp combat."
+  ],
+  "requested_features": [
+    {
+      "source": "industrial platformer",
+      "capability": "factory_environment",
+      "description": "Game staged in an industrial factory setting with timed hazards."
+    },
+    {
+      "source": "activate two switches to open a security gate",
+      "capability": "switches",
+      "description": "Two interactable switches linked to a security gate door."
+    },
+    {
+      "source": "avoiding patrolling guards",
+      "capability": "patrol",
+      "description": "Patrolling guard enemies moving back and forth across platforms."
+    },
+    {
+      "source": "moving machinery",
+      "capability": "moving_platforms",
+      "description": "Moving platforms acting as industrial machinery obstacles."
+    },
+    {
+      "source": "exit should only become available after both switches are activated",
+      "capability": "combat_objective",
+      "description": "Exit door is locked until all required switches are flipped."
+    }
+  ]
+}

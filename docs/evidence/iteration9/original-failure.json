@@ -1,0 +1,72 @@
+{
+  "game_id": "0f0ce45f-fdcb-490b-bbfd-cefef6483eff",
+  "original_prompt": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe enemy spawned will have its type(chaser , or bullet shooting ) at random \n\nthe enemy type can shoot will shoot 5 bullets after 1 second each and then die",
+  "invalid_actors": [
+    {
+      "id": "survival_relic",
+      "kind": "item",
+      "name": "Survival Emblem",
+      "area": 0,
+      "region": "arena_zone",
+      "quantity": 1
+    }
+  ],
+  "quests": [
+    {
+      "kind": "talk",
+      "target": "survivor_guide",
+      "text": "Speak with the Survival Guide to learn the rules of the arena."
+    },
+    {
+      "kind": "defeat",
+      "target": "chaser_enemy",
+      "count": 1,
+      "text": "Survive and defeat the aggressive chaser enemy."
+    },
+    {
+      "kind": "defeat",
+      "target": "shooter_enemy",
+      "count": 1,
+      "text": "Evade incoming bullets and defeat the shooter enemy."
+    },
+    {
+      "kind": "collect",
+      "target": "survival_relic",
+      "count": 1,
+      "text": "Collect the Survival Emblem dropped after proving your endurance."
+    },
+    {
+      "kind": "unlock",
+      "target": "arena_door",
+      "text": "Use the Survival Emblem to unlock the sanctuary door."
+    }
+  ],
+  "actor_roles": [
+    {
+      "id": "survivor_guide",
+      "kind": "npc",
+      "name": "Guide"
+    },
+    {
+      "id": "survival_relic",
+      "kind": "item",
+      "name": "Survival Emblem"
+    },
+    {
+      "id": "arena_door",
+      "kind": "door",
+      "name": "Sanctuary Door"
+    },
+    {
+      "id": "chaser_enemy",
+      "kind": "enemy",
+      "name": "Chaser Fiend"
+    },
+    {
+      "id": "shooter_enemy",
+      "kind": "enemy",
+      "name": "Sniper Fiend"
+    }
+  ],
+  "explanation": "The designer inserted survival_relic / Survival Emblem as an inventory item despite the absence of any inventory or collection request; required item ID is absent. This was an unsolicited objective artifact, not an enemy projectile."
+}

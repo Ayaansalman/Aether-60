@@ -21,7 +21,7 @@ _worker = asyncio.Lock()
 
 def browser_report(game_url, directory, genre="platformer"):
     try:
-        proc = subprocess.run([sys.executable,"-m",("services.boss_qa" if genre=="boss" else "services.runner_qa" if genre=="runner" else "services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
+        proc = subprocess.run([sys.executable,"-m",("services.composition_qa" if genre=="composition" else "services.boss_qa" if genre=="boss" else "services.runner_qa" if genre=="runner" else "services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
             cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=240)
         return json.loads(proc.stdout.strip())
     except Exception as exc:
@@ -61,6 +61,10 @@ async def run(gid: str, request: Generate):
             stage('PLANNING','Interpreting central loop, controls and constraints','START')
             intent,intent_provider=await asyncio.to_thread(interpret,request.prompt,request.mode)
             artifact('semantic_intent.json', {**intent.model_dump(),'provenance':intent_provider})
+            from services.semantic_intent import feasibility
+            compatibility=feasibility(intent.model_dump())
+            artifact('capability_compatibility.json',compatibility)
+            if compatibility['overall']=='FAIL':raise ValueError('Requested behavior is incompatible with the selected controls. See capability_compatibility.json.')
             if intent.genre=='unsupported': raise ValueError('Requested game family is unsupported; see semantic_intent.json')
             if intent.genre=='runner':
                 from services.runner import run_runner
@@ -85,6 +89,7 @@ async def run(gid: str, request: Generate):
                 "requested_mechanics":requirements['requirements'],"model_requests":[f.model_dump() for f in design.requested_features],"unsupported":design.unsupported,"interpretation_source":provenance})
             artifact("game_design.json", design.model_dump())
             artifact("provider.json", provenance)
+            artifact("design_validation.json", {"attempts":provenance.get("validation_attempts",[]),"maximum_corrections":1})
             job_store.update_job(gid, model_id=provenance['model'] or "fixture", limitations=design.unsupported + [note for note in design.design_notes if 'approximat' in note.lower()])
             stage("DESIGNING", "Validated typed design; composing sections and registered mechanics")
             ir = construct(design, request.prompt, request.seed)
@@ -178,7 +183,10 @@ async def run(gid: str, request: Generate):
         except Exception as exc:
             # Never persist raw provider messages: upstream errors can echo credentials/request content.
             code = getattr(exc, 'code', 'GENERATION_FAILED')
-            safe = str(exc)[:500] if isinstance(exc, ValueError) else f"{code}: {type(exc).__name__}. Check provider configuration or retry later."
+            from pydantic import ValidationError
+            if hasattr(exc,'attempts'):artifact('design_validation.json',{'attempts':exc.attempts,'maximum_corrections':1,'original_prompt':request.prompt})
+            elif isinstance(exc,ValidationError):artifact('design_validation.json',{'errors':exc.errors(include_url=False,include_context=False,include_input=False)})
+            safe = 'The generated design contains inconsistent fields. See design_validation.json in the Inspector.' if isinstance(exc,ValidationError) else str(exc)[:500] if isinstance(exc, ValueError) else f"{code}: {type(exc).__name__}. Check provider configuration or retry later."
             event_store.add_event(gid, stage="FAILED", result="FAILED", detail=safe)
             job_store.update_job(gid, status="FAILED", stage="FAILED", error_code=code)
 
@@ -223,7 +231,8 @@ async def reverify_job(gid: str):
         paths=job['artifact_paths']
         attempt=1+sum(name.startswith('qa_retest_') for name in paths)
         genre=json.loads(job['spec_json']).get('genre','platformer')
-        qa_genre='boss' if json.loads(job['spec_json']).get('boss') else genre
+        data=json.loads(job['spec_json'])
+        qa_genre='composition' if data.get('gameplay') and data['gameplay']['outcome']!='quests' else 'boss' if data.get('boss') else genre
         report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}',qa_genre)
         name=f'qa_retest_{attempt}.json';save(gid,name,report);paths.append(name)
         from services.game_factory import parse_ir

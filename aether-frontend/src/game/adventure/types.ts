@@ -1,3 +1,4 @@
+import type {Gameplay} from './behaviors';
 export type BiomeRegion={id:string;name:string;biome:'forest'|'garden'|'dark'|'snow'|'frozen_lake'|'icy_ruins';x:number;y:number;width:number;height:number;slippery:boolean};
 export type Dialogue = { greeting: string[]; active: string[]; completed: string[] };
 export type Actor = {
@@ -10,10 +11,11 @@ export type Area = { regions?:BiomeRegion[]; name: string; environment: string; 
 export type AdventureIR = {
   schema_version:'2.1'; genre:'adventure'; title:string; premise:string; theme:string; seed:number;
   tile_size:32; combat:boolean; areas:Area[]; quests:Goal[]; unsupported:string[];
+  gameplay?:Gameplay|null;
   art?:AdventureArt|null;
   requirements:{source:string;status:string}[];
 };
-export type AdventureUI = {objective:string;inventory:string;dialogue:string;health:number;progress:string};
+export type AdventureUI = {objective:string;inventory:string;dialogue:string;health:number;progress:string;score?:number};
 export type TextureAsset={id:string;url:string;pack_id:string;style_family:string;category:string;width:number;height:number;frame_width:number;frame_height:number;scale:number;
   animations:Record<string,Record<string,number[]>>;body:{width:number;height:number;offset_x:number;offset_y:number}|null};
 export type AssetVisual={asset:string;frame:number;open_frame?:number|null};

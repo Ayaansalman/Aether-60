@@ -1,0 +1,14 @@
+{
+  "provider": "OpenAICompatProvider",
+  "model": "gemini-3.5-flash-lite",
+  "live": true,
+  "initial_latency_ms": 2413,
+  "normalizations": [],
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "model": "gemini-3.5-flash-lite"
+    }
+  ]
+}

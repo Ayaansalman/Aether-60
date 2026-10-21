@@ -7,11 +7,12 @@ from services.orchestrator import get_artifacts_dir
 
 
 async def run_adventure(gid, request, artifact, stage, browser_report, intent=None):
-    artifact('game_intent.json',{'original_prompt':request.prompt,'genre':'adventure','routing':'Explicit genre/interaction phrases; separate adventure adapter'})
+    artifact('game_intent.json',{'original_prompt':request.prompt,'genre':'adventure','routing':'Semantic control selection; modern top-down adapter'})
     stage('PLANNING','Planning top-down adventure with configured provider' if request.mode=='live' else 'Planning labeled deterministic adventure fixture','START')
     design,provenance=await asyncio.to_thread(adventure.plan,request.prompt,request.mode,lambda raw:artifact('model_design.json',raw),intent)
     if request.mode=='fixture':artifact('model_design.json',design.model_dump())
     artifact('provider.json',provenance)
+    artifact('design_validation.json',{'attempts':provenance.get('validation_attempts',[]),'maximum_corrections':1,'original_prompt':request.prompt})
     artifact('design_normalization.json',{'changes':provenance.get('normalizations',[])})
     artifact('interpretation_guard.json',adventure.enforce_requirements(design,request.prompt))
     artifact('game_design.json',design.model_dump());artifact('final_design.json',design.model_dump())
@@ -19,9 +20,13 @@ async def run_adventure(gid, request, artifact, stage, browser_report, intent=No
         'gameplay':{'combat':design.combat,'quests':[q.model_dump() for q in design.quests]},
         'areas':[a.model_dump() for a in design.areas],'unsupported':design.unsupported,'interpretation_source':provenance})
     job_store.update_job(gid,model_id=provenance['model'] or 'fixture',limitations=design.unsupported)
-    stage('DESIGNING','Composing seeded connected areas, NPCs, inventory and event-driven quests')
+    stage('DESIGNING','Constructing validated world, requested actors and typed gameplay relationships')
     stage('SELECTING_ASSETS','Selecting one coherent registered visual family and semantic actor/quest resources')
     ir=adventure.construct(design,request.prompt,request.seed)
+    from services.semantic_intent import fidelity
+    preliminary=fidelity(ir,intent)
+    artifact('semantic_requirement_report.json',preliminary)
+    if preliminary['overall']=='FAIL':raise ValueError('Construction did not preserve required controls or mechanics. See semantic_requirement_report.json.')
     artifact('world_plan.json',{'seed':ir.seed,'areas':[
         {'name':a.name,'method':'settlement and woodland zones' if a.environment in ('village','forest') else 'connected room graph',
          'zones':a.zones,'buildings':len(a.buildings),'trees':len(a.trees),
@@ -29,7 +34,7 @@ async def run_adventure(gid, request, artifact, stage, browser_report, intent=No
         for a in ir.areas]})
     stage('VALIDATING_SPEC','Checking destination connectivity, dialogue references and quest prerequisites')
     validation=adventure.validate_world(ir);artifact('validation.json',validation)
-    artifact('repair_report.json',{'attempts':[],'maximum':0,'scope':'Connected paths are constructed directly. Invalid resource/quest designs fail validation; no speculative runtime repair.'})
+    artifact('repair_report.json',{'attempts':provenance.get('validation_attempts',[]),'maximum':1,'scope':'One bounded design correction; typed semantic gameplay binding. No runtime substitution.'})
     if validation['overall']!='PASS':
         blocked=[check['id'] for check in validation['checks'] if not check['passed']]
         raise ValueError('The generated world blocks these objectives: '+ '; '.join(blocked[:3])+'. Details are saved in validation.json.')
@@ -48,12 +53,13 @@ async def run_adventure(gid, request, artifact, stage, browser_report, intent=No
         'seed':ir.seed,'game_url':url,'area_count':len(ir.areas),'combat':ir.combat,'gravity':0,
         'asset_pack':ir.art.pack_id if ir.art else 'kenney_tiny'})
     stage('TESTING','Running real Chromium adventure interaction checks','START')
-    report=await asyncio.to_thread(browser_report,url,get_artifacts_dir()/gid,'adventure')
+    report=await asyncio.to_thread(browser_report,url,get_artifacts_dir()/gid,'composition' if ir.gameplay and ir.gameplay.outcome!='quests' else 'adventure')
     artifact('qa_report_initial.json',report);artifact('qa_report.json',report)
     artifact('diagnosis.json',{'failures':[c for c in report['checks'] if not c['passed']],'repairs_applied':0})
     # Construction evidence is intentionally distinct from semantic prompt fidelity.
     ir.requirements=[{'id':f'quest_{i}','source':q.text,'constructed':True,
         'status':'verified' if report['overall']=='PASS' else 'constructed_unverified'} for i,q in enumerate(ir.quests)]
+    if ir.gameplay:ir.requirements.extend(fidelity(ir,intent,report)['requirements'])
     artifact('requirement_report.json',{'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED','requirements':ir.requirements,
         'scope':'Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.','unsupported':design.unsupported})
     artifact('game_ir_v2.json',ir.model_dump())

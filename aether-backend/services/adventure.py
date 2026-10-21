@@ -107,7 +107,17 @@ def plan(prompt, mode, raw_callback=None, intent=None):
     provider=get_provider()
     if isinstance(provider,MockModelProvider):
         raise ValueError('Live mode requires a configured model provider. Fixture mode is available offline.')
-    system='''Biome regions and localized slippery momentum are implemented runtime capabilities. Do not list them as unsupported.
+    system='''You also construct non-quest top-down games using optional typed gameplay components.
+Top-down controls do NOT imply inventory, NPCs, quests, items or exit gates.
+For continuous survival set gameplay.outcome=endless, scoring=survival_time, health as requested;
+use archetypes and spawns for timed random spawning. Each spawn chooses uniformly among referenced archetypes.
+Shooter archetypes need attack with shots, interval_ms, windup_ms, projectile_speed, after.
+Attack shots are counted exactly; after=despawn removes the shooter after its final projectile.
+Only inventory pickups are kind=item and require an inventory item ID. Projectiles are attack components, never items.
+Set actors=[] and quests=[] when no static actors or quests are requested. combat=true enables damage;
+gameplay.player_attack separately enables player weapons. Never grant weapons for dodge-only play.
+Use one connected area for composed behaviors. Keep existing quests for actual quest games.
+Biome regions and localized slippery momentum are implemented runtime capabilities. Do not list them as unsupported.
 Biome regions are spatial rectangles within one 48x32 area (interior x=1..46,y=1..30).
 Use AreaDesign.regions for same-world forest, flower garden, dark crypt, snow, frozen_lake and icy_ruins (biome IDs forest/garden/dark/snow/frozen_lake/icy_ruins). Dark and garden halves MUST use dark and garden, never icy_ruins as a proxy for dark. Regions change local appearance while preserving dungeon walls and corridors. Later regions override earlier regions, so a large forest may surround a smaller lake. Give each an id/name/biome/x/y/width/height. slippery=true ONLY when requested. Set actor.region to the requested location (crystal in icy ruins, villager in forest). Preserve same-level constraints with exactly one area; use separate areas only for explicit separate levels.
 You design Aether top-down adventures. Return ONLY JSON matching the schema below.
@@ -139,13 +149,36 @@ Schema: '''+json.dumps(AdventureDesign.model_json_schema())
     if intent: system += "\nPreserve this semantic interpretation: "+json.dumps(intent)
     result=provider.complete(system,prompt)
     text=re.sub(r'^```(?:json)?\s*|\s*```$','',result.text.strip())
-    raw=json.loads(text)
+    try:raw=json.loads(text)
+    except ValueError:raw={'invalid_json':text}
     if raw_callback:raw_callback(raw)
-    normalized,changes=normalize_outdoor_return(raw)
-    design=AdventureDesign.model_validate(normalized)
+    from services.design_validation import validated_response
+    changes=[]
+    def prepare(data):
+        normalized,normalizations=normalize_outdoor_return(data)
+        changes.extend(normalizations)
+        if intent and intent.get('gameplay') is not None:
+            if normalized.get('gameplay') != intent['gameplay']:
+                changes.append({'field':'gameplay','before':normalized.get('gameplay'),'after':intent['gameplay'],'reason':'Typed semantic behavior contract binds construction'})
+            normalized['gameplay']=intent['gameplay']
+        required={r['capability'] for r in (intent or {}).get('requirements',[]) if r.get('status')!='unsupported'}
+        kinds={a.get('kind') for a in normalized.get('actors',[])}
+        systems=normalized.get('gameplay') or {}
+        violations=[]
+        if 'no_combat' in required and (normalized.get('combat') or 'enemy' in kinds or systems.get('archetypes')):violations.append('no_combat forbids hostile enemies and combat')
+        if 'no_inventory' in required and ('item' in kinds or any(q.get('kind')=='deliver' for q in normalized.get('quests',[]))):violations.append('no_inventory forbids inventory items and deliveries')
+        if 'no_quests' in required and normalized.get('quests'):violations.append('no_quests requires quests=[]')
+        if 'no_npcs' in required and 'npc' in kinds:violations.append('no_npcs forbids NPC actors')
+        if 'no_collectibles' in required and kinds & {'item','treasure'}:violations.append('no_collectibles forbids pickups and treasure')
+        if 'no_exit' in required and systems.get('outcome') not in ('endless','survive'):violations.append('no_exit requires a non-exit outcome')
+        for req in (intent or {}).get('requirements',[]):
+            if req['capability']=='single_level' and len(normalized.get('areas',[]))!=(req.get('count') or 1):violations.append('single_level area count was not preserved')
+        if violations:raise ValueError('; '.join(violations))
+        return normalized
+    design,attempts=validated_response(provider,system,prompt,result,AdventureDesign,prepare)
     if re.search(r'peaceful|no combat|no enemies|rather than combat',prompt,re.I) and design.combat:
         raise ValueError('Model contradicted explicit peaceful requirement')
-    return design, {'provider':type(provider).__name__,'model':result.model,'live':True,'latency_ms':result.latency_ms,'normalizations':changes}
+    return design, {'provider':type(provider).__name__,'model':attempts[-1]['model'],'live':True,'initial_latency_ms':result.latency_ms,'normalizations':changes,'validation_attempts':attempts}
 
 
 def enforce_requirements(design, prompt):
@@ -202,7 +235,7 @@ def construct(design, prompt, seed=None):
     from services.adventure_world import build_area
     areas=[build_area(design,index,seed) for index in range(len(design.areas))]
     from services.adventure_assets import choose_art
-    return AdventureIR(title=design.title,premise=design.premise,theme=design.theme,seed=seed,combat=design.combat,art=choose_art(design,prompt,seed),
+    return AdventureIR(title=design.title,premise=design.premise,theme=design.theme,seed=seed,combat=design.combat,gameplay=design.gameplay,art=choose_art(design,prompt,seed),
                        areas=areas,quests=design.quests,unsupported=design.unsupported)
 
 
@@ -218,6 +251,12 @@ def validate_world(ir):
         targets=[(a.x,a.y) for a in area.actors]+[(area.exit['x'],area.exit['y'])]
         targets += [(p['x'],p['y']) for a in area.actors for p in a.pickups]
         checks.append({'id':area.name,'passed':all(t in seen for t in targets),'reachable_tiles':len(seen),'destinations':len(targets)})
+        if ir.gameplay and ir.gameplay.spawns:
+            candidates=[(x*32+16,y*32+16) for x,y in seen if all((x+dx,y+dy) in seen for dx in (-1,0,1) for dy in (-1,0,1))
+                and all((a.x-x)**2+(a.y-y)**2>4 for a in area.actors)]
+            safe=all(any((x-(area.spawn['x']*32+16))**2+(y-(area.spawn['y']*32+16))**2>=rule.safe_radius**2 for x,y in candidates) for rule in ir.gameplay.spawns)
+            checks.append({'id':'spawn_clearance','passed':safe,'valid_positions':len(candidates),'scope':'Connected 3x3 body clearance and initial spawn exclusion radius; runtime rechecks player/enemy distance'})
+
     # Symbolic ordered objective replay catches consumed-item and premature pickup softlocks.
     actors={a.id:a for area in ir.areas for a in area.actors};inventory={};picked=set();activated=set();unlocked=set()
     def reachable(area):

@@ -1,0 +1,99 @@
+{
+  "live-A": {
+    "overall": "PASS",
+    "passed": 12,
+    "checks": 12
+  },
+  "live-D": {
+    "overall": "PASS",
+    "passed": 14,
+    "checks": 14
+  },
+  "boss": {
+    "overall": "PASS",
+    "passed": 10,
+    "checks": 10
+  },
+  "biomes": {
+    "overall": "PASS",
+    "passed": 20,
+    "checks": 20
+  },
+  "easy-runner": {
+    "overall": "PASS",
+    "passed": 7,
+    "checks": 7,
+    "design": {
+      "difficulty": "easy",
+      "theme": "forest",
+      "player": "creature",
+      "speed": 210.0,
+      "max_speed": 280.0,
+      "challenge": {
+        "patterns": [
+          "single",
+          "rhythm",
+          "escalation",
+          "mixed",
+          "recovery"
+        ],
+        "recovery": 0.9,
+        "spacing": 2.1,
+        "precision": 0.3,
+        "transition": 30.0,
+        "sequence_length": 3,
+        "rest_every": 2
+      }
+    }
+  },
+  "extreme-runner": {
+    "overall": "PASS",
+    "passed": 7,
+    "checks": 7,
+    "design": {
+      "difficulty": "extreme",
+      "theme": "factory",
+      "player": "robot",
+      "speed": 390.0,
+      "max_speed": 500.0,
+      "challenge": {
+        "patterns": [
+          "single",
+          "rhythm",
+          "escalation",
+          "mixed",
+          "recovery"
+        ],
+        "recovery": 0.1,
+        "spacing": 0.95,
+        "precision": 0.82,
+        "transition": 155.0,
+        "sequence_length": 6,
+        "rest_every": 6
+      }
+    }
+  },
+  "api-replay-A": {
+    "status": "READY",
+    "url": "http://localhost:5173/studio/play/5c220870-0d7c-465f-94b6-f4cc4b57ca61",
+    "runtime": "PASS",
+    "passed": 12,
+    "checks": 12,
+    "semantic": "PASS"
+  },
+  "api-replay-D": {
+    "status": "READY_WITH_WARNINGS",
+    "url": "http://localhost:5173/studio/play/584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+    "runtime": "PASS",
+    "passed": 15,
+    "checks": 15,
+    "semantic": "WARN"
+  },
+  "automated": {
+    "backend_passed": 110,
+    "frontend_passed": 36,
+    "build": "PASS",
+    "lint": "PASS",
+    "scope": "Focused selection, not exhaustive audit"
+  }
+}

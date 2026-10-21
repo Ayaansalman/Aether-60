@@ -74,18 +74,26 @@ def compile_interactions(design, platforms, entities, prefix):
     for index, entity in enumerate(entities): entity.id = f'{prefix}_{entity.kind}_{index}'
     route = [p for p in platforms if not p.moving and p.route == 'main'][1:]
     links = []
+    gates = {}
     for index, interaction in enumerate(design.interactions):
         if not 0 <= interaction.section < interaction.door_section < len(route):
             raise ValueError('Switch must precede its door on existing level sections')
         if interaction.trigger == 'projectile' and design.player_attack != 'projectile':
             raise ValueError('Projectile switches require the player projectile attack')
         source, target = route[interaction.section], route[interaction.door_section]
-        switch_id, door_id = f'{prefix}_trigger_{index}', f'{prefix}_door_{index}'
-        entities.extend([
-            Entity(id=switch_id, kind='pressure_plate' if interaction.trigger == 'pressure' else 'switch',
-                   activation=interaction.trigger, x=(source.x+(2.1 if interaction.trigger=='projectile' else 1.1))*36, y=source.y*36-(6 if interaction.trigger == 'pressure' else 24), platform=platforms.index(source)),
-            Entity(id=door_id, kind='door', x=(target.x+target.width-1.5)*36, y=target.y*36-90, platform=platforms.index(target))])
-        links.append(BehaviorLink(sources=[switch_id], target=door_id))
+        switch_id = f'{prefix}_trigger_{index}'
+        gate_key = ('named',interaction.gate) if interaction.gate else ('isolated',index)
+        entities.append(Entity(id=switch_id, kind='pressure_plate' if interaction.trigger == 'pressure' else 'switch',
+                   activation=interaction.trigger, x=(source.x+(2.1 if interaction.trigger=='projectile' else 1.1))*36, y=source.y*36-(6 if interaction.trigger == 'pressure' else 24), platform=platforms.index(source)))
+        if gate_key in gates:
+            link, section = gates[gate_key]
+            if section != interaction.door_section:raise ValueError('Shared gate switches must reference the same door section')
+            link.sources.append(switch_id)
+        else:
+            door_id=f'{prefix}_door_{index}'
+            entities.append(Entity(id=door_id, kind='door', x=(target.x+target.width-1.5)*36, y=target.y*36-90, platform=platforms.index(target)))
+            link=BehaviorLink(sources=[switch_id],target=door_id)
+            gates[gate_key]=(link,interaction.door_section);links.append(link)
     goals = compile_goals(design.objectives, entities, prefix)
     # Physical doors also gate the exit, preventing an optional route from bypassing the puzzle.
     if links and not any(goal.kind == 'unlock' for goal in goals):

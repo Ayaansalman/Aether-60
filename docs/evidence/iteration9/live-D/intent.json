@@ -1,0 +1,103 @@
+{
+  "genre": "platformer",
+  "loop": "platformer_level_completion",
+  "control": "platform",
+  "requirements": [
+    {
+      "source": "industrial platformer",
+      "meaning": "Platformer game featuring an industrial theme and mechanical obstacles",
+      "capability": "platform_movement",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "mandatory_route_edges",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true
+    },
+    {
+      "source": "industrial platformer",
+      "meaning": "Visual setting styled as an industrial factory",
+      "capability": "visual_theme",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "theme_applied",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true
+    },
+    {
+      "source": "activate two switches to open a security gate",
+      "meaning": "Two switches must be activated to open the security gate",
+      "capability": "switch_gate",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "switch_door",
+      "biomes": [],
+      "count": 2,
+      "scope": "game",
+      "mandatory": true
+    },
+    {
+      "source": "avoiding patrolling guards",
+      "meaning": "Patrolling guard enemies move back and forth along platforms",
+      "capability": "patrol_enemies",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "enemy_patrol",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true
+    },
+    {
+      "source": "moving machinery",
+      "meaning": "Moving platforms act as industrial machinery obstacles",
+      "capability": "moving_platforms",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "moving_platform_motion",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true
+    },
+    {
+      "source": "exit should only become available after both switches are activated",
+      "meaning": "Level exit is locked until the switch gate requirements are met",
+      "capability": "restart",
+      "status": "planned",
+      "depends_on": [
+        "switch_gate"
+      ],
+      "verification": "rapid_restart",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true
+    }
+  ],
+  "arcade": null,
+  "perspective": "side_scrolling",
+  "structure": "connected_levels",
+  "loops": [
+    "exploration",
+    "avoidance",
+    "quest"
+  ],
+  "gameplay": null,
+  "provenance": {
+    "provider": "OpenAICompatProvider",
+    "model": "gemini-3.5-flash-lite",
+    "live": true,
+    "validation_attempts": [
+      {
+        "attempt": 1,
+        "valid": true,
+        "model": "gemini-3.5-flash-lite"
+      }
+    ],
+    "source_grounding": []
+  }
+}

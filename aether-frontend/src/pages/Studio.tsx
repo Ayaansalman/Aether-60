@@ -629,7 +629,7 @@ function Workspace() {
                     {spec.genre === 'adventure' && <><kbd>↑</kbd><kbd>↓</kbd></>}
                     <span>Move</span>
                   </div>}
-                  <div>
+                  {!(spec.genre === "adventure" && spec.gameplay && spec.gameplay.outcome!=="quests") && <div>
                     <kbd>{spec.genre === "adventure" ? "E" : "SPACE"}</kbd>
                     <span>
                       {spec.genre === "adventure" ? "Interact (E)" : spec.genre === "runner" && spec.mode === "flap" ? "Flap / tap" : "Jump"}
@@ -637,7 +637,7 @@ function Workspace() {
                         ? " / double jump"
                         : ""}
                     </span>
-                  </div>
+                  </div>}
                   {(spec?.genre === "platformer" ? spec.player.abilities : []).includes("dash") && (
                     <div>
                       <kbd>SHIFT</kbd>
@@ -648,7 +648,7 @@ function Workspace() {
                     <kbd>R</kbd>
                     <span>Restart</span>
                   </div>
-                  <span className="focus-hint">{spec.genre === "runner" ? `Automatic scrolling · Space or tap: ${spec.mode === "flap" ? "flap upward" : "jump"} · R: restart` : "Click game to focus · WASD / arrows: move · E: interact · F/X: attack when equipped"}</span>
+                  <span className="focus-hint">{spec.genre === "runner" ? `Automatic scrolling · Space or tap: ${spec.mode === "flap" ? "flap upward" : "jump"} · R: restart` : spec.genre === "adventure" && spec.gameplay && spec.gameplay.outcome!=="quests" ? "Click game to focus · WASD / arrows: move · R: restart" : "Click game to focus · WASD / arrows: move · E: interact · F/X: attack when equipped"}</span>
                 </div>}
               </>
             ) : (

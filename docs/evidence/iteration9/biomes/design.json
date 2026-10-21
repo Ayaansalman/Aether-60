@@ -1,0 +1,122 @@
+{
+  "genre": "adventure",
+  "title": "Forest and Frost",
+  "premise": "Create a top-down fantasy adventure in one connected world where a lush enchanted forest surrounds a frozen lake and icy ruins. I should be able to walk naturally from the green forest into the snowy region without changing levels. The frozen lake has slippery terrain. A forest villager asks me to retrieve a magical crystal from the icy ruins. Keep the game focused on exploration with no combat.",
+  "theme": "woodland",
+  "art_style": "auto",
+  "areas": [
+    {
+      "regions": [
+        {
+          "id": "woodland",
+          "name": "Enchanted Forest",
+          "biome": "forest",
+          "x": 1,
+          "y": 1,
+          "width": 46,
+          "height": 30,
+          "slippery": false
+        },
+        {
+          "id": "lake",
+          "name": "Frozen Lake",
+          "biome": "frozen_lake",
+          "x": 20,
+          "y": 10,
+          "width": 12,
+          "height": 12,
+          "slippery": true
+        },
+        {
+          "id": "ruins",
+          "name": "Icy Ruins",
+          "biome": "icy_ruins",
+          "x": 34,
+          "y": 7,
+          "width": 11,
+          "height": 17,
+          "slippery": false
+        }
+      ],
+      "name": "Enchanted woodland and frozen ruins",
+      "environment": "forest"
+    }
+  ],
+  "actors": [
+    {
+      "region": "woodland",
+      "id": "villager",
+      "kind": "npc",
+      "name": "Rowan the Forest Keeper",
+      "area": 0,
+      "role": "",
+      "item": "",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Please retrieve the magical crystal from the Icy Ruins east of the frozen lake."
+        ],
+        "active": [
+          "The crystal is in the Icy Ruins."
+        ],
+        "completed": [
+          "The forest thanks you."
+        ]
+      }
+    },
+    {
+      "region": "ruins",
+      "id": "crystal",
+      "kind": "item",
+      "name": "Magical Crystal",
+      "area": 0,
+      "role": "",
+      "item": "crystal",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    }
+  ],
+  "quests": [
+    {
+      "kind": "talk",
+      "target": "villager",
+      "count": 1,
+      "text": "Speak to Rowan",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "collect",
+      "target": "crystal",
+      "count": 1,
+      "text": "Retrieve the magical crystal from the Icy Ruins",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "deliver",
+      "target": "villager",
+      "count": 1,
+      "text": "Return the crystal to Rowan",
+      "item": "crystal",
+      "delivery_items": {}
+    }
+  ],
+  "gameplay": null,
+  "combat": false,
+  "unsupported": []
+}

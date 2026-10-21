@@ -70,8 +70,11 @@ def choose_art(design,prompt,seed):
             actors[a.id]=id
     else:
         player='tiny_hero';actors={a.id:('tiny_treant' if a.behavior=='patrol' else 'tiny_mole') if a.kind=='enemy' else pack['roles']['landmark' if a.kind=='landmark' else 'herb' if re.search(r'herb|leaf|mint',a.item+' '+a.name,re.I) else 'item']['asset'] for a in design.actors}
+    if design.gameplay:
+        for archetype in design.gameplay.archetypes:
+            actors[archetype.id]=('ninja_spirit' if archetype.behavior=='shooter' else 'ninja_skull') if requested=='ninja_adventure' else ('tiny_treant' if archetype.behavior=='shooter' else 'tiny_mole')
     # Resolve only gameplay dependencies, not the complete library, into the game IR.
-    role_names={'exit'}
+    role_names={'exit'} if not design.gameplay or design.gameplay.outcome=='quests' else set()
     role_names.update(a.kind for a in design.actors if a.kind not in ('item','npc','enemy'))
     if any(a.kind=='item' for a in design.actors):role_names.update(['item','herb','key'])
     if any(a.environment in ('forest','village') for a in design.areas):role_names.add('tree')

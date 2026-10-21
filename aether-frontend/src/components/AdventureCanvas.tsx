@@ -25,9 +25,9 @@ export function AdventureCanvas({spec,restart=0}:{spec:AdventureIR;restart?:numb
   return <>
     <div className="game-surface" ref={container} tabIndex={0} onPointerDown={e=>e.currentTarget.focus()} aria-label="Adventure game. WASD or arrows move, E interact, F attack when equipped, R restart">{error&&<p role="alert">Game failed to load: {error}</p>}</div>
     {status&&<div className="adventure-mobile-status" aria-live="polite">
-      <strong>{status.objective}</strong><span>{status.health}/5 hearts · Quests {status.progress} · Inventory: {status.inventory}</span>
+      <strong>{status.objective}</strong><span>{status.health}/{spec.gameplay?.health??5} hearts · {spec.gameplay&&spec.gameplay.outcome!=='quests'?`${(status.score||0).toFixed(1)}s`:`Quests ${status.progress} · Inventory: ${status.inventory}`}</span>
       {status.dialogue&&<p>{status.dialogue}<br/><small>Talk / Use · continue</small></p>}
     </div>}
-    <div className="touch-controls">{[['left','←'],['up','↑'],['down','↓'],['right','→'],['interact','Talk / Use'],...(spec.combat?[['attack','Attack']]:[])].map(([key,label])=><button key={key} aria-label={`Game ${key}`} onPointerDown={e=>{e.preventDefault();e.currentTarget.setPointerCapture(e.pointerId);container.current?.focus();control.current(key,true);}} onPointerUp={()=>control.current(key,false)} onPointerCancel={()=>control.current(key,false)}>{label}</button>)}</div>
+    <div className="touch-controls">{[['left','←'],['up','↑'],['down','↓'],['right','→'],...(!spec.gameplay||spec.gameplay.outcome==='quests'?[['interact','Talk / Use']]:[]),...((spec.gameplay?spec.gameplay.player_attack:spec.combat)?[['attack','Attack']]:[])].map(([key,label])=><button key={key} aria-label={`Game ${key}`} onPointerDown={e=>{e.preventDefault();e.currentTarget.setPointerCapture(e.pointerId);container.current?.focus();control.current(key,true);}} onPointerUp={()=>control.current(key,false)} onPointerCancel={()=>control.current(key,false)}>{label}</button>)}</div>
   </>;
 }

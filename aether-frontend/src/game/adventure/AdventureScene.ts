@@ -1,4 +1,7 @@
 import {biomeAt} from './regions';
+import {BehaviorWorld,spawnPositions} from './behaviors';
+import type {BehaviorEnemy,BehaviorEvent} from './behaviors';
+import {feedback} from '../feedback';
 import Phaser from 'phaser';
 import type { Actor, AdventureIR } from './types';
 import { AdventureState } from './state';
@@ -27,11 +30,18 @@ export class AdventureScene extends Phaser.Scene {
   lastAttack=0;
   lastDamage=0;
   generation=0;
+  behavior?:BehaviorWorld;
+  enemies!:Phaser.Physics.Arcade.Group;
+  hostileShots!:Phaser.Physics.Arcade.Group;
+  feedbackEvents:Record<string,number>={};
+  accumulator=0;
+  get questMode(){return !this.spec.gameplay||this.spec.gameplay.outcome==='quests';}
+  get canAttack(){return this.spec.gameplay?this.spec.gameplay.player_attack:this.spec.combat;}
   constructor() { super('Adventure'); }
   init(data:{spec:AdventureIR;state?:AdventureState;generation?:number}) {
     this.spec=data.spec;this.state=data.state||new AdventureState(this.spec);
     this.generation=(data.generation||0)+1;
-    this.actors=[];this.dialogue=[];this.touch={};this.touched=new Set();this.lastAttack=0;this.lastDamage=0;
+    this.actors=[];this.dialogue=[];this.touch={};this.touched=new Set();this.lastAttack=-Infinity;this.lastDamage=-Infinity;this.behavior=undefined;this.feedbackEvents={};this.accumulator=0;
   }
   preload() {
     if(this.spec.art){preloadArt(this,this.spec.art);return;}
@@ -99,7 +109,7 @@ export class AdventureScene extends Phaser.Scene {
     this.player=this.physics.add.sprite(area.spawn.x*size+16,area.spawn.y*size+16,art?.player||'tiny-dungeon',art?0:96).setScale(2).setDepth(10).setCollideWorldBounds(true);
     if(art)applyAsset(this.player,art.assets[art.player]);else this.player.setSize(9,9).setOffset(3,6);
     this.physics.add.collider(this.player,layer);
-    const enemies=this.physics.add.group();
+    const enemies=this.enemies=this.physics.add.group();
     // These sprites already have dynamic Arcade bodies; retain that body type in
     // the collision group (a static group would query the wrong spatial tree).
     const doors=this.physics.add.group({immovable:true,allowGravity:false});
@@ -128,7 +138,7 @@ export class AdventureScene extends Phaser.Scene {
           sprite.setFrame(art.roles.switch.open_frame);
         } else if(actor.kind==='item') {
           this.physics.add.overlap(this.player,sprite,()=>{
-            this.state.pickup(actor,instance);this.toast(x,y,`+1 ${actor.name}`);sprite.destroy();this.refresh();
+            this.state.pickup(actor,instance);this.cue(x,y,'collect');this.toast(x,y,`+1 ${actor.name}`);sprite.destroy();this.refresh();
           });
         }
         if(actor.kind==='npc')this.physics.add.collider(this.player,sprite);
@@ -142,17 +152,17 @@ export class AdventureScene extends Phaser.Scene {
     this.physics.add.overlap(this.shots,enemies,(shot,enemy)=>{
       const target=this.actors.find(a=>a.sprite===enemy);
       shot.destroy();
-      if(target && --target.health<=0){this.state.defeat(target.data.id);this.effect(target.sprite.x,target.sprite.y);target.sprite.destroy();this.refresh();}
-      else if(target){target.sprite.setTint(0xffb5b5);this.time.delayedCall(150,()=>{if(target.sprite.active)target.sprite.clearTint();});}
+      if(target && --target.health<=0){this.state.defeat(target.data.id);this.effect(target.sprite.x,target.sprite.y);this.behavior?.remove(target.data.id);target.sprite.destroy();this.refresh();}
+      else if(target){this.cue(target.sprite.x,target.sprite.y,'impact');target.sprite.setTint(0xffb5b5);this.time.delayedCall(150,()=>{if(target.sprite.active)target.sprite.clearTint();});}
     });
-    this.physics.add.overlap(this.player,enemies,()=>{
-      if(this.time.now-this.lastDamage<1000||this.state.lost||this.state.won||this.dialogue.length)return;
-      this.lastDamage=this.time.now;this.state.health--;this.player.setTint(0xff7777);
-      this.time.delayedCall(250,()=>this.player.clearTint());
-      if(this.state.health<=0)this.state.lost=true;this.refresh();
-    });
+    this.physics.add.overlap(this.player,enemies,()=>this.takeDamage());
+    this.hostileShots=this.physics.add.group({allowGravity:false});
+    this.physics.add.collider(this.hostileShots,layer,shot=>{this.cue((shot as Sprite).x,(shot as Sprite).y,'impact');shot.destroy();});
+    this.physics.add.collider(this.hostileShots,doors,shot=>shot.destroy());
+    this.physics.add.overlap(this.player,this.hostileShots,(_player,shot)=>{this.takeDamage();shot.destroy();});
+    if(this.spec.gameplay)this.behavior=new BehaviorWorld(this.spec.gameplay,this.spec.seed,spawnPositions(area));
     const exitArt=art?.roles.exit;
-    this.add.sprite(area.exit.x*size+16,area.exit.y*size+16,exitArt?.asset||'tiny-dungeon',exitArt?.frame??44).setScale(exitArt?art!.assets[exitArt.asset].scale:2).setDepth(5);
+    if(this.questMode)this.add.sprite(area.exit.x*size+16,area.exit.y*size+16,exitArt?.asset||'tiny-dungeon',exitArt?.frame??44).setScale(exitArt?art!.assets[exitArt.asset].scale:2).setDepth(5);
     if(art&&outdoor&&art.roles.tree){
       const tree=art.assets[art.roles.tree.asset];
       for(const p of area.trees||[])
@@ -160,8 +170,8 @@ export class AdventureScene extends Phaser.Scene {
     }
     for(const zone of area.zones||[])
       this.add.text(zone.x*32+16,zone.y*32-60,zone.name,{fontSize:'11px',fontFamily:'monospace',color:outdoor?'#e9f4c0':'#cfc0dc',backgroundColor:'#17223199',padding:{x:5,y:3}}).setOrigin(.5).setDepth(2100);
-    const marker=this.add.text(area.exit.x*size+16,area.exit.y*size-18,this.state.area<this.spec.areas.length-1?'NEXT AREA · E':'EXIT · E',{fontSize:'12px',color:'#ffe5a6',backgroundColor:'#172231cc',padding:{x:4,y:3}}).setOrigin(.5).setDepth(6);
-    this.tweens.add({targets:marker,alpha:.5,yoyo:true,repeat:-1,duration:900});
+    if(this.questMode){const marker=this.add.text(area.exit.x*size+16,area.exit.y*size-18,this.state.area<this.spec.areas.length-1?'NEXT AREA · E':'EXIT · E',{fontSize:'12px',color:'#ffe5a6',backgroundColor:'#172231cc',padding:{x:4,y:3}}).setOrigin(.5).setDepth(6);
+    this.tweens.add({targets:marker,alpha:.5,yoyo:true,repeat:-1,duration:900});}
     this.cameras.main.setBounds(0,0,area.width*size,area.height*size).startFollow(this.player,true,.14,.14);
     this.hud=this.add.text(20,16,'',{fontFamily:'monospace',fontSize:'15px',color:'#fff4d9',backgroundColor:'#172231ee',padding:{x:14,y:10},wordWrap:{width:610}}).setScrollFactor(0).setDepth(3000);
     this.hint=this.add.text(20,466,'WASD / arrows · move    E · talk / use    R · restart',{fontFamily:'monospace',fontSize:'15px',color:'#ffffff',backgroundColor:'#172231ee',padding:{x:10,y:8},wordWrap:{width:880}}).setScrollFactor(0).setDepth(3000);
@@ -188,13 +198,49 @@ export class AdventureScene extends Phaser.Scene {
     this.refresh();
     this.toast(this.player.x,this.player.y-40,`You · ${outdoor?'explore the paths':'enter the depths'}`);
   }
+  cue(x:number,y:number,event:Parameters<typeof feedback>[3],duration=220){
+    this.feedbackEvents[event]=(this.feedbackEvents[event]||0)+1;
+    feedback(this,x,y,event,duration,this.spec.gameplay?.feedback==='subtle');
+  }
+  takeDamage(){
+    if(this.time.now-this.lastDamage<(this.spec.gameplay?.invulnerability_ms??1000)||this.state.lost||this.state.won||this.dialogue.length||!this.game.canvas.parentElement?.contains(document.activeElement))return;
+    this.lastDamage=this.time.now;this.state.health=Math.max(0,this.state.health-1);
+    this.cue(this.player.x,this.player.y,'impact');this.player.setTint(0xff7777);
+    this.cameras.main.shake(80,.002);
+    this.time.delayedCall(180,()=>{if(this.player.active)this.player.clearTint();});
+    this.tweens.add({targets:this.player,alpha:.35,duration:(this.spec.gameplay?.invulnerability_ms??1000)/10,yoyo:true,repeat:4,onComplete:()=>this.player.setAlpha(1)});
+    if(this.state.health===0)this.state.lost=true;this.refresh();
+  }
+  behaviorEvent(event:BehaviorEvent,enemy:BehaviorEnemy){
+    const art=this.spec.art;
+    if(event.type==='spawn'){
+      const asset=art?.assets[art.actors[enemy.archetype.id]];
+      const sprite=this.physics.add.sprite(enemy.x,enemy.y,asset?.id||'tiny-dungeon',asset?0:121).setDepth(5).setCollideWorldBounds(true);
+      if(asset){applyAsset(sprite,asset);animateActor(sprite,asset,0,0);}
+      else sprite.setScale(2).setSize(10,10);
+      this.enemies.add(sprite);
+      const data:Actor={id:enemy.id,kind:'enemy',name:enemy.archetype.name,role:enemy.archetype.id,item:'',quantity:1,requires:[],behavior:enemy.archetype.behavior==='patrol'?'patrol':'chase',dialogue:{greeting:[],active:[],completed:[]},x:enemy.x/32,y:enemy.y/32,area:this.state.area,pickups:[]};
+      this.actors.push({data,sprite,health:enemy.archetype.health,homeX:enemy.x,homeY:enemy.y});return;
+    }
+    const live=this.actors.find(a=>a.data.id===enemy.id&&a.sprite.active);if(!live)return;
+    if(event.type==='windup'){this.cue(live.sprite.x,live.sprite.y,'windup',enemy.archetype.attack!.windup_ms);return;}
+    if(event.type==='despawn'){this.cue(live.sprite.x,live.sprite.y,'defeat');live.sprite.destroy();return;}
+    if(event.type==='shot'&&this.hostileShots.countActive(true)<240){
+      const visual=art?.roles.projectile,origin=live.sprite.body!.center;
+      const shot=this.hostileShots.create(origin.x,origin.y,visual?.asset||'tiny-dungeon',visual?.frame??116) as Sprite;
+      shot.setScale(visual?art!.assets[visual.asset].scale:1.2).setTint(0xffaa88).setDepth(2300);
+      shot.setSize(6,6);this.physics.moveToObject(shot,this.player,enemy.archetype.attack!.projectile_speed);
+      shot.setRotation(Math.atan2(shot.body!.velocity.y,shot.body!.velocity.x));
+      this.time.delayedCall(6000,()=>{if(shot.active)shot.destroy();});
+    }
+  }
   snapshot() {
     if(!this.physics?.world||!this.player?.body)return {ready:false,generation:this.generation};
-    return {localBiome:biomeAt(this.spec.areas[this.state.area].regions||[],this.player.x/32,this.player.y/32)?.id,regions:this.spec.areas[this.state.area].regions||[],ready:true,generation:this.generation,genre:'adventure',area:this.state.area,x:this.player.x,y:this.player.y,
+    return {behavior:this.behavior?{elapsed:this.behavior.elapsed,totalShots:this.behavior.totalShots,completedSequences:this.behavior.completedSequences,events:this.behavior.events,active:this.behavior.enemies.size}:null,feedback:this.feedbackEvents,projectiles:this.hostileShots?.getChildren().filter(s=>s.active).map(s=>({x:(s as Sprite).x,y:(s as Sprite).y})),hostileProjectiles:this.hostileShots?.countActive(true),questMode:this.questMode,score:this.behavior&&this.spec.gameplay?.scoring==='survival_time'?this.behavior.elapsed/1000:0,localBiome:biomeAt(this.spec.areas[this.state.area].regions||[],this.player.x/32,this.player.y/32)?.id,regions:this.spec.areas[this.state.area].regions||[],ready:true,generation:this.generation,genre:'adventure',area:this.state.area,x:this.player.x,y:this.player.y,
       vx:this.player.body?.velocity.x,vy:this.player.body?.velocity.y,gravity:this.physics.world.gravity.y,
       inventory:this.state.inventory,quests:this.state.states,objective:this.state.objective,health:this.state.health,
       won:this.state.won,lost:this.state.lost,dialogue:this.dialogue,unlocked:[...this.state.unlocked],activated:[...this.state.activated],
-      actors:this.actors.filter(a=>a.sprite.active).map(a=>({id:a.data.id,kind:a.data.kind,x:a.sprite.x,y:a.sprite.y,health:a.health,
+      actors:this.actors.filter(a=>a.sprite.active).map(a=>({id:a.data.id,kind:a.data.kind,x:a.sprite.x,y:a.sprite.y,health:a.health,role:a.data.role,behavior:this.behavior?.enemies.get(a.data.id)?.archetype.behavior||a.data.behavior,animation:a.sprite.anims.currentAnim?.key,
         body:a.sprite.body?{x:a.sprite.body.x,y:a.sprite.body.y,width:a.sprite.body.width,height:a.sprite.body.height,enabled:a.sprite.body.enable}:null})),
       assetPack:this.spec.art?.pack_id||'kenney_tiny',playerTexture:this.player.texture.key,playerFrame:this.player.frame.name,animation:this.player.anims.currentAnim?.key,
       selectedAssets:this.spec.art?Object.keys(this.spec.art.assets):['tiny-town','tiny-dungeon'],
@@ -205,6 +251,7 @@ export class AdventureScene extends Phaser.Scene {
     this.tweens.add({targets:text,y:text.y-24,alpha:0,delay:700,duration:800,onComplete:()=>text.destroy()});
   }
   effect(x:number,y:number) {
+    this.cue(x,y,'defeat');
     const role=this.spec.art?.roles.vfx;if(!role)return;
     const key=`${role.asset}:effect`;
     if(!this.anims.exists(key))this.anims.create({key,frames:this.anims.generateFrameNumbers(role.asset),frameRate:14,repeat:0});
@@ -212,15 +259,19 @@ export class AdventureScene extends Phaser.Scene {
   }
   refresh() {
     const s=this.state;
-    this.hud.setText(`${this.spec.areas[s.area].name}   ·   ${this.spec.combat?`${s.health}/5 hearts`:'Exploration'}   ·   Quest ${s.completed.filter(Boolean).length}/${s.completed.length}\n${s.won?'ADVENTURE COMPLETE! Press R to play again.':s.lost?'You fell in battle. Press R to restart.':s.objective}\nInventory: ${Object.entries(s.inventory).filter(([,n])=>n>0).map(([k,n])=>`${k} ×${n}`).join('   ')||'empty'}`);
+    this.hud.setText(`${this.spec.areas[s.area].name}   ·   ${this.spec.combat?`${s.health}/${this.spec.gameplay?.health??5} hearts`:'Exploration'}   ·   Quest ${s.completed.filter(Boolean).length}/${s.completed.length}\n${s.won?'ADVENTURE COMPLETE! Press R to play again.':s.lost?'You fell in battle. Press R to restart.':s.objective}\nInventory: ${Object.entries(s.inventory).filter(([,n])=>n>0).map(([k,n])=>`${k} ×${n}`).join('   ')||'empty'}`);
+    if(this.behavior&&!this.questMode){
+      const seconds=this.behavior.elapsed/1000;
+      this.hud.setText(`${s.health}/${this.spec.gameplay!.health} hearts · ${seconds.toFixed(1)}s\n${s.lost?'GAME OVER · R to retry':s.won?'SURVIVED · R to retry':'Dodge and survive'}`);
+    }
     this.emitUI();
   }
   emitUI() {
     const s=this.state;
     this.game.events.emit('adventure-ui',{
-      objective:s.won?'Adventure complete! Press R to play again.':s.lost?'You fell in battle. Press R to restart.':s.objective,
+      objective:!this.questMode?(s.lost?'Game over · R to retry':s.won?'Survived · R to retry':'Dodge and survive'):s.won?'Adventure complete! Press R to play again.':s.lost?'You fell in battle. Press R to restart.':s.objective,
       inventory:Object.entries(s.inventory).filter(([,n])=>n>0).map(([k,n])=>`${k} ×${n}`).join(', ')||'empty',
-      dialogue:this.dialogue[0]||'',health:s.health,progress:`${s.completed.filter(Boolean).length}/${s.completed.length}`,
+      dialogue:this.dialogue[0]||'',score:this.behavior?this.behavior.elapsed/1000:undefined,health:s.health,progress:`${s.completed.filter(Boolean).length}/${s.completed.length}`,
     });
   }
   pressed(key:string,touch=key.toLowerCase()) {
@@ -245,15 +296,24 @@ export class AdventureScene extends Phaser.Scene {
     const target=this.actors.filter(a=>a.sprite.active&&a.data.id===goal?.target).sort((a,b)=>Phaser.Math.Distance.Between(this.player.x,this.player.y,a.sprite.x,a.sprite.y)-Phaser.Math.Distance.Between(this.player.x,this.player.y,b.sprite.x,b.sprite.y))[0];
     const targetX=target?.sprite.x??this.spec.areas[this.state.area].exit.x*32+16;
     const targetY=target?.sprite.y??this.spec.areas[this.state.area].exit.y*32+16;
-    this.objectiveMarker.setPosition(targetX,targetY-39+Math.sin(time/220)*3).setVisible(!this.state.won&&!this.state.lost);
+    this.objectiveMarker.setPosition(targetX,targetY-39+Math.sin(time/220)*3).setVisible(this.questMode&&!this.state.won&&!this.state.lost);
     const mx=targetX-this.player.x,my=targetY-this.player.y;
-    this.compass.setText(`${my<-30?'↑ ':my>30?'↓ ':''}${mx<-30?'← ':mx>30?'→ ':''}${Math.round(Math.hypot(mx,my)/32)} tiles to ${target?.data.name||'exit'}`);
+    this.compass.setVisible(this.questMode).setText(`${my<-30?'↑ ':my>30?'↓ ':''}${mx<-30?'← ':mx>30?'→ ':''}${Math.round(Math.hypot(mx,my)/32)} tiles to ${target?.data.name||'exit'}`);
     const focused=this.game.canvas.parentElement?.contains(document.activeElement);
-    if(!focused){this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));return;}
+    if(!focused){this.physics.world.pause();this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));return;}
     if(this.pressed('R','restart')){this.scene.restart({spec:this.spec,generation:this.generation});return;}
+    this.physics.world.resume();
     const use=this.pressed('E','interact');
-    if(this.state.won||this.state.lost){this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));return;}
-    if(this.dialogue.length){this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));if(use)this.advanceDialogue();return;}
+    if(this.state.won||this.state.lost){this.physics.world.pause();this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));return;}
+    if(this.dialogue.length){this.physics.world.pause();this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));if(use)this.advanceDialogue();return;}
+    if(this.behavior){
+      this.accumulator+=Math.min(delta,100);
+      for(;this.accumulator>=1000/120;this.accumulator-=1000/120)this.behavior.advance(1000/120,this.player,(event,enemy)=>this.behaviorEvent(event,enemy));
+      for(const a of this.actors){const enemy=this.behavior.enemies.get(a.data.id);if(enemy&&a.sprite.active){enemy.x=a.sprite.x;enemy.y=a.sprite.y;}}
+      this.actors=this.actors.filter(a=>a.sprite.active);
+      if(this.spec.gameplay?.outcome==='survive'&&this.behavior.elapsed>=this.spec.gameplay.duration_seconds!*1000)this.state.won=true;
+      this.refresh();
+    }
     const dx=Number(this.keys.RIGHT.isDown||this.keys.D.isDown||!!this.touch.right)-Number(this.keys.LEFT.isDown||this.keys.A.isDown||!!this.touch.left);
     const dy=Number(this.keys.DOWN.isDown||this.keys.S.isDown||!!this.touch.down)-Number(this.keys.UP.isDown||this.keys.W.isDown||!!this.touch.up);
     const velocity=new Phaser.Math.Vector2(dx,dy).normalize().scale(155);
@@ -268,24 +328,25 @@ export class AdventureScene extends Phaser.Scene {
       .sort((a,b)=>Phaser.Math.Distance.Between(this.player.x,this.player.y,a.sprite.x,a.sprite.y)-Phaser.Math.Distance.Between(this.player.x,this.player.y,b.sprite.x,b.sprite.y))[0];
     const distance=near?Phaser.Math.Distance.Between(this.player.x,this.player.y,near.sprite.x,near.sprite.y):Infinity;
     const area=this.spec.areas[this.state.area],atExit=Phaser.Math.Distance.Between(this.player.x,this.player.y,area.exit.x*32+16,area.exit.y*32+16)<55;
-    this.hint.setText(distance<58?`E · ${near.data.kind==='npc'?'Talk to':'Use'} ${near.data.name}`:atExit?'E · enter the passage':'WASD / arrows · move    E · interact'+(this.spec.combat?'    F / X · attack':'')+'    R · restart');
+    this.hint.setText(distance<58?`E · ${near.data.kind==='npc'?'Talk to':'Use'} ${near.data.name}`:atExit&&this.questMode?'E · enter the passage':'WASD / arrows · move'+(this.questMode?'    E · interact':'')+(this.canAttack?'    F / X · attack':'')+'    R · restart');
     if(near?.data.kind==='landmark'&&distance<50&&!this.state.explored.has(near.data.id)){this.state.explore(near.data.id);this.refresh();}
-    if(use){
+    if(use&&this.questMode){
       if(distance<58){
         const lines=this.state.interact(near.data);
+        if(near.data.kind==='switch'||(near.data.kind==='door'&&this.state.unlocked.has(near.data.id)))this.cue(near.sprite.x,near.sprite.y,'activate');
         if(near.data.kind==='door'&&this.state.unlocked.has(near.data.id)){
           (near.sprite.body as Phaser.Physics.Arcade.Body).enable=false;near.sprite.setFrame(this.spec.art?.roles.door.open_frame??33).setAlpha(.5);
         }
         if(near.data.kind==='switch'&&this.spec.art?.roles.switch.open_frame!=null)near.sprite.setFrame(this.spec.art.roles.switch.open_frame);
         if(near.data.kind==='treasure'){near.sprite.destroy();}
         this.showDialogue(lines,near.data.name);this.refresh();
-      } else if(atExit){
+      } else if(atExit&&this.questMode){
         if(this.state.leave()){
           if(!this.state.won)this.scene.restart({spec:this.spec,state:this.state,generation:this.generation});else this.refresh();
         }else this.showDialogue(['Complete the objectives in this area before leaving.']);
       }
     }
-    if(this.spec.combat && (this.pressed('F','attack')||this.pressed('X')) && time-this.lastAttack>260){
+    if(this.canAttack && (this.pressed('F','attack')||this.pressed('X')) && time-this.lastAttack>260){
       this.lastAttack=time;
       const projectile=this.spec.art?.roles.projectile;
       const origin=this.spec.art?this.player.body!.center:this.player;
@@ -296,12 +357,16 @@ export class AdventureScene extends Phaser.Scene {
     for(const a of this.actors){
       if(a.data.kind!=='enemy'||!a.sprite.active)continue;
       const distance=Phaser.Math.Distance.Between(a.sprite.x,a.sprite.y,this.player.x,this.player.y);
-      if(distance<220){this.physics.moveToObject(a.sprite,this.player,66);}
+      const component=this.behavior?.enemies.get(a.data.id);
+      if(component?.archetype.behavior==='shooter'){a.sprite.setVelocity(0);}
+      else if(component?.archetype.behavior==='chase'){this.physics.moveToObject(a.sprite,this.player,component.archetype.speed);}
+      else if(component?.archetype.behavior==='patrol'){this.physics.moveTo(a.sprite,a.homeX+Math.sin(time/1600)*65,a.homeY,component.archetype.speed);}
+      else if(distance<220){this.physics.moveToObject(a.sprite,this.player,66);}
       else if(a.data.behavior==='patrol'){
         const tx=a.homeX+Math.sin(time/1600)*65;
         this.physics.moveTo(a.sprite,tx,a.homeY,40);
       }else a.sprite.setVelocity(0);
-      if(this.spec.art)animateActor(a.sprite,this.spec.art.assets[this.spec.art.actors[a.data.id]],a.sprite.body?.velocity.x||0,a.sprite.body?.velocity.y||0);
+      if(this.spec.art)animateActor(a.sprite,this.spec.art.assets[this.spec.art.actors[component?.archetype.id||a.data.id]],a.sprite.body?.velocity.x||0,a.sprite.body?.velocity.y||0,!!component?.warned);
       else a.sprite.setFlipX((a.sprite.body?.velocity.x||0)<0);
     }
   }

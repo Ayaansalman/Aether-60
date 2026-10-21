@@ -155,22 +155,28 @@ when all requested features are supported; do not invent unrequested inventory, 
 Compose 5-14 varied sections. kind=meadow/ruins/factory/ascent/gauntlet/cavern/terraces/bridge, length=4..10 tiles,
 elevation=-1..2 tiles (positive climbs), gap=1..3 tiles, enemies/hazards boolean.
 Tower requests should use ascending sections; peaceful requests should exclude enemies and hazards.
+Set collectibles_enabled=false unless pickups are requested. For multiple switches opening ONE gate, give their interactions the same gate ID and door_section; condition is all switches. Separate gates use distinct IDs. Preserve exact requested switch counts.
 GameDesign JSON Schema:\n""" + json.dumps(GameDesign.model_json_schema())
     if intent: system += "\nPreserve this semantic interpretation and requirement relationships: "+json.dumps(intent)
-    last = None
-    for attempt in range(2):
-        result = provider.complete(system, prompt if attempt == 0 else prompt + "\nCorrect your previous invalid response: " + str(last)[:1000])
-        try:
-            content = result.text.strip()
-            if content.startswith("```"):
-                content = re.sub(r"^```(?:json)?\s*|\s*```$", "", content)
-            design = GameDesign.model_validate_json(content)
-            if any(feature.source.lower() not in prompt.lower() for feature in design.requested_features):
-                raise ValueError('Requested feature source must quote the original prompt')
-            return design, {"provider": "openai_compat", "model": result.model, "live": True, "latency_ms": result.latency_ms, "fallbacks": result.fallback_events}
-        except ValueError as exc:
-            last = exc
-    raise ValueError("Model returned an invalid design after two bounded attempts")
+    from services.design_validation import validated_response
+    result=provider.complete(system,prompt)
+    secondary_requirements=[]
+    def grounded(raw):
+        if intent:
+            # Interpretation owns the requirement contract. A second classifier
+            # in the designer previously relabeled gate objectives as combat.
+            secondary_requirements.extend(raw.get('requested_features',[]))
+            raw={**raw,'requested_features':[]}
+        design=GameDesign.model_validate(raw)
+        if any(feature.source.lower() not in prompt.lower() for feature in design.requested_features):
+            raise ValueError('requested_features.source must quote the original prompt exactly')
+        return design.model_dump()
+    design,attempts=validated_response(provider,system,prompt,result,GameDesign,grounded)
+    return design, {"provider":type(provider).__name__,"model":attempts[-1]['model'],"live":True,
+        "initial_latency_ms":result.latency_ms,"fallbacks":getattr(result,'fallback_events',[]),"validation_attempts":attempts,
+        "requirement_authority":"semantic_intent.json" if intent else "designer requested_features and deterministic extraction",
+        "advisory_designer_requirements":secondary_requirements}
+
 
 
 def construct(design: GameDesign, prompt: str, seed: int | None = None, level_id: str = 'L1') -> PlatformerIR:

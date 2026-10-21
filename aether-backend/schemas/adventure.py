@@ -2,6 +2,7 @@
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from schemas.assets import AdventureArt
+from schemas.gameplay import Gameplay
 
 
 class Contract(BaseModel):
@@ -65,14 +66,27 @@ class AdventureDesign(Contract):
     theme: Literal['woodland', 'dark', 'fantasy'] = 'woodland'
     art_style: str = Field(default='auto',pattern=r'^[a-z_]{1,40}$')
     areas: list[AreaDesign] = Field(min_length=1, max_length=3)
-    actors: list[Actor] = Field(min_length=1, max_length=32)
-    quests: list[Goal] = Field(min_length=1, max_length=16)
+    actors: list[Actor] = Field(default_factory=list, max_length=32)
+    quests: list[Goal] = Field(default_factory=list, max_length=16)
+    gameplay: Gameplay | None = None
     combat: bool = False
     unsupported: list[str] = Field(default_factory=list, max_length=20)
 
     @model_validator(mode='after')
     def references(self):
+        quest_mode = self.gameplay is None or self.gameplay.outcome == 'quests'
+        if quest_mode and not self.quests:
+            raise ValueError('Quest outcome needs at least one quest')
+        if self.gameplay:
+            if len(self.areas) != 1:
+                raise ValueError('Composed top-down behaviors currently require one connected area')
+            if (self.gameplay.archetypes or self.gameplay.player_attack) and not self.combat:
+                raise ValueError('Hostile behaviors and player attacks require combat=true')
+            if not quest_mode and self.quests:
+                raise ValueError('Non-quest outcomes must not insert quest objectives')
         actors = {a.id: a for a in self.actors}
+        if self.gameplay and set(actors) & {a.id for a in self.gameplay.archetypes}:
+            raise ValueError('Static actor and enemy archetype IDs must be distinct')
         if len(actors) != len(self.actors):
             raise ValueError('Duplicate actor IDs')
         for area in self.areas:
@@ -107,7 +121,7 @@ class AdventureDesign(Contract):
         # Monotonic area progression: all objectives in an earlier area must precede departure.
         if [actors[q.target].area for q in self.quests] != sorted(actors[q.target].area for q in self.quests):
             raise ValueError('Quest sequence must follow area order')
-        if {actors[q.target].area for q in self.quests} != set(range(len(self.areas))):
+        if quest_mode and {actors[q.target].area for q in self.quests} != set(range(len(self.areas))):
             raise ValueError('Every area needs at least one objective')
         for area in range(len(self.areas)):
             if sum(a.kind=='door' and a.area==area for a in self.actors)>1:
@@ -142,8 +156,18 @@ class AdventureIR(Contract):
     seed: int
     tile_size: Literal[32] = 32
     combat: bool
+    gameplay: Gameplay | None = None
     art: AdventureArt | None = None
     areas: list[AreaIR]
     quests: list[Goal]
     unsupported: list[str] = Field(default_factory=list)
     requirements: list[dict] = Field(default_factory=list)
+
+    @model_validator(mode='after')
+    def design_contract(self):
+        # Revalidate imported/repaired IR through the same design dependency boundary.
+        AdventureDesign(title=self.title,premise=self.premise,theme=self.theme,
+            areas=[AreaDesign(**{key:getattr(a,key) for key in AreaDesign.model_fields}) for a in self.areas],
+            actors=[Actor(**{key:getattr(a,key) for key in Actor.model_fields}) for area in self.areas for a in area.actors],
+            quests=self.quests,combat=self.combat,gameplay=self.gameplay)
+        return self

@@ -1,0 +1,119 @@
+{
+  "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+  "requirements": [
+    {
+      "id": "factory_environment",
+      "source": "industrial",
+      "span": [
+        10,
+        20
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "environment_composition"
+    },
+    {
+      "id": "patrol",
+      "source": "patrolling",
+      "span": [
+        106,
+        116
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "enemy_patrol"
+    },
+    {
+      "id": "moving_platforms",
+      "source": "moving machinery",
+      "span": [
+        128,
+        144
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "moving_platform_motion"
+    },
+    {
+      "id": "switches",
+      "source": "switches",
+      "span": [
+        58,
+        66
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "switch_door"
+    }
+  ],
+  "changes": [
+    {
+      "field": "topology",
+      "before": "journey",
+      "after": "terraces",
+      "reason": "Explicit requested capability"
+    },
+    {
+      "field": "gameplay",
+      "before": {
+        "objectives": [
+          {
+            "kind": "unlock",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          }
+        ],
+        "interactions": [
+          {
+            "trigger": "interact",
+            "section": 2,
+            "door_section": 7,
+            "gate": "sec_gate"
+          },
+          {
+            "trigger": "interact",
+            "section": 5,
+            "door_section": 7,
+            "gate": "sec_gate"
+          }
+        ],
+        "player_attack": "stomp"
+      },
+      "after": {
+        "objectives": [
+          {
+            "kind": "unlock",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          },
+          {
+            "kind": "activate",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          }
+        ],
+        "interactions": [
+          {
+            "trigger": "interact",
+            "section": 2,
+            "door_section": 7,
+            "gate": "sec_gate"
+          },
+          {
+            "trigger": "interact",
+            "section": 5,
+            "door_section": 7,
+            "gate": "sec_gate"
+          }
+        ],
+        "player_attack": "stomp"
+      },
+      "reason": "Explicit gameplay requirements composed into registered components"
+    }
+  ],
+  "unsupported": [],
+  "overall": "PASS"
+}

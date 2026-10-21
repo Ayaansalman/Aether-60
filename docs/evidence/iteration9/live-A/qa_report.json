@@ -1,0 +1,1473 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "composition_contract",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "behavior": {
+          "elapsed": 208.3333333333334,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": false,
+        "score": 0.2083333333333334,
+        "localBiome": null,
+        "regions": [],
+        "ready": true,
+        "generation": 1,
+        "genre": "adventure",
+        "area": 0,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [],
+        "objective": "Dodge and survive",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_hearts",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_spirit",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "before": 272,
+        "after": 300.41666666666646
+      }
+    },
+    {
+      "id": "composition_safe_spawning",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "spawns": [
+          {
+            "type": "spawn",
+            "id": "spawn_1",
+            "at": 1808.333333333328,
+            "distance": 456.0959405042371
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_2",
+            "at": 3608.3333333333544,
+            "distance": 1147.1006930518352
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_3",
+            "at": 5416.666666666649,
+            "distance": 643.192039751737
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_4",
+            "at": 7224.999999999916,
+            "distance": 489.50587330490737
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_5",
+            "at": 9024.999999999942,
+            "distance": 1190.8988202194173
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_6",
+            "at": 10825.000000000073,
+            "distance": 1224.8101893762969
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_7",
+            "at": 12625.000000000204,
+            "distance": 704.7268974574478
+          }
+        ],
+        "world_validation": "PASS"
+      }
+    },
+    {
+      "id": "composition_enemy_roles",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "roles": [
+          "chaser_enemy",
+          "shooter_enemy"
+        ],
+        "chaser_moved": true
+      }
+    },
+    {
+      "id": "composition_attack_sequence",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "completed_sequences": [
+          [
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 2158.333333333328,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 3158.333333333328,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 4158.3333333333285,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 5158.3333333333285,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 6158.3333333333285,
+              "shot": 5
+            }
+          ],
+          [
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 3958.3333333333544,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 4958.333333333354,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 5958.333333333354,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 6958.333333333354,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 7958.333333333354,
+              "shot": 5
+            }
+          ],
+          [
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 5766.666666666649,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 6766.666666666649,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 7766.666666666649,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 8766.66666666665,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 9766.66666666665,
+              "shot": 5
+            }
+          ],
+          [
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 9374.999999999942,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 10374.999999999942,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 11374.999999999942,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 12374.999999999942,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 13374.999999999942,
+              "shot": 5
+            }
+          ]
+        ],
+        "expected": [
+          {
+            "interval_ms": 1000,
+            "shots": 5,
+            "windup_ms": 350,
+            "projectile_speed": 180,
+            "after": "despawn"
+          }
+        ],
+        "method": "Real-time scheduler; player teleports to evade. No attack clocks/counters changed."
+      }
+    },
+    {
+      "id": "composition_feedback",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "events": {
+          "windup": 26,
+          "impact": 22,
+          "defeat": 4
+        },
+        "asset_attack_animation_observed": false
+      }
+    },
+    {
+      "id": "composition_survival_score",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": 14.016666666666971
+    },
+    {
+      "id": "composition_projectile_damage",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "method": "Controlled player overlap with actual emitted projectile",
+        "snapshot": {
+          "behavior": {
+            "elapsed": 15050.00000000038,
+            "totalShots": 28,
+            "completedSequences": 4,
+            "events": [
+              {
+                "type": "spawn",
+                "id": "spawn_1",
+                "at": 1808.333333333328,
+                "distance": 456.0959405042371
+              },
+              {
+                "type": "windup",
+                "id": "spawn_1",
+                "at": 1808.333333333328
+              },
+              {
+                "type": "shot",
+                "id": "spawn_1",
+                "at": 2158.333333333328,
+                "shot": 1
+              },
+              {
+                "type": "windup",
+                "id": "spawn_1",
+                "at": 2808.33333333334
+              },
+              {
+                "type": "shot",
+                "id": "spawn_1",
+                "at": 3158.333333333328,
+                "shot": 2
+              },
+              {
+                "type": "spawn",
+                "id": "spawn_2",
+                "at": 3608.3333333333544,
+                "distance": 1147.1006930518352
+              },
+              {
+                "type": "windup",
+                "id": "spawn_2",
+                "at": 3608.3333333333544
+              },
+              {
+                "type": "windup",
+                "id": "spawn_1",
+                "at": 3808.333333333358
+              },
+              {
+                "type": "shot",
+                "id": "spawn_2",
+                "at": 3958.3333333333544,
+                "shot": 1
+              },
+              {
+                "type": "shot",
+                "id": "spawn_1",
+                "at": 4158.3333333333285,
+                "shot": 3
+              },
+              {
+                "type": "windup",
+                "id": "spawn_2",
+                "at": 4616.666666666678
+              },
+              {
+                "type": "windup",
+                "id": "spawn_1",
+                "at": 4808.333333333338
+              },
+              {
+                "type": "shot",
+                "id": "spawn_2",
+                "at": 4958.333333333354,
+                "shot": 2
+              },
+              {
+                "type": "shot",
+                "id": "spawn_1",
+                "at": 5158.3333333333285,
+                "shot": 4
+              },
+              {
+                "type": "spawn",
+                "id": "spawn_3",
+                "at": 5416.666666666649,
+                "distance": 643.192039751737
+              },
+              {
+                "type": "windup",
+                "id": "spawn_3",
+                "at": 5416.666666666649
+              },
+              {
+                "type": "windup",
+                "id": "spawn_2",
+                "at": 5616.6666666666415
+              },
+              {
+                "type": "shot",
+                "id": "spawn_3",
+                "at": 5766.666666666649,
+                "shot": 1
+              },
+              {
+                "type": "windup",
+                "id": "spawn_1",
+                "at": 5816.666666666634
+              },
+              {
+                "type": "shot",
+                "id": "spawn_2",
+                "at": 5958.333333333354,
+                "shot": 3
+              },
+              {
+                "type": "shot",
+                "id": "spawn_1",
+                "at": 6158.3333333333285,
+                "shot": 5
+              },
+              {
+                "type": "despawn",
+                "id": "spawn_1",
+                "at": 6158.3333333333285
+              },
+              {
+                "type": "windup",
+                "id": "spawn_3",
+                "at": 6424.999999999945
+              },
+              {
+                "type": "windup",
+                "id": "spawn_2",
+                "at": 6616.666666666605
+              },
+              {
+                "type": "shot",
+                "id": "spawn_3",
+                "at": 6766.666666666649,
+                "shot": 2
+              },
+              {
+                "type": "shot",
+                "id": "spawn_2",
+                "at": 6958.333333333354,
+                "shot": 4
+              },
+              {
+                "type": "spawn",
+                "id": "spawn_4",
+                "at": 7224.999999999916,
+                "distance": 489.50587330490737
+              },
+              {
+                "type": "windup",
+                "id": "spawn_3",
+                "at": 7424.999999999909
+              },
+              {
+                "type": "windup",
+                "id": "spawn_2",
+                "at": 7616.666666666569
+              },
+              {
+                "type": "shot",
+                "id": "spawn_3",
+                "at": 7766.666666666649,
+                "shot": 3
+              },
+              {
+                "type": "shot",
+                "id": "spawn_2",
+                "at": 7958.333333333354,
+                "shot": 5
+              },
+              {
+                "type": "despawn",
+                "id": "spawn_2",
+                "at": 7958.333333333354
+              },
+              {
+                "type": "windup",
+                "id": "spawn_3",
+                "at": 8424.999999999898
+              },
+              {
+                "type": "shot",
+                "id": "spawn_3",
+                "at": 8766.66666666665,
+                "shot": 4
+              },
+              {
+                "type": "spawn",
+                "id": "spawn_5",
+                "at": 9024.999999999942,
+                "distance": 1190.8988202194173
+              },
+              {
+                "type": "windup",
+                "id": "spawn_5",
+                "at": 9024.999999999942
+              },
+              {
+                "type": "shot",
+                "id": "spawn_5",
+                "at": 9374.999999999942,
+                "shot": 1
+              },
+              {
+                "type": "windup",
+                "id": "spawn_3",
+                "at": 9424.99999999997
+              },
+              {
+                "type": "shot",
+                "id": "spawn_3",
+                "at": 9766.66666666665,
+                "shot": 5
+              },
+              {
+                "type": "despawn",
+                "id": "spawn_3",
+                "at": 9766.66666666665
+              },
+              {
+                "type": "windup",
+                "id": "spawn_5",
+                "at": 10025.000000000015
+              },
+              {
+                "type": "shot",
+                "id": "spawn_5",
+                "at": 10374.999999999942,
+                "shot": 2
+              },
+              {
+                "type": "spawn",
+                "id": "spawn_6",
+                "at": 10825.000000000073,
+                "distance": 1224.8101893762969
+              },
+              {
+                "type": "windup",
+                "id": "spawn_6",
+                "at": 10825.000000000073
+              },
+              {
+                "type": "windup",
+                "id": "spawn_5",
+                "at": 11025.000000000087
+              },
+              {
+                "type": "shot",
+                "id": "spawn_6",
+                "at": 11175.000000000073,
+                "shot": 1
+              },
+              {
+                "type": "shot",
+                "id": "spawn_5",
+                "at": 11374.999999999942,
+                "shot": 3
+              },
+              {
+                "type": "windup",
+                "id": "spawn_6",
+                "at": 11825.000000000146
+              },
+              {
+                "type": "windup",
+                "id": "spawn_5",
+                "at": 12025.00000000016
+              },
+              {
+                "type": "shot",
+                "id": "spawn_6",
+                "at": 12175.000000000073,
+                "shot": 2
+              },
+              {
+                "type": "shot",
+                "id": "spawn_5",
+                "at": 12374.999999999942,
+                "shot": 4
+              },
+              {
+                "type": "spawn",
+                "id": "spawn_7",
+                "at": 12625.000000000204,
+                "distance": 704.7268974574478
+              },
+              {
+                "type": "windup",
+                "id": "spawn_7",
+                "at": 12625.000000000204
+              },
+              {
+                "type": "windup",
+                "id": "spawn_6",
+                "at": 12825.000000000218
+              },
+              {
+                "type": "shot",
+                "id": "spawn_7",
+                "at": 12975.000000000204,
+                "shot": 1
+              },
+              {
+                "type": "windup",
+                "id": "spawn_5",
+                "at": 13025.000000000233
+              },
+              {
+                "type": "shot",
+                "id": "spawn_6",
+                "at": 13175.000000000073,
+                "shot": 3
+              },
+              {
+                "type": "shot",
+                "id": "spawn_5",
+                "at": 13374.999999999942,
+                "shot": 5
+              },
+              {
+                "type": "despawn",
+                "id": "spawn_5",
+                "at": 13374.999999999942
+              },
+              {
+                "type": "windup",
+                "id": "spawn_7",
+                "at": 13625.000000000276
+              },
+              {
+                "type": "windup",
+                "id": "spawn_6",
+                "at": 13825.000000000291
+              },
+              {
+                "type": "shot",
+                "id": "spawn_7",
+                "at": 13975.000000000204,
+                "shot": 2
+              },
+              {
+                "type": "shot",
+                "id": "spawn_6",
+                "at": 14175.000000000073,
+                "shot": 4
+              },
+              {
+                "type": "spawn",
+                "id": "spawn_8",
+                "at": 14425.000000000335,
+                "distance": 527.7575200790606
+              },
+              {
+                "type": "windup",
+                "id": "spawn_8",
+                "at": 14425.000000000335
+              },
+              {
+                "type": "windup",
+                "id": "spawn_7",
+                "at": 14625.00000000035
+              },
+              {
+                "type": "shot",
+                "id": "spawn_8",
+                "at": 14775.000000000335,
+                "shot": 1
+              },
+              {
+                "type": "windup",
+                "id": "spawn_6",
+                "at": 14825.000000000364
+              },
+              {
+                "type": "shot",
+                "id": "spawn_7",
+                "at": 14975.000000000204,
+                "shot": 3
+              }
+            ],
+            "active": 4
+          },
+          "feedback": {
+            "windup": 29,
+            "impact": 25,
+            "defeat": 4
+          },
+          "projectiles": [
+            {
+              "x": 1255.4623204714735,
+              "y": 740.5449665763422
+            },
+            {
+              "x": 722.5274489226682,
+              "y": 300.85923198722566
+            },
+            {
+              "x": 830.9886756577655,
+              "y": 687.417246170064
+            }
+          ],
+          "hostileProjectiles": 3,
+          "questMode": false,
+          "score": 15.05000000000038,
+          "localBiome": null,
+          "regions": [],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 1169.273367238724,
+          "y": 674.264870061008,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [],
+          "objective": "Dodge and survive",
+          "health": 2,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "spawn_4",
+              "kind": "enemy",
+              "x": 732.3777891678405,
+              "y": 519.0726654909605,
+              "health": 2,
+              "role": "chaser_enemy",
+              "behavior": "chase",
+              "animation": "ninja_skull:right:walk",
+              "body": {
+                "x": 722.3777891678405,
+                "y": 509.0726654909605,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            },
+            {
+              "id": "spawn_6",
+              "kind": "enemy",
+              "x": 1392,
+              "y": 816,
+              "health": 2,
+              "role": "shooter_enemy",
+              "behavior": "shooter",
+              "animation": "ninja_spirit:down:idle",
+              "body": {
+                "x": 1382,
+                "y": 806,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            },
+            {
+              "id": "spawn_7",
+              "kind": "enemy",
+              "x": 816,
+              "y": 688,
+              "health": 2,
+              "role": "shooter_enemy",
+              "behavior": "shooter",
+              "animation": "ninja_spirit:down:idle",
+              "body": {
+                "x": 806,
+                "y": 678,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            },
+            {
+              "id": "spawn_8",
+              "kind": "enemy",
+              "x": 688,
+              "y": 272,
+              "health": 2,
+              "role": "shooter_enemy",
+              "behavior": "shooter",
+              "animation": "ninja_spirit:down:idle",
+              "body": {
+                "x": 678,
+                "y": 262,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjablue",
+          "playerFrame": 3,
+          "animation": "ninja_ninjablue:right:idle",
+          "selectedAssets": [
+            "ninja_hearts",
+            "ninja_ninjablue",
+            "ninja_projectile",
+            "ninja_skull",
+            "ninja_smoke",
+            "ninja_spirit",
+            "ninja_terrain"
+          ],
+          "missingAssets": []
+        }
+      }
+    },
+    {
+      "id": "composition_health_loss",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "behavior": {
+          "elapsed": 16766.66666666709,
+          "totalShots": 31,
+          "completedSequences": 5,
+          "events": [
+            {
+              "type": "spawn",
+              "id": "spawn_1",
+              "at": 1808.333333333328,
+              "distance": 456.0959405042371
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 1808.333333333328
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 2158.333333333328,
+              "shot": 1
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 2808.33333333334
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 3158.333333333328,
+              "shot": 2
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_2",
+              "at": 3608.3333333333544,
+              "distance": 1147.1006930518352
+            },
+            {
+              "type": "windup",
+              "id": "spawn_2",
+              "at": 3608.3333333333544
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 3808.333333333358
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 3958.3333333333544,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 4158.3333333333285,
+              "shot": 3
+            },
+            {
+              "type": "windup",
+              "id": "spawn_2",
+              "at": 4616.666666666678
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 4808.333333333338
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 4958.333333333354,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 5158.3333333333285,
+              "shot": 4
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_3",
+              "at": 5416.666666666649,
+              "distance": 643.192039751737
+            },
+            {
+              "type": "windup",
+              "id": "spawn_3",
+              "at": 5416.666666666649
+            },
+            {
+              "type": "windup",
+              "id": "spawn_2",
+              "at": 5616.6666666666415
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 5766.666666666649,
+              "shot": 1
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 5816.666666666634
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 5958.333333333354,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 6158.3333333333285,
+              "shot": 5
+            },
+            {
+              "type": "despawn",
+              "id": "spawn_1",
+              "at": 6158.3333333333285
+            },
+            {
+              "type": "windup",
+              "id": "spawn_3",
+              "at": 6424.999999999945
+            },
+            {
+              "type": "windup",
+              "id": "spawn_2",
+              "at": 6616.666666666605
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 6766.666666666649,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 6958.333333333354,
+              "shot": 4
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_4",
+              "at": 7224.999999999916,
+              "distance": 489.50587330490737
+            },
+            {
+              "type": "windup",
+              "id": "spawn_3",
+              "at": 7424.999999999909
+            },
+            {
+              "type": "windup",
+              "id": "spawn_2",
+              "at": 7616.666666666569
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 7766.666666666649,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 7958.333333333354,
+              "shot": 5
+            },
+            {
+              "type": "despawn",
+              "id": "spawn_2",
+              "at": 7958.333333333354
+            },
+            {
+              "type": "windup",
+              "id": "spawn_3",
+              "at": 8424.999999999898
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 8766.66666666665,
+              "shot": 4
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_5",
+              "at": 9024.999999999942,
+              "distance": 1190.8988202194173
+            },
+            {
+              "type": "windup",
+              "id": "spawn_5",
+              "at": 9024.999999999942
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 9374.999999999942,
+              "shot": 1
+            },
+            {
+              "type": "windup",
+              "id": "spawn_3",
+              "at": 9424.99999999997
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 9766.66666666665,
+              "shot": 5
+            },
+            {
+              "type": "despawn",
+              "id": "spawn_3",
+              "at": 9766.66666666665
+            },
+            {
+              "type": "windup",
+              "id": "spawn_5",
+              "at": 10025.000000000015
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 10374.999999999942,
+              "shot": 2
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_6",
+              "at": 10825.000000000073,
+              "distance": 1224.8101893762969
+            },
+            {
+              "type": "windup",
+              "id": "spawn_6",
+              "at": 10825.000000000073
+            },
+            {
+              "type": "windup",
+              "id": "spawn_5",
+              "at": 11025.000000000087
+            },
+            {
+              "type": "shot",
+              "id": "spawn_6",
+              "at": 11175.000000000073,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 11374.999999999942,
+              "shot": 3
+            },
+            {
+              "type": "windup",
+              "id": "spawn_6",
+              "at": 11825.000000000146
+            },
+            {
+              "type": "windup",
+              "id": "spawn_5",
+              "at": 12025.00000000016
+            },
+            {
+              "type": "shot",
+              "id": "spawn_6",
+              "at": 12175.000000000073,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 12374.999999999942,
+              "shot": 4
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_7",
+              "at": 12625.000000000204,
+              "distance": 704.7268974574478
+            },
+            {
+              "type": "windup",
+              "id": "spawn_7",
+              "at": 12625.000000000204
+            },
+            {
+              "type": "windup",
+              "id": "spawn_6",
+              "at": 12825.000000000218
+            },
+            {
+              "type": "shot",
+              "id": "spawn_7",
+              "at": 12975.000000000204,
+              "shot": 1
+            },
+            {
+              "type": "windup",
+              "id": "spawn_5",
+              "at": 13025.000000000233
+            },
+            {
+              "type": "shot",
+              "id": "spawn_6",
+              "at": 13175.000000000073,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 13374.999999999942,
+              "shot": 5
+            },
+            {
+              "type": "despawn",
+              "id": "spawn_5",
+              "at": 13374.999999999942
+            },
+            {
+              "type": "windup",
+              "id": "spawn_7",
+              "at": 13625.000000000276
+            },
+            {
+              "type": "windup",
+              "id": "spawn_6",
+              "at": 13825.000000000291
+            },
+            {
+              "type": "shot",
+              "id": "spawn_7",
+              "at": 13975.000000000204,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_6",
+              "at": 14175.000000000073,
+              "shot": 4
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_8",
+              "at": 14425.000000000335,
+              "distance": 527.7575200790606
+            },
+            {
+              "type": "windup",
+              "id": "spawn_8",
+              "at": 14425.000000000335
+            },
+            {
+              "type": "windup",
+              "id": "spawn_7",
+              "at": 14625.00000000035
+            },
+            {
+              "type": "shot",
+              "id": "spawn_8",
+              "at": 14775.000000000335,
+              "shot": 1
+            },
+            {
+              "type": "windup",
+              "id": "spawn_6",
+              "at": 14825.000000000364
+            },
+            {
+              "type": "shot",
+              "id": "spawn_7",
+              "at": 14975.000000000204,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_6",
+              "at": 15175.000000000073,
+              "shot": 5
+            },
+            {
+              "type": "despawn",
+              "id": "spawn_6",
+              "at": 15175.000000000073
+            },
+            {
+              "type": "windup",
+              "id": "spawn_8",
+              "at": 15425.000000000407
+            },
+            {
+              "type": "windup",
+              "id": "spawn_7",
+              "at": 15625.000000000422
+            },
+            {
+              "type": "shot",
+              "id": "spawn_8",
+              "at": 15775.000000000335,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_7",
+              "at": 15975.000000000204,
+              "shot": 4
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_9",
+              "at": 16225.000000000466,
+              "distance": 605.5289028696212
+            },
+            {
+              "type": "windup",
+              "id": "spawn_8",
+              "at": 16425.000000000473
+            },
+            {
+              "type": "windup",
+              "id": "spawn_7",
+              "at": 16625.000000000444
+            }
+          ],
+          "active": 4
+        },
+        "feedback": {
+          "windup": 33,
+          "impact": 31,
+          "defeat": 5
+        },
+        "projectiles": [
+          {
+            "x": 1149.0254915331534,
+            "y": 661.3798582483723
+          },
+          {
+            "x": 723.0246987561885,
+            "y": 451.6170105447668
+          }
+        ],
+        "hostileProjectiles": 2,
+        "questMode": false,
+        "score": 16.76666666666709,
+        "localBiome": null,
+        "regions": [],
+        "ready": true,
+        "generation": 1,
+        "genre": "adventure",
+        "area": 0,
+        "x": 737.4799249546955,
+        "y": 522.3361750705325,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [],
+        "objective": "Dodge and survive",
+        "health": 0,
+        "won": false,
+        "lost": true,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "spawn_4",
+            "kind": "enemy",
+            "x": 736.3856605212583,
+            "y": 524.2829040448244,
+            "health": 2,
+            "role": "chaser_enemy",
+            "behavior": "chase",
+            "animation": "ninja_skull:down:walk",
+            "body": {
+              "x": 726.3856605212583,
+              "y": 514.2829040448244,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "spawn_7",
+            "kind": "enemy",
+            "x": 816,
+            "y": 688,
+            "health": 2,
+            "role": "shooter_enemy",
+            "behavior": "shooter",
+            "animation": "ninja_spirit:down:idle",
+            "body": {
+              "x": 806,
+              "y": 678,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "spawn_8",
+            "kind": "enemy",
+            "x": 688,
+            "y": 272,
+            "health": 2,
+            "role": "shooter_enemy",
+            "behavior": "shooter",
+            "animation": "ninja_spirit:down:idle",
+            "body": {
+              "x": 678,
+              "y": 262,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "spawn_9",
+            "kind": "enemy",
+            "x": 1261.948755351314,
+            "y": 737.9570107059167,
+            "health": 2,
+            "role": "chaser_enemy",
+            "behavior": "chase",
+            "animation": "ninja_skull:left:walk",
+            "body": {
+              "x": 1251.948755351314,
+              "y": 727.9570107059167,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 3,
+        "animation": "ninja_ninjablue:right:idle",
+        "selectedAssets": [
+          "ninja_hearts",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_spirit",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "composition_score_stops",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "at_loss": 16.76666666666709,
+        "later": 16.76666666666709
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "behavior": {
+          "elapsed": 124.99999999999997,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": false,
+        "score": 0.12499999999999997,
+        "localBiome": null,
+        "regions": [],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 272,
+        "y": 752,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [],
+        "objective": "Dodge and survive",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_hearts",
+          "ninja_ninjablue",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_spirit",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Actual Phaser timers/AI/projectiles and collision. Controlled player repositioning for evasion and damage; not autonomous full playthrough or subjective quality assessment."
+}

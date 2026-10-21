@@ -1,0 +1,6735 @@
+{
+  "job": {
+    "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+    "prompt": "Create an industrial platformer where I must activate two switches to open a security gate while avoiding patrolling guards and moving machinery. The exit should only become available after both switches are activated.",
+    "status": "READY_WITH_WARNINGS",
+    "stage": "READY_WITH_WARNINGS",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "captured-gemini-3.5-flash-lite",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T19:03:08.070564+00:00",
+    "updated_at": "2026-10-21T19:03:28.062891+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "semantic_intent.json",
+      "capability_compatibility.json",
+      "game_intent.json",
+      "model_design.json",
+      "requirement_report.json",
+      "game_design.json",
+      "provider.json",
+      "design_validation.json",
+      "repair_report.json",
+      "final_design.json",
+      "validation.json",
+      "game_ir_v2.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "diagnosis.json",
+      "qa_report.json",
+      "semantic_requirement_report.json",
+      "outcome.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 15,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5173/studio/play/584b2fc0-95b3-4fac-addb-93d9271a2cdc"
+  },
+  "events": [
+    {
+      "id": 1865,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:08.098271+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1866,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:08.132435+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.03s; language model",
+      "diff": null
+    },
+    {
+      "id": 1867,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:08.275598+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting prompt with Gemini",
+      "attempt": 1,
+      "rationale": "Elapsed 0.17s; language model",
+      "diff": null
+    },
+    {
+      "id": 1868,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:08.508771+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Validated typed design; composing sections and registered mechanics",
+      "attempt": 1,
+      "rationale": "Elapsed 0.41s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1869,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:08.546441+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking jump trajectories, landing margins and objective consistency",
+      "attempt": 1,
+      "rationale": "Elapsed 0.45s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1870,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:08.835305+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Runtime specification and asset dependencies persisted",
+      "attempt": 1,
+      "rationale": "Elapsed 0.73s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1871,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:08.881585+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium gameplay checks",
+      "attempt": 1,
+      "rationale": "Elapsed 0.78s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1872,
+      "game_id": "584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "ts": "2026-10-21T19:03:28.050206+00:00",
+      "stage": "READY_WITH_WARNINGS",
+      "result": "SUCCESS",
+      "detail": "Browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 19.95s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "platformer",
+      "loop": "platformer_level_completion",
+      "control": "platform",
+      "requirements": [
+        {
+          "source": "industrial platformer",
+          "meaning": "Platformer game featuring an industrial theme and mechanical obstacles",
+          "capability": "platform_movement",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "mandatory_route_edges",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true
+        },
+        {
+          "source": "industrial platformer",
+          "meaning": "Visual setting styled as an industrial factory",
+          "capability": "visual_theme",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "theme_applied",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true
+        },
+        {
+          "source": "activate two switches to open a security gate",
+          "meaning": "Two switches must be activated to open the security gate",
+          "capability": "switch_gate",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "switch_door",
+          "biomes": [],
+          "count": 2,
+          "scope": "game",
+          "mandatory": true
+        },
+        {
+          "source": "avoiding patrolling guards",
+          "meaning": "Patrolling guard enemies move back and forth along platforms",
+          "capability": "patrol_enemies",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "enemy_patrol",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true
+        },
+        {
+          "source": "moving machinery",
+          "meaning": "Moving platforms act as industrial machinery obstacles",
+          "capability": "moving_platforms",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "moving_platform_motion",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true
+        },
+        {
+          "source": "exit should only become available after both switches are activated",
+          "meaning": "Level exit is locked until the switch gate requirements are met",
+          "capability": "restart",
+          "status": "planned",
+          "depends_on": [
+            "switch_gate"
+          ],
+          "verification": "rapid_restart",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true
+        }
+      ],
+      "arcade": null,
+      "perspective": "side_scrolling",
+      "structure": "connected_levels",
+      "loops": [
+        "exploration",
+        "avoidance",
+        "quest"
+      ],
+      "gameplay": null,
+      "provenance": {
+        "provider": "CapturedGeminiReplay",
+        "model": "captured-gemini-3.5-flash-lite",
+        "live": true,
+        "validation_attempts": [
+          {
+            "attempt": 1,
+            "valid": true,
+            "model": "captured-gemini-3.5-flash-lite"
+          }
+        ],
+        "source_grounding": []
+      }
+    },
+    "capability_compatibility.json": {
+      "overall": "PASS",
+      "issues": [],
+      "decision_source": "deterministic capability compatibility",
+      "catalog": {
+        "platform_movement": {
+          "ir_path": "player",
+          "verification": "mandatory_route_edges",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "player"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "top_down_movement": {
+          "ir_path": "areas",
+          "verification": "top_down_horizontal_movement",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "auto_run": {
+          "ir_path": "mode",
+          "verification": "runner_input",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "flap": {
+          "ir_path": "mode",
+          "verification": "repeatable_flap",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "endless_obstacles": {
+          "ir_path": "endless",
+          "verification": "endless_bounded_state",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "endless"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "finite_finish": {
+          "ir_path": "finish_distance",
+          "verification": null,
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "finish_distance"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "distance_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "gap_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "restart": {
+          "ir_path": "genre",
+          "verification": "rapid_restart",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "genre"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_duel": {
+          "ir_path": "boss",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_health_bar": {
+          "ir_path": "boss.health",
+          "verification": "boss_arena",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_patterns": {
+          "ir_path": "boss.patterns",
+          "verification": "boss_volley",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.patterns"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_defeat": {
+          "ir_path": "boss.victory",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.victory"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_ordinary_enemies": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_collectibles": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_combat": {
+          "ir_path": "combat",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "combat"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "single_level": {
+          "ir_path": "areas/levels",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "areas/levels"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "biome_regions": {
+          "ir_path": "areas.regions",
+          "verification": "biome_regions",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "slippery_region": {
+          "ir_path": "areas.regions.slippery",
+          "verification": "localized_slippery",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions.slippery"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_delivery": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_collect": {
+          "ir_path": "quests",
+          "verification": "quest_collect",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_activate": {
+          "ir_path": "quests",
+          "verification": "quest_activate",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_unlock": {
+          "ir_path": "quests",
+          "verification": "quest_unlock",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_explore": {
+          "ir_path": "quests",
+          "verification": "quest_explore",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "adventure_combat": {
+          "ir_path": "quests",
+          "verification": "adventure_combat",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "treasure_finish": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "projectile_attack": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "sword_melee": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "visual_theme": {
+          "ir_path": "theme",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "theme"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "unsupported": {
+          "ir_path": "unsupported",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "unsupported"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "switch_gate": {
+          "ir_path": "links",
+          "verification": "shared_gate_dependency",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "links"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "moving_platforms": {
+          "ir_path": "platforms.moving",
+          "verification": "moving_platform_motion",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "platforms.moving"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "patrol_enemies": {
+          "ir_path": "entities.behavior",
+          "verification": "enemy_patrol",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "entities.behavior"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "health_damage": {
+          "ir_path": "gameplay.health",
+          "verification": "composition_health_loss",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "enemy_spawning": {
+          "ir_path": "gameplay.spawns",
+          "verification": "composition_safe_spawning",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "top_down_movement",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.spawns"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+        },
+        "enemy_roles": {
+          "ir_path": "gameplay.archetypes",
+          "verification": "composition_enemy_roles",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "attack_sequence": {
+          "ir_path": "gameplay.archetypes.attack",
+          "verification": "composition_attack_sequence",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "enemy_roles",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes.attack"
+          ],
+          "behavior_types": [
+            "timed_projectile_sequence"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "survival_time": {
+          "ir_path": "gameplay.scoring",
+          "verification": "composition_survival_score",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "no_inventory": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_quests": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_npcs": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_exit": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        }
+      },
+      "relationships": null,
+      "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+    },
+    "game_intent.json": {
+      "original_prompt": "Create an industrial platformer where I must activate two switches to open a security gate while avoiding patrolling guards and moving machinery. The exit should only become available after both switches are activated.",
+      "genre": "platformer",
+      "setting": "industrial",
+      "gameplay": {
+        "objectives": [
+          {
+            "kind": "unlock",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          },
+          {
+            "kind": "activate",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          }
+        ],
+        "campaign_objectives": [],
+        "interactions": [
+          {
+            "trigger": "interact",
+            "section": 2,
+            "door_section": 7,
+            "gate": "sec_gate"
+          },
+          {
+            "trigger": "interact",
+            "section": 5,
+            "door_section": 7,
+            "gate": "sec_gate"
+          }
+        ],
+        "player_attack": "stomp"
+      },
+      "level_count": 1,
+      "progression": [],
+      "requested_mechanics": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "span": [
+            10,
+            20
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "environment_composition"
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            106,
+            116
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "enemy_patrol"
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving machinery",
+          "span": [
+            128,
+            144
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "moving_platform_motion"
+        },
+        {
+          "id": "switches",
+          "source": "switches",
+          "span": [
+            58,
+            66
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "switch_door"
+        }
+      ],
+      "model_requests": [],
+      "unsupported": [],
+      "interpretation_source": {
+        "provider": "CapturedGeminiReplay",
+        "model": "captured-gemini-3.5-flash-lite",
+        "live": true,
+        "initial_latency_ms": 0,
+        "fallbacks": [],
+        "validation_attempts": [
+          {
+            "attempt": 1,
+            "valid": true,
+            "model": "captured-gemini-3.5-flash-lite"
+          }
+        ],
+        "requirement_authority": "semantic_intent.json",
+        "advisory_designer_requirements": [
+          {
+            "source": "industrial platformer",
+            "capability": "factory_environment",
+            "description": "Game staged in an industrial factory setting with timed hazards."
+          },
+          {
+            "source": "activate two switches to open a security gate",
+            "capability": "switches",
+            "description": "Two interactable switches linked to a security gate door."
+          },
+          {
+            "source": "avoiding patrolling guards",
+            "capability": "patrol",
+            "description": "Patrolling guard enemies moving back and forth across platforms."
+          },
+          {
+            "source": "moving machinery",
+            "capability": "moving_platforms",
+            "description": "Moving platforms acting as industrial machinery obstacles."
+          },
+          {
+            "source": "exit should only become available after both switches are activated",
+            "capability": "combat_objective",
+            "description": "Exit door is locked until all required switches are flipped."
+          }
+        ]
+      }
+    },
+    "model_design.json": {
+      "boss": null,
+      "collectibles_enabled": false,
+      "title": "Industrial Infiltration",
+      "premise": "Navigate a high-security industrial facility, bypass patrolling guards, ride moving machinery, and flip two control switches to unlock the exit gate.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "balanced",
+      "objective": "reach_exit",
+      "abilities": [
+        "double_jump"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 60,
+        "period_ms": 3000
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "trigger": "interact",
+          "section": 2,
+          "door_section": 7,
+          "gate": "sec_gate"
+        },
+        {
+          "trigger": "interact",
+          "section": 5,
+          "door_section": 7,
+          "gate": "sec_gate"
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        },
+        {
+          "kind": "activate",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        }
+      ],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2200,
+      "timed_hazards": true,
+      "exit_indicator": "glow",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "terraces",
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Switches in sections 2 and 5 share the gate ID 'sec_gate' linked to the security door in section 7, ensuring both must be activated before the exit unlocks.",
+        "Moving machinery is represented via moving platforms across factory sections.",
+        "Patrolling guards use standard stomp combat."
+      ],
+      "requested_features": []
+    },
+    "requirement_report.json": {
+      "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.",
+      "requirements": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "span": [
+            10,
+            20
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "environment_composition",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "factory_environment",
+            "qa": "environment_composition"
+          }
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            106,
+            116
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "enemy_patrol",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "patrol",
+            "qa": "enemy_patrol"
+          }
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving machinery",
+          "span": [
+            128,
+            144
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "moving_platform_motion",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "moving_platforms",
+            "qa": "moving_platform_motion"
+          }
+        },
+        {
+          "id": "switches",
+          "source": "switches",
+          "span": [
+            58,
+            66
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "switch_door",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "switches",
+            "qa": "switch_door"
+          }
+        }
+      ],
+      "changes": [],
+      "unsupported": [],
+      "overall": "PASS"
+    },
+    "game_design.json": {
+      "boss": null,
+      "collectibles_enabled": false,
+      "title": "Industrial Infiltration",
+      "premise": "Navigate a high-security industrial facility, bypass patrolling guards, ride moving machinery, and flip two control switches to unlock the exit gate.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "balanced",
+      "objective": "reach_exit",
+      "abilities": [
+        "double_jump"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 60,
+        "period_ms": 3000
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "trigger": "interact",
+          "section": 2,
+          "door_section": 7,
+          "gate": "sec_gate"
+        },
+        {
+          "trigger": "interact",
+          "section": 5,
+          "door_section": 7,
+          "gate": "sec_gate"
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        },
+        {
+          "kind": "activate",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        }
+      ],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2200,
+      "timed_hazards": true,
+      "exit_indicator": "glow",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "terraces",
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Switches in sections 2 and 5 share the gate ID 'sec_gate' linked to the security door in section 7, ensuring both must be activated before the exit unlocks.",
+        "Moving machinery is represented via moving platforms across factory sections.",
+        "Patrolling guards use standard stomp combat."
+      ],
+      "requested_features": []
+    },
+    "provider.json": {
+      "provider": "CapturedGeminiReplay",
+      "model": "captured-gemini-3.5-flash-lite",
+      "live": true,
+      "initial_latency_ms": 0,
+      "fallbacks": [],
+      "validation_attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "captured-gemini-3.5-flash-lite"
+        }
+      ],
+      "requirement_authority": "semantic_intent.json",
+      "advisory_designer_requirements": [
+        {
+          "source": "industrial platformer",
+          "capability": "factory_environment",
+          "description": "Game staged in an industrial factory setting with timed hazards."
+        },
+        {
+          "source": "activate two switches to open a security gate",
+          "capability": "switches",
+          "description": "Two interactable switches linked to a security gate door."
+        },
+        {
+          "source": "avoiding patrolling guards",
+          "capability": "patrol",
+          "description": "Patrolling guard enemies moving back and forth across platforms."
+        },
+        {
+          "source": "moving machinery",
+          "capability": "moving_platforms",
+          "description": "Moving platforms acting as industrial machinery obstacles."
+        },
+        {
+          "source": "exit should only become available after both switches are activated",
+          "capability": "combat_objective",
+          "description": "Exit door is locked until all required switches are flipped."
+        }
+      ]
+    },
+    "design_validation.json": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "captured-gemini-3.5-flash-lite"
+        }
+      ],
+      "maximum_corrections": 1
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 2
+    },
+    "final_design.json": {
+      "boss": null,
+      "collectibles_enabled": false,
+      "title": "Industrial Infiltration",
+      "premise": "Navigate a high-security industrial facility, bypass patrolling guards, ride moving machinery, and flip two control switches to unlock the exit gate.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "balanced",
+      "objective": "reach_exit",
+      "abilities": [
+        "double_jump"
+      ],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 60,
+        "period_ms": 3000
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "trigger": "interact",
+          "section": 2,
+          "door_section": 7,
+          "gate": "sec_gate"
+        },
+        {
+          "trigger": "interact",
+          "section": 5,
+          "door_section": 7,
+          "gate": "sec_gate"
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        },
+        {
+          "kind": "activate",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        }
+      ],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2200,
+      "timed_hazards": true,
+      "exit_indicator": "glow",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "terraces",
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Switches in sections 2 and 5 share the gate ID 'sec_gate' linked to the security door in section 7, ensuring both must be activated before the exit unlocks.",
+        "Moving machinery is represented via moving platforms across factory sections.",
+        "Patrolling guards use standard stomp combat."
+      ],
+      "requested_features": []
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "goal_L1_goal_0",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "goal_L1_goal_1",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "link_L1_door_0",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_5_6",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_6_7",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_7_8",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "objective_on_main_route",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "entry_exit",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "entity_supports",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    },
+    "game_ir_v2.json": {
+      "boss": null,
+      "title": "Industrial Infiltration",
+      "width": 2556,
+      "height": 900,
+      "spawn": {
+        "x": 90.0,
+        "y": 692.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 0
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 20,
+          "width": 8,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 9,
+          "y": 20,
+          "width": 6,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 10,
+          "y": 18,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 60,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 17,
+          "y": 19,
+          "width": 5,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 23,
+          "y": 19,
+          "width": 6,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 24,
+          "y": 17,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 60,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 31,
+          "y": 18,
+          "width": 7,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 40,
+          "y": 18,
+          "width": 8,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 41,
+          "y": 16,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 60,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 49,
+          "y": 17,
+          "width": 5,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 56,
+          "y": 17,
+          "width": 7,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 57,
+          "y": 15,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 60,
+            "period_ms": 3000
+          }
+        },
+        {
+          "x": 64,
+          "y": 17,
+          "width": 5,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        }
+      ],
+      "entities": [
+        {
+          "boss": null,
+          "id": "L1_enemy_0",
+          "x": 684.0,
+          "y": 662.0,
+          "kind": "enemy",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_timed_hazard_1",
+          "x": 968.4,
+          "y": 668.0,
+          "kind": "timed_hazard",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_enemy_2",
+          "x": 1216.8,
+          "y": 626.0,
+          "kind": "enemy",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_checkpoint_3",
+          "x": 1008.0,
+          "y": 654.0,
+          "kind": "checkpoint",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_enemy_4",
+          "x": 1836.0,
+          "y": 590.0,
+          "kind": "enemy",
+          "platform": 9,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_timed_hazard_5",
+          "x": 1881.0,
+          "y": 596.0,
+          "kind": "timed_hazard",
+          "platform": 9,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_enemy_6",
+          "x": 2376.0,
+          "y": 590.0,
+          "kind": "enemy",
+          "platform": 12,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_exit_7",
+          "x": 2448.0,
+          "y": 576.0,
+          "kind": "exit",
+          "platform": 12,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_trigger_0",
+          "x": 867.6,
+          "y": 660.0,
+          "kind": "switch",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_door_0",
+          "x": 2430.0,
+          "y": 522.0,
+          "kind": "door",
+          "platform": 12,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "boss": null,
+          "id": "L1_trigger_1",
+          "x": 1803.6000000000001,
+          "y": 588.0,
+          "kind": "switch",
+          "platform": 9,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow",
+      "theme": "industrial",
+      "slippery": false,
+      "exit_style": "gate",
+      "exit_indicator": "glow",
+      "collectible": "crystals",
+      "difficulty": "balanced",
+      "briefing": "",
+      "topology": "terraces",
+      "goals": [
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L1_goal_0",
+          "targets": [
+            "L1_door_0"
+          ]
+        },
+        {
+          "kind": "activate",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L1_goal_1",
+          "targets": [
+            "L1_trigger_0",
+            "L1_trigger_1"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "sources": [
+            "L1_trigger_0",
+            "L1_trigger_1"
+          ],
+          "target": "L1_door_0",
+          "condition": "all",
+          "action": "open_door"
+        }
+      ],
+      "player_attack": "stomp",
+      "schema_version": "2.0",
+      "genre": "platformer",
+      "seed": 7,
+      "tile_size": 36,
+      "player": {
+        "speed": 250,
+        "jump": 490,
+        "gravity": 1100,
+        "health": 3,
+        "abilities": [
+          "double_jump"
+        ]
+      },
+      "levels": [],
+      "campaign_goals": [],
+      "requirements": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "span": [
+            10,
+            20
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "environment_composition",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "factory_environment",
+            "qa": "environment_composition"
+          }
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            106,
+            116
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "enemy_patrol",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "patrol",
+            "qa": "enemy_patrol"
+          }
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving machinery",
+          "span": [
+            128,
+            144
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "moving_platform_motion",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "moving_platforms",
+            "qa": "moving_platform_motion"
+          }
+        },
+        {
+          "id": "switches",
+          "source": "switches",
+          "span": [
+            58,
+            66
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "switch_door",
+          "model_sources": [],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "switches",
+            "qa": "switch_door"
+          }
+        }
+      ],
+      "asset_pack": "kenney_pixel_platformer"
+    },
+    "asset_manifest.json": {
+      "id": "kenney_pixel_platformer",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "sources": [
+        "https://kenney.nl/assets/pixel-platformer",
+        "https://kenney.nl/assets/pixel-platformer-industrial-expansion"
+      ],
+      "textures": {
+        "terrain": {
+          "url": "/assets/platformer/terrain.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 20
+        },
+        "characters": {
+          "url": "/assets/platformer/characters.png",
+          "frameWidth": 24,
+          "frameHeight": 24,
+          "columns": 9
+        },
+        "industrial": {
+          "url": "/assets/platformer/industrial.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 16
+        }
+      },
+      "backgrounds": {
+        "forest": "/assets/platformer/background-forest.png",
+        "industrial": "/assets/platformer/background-industrial.png",
+        "twilight": "/assets/platformer/background-twilight.png"
+      },
+      "animations": {
+        "idle": [
+          0
+        ],
+        "run": [
+          0,
+          1
+        ],
+        "jump": [
+          0
+        ],
+        "fall": [
+          1
+        ],
+        "damage": "tint and invulnerability blink; no dedicated damage frames in pack"
+      },
+      "roles": {
+        "forest_ground": 0,
+        "forest_fill": 4,
+        "industrial_ground": 0,
+        "industrial_fill": 11,
+        "crystal": 67,
+        "spikes": 68,
+        "checkpoint": 112,
+        "exit": 10,
+        "enemy_forest": [
+          12,
+          13
+        ],
+        "enemy_industrial": [
+          22,
+          23
+        ],
+        "moving_industrial": 25,
+        "moving_forest": 49,
+        "forest_ruins": 129,
+        "forest_props": [
+          124,
+          125,
+          126
+        ],
+        "tree_trunk": 116,
+        "tree_crown": 16,
+        "industrial_prop": 75,
+        "industrial_sign": 41
+      },
+      "files": {
+        "background-forest.png": "f8d264a826b90b85f66ff0eba79b5bc0e5d88a12cb9056b54f427fa3b8bf26a6",
+        "background-industrial.png": "d9c2f01ded10e4b61b59917833c4735d3593673c55406d73afe0be100e08ef6e",
+        "background-twilight.png": "3cdc2da58bd4b6733e78ae0f5be84581cc1c09b232d8c46bcc446b892f42ab20",
+        "characters.png": "22622d54dfc9d85346c9b75b999c8604e6eb336e42c4708bcf8b21094d8a2dad",
+        "industrial.png": "b54ba09f1564228f43921c33e2652f14e168565159d3624a1eb8b68bc633b872",
+        "terrain.png": "a3bbff36594baa36c803a67e9152a20a80f2faeb3c22ca84ac06e0a70f56553d"
+      },
+      "procedural": {
+        "source": "src/game/platformer/PlatformerScene.ts",
+        "author": "Aether project",
+        "license": "Project source terms; not attributed to Kenney",
+        "roles": [
+          "ice terrain",
+          "cavern silhouettes",
+          "ice crystals",
+          "falling icicles",
+          "relic medallion",
+          "shrine exit",
+          "industrial gate",
+          "exit beacon",
+          "animated exit halo"
+        ]
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "background-forest.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-twilight.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "characters.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "terrain.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "genre": "platformer",
+      "schema_version": "2.0",
+      "seed": 7,
+      "game_url": "http://localhost:5173/studio/play/584b2fc0-95b3-4fac-addb-93d9271a2cdc",
+      "capabilities": [
+        "factory_environment",
+        "patrol",
+        "moving_platforms",
+        "switches"
+      ],
+      "moving_platforms": true,
+      "level_count": 1,
+      "topology": "terraces",
+      "exit_style": "gate",
+      "exit_indicator": "glow"
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.5069615494186263,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 663.416666666666,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1196.216666666668,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1815.416666666668,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2355.416666666664,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 467.2671151375484,
+                  "y": 657
+                },
+                {
+                  "x": 971.2671151375484,
+                  "y": 621
+                },
+                {
+                  "x": 1583.2671151375484,
+                  "y": 585
+                },
+                {
+                  "x": 2159.2671151375484,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 696,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 3440.2
+            },
+            "after": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.8839566987447491,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 644.9999999999986,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1177.8000000000027,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1797.0000000000027,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2336.9999999999945,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": false,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": false,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 488.3815572471545,
+                  "y": 657
+                },
+                {
+                  "x": 992.3815572471545,
+                  "y": 621
+                },
+                {
+                  "x": 1604.3815572471544,
+                  "y": 585
+                },
+                {
+                  "x": 2180.3815572471544,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 133.3888888888889,
+              "y": 696,
+              "vx": 216.66666666666666,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 7,
+              "time": 4056.8
+            }
+          }
+        },
+        {
+          "id": "jump",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.9432159720584686,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 677.4999999999998,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1210.3000000000004,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1829.5000000000005,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2369.499999999999,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 442.41889066001585,
+                  "y": 657
+                },
+                {
+                  "x": 946.4188906600158,
+                  "y": 621
+                },
+                {
+                  "x": 1558.418890660016,
+                  "y": 585
+                },
+                {
+                  "x": 2134.4188906600157,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 696,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 4473.4
+            },
+            "after": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.5207452171474759,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 661.2499999999992,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1194.0500000000015,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1813.2500000000016,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2353.249999999997,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 470.56725658119234,
+                  "y": 657
+                },
+                {
+                  "x": 974.5672565811924,
+                  "y": 621
+                },
+                {
+                  "x": 1586.5672565811924,
+                  "y": 585
+                },
+                {
+                  "x": 2162.5672565811924,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 617.6388888888889,
+              "vx": 0,
+              "vy": -251.66666666666688,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 7,
+              "time": 5023.4
+            }
+          }
+        },
+        {
+          "id": "environment_composition",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.9170536366244072,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 676.4166666666664,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1209.2166666666672,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1828.4166666666672,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2368.4166666666656,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 444.47470144906555,
+                  "y": 657
+                },
+                {
+                  "x": 948.4747014490656,
+                  "y": 621
+                },
+                {
+                  "x": 1560.4747014490656,
+                  "y": 585
+                },
+                {
+                  "x": 2136.4747014490654,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 3,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 696,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 5440.1
+            }
+          }
+        },
+        {
+          "id": "enemy_patrol",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "method": "Actual decision state, motion or telegraphed projectile attack; controlled player placement",
+            "before": {
+              "id": "L1_enemy_0",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 678.5833333333331,
+              "y": 665.3000000000001,
+              "vx": -65
+            },
+            "after": {
+              "id": "L1_enemy_0",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 664.4999999999993,
+              "y": 665.3000000000001,
+              "vx": -65
+            }
+          }
+        },
+        {
+          "id": "moving_platform_motion",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "before": [
+              {
+                "x": 440.35038605760394,
+                "y": 657
+              },
+              {
+                "x": 944.3503860576039,
+                "y": 621
+              },
+              {
+                "x": 1556.3503860576038,
+                "y": 585
+              },
+              {
+                "x": 2132.350386057604,
+                "y": 549
+              }
+            ],
+            "after": [
+              {
+                "x": 473.67950222753984,
+                "y": 657
+              },
+              {
+                "x": 977.6795022275398,
+                "y": 621
+              },
+              {
+                "x": 1589.6795022275398,
+                "y": 585
+              },
+              {
+                "x": 2165.67950222754,
+                "y": 549
+              }
+            ]
+          }
+        },
+        {
+          "id": "timed_hazard_cycle",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "active_samples": [
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ]
+          }
+        },
+        {
+          "id": "shared_gate_dependency",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "method": "Real E/pressure/projectile activation, physical door body state and early exit overlap; controlled positions only",
+            "sequence": [
+              {
+                "activated": "L1_trigger_0",
+                "open": false,
+                "collidable": true,
+                "expected_open": false,
+                "exit_blocked": true
+              },
+              {
+                "activated": "L1_trigger_1",
+                "open": true,
+                "collidable": false,
+                "expected_open": true
+              }
+            ],
+            "feedback": {
+              "activate": 2,
+              "impact": 1,
+              "defeat": 1
+            }
+          }
+        },
+        {
+          "id": "switch_door",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "method": "Actual pressure/contact/proximity/key or projectile activation and linked door body removal",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 1,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [
+                  "L1_trigger_0"
+                ],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": true
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {
+                "activate": 3,
+                "impact": 1,
+                "defeat": 1
+              },
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.6869329861467711,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 649.3333333333321,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1182.1333333333357,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1801.3333333333358,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2341.3333333333285,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 485.92764277795004,
+                  "y": 657
+                },
+                {
+                  "x": 989.92764277795,
+                  "y": 621
+                },
+                {
+                  "x": 1601.92764277795,
+                  "y": 585
+                },
+                {
+                  "x": 2177.92764277795,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 8,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 867.6,
+              "y": 660,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 12923.2
+            }
+          }
+        },
+        {
+          "id": "switch_door",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "method": "Actual pressure/contact/proximity/key or projectile activation and linked door body removal",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 1,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [
+                  "L1_enemy_4"
+                ],
+                "activate": [
+                  "L1_trigger_1"
+                ],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": true
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {
+                "activate": 4,
+                "impact": 2,
+                "defeat": 2
+              },
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.6631457364077772,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 647.1666666666654,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1179.9666666666692,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2339.1666666666615,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 487.6310312740072,
+                  "y": 657
+                },
+                {
+                  "x": 991.6310312740072,
+                  "y": 621
+                },
+                {
+                  "x": 1603.6310312740072,
+                  "y": 585
+                },
+                {
+                  "x": 2179.6310312740075,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 9,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 1798.488888888889,
+              "y": 539.7222222222223,
+              "vx": 0,
+              "vy": -134.99999999999997,
+              "grounded": false,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 7,
+              "time": 13656.4
+            }
+          }
+        },
+        {
+          "id": "objective_locked_exit",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "Industrial Infiltration",
+            "topology": "terraces",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 0
+            },
+            "goals": [
+              {
+                "id": "L1_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L1_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 2,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": []
+            },
+            "triggers": [
+              {
+                "id": "L1_trigger_0",
+                "activation": "interact",
+                "x": 867.6,
+                "y": 660,
+                "active": false
+              },
+              {
+                "id": "L1_trigger_1",
+                "activation": "interact",
+                "x": 1803.6000000000001,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L1_door_0",
+                "x": 2430,
+                "y": 522,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "feedback": {
+              "activate": 4,
+              "impact": 2,
+              "defeat": 2
+            },
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 692
+            },
+            "exitAlpha": 0.7886522387938153,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L1_enemy_0",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 656.9166666666657,
+                "y": 665.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_2",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1189.7166666666685,
+                "y": 629.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_4",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1808.9166666666686,
+                "y": 593.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_6",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2348.916666666663,
+                "y": 593.3000000000001,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [
+              {
+                "active": true,
+                "x": 968.4,
+                "y": 668
+              },
+              {
+                "active": true,
+                "x": 1881,
+                "y": 596
+              }
+            ],
+            "movingPlatforms": [
+              {
+                "x": 479.28064521640334,
+                "y": 657
+              },
+              {
+                "x": 983.2806452164033,
+                "y": 621
+              },
+              {
+                "x": 1595.2806452164034,
+                "y": 585
+              },
+              {
+                "x": 2171.280645216403,
+                "y": 549
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "industrial",
+            "terrainTexture": "industrial",
+            "generation": 10,
+            "landedPlatforms": [
+              0,
+              12
+            ],
+            "x": 2448,
+            "y": 588,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 7,
+            "time": 14173.1
+          }
+        },
+        {
+          "id": "objective_conditions",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "stage": 0,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 1,
+                  "needed": 1,
+                  "complete": true,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 2,
+                  "needed": 2,
+                  "complete": true,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [
+                  "L1_enemy_4"
+                ],
+                "activate": [
+                  "L1_trigger_0",
+                  "L1_trigger_1"
+                ],
+                "unlock": [
+                  "L1_door_0"
+                ],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": true
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": true
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": true,
+                  "collidable": false
+                }
+              ],
+              "feedback": {
+                "activate": 6,
+                "impact": 3,
+                "defeat": 3
+              },
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.7785813031330474,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 657.9999999999991,
+                  "y": 665.3000000000001,
+                  "vx": 65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1130.1333333333394,
+                  "y": 629.3000000000001,
+                  "vx": 65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2349.9999999999964,
+                  "y": 593.3000000000001,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": false,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": false,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 450.54101966249675,
+                  "y": 657
+                },
+                {
+                  "x": 954.5410196624968,
+                  "y": 621
+                },
+                {
+                  "x": 1566.5410196624969,
+                  "y": 585
+                },
+                {
+                  "x": 2142.5410196624966,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                12,
+                4
+              ],
+              "x": 1798.488888888889,
+              "y": 539.7222222222223,
+              "vx": 0,
+              "vy": -134.99999999999997,
+              "grounded": false,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 7,
+              "time": 15089.7
+            }
+          }
+        },
+        {
+          "id": "win_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "Industrial Infiltration",
+            "topology": "terraces",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 0
+            },
+            "goals": [
+              {
+                "id": "L1_goal_0",
+                "kind": "unlock",
+                "amount": 1,
+                "needed": 1,
+                "complete": true,
+                "failed": false
+              },
+              {
+                "id": "L1_goal_1",
+                "kind": "activate",
+                "amount": 2,
+                "needed": 2,
+                "complete": true,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [
+                "L1_enemy_4"
+              ],
+              "activate": [
+                "L1_trigger_0",
+                "L1_trigger_1"
+              ],
+              "unlock": [
+                "L1_door_0"
+              ],
+              "collect": []
+            },
+            "triggers": [
+              {
+                "id": "L1_trigger_0",
+                "activation": "interact",
+                "x": 867.6,
+                "y": 660,
+                "active": true
+              },
+              {
+                "id": "L1_trigger_1",
+                "activation": "interact",
+                "x": 1803.6000000000001,
+                "y": 588,
+                "active": true
+              }
+            ],
+            "doors": [
+              {
+                "id": "L1_door_0",
+                "x": 2430,
+                "y": 522,
+                "open": true,
+                "collidable": false
+              }
+            ],
+            "feedback": {
+              "activate": 6,
+              "impact": 3,
+              "defeat": 3
+            },
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 692
+            },
+            "exitAlpha": 0.9478215780233632,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L1_enemy_0",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 691.5833333333336,
+                "y": 665.3000000000001,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_2",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1163.7166666666703,
+                "y": 629.3000000000001,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_6",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2383.5833333333344,
+                "y": 593.3000000000001,
+                "vx": 65
+              }
+            ],
+            "icicles": [],
+            "machines": [
+              {
+                "active": false,
+                "x": 968.4,
+                "y": 668
+              },
+              {
+                "active": false,
+                "x": 1881,
+                "y": 596
+              }
+            ],
+            "movingPlatforms": [
+              {
+                "x": 390.32049777245993,
+                "y": 657
+              },
+              {
+                "x": 894.3204977724599,
+                "y": 621
+              },
+              {
+                "x": 1506.32049777246,
+                "y": 585
+              },
+              {
+                "x": 2082.32049777246,
+                "y": 549
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "industrial",
+            "terrainTexture": "industrial",
+            "generation": 10,
+            "landedPlatforms": [
+              0,
+              12,
+              4,
+              9
+            ],
+            "x": 2448,
+            "y": 576.6111111111111,
+            "vx": 0,
+            "vy": 18.333333333333332,
+            "grounded": false,
+            "health": 2,
+            "crystals": 0,
+            "state": "won",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 7,
+            "time": 15673
+          }
+        },
+        {
+          "id": "restart_reset",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "Industrial Infiltration",
+            "topology": "terraces",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 0
+            },
+            "goals": [
+              {
+                "id": "L1_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L1_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 2,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": []
+            },
+            "triggers": [
+              {
+                "id": "L1_trigger_0",
+                "activation": "interact",
+                "x": 867.6,
+                "y": 660,
+                "active": false
+              },
+              {
+                "id": "L1_trigger_1",
+                "activation": "interact",
+                "x": 1803.6000000000001,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L1_door_0",
+                "x": 2430,
+                "y": 522,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "feedback": {
+              "activate": 6,
+              "impact": 3,
+              "defeat": 3
+            },
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 692
+            },
+            "exitAlpha": 0.9668136926805508,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L1_enemy_0",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 672.0833333333329,
+                "y": 665.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_2",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1204.8833333333341,
+                "y": 629.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_4",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1824.0833333333342,
+                "y": 593.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_6",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2364.0833333333317,
+                "y": 593.3000000000001,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [
+              {
+                "active": true,
+                "x": 968.4,
+                "y": 668
+              },
+              {
+                "active": true,
+                "x": 1881,
+                "y": 596
+              }
+            ],
+            "movingPlatforms": [
+              {
+                "x": 456.404198584548,
+                "y": 657
+              },
+              {
+                "x": 960.404198584548,
+                "y": 621
+              },
+              {
+                "x": 1572.404198584548,
+                "y": 585
+              },
+              {
+                "x": 2148.404198584548,
+                "y": 549
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "industrial",
+            "terrainTexture": "industrial",
+            "generation": 11,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 696,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 7,
+            "time": 16023
+          }
+        },
+        {
+          "id": "canvas_and_assets",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": {
+            "missing": [],
+            "http_failures": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "screenshot": "gameplay.png",
+      "scope": "Controlled-position functional browser verification, not autonomous completion or enjoyment assessment."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 0
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.5069615494186263,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 663.416666666666,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1196.216666666668,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1815.416666666668,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2355.416666666664,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 467.2671151375484,
+                  "y": 657
+                },
+                {
+                  "x": 971.2671151375484,
+                  "y": 621
+                },
+                {
+                  "x": 1583.2671151375484,
+                  "y": 585
+                },
+                {
+                  "x": 2159.2671151375484,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 696,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 3440.2
+            },
+            "after": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.8839566987447491,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 644.9999999999986,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1177.8000000000027,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1797.0000000000027,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2336.9999999999945,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": false,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": false,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 488.3815572471545,
+                  "y": 657
+                },
+                {
+                  "x": 992.3815572471545,
+                  "y": 621
+                },
+                {
+                  "x": 1604.3815572471544,
+                  "y": 585
+                },
+                {
+                  "x": 2180.3815572471544,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 133.3888888888889,
+              "y": 696,
+              "vx": 216.66666666666666,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 7,
+              "time": 4056.8
+            }
+          }
+        },
+        {
+          "id": "jump",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "before": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.9432159720584686,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 677.4999999999998,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1210.3000000000004,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1829.5000000000005,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2369.499999999999,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 442.41889066001585,
+                  "y": 657
+                },
+                {
+                  "x": 946.4188906600158,
+                  "y": 621
+                },
+                {
+                  "x": 1558.418890660016,
+                  "y": 585
+                },
+                {
+                  "x": 2134.4188906600157,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 696,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 4473.4
+            },
+            "after": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.5207452171474759,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 661.2499999999992,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1194.0500000000015,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1813.2500000000016,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2353.249999999997,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 470.56725658119234,
+                  "y": 657
+                },
+                {
+                  "x": 974.5672565811924,
+                  "y": 621
+                },
+                {
+                  "x": 1586.5672565811924,
+                  "y": 585
+                },
+                {
+                  "x": 2162.5672565811924,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 2,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 617.6388888888889,
+              "vx": 0,
+              "vy": -251.66666666666688,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 7,
+              "time": 5023.4
+            }
+          }
+        },
+        {
+          "id": "environment_composition",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 0,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {},
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.9170536366244072,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 676.4166666666664,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1209.2166666666672,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1828.4166666666672,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2368.4166666666656,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 444.47470144906555,
+                  "y": 657
+                },
+                {
+                  "x": 948.4747014490656,
+                  "y": 621
+                },
+                {
+                  "x": 1560.4747014490656,
+                  "y": 585
+                },
+                {
+                  "x": 2136.4747014490654,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 3,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 90,
+              "y": 696,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 5440.1
+            }
+          }
+        },
+        {
+          "id": "enemy_patrol",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "method": "Actual decision state, motion or telegraphed projectile attack; controlled player placement",
+            "before": {
+              "id": "L1_enemy_0",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 678.5833333333331,
+              "y": 665.3000000000001,
+              "vx": -65
+            },
+            "after": {
+              "id": "L1_enemy_0",
+              "behavior": "patrol",
+              "phase": "idle",
+              "health": 1,
+              "x": 664.4999999999993,
+              "y": 665.3000000000001,
+              "vx": -65
+            }
+          }
+        },
+        {
+          "id": "moving_platform_motion",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "before": [
+              {
+                "x": 440.35038605760394,
+                "y": 657
+              },
+              {
+                "x": 944.3503860576039,
+                "y": 621
+              },
+              {
+                "x": 1556.3503860576038,
+                "y": 585
+              },
+              {
+                "x": 2132.350386057604,
+                "y": 549
+              }
+            ],
+            "after": [
+              {
+                "x": 473.67950222753984,
+                "y": 657
+              },
+              {
+                "x": 977.6795022275398,
+                "y": 621
+              },
+              {
+                "x": 1589.6795022275398,
+                "y": 585
+              },
+              {
+                "x": 2165.67950222754,
+                "y": 549
+              }
+            ]
+          }
+        },
+        {
+          "id": "timed_hazard_cycle",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "active_samples": [
+              true,
+              true,
+              true,
+              true,
+              false,
+              false,
+              false,
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              false
+            ]
+          }
+        },
+        {
+          "id": "shared_gate_dependency",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "method": "Real E/pressure/projectile activation, physical door body state and early exit overlap; controlled positions only",
+            "sequence": [
+              {
+                "activated": "L1_trigger_0",
+                "open": false,
+                "collidable": true,
+                "expected_open": false,
+                "exit_blocked": true
+              },
+              {
+                "activated": "L1_trigger_1",
+                "open": true,
+                "collidable": false,
+                "expected_open": true
+              }
+            ],
+            "feedback": {
+              "activate": 2,
+              "impact": 1,
+              "defeat": 1
+            }
+          }
+        },
+        {
+          "id": "switch_door",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "method": "Actual pressure/contact/proximity/key or projectile activation and linked door body removal",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 1,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [
+                  "L1_trigger_0"
+                ],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": true
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": false
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {
+                "activate": 3,
+                "impact": 1,
+                "defeat": 1
+              },
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.6869329861467711,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 649.3333333333321,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1182.1333333333357,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_4",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1801.3333333333358,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2341.3333333333285,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 485.92764277795004,
+                  "y": 657
+                },
+                {
+                  "x": 989.92764277795,
+                  "y": 621
+                },
+                {
+                  "x": 1601.92764277795,
+                  "y": 585
+                },
+                {
+                  "x": 2177.92764277795,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 8,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 867.6,
+              "y": 660,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 12923.2
+            }
+          }
+        },
+        {
+          "id": "switch_door",
+          "passed": true,
+          "critical": true,
+          "category": "fidelity",
+          "details": {
+            "stage": 0,
+            "method": "Actual pressure/contact/proximity/key or projectile activation and linked door body removal",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 1,
+                  "needed": 2,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [
+                  "L1_enemy_4"
+                ],
+                "activate": [
+                  "L1_trigger_1"
+                ],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": false
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": true
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": false,
+                  "collidable": true
+                }
+              ],
+              "feedback": {
+                "activate": 4,
+                "impact": 2,
+                "defeat": 2
+              },
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.6631457364077772,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 647.1666666666654,
+                  "y": 665.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1179.9666666666692,
+                  "y": 629.3000000000001,
+                  "vx": -65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2339.1666666666615,
+                  "y": 593.3000000000001,
+                  "vx": -65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": true,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 487.6310312740072,
+                  "y": 657
+                },
+                {
+                  "x": 991.6310312740072,
+                  "y": 621
+                },
+                {
+                  "x": 1603.6310312740072,
+                  "y": 585
+                },
+                {
+                  "x": 2179.6310312740075,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 9,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 1798.488888888889,
+              "y": 539.7222222222223,
+              "vx": 0,
+              "vy": -134.99999999999997,
+              "grounded": false,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 7,
+              "time": 13656.4
+            }
+          }
+        },
+        {
+          "id": "objective_locked_exit",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "Industrial Infiltration",
+            "topology": "terraces",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 0
+            },
+            "goals": [
+              {
+                "id": "L1_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L1_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 2,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": []
+            },
+            "triggers": [
+              {
+                "id": "L1_trigger_0",
+                "activation": "interact",
+                "x": 867.6,
+                "y": 660,
+                "active": false
+              },
+              {
+                "id": "L1_trigger_1",
+                "activation": "interact",
+                "x": 1803.6000000000001,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L1_door_0",
+                "x": 2430,
+                "y": 522,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "feedback": {
+              "activate": 4,
+              "impact": 2,
+              "defeat": 2
+            },
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 692
+            },
+            "exitAlpha": 0.7886522387938153,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L1_enemy_0",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 656.9166666666657,
+                "y": 665.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_2",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1189.7166666666685,
+                "y": 629.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_4",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1808.9166666666686,
+                "y": 593.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_6",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2348.916666666663,
+                "y": 593.3000000000001,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [
+              {
+                "active": true,
+                "x": 968.4,
+                "y": 668
+              },
+              {
+                "active": true,
+                "x": 1881,
+                "y": 596
+              }
+            ],
+            "movingPlatforms": [
+              {
+                "x": 479.28064521640334,
+                "y": 657
+              },
+              {
+                "x": 983.2806452164033,
+                "y": 621
+              },
+              {
+                "x": 1595.2806452164034,
+                "y": 585
+              },
+              {
+                "x": 2171.280645216403,
+                "y": 549
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "industrial",
+            "terrainTexture": "industrial",
+            "generation": 10,
+            "landedPlatforms": [
+              0,
+              12
+            ],
+            "x": 2448,
+            "y": 588,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 7,
+            "time": 14173.1
+          }
+        },
+        {
+          "id": "objective_conditions",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "stage": 0,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "Industrial Infiltration",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "L1_goal_0",
+                  "kind": "unlock",
+                  "amount": 1,
+                  "needed": 1,
+                  "complete": true,
+                  "failed": false
+                },
+                {
+                  "id": "L1_goal_1",
+                  "kind": "activate",
+                  "amount": 2,
+                  "needed": 2,
+                  "complete": true,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [
+                  "L1_enemy_4"
+                ],
+                "activate": [
+                  "L1_trigger_0",
+                  "L1_trigger_1"
+                ],
+                "unlock": [
+                  "L1_door_0"
+                ],
+                "collect": []
+              },
+              "triggers": [
+                {
+                  "id": "L1_trigger_0",
+                  "activation": "interact",
+                  "x": 867.6,
+                  "y": 660,
+                  "active": true
+                },
+                {
+                  "id": "L1_trigger_1",
+                  "activation": "interact",
+                  "x": 1803.6000000000001,
+                  "y": 588,
+                  "active": true
+                }
+              ],
+              "doors": [
+                {
+                  "id": "L1_door_0",
+                  "x": 2430,
+                  "y": 522,
+                  "open": true,
+                  "collidable": false
+                }
+              ],
+              "feedback": {
+                "activate": 6,
+                "impact": 3,
+                "defeat": 3
+              },
+              "playerShotsFired": 0,
+              "playerAttack": "stomp",
+              "respawn": {
+                "x": 90,
+                "y": 692
+              },
+              "exitAlpha": 0.7785813031330474,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "L1_enemy_0",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 657.9999999999991,
+                  "y": 665.3000000000001,
+                  "vx": 65
+                },
+                {
+                  "id": "L1_enemy_2",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 1130.1333333333394,
+                  "y": 629.3000000000001,
+                  "vx": 65
+                },
+                {
+                  "id": "L1_enemy_6",
+                  "behavior": "patrol",
+                  "phase": "idle",
+                  "health": 1,
+                  "x": 2349.9999999999964,
+                  "y": 593.3000000000001,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": false,
+                  "x": 968.4,
+                  "y": 668
+                },
+                {
+                  "active": false,
+                  "x": 1881,
+                  "y": 596
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 450.54101966249675,
+                  "y": 657
+                },
+                {
+                  "x": 954.5410196624968,
+                  "y": 621
+                },
+                {
+                  "x": 1566.5410196624969,
+                  "y": 585
+                },
+                {
+                  "x": 2142.5410196624966,
+                  "y": 549
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                12,
+                4
+              ],
+              "x": 1798.488888888889,
+              "y": 539.7222222222223,
+              "vx": 0,
+              "vy": -134.99999999999997,
+              "grounded": false,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "jump",
+              "seed": 7,
+              "time": 15089.7
+            }
+          }
+        },
+        {
+          "id": "win_condition",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "Industrial Infiltration",
+            "topology": "terraces",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 0
+            },
+            "goals": [
+              {
+                "id": "L1_goal_0",
+                "kind": "unlock",
+                "amount": 1,
+                "needed": 1,
+                "complete": true,
+                "failed": false
+              },
+              {
+                "id": "L1_goal_1",
+                "kind": "activate",
+                "amount": 2,
+                "needed": 2,
+                "complete": true,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [
+                "L1_enemy_4"
+              ],
+              "activate": [
+                "L1_trigger_0",
+                "L1_trigger_1"
+              ],
+              "unlock": [
+                "L1_door_0"
+              ],
+              "collect": []
+            },
+            "triggers": [
+              {
+                "id": "L1_trigger_0",
+                "activation": "interact",
+                "x": 867.6,
+                "y": 660,
+                "active": true
+              },
+              {
+                "id": "L1_trigger_1",
+                "activation": "interact",
+                "x": 1803.6000000000001,
+                "y": 588,
+                "active": true
+              }
+            ],
+            "doors": [
+              {
+                "id": "L1_door_0",
+                "x": 2430,
+                "y": 522,
+                "open": true,
+                "collidable": false
+              }
+            ],
+            "feedback": {
+              "activate": 6,
+              "impact": 3,
+              "defeat": 3
+            },
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 692
+            },
+            "exitAlpha": 0.9478215780233632,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L1_enemy_0",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 691.5833333333336,
+                "y": 665.3000000000001,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_2",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1163.7166666666703,
+                "y": 629.3000000000001,
+                "vx": 65
+              },
+              {
+                "id": "L1_enemy_6",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2383.5833333333344,
+                "y": 593.3000000000001,
+                "vx": 65
+              }
+            ],
+            "icicles": [],
+            "machines": [
+              {
+                "active": false,
+                "x": 968.4,
+                "y": 668
+              },
+              {
+                "active": false,
+                "x": 1881,
+                "y": 596
+              }
+            ],
+            "movingPlatforms": [
+              {
+                "x": 390.32049777245993,
+                "y": 657
+              },
+              {
+                "x": 894.3204977724599,
+                "y": 621
+              },
+              {
+                "x": 1506.32049777246,
+                "y": 585
+              },
+              {
+                "x": 2082.32049777246,
+                "y": 549
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "industrial",
+            "terrainTexture": "industrial",
+            "generation": 10,
+            "landedPlatforms": [
+              0,
+              12,
+              4,
+              9
+            ],
+            "x": 2448,
+            "y": 576.6111111111111,
+            "vx": 0,
+            "vy": 18.333333333333332,
+            "grounded": false,
+            "health": 2,
+            "crystals": 0,
+            "state": "won",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 7,
+            "time": 15673
+          }
+        },
+        {
+          "id": "restart_reset",
+          "passed": true,
+          "critical": true,
+          "category": "gameplay",
+          "details": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "Industrial Infiltration",
+            "topology": "terraces",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 0
+            },
+            "goals": [
+              {
+                "id": "L1_goal_0",
+                "kind": "unlock",
+                "amount": 0,
+                "needed": 1,
+                "complete": false,
+                "failed": false
+              },
+              {
+                "id": "L1_goal_1",
+                "kind": "activate",
+                "amount": 0,
+                "needed": 2,
+                "complete": false,
+                "failed": false
+              }
+            ],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": []
+            },
+            "triggers": [
+              {
+                "id": "L1_trigger_0",
+                "activation": "interact",
+                "x": 867.6,
+                "y": 660,
+                "active": false
+              },
+              {
+                "id": "L1_trigger_1",
+                "activation": "interact",
+                "x": 1803.6000000000001,
+                "y": 588,
+                "active": false
+              }
+            ],
+            "doors": [
+              {
+                "id": "L1_door_0",
+                "x": 2430,
+                "y": 522,
+                "open": false,
+                "collidable": true
+              }
+            ],
+            "feedback": {
+              "activate": 6,
+              "impact": 3,
+              "defeat": 3
+            },
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 692
+            },
+            "exitAlpha": 0.9668136926805508,
+            "exitStyle": "gate",
+            "enemies": [
+              {
+                "id": "L1_enemy_0",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 672.0833333333329,
+                "y": 665.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_2",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1204.8833333333341,
+                "y": 629.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_4",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 1824.0833333333342,
+                "y": 593.3000000000001,
+                "vx": -65
+              },
+              {
+                "id": "L1_enemy_6",
+                "behavior": "patrol",
+                "phase": "idle",
+                "health": 1,
+                "x": 2364.0833333333317,
+                "y": 593.3000000000001,
+                "vx": -65
+              }
+            ],
+            "icicles": [],
+            "machines": [
+              {
+                "active": true,
+                "x": 968.4,
+                "y": 668
+              },
+              {
+                "active": true,
+                "x": 1881,
+                "y": 596
+              }
+            ],
+            "movingPlatforms": [
+              {
+                "x": 456.404198584548,
+                "y": 657
+              },
+              {
+                "x": 960.404198584548,
+                "y": 621
+              },
+              {
+                "x": 1572.404198584548,
+                "y": 585
+              },
+              {
+                "x": 2148.404198584548,
+                "y": 549
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "industrial",
+            "terrainTexture": "industrial",
+            "generation": 11,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 696,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 3,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 7,
+            "time": 16023
+          }
+        },
+        {
+          "id": "canvas_and_assets",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": {
+            "missing": [],
+            "http_failures": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "runtime",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "screenshot": "gameplay.png",
+      "scope": "Controlled-position functional browser verification, not autonomous completion or enjoyment assessment."
+    },
+    "semantic_requirement_report.json": {
+      "behavior_preserved": true,
+      "control_preserved": true,
+      "arcade_constraints": {},
+      "overall": "WARN",
+      "requirements": [
+        {
+          "source": "industrial platformer",
+          "meaning": "Platformer game featuring an industrial theme and mechanical obstacles",
+          "capability": "platform_movement",
+          "status": "constructed_unverified",
+          "depends_on": [],
+          "verification": "mandatory_route_edges",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "requested_capability": "platform_movement",
+          "bound_biomes": [],
+          "constructed": true,
+          "ir_path": "player",
+          "runtime_check": "mandatory_route_edges",
+          "runtime_verified": false
+        },
+        {
+          "source": "industrial platformer",
+          "meaning": "Visual setting styled as an industrial factory",
+          "capability": "visual_theme",
+          "status": "approximated",
+          "depends_on": [],
+          "verification": "theme_applied",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "requested_capability": "visual_theme",
+          "bound_biomes": [],
+          "constructed": true,
+          "ir_path": "theme",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "activate two switches to open a security gate",
+          "meaning": "Two switches must be activated to open the security gate",
+          "capability": "switch_gate",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "switch_door",
+          "biomes": [],
+          "count": 2,
+          "scope": "game",
+          "mandatory": true,
+          "requested_capability": "switch_gate",
+          "bound_biomes": [],
+          "constructed": true,
+          "ir_path": "links",
+          "runtime_check": "shared_gate_dependency",
+          "runtime_verified": true
+        },
+        {
+          "source": "avoiding patrolling guards",
+          "meaning": "Patrolling guard enemies move back and forth along platforms",
+          "capability": "patrol_enemies",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "enemy_patrol",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "requested_capability": "patrol_enemies",
+          "bound_biomes": [],
+          "constructed": true,
+          "ir_path": "entities.behavior",
+          "runtime_check": "enemy_patrol",
+          "runtime_verified": true
+        },
+        {
+          "source": "moving machinery",
+          "meaning": "Moving platforms act as industrial machinery obstacles",
+          "capability": "moving_platforms",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "moving_platform_motion",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "requested_capability": "moving_platforms",
+          "bound_biomes": [],
+          "constructed": true,
+          "ir_path": "platforms.moving",
+          "runtime_check": "moving_platform_motion",
+          "runtime_verified": true
+        },
+        {
+          "source": "exit should only become available after both switches are activated",
+          "meaning": "Level exit is locked until the switch gate requirements are met",
+          "capability": "restart",
+          "status": "constructed_unverified",
+          "depends_on": [
+            "switch_gate"
+          ],
+          "verification": "rapid_restart",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "requested_capability": "restart",
+          "bound_biomes": [],
+          "constructed": true,
+          "ir_path": "genre",
+          "runtime_check": "whole_campaign_restart",
+          "runtime_verified": false
+        }
+      ],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    },
+    "outcome.json": {
+      "status": "READY_WITH_WARNINGS",
+      "elapsed_seconds": 19.95,
+      "visual_quality": "Requires human screenshot review; functional checks are not an aesthetic score."
+    }
+  },
+  "verification_provenance": "Captured real Gemini semantic/design replay through HTTP API and actual browser; no new provider calls."
+}

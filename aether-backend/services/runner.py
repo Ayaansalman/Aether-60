@@ -9,16 +9,20 @@ def plan(prompt,mode,intent=None):
     from providers.mock import MockModelProvider
     provider=get_provider()
     if isinstance(provider,MockModelProvider):raise ValueError('Live runner requires configured provider')
-    result=provider.complete('Design a playable original arcade runner. Return only JSON. ground means automatic forward motion and grounded jump; flap means gravity and repeatable upward impulse. Choose easy/medium/hard/extreme difficulty and stable/gradual/surge progression from the request. Omit numerical tuning to use that difficulty profile, or supply deliberate values. Challenge recovery is grounded time between jumps; spacing is seconds between flying gates; precision is fraction of safe jump width; transition is maximum flying height change in pixels. Choose ground patterns from single/rhythm/escalation/mixed/recovery; flap patterns from single/alternating/ascending/descending/corridor/recovery. Patterns vary in length and geometry, with periodic recovery. Use exclusions for forbidden obstacle families. Choose factory for industrial machinery, neon for city, forest, sky or ice. Bird and creature are supported players. Preserve environmental theme, character, pacing, finite/endless, scoring and constraints. Unavailable special mechanics must be recorded in unsupported. No generated code. Schema: '+json.dumps(RunnerDesign.model_json_schema())+'\nSemantic intent: '+json.dumps(intent),prompt)
-    raw=json.loads(re.sub(r'^```(?:json)?\s*|\s*```$','',result.text.strip()))
-    # Explicit semantic constraints survive a designer omission or contradictory default.
+    system='Design a playable original arcade runner. Return only JSON. ground means automatic forward motion and grounded jump; flap means gravity and repeatable upward impulse. Choose easy/medium/hard/extreme difficulty and stable/gradual/surge progression from the request. Omit numerical tuning to use that difficulty profile, or supply deliberate values. Challenge recovery is grounded time between jumps; spacing is seconds between flying gates; precision is fraction of safe jump width; transition is maximum flying height change in pixels. Choose ground patterns from single/rhythm/escalation/mixed/recovery; flap patterns from single/alternating/ascending/descending/corridor/recovery. Patterns vary in length and geometry, with periodic recovery. Use exclusions for forbidden obstacle families. Choose factory for industrial machinery, neon for city, forest, sky or ice. Bird and creature are supported players. Preserve environmental theme, character, pacing, finite/endless, scoring and constraints. Unavailable special mechanics must be recorded in unsupported. No generated code. Schema: '+json.dumps(RunnerDesign.model_json_schema())+'\nSemantic intent: '+json.dumps(intent)
+    result=provider.complete(system,prompt)
+    from services.design_validation import validated_response
     arcade=(intent or {}).get('arcade') or {}
     bindings=[]
-    for key,value in arcade.items():
-        if value is not None:
-            if raw.get(key)!=value:bindings.append({'field':key,'model_value':raw.get(key),'semantic_value':value})
-            raw[key]=value
-    return RunnerDesign.model_validate(raw),{'provider':type(provider).__name__,'model':result.model,'live':True,'intent_bindings':bindings}
+    def prepare(raw):
+        for key,value in arcade.items():
+            if value is not None:
+                if raw.get(key)!=value:bindings.append({'field':key,'model_value':raw.get(key),'semantic_value':value})
+                raw[key]=value
+        return raw
+    design,attempts=validated_response(provider,system,prompt,result,RunnerDesign,prepare)
+    return design,{'provider':type(provider).__name__,'model':attempts[-1]['model'],'live':True,'intent_bindings':bindings,'validation_attempts':attempts}
+
 
 def fixture_design(prompt):
     """Offline fixtures only; live designs use the semantic and designer models."""
@@ -43,6 +47,7 @@ async def run_runner(gid,request,artifact,stage,browser_report,intent=None):
     stage('PLANNING','Planning validated arcade controls and survival loop','START')
     design,provider=await asyncio.to_thread(plan,request.prompt,request.mode,intent)
     artifact('model_design.json',design.model_dump());artifact('provider.json',provider)
+    artifact('design_validation.json',{'attempts':provider.get('validation_attempts',[]),'maximum_corrections':1})
     artifact('final_design.json',design.model_dump());artifact('game_design.json',design.model_dump())
     artifact('game_intent.json',{'original_prompt':request.prompt,'genre':'runner','control':design.mode,'endless':design.endless,'semantic':intent})
     stage('DESIGNING','Composing seeded obstacle stream and selected movement controller')

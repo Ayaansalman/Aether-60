@@ -1,0 +1,151 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "boss_arena",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "count": 1,
+        "health": 12,
+        "bar": true,
+        "entities": 1
+      }
+    },
+    {
+      "id": "boss_attack_feedback",
+      "passed": true,
+      "critical": true,
+      "details": "Observed procedural warning on a natural boss state transition"
+    },
+    {
+      "id": "boss_volley",
+      "passed": true,
+      "critical": true,
+      "details": true
+    },
+    {
+      "id": "boss_charge",
+      "passed": true,
+      "critical": true,
+      "details": "Controlled attack clock, real runtime charge"
+    },
+    {
+      "id": "player_attack_damage",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "before": 12,
+        "after": 11,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 1,
+          "levelTitle": "Duel at the Castle",
+          "topology": "journey",
+          "objective": {
+            "type": "boss_defeat",
+            "required": 0,
+            "total": 0
+          },
+          "goals": [
+            {
+              "id": "defeat_boss",
+              "kind": "defeat",
+              "amount": 0,
+              "needed": 1,
+              "complete": false,
+              "failed": false
+            }
+          ],
+          "progress": {
+            "defeat": [],
+            "activate": [],
+            "unlock": [],
+            "collect": []
+          },
+          "triggers": [],
+          "doors": [],
+          "feedback": {
+            "windup": 1,
+            "impact": 1
+          },
+          "playerShotsFired": 1,
+          "playerAttack": "projectile",
+          "respawn": {
+            "x": 160,
+            "y": 475
+          },
+          "exitAlpha": null,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "id": "arena_boss",
+              "behavior": "patrol",
+              "phase": "recover",
+              "health": 11,
+              "x": 500,
+              "y": 483,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [],
+          "shotsFired": 1,
+          "slippery": false,
+          "environment": "forest",
+          "terrainTexture": "terrain",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 240,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 5,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 7,
+          "time": 6327.2
+        }
+      }
+    },
+    {
+      "id": "boss_player_damage",
+      "passed": true,
+      "critical": true,
+      "details": "Controlled overlap, real collision damage"
+    },
+    {
+      "id": "boss_duel",
+      "passed": true,
+      "critical": true,
+      "details": "Final health set to one; real projectile collision triggers victory without exit"
+    },
+    {
+      "id": "boss_hit_defeat_feedback",
+      "passed": true,
+      "critical": true,
+      "details": "Real projectile hits and defeat emitted shared event effects"
+    },
+    {
+      "id": "boss_restart",
+      "passed": true,
+      "critical": true,
+      "details": "Real R restart"
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "details": []
+    }
+  ],
+  "scope": "Controlled positions, boss clock and final HP; real Phaser collisions, projectiles and keyboard. Not an autonomous duel."
+}

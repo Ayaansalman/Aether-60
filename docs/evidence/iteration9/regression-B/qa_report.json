@@ -1,0 +1,1215 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "behavior": null,
+          "feedback": {},
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "woodland",
+          "regions": [
+            {
+              "id": "woodland",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 20,
+              "y": 10,
+              "width": 12,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 34,
+              "y": 7,
+              "width": 11,
+              "height": 17,
+              "slippery": false
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 400,
+          "y": 560,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak to Rowan",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "villager",
+              "kind": "npc",
+              "x": 624,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": "ninja_noble:down:idle",
+              "body": {
+                "x": 614,
+                "y": 519,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "crystal",
+              "kind": "item",
+              "x": 1264,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1248,
+                "y": 512,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjagreen",
+          "playerFrame": 0,
+          "animation": "ninja_ninjagreen:down:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjagreen",
+            "ninja_noble",
+            "ninja_terrain",
+            "ninja_tree"
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "biome_regions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "regions": [
+          {
+            "id": "woodland",
+            "name": "Enchanted Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 46,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "lake",
+            "name": "Frozen Lake",
+            "biome": "frozen_lake",
+            "x": 20,
+            "y": 10,
+            "width": 12,
+            "height": 12,
+            "slippery": true
+          },
+          {
+            "id": "ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 34,
+            "y": 7,
+            "width": 11,
+            "height": 17,
+            "slippery": false
+          }
+        ],
+        "same_scene": true
+      }
+    },
+    {
+      "id": "connected_biome_crossing",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "behavior": null,
+          "feedback": {},
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "lake",
+          "regions": [
+            {
+              "id": "woodland",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 20,
+              "y": 10,
+              "width": 12,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 34,
+              "y": 7,
+              "width": 11,
+              "height": 17,
+              "slippery": false
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 667.6654657332501,
+          "y": 528,
+          "vx": 140.253539840102,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak to Rowan",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "villager",
+              "kind": "npc",
+              "x": 624,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": "ninja_noble:down:idle",
+              "body": {
+                "x": 614,
+                "y": 519,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "crystal",
+              "kind": "item",
+              "x": 1264,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1248,
+                "y": 512,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjagreen",
+          "playerFrame": 3,
+          "animation": "ninja_ninjagreen:right:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjagreen",
+            "ninja_noble",
+            "ninja_terrain",
+            "ninja_tree"
+          ],
+          "missingAssets": []
+        },
+        "method": "Controlled launch just outside lake; real rightward keyboard movement across boundary"
+      }
+    },
+    {
+      "id": "localized_slippery",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "released": {
+          "behavior": null,
+          "feedback": {},
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "lake",
+          "regions": [
+            {
+              "id": "woodland",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 20,
+              "y": 10,
+              "width": 12,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 34,
+              "y": 7,
+              "width": 11,
+              "height": 17,
+              "slippery": false
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 854.2846370971391,
+          "y": 528,
+          "vx": 38.455107118688765,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak to Rowan",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "villager",
+              "kind": "npc",
+              "x": 624,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": "ninja_noble:down:idle",
+              "body": {
+                "x": 614,
+                "y": 519,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "crystal",
+              "kind": "item",
+              "x": 1264,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1248,
+                "y": 512,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjagreen",
+          "playerFrame": 3,
+          "animation": "ninja_ninjagreen:right:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjagreen",
+            "ninja_noble",
+            "ninja_terrain",
+            "ninja_tree"
+          ],
+          "missingAssets": []
+        },
+        "coasting": {
+          "behavior": null,
+          "feedback": {},
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "lake",
+          "regions": [
+            {
+              "id": "woodland",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 20,
+              "y": 10,
+              "width": 12,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 34,
+              "y": 7,
+              "width": 11,
+              "height": 17,
+              "slippery": false
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 857.8285269044572,
+          "y": 528,
+          "vx": 31.48689766203612,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak to Rowan",
+          "health": 5,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "villager",
+              "kind": "npc",
+              "x": 624,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": "ninja_noble:down:idle",
+              "body": {
+                "x": 614,
+                "y": 519,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "crystal",
+              "kind": "item",
+              "x": 1264,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1248,
+                "y": 512,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjagreen",
+          "playerFrame": 3,
+          "animation": "ninja_ninjagreen:right:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjagreen",
+            "ninja_noble",
+            "ninja_terrain",
+            "ninja_tree"
+          ],
+          "missingAssets": []
+        }
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 400,
+        "after": 428.41666666666646
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 80,
+        "after_y": 41
+      }
+    },
+    {
+      "id": "registered_animation_frames",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "observed_frames": [
+          11,
+          15,
+          11,
+          7,
+          15,
+          7,
+          15
+        ],
+        "asset": "ninja_ninjagreen"
+      }
+    },
+    {
+      "id": "directional_art_and_pack",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "directions": [
+          "ninja_ninjagreen:left:idle",
+          "ninja_ninjagreen:up:idle",
+          "ninja_ninjagreen:down:idle"
+        ],
+        "selected_assets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_noble",
+          "ninja_terrain",
+          "ninja_tree"
+        ]
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          1,
+          1,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          42,
+          48
+        ]
+      }
+    },
+    {
+      "id": "dialogue_0",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Rowan the Forest Keeper\nPlease retrieve the magical crystal from the Icy Ruins east of the frozen lake."
+      ]
+    },
+    {
+      "id": "quest_0_talk",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": null,
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "woodland",
+        "regions": [
+          {
+            "id": "woodland",
+            "name": "Enchanted Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 46,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "lake",
+            "name": "Frozen Lake",
+            "biome": "frozen_lake",
+            "x": 20,
+            "y": 10,
+            "width": 12,
+            "height": 12,
+            "slippery": true
+          },
+          {
+            "id": "ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 34,
+            "y": 7,
+            "width": 11,
+            "height": 17,
+            "slippery": false
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 591,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Retrieve the magical crystal from the Icy Ruins (0/1)",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 624,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": "ninja_noble:down:idle",
+            "body": {
+              "x": 614,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crystal",
+            "kind": "item",
+            "x": 1264,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": null,
+            "body": {
+              "x": 1248,
+              "y": 512,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_noble",
+          "ninja_terrain",
+          "ninja_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_1",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "crystal": 1
+      }
+    },
+    {
+      "id": "quest_1_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": null,
+        "feedback": {
+          "collect": 1
+        },
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "ruins",
+        "regions": [
+          {
+            "id": "woodland",
+            "name": "Enchanted Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 46,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "lake",
+            "name": "Frozen Lake",
+            "biome": "frozen_lake",
+            "x": 20,
+            "y": 10,
+            "width": 12,
+            "height": 12,
+            "slippery": true
+          },
+          {
+            "id": "ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 34,
+            "y": 7,
+            "width": 11,
+            "height": 17,
+            "slippery": false
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1264,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crystal": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Return the crystal to Rowan",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 624,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": "ninja_noble:down:idle",
+            "body": {
+              "x": 614,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_noble",
+          "ninja_terrain",
+          "ninja_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "dialogue_2",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Rowan the Forest Keeper\nThe forest thanks you."
+      ]
+    },
+    {
+      "id": "inventory_delivery_consumed",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "crystal": 0
+      }
+    },
+    {
+      "id": "quest_2_deliver",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": null,
+        "feedback": {
+          "collect": 1
+        },
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "woodland",
+        "regions": [
+          {
+            "id": "woodland",
+            "name": "Enchanted Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 46,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "lake",
+            "name": "Frozen Lake",
+            "biome": "frozen_lake",
+            "x": 20,
+            "y": 10,
+            "width": 12,
+            "height": 12,
+            "slippery": true
+          },
+          {
+            "id": "ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 34,
+            "y": 7,
+            "width": 11,
+            "height": 17,
+            "slippery": false
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 591,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crystal": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 624,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": "ninja_noble:down:idle",
+            "body": {
+              "x": 614,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_noble",
+          "ninja_terrain",
+          "ninja_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "checks": [
+          "quest_1_collect"
+        ]
+      }
+    },
+    {
+      "id": "adventure_completion",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": null,
+        "feedback": {
+          "collect": 1
+        },
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "ruins",
+        "regions": [
+          {
+            "id": "woodland",
+            "name": "Enchanted Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 46,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "lake",
+            "name": "Frozen Lake",
+            "biome": "frozen_lake",
+            "x": 20,
+            "y": 10,
+            "width": 12,
+            "height": 12,
+            "slippery": true
+          },
+          {
+            "id": "ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 34,
+            "y": 7,
+            "width": 11,
+            "height": 17,
+            "slippery": false
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1392,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "crystal": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 5,
+        "won": true,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 624,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": "ninja_noble:down:idle",
+            "body": {
+              "x": 614,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_noble",
+          "ninja_terrain",
+          "ninja_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": null,
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "woodland",
+        "regions": [
+          {
+            "id": "woodland",
+            "name": "Enchanted Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 46,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "lake",
+            "name": "Frozen Lake",
+            "biome": "frozen_lake",
+            "x": 20,
+            "y": 10,
+            "width": 12,
+            "height": 12,
+            "slippery": true
+          },
+          {
+            "id": "ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 34,
+            "y": 7,
+            "width": 11,
+            "height": 17,
+            "slippery": false
+          }
+        ],
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 400,
+        "y": 560,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Speak to Rowan",
+        "health": 5,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "villager",
+            "kind": "npc",
+            "x": 624,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": "ninja_noble:down:idle",
+            "body": {
+              "x": 614,
+              "y": 519,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "crystal",
+            "kind": "item",
+            "x": 1264,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": null,
+            "body": {
+              "x": 1248,
+              "y": 512,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjagreen",
+        "playerFrame": 0,
+        "animation": "ninja_ninjagreen:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjagreen",
+          "ninja_noble",
+          "ninja_terrain",
+          "ninja_tree"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

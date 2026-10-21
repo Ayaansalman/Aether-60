@@ -1,0 +1,181 @@
+{
+  "boss": {
+    "name": "Knight Sentinel",
+    "health": 12,
+    "telegraph_ms": 700,
+    "cooldown_ms": 1700,
+    "patterns": [
+      "charge",
+      "volley"
+    ],
+    "victory": "boss_defeat",
+    "ordinary_enemies": 0
+  },
+  "collectibles_enabled": false,
+  "title": "Duel at the Castle",
+  "premise": "Create a single-level medieval platformer set in a castle arena. I must fight one powerful knight boss in a one-on-one duel. The boss should have multiple attack patterns and a visible health bar. I can attack using my sword or an available combat ability. Do not add ordinary enemies or collectible objectives. I win only when the boss is defeated.",
+  "genre": "platformer",
+  "theme": "forest",
+  "difficulty": "balanced",
+  "objective": "reach_exit",
+  "abilities": [],
+  "checkpoints": true,
+  "moving_platforms": false,
+  "platform_motion": {
+    "axis": "horizontal",
+    "pattern": "sine",
+    "distance": 54,
+    "period_ms": 3000
+  },
+  "player_attack": "projectile",
+  "interactions": [],
+  "objectives": [],
+  "campaign_objectives": [],
+  "slippery": false,
+  "falling_icicles": false,
+  "icicle_trigger": "mixed",
+  "hazard_period_ms": 2200,
+  "timed_hazards": false,
+  "exit_indicator": "none",
+  "exit_style": "gate",
+  "collectible": "crystals",
+  "level_count": 1,
+  "levels": [],
+  "topology": "journey",
+  "sections": [
+    {
+      "kind": "meadow",
+      "length": 5,
+      "elevation": -1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "meadow",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "ruins",
+      "length": 7,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": true,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "meadow",
+      "length": 5,
+      "elevation": -1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "meadow",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "ruins",
+      "length": 7,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": true,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "meadow",
+      "length": 5,
+      "elevation": -1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    },
+    {
+      "kind": "meadow",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "challenge": "traversal"
+    }
+  ],
+  "unsupported": [],
+  "design_notes": [
+    "Offline fixture: keyword interpretation and seeded construction; no model was called.",
+    "Sword melee approximated by the available F/X projectile combat ability."
+  ],
+  "requested_features": []
+}

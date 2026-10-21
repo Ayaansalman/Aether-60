@@ -129,3 +129,9 @@ Click the game canvas to focus keyboard input. Touch buttons appear where suppor
 The latest Iteration 6 verification passed 87 targeted backend tests, 17 frontend tests, 77 asset checks, production build and ESLint. Final Chromium results: healer fixture 16/16, crypt fixture 24/24, live Gemini healer 21/21, live Gemini crypt 24/24 and platformer regression 18/18. Geometry invariants passed forty seeds for each adventure acceptance prompt. Rendered screenshots were inspected; mobile creator QA was not rerun in Iteration 6.
 
 See [setup](../README.md#run), [Iteration 6 evidence and reproduction](ITERATION6_RESULTS.md), [platformer systems](ITERATION4_RESULTS.md) and [asset provenance](ASSET_LIBRARY_EXPANSION.md).
+
+## Iteration 9 - composed top-down behaviors
+
+The existing adventure controller also accepts non-quest top-down games via optional typed `gameplay`: safe periodic spawning, uniform enemy-role choice, pursuit/patrol, counted projectile attacks with windup/interval and despawn/repeat, health/invulnerability, endless or finite survival and time scoring. It uses the modern AdventureScene and existing CC0 sprites. No inventory/NPC/quest/exit is implied by top-down movement. Inventory and quest dependency validation remains mandatory when those mechanics are used. New scheduler configurations are limited to one connected map, 64 live enemies and a conservative 240-projectile concurrency budget; unsafe spawns defer.
+
+Platformer interactions may share a `gate` ID; every linked source must activate before that one door opens. Typed capability descriptors and semantic requirements are exposed in the existing Inspector. Shared event feedback covers warnings, impacts, defeats and interactions. See [Iteration 9](ITERATION9_RESULTS.md) for verified examples, field contracts and limits; this does not provide arbitrary executable game logic or new controllers.

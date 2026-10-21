@@ -1,3 +1,4 @@
+import {feedback} from '../feedback';
 import Phaser from "phaser";
 import type { PlatformerIR, Platform, Entity } from "./types";
 import { iciclePhase, indicatorAnimation, exitDecision, resolveLevel } from "./behaviors";
@@ -573,12 +574,16 @@ export class PlatformerScene extends Phaser.Scene {
   }
   hitEnemy(enemy: PlatformerScene['enemies'][number]) {
     if (!enemy.sprite.active || enemy.memory.phase === 'hurt' || this.state !== 'playing') return;
-    enemy.health--;
+    enemy.health--;feedback(this,enemy.sprite.x,enemy.sprite.y,'impact');
     this.burst(enemy.sprite.x,enemy.sprite.y,0xf7ca72);
     if (enemy.health <= 0) {
       this.gameplay.emit('defeat',enemy.spec.id || '');
-      enemy.sprite.destroy();
-      if(enemy.spec.boss) this.finish("won");
+      feedback(this,enemy.sprite.x,enemy.sprite.y,'defeat');enemy.sprite.destroy();
+      if(enemy.spec.boss){
+        const bar=this.children.getByName('boss-health') as Phaser.GameObjects.Text|null;
+        bar?.setText(`${enemy.spec.boss.name} · DEFEATED · 0/${enemy.spec.boss.health}`);
+        this.finish("won");
+      }
     } else if(enemy.spec.boss) {
       this.tweens.add({targets:enemy.sprite,alpha:.35,duration:80,yoyo:true,repeat:1});
     } else {
@@ -596,6 +601,7 @@ export class PlatformerScene extends Phaser.Scene {
   activateTrigger(trigger: PlatformerScene['triggers'][number]) {
     if (this.state !== 'playing' || this.gameplay.progress.activate.includes(trigger.spec.id || '')) return;
     const opened = this.gameplay.emit('activate',trigger.spec.id || '');
+    feedback(this,trigger.sprite.x,trigger.sprite.y,'activate');
     trigger.sprite.setTint(0x83ffb0);
     this.burst(trigger.sprite.x,trigger.sprite.y,0x83ffb0);
     for (const id of opened) {
@@ -678,7 +684,7 @@ export class PlatformerScene extends Phaser.Scene {
     this.message
       .setText(
         state === "won"
-          ? `All ${this.campaign.levels?.length || 1} levels complete!\nPress R to play again`
+          ? this.spec.boss ? `${this.spec.boss.name} defeated!\nPress R to duel again` : `All ${this.campaign.levels?.length || 1} levels complete!\nPress R to play again`
           : `${reason ? reason+'\n' : ''}Journey ended at level ${this.levelIndex+1}\nPress R to restart the journey`,
       )
       .setVisible(true);
@@ -697,6 +703,7 @@ export class PlatformerScene extends Phaser.Scene {
       progress: this.gameplay.progress,
       triggers: this.triggers.map(t=>({id:t.spec.id,activation:t.spec.activation,x:t.sprite.x,y:t.sprite.y,active:this.gameplay.progress.activate.includes(t.spec.id || '')})),
       doors: this.doors.map(d=>({id:d.spec.id,x:d.sprite.x,y:d.sprite.y,open:d.open,collidable:(d.sprite.body as Phaser.Physics.Arcade.StaticBody).enable})),
+      feedback:this.data.get('feedback')||{},
       playerShotsFired: this.playerShotsFired,
       playerAttack: this.spec.player_attack || 'stomp',
       respawn: this.spawn,
@@ -833,6 +840,7 @@ export class PlatformerScene extends Phaser.Scene {
       const boss=e.spec.boss;
       const decision=boss ? bossStep(e.memory,time,e.health,boss.health,this.hero.x,e.sprite.x,40,this.spec.width-40,boss.telegraph_ms,boss.cooldown_ms) : enemyStep(e.behavior,e.memory,{x:e.sprite.x,y:e.sprite.y,low,high,playerX:this.hero.x,playerY:this.hero.y},time,
         e.spec.ai || {health:1,cooldown_ms:1400,telegraph_ms:450,radius:300});
+      if(decision.memory.phase==='windup'&&e.memory.phase!=='windup')feedback(this,e.sprite.x,e.sprite.y,'windup',boss?.telegraph_ms??e.spec.ai?.telegraph_ms??450);
       e.memory=decision.memory;
       e.direction=decision.memory.direction;
       e.sprite.setVelocityX(decision.vx);

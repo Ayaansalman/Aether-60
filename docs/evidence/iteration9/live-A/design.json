@@ -1,0 +1,63 @@
+{
+  "genre": "adventure",
+  "title": "Endless Survival Arena",
+  "premise": "Survive as long as possible by dodging relentless chasers and shooter enemies in a top-down arena.",
+  "theme": "dark",
+  "art_style": "auto",
+  "areas": [
+    {
+      "regions": [],
+      "name": "Survival Arena",
+      "environment": "dungeon"
+    }
+  ],
+  "actors": [],
+  "quests": [],
+  "gameplay": {
+    "feedback": "clear",
+    "health": 3,
+    "invulnerability_ms": 1000,
+    "player_attack": false,
+    "outcome": "endless",
+    "duration_seconds": null,
+    "scoring": "survival_time",
+    "archetypes": [
+      {
+        "id": "chaser_enemy",
+        "name": "Chaser",
+        "behavior": "chase",
+        "speed": 65,
+        "health": 2,
+        "attack": null
+      },
+      {
+        "id": "shooter_enemy",
+        "name": "Shooter",
+        "behavior": "shooter",
+        "speed": 0,
+        "health": 2,
+        "attack": {
+          "interval_ms": 1000,
+          "shots": 5,
+          "windup_ms": 350,
+          "projectile_speed": 180,
+          "after": "despawn"
+        }
+      }
+    ],
+    "spawns": [
+      {
+        "id": "survival_spawn",
+        "archetypes": [
+          "chaser_enemy",
+          "shooter_enemy"
+        ],
+        "interval_ms": 1800,
+        "max_alive": 16,
+        "safe_radius": 220
+      }
+    ]
+  },
+  "combat": true,
+  "unsupported": []
+}

@@ -118,6 +118,21 @@ def verify_gameplay(page, spec, directory, record):
                     record('enemy_damage_reaction',damaged is not None and damaged['health']==enemy['ai']['health']-1 and damaged['phase']=='hurt',snap())
                 page.wait_for_timeout(240)
             record('player_projectile',enemy['id'] in snap()['progress']['defeat'] and snap()['playerShotsFired']>0,{'stage':stage,'snapshot':snap()},'fidelity')
+        for link in (link for link in level.get('links',[]) if len(link['sources'])>1):
+            restart(stage)
+            sequence=[]
+            gate=next(e for e in level['entities'] if e['kind']=='exit')
+            for index,source in enumerate(link['sources']):
+                entity=next(e for e in level['entities'] if e['id']==source)
+                activate(entity,level)
+                current=snap();door=next(d for d in current['doors'] if d['id']==link['target'])
+                last=index==len(link['sources'])-1
+                sequence.append({'activated':source,'open':door['open'],'collidable':door['collidable'],'expected_open':last})
+                if not last:
+                    teleport(gate['x'],gate['y']);page.wait_for_timeout(100)
+                    sequence[-1]['exit_blocked']=snap()['state']=='playing'
+            valid=all(s['open']==s['expected_open'] and s['collidable']!=s['expected_open'] and s.get('exit_blocked',True) for s in sequence)
+            record('shared_gate_dependency',valid,{'method':'Real E/pressure/projectile activation, physical door body state and early exit overlap; controlled positions only','sequence':sequence,'feedback':snap().get('feedback',{})},'fidelity')
         for entity in (e for e in level['entities'] if e['kind'] in ('switch','pressure_plate')):
             restart(stage)
             link=next((link for link in level.get('links',[]) if link['sources']==[entity['id']]),None)

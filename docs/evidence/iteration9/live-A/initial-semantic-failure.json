@@ -1,0 +1,361 @@
+[
+  {
+    "attempt": 1,
+    "valid": false,
+    "errors": [
+      {
+        "type": "value_error",
+        "loc": [
+          "gameplay"
+        ],
+        "msg": "Value error, outcome=survive requires a positive duration_seconds; outcome=endless or quests requires duration_seconds=null (never 0)"
+      }
+    ],
+    "candidate": {
+      "genre": "adventure",
+      "loop": "Survive as long as possible by dodging enemy projectiles and attacks.",
+      "control": "top_down",
+      "perspective": "top_down",
+      "structure": "arena",
+      "loops": [
+        "survival",
+        "combat",
+        "avoidance"
+      ],
+      "requirements": [
+        {
+          "source": "top-down survival game",
+          "meaning": "Top-down movement perspective for survival gameplay",
+          "capability": "top_down_movement",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "top_down_horizontal_movement",
+          "mandatory": true
+        },
+        {
+          "source": "survive as long as possible",
+          "meaning": "Score based on survival time",
+          "capability": "survival_time",
+          "status": "planned",
+          "depends_on": [
+            "health_damage"
+          ],
+          "verification": "composition_survival_score",
+          "mandatory": true
+        },
+        {
+          "source": "I have three health points",
+          "meaning": "Player starts with three health points and loses health on damage",
+          "capability": "health_damage",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "composition_health_loss",
+          "count": 3,
+          "mandatory": true
+        },
+        {
+          "source": "Enemies continuously spawn at random valid positions",
+          "meaning": "Continuous enemy spawning at safe random positions",
+          "capability": "enemy_spawning",
+          "status": "planned",
+          "depends_on": [
+            "top_down_movement",
+            "health_damage"
+          ],
+          "verification": "composition_safe_spawning",
+          "mandatory": true
+        },
+        {
+          "source": "Each spawned enemy randomly becomes either a chaser or a shooter",
+          "meaning": "Enemies use chaser or shooter roles uniformly",
+          "capability": "enemy_roles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "composition_enemy_roles",
+          "mandatory": true
+        },
+        {
+          "source": "Shooters fire five bullets, with one second between consecutive shots, then disappear",
+          "meaning": "Shooter attack sequence of 5 shots with 1000ms intervals before despawning",
+          "capability": "attack_sequence",
+          "status": "planned",
+          "depends_on": [
+            "enemy_roles",
+            "health_damage"
+          ],
+          "verification": "composition_attack_sequence",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include quests",
+          "meaning": "No quests in the game",
+          "capability": "no_quests",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_quests",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include inventory",
+          "meaning": "No inventory system",
+          "capability": "no_inventory",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_inventory",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include NPC conversations",
+          "meaning": "No NPC entities or conversations",
+          "capability": "no_npcs",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_npcs",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include collectibles",
+          "meaning": "No collectible items",
+          "capability": "no_collectibles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_collectibles",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include exit gates",
+          "meaning": "No exit gates or level transitions",
+          "capability": "no_exit",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_exit",
+          "mandatory": true
+        }
+      ],
+      "arcade": null,
+      "gameplay": {
+        "feedback": "clear",
+        "health": 3,
+        "invulnerability_ms": 1000,
+        "player_attack": false,
+        "outcome": "survive",
+        "duration_seconds": null,
+        "scoring": "survival_time",
+        "archetypes": [
+          {
+            "id": "chaser",
+            "name": "Chaser",
+            "behavior": "chase",
+            "speed": 80,
+            "health": 1,
+            "attack": null
+          },
+          {
+            "id": "shooter",
+            "name": "Shooter",
+            "behavior": "shooter",
+            "speed": 40,
+            "health": 1,
+            "attack": {
+              "interval_ms": 1000,
+              "shots": 5,
+              "windup_ms": 300,
+              "projectile_speed": 160,
+              "after": "despawn"
+            }
+          }
+        ],
+        "spawns": [
+          {
+            "id": "main_spawn",
+            "archetypes": [
+              "chaser",
+              "shooter"
+            ],
+            "interval_ms": 2000,
+            "max_alive": 20,
+            "safe_radius": 220
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 2,
+    "valid": false,
+    "errors": [
+      {
+        "loc": [],
+        "msg": "requirements.7.source must quote an exact contiguous substring of the original prompt; invalid source: 'Do not include inventory'"
+      }
+    ],
+    "candidate": {
+      "genre": "adventure",
+      "loop": "Survive as long as possible by dodging enemy projectiles and attacks.",
+      "control": "top_down",
+      "perspective": "top_down",
+      "structure": "arena",
+      "loops": [
+        "survival",
+        "combat",
+        "avoidance"
+      ],
+      "requirements": [
+        {
+          "source": "top-down survival game",
+          "meaning": "Top-down movement perspective for survival gameplay",
+          "capability": "top_down_movement",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "top_down_horizontal_movement",
+          "mandatory": true
+        },
+        {
+          "source": "survive as long as possible",
+          "meaning": "Score based on survival time",
+          "capability": "survival_time",
+          "status": "planned",
+          "depends_on": [
+            "health_damage"
+          ],
+          "verification": "composition_survival_score",
+          "mandatory": true
+        },
+        {
+          "source": "I have three health points",
+          "meaning": "Player starts with three health points and loses health on damage",
+          "capability": "health_damage",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "composition_health_loss",
+          "count": 3,
+          "mandatory": true
+        },
+        {
+          "source": "Enemies continuously spawn at random valid positions",
+          "meaning": "Continuous enemy spawning at safe random positions",
+          "capability": "enemy_spawning",
+          "status": "planned",
+          "depends_on": [
+            "top_down_movement",
+            "health_damage"
+          ],
+          "verification": "composition_safe_spawning",
+          "mandatory": true
+        },
+        {
+          "source": "Each spawned enemy randomly becomes either a chaser or a shooter",
+          "meaning": "Enemies use chaser or shooter roles uniformly",
+          "capability": "enemy_roles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "composition_enemy_roles",
+          "mandatory": true
+        },
+        {
+          "source": "Shooters fire five bullets, with one second between consecutive shots, then disappear",
+          "meaning": "Shooter attack sequence of 5 shots with 1000ms intervals before despawning",
+          "capability": "attack_sequence",
+          "status": "planned",
+          "depends_on": [
+            "enemy_roles",
+            "health_damage"
+          ],
+          "verification": "composition_attack_sequence",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include quests",
+          "meaning": "No quests in the game",
+          "capability": "no_quests",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_quests",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include inventory",
+          "meaning": "No inventory system",
+          "capability": "no_inventory",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_inventory",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include NPC conversations",
+          "meaning": "No NPC entities or conversations",
+          "capability": "no_npcs",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_npcs",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include collectibles",
+          "meaning": "No collectible items",
+          "capability": "no_collectibles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_collectibles",
+          "mandatory": true
+        },
+        {
+          "source": "Do not include exit gates",
+          "meaning": "No exit gates or level transitions",
+          "capability": "no_exit",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_exit",
+          "mandatory": true
+        }
+      ],
+      "arcade": null,
+      "gameplay": {
+        "feedback": "clear",
+        "health": 3,
+        "invulnerability_ms": 1000,
+        "player_attack": false,
+        "outcome": "endless",
+        "duration_seconds": null,
+        "scoring": "survival_time",
+        "archetypes": [
+          {
+            "id": "chaser",
+            "name": "Chaser",
+            "behavior": "chase",
+            "speed": 80,
+            "health": 1,
+            "attack": null
+          },
+          {
+            "id": "shooter",
+            "name": "Shooter",
+            "behavior": "shooter",
+            "speed": 40,
+            "health": 1,
+            "attack": {
+              "interval_ms": 1000,
+              "shots": 5,
+              "windup_ms": 300,
+              "projectile_speed": 160,
+              "after": "despawn"
+            }
+          }
+        ],
+        "spawns": [
+          {
+            "id": "main_spawn",
+            "archetypes": [
+              "chaser",
+              "shooter"
+            ],
+            "interval_ms": 2000,
+            "max_alive": 20,
+            "safe_radius": 220
+          }
+        ]
+      }
+    }
+  }
+]

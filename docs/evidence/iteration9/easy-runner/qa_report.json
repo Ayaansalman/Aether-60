@@ -1,0 +1,100 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "runner_input",
+      "passed": true,
+      "critical": true,
+      "details": [
+        {
+          "mode": "ground",
+          "state": "playing",
+          "score": 0,
+          "distance": 3.5,
+          "y": 430,
+          "vy": 0,
+          "active": 1,
+          "serial": 4,
+          "generation": 2
+        },
+        {
+          "mode": "ground",
+          "state": "playing",
+          "score": 3,
+          "distance": 35,
+          "y": 359.3125,
+          "vy": -365,
+          "active": 1,
+          "serial": 4,
+          "generation": 2
+        }
+      ]
+    },
+    {
+      "id": "bounds_death",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "mode": "ground",
+        "state": "lost",
+        "score": 0,
+        "distance": 1.75,
+        "y": 10.104166666666666,
+        "vy": 12.5,
+        "active": 0,
+        "serial": 4,
+        "generation": 3
+      }
+    },
+    {
+      "id": "rapid_restart",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "mode": "ground",
+        "state": "playing",
+        "score": 0,
+        "distance": 3.5,
+        "y": 430,
+        "vy": 0,
+        "active": 1,
+        "serial": 4,
+        "generation": 4
+      }
+    },
+    {
+      "id": "score_once",
+      "passed": true,
+      "critical": true,
+      "details": [
+        21,
+        21
+      ]
+    },
+    {
+      "id": "obstacle_collision",
+      "passed": true,
+      "critical": true,
+      "details": "lost"
+    },
+    {
+      "id": "endless_bounded_state",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "active": 2,
+        "serial": 1653,
+        "endless": true,
+        "stopped": true,
+        "pending": 2
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "details": []
+    }
+  ],
+  "scope": "Real keyboard/pointer input plus disclosed controlled state for collision/scoring and accelerated generation; not autonomous survival."
+}

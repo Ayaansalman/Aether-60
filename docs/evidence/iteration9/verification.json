@@ -1,0 +1,26 @@
+{
+  "backend": {
+    "command": "aether-backend/venv/Scripts/python.exe -m pytest aether-backend/tests/test_iteration9.py aether-backend/tests/test_iteration8.py aether-backend/tests/test_iteration7.py aether-backend/tests/test_adventure.py aether-backend/tests/test_iteration6.py aether-backend/tests/test_gameplay_systems.py aether-backend/tests/test_platformer_api.py aether-backend/tests/test_platformer_fidelity.py -q",
+    "passed": 110
+  },
+  "frontend": {
+    "cwd": "aether-frontend",
+    "command": "node --experimental-strip-types --test tests/iteration9.test.mjs tests/iteration8.test.mjs tests/iteration7.test.mjs tests/platformer-behaviors.test.mjs tests/adventure-state.test.mjs",
+    "passed": 36
+  },
+  "production_build": {
+    "command": "npm run build",
+    "cwd": "aether-frontend",
+    "result": "PASS"
+  },
+  "lint": {
+    "command": "npm run lint",
+    "cwd": "aether-frontend",
+    "result": "PASS"
+  },
+  "warnings": [
+    "Existing Python multipart/anyio deprecations",
+    "Existing Phaser/Vite chunk advisory"
+  ],
+  "scope": "Focused regression suite, not exhaustive project audit"
+}

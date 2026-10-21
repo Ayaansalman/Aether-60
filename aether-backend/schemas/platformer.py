@@ -57,6 +57,7 @@ class InteractionDesign(Contract):
     trigger: Literal['interact', 'touch', 'pressure', 'proximity', 'projectile'] = 'interact'
     section: int = Field(default=0, ge=0, le=13)
     door_section: int = Field(default=1, ge=0, le=13)
+    gate: str | None = Field(default=None,pattern=r'^[a-z][a-z0-9_]{0,39}$',description='Shared gate ID groups multiple switches into one all-sources door')
 
 
 class BehaviorLink(Contract):
@@ -150,6 +151,18 @@ class GameDesign(Contract):
     def consistent_levels(self):
         if self.levels and len(self.levels) != self.level_count:
             raise ValueError('levels must contain exactly level_count level specifications')
+        for owner in [self,*self.levels]:
+            interactions=owner.interactions or []
+            if not interactions:continue
+            gates={('named',i.gate) if i.gate else ('isolated',index) for index,i in enumerate(interactions)}
+            for goal in owner.objectives or []:
+                if goal.kind=='unlock' and goal.count>len(gates):
+                    raise ValueError('unlock.count exceeds the number of distinct gates; count doors, not switches. Use count=0 for all gates')
+                if goal.kind=='activate' and goal.count>len(interactions):
+                    raise ValueError('activate.count exceeds the number of switches')
+            for gate in {i.gate for i in interactions if i.gate}:
+                if len({i.door_section for i in interactions if i.gate==gate})!=1:
+                    raise ValueError('Shared gate switches must reference the same door section')
         return self
 
 

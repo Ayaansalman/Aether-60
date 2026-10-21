@@ -16,9 +16,10 @@ export class AdventureState {
   won = false;
   lost = false;
   spec: AdventureIR;
-  constructor(spec: AdventureIR) { this.spec=spec; this.completed = spec.quests.map(() => false); }
+  constructor(spec: AdventureIR) { this.spec=spec; this.health=spec.gameplay?.health??5; this.completed = spec.quests.map(() => false); }
   get current() { return this.completed.findIndex(v => !v); }
   get objective() {
+    if(this.spec.gameplay&&this.spec.gameplay.outcome!=='quests')return 'Dodge and survive';
     const q=this.spec.quests[this.current];
     if(!q)return 'All quests complete — use the glowing exit.';
     return q.kind==='collect'?`${q.text} (${Math.min(this.collected[q.target]||0,q.count)}/${q.count})`:q.text;
@@ -74,6 +75,7 @@ export class AdventureState {
     return this.spec.quests.every((q,i)=>this.completed[i] || this.spec.areas[this.area].actors.every(a=>a.id!==q.target));
   }
   leave() {
+    if (this.spec.gameplay && this.spec.gameplay.outcome!=='quests') return false;
     if (!this.canLeave()) return false;
     if (this.area<this.spec.areas.length-1) this.area++;
     else this.won=this.current<0;
