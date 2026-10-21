@@ -1,4 +1,3 @@
-import {emitterStep,safeSpawn} from './survival/stream';
 import Phaser from 'phaser';
 import type { GameIR } from './gameir';
 import type { GameState, EnemyPosition } from './qaHook';
@@ -126,14 +125,6 @@ export class ArenaScene extends Phaser.Scene {
   private gameIR!: GameIR;
   private themeConfig!: ThemeVisualConfig;
   private decoGraphics?: Phaser.GameObjects.Graphics;
-  private streamNextAt=0;
-  private streamSerial=0;
-  private streamShots=0;
-  private streamExpired=0;
-  private streamFires:{id:number;at:number;shot:number}[]=[];
-  private streamTrace:{id:number;type:string;x:number;y:number;at:number;shots?:number}[]=[];
-  private touch:Record<string,boolean>={};
-  private requestRestart=false;
   private player!: Phaser.GameObjects.Rectangle;
   private enemies!: Phaser.GameObjects.Group;
   private collectiblesGroup!: Phaser.GameObjects.Group;
@@ -206,7 +197,6 @@ export class ArenaScene extends Phaser.Scene {
     enemiesPaused?: boolean;
   }): void {
     this.gameIR = data.gameIR;
-    this.streamNextAt=0;this.streamSerial=0;this.streamShots=0;this.streamExpired=0;this.streamTrace=[];this.streamFires=[];this.touch={};this.requestRestart=false;
     this.maxHealth = this.gameIR.player?.max_health ?? 3;
     const bug = this.getBugParam();
     if (bug === 'restart_keeps_hp' && data?.isRestart) {
@@ -389,7 +379,7 @@ export class ArenaScene extends Phaser.Scene {
       : [{ type: 'chaser', count: 5, speed: 75.0 }];
 
     let enemyIndex = 0;
-    if(!this.gameIR.survival_stream)for (const config of enemyConfigs) {
+    for (const config of enemyConfigs) {
       const enemyCount = config.count ?? 5;
       const enemyType = config.type || 'chaser';
       const enemySpeed = config.speed ?? 75.0;
@@ -614,21 +604,10 @@ export class ArenaScene extends Phaser.Scene {
       callback: () => {
         if (!this.isGameOver && !this.isGameWon) {
           this.timeElapsed += 1;
-          if(this.gameIR.survival_stream)this.updateHUD();
         }
       },
     });
 
-    if(this.gameIR.survival_stream){
-      this.streamNextAt=this.time.now+this.gameIR.survival_stream.spawn_interval_ms;
-      const control=(key:string,pressed:boolean)=>{this.touch[key]=pressed;if(key==='restart'&&pressed)this.requestRestart=true;};
-      this.events.on('survival-control',control);
-      this.events.once('shutdown',()=>this.events.off('survival-control',control));
-      if(this.isTestMode()){
-        const testing=window as Window & {__survivalScene?:ArenaScene};testing.__survivalScene=this;
-        this.events.once('shutdown',()=>{if(testing.__survivalScene===this)delete testing.__survivalScene;});
-      }
-    }
     // 11. QA Test Hook Setup (?test=1 only)
     if (this.isTestMode()) {
       window.__AETHER_GAME__ = {
@@ -648,15 +627,12 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   private updateHUD(): void {
-    if(this.gameIR.survival_stream)this.game.events.emit('survival-ui',{health:this.currentHealth,max:this.maxHealth,seconds:this.timeElapsed});
     if (this.healthText) {
       this.healthText.setText(`HP: ${this.currentHealth} / ${this.maxHealth}`);
     }
 
     if (this.objectiveText) {
-      if(this.gameIR.objective?.type==='survive_endless'){
-        this.objectiveText.setText(`Survived: ${this.timeElapsed}s · Dodge chasers & shooters`);
-      } else if (this.gameIR.objective?.type === 'survive_seconds') {
+      if (this.gameIR.objective?.type === 'survive_seconds') {
         this.objectiveText.setText(`Time: ${this.survivalTimeRemaining}s`);
       } else if (this.gameIR.objective?.type === 'defeat_enemies') {
         this.objectiveText.setText(`Defeated: ${this.enemiesDefeated} / ${this.targetScore}`);
@@ -785,7 +761,6 @@ export class ArenaScene extends Phaser.Scene {
       }
     }
 
-    if(this.gameIR.survival_stream)return;
     // Respawn 3 seconds later at least 200px from player
     const timer = this.time.delayedCall(3000, () => {
       this.respawnEnemy(enemyType, enemySpeed);
@@ -793,7 +768,7 @@ export class ArenaScene extends Phaser.Scene {
     this.respawnTimers.push(timer);
   }
 
-  private respawnEnemy(enemyType: string = 'chaser', speed: number = 75.0, position?:{x:number;y:number}): void {
+  private respawnEnemy(enemyType: string = 'chaser', speed: number = 75.0): void {
     if (this.isGameOver || this.isGameWon) return;
 
     const width = this.scale.width;
@@ -812,7 +787,6 @@ export class ArenaScene extends Phaser.Scene {
       attempts < 100
     );
 
-    if(position){enemyX=position.x;enemyY=position.y;}
     const enemy = this.add.rectangle(enemyX, enemyY, 24, 24, this.themeConfig.enemyColor);
     enemy.setStrokeStyle(1.5, this.themeConfig.enemyAccent, 1);
     this.physics.add.existing(enemy);
@@ -836,13 +810,6 @@ export class ArenaScene extends Phaser.Scene {
       enemyBody.setVelocity(Math.cos(bounceAngle) * speed, Math.sin(bounceAngle) * speed);
     }
 
-    if(this.gameIR.survival_stream){
-      const id=this.streamSerial++;enemy.setData('streamId',id);enemy.setData('bornAt',this.time.now);enemy.setData('shots',0);
-      enemy.setFillStyle(enemyType==='shooter'?0xf59e0b:0xe84c70);
-      const label=this.add.text(enemyX,enemyY-24,enemyType==='shooter'?'S 0/'+this.gameIR.survival_stream.shooter_shots:'C',{fontSize:'12px',fontFamily:'monospace',color:'#fff0cc',backgroundColor:'#172131aa'}).setOrigin(.5).setDepth(20);
-      enemy.setData('streamLabel',label);enemy.once('destroy',()=>label.destroy());
-      this.streamTrace.push({id,type:enemyType,x:enemyX,y:enemyY,at:this.time.now});this.streamTrace=this.streamTrace.slice(-64);
-    }
     this.enemies.add(enemy);
   }
 
@@ -853,11 +820,11 @@ export class ArenaScene extends Phaser.Scene {
     this.physics.add.existing(bullet);
     const body = bullet.body as Phaser.Physics.Arcade.Body;
     const angle = Phaser.Math.Angle.Between(enemy.x, enemy.y, this.player.x, this.player.y);
-    const bulletSpeed = this.gameIR.survival_stream?.bullet_speed ?? 95; // slow avoidable bullet
+    const bulletSpeed = 95; // slow avoidable bullet
     body.setVelocity(Math.cos(angle) * bulletSpeed, Math.sin(angle) * bulletSpeed);
     this.enemyProjectilesGroup.add(bullet);
 
-    this.time.delayedCall(this.gameIR.survival_stream?.bullet_lifetime_ms ?? 4000, () => {
+    this.time.delayedCall(4000, () => {
       if (bullet.active) bullet.destroy();
     });
   }
@@ -879,7 +846,6 @@ export class ArenaScene extends Phaser.Scene {
 
   private handlePlayerHit(enemy: Phaser.GameObjects.Rectangle): void {
     if (this.enemiesPaused || this.isInvulnerable || this.isGameOver || this.isGameWon) return;
-    if(this.gameIR.survival_stream&&this.time.now-(enemy.getData('bornAt')??-10000)<this.gameIR.survival_stream.warning_ms)return;
 
     this.currentHealth = Math.max(0, this.currentHealth - 1);
     this.updateHUD();
@@ -1048,7 +1014,7 @@ export class ArenaScene extends Phaser.Scene {
       status,
       hp: this.currentHealth,
       maxHp: this.maxHealth,
-      score: this.gameIR.objective?.type==='survive_endless'?this.timeElapsed:this.gameIR.objective?.type === 'defeat_enemies' ? this.enemiesDefeated : this.score,
+      score: this.gameIR.objective?.type === 'defeat_enemies' ? this.enemiesDefeated : this.score,
       target:
         this.gameIR.objective?.type === 'survive_seconds'
           ? (this.gameIR.objective.target ?? 30)
@@ -1194,12 +1160,6 @@ export class ArenaScene extends Phaser.Scene {
   }
 
   update(_time: number, delta: number): void {
-    if(this.gameIR.survival_stream){
-      const focused=this.game.canvas.closest('.game-surface')?.contains(document.activeElement);
-      this.time.paused=!focused;
-      if(!focused){this.physics.pause();return;}
-      if(!this.isGameOver&&!this.isGameWon)this.physics.resume();
-    }
     this.totalGameTimeMs += delta;
     // Increment tick for QA test runner confirmation
     if (typeof window !== 'undefined' && window.__AETHER_GAME__) {
@@ -1208,7 +1168,7 @@ export class ArenaScene extends Phaser.Scene {
     }
 
     // R key restart
-    if (this.requestRestart || this.rKey && Phaser.Input.Keyboard.JustDown(this.rKey)) {
+    if (this.rKey && Phaser.Input.Keyboard.JustDown(this.rKey)) {
       this.restartGame();
       return;
     }
@@ -1354,13 +1314,13 @@ export class ArenaScene extends Phaser.Scene {
       let iy = 0;
 
       const leftPressed =
-        Boolean(this.cursors?.left?.isDown) || Boolean(this.wasdKeys?.A?.isDown) || Boolean(this.touch.left);
+        Boolean(this.cursors?.left?.isDown) || Boolean(this.wasdKeys?.A?.isDown);
       const rightPressed =
-        Boolean(this.cursors?.right?.isDown) || Boolean(this.wasdKeys?.D?.isDown) || Boolean(this.touch.right);
+        Boolean(this.cursors?.right?.isDown) || Boolean(this.wasdKeys?.D?.isDown);
       const upPressed =
-        Boolean(this.cursors?.up?.isDown) || Boolean(this.wasdKeys?.W?.isDown) || Boolean(this.touch.up);
+        Boolean(this.cursors?.up?.isDown) || Boolean(this.wasdKeys?.W?.isDown);
       const downPressed =
-        Boolean(this.cursors?.down?.isDown) || Boolean(this.wasdKeys?.S?.isDown) || Boolean(this.touch.down);
+        Boolean(this.cursors?.down?.isDown) || Boolean(this.wasdKeys?.S?.isDown);
 
       if (leftPressed) ix -= 1;
       if (rightPressed) ix += 1;
@@ -1389,14 +1349,6 @@ export class ArenaScene extends Phaser.Scene {
       playerBody.setVelocity(vx, vy);
     }
 
-    const stream=this.gameIR.survival_stream;
-    if(stream&&!this.enemiesPaused&&this.time.now>=this.streamNextAt){
-      this.streamNextAt=this.time.now+stream.spawn_interval_ms;
-      if(this.enemies.getLength()<stream.max_active){
-        const point=safeSpawn(this.rng,this.scale.width,this.scale.height,this.player,stream.safe_radius);
-        if(point){const config=this.gameIR.enemies[Math.floor(this.rng()*this.gameIR.enemies.length)];this.respawnEnemy(config.type,config.speed,point);}
-      }
-    }
     // Update enemies: multi-type behaviours if not paused
     if (!this.enemiesPaused) {
       const now = this.time.now;
@@ -1407,14 +1359,6 @@ export class ArenaScene extends Phaser.Scene {
 
         const enemyType = (enemy.getData('enemyType') as string) || 'chaser';
         const baseSpeed = (enemy.getData('speed') as number) ?? 75.0;
-        if(stream){
-          const age=now-(enemy.getData('bornAt')??now);
-          const label=enemy.getData('streamLabel') as Phaser.GameObjects.Text;
-          label?.setPosition(enemy.x,enemy.y-24);
-          if(age<stream.warning_ms){enemy.setAlpha(.45);enemyBody.setVelocity(0,0);return;}
-          enemy.setAlpha(1);
-          if(enemyType==='chaser'&&age>=stream.chaser_lifetime_ms){enemy.destroy();return;}
-        }
 
         if (enemyType === 'chaser') {
           const angle = Phaser.Math.Angle.Between(
@@ -1528,11 +1472,7 @@ export class ArenaScene extends Phaser.Scene {
           }
 
           const lastShoot = (enemy.getData('lastShootTime') as number) || 0;
-          if(stream){
-            const next=emitterStep(enemy.getData('shots')||0,lastShoot,now,stream);
-            if(next.fire){this.shootEnemyBullet(enemy);this.streamShots++;this.streamFires.push({id:enemy.getData('streamId'),at:now,shot:next.shots});this.streamFires=this.streamFires.slice(-64);enemy.setData('lastShootTime',next.lastAt);enemy.setData('shots',next.shots);(enemy.getData('streamLabel') as Phaser.GameObjects.Text)?.setText(`S ${next.shots}/${stream.shooter_shots}`);}
-            if(next.expired){this.streamExpired++;const record=this.streamTrace.find(r=>r.id===enemy.getData('streamId'));if(record)record.shots=next.shots;enemy.destroy();}
-          } else if (now - lastShoot >= 2500) {
+          if (now - lastShoot >= 2500) {
             enemy.setData('lastShootTime', now);
             this.shootEnemyBullet(enemy);
           }

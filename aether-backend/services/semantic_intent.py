@@ -7,19 +7,17 @@ class Requirement(BaseModel):
     model_config=ConfigDict(extra='forbid')
     source: str
     meaning: str
-    capability: Literal['platform_movement','top_down_movement','auto_run','flap','endless_obstacles','finite_finish','distance_score','gap_score','restart','boss_duel','boss_health_bar','boss_patterns','boss_defeat','no_ordinary_enemies','no_collectibles','no_combat','single_level','biome_regions','slippery_region','quest_delivery','quest_collect','quest_activate','quest_unlock','quest_explore','adventure_combat','treasure_finish','projectile_attack','sword_melee','visual_theme','endless_survival','random_enemy_spawns','enemy_chaser','enemy_shooter','emitter_lifecycle','player_health','survival_score','unsupported']
+    capability: Literal['platform_movement','top_down_movement','auto_run','flap','endless_obstacles','finite_finish','distance_score','gap_score','restart','boss_duel','boss_health_bar','boss_patterns','boss_defeat','no_ordinary_enemies','no_collectibles','no_combat','single_level','biome_regions','slippery_region','quest_delivery','quest_collect','quest_activate','quest_unlock','quest_explore','adventure_combat','treasure_finish','projectile_attack','sword_melee','visual_theme','unsupported']
     status: Literal['planned','approximated','unsupported']='planned'
     depends_on: list[str]=Field(default_factory=list)
     verification: str
     biomes: list[Literal['forest','garden','dark','snow','frozen_lake','icy_ruins']]=Field(default_factory=list)
     count: int | None = Field(default=None,ge=0,le=100)
-    interval_ms: int | None = Field(default=None,ge=100,le=10000)
-    enemy_types: list[Literal['chaser','shooter']]=Field(default_factory=list)
     scope: Literal['game','same_level','separate_levels']='game'
 
 class Intent(BaseModel):
     model_config=ConfigDict(extra='forbid')
-    genre: Literal['platformer','adventure','runner','arena_survival','unsupported']
+    genre: Literal['platformer','adventure','runner','unsupported']
     loop: str
     control: Literal['platform','top_down','auto_jump','flap','unsupported']
     requirements: list[Requirement]=Field(default_factory=list)
@@ -29,12 +27,12 @@ def interpret(prompt, mode):
         from services.game_factory import genre_for_prompt
         genre=genre_for_prompt(prompt)
         flap=bool(re.search(r'flap|tap.*(?:fly|airborne)|flying.*(?:tap|space)',prompt,re.I))
-        return Intent(genre=genre,loop='Deterministic fixture interpretation',control='flap' if flap else 'auto_jump' if genre=='runner' else 'top_down' if genre in ('adventure','arena_survival') else 'platform'), {'provider':'fixture','live':False}
+        return Intent(genre=genre,loop='Deterministic fixture interpretation',control='flap' if flap else 'auto_jump' if genre=='runner' else 'top_down' if genre=='adventure' else 'platform'), {'provider':'fixture','live':False}
     from providers.factory import get_provider
     from providers.mock import MockModelProvider
     provider=get_provider()
     if isinstance(provider,MockModelProvider): raise ValueError('Live interpretation requires configured provider')
-    result=provider.complete('Interpret the requested game semantically. Return JSON only, no code. Select arena_survival for top-down bullet-dodging, evasion, random enemy spawning or timed/endless survival WITHOUT quests. Top-down is a perspective, NOT automatically an adventure. For arena_survival use endless_survival, random_enemy_spawns, enemy_chaser, enemy_shooter, emitter_lifecycle, player_health and survival_score; preserve HP and shots in count, fire interval in interval_ms, and roles in enemy_types. Never invent collectible quests to represent survival. Select platformer for manual run/jump or boss arenas; adventure for top-down exploration/quests; runner for automatic horizontal scrolling survival, including gravity plus flap impulse. Unsupported genres must be explicit. Enumerate important constraints with verbatim source substrings, intended meaning, runtime capability, dependencies, and concrete verification. Preserve exact counts in count, biome names in biomes, and same_level versus separate_levels in scope. Preserve exclusions, win conditions, control model and environmental physics. For adventure requests use quest_collect for keys/items, quest_activate for switches, quest_unlock for doors, adventure_combat for monsters, and treasure_finish for final treasure. quest_delivery is ONLY an item return to an NPC; finite_finish is ONLY a finite runner. Dark and flower garden regions use dark/garden biome IDs. Sword combat is approximated by platformer projectiles; never claim implemented melee. Schema: '+json.dumps(Intent.model_json_schema()),prompt)
+    result=provider.complete('Interpret the requested game semantically. Return JSON only, no code. Select platformer for manual run/jump or boss arenas; adventure for top-down exploration/quests; runner for automatic horizontal scrolling survival, including gravity plus flap impulse. Unsupported genres must be explicit. Enumerate important constraints with verbatim source substrings, intended meaning, runtime capability, dependencies, and concrete verification. Preserve exact counts in count, biome names in biomes, and same_level versus separate_levels in scope. Preserve exclusions, win conditions, control model and environmental physics. For adventure requests use quest_collect for keys/items, quest_activate for switches, quest_unlock for doors, adventure_combat for monsters, and treasure_finish for final treasure. quest_delivery is ONLY an item return to an NPC; finite_finish is ONLY a finite runner. Dark and flower garden regions use dark/garden biome IDs. Sword combat is approximated by platformer projectiles; never claim implemented melee. Schema: '+json.dumps(Intent.model_json_schema()),prompt)
     intent=Intent.model_validate_json(re.sub(r'^```(?:json)?\s*|\s*```$','',result.text.strip()))
     if any(r.source.lower() not in prompt.lower() for r in intent.requirements): raise ValueError('Intent sources must quote original prompt')
     return intent, {'provider':type(provider).__name__,'model':result.model,'live':True}
@@ -64,8 +62,6 @@ CAPABILITY_MAP = {
     'projectile_attack': ('player_attack', 'player_attack_damage'),
     'sword_melee': ('player_attack', 'player_attack_damage'),
     'visual_theme': ('theme', None),
-    **{cap:('survival_stream',cap) for cap in ['endless_survival','random_enemy_spawns','enemy_chaser','enemy_shooter','emitter_lifecycle','survival_score']},
-    'player_health':('player.max_health','survival_damage'),
     'unsupported': ('unsupported', None),
 }
 
@@ -77,9 +73,8 @@ def fidelity(ir, intent, qa=None):
     actors=[a for area in data.get('areas',[]) for a in area['actors']]
     regions=[r for area in data.get('areas',[]) for r in area.get('regions',[])]
     no_enemies=not any(e['kind']=='enemy' and not e.get('boss') for e in entities) and not any(a['kind']=='enemy' for a in actors)
-    if genre=='arena_survival' and data.get('enemies'):no_enemies=False
     witnesses={
-        'platform_movement':genre=='platformer','top_down_movement':genre in ('adventure','arena_survival'),
+        'platform_movement':genre=='platformer','top_down_movement':genre=='adventure',
         'auto_run':genre=='runner' and data['mode']=='ground','flap':genre=='runner' and data['mode']=='flap',
         'endless_obstacles':genre=='runner' and data['endless'],'finite_finish':(genre=='runner' and not data['endless']) or (genre=='adventure' and bool(data['quests'])),
         'distance_score':data.get('scoring')=='distance','gap_score':data.get('scoring')=='gaps','restart':True,
@@ -97,10 +92,7 @@ def fidelity(ir, intent, qa=None):
     witnesses.update({cap:any(q['kind']==kind for q in data.get('quests',[])) for cap,kind in [('quest_collect','collect'),('quest_activate','activate'),('quest_unlock','unlock'),('quest_explore','explore')]})
     witnesses['adventure_combat']=genre=='adventure' and data['combat'] and any(a['kind']=='enemy' for a in actors)
     witnesses['treasure_finish']=genre=='adventure' and any(q['kind']=='collect' and any(a['id']==q['target'] and a['kind']=='treasure' for a in actors) for q in data.get('quests',[]))
-    if genre=='arena_survival':
-        stream=data['survival_stream'];roles={e['type'] for e in data['enemies']}
-        witnesses.update(endless_survival=data['objective']['type']=='survive_endless',random_enemy_spawns=stream['selection']=='random',enemy_chaser='chaser' in roles,enemy_shooter='shooter' in roles,emitter_lifecycle='shooter' in roles and stream['expire_after_burst'],player_health=bool(data['player']['max_health']),survival_score=True,no_collectibles=not data['collectibles'])
-    expected_control='flap' if genre=='runner' and data['mode']=='flap' else 'auto_jump' if genre=='runner' else 'top_down' if genre in ('adventure','arena_survival') else 'platform'
+    expected_control='flap' if genre=='runner' and data['mode']=='flap' else 'auto_jump' if genre=='runner' else 'top_down' if genre=='adventure' else 'platform'
     root_ok=intent.get('genre',genre)==genre and intent.get('control',expected_control)==expected_control
     checks={c['id']:c['passed'] for c in (qa or {}).get('checks',[])}
     result=[]
@@ -115,15 +107,8 @@ def fidelity(ir, intent, qa=None):
             if cap=='finite_finish':cap='treasure_finish'
         path,check=CAPABILITY_MAP.get(cap,('unsupported',None))
         if genre=='adventure' and cap=='projectile_attack':check='adventure_combat'
-        if cap=='restart':check={'adventure':'whole_game_restart','platformer':'boss_restart' if boss else 'whole_campaign_restart','runner':'rapid_restart','arena_survival':'survival_restart'}[genre]
-        if genre=='arena_survival' and cap=='top_down_movement':check='survival_movement'
+        if cap=='restart':check={'adventure':'whole_game_restart','platformer':'boss_restart' if boss else 'whole_campaign_restart','runner':'rapid_restart'}[genre]
         built=witnesses.get(cap,False)
-        if genre=='arena_survival':
-            if req.get('enemy_types'):built=built and set(req['enemy_types']).issubset(roles)
-            if cap=='player_health' and req.get('count') is not None:built=built and data['player']['max_health']==req['count']
-            if cap=='emitter_lifecycle':
-                if req.get('count') is not None:built=built and stream['shooter_shots']==req['count']
-                if req.get('interval_ms') is not None:built=built and stream['shot_interval_ms']==req['interval_ms']
         requested_biomes=set(req.get('biomes',[]))
         if 'forest' in requested_biomes and 'garden' in {r['biome'] for r in regions} and re.search(r'garden',req['source'],re.I):
             requested_biomes.discard('forest');requested_biomes.add('garden')

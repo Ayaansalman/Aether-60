@@ -29,7 +29,7 @@ export interface CollectibleConfig {
   count: number;
 }
 
-export type ObjectiveType = 'survive_endless' | 'survive_seconds' | 'collect_count' | 'defeat_enemies';
+export type ObjectiveType = 'survive_seconds' | 'collect_count' | 'defeat_enemies';
 
 export interface ObjectiveConfig {
   type: ObjectiveType;
@@ -56,7 +56,6 @@ export interface ControlsConfig {
 }
 
 export interface GameIR {
-  survival_stream?: import('./survival/stream').SurvivalStream;
   schema_version: string; // "1.0"
   title: string;
   genre: GameGenre;

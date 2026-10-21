@@ -1569,7 +1569,3 @@ html:has(.studio-theme) { overflow-x:clip; overflow-y:auto; }
 .flap .world-art { background: radial-gradient(ellipse at 25% 24%, #ffffffcc 0 12%, transparent 13%), #8ed9ef; }
 .auto-runner .pixel-ground { background: #24d9c5; border-color: #44f1dd; }
 .flap .pixel-ground { background: #9abf77; border-color: #d4e5aa; }
-
-.theme-dot.survival { background: #e9884a; }
-.survival .world-art { background: radial-gradient(circle at 70% 25%, #f59e0b 0 8px, transparent 9px), radial-gradient(circle at 30% 65%, #e84c70 0 10px, transparent 11px), repeating-linear-gradient(0deg, transparent 0 31px, #253144 32px), #101827; }
-.survival .pixel-ground, .survival .pixel-hill { display: none; }

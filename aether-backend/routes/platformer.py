@@ -9,7 +9,7 @@ import uuid
 from pathlib import Path
 from typing import Literal
 from fastapi import APIRouter, BackgroundTasks, HTTPException
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, Field
 from services import job_store, event_store
 from services.orchestrator import get_artifacts_dir
 from services.platformer import plan, construct, validate_route, enforce_explicit_requirements, validate_assets
@@ -21,7 +21,7 @@ _worker = asyncio.Lock()
 
 def browser_report(game_url, directory, genre="platformer"):
     try:
-        proc = subprocess.run([sys.executable,"-m",("services.survival_qa" if genre=="arena_survival" else "services.boss_qa" if genre=="boss" else "services.runner_qa" if genre=="runner" else "services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
+        proc = subprocess.run([sys.executable,"-m",("services.boss_qa" if genre=="boss" else "services.runner_qa" if genre=="runner" else "services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
             cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=240)
         return json.loads(proc.stdout.strip())
     except Exception as exc:
@@ -62,10 +62,6 @@ async def run(gid: str, request: Generate):
             intent,intent_provider=await asyncio.to_thread(interpret,request.prompt,request.mode)
             artifact('semantic_intent.json', {**intent.model_dump(),'provenance':intent_provider})
             if intent.genre=='unsupported': raise ValueError('Requested game family is unsupported; see semantic_intent.json')
-            if intent.genre=='arena_survival':
-                from services.survival import run_survival
-                await run_survival(gid,request,artifact,stage,browser_report,intent.model_dump())
-                return
             if intent.genre=='runner':
                 from services.runner import run_runner
                 await run_runner(gid,request,artifact,stage,browser_report,intent.model_dump())
@@ -182,11 +178,7 @@ async def run(gid: str, request: Generate):
         except Exception as exc:
             # Never persist raw provider messages: upstream errors can echo credentials/request content.
             code = getattr(exc, 'code', 'GENERATION_FAILED')
-            if isinstance(exc,ValidationError):
-                errors=[{'field':'.'.join(map(str,e['loc'])),'message':e['msg'],'type':e['type']} for e in exc.errors(include_input=False,include_url=False)]
-                artifact('design_validation_errors.json',{'errors':errors})
-                safe='The generated design could not be validated: '+ '; '.join((e['field']+': ' if e['field'] else '')+e['message'] for e in errors[:2])
-            else:safe = str(exc)[:500] if isinstance(exc, ValueError) else f"{code}: {type(exc).__name__}. Check provider configuration or retry later."
+            safe = str(exc)[:500] if isinstance(exc, ValueError) else f"{code}: {type(exc).__name__}. Check provider configuration or retry later."
             event_store.add_event(gid, stage="FAILED", result="FAILED", detail=safe)
             job_store.update_job(gid, status="FAILED", stage="FAILED", error_code=code)
 
@@ -242,7 +234,7 @@ async def reverify_job(gid: str):
             save(gid,'asset_validation.json',adventure.validate_assets())
             save(gid,'validation.json',adventure.validate_world(ir))
             coverage={'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED', 'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
-        elif genre in ('runner','arena_survival'):
+        elif genre=='runner':
             coverage={'overall':report['overall'],'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
         else:
             coverage=requirement_evidence(ir,job['prompt'],job['limitations'],report)

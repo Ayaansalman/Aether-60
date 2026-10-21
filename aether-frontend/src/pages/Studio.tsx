@@ -1,5 +1,3 @@
-import {SurvivalCanvas} from '../components/SurvivalCanvas';
-import type {SurvivalIR} from '../game/survival/stream';
 import {RunnerCanvas} from '../components/RunnerCanvas';
 import type {RunnerIR} from '../game/runner/world';
 import { useEffect, useState } from "react";
@@ -28,10 +26,9 @@ import { PlatformerCanvas } from "../components/PlatformerCanvas";
 import type { PlatformerIR, StudioJob } from "../game/platformer/types";
 import "./studio.css";
 
-type GeneratedIR = PlatformerIR | AdventureIR | RunnerIR | SurvivalIR;
+type GeneratedIR = PlatformerIR | AdventureIR | RunnerIR;
 
 const PROMPTS = [
-  ["11", "Bulletfall Survival", "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe enemy spawned will have its type(chaser , or bullet shooting ) at random \n\nthe enemy type can shoot will shoot 5 bullets after 1 second each and then die", "survival"],
   ["09", "Neon Overdrive", "Create a fast-paced endless 2D runner in a neon cyberpunk city. My character should automatically run forward while I jump over spikes, gaps, and laser obstacles. Make the course become gradually faster and more challenging. Track my distance, and let me instantly restart after crashing.", "auto-runner"],
   ["10", "Cloudwing", "Create a colorful arcade game where I control a small flying creature. The world scrolls from right to left, and pressing Space or tapping the screen makes the creature flap upward against gravity. I must fly between gaps in obstacles, earn points for each gap passed, and survive as long as possible.", "flap"],
   ["06", "The Woodland Remedy", "Create a cozy top-down fantasy adventure in a woodland village. A village healer needs three magical herbs from the nearby forest. Let me explore the village, talk to the healer, collect the herbs, and return to complete the quest. Include charming buildings, paths, trees, friendly villagers, and colorful environments. No combat.", "village"],
@@ -442,7 +439,7 @@ function Workspace() {
               disabled={busy}
             />
             <div className="prompt-meta">
-              <span>Platformer / adventure / runner / survival</span>
+              <span>Platformer / adventure / runner</span>
               <span>{prompt.length}/3000</span>
             </div>
             <label htmlFor="provider-mode" className="mode-label">
@@ -495,7 +492,7 @@ function Workspace() {
             <details className="capabilities">
               <summary>What can Aether build?</summary>
               <p>
-                Top-down arena survival supports random chaser/shooter spawns, health, elapsed-time scoring and configurable timed shooter expiry, with no mandatory quests. Auto-runners and tap-to-flap scrollers support endless seeded obstacles, distance or gap scores, keyboard/touch and instant restart. Platformers support boss arenas with telegraphed attacks. Adventures support connected biome regions and localized slippery ice. Forest, industrial, ice cavern and twilight platformers with up to three levels. Patrol, chase, ranged enemies, turrets and ambushers; icicles, slippery terrain, timed machinery, bounded moving platforms, checkpoints, double jump and dash. Switches, latched pressure plates and projectile switches open linked doors. Objectives can combine defeating guards, collecting objects, activating controls, unlocking paths, survival time and deadlines. Top-down adventures support connected villages, forests and dungeons, NPC dialogue, inventory, keys, switches, sequential quests and optional combat. Custom mechanics remain limited;
+                Auto-runners and tap-to-flap scrollers support endless seeded obstacles, distance or gap scores, keyboard/touch and instant restart. Platformers support boss arenas with telegraphed attacks. Adventures support connected biome regions and localized slippery ice. Forest, industrial, ice cavern and twilight platformers with up to three levels. Patrol, chase, ranged enemies, turrets and ambushers; icicles, slippery terrain, timed machinery, bounded moving platforms, checkpoints, double jump and dash. Switches, latched pressure plates and projectile switches open linked doors. Objectives can combine defeating guards, collecting objects, activating controls, unlocking paths, survival time and deadlines. Top-down adventures support connected villages, forests and dungeons, NPC dialogue, inventory, keys, switches, sequential quests and optional combat. Custom mechanics remain limited;
                 requested unsupported features appear in the Inspector.
               </p>
             </details>
@@ -604,7 +601,7 @@ function Workspace() {
                     </button>
                   )}
                   {spec ? (
-                    spec.genre === "arena_survival" ? <SurvivalCanvas spec={spec} restart={restart} /> : spec.genre === "runner" ? <RunnerCanvas spec={spec} restart={restart} /> : spec.genre === "adventure" ? <AdventureCanvas spec={spec} restart={restart} /> : <PlatformerCanvas spec={spec} restart={restart} />
+                    spec.genre === "runner" ? <RunnerCanvas spec={spec} restart={restart} /> : spec.genre === "adventure" ? <AdventureCanvas spec={spec} restart={restart} /> : <PlatformerCanvas spec={spec} restart={restart} />
                   ) : (
                     <div className="empty-preview">
                       <Gamepad2 size={40} />
@@ -629,10 +626,10 @@ function Workspace() {
                   {spec.genre !== "runner" && <div>
                     <kbd>←</kbd>
                     <kbd>→</kbd>
-                    {(spec.genre === 'adventure'||spec.genre==='arena_survival') && <><kbd>↑</kbd><kbd>↓</kbd></>}
+                    {spec.genre === 'adventure' && <><kbd>↑</kbd><kbd>↓</kbd></>}
                     <span>Move</span>
                   </div>}
-                  {spec.genre!=="arena_survival" && <div>
+                  <div>
                     <kbd>{spec.genre === "adventure" ? "E" : "SPACE"}</kbd>
                     <span>
                       {spec.genre === "adventure" ? "Interact (E)" : spec.genre === "runner" && spec.mode === "flap" ? "Flap / tap" : "Jump"}
@@ -641,7 +638,6 @@ function Workspace() {
                         : ""}
                     </span>
                   </div>
-                  }
                   {(spec?.genre === "platformer" ? spec.player.abilities : []).includes("dash") && (
                     <div>
                       <kbd>SHIFT</kbd>
@@ -652,13 +648,13 @@ function Workspace() {
                     <kbd>R</kbd>
                     <span>Restart</span>
                   </div>
-                  <span className="focus-hint">{spec.genre === "arena_survival" ? "WASD / arrows or touch: dodge · R: restart · Survive as long as possible" : spec.genre === "runner" ? `Automatic scrolling · Space or tap: ${spec.mode === "flap" ? "flap upward" : "jump"} · R: restart` : "Click game to focus · WASD / arrows: move · E: interact · F/X: attack when equipped"}</span>
+                  <span className="focus-hint">{spec.genre === "runner" ? `Automatic scrolling · Space or tap: ${spec.mode === "flap" ? "flap upward" : "jump"} · R: restart` : "Click game to focus · WASD / arrows: move · E: interact · F/X: attack when equipped"}</span>
                 </div>}
               </>
             ) : (
               <div className="design-view">
                 <h3>World blueprint</h3>
-                {spec?.genre === "arena_survival" ? <><p>Top-down survival · {spec.player.max_health} HP · {spec.objective.type === "survive_endless" ? "Endless" : `${spec.objective.target}s target`}</p><p>Random chaser/shooter spawns every {spec.survival_stream.spawn_interval_ms / 1000}s. Shooters fire {spec.survival_stream.shooter_shots} shots at {spec.survival_stream.shot_interval_ms / 1000}s intervals, then expire.</p><p>WASD / arrows to evade · R to restart · Seed {spec.seed}</p></> : spec?.genre === "runner" ? <><p>{spec.mode} · {spec.endless ? "Endless" : "Finite"} · Seed {spec.seed}</p><p>{spec.speed} → {spec.max_speed} px/s · {spec.scoring} scoring · Space / tap to {spec.mode === "flap" ? "flap" : "jump"}</p></> : spec?.genre === "adventure" ? <><p>{spec.areas.length} connected areas · Seed {spec.seed}</p><p>{spec.areas.map(a=>`${a.name} (${a.environment})`).join(" → ")}</p><ol>{spec.quests.map((q,i)=><li key={i}>{q.text}</li>)}</ol><p>{spec.art?.pack_id || 'Kenney Tiny Town & Tiny Dungeon'} · CC0</p></> : spec ? (
+                {spec?.genre === "runner" ? <><p>{spec.mode} · {spec.endless ? "Endless" : "Finite"} · Seed {spec.seed}</p><p>{spec.speed} → {spec.max_speed} px/s · {spec.scoring} scoring · Space / tap to {spec.mode === "flap" ? "flap" : "jump"}</p></> : spec?.genre === "adventure" ? <><p>{spec.areas.length} connected areas · Seed {spec.seed}</p><p>{spec.areas.map(a=>`${a.name} (${a.environment})`).join(" → ")}</p><ol>{spec.quests.map((q,i)=><li key={i}>{q.text}</li>)}</ol><p>{spec.art?.pack_id || 'Kenney Tiny Town & Tiny Dungeon'} · CC0</p></> : spec ? (
                   <>
                     <p>
                       {spec.levels?.length || 1} connected stage{(spec.levels?.length || 1)>1?'s':''} · {" "}
@@ -877,7 +873,7 @@ function Workspace() {
           {busy ? "GENERATION IN PROGRESS" : "READY TO EXPLORE"}{" "}
           <span className="footer-divider">/</span> PLATFORMER / ADVENTURE
         </span>
-        <span>Artwork · {spec?.genre==='runner'||spec?.genre==='arena_survival' ? 'Original procedural art' : spec?.genre==='adventure' && spec.art ? spec.art.pack_id==='ninja_adventure' ? 'Pixel-Boy & AAA' : 'Ansimuz' : 'Kenney'} · CC0</span>
+        <span>Artwork · {spec?.genre==='runner' ? 'Original procedural art' : spec?.genre==='adventure' && spec.art ? spec.art.pack_id==='ninja_adventure' ? 'Pixel-Boy & AAA' : 'Ansimuz' : 'Kenney'} · CC0</span>
       </div>
     </div>
   );
