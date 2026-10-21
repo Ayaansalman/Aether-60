@@ -2,7 +2,7 @@ import Phaser from "phaser";
 import type { PlatformerIR, Platform, Entity } from "./types";
 import { iciclePhase, indicatorAnimation, exitDecision, resolveLevel } from "./behaviors";
 import type { IcicleState } from "./behaviors";
-import { Gameplay, triggerReady, enemyStep, platformPosition } from './gameplay';
+import { Gameplay, triggerReady, enemyStep, bossStep, platformPosition } from './gameplay';
 import type { Progress, EnemyMemory } from './gameplay';
 import registry from "../../../public/assets/registry.json";
 
@@ -169,6 +169,13 @@ export class PlatformerScene extends Phaser.Scene {
       .setScrollFactor(0)
       .setDepth(-10);
     background.setTileScale(8, 8);
+    if(s.boss){
+      background.setVisible(false);camera.setBackgroundColor('#30344c');
+      const castle=this.add.graphics().setDepth(-1);
+      castle.fillStyle(0x51536b,1);castle.fillRect(0,220,s.width,285);
+      for(let x=0;x<s.width;x+=96){castle.fillRect(x,140,64,100);castle.fillRect(x-8,130,20,25);castle.fillRect(x+24,130,20,25);castle.fillRect(x+52,130,20,25);castle.fillStyle(0x202338,1);castle.fillRoundedRect(x+20,270,26,90,12);castle.fillStyle(0x51536b,1);}
+      castle.lineStyle(1,0x76758c,.55);for(let y=230;y<500;y+=35)castle.lineBetween(0,y,s.width,y);
+    }
     if (s.theme === "twilight") background.setTint(0x8a8ebd);
     if (ice) {
       background.setVisible(false);
@@ -230,7 +237,7 @@ export class PlatformerScene extends Phaser.Scene {
         const x = (p.x + p.width - 1)*36, y = p.y*36;
         decor.fillStyle(0x7fdcea,.8).fillTriangle(x-15,y,x+16,y,x+3,y-65);
         decor.fillStyle(0xd5fcff).fillTriangle(x+3,y,x+16,y,x+3,y-65);
-      } else if (!industrial) {
+      } else if (!industrial && !s.boss) {
         // Trees, flowers, stonework and signposts use the same authored tiles as terrain.
         for (let x = p.x + 1; x < p.x + p.width - 1; x += 3) {
           this.add
@@ -255,7 +262,7 @@ export class PlatformerScene extends Phaser.Scene {
               .setTint(0x88bc9b);
           }
         }
-      } else {
+      } else if(!s.boss) {
         this.add
           .image(
             (p.x + 1) * 36,
@@ -306,6 +313,7 @@ export class PlatformerScene extends Phaser.Scene {
           repeat: -1,
         });
     }
+    if(s.boss)layer.setTint(0x9c9aaf);
     this.projectiles = this.physics.add.group({allowGravity:false});
     this.playerProjectiles = this.physics.add.group({allowGravity:false});
     for (const group of [this.projectiles, this.playerProjectiles]) this.physics.add.collider(group, layer, (bullet) => {
@@ -339,14 +347,22 @@ export class PlatformerScene extends Phaser.Scene {
         continue;
       }
       if (e.kind === "enemy") {
+        if(e.boss&&!this.textures.exists('boss-knight')){
+          const knight=this.make.graphics({x:0,y:0});
+          knight.fillStyle(0x7086a5).fillRect(6,5,12,10);knight.fillStyle(0xc6d5e5).fillRect(8,3,10,8);
+          knight.fillStyle(0x26314d).fillRect(10,7,8,2);knight.fillStyle(0xa73f65).fillRect(7,14,12,12);
+          knight.fillStyle(0x9babbd).fillRect(9,14,9,11);knight.fillRect(7,25,5,6);knight.fillRect(15,25,5,6);
+          knight.fillStyle(0xe8d897).fillRect(1,13,3,16);knight.fillRect(0,20,7,2);knight.fillStyle(0x4b698e).fillRoundedRect(17,13,7,13,3);
+          knight.generateTexture('boss-knight',24,32);knight.destroy();
+        }
         const obj = this.physics.add
           .sprite(
             e.x,
             e.y,
-            "characters",
-            (industrial ? roles.enemy_industrial : roles.enemy_forest)[0],
+            e.boss ? "boss-knight" : "characters",
+            e.boss ? undefined : (industrial ? roles.enemy_industrial : roles.enemy_forest)[0],
           )
-          .setScale(1.7);
+          .setScale(e.boss ? 3 : 1.7);
         obj.setSize(14, 17).setOffset(5, 6);
         this.physics.add.collider(obj, layer);
         this.enemies.push({
@@ -356,7 +372,7 @@ export class PlatformerScene extends Phaser.Scene {
           behavior: e.behavior || "patrol",
           shotAt: this.time.now,
           spec: e,
-          health: e.ai?.health || 1,
+          health: e.boss?.health || e.ai?.health || 1,
           memory: {phase:'idle', at:this.time.now, direction:-1},
         });
         if (e.behavior === "shooter") obj.setTint(0xffb56a);
@@ -488,6 +504,9 @@ export class PlatformerScene extends Phaser.Scene {
     camera.fadeIn(250);
     camera.startFollow(this.hero, true, 0.1, 0.1, s.camera_mode === "vertical" ? 0 : -150, 55);
     if (new URLSearchParams(location.search).has("test")) {
+      const testing=window as Window & {__bossScene?:PlatformerScene};
+      testing.__bossScene=this;
+      this.events.once('shutdown',()=>{if(testing.__bossScene===this)delete testing.__bossScene;});
       Object.assign(window, {
         __AETHER_PLATFORMER__: {
           snapshot: () => this.snapshot(),
@@ -527,6 +546,10 @@ export class PlatformerScene extends Phaser.Scene {
       this.messageUntil=this.time.now+1000; this.exitBlockedMessage=false;
     }
     const hint=pending ? pending.kind==='time_limit' ? `Time left: ${Math.max(0,Math.ceil(pending.needed-pending.amount))}s` : `${pending.kind}: ${Math.min(pending.needed,Math.floor(pending.amount))}/${pending.needed}${pending.kind==='survive'?'s':''}` : 'Reach the exit';
+    if(this.spec.boss){
+      this.hud.setText(`${'♥ '.repeat(Math.max(0,this.health))}  BOSS DUEL\nF / X · combat ability   Space · jump\nDefeat ${this.spec.boss.name} to win`);
+      return;
+    }
     this.hud.setText(
       `${"♥ ".repeat(Math.max(0, this.health))}  Level ${this.levelIndex+1}/${this.campaign.levels?.length || 1}\n${this.crystals} collected · ${this.spec.objective.required} needed · ${this.spec.objective.total} ${this.spec.collectible || "crystals"}\n${goals.length?`${goals.filter(goal=>goal.complete).length}/${goals.length} objectives · ${hint}`:this.crystals < this.spec.objective.required ? "Collect items, then reach the exit" : "Reach the exit"}${this.checkpoint >= 0 ? " · Saved" : ""}`,
     );
@@ -555,6 +578,9 @@ export class PlatformerScene extends Phaser.Scene {
     if (enemy.health <= 0) {
       this.gameplay.emit('defeat',enemy.spec.id || '');
       enemy.sprite.destroy();
+      if(enemy.spec.boss) this.finish("won");
+    } else if(enemy.spec.boss) {
+      this.tweens.add({targets:enemy.sprite,alpha:.35,duration:80,yoyo:true,repeat:1});
     } else {
       enemy.memory = {...enemy.memory,phase:'hurt',at:this.time.now};
       enemy.sprite.setTint(0xffffff).setVelocityX(0);
@@ -804,20 +830,32 @@ export class PlatformerScene extends Phaser.Scene {
       if (!e.sprite.active) continue;
       const low = (e.platform.x + 0.5) * 36,
         high = (e.platform.x + e.platform.width - 0.5) * 36;
-      const decision=enemyStep(e.behavior,e.memory,{x:e.sprite.x,y:e.sprite.y,low,high,playerX:this.hero.x,playerY:this.hero.y},time,
+      const boss=e.spec.boss;
+      const decision=boss ? bossStep(e.memory,time,e.health,boss.health,this.hero.x,e.sprite.x,40,this.spec.width-40,boss.telegraph_ms,boss.cooldown_ms) : enemyStep(e.behavior,e.memory,{x:e.sprite.x,y:e.sprite.y,low,high,playerX:this.hero.x,playerY:this.hero.y},time,
         e.spec.ai || {health:1,cooldown_ms:1400,telegraph_ms:450,radius:300});
       e.memory=decision.memory;
       e.direction=decision.memory.direction;
       e.sprite.setVelocityX(decision.vx);
       e.sprite.setTint(e.memory.phase==='windup' ? (Math.floor(time/80)%2?0xffffff:0xff6755) : e.memory.phase==='hurt'?0xffffff:e.behavior==='turret'?0xffb56a:e.behavior==='ambusher'?0xeaa0db:0xffffff);
+      if (boss) {
+        const bar=this.children.getByName('boss-health') as Phaser.GameObjects.Text | null;
+        if(bar)bar.setText(`${boss.name}  ${'█'.repeat(Math.ceil(20*e.health/boss.health))} ${e.health}/${boss.health} · ${e.memory.phase==='windup'?'ATTACK INCOMING':e.health<=boss.health/2?'ENRAGED':''}`);
+        else this.add.text(280,95,'',{fontSize:'18px',color:'#ffb0b0',backgroundColor:'#21182bee',padding:{x:12,y:6}}).setName('boss-health').setScrollFactor(0).setDepth(3000);
+      }
       if (decision.fire) {
         e.shotAt=time; this.shotsFired++;
         const bullet=this.projectiles!.create(e.sprite.x,e.sprite.y,"terrain",registry.roles.crystal) as Phaser.Physics.Arcade.Sprite;
         bullet.setScale(.65).setTint(0xff855e).setVelocityX(e.direction*190);
+        if(boss)for(const vy of [-100,100]) {
+          const shot=this.projectiles!.create(e.sprite.x,e.sprite.y,'terrain',registry.roles.crystal) as Phaser.Physics.Arcade.Sprite;
+          shot.setScale(.8).setTint(0xff855e).setVelocity(e.direction*230,vy);
+          this.time.delayedCall(2400,()=>{if(shot.active)shot.destroy();});
+        }
         this.time.delayedCall(2400,()=>{if(bullet.active)bullet.destroy();});
       }
+      if(boss)e.sprite.setX(Phaser.Math.Clamp(e.sprite.x,40,this.spec.width-40));
       e.sprite.setFlipX(e.direction > 0);
-      e.sprite.setFrame(
+      if(!boss)e.sprite.setFrame(
         (this.spec.theme === "industrial"
           ? registry.roles.enemy_industrial
           : registry.roles.enemy_forest)[Math.floor(time / 180) % 2],

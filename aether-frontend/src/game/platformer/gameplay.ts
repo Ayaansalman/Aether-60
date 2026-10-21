@@ -52,7 +52,7 @@ export function platformPosition(x: number, y: number, motion: Motion, elapsed: 
 }
 
 export type EnemyPhase = 'idle' | 'reposition' | 'windup' | 'attack' | 'recover' | 'hurt';
-export interface EnemyMemory { phase: EnemyPhase; at: number; direction: number }
+export interface EnemyMemory { phase: EnemyPhase; at: number; direction: number; cycle?:number }
 export function enemyStep(behavior: string, memory: EnemyMemory, sensor: {x:number; y:number; low:number; high:number; playerX:number; playerY:number}, now: number, config: EnemyConfig) {
   const decision = enemyDecision(behavior, sensor.x, sensor.y, sensor.low, sensor.high, memory.direction, sensor.playerX, sensor.playerY, 0);
   const elapsed = now - memory.at, dx = sensor.playerX - sensor.x;
@@ -84,4 +84,21 @@ export function enemyStep(behavior: string, memory: EnemyMemory, sensor: {x:numb
   }
   if (vx < 0 && sensor.x <= sensor.low || vx > 0 && sensor.x >= sensor.high) vx = 0;
   return {memory:next, vx, fire};
+}
+
+/** Boss cycles between a committed charge and a three-shot volley, with a readable windup. */
+export function bossStep(memory:EnemyMemory,now:number,health:number,maxHealth:number,playerX:number,x:number,low:number,high:number,telegraph:number,cooldown:number) {
+  const elapsed=now-memory.at;let next={...memory};let vx=0,fire=false;
+  const phase2=health<=maxHealth/2;
+  if(memory.phase==='hurt'){if(elapsed>=250)next={...next,phase:'recover',at:now};}
+  else if(memory.phase==='idle'||memory.phase==='recover'){
+    if(elapsed>=cooldown*(phase2?.7:1))next={phase:'windup',at:now,direction:Math.sign(playerX-x)||-1,cycle:(memory.cycle||0)+1};
+  }else if(memory.phase==='windup'){
+    if(elapsed>=telegraph){next={...next,phase:'attack',at:now};fire=(memory.cycle||0)%2===0;}
+  }else if(memory.phase==='attack'){
+    if(elapsed<480&&(memory.cycle||0)%2===1)vx=memory.direction*(phase2?340:270);
+    else next={...next,phase:'recover',at:now};
+  }
+  if(x<=low&&vx<0||x>=high&&vx>0)vx=0;
+  return {memory:next,vx,fire};
 }

@@ -1,3 +1,4 @@
+import {biomeAt} from './regions';
 import Phaser from 'phaser';
 import type { Actor, AdventureIR } from './types';
 import { AdventureState } from './state';
@@ -47,6 +48,19 @@ export class AdventureScene extends Phaser.Scene {
     const tileSet=map.addTilesetImage(art?.terrain.texture||(outdoor?'tiny-town':'tiny-dungeon'))!;
     const layer=map.createLayer(0,tileSet)!.setScale(2);
     if(this.spec.theme==='dark')layer.setTint(0xb7a8c2);
+    for(const region of area.regions||[]) {
+      if(region.biome==='forest')continue;
+      const palette=region.biome==='frozen_lake'?0x73cde5:region.biome==='icy_ruins'?0xc4cfee:0xe2efff;
+      layer.forEachTile(tile=>{if(tile.x>=region.x&&tile.x<region.x+region.width&&tile.y>=region.y&&tile.y<region.y+region.height)tile.tint=palette;});
+      const terrain=this.add.graphics().setDepth(1);
+      terrain.fillStyle(palette,.72);terrain.fillRect(region.x*32,region.y*32,region.width*32,region.height*32);
+      terrain.lineStyle(2,0xe4faff,.55);
+      for(let y=region.y+1;y<region.y+region.height-1;y+=2)for(let x=region.x+1;x<region.x+region.width-1;x+=3){
+        if(region.biome==='frozen_lake'){terrain.lineBetween(x*32,y*32,x*32+32,y*32-9);}
+        else if(region.biome==='icy_ruins'){terrain.fillStyle(0x6b7caa,.8);terrain.fillRect(x*32,y*32,24,12);terrain.fillStyle(0xf0faff,.9);terrain.fillRect(x*32,y*32,24,3);}
+        else {terrain.fillStyle(0xffffff,.7);terrain.fillCircle(x*32,y*32,3);}
+      }
+    }
     // Per-tile properties keep collision independent from visual frame IDs.
     layer.forEachTile(tile=>{if ([1,4].includes(area.tiles[tile.y][tile.x])||area.tiles[tile.y][tile.x]>=13) tile.setCollision(true,true,true,true);});
     // Each complete house has one footprint depth so actors can pass behind its roof.
@@ -157,7 +171,7 @@ export class AdventureScene extends Phaser.Scene {
   }
   snapshot() {
     if(!this.physics?.world||!this.player?.body)return {ready:false,generation:this.generation};
-    return {ready:true,generation:this.generation,genre:'adventure',area:this.state.area,x:this.player.x,y:this.player.y,
+    return {localBiome:biomeAt(this.spec.areas[this.state.area].regions||[],this.player.x/32,this.player.y/32)?.id,regions:this.spec.areas[this.state.area].regions||[],ready:true,generation:this.generation,genre:'adventure',area:this.state.area,x:this.player.x,y:this.player.y,
       vx:this.player.body?.velocity.x,vy:this.player.body?.velocity.y,gravity:this.physics.world.gravity.y,
       inventory:this.state.inventory,quests:this.state.states,objective:this.state.objective,health:this.state.health,
       won:this.state.won,lost:this.state.lost,dialogue:this.dialogue,unlocked:[...this.state.unlocked],activated:[...this.state.activated],
@@ -204,7 +218,7 @@ export class AdventureScene extends Phaser.Scene {
     if(this.dialogue.length)this.dialog.setText(`${this.dialogue[0]}\n\nE · continue`);
     this.emitUI();
   }
-  update(time:number) {
+  update(time:number,delta:number) {
     if(!this.player||!this.keys)return;
     this.player.setDepth(this.player.y);
     for(const a of this.actors)if(a.sprite.active)a.sprite.setDepth(a.sprite.y);
@@ -223,7 +237,10 @@ export class AdventureScene extends Phaser.Scene {
     if(this.dialogue.length){this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));if(use)this.advanceDialogue();return;}
     const dx=Number(this.keys.RIGHT.isDown||this.keys.D.isDown||!!this.touch.right)-Number(this.keys.LEFT.isDown||this.keys.A.isDown||!!this.touch.left);
     const dy=Number(this.keys.DOWN.isDown||this.keys.S.isDown||!!this.touch.down)-Number(this.keys.UP.isDown||this.keys.W.isDown||!!this.touch.up);
-    const velocity=new Phaser.Math.Vector2(dx,dy).normalize().scale(155);this.player.setVelocity(velocity.x,velocity.y);
+    const velocity=new Phaser.Math.Vector2(dx,dy).normalize().scale(155);
+    const local=biomeAt(this.spec.areas[this.state.area].regions||[],this.player.x/32,this.player.y/32);
+    const blend=local?.slippery?1-Math.exp(-Math.min(delta,50)/500):1;
+    this.player.setVelocity(Phaser.Math.Linear(this.player.body!.velocity.x,velocity.x,blend),Phaser.Math.Linear(this.player.body!.velocity.y,velocity.y,blend));
     if(dx||dy)this.facing.set(dx,dy).normalize();
     if(this.spec.art)animateActor(this.player,this.spec.art.assets[this.spec.art.player],velocity.x,velocity.y,time-this.lastAttack<130);
     else if(dx||dy){this.player.setFlipX(dx<0).setAngle(Math.sin(time/85)*4).setScale(2,2+Math.sin(time/70)*.045);}

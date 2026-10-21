@@ -71,7 +71,7 @@ def fixture_design(prompt: str) -> GameDesign:
     calm = any(w in p for w in ("peaceful", "relaxed", "cozy", "easy", "no enemies"))
     ice = any(w in p for w in ("frozen", "ice", "icicle"))
     theme = "industrial" if industry else "ice" if ice else "twilight" if tower else "forest"
-    unsupported = [f"Unsupported request: {word}" for word in ("multiplayer", "3d", "rpg", "dialogue", "crafting", "boss", "underwater") if re.search(r"\b" + word + r"\b", p)]
+    unsupported = [f"Unsupported request: {word}" for word in ("multiplayer", "3d", "rpg", "dialogue", "crafting", "underwater") if re.search(r"\b" + word + r"\b", p)]
     design = GameDesign(
         title="The Copperworks" if industry else "The Frostbound Vault" if ice else "Stairway to the Stars" if tower else "The Verdant Passage",
         topology="ascent" if tower else "terraces" if industry else "cavern" if ice else "journey",
@@ -91,10 +91,16 @@ def fixture_design(prompt: str) -> GameDesign:
                           hazards=not calm and i % 3 == 2) for i in range(9 if tower else 8)],
         unsupported=unsupported, design_notes=["Offline fixture: keyword interpretation and seeded construction; no model was called."])
     compose_intent(design, prompt)
+    if 'boss' in p:
+        from schemas.platformer import BossEncounter
+        design.title='Duel at the Castle'
+        design.boss=BossEncounter()
+        design.player_attack='projectile'
+        design.collectibles_enabled=False
     return design
 
 
-def plan(prompt: str, mode: str):
+def plan(prompt: str, mode: str, intent=None):
     if mode == "fixture":
         return fixture_design(prompt), {"provider": "fixture", "model": None, "live": False}
     from providers.factory import get_provider
@@ -104,6 +110,12 @@ def plan(prompt: str, mode: str):
         raise ValueError("Live mode requires MODEL_PROVIDER=openai_compat and a configured API key. Use the explicitly labeled fixture mode for offline work.")
     system = """You are Aether's platformer game designer. Interpret the user's requirements faithfully.
 Return ONLY a JSON object matching the following schema. No executable code.
+Boss encounters: boss is a BossEncounter or null. For a duel choose exactly one boss, ordinary_enemies=0,
+victory=boss_defeat and patterns charge+volley. This builds a bounded arena, not traversal sections.
+Explicitly decide collectibles_enabled: only true when the requested loop uses collectibles.
+Use player_attack=projectile as the available combat ability; sword melee is an approximation,
+and design_notes must disclose this. collectibles_enabled=false for no collectible requests.
+Do not select ordinary enemies, exit objectives, extra levels or hazards for a one-on-one duel.
 Supported: platformer; forest/industrial/twilight/ice environments; crystals or relics;
 patrol, chase and shooter enemies (section.encounter); proximity or timed falling icicles; slippery
 terrain; timed machinery; checkpoints; double_jump; dash; moving platforms; exit_indicator
@@ -144,6 +156,7 @@ Compose 5-14 varied sections. kind=meadow/ruins/factory/ascent/gauntlet/cavern/t
 elevation=-1..2 tiles (positive climbs), gap=1..3 tiles, enemies/hazards boolean.
 Tower requests should use ascending sections; peaceful requests should exclude enemies and hazards.
 GameDesign JSON Schema:\n""" + json.dumps(GameDesign.model_json_schema())
+    if intent: system += "\nPreserve this semantic interpretation and requirement relationships: "+json.dumps(intent)
     last = None
     for attempt in range(2):
         result = provider.complete(system, prompt if attempt == 0 else prompt + "\nCorrect your previous invalid response: " + str(last)[:1000])
@@ -161,6 +174,9 @@ GameDesign JSON Schema:\n""" + json.dumps(GameDesign.model_json_schema())
 
 
 def construct(design: GameDesign, prompt: str, seed: int | None = None, level_id: str = 'L1') -> PlatformerIR:
+    if design.boss:
+        from services.boss import construct_arena
+        return construct_arena(design,prompt,seed)
     seed = seed if seed is not None else int(hashlib.sha256(prompt.encode()).hexdigest()[:8], 16)
     rng = random.Random(seed)
     # Leave enough vertical room for every requested ascent.
@@ -185,7 +201,7 @@ def construct(design: GameDesign, prompt: str, seed: int | None = None, level_id
         platforms.append(platform)
         main_index = len(platforms) - 1
         offsets = range(1, length - 1, 2) if section.kind not in ('bridge', 'gauntlet') else [length // 2]
-        for offset in offsets:
+        for offset in (offsets if design.collectibles_enabled else []):
             lift = 20 * (1 - abs(offset - length/2) / (length/2)) if design.topology == 'journey' else (offset % 3)*10
             entities.append(Entity(x=(x + offset + .5) * 36, y=y * 36 - 56 - lift, kind="crystal", platform=main_index))
         if section.enemies:
@@ -211,7 +227,7 @@ def construct(design: GameDesign, prompt: str, seed: int | None = None, level_id
         if (section.challenge == 'exploration' or section.kind in ('ruins', 'terraces') and i % 3 == 2) and not moving and not clear_stomp:
             # An optional suspended shelf creates an alternate collectible route, not a mandatory jump.
             platforms.append(Platform(x=x+1, y=y-2, width=4, kind='bridge', route='optional'))
-            entities.append(Entity(x=(x+3)*36, y=(y-2)*36-45, kind='crystal', platform=len(platforms)-1))
+            if design.collectibles_enabled: entities.append(Entity(x=(x+3)*36, y=(y-2)*36-45, kind='crystal', platform=len(platforms)-1))
         x += length
     if design.moving_platforms and not any(p.moving for p in platforms):
         platforms.append(Platform(x=1,y=start_y-2,width=4,kind='bridge',moving=True,route='optional',motion=design.platform_motion))
@@ -270,7 +286,7 @@ def validate_route(ir: PlatformerIR) -> dict:
                        "details":{"gap_with_margin":distance,"safe_range":round(ir.player.speed*flight*.85,1),"rise":rise}})
     checks.append({"id":"objective_consistent","passed":0 <= ir.objective['required'] <= sum(e.kind=='crystal' for e in ir.entities),"category":"specification","critical":True})
     checks.append({'id': 'objective_on_main_route', 'passed': ir.objective['required'] <= sum(e.kind == 'crystal' and 0 <= e.platform < len(ir.platforms) and ir.platforms[e.platform].route == 'main' for e in ir.entities), 'category': 'specification', 'critical': True})
-    checks.append({'id': 'entry_exit', 'passed': bool(path) and path[0].x*36 <= ir.spawn['x'] <= (path[0].x+path[0].width)*36 and sum(e.kind == 'exit' for e in ir.entities) == 1 and any(e.kind == 'exit' and e.platform == ir.platforms.index(path[-1]) for e in ir.entities), 'category': 'specification', 'critical': True})
+    checks.append({'id': 'entry_exit', 'passed': bool(path) and path[0].x*36 <= ir.spawn['x'] <= (path[0].x+path[0].width)*36 and (bool(ir.boss) and len(ir.entities)==1 and ir.entities[0].boss is not None or not ir.boss and sum(e.kind == 'exit' for e in ir.entities) == 1 and any(e.kind == 'exit' and e.platform == ir.platforms.index(path[-1]) for e in ir.entities)), 'category': 'specification', 'critical': True})
     checks.append({'id': 'entity_supports', 'passed': all(0 <= e.platform < len(ir.platforms) and ir.platforms[e.platform].x*36 <= e.x <= (ir.platforms[e.platform].x+ir.platforms[e.platform].width)*36 for e in ir.entities), 'category': 'specification', 'critical': True})
     return {"overall":"PASS" if all(c['passed'] for c in checks) else "FAIL", "checks":checks,
             "scope":"Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."}
@@ -279,6 +295,19 @@ def validate_route(ir: PlatformerIR) -> dict:
 def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
     """Capability guard after model interpretation; modifications are inspectable, not silent."""
     p = prompt.lower()
+    if re.search(r'no (?:ordinary |regular )?collectibl|do not add.*collectible',p):
+        design.collectibles_enabled=False
+        design.objective='reach_exit'
+    if re.search(r'\bboss\b',p) and re.search(r'duel|one.on.one|arena|exactly one',p):
+        from schemas.platformer import BossEncounter
+        design.boss=design.boss or BossEncounter()
+        design.player_attack='projectile'
+        design.level_count=1;design.levels=[]
+        design.collectibles_enabled=False
+        design.unsupported=[v for v in design.unsupported if 'boss' not in v.lower()]
+        if 'sword' in p:
+            note='Sword melee approximated by the available F/X projectile combat ability.'
+            if note not in design.design_notes: design.design_notes.append(note)
     # Exclusions inside a level clause belong to that level's model specification.
     # Campaign-wide exclusions occur before the first scoped instruction.
     exclusions = re.split(r'\b(?:first|second|third|final|last)\s+(?:level|stage)\b', p, maxsplit=1)[0]
@@ -348,7 +377,7 @@ def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
         design.unsupported=[v for v in design.unsupported if v not in incorrect]
         changes.append({'field':'unsupported','removed':incorrect,'reason':'Registered capabilities incorrectly marked unsupported by model'})
     # These are recognized explicit future requests, not claims of comprehensive NLP coverage.
-    for word in ('multiplayer','3d','rpg','dialogue','crafting','boss','underwater'):
+    for word in ('multiplayer','3d','rpg','dialogue','crafting','underwater'):
         if re.search(r'\b'+word+r'\b',p) and not any(word in v.lower() for v in design.unsupported):
             design.unsupported.append('Unsupported request: '+word)
     if design.levels and len(design.levels) != design.level_count:

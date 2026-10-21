@@ -54,3 +54,7 @@ Standard QA checks exit immediately upon surviving `min_seconds=3.0` (`not measu
 | `/play/demo-melee` | 5.42 s | 5.36 s | 5.34 s | **5.34 s** | **+2.34 s (+78.0%)** |
 | `/play/demo-avoid` | 5.47 s | 5.38 s | 5.28 s | **5.28 s** | **+2.28 s (+76.0%)** |
 
+
+## Iteration 7 (2026-10-21)
+
+Semantic game/control/requirement planning, two distinct arcade runner modes, one-on-one boss arenas and same-world adventure biome regions are implemented in the existing v2 pipeline. Focused verification: 83 backend tests, 23 frontend component/state tests, build/lint, four deterministic acceptance browser scenarios and existing platformer regression pass. Two live Gemini jobs (B/D) and a labeled saved-design retest are documented with scope and limitations in [ITERATION7_RESULTS.md](ITERATION7_RESULTS.md) and [DEVELOPMENT_PROGRESS.md](DEVELOPMENT_PROGRESS.md).

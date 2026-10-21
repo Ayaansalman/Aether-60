@@ -1,0 +1,44 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "creator_runner_generation",
+      "passed": true,
+      "details": {
+        "game_id": "f8524d88-253c-4ebf-ae4f-d579d68fac88",
+        "status": "READY"
+      }
+    },
+    {
+      "id": "runner_control_labels",
+      "passed": true,
+      "details": "SPACE\nJump\nR\nRestart\nAutomatic scrolling \u00b7 Space or tap: jump \u00b7 R: restart"
+    },
+    {
+      "id": "semantic_inspector",
+      "passed": true,
+      "details": "{\n  \"control_preserved\": true,\n  \"overall\": \"PASS\",\n  \"requirements\": [],\n  \"scope\": \"Structured construction witnesses plus specific runtime checks; visual style needs human review.\"\n}"
+    },
+    {
+      "id": "mobile_tap_jump",
+      "passed": true,
+      "details": {
+        "mode": "ground",
+        "state": "playing",
+        "score": 4,
+        "distance": 42.51666666666666,
+        "y": 411.375,
+        "vy": -540,
+        "active": 1,
+        "serial": 1,
+        "generation": 2
+      }
+    },
+    {
+      "id": "no_browser_errors",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "scope": "Actual creator UI submits deterministic scenario C through API and uses current runner runtime, Inspector and mobile pointer input; no model calls."
+}

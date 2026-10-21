@@ -1,0 +1,124 @@
+{
+  "genre": "adventure",
+  "title": "The Crystal of the Frozen Reaches",
+  "premise": "Explore the connected lush forest and icy ruins, speak to the forest villager, and retrieve the magical crystal from the ruins without combat.",
+  "theme": "fantasy",
+  "art_style": "auto",
+  "areas": [
+    {
+      "regions": [
+        {
+          "id": "outer_forest",
+          "name": "Enchanted Forest",
+          "biome": "forest",
+          "x": 1,
+          "y": 1,
+          "width": 46,
+          "height": 30,
+          "slippery": false
+        },
+        {
+          "id": "inner_lake",
+          "name": "Frozen Lake",
+          "biome": "frozen_lake",
+          "x": 15,
+          "y": 10,
+          "width": 16,
+          "height": 12,
+          "slippery": true
+        },
+        {
+          "id": "deep_ruins",
+          "name": "Icy Ruins",
+          "biome": "icy_ruins",
+          "x": 32,
+          "y": 6,
+          "width": 14,
+          "height": 18,
+          "slippery": false
+        }
+      ],
+      "name": "Enchanted Woodlands and Icy Ruins",
+      "environment": "forest"
+    }
+  ],
+  "actors": [
+    {
+      "region": "outer_forest",
+      "id": "villager",
+      "kind": "npc",
+      "name": "Elder Rowan",
+      "area": 0,
+      "role": "Forest Guardian",
+      "item": "",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome to our woods, traveler.",
+          "Could you help me with a delicate task?"
+        ],
+        "active": [
+          "Please find the magical crystal hidden within the icy ruins.",
+          "Cross the frozen lake carefully\u2014it is quite slippery!"
+        ],
+        "completed": [
+          "You found the magical crystal! Our sanctuary is safe.",
+          "Thank you for your wondrous journey."
+        ]
+      }
+    },
+    {
+      "region": "deep_ruins",
+      "id": "magical_crystal",
+      "kind": "item",
+      "name": "Magical Crystal",
+      "area": 0,
+      "role": "",
+      "item": "crystal",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    }
+  ],
+  "quests": [
+    {
+      "kind": "talk",
+      "target": "villager",
+      "count": 1,
+      "text": "Speak with Elder Rowan in the forest.",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "collect",
+      "target": "magical_crystal",
+      "count": 1,
+      "text": "Retrieve the magical crystal from the icy ruins.",
+      "item": "crystal",
+      "delivery_items": {}
+    },
+    {
+      "kind": "deliver",
+      "target": "villager",
+      "count": 1,
+      "text": "Return the magical crystal to Elder Rowan.",
+      "item": "crystal",
+      "delivery_items": {}
+    }
+  ],
+  "combat": false,
+  "unsupported": []
+}

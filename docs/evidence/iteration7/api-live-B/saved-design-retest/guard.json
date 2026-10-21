@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "field": "unsupported",
+      "before": "slippery terrain physics modifier",
+      "reason": "Typed biome regions instantiate this registered capability; runtime verification follows"
+    },
+    {
+      "field": "unsupported",
+      "before": "seamless biome transition without loading screens",
+      "reason": "Typed biome regions instantiate this registered capability; runtime verification follows"
+    }
+  ],
+  "scope": "Bounded explicit feature/resource guards, not general semantic fidelity certification"
+}

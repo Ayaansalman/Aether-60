@@ -7,6 +7,20 @@ class Contract(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
+class BossEncounter(Contract):
+    name: str = Field(default='Knight Sentinel',max_length=60)
+    health: int = Field(default=12,ge=4,le=30)
+    telegraph_ms: int = Field(default=700,ge=500,le=1500)
+    cooldown_ms: int = Field(default=1700,ge=900,le=4000)
+    patterns: list[Literal['charge','volley']] = Field(default_factory=lambda:['charge','volley'],min_length=2,max_length=2)
+    victory: Literal['boss_defeat']='boss_defeat'
+    ordinary_enemies: Literal[0]=0
+    @model_validator(mode='after')
+    def distinct_patterns(self):
+        if set(self.patterns)!={'charge','volley'}: raise ValueError('Boss needs distinct charge and volley patterns')
+        return self
+
+
 class EnemyConfig(Contract):
     health: int = Field(default=1, ge=1, le=3)
     cooldown_ms: int = Field(default=1400, ge=400, le=5000)
@@ -70,7 +84,7 @@ class RequestedFeature(Contract):
                         'falling_icicles', 'exit_indicator', 'collectibles', 'patrol', 'robots', 'chase',
                         'ranged', 'moving_platforms', 'timed_hazards', 'checkpoints', 'multiple_levels',
                         'double_jump', 'dash', 'switches', 'pressure_plates', 'projectile_switches',
-                        'combat_objective', 'timed_objective', 'survival_objective', 'turret', 'ambusher', 'player_projectiles', 'unsupported']
+                        'combat_objective', 'timed_objective', 'survival_objective', 'turret', 'ambusher', 'player_projectiles', 'boss_duel', 'unsupported']
     description: str = Field(min_length=1, max_length=300)
 
 
@@ -100,6 +114,8 @@ class LevelDesign(Contract):
 
 
 class GameDesign(Contract):
+    boss: BossEncounter | None = None
+    collectibles_enabled: bool = True
     title: str = Field(min_length=1, max_length=80)
     premise: str = Field(min_length=1, max_length=500)
     genre: Literal["platformer"] = "platformer"
@@ -148,6 +164,7 @@ class Platform(Contract):
 
 
 class Entity(Contract):
+    boss: BossEncounter | None = None
     id: str = Field(default='', max_length=80)
     x: float
     y: float
@@ -170,6 +187,7 @@ class Player(Contract):
 
 
 class LevelIR(Contract):
+    boss: BossEncounter | None = None
     title: str
     width: int
     height: int
@@ -246,6 +264,10 @@ class PlatformerIR(LevelIR):
 
     @model_validator(mode='after')
     def campaign_references(self):
+        if self.boss:
+            if self.levels or len(self.entities)!=1 or self.entities[0].boss!=self.boss or self.entities[0].kind!='enemy': raise ValueError('Duel requires exactly one designated boss in one arena')
+            if self.objective.get('type')!='boss_defeat' or self.player_attack!='projectile': raise ValueError('Boss duel needs supported player combat and defeat victory')
+            if not any(g.kind=='defeat' and g.targets==[self.entities[0].id] for g in self.goals): raise ValueError('Boss victory must target the designated boss')
         entities = [entity for level in (self.levels or [self]) for entity in level.entities if entity.id]
         if len({entity.id for entity in entities}) != len(entities):
             raise ValueError('Campaign entity IDs must be unique across levels')

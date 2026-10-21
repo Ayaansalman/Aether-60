@@ -1,0 +1,425 @@
+{
+  "job": {
+    "game_id": "55d46909-d17b-481f-8aa3-d066bc9d457f",
+    "prompt": "Create a colorful arcade game where I control a small flying creature. The world scrolls from right to left, and pressing Space or tapping the screen makes the creature flap upward against gravity. I must fly between gaps in obstacles, earn points for each gap passed, and survive as long as possible.",
+    "status": "READY",
+    "stage": "READY",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "gemini-3.5-flash-lite",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T13:08:49.439000+00:00",
+    "updated_at": "2026-10-21T13:08:59.772308+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "semantic_intent.json",
+      "model_design.json",
+      "provider.json",
+      "final_design.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report.json",
+      "requirement_report.json",
+      "semantic_requirement_report.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 9,
+      "failed": 0
+    },
+    "game_url": "http://localhost:5173/studio/play/55d46909-d17b-481f-8aa3-d066bc9d457f"
+  },
+  "events": [
+    {
+      "id": 1728,
+      "game_id": "55d46909-d17b-481f-8aa3-d066bc9d457f",
+      "ts": "2026-10-21T13:08:49.460518+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1729,
+      "game_id": "55d46909-d17b-481f-8aa3-d066bc9d457f",
+      "ts": "2026-10-21T13:08:49.532477+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.06s; language model",
+      "diff": null
+    },
+    {
+      "id": 1730,
+      "game_id": "55d46909-d17b-481f-8aa3-d066bc9d457f",
+      "ts": "2026-10-21T13:08:52.583577+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning validated arcade controls and survival loop",
+      "attempt": 1,
+      "rationale": "Elapsed 3.11s; language model",
+      "diff": null
+    },
+    {
+      "id": 1731,
+      "game_id": "55d46909-d17b-481f-8aa3-d066bc9d457f",
+      "ts": "2026-10-21T13:08:54.394516+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running Chromium arcade checks",
+      "attempt": 1,
+      "rationale": "Elapsed 4.92s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1732,
+      "game_id": "55d46909-d17b-481f-8aa3-d066bc9d457f",
+      "ts": "2026-10-21T13:08:59.793311+00:00",
+      "stage": "READY",
+      "result": "SUCCESS",
+      "detail": "Arcade checks PASS",
+      "attempt": 1,
+      "rationale": "Elapsed 10.33s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "runner",
+      "loop": "Survive as long as possible by flying through gaps in obstacles, earning points for each gap passed until crashing.",
+      "control": "flap",
+      "requirements": [
+        {
+          "source": "world scrolls from right to left",
+          "meaning": "The environment moves continuously from right to left to simulate forward flight.",
+          "capability": "endless_obstacles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "Verify obstacles spawn off-screen right and move leftward toward the player."
+        },
+        {
+          "source": "pressing Space or tapping the screen makes the creature flap upward against gravity",
+          "meaning": "User input applies an upward velocity impulse counteracting constant downward gravity.",
+          "capability": "flap",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "Verify pressing Space or tapping causes an instant upward hop followed by gravity pulling the creature down."
+        },
+        {
+          "source": "fly between gaps in obstacles",
+          "meaning": "Procedurally generated vertical barriers contain openings through which the player must navigate.",
+          "capability": "endless_obstacles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "Verify obstacles have distinct top and bottom collision bounds with clear vertical gaps."
+        },
+        {
+          "source": "earn points for each gap passed",
+          "meaning": "Passing successfully through an obstacle's horizontal span increments the score counter.",
+          "capability": "gap_score",
+          "status": "planned",
+          "depends_on": [
+            "endless_obstacles"
+          ],
+          "verification": "Verify score increases by 1 each time the creature clears an obstacle."
+        },
+        {
+          "source": "survive as long as possible",
+          "meaning": "Endless survival gameplay loop ending on collision with obstacles or screen boundaries, triggering a restart option.",
+          "capability": "restart",
+          "status": "planned",
+          "depends_on": [
+            "endless_obstacles",
+            "flap"
+          ],
+          "verification": "Verify hitting the ground, ceiling, or any obstacle ends the run and allows restarting."
+        }
+      ],
+      "provenance": {
+        "provider": "OpenAICompatProvider",
+        "model": "gemini-3.5-flash-lite",
+        "live": true
+      }
+    },
+    "model_design.json": {
+      "genre": "runner",
+      "title": "Neon Flutter",
+      "mode": "flap",
+      "theme": "neon",
+      "player": "creature",
+      "endless": true,
+      "finish_distance": 3000.0,
+      "speed": 220.0,
+      "max_speed": 350.0,
+      "acceleration": 1.0,
+      "gravity": 1200.0,
+      "jump_impulse": 550.0,
+      "flap_impulse": 320.0,
+      "gap_height": 200.0,
+      "obstacles": [
+        "barrier",
+        "laser"
+      ],
+      "scoring": "gaps",
+      "unsupported": []
+    },
+    "provider.json": {
+      "provider": "OpenAICompatProvider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true
+    },
+    "final_design.json": {
+      "genre": "runner",
+      "title": "Neon Flutter",
+      "mode": "flap",
+      "theme": "neon",
+      "player": "creature",
+      "endless": true,
+      "finish_distance": 3000.0,
+      "speed": 220.0,
+      "max_speed": 350.0,
+      "acceleration": 1.0,
+      "gravity": 1200.0,
+      "jump_impulse": 550.0,
+      "flap_impulse": 320.0,
+      "gap_height": 200.0,
+      "obstacles": [
+        "barrier",
+        "laser"
+      ],
+      "scoring": "gaps",
+      "unsupported": []
+    },
+    "game_ir_v2.json": {
+      "genre": "runner",
+      "title": "Neon Flutter",
+      "mode": "flap",
+      "theme": "neon",
+      "player": "creature",
+      "endless": true,
+      "finish_distance": 3000.0,
+      "speed": 220.0,
+      "max_speed": 350.0,
+      "acceleration": 1.0,
+      "gravity": 1200.0,
+      "jump_impulse": 550.0,
+      "flap_impulse": 320.0,
+      "gap_height": 200.0,
+      "obstacles": [
+        "barrier",
+        "laser"
+      ],
+      "scoring": "gaps",
+      "unsupported": [],
+      "schema_version": "2.2",
+      "seed": 7,
+      "requirements": [
+        {
+          "source": "Runner control, procedural obstacles, score and restart",
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "adapter": "RunnerCanvas",
+      "genre": "runner",
+      "mode": "flap",
+      "art": "original canvas primitives",
+      "bounded_active_world": true
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "runner_input",
+          "passed": true,
+          "critical": true,
+          "details": [
+            {
+              "mode": "flap",
+              "state": "playing",
+              "score": 0,
+              "distance": 3.666875,
+              "y": 250.25,
+              "vy": 20,
+              "active": 1,
+              "serial": 1,
+              "generation": 2
+            },
+            {
+              "mode": "flap",
+              "state": "playing",
+              "score": 0,
+              "distance": 33.011875,
+              "y": 218.91666666666666,
+              "vy": -160,
+              "active": 1,
+              "serial": 1,
+              "generation": 2
+            }
+          ]
+        },
+        {
+          "id": "repeatable_flap",
+          "passed": true,
+          "critical": true,
+          "details": "Real keyboard airborne flap"
+        },
+        {
+          "id": "pointer_flap",
+          "passed": true,
+          "critical": true,
+          "details": "Pointer event applies impulse"
+        },
+        {
+          "id": "bounds_death",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "mode": "flap",
+            "state": "lost",
+            "score": 0,
+            "distance": 1.8334027777777777,
+            "y": 10.083333333333334,
+            "vy": 10,
+            "active": 0,
+            "serial": 1,
+            "generation": 3
+          }
+        },
+        {
+          "id": "rapid_restart",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "mode": "flap",
+            "state": "playing",
+            "score": 0,
+            "distance": 3.666875,
+            "y": 250.25,
+            "vy": 20,
+            "active": 1,
+            "serial": 1,
+            "generation": 4
+          }
+        },
+        {
+          "id": "score_once",
+          "passed": true,
+          "critical": true,
+          "details": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "obstacle_collision",
+          "passed": true,
+          "critical": true,
+          "details": "lost"
+        },
+        {
+          "id": "endless_bounded_state",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "active": 2,
+            "serial": 1427
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "details": []
+        }
+      ],
+      "scope": "Real keyboard/pointer input plus disclosed controlled state for collision/scoring and accelerated generation; not autonomous survival."
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "source": "Runner control, procedural obstacles, score and restart",
+          "status": "verified"
+        }
+      ],
+      "unsupported": [],
+      "scope": "Runtime checks; arbitrary semantic coverage is not certified"
+    },
+    "semantic_requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "source": "world scrolls from right to left",
+          "meaning": "The environment moves continuously from right to left to simulate forward flight.",
+          "capability": "endless_obstacles",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "Verify obstacles spawn off-screen right and move leftward toward the player.",
+          "constructed": true,
+          "ir_path": "endless",
+          "runtime_check": "endless_bounded_state",
+          "runtime_verified": true
+        },
+        {
+          "source": "pressing Space or tapping the screen makes the creature flap upward against gravity",
+          "meaning": "User input applies an upward velocity impulse counteracting constant downward gravity.",
+          "capability": "flap",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "Verify pressing Space or tapping causes an instant upward hop followed by gravity pulling the creature down.",
+          "constructed": true,
+          "ir_path": "mode",
+          "runtime_check": "repeatable_flap",
+          "runtime_verified": true
+        },
+        {
+          "source": "fly between gaps in obstacles",
+          "meaning": "Procedurally generated vertical barriers contain openings through which the player must navigate.",
+          "capability": "endless_obstacles",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "Verify obstacles have distinct top and bottom collision bounds with clear vertical gaps.",
+          "constructed": true,
+          "ir_path": "endless",
+          "runtime_check": "endless_bounded_state",
+          "runtime_verified": true
+        },
+        {
+          "source": "earn points for each gap passed",
+          "meaning": "Passing successfully through an obstacle's horizontal span increments the score counter.",
+          "capability": "gap_score",
+          "status": "verified",
+          "depends_on": [
+            "endless_obstacles"
+          ],
+          "verification": "Verify score increases by 1 each time the creature clears an obstacle.",
+          "constructed": true,
+          "ir_path": "scoring",
+          "runtime_check": "score_once",
+          "runtime_verified": true
+        },
+        {
+          "source": "survive as long as possible",
+          "meaning": "Endless survival gameplay loop ending on collision with obstacles or screen boundaries, triggering a restart option.",
+          "capability": "restart",
+          "status": "verified",
+          "depends_on": [
+            "endless_obstacles",
+            "flap"
+          ],
+          "verification": "Verify hitting the ground, ceiling, or any obstacle ends the run and allows restarting.",
+          "constructed": true,
+          "ir_path": "genre",
+          "runtime_check": "rapid_restart",
+          "runtime_verified": true
+        }
+      ],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    }
+  }
+}

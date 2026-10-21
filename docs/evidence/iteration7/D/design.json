@@ -1,0 +1,23 @@
+{
+  "genre": "runner",
+  "title": "Skyline Sprint",
+  "mode": "flap",
+  "theme": "sky",
+  "player": "creature",
+  "endless": true,
+  "finish_distance": 3000.0,
+  "speed": 280.0,
+  "max_speed": 440.0,
+  "acceleration": 0.0,
+  "gravity": 1500.0,
+  "jump_impulse": 590.0,
+  "flap_impulse": 310.0,
+  "gap_height": 190.0,
+  "obstacles": [
+    "spike",
+    "gap",
+    "laser"
+  ],
+  "scoring": "gaps",
+  "unsupported": []
+}

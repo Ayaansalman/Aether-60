@@ -6,6 +6,7 @@ The model's unsupported list is retained for requests outside this vocabulary.
 import re
 
 FEATURES = {
+    'boss_duel': (r'\bboss\b', 'boss_duel'),
     'ice_environment': (r'\bice\b|frozen', 'ice_composition'),
     'forest_environment': (r'forest', 'environment_composition'),
     'factory_environment': (r'industrial|factory', 'environment_composition'),
@@ -41,6 +42,8 @@ def extract_requirements(prompt):
         match = re.search(pattern, prompt, re.I)
         if not match:
             continue
+        clause=re.split(r'[.!;]',prompt[:match.start()])[-1].lower()
+        if feature=='collectibles' and re.search(r'do not add|\bno\b|without',clause): continue
         prefix = prompt[max(0, match.start()-12):match.start()].lower()
         if re.search(r'(no|without)\s*$', prefix):
             continue
@@ -55,6 +58,7 @@ def requirement_evidence(ir, prompt, unsupported=(), qa=None, requested=()):
     platforms = [p for level in levels for p in level.platforms]
     goals = [goal for level in levels for goal in level.goals] + ir.campaign_goals
     witnesses = {
+        'boss_duel': bool(ir.boss) and sum(e.boss is not None for e in entities)==1 and len(entities)==1,
         'ice_environment': any((level.theme or ir.theme) == 'ice' for level in levels), 'forest_environment': any((level.theme or ir.theme) == 'forest' for level in levels),
         'factory_environment': any((level.theme or ir.theme) == 'industrial' for level in levels), 'slippery': any(level.slippery if level.slippery is not None else ir.slippery for level in levels),
         'falling_icicles': any(e.kind == 'icicle' for e in entities),

@@ -6,10 +6,10 @@ from services import adventure, job_store
 from services.orchestrator import get_artifacts_dir
 
 
-async def run_adventure(gid, request, artifact, stage, browser_report):
+async def run_adventure(gid, request, artifact, stage, browser_report, intent=None):
     artifact('game_intent.json',{'original_prompt':request.prompt,'genre':'adventure','routing':'Explicit genre/interaction phrases; separate adventure adapter'})
     stage('PLANNING','Planning top-down adventure with configured provider' if request.mode=='live' else 'Planning labeled deterministic adventure fixture','START')
-    design,provenance=await asyncio.to_thread(adventure.plan,request.prompt,request.mode,lambda raw:artifact('model_design.json',raw))
+    design,provenance=await asyncio.to_thread(adventure.plan,request.prompt,request.mode,lambda raw:artifact('model_design.json',raw),intent)
     if request.mode=='fixture':artifact('model_design.json',design.model_dump())
     artifact('provider.json',provenance)
     artifact('design_normalization.json',{'changes':provenance.get('normalizations',[])})
@@ -55,7 +55,9 @@ async def run_adventure(gid, request, artifact, stage, browser_report):
     artifact('requirement_report.json',{'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED','requirements':ir.requirements,
         'scope':'Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.','unsupported':design.unsupported})
     artifact('game_ir_v2.json',ir.model_dump())
-    final='FAILED' if report['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and not design.unsupported else 'READY_WITH_WARNINGS'
+    from services.semantic_intent import fidelity
+    semantic=fidelity(ir,intent,report);artifact('semantic_requirement_report.json',semantic)
+    final='FAILED' if report['overall']=='FAIL' or semantic['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and semantic['overall']=='PASS' and not design.unsupported else 'READY_WITH_WARNINGS'
     job_store.update_job(gid,spec_json=ir.model_dump_json(),latest_qa_json=json.dumps(report),qa_summary={
         'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks']),
         'critical_failed':[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})

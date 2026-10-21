@@ -1,0 +1,304 @@
+{
+  "job": {
+    "game_id": "721eb2b7-07a4-4b9c-b6a6-98d606028131",
+    "prompt": "Create a fast-paced endless 2D runner in a neon cyberpunk city. My character should automatically run forward while I jump over spikes, gaps, and laser obstacles. Make the course become gradually faster and more challenging. Track my distance, and let me instantly restart after crashing.",
+    "status": "READY",
+    "stage": "READY",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "fixture",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T13:21:22.811086+00:00",
+    "updated_at": "2026-10-21T13:21:29.385942+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "semantic_intent.json",
+      "model_design.json",
+      "provider.json",
+      "final_design.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report.json",
+      "requirement_report.json",
+      "semantic_requirement_report.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 7,
+      "failed": 0
+    },
+    "game_url": "http://localhost:5173/studio/play/721eb2b7-07a4-4b9c-b6a6-98d606028131"
+  },
+  "events": [
+    {
+      "id": 1747,
+      "game_id": "721eb2b7-07a4-4b9c-b6a6-98d606028131",
+      "ts": "2026-10-21T13:21:22.832614+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted fixture generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1748,
+      "game_id": "721eb2b7-07a4-4b9c-b6a6-98d606028131",
+      "ts": "2026-10-21T13:21:22.881610+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.05s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1749,
+      "game_id": "721eb2b7-07a4-4b9c-b6a6-98d606028131",
+      "ts": "2026-10-21T13:21:23.019678+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning validated arcade controls and survival loop",
+      "attempt": 1,
+      "rationale": "Elapsed 0.19s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1750,
+      "game_id": "721eb2b7-07a4-4b9c-b6a6-98d606028131",
+      "ts": "2026-10-21T13:21:23.192743+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running Chromium arcade checks",
+      "attempt": 1,
+      "rationale": "Elapsed 0.36s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1751,
+      "game_id": "721eb2b7-07a4-4b9c-b6a6-98d606028131",
+      "ts": "2026-10-21T13:21:29.405952+00:00",
+      "stage": "READY",
+      "result": "SUCCESS",
+      "detail": "Arcade checks PASS",
+      "attempt": 1,
+      "rationale": "Elapsed 6.56s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "runner",
+      "loop": "Deterministic fixture interpretation",
+      "control": "auto_jump",
+      "requirements": [],
+      "provenance": {
+        "provider": "fixture",
+        "live": false
+      }
+    },
+    "model_design.json": {
+      "genre": "runner",
+      "title": "Skyline Sprint",
+      "mode": "ground",
+      "theme": "neon",
+      "player": "robot",
+      "endless": true,
+      "finish_distance": 3000,
+      "speed": 340.0,
+      "max_speed": 440,
+      "acceleration": 2.0,
+      "gravity": 1500,
+      "jump_impulse": 590,
+      "flap_impulse": 310,
+      "gap_height": 190,
+      "obstacles": [
+        "spike",
+        "gap",
+        "laser"
+      ],
+      "scoring": "distance",
+      "unsupported": []
+    },
+    "provider.json": {
+      "provider": "fixture",
+      "model": null,
+      "live": false
+    },
+    "final_design.json": {
+      "genre": "runner",
+      "title": "Skyline Sprint",
+      "mode": "ground",
+      "theme": "neon",
+      "player": "robot",
+      "endless": true,
+      "finish_distance": 3000,
+      "speed": 340.0,
+      "max_speed": 440,
+      "acceleration": 2.0,
+      "gravity": 1500,
+      "jump_impulse": 590,
+      "flap_impulse": 310,
+      "gap_height": 190,
+      "obstacles": [
+        "spike",
+        "gap",
+        "laser"
+      ],
+      "scoring": "distance",
+      "unsupported": []
+    },
+    "game_ir_v2.json": {
+      "genre": "runner",
+      "title": "Skyline Sprint",
+      "mode": "ground",
+      "theme": "neon",
+      "player": "robot",
+      "endless": true,
+      "finish_distance": 3000.0,
+      "speed": 340.0,
+      "max_speed": 440.0,
+      "acceleration": 2.0,
+      "gravity": 1500.0,
+      "jump_impulse": 590.0,
+      "flap_impulse": 310.0,
+      "gap_height": 190.0,
+      "obstacles": [
+        "spike",
+        "gap",
+        "laser"
+      ],
+      "scoring": "distance",
+      "unsupported": [],
+      "schema_version": "2.2",
+      "seed": 7,
+      "requirements": [
+        {
+          "source": "Runner control, procedural obstacles, score and restart",
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "adapter": "RunnerCanvas",
+      "genre": "runner",
+      "mode": "ground",
+      "art": "original canvas primitives",
+      "bounded_active_world": true
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "runner_input",
+          "passed": true,
+          "critical": true,
+          "details": [
+            {
+              "mode": "ground",
+              "state": "playing",
+              "score": 0,
+              "distance": 5.667083333333333,
+              "y": 430,
+              "vy": 0,
+              "active": 1,
+              "serial": 1,
+              "generation": 2
+            },
+            {
+              "mode": "ground",
+              "state": "playing",
+              "score": 6,
+              "distance": 62.368472222222216,
+              "y": 353.5416666666667,
+              "vy": -340,
+              "active": 1,
+              "serial": 1,
+              "generation": 2
+            }
+          ]
+        },
+        {
+          "id": "bounds_death",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "mode": "ground",
+            "state": "lost",
+            "score": 0,
+            "distance": 2.833472222222222,
+            "y": 10.104166666666666,
+            "vy": 12.5,
+            "active": 0,
+            "serial": 1,
+            "generation": 3
+          }
+        },
+        {
+          "id": "rapid_restart",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "mode": "ground",
+            "state": "playing",
+            "score": 0,
+            "distance": 2.833472222222222,
+            "y": 430,
+            "vy": 0,
+            "active": 1,
+            "serial": 1,
+            "generation": 4
+          }
+        },
+        {
+          "id": "score_once",
+          "passed": true,
+          "critical": true,
+          "details": [
+            34,
+            34
+          ]
+        },
+        {
+          "id": "obstacle_collision",
+          "passed": true,
+          "critical": true,
+          "details": "lost"
+        },
+        {
+          "id": "endless_bounded_state",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "active": 2,
+            "serial": 1275
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "details": []
+        }
+      ],
+      "scope": "Real keyboard/pointer input plus disclosed controlled state for collision/scoring and accelerated generation; not autonomous survival."
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "source": "Runner control, procedural obstacles, score and restart",
+          "status": "verified"
+        }
+      ],
+      "unsupported": [],
+      "scope": "Runtime checks; arbitrary semantic coverage is not certified"
+    },
+    "semantic_requirement_report.json": {
+      "control_preserved": true,
+      "overall": "PASS",
+      "requirements": [],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    }
+  }
+}

@@ -14,7 +14,23 @@ class Dialogue(Contract):
     completed: list[str] = Field(default_factory=lambda: ['Thank you for your help!'], min_length=1, max_length=4)
 
 
+class BiomeRegion(Contract):
+    id: str = Field(pattern=r'^[a-z][a-z0-9_]{0,39}$')
+    name: str = Field(max_length=60)
+    biome: Literal['forest','snow','frozen_lake','icy_ruins']
+    x: int = Field(ge=1,le=44)
+    y: int = Field(ge=1,le=28)
+    width: int = Field(ge=3,le=46)
+    height: int = Field(ge=3,le=30)
+    slippery: bool = False
+    @model_validator(mode='after')
+    def bounds(self):
+        if self.x+self.width>47 or self.y+self.height>31: raise ValueError('Biome exceeds 48x32 map interior')
+        return self
+
+
 class Actor(Contract):
+    region: str | None = None
     id: str = Field(pattern=r'^[a-z][a-z0-9_]{0,39}$')
     kind: Literal['npc', 'item', 'door', 'switch', 'enemy', 'landmark', 'treasure']
     name: str = Field(min_length=1, max_length=60)
@@ -37,6 +53,7 @@ class Goal(Contract):
 
 
 class AreaDesign(Contract):
+    regions: list[BiomeRegion] = Field(default_factory=list,max_length=8)
     name: str = Field(min_length=1, max_length=60)
     environment: Literal['village', 'forest', 'ruins', 'dungeon', 'cave']
 
@@ -58,6 +75,10 @@ class AdventureDesign(Contract):
         actors = {a.id: a for a in self.actors}
         if len(actors) != len(self.actors):
             raise ValueError('Duplicate actor IDs')
+        for area in self.areas:
+            if len({r.id for r in area.regions})!=len(area.regions): raise ValueError('Duplicate region IDs')
+        for a in self.actors:
+            if a.region and (a.area>=len(self.areas) or a.region not in {r.id for r in self.areas[a.area].regions}): raise ValueError('Actor references missing biome')
         items = {a.item for a in self.actors if a.kind == 'item'}
         expected = {'talk': ['npc'], 'deliver': ['npc'], 'collect': ['item', 'treasure'], 'explore': ['landmark'],
                     'defeat': ['enemy'], 'activate': ['switch'], 'unlock': ['door']}

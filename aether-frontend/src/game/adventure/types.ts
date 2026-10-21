@@ -1,3 +1,4 @@
+export type BiomeRegion={id:string;name:string;biome:'forest'|'snow'|'frozen_lake'|'icy_ruins';x:number;y:number;width:number;height:number;slippery:boolean};
 export type Dialogue = { greeting: string[]; active: string[]; completed: string[] };
 export type Actor = {
   id: string; kind: 'npc'|'item'|'door'|'switch'|'enemy'|'landmark'|'treasure';
@@ -5,7 +6,7 @@ export type Actor = {
   behavior: 'patrol'|'chase'; dialogue: Dialogue; x: number; y: number; area: number; pickups:{x:number;y:number}[];
 };
 export type Goal = { kind: 'talk'|'collect'|'deliver'|'explore'|'defeat'|'activate'|'unlock'; target: string; count: number; text: string; item: string; delivery_items?:Record<string,number> };
-export type Area = { name: string; environment: string; width: number; height: number; tiles: number[][]; spawn: {x:number;y:number}; exit:{x:number;y:number}; actors: Actor[]; zones?:{name:string;x:number;y:number}[]; trees?:{x:number;y:number}[]; buildings?:{x:number;y:number;variant:number}[] };
+export type Area = { regions?:BiomeRegion[]; name: string; environment: string; width: number; height: number; tiles: number[][]; spawn: {x:number;y:number}; exit:{x:number;y:number}; actors: Actor[]; zones?:{name:string;x:number;y:number}[]; trees?:{x:number;y:number}[]; buildings?:{x:number;y:number;variant:number}[] };
 export type AdventureIR = {
   schema_version:'2.1'; genre:'adventure'; title:string; premise:string; theme:string; seed:number;
   tile_size:32; combat:boolean; areas:Area[]; quests:Goal[]; unsupported:string[];

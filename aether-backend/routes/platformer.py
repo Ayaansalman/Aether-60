@@ -21,7 +21,7 @@ _worker = asyncio.Lock()
 
 def browser_report(game_url, directory, genre="platformer"):
     try:
-        proc = subprocess.run([sys.executable,"-m",("services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
+        proc = subprocess.run([sys.executable,"-m",("services.boss_qa" if genre=="boss" else "services.runner_qa" if genre=="runner" else "services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
             cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=240)
         return json.loads(proc.stdout.strip())
     except Exception as exc:
@@ -57,15 +57,23 @@ async def run(gid: str, request: Generate):
             job_store.update_job(gid, artifact_paths=artifacts)
 
         try:
-            from services.game_factory import genre_for_prompt
-            if genre_for_prompt(request.prompt)=="adventure":
+            from services.semantic_intent import interpret
+            stage('PLANNING','Interpreting central loop, controls and constraints','START')
+            intent,intent_provider=await asyncio.to_thread(interpret,request.prompt,request.mode)
+            artifact('semantic_intent.json', {**intent.model_dump(),'provenance':intent_provider})
+            if intent.genre=='unsupported': raise ValueError('Requested game family is unsupported; see semantic_intent.json')
+            if intent.genre=='runner':
+                from services.runner import run_runner
+                await run_runner(gid,request,artifact,stage,browser_report,intent.model_dump())
+                return
+            if intent.genre=="adventure":
                 from services.adventure_pipeline import run_adventure
-                await run_adventure(gid,request,artifact,stage,browser_report)
+                await run_adventure(gid,request,artifact,stage,browser_report,intent.model_dump())
                 return
             artifact("game_intent.json", {"original_prompt": request.prompt, "requirements": extract_requirements(request.prompt),
                 "scope": "Explicit phrases; model interpretation follows. Unrecognized language is not certified."})
             stage("PLANNING", "Interpreting prompt with Gemini" if request.mode=="live" else "Building explicitly labeled offline fixture", "START")
-            design, provenance = await asyncio.to_thread(plan, request.prompt, request.mode)
+            design, provenance = await asyncio.to_thread(plan, request.prompt, request.mode,intent.model_dump())
             artifact("model_design.json", design.model_dump())
             requirements = enforce_explicit_requirements(design, request.prompt)
             artifact("requirement_report.json", requirements)
@@ -77,7 +85,7 @@ async def run(gid: str, request: Generate):
                 "requested_mechanics":requirements['requirements'],"model_requests":[f.model_dump() for f in design.requested_features],"unsupported":design.unsupported,"interpretation_source":provenance})
             artifact("game_design.json", design.model_dump())
             artifact("provider.json", provenance)
-            job_store.update_job(gid, model_id=provenance['model'] or "fixture", limitations=design.unsupported)
+            job_store.update_job(gid, model_id=provenance['model'] or "fixture", limitations=design.unsupported + [note for note in design.design_notes if 'approximat' in note.lower()])
             stage("DESIGNING", "Validated typed design; composing sections and registered mechanics")
             ir = construct(design, request.prompt, request.seed)
             stage("VALIDATING_SPEC", "Checking jump trajectories, landing margins and objective consistency")
@@ -121,7 +129,7 @@ async def run(gid: str, request: Generate):
             stage("BUILDING", "Runtime specification and asset dependencies persisted")
             stage("TESTING", "Running real Chromium gameplay checks", "START")
             # Subprocess timeout bounds QA, including browser startup and every route edge.
-            report = await asyncio.to_thread(browser_report,game_url,get_artifacts_dir()/gid)
+            report = await asyncio.to_thread(browser_report,game_url,get_artifacts_dir()/gid,"boss" if ir.boss else "platformer")
             artifact("qa_report_initial.json", report)
             while report['overall']=='FAIL' and len(repairs)<2:
                 failed=[c for c in report['checks'] if not c['passed'] and c.get('critical',True)]
@@ -156,11 +164,14 @@ async def run(gid: str, request: Generate):
             artifact("game_ir_v2.json", ir.model_dump())
             job_store.update_job(gid, spec_json=ir.model_dump_json())
             job_store.update_job(gid, latest_qa_json=json.dumps(report), qa_summary={"passed":sum(c['passed'] for c in report['checks']),"failed":sum(not c['passed'] for c in report['checks']),"critical_failed":[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
-            if report['overall']=='FAIL' or coverage['overall']=='FAIL':
+            from services.semantic_intent import fidelity
+            semantic=fidelity(ir,intent.model_dump(),report)
+            artifact('semantic_requirement_report.json',semantic)
+            if report['overall']=='FAIL' or coverage['overall']=='FAIL' or semantic['overall']=='FAIL':
                 final="FAILED"
                 detail="Runtime QA failed; evidence recorded. Runtime/asset defects require a developer, not difficulty patches."
             else:
-                final="READY" if report['overall']=='PASS' and coverage['overall']=='PASS' and not design.unsupported else "READY_WITH_WARNINGS"
+                final="READY" if report['overall']=='PASS' and coverage['overall']=='PASS' and semantic['overall']=='PASS' and not design.unsupported and not any("approximat" in n.lower() for n in design.design_notes) else "READY_WITH_WARNINGS"
                 detail="Browser checks passed" if report['overall']=='PASS' else "Specification ready; browser QA unavailable. Runtime remains unverified."
             stage(final, detail)
             artifact("outcome.json", {"status":final,"elapsed_seconds":round(time.monotonic()-started,2),"visual_quality":"Requires human screenshot review; functional checks are not an aesthetic score."})
@@ -212,7 +223,8 @@ async def reverify_job(gid: str):
         paths=job['artifact_paths']
         attempt=1+sum(name.startswith('qa_retest_') for name in paths)
         genre=json.loads(job['spec_json']).get('genre','platformer')
-        report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}',genre)
+        qa_genre='boss' if json.loads(job['spec_json']).get('boss') else genre
+        report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}',qa_genre)
         name=f'qa_retest_{attempt}.json';save(gid,name,report);paths.append(name)
         from services.game_factory import parse_ir
         ir=parse_ir(json.loads(job['spec_json']))
@@ -222,12 +234,20 @@ async def reverify_job(gid: str):
             save(gid,'asset_validation.json',adventure.validate_assets())
             save(gid,'validation.json',adventure.validate_world(ir))
             coverage={'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED', 'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
+        elif genre=='runner':
+            coverage={'overall':report['overall'],'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
         else:
             coverage=requirement_evidence(ir,job['prompt'],job['limitations'],report)
         previous=json.loads((get_artifacts_dir()/gid/'requirement_report.json').read_text(encoding='utf-8'))
         save(gid,'requirement_report.json',{**previous,**coverage})
         ir.requirements=coverage['requirements'];save(gid,'game_ir_v2.json',ir.model_dump())
-        final='FAILED' if report['overall']=='FAIL' or coverage['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and coverage['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
+        from services.semantic_intent import fidelity
+        intent_path=get_artifacts_dir()/gid/'semantic_intent.json'
+        semantic=fidelity(ir,json.loads(intent_path.read_text(encoding='utf-8')),report) if intent_path.is_file() else {'overall':'PASS'}
+        if intent_path.is_file():
+            save(gid,'semantic_requirement_report.json',semantic)
+            if 'semantic_requirement_report.json' not in paths: paths.append('semantic_requirement_report.json')
+        final='FAILED' if report['overall']=='FAIL' or coverage['overall']=='FAIL' or semantic['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and coverage['overall']=='PASS' and semantic['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
         job_store.update_job(gid,status=final,stage=final,spec_json=ir.model_dump_json(),latest_qa_json=json.dumps(report),artifact_paths=paths,
             qa_summary={'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks']),
                 'critical_failed':[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})

@@ -84,9 +84,11 @@ def build_area(design, index, seed):
     door_order = next((i for i, q in enumerate(design.quests) if door and q.target == door.id), len(design.quests))
     door_x, door_y = (31, 23) if not outdoor else (32, 17)
 
+    region=None
     def reserve(center, bounds):
         candidates = [(x, y) for y in range(bounds[1], bounds[3]) for x in range(bounds[0], bounds[2])
                       if tiles[y][x] < 10 and tiles[y][x] != 1 and
+                      (region is None or next((r.id for r in reversed(area.regions) if r.x<=x<r.x+r.width and r.y<=y<r.y+r.height),None)==region.id) and
                       all(abs(x-u)+abs(y-v) >= 3 for u, v in used)]
         if not candidates: raise ValueError('Spatial zone exhausted by adventure actors')
         candidates.sort(key=lambda p: abs(p[0]-center[0])+abs(p[1]-center[1])+rng.random()*3)
@@ -113,6 +115,10 @@ def build_area(design, index, seed):
         else:
             center = (39, 23) if beyond or final_only else centers[2] if actor.kind in ('item', 'switch', 'treasure') else centers[1+n%2]
             bounds = (34, 19, 45, 28) if beyond or final_only else (3, 4, 29, 28)
+        region=next((r for r in area.regions if r.id==actor.region),None)
+        if region:
+            bounds=(region.x+1,region.y+1,region.x+region.width-1,region.y+region.height-1)
+            center=(region.x+region.width//2,region.y+region.height//2)
         x, y = reserve(center, bounds)
         pickups = []
         if actor.kind == 'item':
@@ -145,6 +151,14 @@ def build_area(design, index, seed):
             for dx, dy in [(-3,-2),(3,-2),(-3,2),(3,2)]:
                 x,y=zone['x']+dx,zone['y']+dy
                 if tiles[y][x] == 0 and (x,y) not in protected: tiles[y][x] = 3
+    # Deliberate biome clearings preserve all routes and remove incompatible tree modules.
+    for region in area.regions:
+        if region.biome=='forest': continue
+        for ry in range(region.y,region.y+region.height):
+            for rx in range(region.x,region.x+region.width):
+                if tiles[ry][rx] in (1,3,4): tiles[ry][rx]=0
+        trees=[t for t in trees if not (region.x<=t['x']<region.x+region.width and region.y<=t['y']<region.y+region.height)]
+        zones.append(dict(name=region.name,x=region.x+region.width//2,y=region.y+2))
     if door:
         for y in range(1, h-1): tiles[y][door_x] = 1
         tiles[door_y][door_x] = 2

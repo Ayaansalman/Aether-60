@@ -1,3 +1,5 @@
+import {RunnerCanvas} from '../components/RunnerCanvas';
+import type {RunnerIR} from '../game/runner/world';
 import { useEffect, useState } from "react";
 import { Link, Route, Routes, useParams, useNavigate } from "react-router-dom";
 import {
@@ -24,7 +26,7 @@ import { PlatformerCanvas } from "../components/PlatformerCanvas";
 import type { PlatformerIR, StudioJob } from "../game/platformer/types";
 import "./studio.css";
 
-type GeneratedIR = PlatformerIR | AdventureIR;
+type GeneratedIR = PlatformerIR | AdventureIR | RunnerIR;
 
 const PROMPTS = [
   ["06", "The Woodland Remedy", "Create a cozy top-down fantasy adventure in a woodland village. A village healer needs three magical herbs from the nearby forest. Let me explore the village, talk to the healer, collect the herbs, and return to complete the quest. Include charming buildings, paths, trees, friendly villagers, and colorful environments. No combat.", "village"],
@@ -182,7 +184,7 @@ function Landing() {
             Aether builds the path.
           </h2>
           <p>
-            Build 2D platformers and top-down adventures. Seeded worlds,
+            Build platformers, top-down adventures and arcade runners. Seeded worlds,
             real pixel artwork, and a workflow you can look inside.
           </p>
           <Link to="/studio" className="text-link">
@@ -244,6 +246,7 @@ function Workspace() {
   );
   const [spec, setSpec] = useState<GeneratedIR | null>(null);
   const [job, setJob] = useState<StudioJob | null>(null);
+  const semanticReport = job?.artifacts['semantic_requirement_report.json'] as {overall:string;requirements:{source:string;status:string;ir_path:string}[]}|undefined;
   const [activeId, setActiveId] = useState(id || "");
   const [busy, setBusy] = useState(false),
     [error, setError] = useState("");
@@ -434,7 +437,7 @@ function Workspace() {
               disabled={busy}
             />
             <div className="prompt-meta">
-              <span>Platformer / top-down adventure</span>
+              <span>Platformer / adventure / runner</span>
               <span>{prompt.length}/3000</span>
             </div>
             <label htmlFor="provider-mode" className="mode-label">
@@ -487,7 +490,7 @@ function Workspace() {
             <details className="capabilities">
               <summary>What can Aether build?</summary>
               <p>
-                Forest, industrial, ice cavern and twilight platformers with up to three levels. Patrol, chase, ranged enemies, turrets and ambushers; icicles, slippery terrain, timed machinery, bounded moving platforms, checkpoints, double jump and dash. Switches, latched pressure plates and projectile switches open linked doors. Objectives can combine defeating guards, collecting objects, activating controls, unlocking paths, survival time and deadlines. Top-down adventures support connected villages, forests and dungeons, NPC dialogue, inventory, keys, switches, sequential quests and optional combat. Custom mechanics remain limited;
+                Auto-runners and tap-to-flap scrollers support endless seeded obstacles, distance or gap scores, keyboard/touch and instant restart. Platformers support boss arenas with telegraphed attacks. Adventures support connected biome regions and localized slippery ice. Forest, industrial, ice cavern and twilight platformers with up to three levels. Patrol, chase, ranged enemies, turrets and ambushers; icicles, slippery terrain, timed machinery, bounded moving platforms, checkpoints, double jump and dash. Switches, latched pressure plates and projectile switches open linked doors. Objectives can combine defeating guards, collecting objects, activating controls, unlocking paths, survival time and deadlines. Top-down adventures support connected villages, forests and dungeons, NPC dialogue, inventory, keys, switches, sequential quests and optional combat. Custom mechanics remain limited;
                 requested unsupported features appear in the Inspector.
               </p>
             </details>
@@ -596,12 +599,12 @@ function Workspace() {
                     </button>
                   )}
                   {spec ? (
-                    spec.genre === "adventure" ? <AdventureCanvas spec={spec} restart={restart} /> : <PlatformerCanvas spec={spec} restart={restart} />
+                    spec.genre === "runner" ? <RunnerCanvas spec={spec} restart={restart} /> : spec.genre === "adventure" ? <AdventureCanvas spec={spec} restart={restart} /> : <PlatformerCanvas spec={spec} restart={restart} />
                   ) : (
                     <div className="empty-preview">
                       <Gamepad2 size={40} />
                       <h3>{busy ? job?.events.at(-1)?.stage.replaceAll("_", " ") || "QUEUED" : error ? "Your game could not be built" : "Your next world belongs here."}</h3>
-                      <p role="status" aria-live="polite">{busy ? job?.events.at(-1)?.detail || "Waiting for backend progress…" : error ? "Review the message beside your prompt, then retry. The Inspector contains recorded diagnostics." : "Describe a platformer or top-down adventure, then select Generate game. Inspiration buttons open clearly labeled sample games."}</p>
+                      <p role="status" aria-live="polite">{busy ? job?.events.at(-1)?.detail || "Waiting for backend progress…" : error ? "Review the message beside your prompt, then retry. The Inspector contains recorded diagnostics." : "Describe a platformer, adventure or arcade runner, then select Generate game. Inspiration buttons open clearly labeled sample games."}</p>
                     </div>
                   )}
                   <div className="preview-frame-footer">
@@ -618,16 +621,16 @@ function Workspace() {
                   </div>
                 </div>
                 {spec && <div className="game-controls">
-                  <div>
+                  {spec.genre !== "runner" && <div>
                     <kbd>←</kbd>
                     <kbd>→</kbd>
                     {spec.genre === 'adventure' && <><kbd>↑</kbd><kbd>↓</kbd></>}
                     <span>Move</span>
-                  </div>
+                  </div>}
                   <div>
                     <kbd>{spec.genre === "adventure" ? "E" : "SPACE"}</kbd>
                     <span>
-                      {spec.genre === "adventure" ? "Interact (E)" : "Jump"}
+                      {spec.genre === "adventure" ? "Interact (E)" : spec.genre === "runner" && spec.mode === "flap" ? "Flap / tap" : "Jump"}
                       {(spec?.genre === "platformer" ? spec.player.abilities : []).includes("double_jump")
                         ? " / double jump"
                         : ""}
@@ -643,13 +646,13 @@ function Workspace() {
                     <kbd>R</kbd>
                     <span>Restart</span>
                   </div>
-                  <span className="focus-hint">Click game to focus · WASD / arrows: move · E: interact · F/X: attack when equipped</span>
+                  <span className="focus-hint">{spec.genre === "runner" ? `Automatic scrolling · Space or tap: ${spec.mode === "flap" ? "flap upward" : "jump"} · R: restart` : "Click game to focus · WASD / arrows: move · E: interact · F/X: attack when equipped"}</span>
                 </div>}
               </>
             ) : (
               <div className="design-view">
                 <h3>World blueprint</h3>
-                {spec?.genre === "adventure" ? <><p>{spec.areas.length} connected areas · Seed {spec.seed}</p><p>{spec.areas.map(a=>`${a.name} (${a.environment})`).join(" → ")}</p><ol>{spec.quests.map((q,i)=><li key={i}>{q.text}</li>)}</ol><p>{spec.art?.pack_id || 'Kenney Tiny Town & Tiny Dungeon'} · CC0</p></> : spec ? (
+                {spec?.genre === "runner" ? <><p>{spec.mode} · {spec.endless ? "Endless" : "Finite"} · Seed {spec.seed}</p><p>{spec.speed} → {spec.max_speed} px/s · {spec.scoring} scoring · Space / tap to {spec.mode === "flap" ? "flap" : "jump"}</p></> : spec?.genre === "adventure" ? <><p>{spec.areas.length} connected areas · Seed {spec.seed}</p><p>{spec.areas.map(a=>`${a.name} (${a.environment})`).join(" → ")}</p><ol>{spec.quests.map((q,i)=><li key={i}>{q.text}</li>)}</ol><p>{spec.art?.pack_id || 'Kenney Tiny Town & Tiny Dungeon'} · CC0</p></> : spec ? (
                   <>
                     <p>
                       {spec.levels?.length || 1} connected stage{(spec.levels?.length || 1)>1?'s':''} · {" "}
@@ -677,7 +680,7 @@ function Workspace() {
                       </dd>
                       <dt>Objective</dt>
                       <dd>
-                        {spec.objective.required
+                        {spec.boss ? `Defeat ${spec.boss.name} · F/X combat ability` : spec.objective.required
                           ? `Collect ${spec.objective.required} ${spec.collectible || "crystals"}, then reach the exit`
                           : "Reach the exit"}
                       </dd>
@@ -721,6 +724,11 @@ function Workspace() {
                 View process <ArrowRight size={15} />
               </button>
             </div>
+            {semanticReport && <details className="capabilities requirement-coverage">
+              <summary>Prompt fidelity · {semanticReport.overall}</summary>
+              {semanticReport.requirements.map((req,i)=><p key={i}><strong>{req.source}</strong> — {req.status.replaceAll('_',' ')}<br/><small>{req.ir_path}</small></p>)}
+              <p>Source phrases, structured requirements and runtime evidence: semantic_requirement_report.json in the Inspector.</p>
+            </details>}
             {spec?.requirements?.length ? <details className="capabilities requirement-coverage">
               <summary>Requested features · {spec.requirements.length} tracked</summary>
               {spec.requirements.map((req,i)=><p key={i}><strong>{req.source}</strong> — {req.status.replaceAll("_"," ")}</p>)}
@@ -863,7 +871,7 @@ function Workspace() {
           {busy ? "GENERATION IN PROGRESS" : "READY TO EXPLORE"}{" "}
           <span className="footer-divider">/</span> PLATFORMER / ADVENTURE
         </span>
-        <span>Artwork · {spec?.genre==='adventure' && spec.art ? spec.art.pack_id==='ninja_adventure' ? 'Pixel-Boy & AAA' : 'Ansimuz' : 'Kenney'} · CC0</span>
+        <span>Artwork · {spec?.genre==='runner' ? 'Original procedural art' : spec?.genre==='adventure' && spec.art ? spec.art.pack_id==='ninja_adventure' ? 'Pixel-Boy & AAA' : 'Ansimuz' : 'Kenney'} · CC0</span>
       </div>
     </div>
   );

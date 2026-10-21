@@ -1,3 +1,4 @@
+export interface BossEncounter {name:string;health:number;telegraph_ms:number;cooldown_ms:number;patterns:('charge'|'volley')[];victory:'boss_defeat';ordinary_enemies:0}
 export interface Platform {
   x: number;
   y: number;
@@ -12,6 +13,7 @@ export interface EnemyConfig { health: number; cooldown_ms: number; telegraph_ms
 export interface Goal { id: string; kind: 'defeat' | 'activate' | 'unlock' | 'collect' | 'survive' | 'time_limit'; count: number; seconds: number; targets: string[]; enemy_behavior?: Entity['behavior'] | null }
 export interface BehaviorLink { sources: string[]; target: string; condition: 'all' | 'any'; action: 'open_door' }
 export interface Entity {
+  boss?: BossEncounter | null;
   id?: string;
   x: number;
   y: number;
@@ -25,6 +27,7 @@ export interface Entity {
   radius?: number;
 }
 export interface PlatformerIR {
+  boss?: BossEncounter | null;
   schema_version: "2.0";
   genre: "platformer";
   title: string;

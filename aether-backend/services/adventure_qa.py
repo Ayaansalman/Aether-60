@@ -41,6 +41,18 @@ def run_browser_qa(url, directory, fixture=None):
             page.locator('.game-surface').click()
             record('genre_assets_gravity',snap()['genre']=='adventure' and snap()['gravity']==0 and not snap()['missingAssets'] and not assets,{'snapshot':snap(),'asset_http_failures':assets})
             area=spec['areas'][0]
+            if area.get('regions'):
+                record('biome_regions',len(snap()['regions'])==len(area['regions']) and len(spec['areas'])==1,{'regions':snap()['regions'],'same_scene':True})
+                ice=next((r for r in area['regions'] if r['slippery']),None)
+                if ice:
+                    teleport((ice['x']-1)*32+16,(ice['y']+ice['height']//2)*32+16)
+                    press('ArrowRight',400)
+                    record('connected_biome_crossing',snap().get('localBiome')==ice['id'],{'snapshot':snap(),'method':'Controlled launch just outside lake; real rightward keyboard movement across boundary'})
+                    teleport((ice['x']+ice['width']//2)*32+16,(ice['y']+ice['height']//2)*32+16)
+                    press('ArrowRight',220);coast=snap();page.wait_for_timeout(100);later=snap()
+                    record('localized_slippery',coast['vx']>10 and later['x']>coast['x'] and later['vx']>0,{'released':coast,'coasting':later})
+                    teleport(area['spawn']['x']*32+16,area['spawn']['y']*32+16)
+
             page.wait_for_timeout(500)
             page.screenshot(path=str(directory/'opening.png'),full_page=True)
             before=snap();press('ArrowRight',220);after=snap()

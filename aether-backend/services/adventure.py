@@ -62,8 +62,22 @@ def fixture_design(prompt):
     elif not quests or re.search(r'explore',p) and not village:
         actor('vista','landmark','Hidden Sanctuary');quest('explore','vista','Discover the hidden sanctuary')
     unsupported=[f'Unsupported request: {w}' for w in ['multiplayer','crafting','equipment','3d','boss','procedural dialogue'] if w in p]
-    return AdventureDesign(title='The Woodland Remedy' if village else 'The Forgotten Crypt' if 'crypt' in p else 'The Sealed Depths' if dungeon else 'Whispers of the Wild',
+    design=AdventureDesign(title='The Woodland Remedy' if village else 'The Forgotten Crypt' if 'crypt' in p else 'The Sealed Depths' if dungeon else 'Whispers of the Wild',
         premise=prompt[:500],theme='dark' if dungeon else 'woodland',areas=areas,actors=actors,quests=quests,combat=combat,unsupported=unsupported)
+    if re.search(r'forest|woodland|nature',p) and re.search(r'ice|icy|frozen|snow',p) and not re.search(r'(?:second|next|two|2) levels?',p):
+        from schemas.adventure import AreaDesign,Actor,Goal
+        design.theme='woodland';design.title='Forest and Frost'
+        design.areas=[AreaDesign(name='Enchanted woodland and frozen ruins',environment='forest',regions=[
+            dict(id='woodland',name='Enchanted Forest',biome='forest',x=1,y=1,width=46,height=30),
+            dict(id='lake',name='Frozen Lake',biome='frozen_lake',x=20,y=10,width=12,height=12,slippery='slippery' in p),
+            dict(id='ruins',name='Icy Ruins',biome='icy_ruins',x=34,y=7,width=11,height=17)])]
+        if re.search(r'crystal|retrieve',p):
+            design.actors=[Actor(id='villager',kind='npc',name='Rowan the Forest Keeper',region='woodland',dialogue={'greeting':['Please retrieve the magical crystal from the Icy Ruins east of the frozen lake.'],'active':['The crystal is in the Icy Ruins.'],'completed':['The forest thanks you.']}),Actor(id='crystal',kind='item',name='Magical Crystal',item='crystal',region='ruins')]
+            design.quests=[Goal(kind='talk',target='villager',text='Speak to Rowan'),Goal(kind='collect',target='crystal',text='Retrieve the magical crystal from the Icy Ruins'),Goal(kind='deliver',target='villager',item='crystal',text='Return the crystal to Rowan')]
+        else:
+            for a in design.actors:a.area=0
+    return design
+
 
 
 def normalize_outdoor_return(data):
@@ -85,7 +99,7 @@ def normalize_outdoor_return(data):
     return data,changes
 
 
-def plan(prompt, mode, raw_callback=None):
+def plan(prompt, mode, raw_callback=None, intent=None):
     if mode=='fixture':
         return fixture_design(prompt), {'provider':'fixture','model':None,'live':False}
     from providers.factory import get_provider
@@ -93,7 +107,10 @@ def plan(prompt, mode, raw_callback=None):
     provider=get_provider()
     if isinstance(provider,MockModelProvider):
         raise ValueError('Live mode requires a configured model provider. Fixture mode is available offline.')
-    system='''You design Aether top-down adventures. Return ONLY JSON matching the schema below.
+    system='''Biome regions and localized slippery momentum are implemented runtime capabilities. Do not list them as unsupported.
+Biome regions are spatial rectangles within one 48x32 area (interior x=1..46,y=1..30).
+Use AreaDesign.regions for same-world forest, snow, frozen_lake and icy_ruins. Later regions override earlier regions, so a large forest may surround a smaller lake. Give each an id/name/biome/x/y/width/height. slippery=true ONLY when requested. Set actor.region to the requested location (crystal in icy ruins, villager in forest). Preserve same-level constraints with exactly one area; use separate areas only for explicit separate levels.
+You design Aether top-down adventures. Return ONLY JSON matching the schema below.
 Use supported event-driven sequential quests: talk to NPC, collect item, deliver inventory to NPC,
 explore landmark, defeat enemy, activate switch, unlock door. All targets are actor IDs.
 Areas progress in order via an exit portal. Put all earlier-area quests before later-area quests.
@@ -119,6 +136,7 @@ tiny_rpg_forest (forest exploration/combat only, no NPCs, doors or interiors), o
 for the older compatibility theme. Never add gameplay to match an asset. Select actors and environments
 from the user requirements; registered resources are resolved after design validation.
 Schema: '''+json.dumps(AdventureDesign.model_json_schema())
+    if intent: system += "\nPreserve this semantic interpretation: "+json.dumps(intent)
     result=provider.complete(system,prompt)
     text=re.sub(r'^```(?:json)?\s*|\s*```$','',result.text.strip())
     raw=json.loads(text)
@@ -135,8 +153,17 @@ def enforce_requirements(design, prompt):
     changes=[]
     words={'multiplayer':r'multiplayer|co-op|online','crafting':r'craft','equipment':r'equipment|equip|armor|stats',
            '3d':r'\b3d\b','boss':r'\bboss\b','time of day':r'day.?night|time of day','inventory management':r'complex inventory|inventory management'}
+    registered = {
+        'slippery terrain physics modifier': any(r.slippery for area in design.areas for r in area.regions),
+        'slippery terrain': any(r.slippery for area in design.areas for r in area.regions),
+        'seamless biome transition without loading screens': len(design.areas)==1 and len(design.areas[0].regions)>1,
+        'same level biome regions': len(design.areas)==1 and len(design.areas[0].regions)>1,
+    }
     retained=[]
     for limitation in design.unsupported:
+        if registered.get(limitation.lower().strip().removeprefix('unsupported: ').removeprefix('unsupported request: ')):
+            changes.append({'field':'unsupported','before':limitation,'reason':'Typed biome regions instantiate this registered capability; runtime verification follows'})
+            continue
         matches=[pattern for name,pattern in words.items() if name in limitation.lower()]
         if any(re.search(pattern,prompt,re.I) for pattern in matches) or limitation.lower() in prompt.lower() or (not matches and not re.search(r'cozy|non-combat|peaceful',limitation,re.I)):retained.append(limitation)
         else:changes.append({'field':'unsupported','before':limitation,'reason':'No matching requested unavailable capability; raw model output preserved'})

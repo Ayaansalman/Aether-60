@@ -1,0 +1,6508 @@
+{
+  "job": {
+    "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+    "prompt": "Create a top-down fantasy adventure in one connected world where a lush enchanted forest surrounds a frozen lake and icy ruins. I should be able to walk naturally from the green forest into the snowy region without changing levels. The frozen lake has slippery terrain. A forest villager asks me to retrieve a magical crystal from the icy ruins. Keep the game focused on exploration with no combat.",
+    "status": "READY_WITH_WARNINGS",
+    "stage": "READY_WITH_WARNINGS",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "gemini-3.5-flash-lite",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T13:10:45.153920+00:00",
+    "updated_at": "2026-10-21T13:11:37.997451+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "semantic_intent.json",
+      "game_intent.json",
+      "model_design.json",
+      "provider.json",
+      "design_normalization.json",
+      "interpretation_guard.json",
+      "game_design.json",
+      "final_design.json",
+      "world_plan.json",
+      "validation.json",
+      "repair_report.json",
+      "asset_selection.json",
+      "asset_export_manifest.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "qa_report.json",
+      "diagnosis.json",
+      "requirement_report.json",
+      "semantic_requirement_report.json",
+      "outcome.json"
+    ],
+    "limitations": [
+      "slippery terrain physics modifier",
+      "seamless biome transition without loading screens"
+    ],
+    "qa_summary": {
+      "passed": 18,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5173/studio/play/58608104-b3da-4ff8-b412-99b842e9bc63"
+  },
+  "events": [
+    {
+      "id": 1733,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:10:45.175831+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1734,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:10:45.225425+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.03s; language model",
+      "diff": null
+    },
+    {
+      "id": 1735,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:10:48.090946+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning top-down adventure with configured provider",
+      "attempt": 1,
+      "rationale": "Elapsed 2.91s; language model",
+      "diff": null
+    },
+    {
+      "id": 1736,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:11:19.297424+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Composing seeded connected areas, NPCs, inventory and event-driven quests",
+      "attempt": 1,
+      "rationale": "Elapsed 34.11s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1737,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:11:19.341493+00:00",
+      "stage": "SELECTING_ASSETS",
+      "result": "SUCCESS",
+      "detail": "Selecting one coherent registered visual family and semantic actor/quest resources",
+      "attempt": 1,
+      "rationale": "Elapsed 34.16s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1738,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:11:19.423008+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking destination connectivity, dialogue references and quest prerequisites",
+      "attempt": 1,
+      "rationale": "Elapsed 34.23s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1739,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:11:19.754506+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Adventure Phaser adapter and licensed tilemaps ready",
+      "attempt": 1,
+      "rationale": "Elapsed 34.56s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1740,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:11:19.815568+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium adventure interaction checks",
+      "attempt": 1,
+      "rationale": "Elapsed 34.62s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1741,
+      "game_id": "58608104-b3da-4ff8-b412-99b842e9bc63",
+      "ts": "2026-10-21T13:11:37.980452+00:00",
+      "stage": "READY_WITH_WARNINGS",
+      "result": "SUCCESS",
+      "detail": "Adventure browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 52.80s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "adventure",
+      "loop": "Explore the connected lush forest and icy ruins, speak to the forest villager, and retrieve the magical crystal from the ruins without combat.",
+      "control": "top_down",
+      "requirements": [
+        {
+          "source": "top-down fantasy adventure",
+          "meaning": "Top-down 2D exploration perspective in a fantasy setting",
+          "capability": "top_down_movement",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "Player moves freely in 2D top-down directions."
+        },
+        {
+          "source": "in one connected world where a lush enchanted forest surrounds a frozen lake and icy ruins",
+          "meaning": "All regions exist together in a single open area",
+          "capability": "single_level",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "Verify all regions are visible in the same scene view."
+        },
+        {
+          "source": "walk naturally from the green forest into the snowy region without changing levels",
+          "meaning": "Seamless transition between biome regions without loading screens or separate levels",
+          "capability": "biome_regions",
+          "status": "planned",
+          "depends_on": [
+            "single_level"
+          ],
+          "verification": "Player walks continuously from green tiles to snow tiles without scene reloads."
+        },
+        {
+          "source": "The frozen lake has slippery terrain",
+          "meaning": "Physics modifier affecting movement momentum on the frozen lake surface",
+          "capability": "slippery_region",
+          "status": "planned",
+          "depends_on": [
+            "top_down_movement"
+          ],
+          "verification": "Player sliding momentum increases when walking on the frozen lake region."
+        },
+        {
+          "source": "A forest villager asks me to retrieve a magical crystal from the icy ruins",
+          "meaning": "Quest delivery loop involving dialogue and item retrieval",
+          "capability": "quest_delivery",
+          "status": "planned",
+          "depends_on": [
+            "top_down_movement"
+          ],
+          "verification": "Interacting with the villager initiates a quest, and collecting the crystal completes the objective."
+        },
+        {
+          "source": "focused on exploration with no combat",
+          "meaning": "Exclusion of enemies, fighting systems, and health bars",
+          "capability": "no_combat",
+          "status": "planned",
+          "depends_on": [
+            "top_down_movement"
+          ],
+          "verification": "Ensure no enemies exist and player cannot attack."
+        }
+      ],
+      "provenance": {
+        "provider": "OpenAICompatProvider",
+        "model": "gemini-3.5-flash-lite",
+        "live": true
+      }
+    },
+    "game_intent.json": {
+      "original_prompt": "Create a top-down fantasy adventure in one connected world where a lush enchanted forest surrounds a frozen lake and icy ruins. I should be able to walk naturally from the green forest into the snowy region without changing levels. The frozen lake has slippery terrain. A forest villager asks me to retrieve a magical crystal from the icy ruins. Keep the game focused on exploration with no combat.",
+      "genre": "adventure",
+      "setting": "fantasy",
+      "gameplay": {
+        "combat": false,
+        "quests": [
+          {
+            "kind": "talk",
+            "target": "villager",
+            "count": 1,
+            "text": "Speak with Elder Rowan in the forest.",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "collect",
+            "target": "magical_crystal",
+            "count": 1,
+            "text": "Retrieve the magical crystal from the icy ruins.",
+            "item": "crystal",
+            "delivery_items": {}
+          },
+          {
+            "kind": "deliver",
+            "target": "villager",
+            "count": 1,
+            "text": "Return the magical crystal to Elder Rowan.",
+            "item": "crystal",
+            "delivery_items": {}
+          }
+        ]
+      },
+      "areas": [
+        {
+          "regions": [
+            {
+              "id": "outer_forest",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "inner_lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 15,
+              "y": 10,
+              "width": 16,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "deep_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 32,
+              "y": 6,
+              "width": 14,
+              "height": 18,
+              "slippery": false
+            }
+          ],
+          "name": "Enchanted Woodlands and Icy Ruins",
+          "environment": "forest"
+        }
+      ],
+      "unsupported": [
+        "slippery terrain physics modifier",
+        "seamless biome transition without loading screens"
+      ],
+      "interpretation_source": {
+        "provider": "OpenAICompatProvider",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "latency_ms": 30950,
+        "normalizations": []
+      }
+    },
+    "model_design.json": {
+      "genre": "adventure",
+      "title": "The Crystal of the Frozen Reaches",
+      "premise": "Explore the connected lush forest and icy ruins, speak to the forest villager, and retrieve the magical crystal from the ruins without combat.",
+      "theme": "fantasy",
+      "art_style": "auto",
+      "combat": false,
+      "areas": [
+        {
+          "name": "Enchanted Woodlands and Icy Ruins",
+          "environment": "forest",
+          "regions": [
+            {
+              "id": "outer_forest",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "inner_lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 15,
+              "y": 10,
+              "width": 16,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "deep_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 32,
+              "y": 6,
+              "width": 14,
+              "height": 18,
+              "slippery": false
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "villager",
+          "kind": "npc",
+          "name": "Elder Rowan",
+          "role": "Forest Guardian",
+          "region": "outer_forest",
+          "dialogue": {
+            "greeting": [
+              "Welcome to our woods, traveler.",
+              "Could you help me with a delicate task?"
+            ],
+            "active": [
+              "Please find the magical crystal hidden within the icy ruins.",
+              "Cross the frozen lake carefully\u2014it is quite slippery!"
+            ],
+            "completed": [
+              "You found the magical crystal! Our sanctuary is safe.",
+              "Thank you for your wondrous journey."
+            ]
+          }
+        },
+        {
+          "id": "magical_crystal",
+          "kind": "item",
+          "name": "Magical Crystal",
+          "item": "crystal",
+          "quantity": 1,
+          "region": "deep_ruins"
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "villager",
+          "text": "Speak with Elder Rowan in the forest."
+        },
+        {
+          "kind": "collect",
+          "target": "magical_crystal",
+          "count": 1,
+          "item": "crystal",
+          "text": "Retrieve the magical crystal from the icy ruins."
+        },
+        {
+          "kind": "deliver",
+          "target": "villager",
+          "count": 1,
+          "item": "crystal",
+          "text": "Return the magical crystal to Elder Rowan."
+        }
+      ],
+      "unsupported": [
+        "slippery terrain physics modifier",
+        "seamless biome transition without loading screens"
+      ]
+    },
+    "provider.json": {
+      "provider": "OpenAICompatProvider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "latency_ms": 30950,
+      "normalizations": []
+    },
+    "design_normalization.json": {
+      "changes": []
+    },
+    "interpretation_guard.json": {
+      "changes": [],
+      "scope": "Bounded explicit feature/resource guards, not general semantic fidelity certification"
+    },
+    "game_design.json": {
+      "genre": "adventure",
+      "title": "The Crystal of the Frozen Reaches",
+      "premise": "Explore the connected lush forest and icy ruins, speak to the forest villager, and retrieve the magical crystal from the ruins without combat.",
+      "theme": "fantasy",
+      "art_style": "auto",
+      "areas": [
+        {
+          "regions": [
+            {
+              "id": "outer_forest",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "inner_lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 15,
+              "y": 10,
+              "width": 16,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "deep_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 32,
+              "y": 6,
+              "width": 14,
+              "height": 18,
+              "slippery": false
+            }
+          ],
+          "name": "Enchanted Woodlands and Icy Ruins",
+          "environment": "forest"
+        }
+      ],
+      "actors": [
+        {
+          "region": "outer_forest",
+          "id": "villager",
+          "kind": "npc",
+          "name": "Elder Rowan",
+          "area": 0,
+          "role": "Forest Guardian",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome to our woods, traveler.",
+              "Could you help me with a delicate task?"
+            ],
+            "active": [
+              "Please find the magical crystal hidden within the icy ruins.",
+              "Cross the frozen lake carefully\u2014it is quite slippery!"
+            ],
+            "completed": [
+              "You found the magical crystal! Our sanctuary is safe.",
+              "Thank you for your wondrous journey."
+            ]
+          }
+        },
+        {
+          "region": "deep_ruins",
+          "id": "magical_crystal",
+          "kind": "item",
+          "name": "Magical Crystal",
+          "area": 0,
+          "role": "",
+          "item": "crystal",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "villager",
+          "count": 1,
+          "text": "Speak with Elder Rowan in the forest.",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "magical_crystal",
+          "count": 1,
+          "text": "Retrieve the magical crystal from the icy ruins.",
+          "item": "crystal",
+          "delivery_items": {}
+        },
+        {
+          "kind": "deliver",
+          "target": "villager",
+          "count": 1,
+          "text": "Return the magical crystal to Elder Rowan.",
+          "item": "crystal",
+          "delivery_items": {}
+        }
+      ],
+      "combat": false,
+      "unsupported": [
+        "slippery terrain physics modifier",
+        "seamless biome transition without loading screens"
+      ]
+    },
+    "final_design.json": {
+      "genre": "adventure",
+      "title": "The Crystal of the Frozen Reaches",
+      "premise": "Explore the connected lush forest and icy ruins, speak to the forest villager, and retrieve the magical crystal from the ruins without combat.",
+      "theme": "fantasy",
+      "art_style": "auto",
+      "areas": [
+        {
+          "regions": [
+            {
+              "id": "outer_forest",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "inner_lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 15,
+              "y": 10,
+              "width": 16,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "deep_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 32,
+              "y": 6,
+              "width": 14,
+              "height": 18,
+              "slippery": false
+            }
+          ],
+          "name": "Enchanted Woodlands and Icy Ruins",
+          "environment": "forest"
+        }
+      ],
+      "actors": [
+        {
+          "region": "outer_forest",
+          "id": "villager",
+          "kind": "npc",
+          "name": "Elder Rowan",
+          "area": 0,
+          "role": "Forest Guardian",
+          "item": "",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome to our woods, traveler.",
+              "Could you help me with a delicate task?"
+            ],
+            "active": [
+              "Please find the magical crystal hidden within the icy ruins.",
+              "Cross the frozen lake carefully\u2014it is quite slippery!"
+            ],
+            "completed": [
+              "You found the magical crystal! Our sanctuary is safe.",
+              "Thank you for your wondrous journey."
+            ]
+          }
+        },
+        {
+          "region": "deep_ruins",
+          "id": "magical_crystal",
+          "kind": "item",
+          "name": "Magical Crystal",
+          "area": 0,
+          "role": "",
+          "item": "crystal",
+          "quantity": 1,
+          "requires": [],
+          "behavior": "chase",
+          "dialogue": {
+            "greeting": [
+              "Welcome, traveler."
+            ],
+            "active": [
+              "Your journey is still ahead."
+            ],
+            "completed": [
+              "Thank you for your help!"
+            ]
+          }
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "villager",
+          "count": 1,
+          "text": "Speak with Elder Rowan in the forest.",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "magical_crystal",
+          "count": 1,
+          "text": "Retrieve the magical crystal from the icy ruins.",
+          "item": "crystal",
+          "delivery_items": {}
+        },
+        {
+          "kind": "deliver",
+          "target": "villager",
+          "count": 1,
+          "text": "Return the magical crystal to Elder Rowan.",
+          "item": "crystal",
+          "delivery_items": {}
+        }
+      ],
+      "combat": false,
+      "unsupported": [
+        "slippery terrain physics modifier",
+        "seamless biome transition without loading screens"
+      ]
+    },
+    "world_plan.json": {
+      "seed": 7,
+      "areas": [
+        {
+          "name": "Enchanted Woodlands and Icy Ruins",
+          "method": "settlement and woodland zones",
+          "zones": [
+            {
+              "name": "Trailhead",
+              "x": 13,
+              "y": 17
+            },
+            {
+              "name": "Herbalist clearing",
+              "x": 36,
+              "y": 9
+            },
+            {
+              "name": "Deepwood grove",
+              "x": 38,
+              "y": 24
+            },
+            {
+              "name": "Frozen Lake",
+              "x": 23,
+              "y": 12
+            },
+            {
+              "name": "Icy Ruins",
+              "x": 39,
+              "y": 8
+            }
+          ],
+          "buildings": 0,
+          "trees": 59,
+          "relationships": [
+            {
+              "actor": "villager",
+              "role": "npc",
+              "location": {
+                "x": 24,
+                "y": 23
+              },
+              "requires": []
+            },
+            {
+              "actor": "magical_crystal",
+              "role": "item",
+              "location": {
+                "x": 39,
+                "y": 15
+              },
+              "requires": []
+            }
+          ]
+        }
+      ]
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "Enchanted Woodlands and Icy Ruins",
+          "passed": true,
+          "reachable_tiles": 1321,
+          "destinations": 4
+        },
+        {
+          "id": "Speak with Elder Rowan in the forest.",
+          "passed": true
+        },
+        {
+          "id": "Retrieve the magical crystal from the icy ruins.",
+          "passed": true
+        },
+        {
+          "id": "Return the magical crystal to Elder Rowan.",
+          "passed": true
+        }
+      ],
+      "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 0,
+      "scope": "Connected paths are constructed directly. Invalid resource/quest designs fail validation; no speculative runtime repair."
+    },
+    "asset_selection.json": {
+      "pack_id": "ninja_adventure",
+      "style_family": "ninja_adventure",
+      "catalog_version": "1.1",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "license": "CC0-1.0",
+      "license_files": [
+        "/assets/adventure/library/ninja_adventure/LICENSE.txt"
+      ],
+      "selection_reason": "Selected registered style from prompt/design; default primary family is Ninja Adventure.",
+      "player": "ninja_ninjablue",
+      "actors": {
+        "villager": "ninja_oldwoman",
+        "magical_crystal": "ninja_gem"
+      },
+      "assets": {
+        "ninja_gem": {
+          "id": "ninja_gem",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/GemGreen.png"
+        },
+        "ninja_herb": {
+          "id": "ninja_herb",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/Grass.png"
+        },
+        "ninja_key": {
+          "id": "ninja_key",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+          "width": 12,
+          "height": 8,
+          "frame_width": 12,
+          "frame_height": 8,
+          "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Treasure/GoldKey.png"
+        },
+        "ninja_ninjablue": {
+          "id": "ninja_ninjablue",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "character",
+          "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjablue.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "f2dd61a264c251b81e63da7a28ab0fdccd261b807e5fa7d1832a468e14a21078",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/NinjaBlue/SpriteSheet.png"
+        },
+        "ninja_oldwoman": {
+          "id": "ninja_oldwoman",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "npc",
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_oldwoman.png",
+          "width": 64,
+          "height": 32,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "94181e3bd33ad204370b591a0224041db556fb7093ca27ec23e0b8169658d5ac",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/OldWoman/SpriteSheet.png"
+        },
+        "ninja_terrain": {
+          "id": "ninja_terrain",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "environment",
+          "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+          "width": 128,
+          "height": 96,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "c881ef263704424aebf8410f0f59deccaf6eeb1c40e756f7e4bc462068cac792",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetField.png"
+        },
+        "ninja_tree": {
+          "id": "ninja_tree",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "decoration",
+          "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+          "width": 32,
+          "height": 32,
+          "frame_width": 32,
+          "frame_height": 32,
+          "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+        }
+      },
+      "roles": {
+        "exit": {
+          "asset": "ninja_terrain",
+          "frame": 38,
+          "open_frame": null
+        },
+        "herb": {
+          "asset": "ninja_herb",
+          "frame": 0,
+          "open_frame": null
+        },
+        "key": {
+          "asset": "ninja_key",
+          "frame": 0,
+          "open_frame": null
+        },
+        "item": {
+          "asset": "ninja_gem",
+          "frame": 0,
+          "open_frame": null
+        },
+        "tree": {
+          "asset": "ninja_tree",
+          "frame": 0,
+          "open_frame": null
+        }
+      },
+      "terrain": {
+        "texture": "ninja_terrain",
+        "ground": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "path": 2,
+        "edges": {
+          "ul": 3,
+          "u": 4,
+          "ur": 5,
+          "l": 6,
+          "r": 7,
+          "dl": 8,
+          "d": 9,
+          "dr": 10
+        },
+        "solid": 11,
+        "decoration": 12,
+        "indoor_ground": 13,
+        "wall": 14,
+        "debris": 15,
+        "indoor_details": [
+          40,
+          41,
+          42,
+          43
+        ],
+        "buildings": [
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ]
+        ]
+      }
+    },
+    "asset_export_manifest.json": {
+      "pack_id": "ninja_adventure",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "redistribution": "CC0 allowlist; excludes raw downloads, demo source and unreviewed resources",
+      "files": [
+        {
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+          "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+          "license": "CC0-1.0",
+          "source_path": "Items/Resource/GemGreen.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+          "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+          "license": "CC0-1.0",
+          "source_path": "Items/Resource/Grass.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+          "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+          "license": "CC0-1.0",
+          "source_path": "Items/Treasure/GoldKey.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjablue.png",
+          "sha256": "f2dd61a264c251b81e63da7a28ab0fdccd261b807e5fa7d1832a468e14a21078",
+          "license": "CC0-1.0",
+          "source_path": "Actor/Character/NinjaBlue/SpriteSheet.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_oldwoman.png",
+          "sha256": "94181e3bd33ad204370b591a0224041db556fb7093ca27ec23e0b8169658d5ac",
+          "license": "CC0-1.0",
+          "source_path": "Actor/Character/OldWoman/SpriteSheet.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+          "sha256": "c881ef263704424aebf8410f0f59deccaf6eeb1c40e756f7e4bc462068cac792",
+          "license": "CC0-1.0",
+          "source_path": "Backgrounds/Tilesets/TilesetField.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+          "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+          "license": "CC0-1.0",
+          "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+        },
+        {
+          "url": "/assets/adventure/library/ninja_adventure/LICENSE.txt",
+          "license": "CC0-1.0",
+          "sha256": "9bc2cd77030dd73fd2497c5729556a11524fa04099d8351bc527fd4d4c31b916"
+        }
+      ]
+    },
+    "asset_manifest.json": {
+      "pack_id": "ninja_adventure",
+      "style_family": "ninja_adventure",
+      "catalog_version": "1.1",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "license": "CC0-1.0",
+      "license_files": [
+        "/assets/adventure/library/ninja_adventure/LICENSE.txt"
+      ],
+      "selection_reason": "Selected registered style from prompt/design; default primary family is Ninja Adventure.",
+      "player": "ninja_ninjablue",
+      "actors": {
+        "villager": "ninja_oldwoman",
+        "magical_crystal": "ninja_gem"
+      },
+      "assets": {
+        "ninja_gem": {
+          "id": "ninja_gem",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/GemGreen.png"
+        },
+        "ninja_herb": {
+          "id": "ninja_herb",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+          "width": 16,
+          "height": 16,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Resource/Grass.png"
+        },
+        "ninja_key": {
+          "id": "ninja_key",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "collectible",
+          "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+          "width": 12,
+          "height": 8,
+          "frame_width": 12,
+          "frame_height": 8,
+          "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Items/Treasure/GoldKey.png"
+        },
+        "ninja_ninjablue": {
+          "id": "ninja_ninjablue",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "character",
+          "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjablue.png",
+          "width": 64,
+          "height": 112,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "f2dd61a264c251b81e63da7a28ab0fdccd261b807e5fa7d1832a468e14a21078",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4,
+                8,
+                12
+              ],
+              "attack": [
+                16
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5,
+                9,
+                13
+              ],
+              "attack": [
+                17
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6,
+                10,
+                14
+              ],
+              "attack": [
+                18
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7,
+                11,
+                15
+              ],
+              "attack": [
+                19
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/NinjaBlue/SpriteSheet.png"
+        },
+        "ninja_oldwoman": {
+          "id": "ninja_oldwoman",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "npc",
+          "url": "/assets/adventure/library/ninja_adventure/npc/ninja_oldwoman.png",
+          "width": 64,
+          "height": 32,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "94181e3bd33ad204370b591a0224041db556fb7093ca27ec23e0b8169658d5ac",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {
+            "down": {
+              "idle": [
+                0
+              ],
+              "walk": [
+                4
+              ]
+            },
+            "up": {
+              "idle": [
+                1
+              ],
+              "walk": [
+                5
+              ]
+            },
+            "left": {
+              "idle": [
+                2
+              ],
+              "walk": [
+                6
+              ]
+            },
+            "right": {
+              "idle": [
+                3
+              ],
+              "walk": [
+                7
+              ]
+            }
+          },
+          "body": {
+            "width": 9,
+            "height": 9,
+            "offset_x": 3,
+            "offset_y": 6
+          },
+          "source_path": "Actor/Character/OldWoman/SpriteSheet.png"
+        },
+        "ninja_terrain": {
+          "id": "ninja_terrain",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "environment",
+          "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+          "width": 128,
+          "height": 96,
+          "frame_width": 16,
+          "frame_height": 16,
+          "sha256": "c881ef263704424aebf8410f0f59deccaf6eeb1c40e756f7e4bc462068cac792",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetField.png"
+        },
+        "ninja_tree": {
+          "id": "ninja_tree",
+          "pack_id": "ninja_adventure",
+          "style_family": "ninja_adventure",
+          "category": "decoration",
+          "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+          "width": 32,
+          "height": 32,
+          "frame_width": 32,
+          "frame_height": 32,
+          "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+          "license": "CC0-1.0",
+          "redistributable": true,
+          "scale": 2.0,
+          "animations": {},
+          "body": null,
+          "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+        }
+      },
+      "roles": {
+        "exit": {
+          "asset": "ninja_terrain",
+          "frame": 38,
+          "open_frame": null
+        },
+        "herb": {
+          "asset": "ninja_herb",
+          "frame": 0,
+          "open_frame": null
+        },
+        "key": {
+          "asset": "ninja_key",
+          "frame": 0,
+          "open_frame": null
+        },
+        "item": {
+          "asset": "ninja_gem",
+          "frame": 0,
+          "open_frame": null
+        },
+        "tree": {
+          "asset": "ninja_tree",
+          "frame": 0,
+          "open_frame": null
+        }
+      },
+      "terrain": {
+        "texture": "ninja_terrain",
+        "ground": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "path": 2,
+        "edges": {
+          "ul": 3,
+          "u": 4,
+          "ur": 5,
+          "l": 6,
+          "r": 7,
+          "dl": 8,
+          "d": 9,
+          "dr": 10
+        },
+        "solid": 11,
+        "decoration": 12,
+        "indoor_ground": 13,
+        "wall": 14,
+        "debris": 15,
+        "indoor_details": [
+          40,
+          41,
+          42,
+          43
+        ],
+        "buildings": [
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ]
+        ]
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "tiny-town",
+          "passed": true,
+          "dimensions": [
+            192,
+            176
+          ]
+        },
+        {
+          "id": "tiny-dungeon",
+          "passed": true,
+          "dimensions": [
+            192,
+            176
+          ]
+        },
+        {
+          "id": "ninja_adventure_license",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_license_file",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_terrain_roles",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_door",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_switch",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_exit",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_landmark",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_herb",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_key",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_item",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_treasure",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_projectile",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_vfx",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_health",
+          "passed": true
+        },
+        {
+          "id": "ninja_adventure_tree",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_license",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_license_file",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_terrain_roles",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_item",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_herb",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_landmark",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_exit",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_projectile",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_vfx",
+          "passed": true
+        },
+        {
+          "id": "tiny_rpg_forest_tree",
+          "passed": true
+        },
+        {
+          "id": "ninja_terrain",
+          "passed": true,
+          "dimensions": [
+            128,
+            96
+          ],
+          "frames": 48
+        },
+        {
+          "id": "ninja_ninjablue",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_ninjagreen",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_knight",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_hunter",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_woman",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_oldwoman",
+          "passed": true,
+          "dimensions": [
+            64,
+            32
+          ],
+          "frames": 8
+        },
+        {
+          "id": "ninja_oldman",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_master",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_monk",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_monk2",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_princess",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_boy",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_noble",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_samurai",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_sorcererorange",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_ninjamageblack",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_caveman",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_cavegirl",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_eskimo",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_ninjared",
+          "passed": true,
+          "dimensions": [
+            64,
+            112
+          ],
+          "frames": 28
+        },
+        {
+          "id": "ninja_slime",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_slime2",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_skull",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_skullblue",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_mushroom",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_mole",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_bluebat",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_snake",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_beast",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_spirit",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_bamboo",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_cyclope",
+          "passed": true,
+          "dimensions": [
+            64,
+            64
+          ],
+          "frames": 16
+        },
+        {
+          "id": "ninja_herb",
+          "passed": true,
+          "dimensions": [
+            16,
+            16
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_key",
+          "passed": true,
+          "dimensions": [
+            12,
+            8
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_gem",
+          "passed": true,
+          "dimensions": [
+            16,
+            16
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_chest",
+          "passed": true,
+          "dimensions": [
+            32,
+            16
+          ],
+          "frames": 2
+        },
+        {
+          "id": "ninja_projectile",
+          "passed": true,
+          "dimensions": [
+            16,
+            16
+          ],
+          "frames": 1
+        },
+        {
+          "id": "ninja_smoke",
+          "passed": true,
+          "dimensions": [
+            192,
+            32
+          ],
+          "frames": 6
+        },
+        {
+          "id": "ninja_hearts",
+          "passed": true,
+          "dimensions": [
+            80,
+            16
+          ],
+          "frames": 5
+        },
+        {
+          "id": "ninja_tree",
+          "passed": true,
+          "dimensions": [
+            32,
+            32
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_hero",
+          "passed": true,
+          "dimensions": [
+            192,
+            160
+          ],
+          "frames": 30
+        },
+        {
+          "id": "tiny_mole",
+          "passed": true,
+          "dimensions": [
+            144,
+            120
+          ],
+          "frames": 30
+        },
+        {
+          "id": "tiny_treant",
+          "passed": true,
+          "dimensions": [
+            186,
+            175
+          ],
+          "frames": 30
+        },
+        {
+          "id": "tiny_terrain",
+          "passed": true,
+          "dimensions": [
+            128,
+            80
+          ],
+          "frames": 40
+        },
+        {
+          "id": "tiny_gem",
+          "passed": true,
+          "dimensions": [
+            28,
+            7
+          ],
+          "frames": 4
+        },
+        {
+          "id": "tiny_coin",
+          "passed": true,
+          "dimensions": [
+            20,
+            7
+          ],
+          "frames": 4
+        },
+        {
+          "id": "tiny_projectile",
+          "passed": true,
+          "dimensions": [
+            5,
+            19
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_smoke",
+          "passed": true,
+          "dimensions": [
+            180,
+            32
+          ],
+          "frames": 6
+        },
+        {
+          "id": "tiny_monument",
+          "passed": true,
+          "dimensions": [
+            101,
+            90
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_tree",
+          "passed": true,
+          "dimensions": [
+            67,
+            80
+          ],
+          "frames": 1
+        },
+        {
+          "id": "tiny_bush",
+          "passed": true,
+          "dimensions": [
+            29,
+            24
+          ],
+          "frames": 1
+        }
+      ]
+    },
+    "game_ir_v2.json": {
+      "schema_version": "2.1",
+      "genre": "adventure",
+      "title": "The Crystal of the Frozen Reaches",
+      "premise": "Explore the connected lush forest and icy ruins, speak to the forest villager, and retrieve the magical crystal from the ruins without combat.",
+      "theme": "fantasy",
+      "seed": 7,
+      "tile_size": 32,
+      "combat": false,
+      "art": {
+        "pack_id": "ninja_adventure",
+        "style_family": "ninja_adventure",
+        "catalog_version": "1.1",
+        "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+        "license": "CC0-1.0",
+        "license_files": [
+          "/assets/adventure/library/ninja_adventure/LICENSE.txt"
+        ],
+        "selection_reason": "Selected registered style from prompt/design; default primary family is Ninja Adventure.",
+        "player": "ninja_ninjablue",
+        "actors": {
+          "villager": "ninja_oldwoman",
+          "magical_crystal": "ninja_gem"
+        },
+        "assets": {
+          "ninja_gem": {
+            "id": "ninja_gem",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "collectible",
+            "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_gem.png",
+            "width": 16,
+            "height": 16,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "5a2d46af4249646dedf54b6c864029af17c283a0fabdc2efa2348a90fd20f3b8",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Items/Resource/GemGreen.png"
+          },
+          "ninja_herb": {
+            "id": "ninja_herb",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "collectible",
+            "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_herb.png",
+            "width": 16,
+            "height": 16,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "1f507bb591e0b2fb4eea40ca7a39c99929ab446e15ab9373dd4e8d89418b9a75",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Items/Resource/Grass.png"
+          },
+          "ninja_key": {
+            "id": "ninja_key",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "collectible",
+            "url": "/assets/adventure/library/ninja_adventure/collectible/ninja_key.png",
+            "width": 12,
+            "height": 8,
+            "frame_width": 12,
+            "frame_height": 8,
+            "sha256": "4f2d60167a4c2584a9e47b7fd505475de89eb4a592e10b21beebfd71e4864aa7",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Items/Treasure/GoldKey.png"
+          },
+          "ninja_ninjablue": {
+            "id": "ninja_ninjablue",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "character",
+            "url": "/assets/adventure/library/ninja_adventure/character/ninja_ninjablue.png",
+            "width": 64,
+            "height": 112,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "f2dd61a264c251b81e63da7a28ab0fdccd261b807e5fa7d1832a468e14a21078",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {
+              "down": {
+                "idle": [
+                  0
+                ],
+                "walk": [
+                  4,
+                  8,
+                  12
+                ],
+                "attack": [
+                  16
+                ]
+              },
+              "up": {
+                "idle": [
+                  1
+                ],
+                "walk": [
+                  5,
+                  9,
+                  13
+                ],
+                "attack": [
+                  17
+                ]
+              },
+              "left": {
+                "idle": [
+                  2
+                ],
+                "walk": [
+                  6,
+                  10,
+                  14
+                ],
+                "attack": [
+                  18
+                ]
+              },
+              "right": {
+                "idle": [
+                  3
+                ],
+                "walk": [
+                  7,
+                  11,
+                  15
+                ],
+                "attack": [
+                  19
+                ]
+              }
+            },
+            "body": {
+              "width": 9,
+              "height": 9,
+              "offset_x": 3,
+              "offset_y": 6
+            },
+            "source_path": "Actor/Character/NinjaBlue/SpriteSheet.png"
+          },
+          "ninja_oldwoman": {
+            "id": "ninja_oldwoman",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "npc",
+            "url": "/assets/adventure/library/ninja_adventure/npc/ninja_oldwoman.png",
+            "width": 64,
+            "height": 32,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "94181e3bd33ad204370b591a0224041db556fb7093ca27ec23e0b8169658d5ac",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {
+              "down": {
+                "idle": [
+                  0
+                ],
+                "walk": [
+                  4
+                ]
+              },
+              "up": {
+                "idle": [
+                  1
+                ],
+                "walk": [
+                  5
+                ]
+              },
+              "left": {
+                "idle": [
+                  2
+                ],
+                "walk": [
+                  6
+                ]
+              },
+              "right": {
+                "idle": [
+                  3
+                ],
+                "walk": [
+                  7
+                ]
+              }
+            },
+            "body": {
+              "width": 9,
+              "height": 9,
+              "offset_x": 3,
+              "offset_y": 6
+            },
+            "source_path": "Actor/Character/OldWoman/SpriteSheet.png"
+          },
+          "ninja_terrain": {
+            "id": "ninja_terrain",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "environment",
+            "url": "/assets/adventure/library/ninja_adventure/environment/ninja_terrain.png",
+            "width": 128,
+            "height": 96,
+            "frame_width": 16,
+            "frame_height": 16,
+            "sha256": "c881ef263704424aebf8410f0f59deccaf6eeb1c40e756f7e4bc462068cac792",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Backgrounds/Tilesets/TilesetField.png"
+          },
+          "ninja_tree": {
+            "id": "ninja_tree",
+            "pack_id": "ninja_adventure",
+            "style_family": "ninja_adventure",
+            "category": "decoration",
+            "url": "/assets/adventure/library/ninja_adventure/decoration/ninja_tree.png",
+            "width": 32,
+            "height": 32,
+            "frame_width": 32,
+            "frame_height": 32,
+            "sha256": "30ecd75f34af4dbf9c68ffbe07e2601eb8863810718eee58c8b099d9f7adc5e0",
+            "license": "CC0-1.0",
+            "redistributable": true,
+            "scale": 2.0,
+            "animations": {},
+            "body": null,
+            "source_path": "Backgrounds/Tilesets/TilesetNature.png"
+          }
+        },
+        "roles": {
+          "exit": {
+            "asset": "ninja_terrain",
+            "frame": 38,
+            "open_frame": null
+          },
+          "herb": {
+            "asset": "ninja_herb",
+            "frame": 0,
+            "open_frame": null
+          },
+          "key": {
+            "asset": "ninja_key",
+            "frame": 0,
+            "open_frame": null
+          },
+          "item": {
+            "asset": "ninja_gem",
+            "frame": 0,
+            "open_frame": null
+          },
+          "tree": {
+            "asset": "ninja_tree",
+            "frame": 0,
+            "open_frame": null
+          }
+        },
+        "terrain": {
+          "texture": "ninja_terrain",
+          "ground": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "path": 2,
+          "edges": {
+            "ul": 3,
+            "u": 4,
+            "ur": 5,
+            "l": 6,
+            "r": 7,
+            "dl": 8,
+            "d": 9,
+            "dr": 10
+          },
+          "solid": 11,
+          "decoration": 12,
+          "indoor_ground": 13,
+          "wall": 14,
+          "debris": 15,
+          "indoor_details": [
+            40,
+            41,
+            42,
+            43
+          ],
+          "buildings": [
+            [
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            [
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ]
+          ]
+        }
+      },
+      "areas": [
+        {
+          "regions": [
+            {
+              "id": "outer_forest",
+              "name": "Enchanted Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 46,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "inner_lake",
+              "name": "Frozen Lake",
+              "biome": "frozen_lake",
+              "x": 15,
+              "y": 10,
+              "width": 16,
+              "height": 12,
+              "slippery": true
+            },
+            {
+              "id": "deep_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 32,
+              "y": 6,
+              "width": 14,
+              "height": 18,
+              "slippery": false
+            }
+          ],
+          "name": "Enchanted Woodlands and Icy Ruins",
+          "environment": "forest",
+          "width": 48,
+          "height": 32,
+          "tiles": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              3,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              3,
+              3,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              2,
+              2,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              1,
+              3,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              2,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "spawn": {
+            "x": 12,
+            "y": 17
+          },
+          "exit": {
+            "x": 43,
+            "y": 16
+          },
+          "actors": [
+            {
+              "region": "outer_forest",
+              "id": "villager",
+              "kind": "npc",
+              "name": "Elder Rowan",
+              "area": 0,
+              "role": "Forest Guardian",
+              "item": "",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome to our woods, traveler.",
+                  "Could you help me with a delicate task?"
+                ],
+                "active": [
+                  "Please find the magical crystal hidden within the icy ruins.",
+                  "Cross the frozen lake carefully\u2014it is quite slippery!"
+                ],
+                "completed": [
+                  "You found the magical crystal! Our sanctuary is safe.",
+                  "Thank you for your wondrous journey."
+                ]
+              },
+              "x": 24,
+              "y": 23,
+              "pickups": []
+            },
+            {
+              "region": "deep_ruins",
+              "id": "magical_crystal",
+              "kind": "item",
+              "name": "Magical Crystal",
+              "area": 0,
+              "role": "",
+              "item": "crystal",
+              "quantity": 1,
+              "requires": [],
+              "behavior": "chase",
+              "dialogue": {
+                "greeting": [
+                  "Welcome, traveler."
+                ],
+                "active": [
+                  "Your journey is still ahead."
+                ],
+                "completed": [
+                  "Thank you for your help!"
+                ]
+              },
+              "x": 39,
+              "y": 15,
+              "pickups": [
+                {
+                  "x": 39,
+                  "y": 15
+                }
+              ]
+            }
+          ],
+          "zones": [
+            {
+              "name": "Trailhead",
+              "x": 13,
+              "y": 17
+            },
+            {
+              "name": "Herbalist clearing",
+              "x": 36,
+              "y": 9
+            },
+            {
+              "name": "Deepwood grove",
+              "x": 38,
+              "y": 24
+            },
+            {
+              "name": "Frozen Lake",
+              "x": 23,
+              "y": 12
+            },
+            {
+              "name": "Icy Ruins",
+              "x": 39,
+              "y": 8
+            }
+          ],
+          "trees": [
+            {
+              "x": 2,
+              "y": 2
+            },
+            {
+              "x": 4,
+              "y": 2
+            },
+            {
+              "x": 6,
+              "y": 2
+            },
+            {
+              "x": 12,
+              "y": 2
+            },
+            {
+              "x": 14,
+              "y": 2
+            },
+            {
+              "x": 18,
+              "y": 2
+            },
+            {
+              "x": 22,
+              "y": 2
+            },
+            {
+              "x": 24,
+              "y": 2
+            },
+            {
+              "x": 26,
+              "y": 2
+            },
+            {
+              "x": 28,
+              "y": 2
+            },
+            {
+              "x": 30,
+              "y": 2
+            },
+            {
+              "x": 32,
+              "y": 2
+            },
+            {
+              "x": 34,
+              "y": 2
+            },
+            {
+              "x": 36,
+              "y": 2
+            },
+            {
+              "x": 38,
+              "y": 2
+            },
+            {
+              "x": 40,
+              "y": 2
+            },
+            {
+              "x": 42,
+              "y": 2
+            },
+            {
+              "x": 44,
+              "y": 2
+            },
+            {
+              "x": 2,
+              "y": 4
+            },
+            {
+              "x": 26,
+              "y": 4
+            },
+            {
+              "x": 28,
+              "y": 4
+            },
+            {
+              "x": 34,
+              "y": 4
+            },
+            {
+              "x": 36,
+              "y": 4
+            },
+            {
+              "x": 38,
+              "y": 4
+            },
+            {
+              "x": 40,
+              "y": 4
+            },
+            {
+              "x": 42,
+              "y": 4
+            },
+            {
+              "x": 44,
+              "y": 4
+            },
+            {
+              "x": 2,
+              "y": 6
+            },
+            {
+              "x": 26,
+              "y": 6
+            },
+            {
+              "x": 28,
+              "y": 6
+            },
+            {
+              "x": 30,
+              "y": 6
+            },
+            {
+              "x": 2,
+              "y": 8
+            },
+            {
+              "x": 28,
+              "y": 8
+            },
+            {
+              "x": 2,
+              "y": 12
+            },
+            {
+              "x": 2,
+              "y": 14
+            },
+            {
+              "x": 2,
+              "y": 22
+            },
+            {
+              "x": 28,
+              "y": 22
+            },
+            {
+              "x": 30,
+              "y": 22
+            },
+            {
+              "x": 28,
+              "y": 24
+            },
+            {
+              "x": 30,
+              "y": 24
+            },
+            {
+              "x": 32,
+              "y": 24
+            },
+            {
+              "x": 42,
+              "y": 24
+            },
+            {
+              "x": 44,
+              "y": 24
+            },
+            {
+              "x": 2,
+              "y": 26
+            },
+            {
+              "x": 26,
+              "y": 26
+            },
+            {
+              "x": 28,
+              "y": 26
+            },
+            {
+              "x": 30,
+              "y": 26
+            },
+            {
+              "x": 36,
+              "y": 26
+            },
+            {
+              "x": 42,
+              "y": 26
+            },
+            {
+              "x": 44,
+              "y": 26
+            },
+            {
+              "x": 2,
+              "y": 28
+            },
+            {
+              "x": 26,
+              "y": 28
+            },
+            {
+              "x": 30,
+              "y": 28
+            },
+            {
+              "x": 32,
+              "y": 28
+            },
+            {
+              "x": 36,
+              "y": 28
+            },
+            {
+              "x": 38,
+              "y": 28
+            },
+            {
+              "x": 40,
+              "y": 28
+            },
+            {
+              "x": 42,
+              "y": 28
+            },
+            {
+              "x": 44,
+              "y": 28
+            }
+          ],
+          "buildings": []
+        }
+      ],
+      "quests": [
+        {
+          "kind": "talk",
+          "target": "villager",
+          "count": 1,
+          "text": "Speak with Elder Rowan in the forest.",
+          "item": "",
+          "delivery_items": {}
+        },
+        {
+          "kind": "collect",
+          "target": "magical_crystal",
+          "count": 1,
+          "text": "Retrieve the magical crystal from the icy ruins.",
+          "item": "crystal",
+          "delivery_items": {}
+        },
+        {
+          "kind": "deliver",
+          "target": "villager",
+          "count": 1,
+          "text": "Return the magical crystal to Elder Rowan.",
+          "item": "crystal",
+          "delivery_items": {}
+        }
+      ],
+      "unsupported": [
+        "slippery terrain physics modifier",
+        "seamless biome transition without loading screens"
+      ],
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Speak with Elder Rowan in the forest.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Retrieve the magical crystal from the icy ruins.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Return the magical crystal to Elder Rowan.",
+          "constructed": true,
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "adapter": "AdventureScene",
+      "genre": "adventure",
+      "schema_version": "2.1",
+      "seed": 7,
+      "game_url": "http://localhost:5173/studio/play/58608104-b3da-4ff8-b412-99b842e9bc63",
+      "area_count": 1,
+      "combat": false,
+      "gravity": 0,
+      "asset_pack": "ninja_adventure"
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "regions": [
+                {
+                  "id": "outer_forest",
+                  "name": "Enchanted Forest",
+                  "biome": "forest",
+                  "x": 1,
+                  "y": 1,
+                  "width": 46,
+                  "height": 30,
+                  "slippery": false
+                },
+                {
+                  "id": "inner_lake",
+                  "name": "Frozen Lake",
+                  "biome": "frozen_lake",
+                  "x": 15,
+                  "y": 10,
+                  "width": 16,
+                  "height": 12,
+                  "slippery": true
+                },
+                {
+                  "id": "deep_ruins",
+                  "name": "Icy Ruins",
+                  "biome": "icy_ruins",
+                  "x": 32,
+                  "y": 6,
+                  "width": 14,
+                  "height": 18,
+                  "slippery": false
+                }
+              ],
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 400,
+              "y": 560,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Elder Rowan in the forest.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 784,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 774,
+                    "y": 743,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "magical_crystal",
+                  "kind": "item",
+                  "x": 1264,
+                  "y": 496,
+                  "health": 2,
+                  "body": {
+                    "x": 1248,
+                    "y": 480,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjablue",
+              "playerFrame": 0,
+              "animation": "ninja_ninjablue:down:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjablue",
+                "ninja_oldwoman",
+                "ninja_terrain",
+                "ninja_tree"
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "biome_regions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "same_scene": true
+          }
+        },
+        {
+          "id": "localized_slippery",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "released": {
+              "regions": [
+                {
+                  "id": "outer_forest",
+                  "name": "Enchanted Forest",
+                  "biome": "forest",
+                  "x": 1,
+                  "y": 1,
+                  "width": 46,
+                  "height": 30,
+                  "slippery": false
+                },
+                {
+                  "id": "inner_lake",
+                  "name": "Frozen Lake",
+                  "biome": "frozen_lake",
+                  "x": 15,
+                  "y": 10,
+                  "width": 16,
+                  "height": 12,
+                  "slippery": true
+                },
+                {
+                  "id": "deep_ruins",
+                  "name": "Icy Ruins",
+                  "biome": "icy_ruins",
+                  "x": 32,
+                  "y": 6,
+                  "width": 14,
+                  "height": 18,
+                  "slippery": false
+                }
+              ],
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 758.5233391749733,
+              "y": 528,
+              "vx": 43.01123165309184,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Elder Rowan in the forest.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 784,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 774,
+                    "y": 743,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "magical_crystal",
+                  "kind": "item",
+                  "x": 1264,
+                  "y": 496,
+                  "health": 2,
+                  "body": {
+                    "x": 1248,
+                    "y": 480,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjablue",
+              "playerFrame": 3,
+              "animation": "ninja_ninjablue:right:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjablue",
+                "ninja_oldwoman",
+                "ninja_terrain",
+                "ninja_tree"
+              ],
+              "missingAssets": []
+            },
+            "coasting": {
+              "regions": [
+                {
+                  "id": "outer_forest",
+                  "name": "Enchanted Forest",
+                  "biome": "forest",
+                  "x": 1,
+                  "y": 1,
+                  "width": 46,
+                  "height": 30,
+                  "slippery": false
+                },
+                {
+                  "id": "inner_lake",
+                  "name": "Frozen Lake",
+                  "biome": "frozen_lake",
+                  "x": 15,
+                  "y": 10,
+                  "width": 16,
+                  "height": 12,
+                  "slippery": true
+                },
+                {
+                  "id": "deep_ruins",
+                  "name": "Icy Ruins",
+                  "biome": "icy_ruins",
+                  "x": 32,
+                  "y": 6,
+                  "width": 14,
+                  "height": 18,
+                  "slippery": false
+                }
+              ],
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 762.4872326736565,
+              "y": 528,
+              "vx": 35.2202528718117,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Elder Rowan in the forest.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 784,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 774,
+                    "y": 743,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "magical_crystal",
+                  "kind": "item",
+                  "x": 1264,
+                  "y": 496,
+                  "health": 2,
+                  "body": {
+                    "x": 1248,
+                    "y": 480,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjablue",
+              "playerFrame": 3,
+              "animation": "ninja_ninjablue:right:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjablue",
+                "ninja_oldwoman",
+                "ninja_terrain",
+                "ninja_tree"
+              ],
+              "missingAssets": []
+            }
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 400,
+            "after": 425.83333333333314
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 80,
+            "after_y": 54.16666666666663
+          }
+        },
+        {
+          "id": "registered_animation_frames",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "observed_frames": [
+              7,
+              11,
+              15,
+              7,
+              11,
+              7,
+              11
+            ],
+            "asset": "ninja_ninjablue"
+          }
+        },
+        {
+          "id": "directional_art_and_pack",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "directions": [
+              "ninja_ninjablue:left:idle",
+              "ninja_ninjablue:up:idle",
+              "ninja_ninjablue:down:idle"
+            ],
+            "selected_assets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ]
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              1,
+              1,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              42,
+              48
+            ]
+          }
+        },
+        {
+          "id": "dialogue_0",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Elder Rowan\nWelcome to our woods, traveler.",
+            "Could you help me with a delicate task?"
+          ]
+        },
+        {
+          "id": "quest_0_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 751,
+            "y": 752,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Retrieve the magical crystal from the icy ruins. (0/1)",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "magical_crystal",
+                "kind": "item",
+                "x": 1264,
+                "y": 496,
+                "health": 2,
+                "body": {
+                  "x": 1248,
+                  "y": 480,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_1",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "crystal": 1
+          }
+        },
+        {
+          "id": "quest_1_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1264,
+            "y": 496,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "crystal": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Return the magical crystal to Elder Rowan.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Elder Rowan\nYou found the magical crystal! Our sanctuary is safe.",
+            "Thank you for your wondrous journey."
+          ]
+        },
+        {
+          "id": "inventory_delivery_consumed",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "crystal": 0
+          }
+        },
+        {
+          "id": "quest_2_deliver",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 751,
+            "y": 752,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "crystal": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1392,
+            "y": 528,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "crystal": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 0,
+            "x": 400,
+            "y": 560,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Speak with Elder Rowan in the forest.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "magical_crystal",
+                "kind": "item",
+                "x": 1264,
+                "y": 496,
+                "health": 2,
+                "body": {
+                  "x": 1248,
+                  "y": 480,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "genre_assets_gravity",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "snapshot": {
+              "regions": [
+                {
+                  "id": "outer_forest",
+                  "name": "Enchanted Forest",
+                  "biome": "forest",
+                  "x": 1,
+                  "y": 1,
+                  "width": 46,
+                  "height": 30,
+                  "slippery": false
+                },
+                {
+                  "id": "inner_lake",
+                  "name": "Frozen Lake",
+                  "biome": "frozen_lake",
+                  "x": 15,
+                  "y": 10,
+                  "width": 16,
+                  "height": 12,
+                  "slippery": true
+                },
+                {
+                  "id": "deep_ruins",
+                  "name": "Icy Ruins",
+                  "biome": "icy_ruins",
+                  "x": 32,
+                  "y": 6,
+                  "width": 14,
+                  "height": 18,
+                  "slippery": false
+                }
+              ],
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 400,
+              "y": 560,
+              "vx": 0,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Elder Rowan in the forest.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 784,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 774,
+                    "y": 743,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "magical_crystal",
+                  "kind": "item",
+                  "x": 1264,
+                  "y": 496,
+                  "health": 2,
+                  "body": {
+                    "x": 1248,
+                    "y": 480,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjablue",
+              "playerFrame": 0,
+              "animation": "ninja_ninjablue:down:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjablue",
+                "ninja_oldwoman",
+                "ninja_terrain",
+                "ninja_tree"
+              ],
+              "missingAssets": []
+            },
+            "asset_http_failures": []
+          }
+        },
+        {
+          "id": "biome_regions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "same_scene": true
+          }
+        },
+        {
+          "id": "localized_slippery",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "released": {
+              "regions": [
+                {
+                  "id": "outer_forest",
+                  "name": "Enchanted Forest",
+                  "biome": "forest",
+                  "x": 1,
+                  "y": 1,
+                  "width": 46,
+                  "height": 30,
+                  "slippery": false
+                },
+                {
+                  "id": "inner_lake",
+                  "name": "Frozen Lake",
+                  "biome": "frozen_lake",
+                  "x": 15,
+                  "y": 10,
+                  "width": 16,
+                  "height": 12,
+                  "slippery": true
+                },
+                {
+                  "id": "deep_ruins",
+                  "name": "Icy Ruins",
+                  "biome": "icy_ruins",
+                  "x": 32,
+                  "y": 6,
+                  "width": 14,
+                  "height": 18,
+                  "slippery": false
+                }
+              ],
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 758.5233391749733,
+              "y": 528,
+              "vx": 43.01123165309184,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Elder Rowan in the forest.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 784,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 774,
+                    "y": 743,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "magical_crystal",
+                  "kind": "item",
+                  "x": 1264,
+                  "y": 496,
+                  "health": 2,
+                  "body": {
+                    "x": 1248,
+                    "y": 480,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjablue",
+              "playerFrame": 3,
+              "animation": "ninja_ninjablue:right:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjablue",
+                "ninja_oldwoman",
+                "ninja_terrain",
+                "ninja_tree"
+              ],
+              "missingAssets": []
+            },
+            "coasting": {
+              "regions": [
+                {
+                  "id": "outer_forest",
+                  "name": "Enchanted Forest",
+                  "biome": "forest",
+                  "x": 1,
+                  "y": 1,
+                  "width": 46,
+                  "height": 30,
+                  "slippery": false
+                },
+                {
+                  "id": "inner_lake",
+                  "name": "Frozen Lake",
+                  "biome": "frozen_lake",
+                  "x": 15,
+                  "y": 10,
+                  "width": 16,
+                  "height": 12,
+                  "slippery": true
+                },
+                {
+                  "id": "deep_ruins",
+                  "name": "Icy Ruins",
+                  "biome": "icy_ruins",
+                  "x": 32,
+                  "y": 6,
+                  "width": 14,
+                  "height": 18,
+                  "slippery": false
+                }
+              ],
+              "ready": true,
+              "generation": 1,
+              "genre": "adventure",
+              "area": 0,
+              "x": 762.4872326736565,
+              "y": 528,
+              "vx": 35.2202528718117,
+              "vy": 0,
+              "gravity": 0,
+              "inventory": {},
+              "quests": [
+                "ACTIVE",
+                "NOT_STARTED",
+                "NOT_STARTED"
+              ],
+              "objective": "Speak with Elder Rowan in the forest.",
+              "health": 5,
+              "won": false,
+              "lost": false,
+              "dialogue": [],
+              "unlocked": [],
+              "activated": [],
+              "actors": [
+                {
+                  "id": "villager",
+                  "kind": "npc",
+                  "x": 784,
+                  "y": 752,
+                  "health": 2,
+                  "body": {
+                    "x": 774,
+                    "y": 743,
+                    "width": 18,
+                    "height": 18,
+                    "enabled": true
+                  }
+                },
+                {
+                  "id": "magical_crystal",
+                  "kind": "item",
+                  "x": 1264,
+                  "y": 496,
+                  "health": 2,
+                  "body": {
+                    "x": 1248,
+                    "y": 480,
+                    "width": 32,
+                    "height": 32,
+                    "enabled": true
+                  }
+                }
+              ],
+              "assetPack": "ninja_adventure",
+              "playerTexture": "ninja_ninjablue",
+              "playerFrame": 3,
+              "animation": "ninja_ninjablue:right:idle",
+              "selectedAssets": [
+                "ninja_gem",
+                "ninja_herb",
+                "ninja_key",
+                "ninja_ninjablue",
+                "ninja_oldwoman",
+                "ninja_terrain",
+                "ninja_tree"
+              ],
+              "missingAssets": []
+            }
+          }
+        },
+        {
+          "id": "top_down_horizontal_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before": 400,
+            "after": 425.83333333333314
+          }
+        },
+        {
+          "id": "top_down_vertical_movement",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "before_y": 80,
+            "after_y": 54.16666666666663
+          }
+        },
+        {
+          "id": "registered_animation_frames",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "observed_frames": [
+              7,
+              11,
+              15,
+              7,
+              11,
+              7,
+              11
+            ],
+            "asset": "ninja_ninjablue"
+          }
+        },
+        {
+          "id": "directional_art_and_pack",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "directions": [
+              "ninja_ninjablue:left:idle",
+              "ninja_ninjablue:up:idle",
+              "ninja_ninjablue:down:idle"
+            ],
+            "selected_assets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ]
+          }
+        },
+        {
+          "id": "environment_collision",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "adjacent_wall": [
+              1,
+              1,
+              -1,
+              0,
+              "ArrowLeft"
+            ],
+            "after": [
+              42,
+              48
+            ]
+          }
+        },
+        {
+          "id": "dialogue_0",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Elder Rowan\nWelcome to our woods, traveler.",
+            "Could you help me with a delicate task?"
+          ]
+        },
+        {
+          "id": "quest_0_talk",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 751,
+            "y": 752,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "COMPLETED",
+              "ACTIVE",
+              "NOT_STARTED"
+            ],
+            "objective": "Retrieve the magical crystal from the icy ruins. (0/1)",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "magical_crystal",
+                "kind": "item",
+                "x": 1264,
+                "y": 496,
+                "health": 2,
+                "body": {
+                  "x": 1248,
+                  "y": 480,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "inventory_1",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "crystal": 1
+          }
+        },
+        {
+          "id": "quest_1_collect",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1264,
+            "y": 496,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "crystal": 1
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "ACTIVE"
+            ],
+            "objective": "Return the magical crystal to Elder Rowan.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "dialogue_2",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": [
+            "Elder Rowan\nYou found the magical crystal! Our sanctuary is safe.",
+            "Thank you for your wondrous journey."
+          ]
+        },
+        {
+          "id": "inventory_delivery_consumed",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "crystal": 0
+          }
+        },
+        {
+          "id": "quest_2_deliver",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 751,
+            "y": 752,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "crystal": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "adventure_completion",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 2,
+            "genre": "adventure",
+            "area": 0,
+            "x": 1392,
+            "y": 528,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {
+              "crystal": 0
+            },
+            "quests": [
+              "COMPLETED",
+              "COMPLETED",
+              "COMPLETED"
+            ],
+            "objective": "All quests complete \u2014 use the glowing exit.",
+            "health": 5,
+            "won": true,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "whole_game_restart",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": {
+            "regions": [
+              {
+                "id": "outer_forest",
+                "name": "Enchanted Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 46,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "inner_lake",
+                "name": "Frozen Lake",
+                "biome": "frozen_lake",
+                "x": 15,
+                "y": 10,
+                "width": 16,
+                "height": 12,
+                "slippery": true
+              },
+              {
+                "id": "deep_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 32,
+                "y": 6,
+                "width": 14,
+                "height": 18,
+                "slippery": false
+              }
+            ],
+            "ready": true,
+            "generation": 3,
+            "genre": "adventure",
+            "area": 0,
+            "x": 400,
+            "y": 560,
+            "vx": 0,
+            "vy": 0,
+            "gravity": 0,
+            "inventory": {},
+            "quests": [
+              "ACTIVE",
+              "NOT_STARTED",
+              "NOT_STARTED"
+            ],
+            "objective": "Speak with Elder Rowan in the forest.",
+            "health": 5,
+            "won": false,
+            "lost": false,
+            "dialogue": [],
+            "unlocked": [],
+            "activated": [],
+            "actors": [
+              {
+                "id": "villager",
+                "kind": "npc",
+                "x": 784,
+                "y": 752,
+                "health": 2,
+                "body": {
+                  "x": 774,
+                  "y": 743,
+                  "width": 18,
+                  "height": 18,
+                  "enabled": true
+                }
+              },
+              {
+                "id": "magical_crystal",
+                "kind": "item",
+                "x": 1264,
+                "y": 496,
+                "health": 2,
+                "body": {
+                  "x": 1248,
+                  "y": 480,
+                  "width": 32,
+                  "height": 32,
+                  "enabled": true
+                }
+              }
+            ],
+            "assetPack": "ninja_adventure",
+            "playerTexture": "ninja_ninjablue",
+            "playerFrame": 0,
+            "animation": "ninja_ninjablue:down:idle",
+            "selectedAssets": [
+              "ninja_gem",
+              "ninja_herb",
+              "ninja_key",
+              "ninja_ninjablue",
+              "ninja_oldwoman",
+              "ninja_terrain",
+              "ninja_tree"
+            ],
+            "missingAssets": []
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "category": "adventure",
+          "details": []
+        }
+      ],
+      "page_errors": [],
+      "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 0
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "id": "quest_0",
+          "source": "Speak with Elder Rowan in the forest.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_1",
+          "source": "Retrieve the magical crystal from the icy ruins.",
+          "constructed": true,
+          "status": "verified"
+        },
+        {
+          "id": "quest_2",
+          "source": "Return the magical crystal to Elder Rowan.",
+          "constructed": true,
+          "status": "verified"
+        }
+      ],
+      "scope": "Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.",
+      "unsupported": [
+        "slippery terrain physics modifier",
+        "seamless biome transition without loading screens"
+      ]
+    },
+    "semantic_requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "source": "top-down fantasy adventure",
+          "meaning": "Top-down 2D exploration perspective in a fantasy setting",
+          "capability": "top_down_movement",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "Player moves freely in 2D top-down directions.",
+          "constructed": true,
+          "ir_path": "areas",
+          "runtime_check": "top_down_horizontal_movement",
+          "runtime_verified": true
+        },
+        {
+          "source": "in one connected world where a lush enchanted forest surrounds a frozen lake and icy ruins",
+          "meaning": "All regions exist together in a single open area",
+          "capability": "single_level",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "Verify all regions are visible in the same scene view.",
+          "constructed": true,
+          "ir_path": "areas/levels",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "walk naturally from the green forest into the snowy region without changing levels",
+          "meaning": "Seamless transition between biome regions without loading screens or separate levels",
+          "capability": "biome_regions",
+          "status": "verified",
+          "depends_on": [
+            "single_level"
+          ],
+          "verification": "Player walks continuously from green tiles to snow tiles without scene reloads.",
+          "constructed": true,
+          "ir_path": "areas.regions",
+          "runtime_check": "biome_regions",
+          "runtime_verified": true
+        },
+        {
+          "source": "The frozen lake has slippery terrain",
+          "meaning": "Physics modifier affecting movement momentum on the frozen lake surface",
+          "capability": "slippery_region",
+          "status": "verified",
+          "depends_on": [
+            "top_down_movement"
+          ],
+          "verification": "Player sliding momentum increases when walking on the frozen lake region.",
+          "constructed": true,
+          "ir_path": "areas.regions.slippery",
+          "runtime_check": "localized_slippery",
+          "runtime_verified": true
+        },
+        {
+          "source": "A forest villager asks me to retrieve a magical crystal from the icy ruins",
+          "meaning": "Quest delivery loop involving dialogue and item retrieval",
+          "capability": "quest_delivery",
+          "status": "verified",
+          "depends_on": [
+            "top_down_movement"
+          ],
+          "verification": "Interacting with the villager initiates a quest, and collecting the crystal completes the objective.",
+          "constructed": true,
+          "ir_path": "quests",
+          "runtime_check": "adventure_completion",
+          "runtime_verified": true
+        },
+        {
+          "source": "focused on exploration with no combat",
+          "meaning": "Exclusion of enemies, fighting systems, and health bars",
+          "capability": "no_combat",
+          "status": "validated_constraint",
+          "depends_on": [
+            "top_down_movement"
+          ],
+          "verification": "Ensure no enemies exist and player cannot attack.",
+          "constructed": true,
+          "ir_path": "combat",
+          "runtime_check": null,
+          "runtime_verified": false
+        }
+      ],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    },
+    "outcome.json": {
+      "status": "READY_WITH_WARNINGS",
+      "visual_quality": "Screenshot review required; functional QA does not certify aesthetics."
+    }
+  }
+}
