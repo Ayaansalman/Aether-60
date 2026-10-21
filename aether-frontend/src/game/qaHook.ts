@@ -25,7 +25,7 @@ export interface GameState {
   maxHp: number;
   score: number;
   target: number;
-  objectiveType: 'survive_seconds' | 'collect_count' | 'defeat_enemies';
+  objectiveType: 'survive_endless' | 'survive_seconds' | 'collect_count' | 'defeat_enemies';
   timeElapsed: number;
   timeLeft: number | null;
   attackMode: 'projectile' | 'melee' | 'avoid_only';

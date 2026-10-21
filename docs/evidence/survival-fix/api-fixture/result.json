@@ -1,0 +1,805 @@
+{
+  "job": {
+    "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+    "prompt": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe enemy spawned will have its type(chaser , or bullet shooting ) at random \n\nthe enemy type can shoot will shoot 5 bullets after 1 second each and then die",
+    "status": "READY",
+    "stage": "READY",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "fixture",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-21T17:06:51.998900+00:00",
+    "updated_at": "2026-10-21T17:07:03.296574+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "semantic_intent.json",
+      "model_design.json",
+      "provider.json",
+      "game_design.json",
+      "final_design.json",
+      "game_intent.json",
+      "validation.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report.json",
+      "semantic_requirement_report.json",
+      "requirement_report.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 14,
+      "failed": 0
+    },
+    "game_url": "http://localhost:5173/studio/play/a62ec332-a3d7-4945-8bf7-36e22ff67e01"
+  },
+  "events": [
+    {
+      "id": 1825,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:06:52.072288+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted fixture generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1826,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:06:52.119591+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.05s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1827,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:06:52.343486+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning arena survival controls, spawning and emitter timing",
+      "attempt": 1,
+      "rationale": "Elapsed 0.27s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1828,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:06:52.542568+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Composing continuous spawning and finite-life shooter behaviors",
+      "attempt": 1,
+      "rationale": "Elapsed 0.47s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1829,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:06:52.582122+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Validating player health, spawn bounds, emitter counts and intervals",
+      "attempt": 1,
+      "rationale": "Elapsed 0.50s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1830,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:06:52.688738+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Existing Phaser ArenaScene with registered survival stream components",
+      "attempt": 1,
+      "rationale": "Elapsed 0.61s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1831,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:06:52.760987+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Checking real arena movement, bullets, emitter expiry and restart",
+      "attempt": 1,
+      "rationale": "Elapsed 0.67s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1832,
+      "game_id": "a62ec332-a3d7-4945-8bf7-36e22ff67e01",
+      "ts": "2026-10-21T17:07:03.316770+00:00",
+      "stage": "READY",
+      "result": "SUCCESS",
+      "detail": "Survival runtime PASS; semantic fidelity PASS",
+      "attempt": 1,
+      "rationale": "Elapsed 11.23s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "arena_survival",
+      "loop": "Deterministic fixture interpretation",
+      "control": "top_down",
+      "requirements": [],
+      "provenance": {
+        "provider": "fixture",
+        "live": false
+      }
+    },
+    "model_design.json": {
+      "schema_version": "2.3",
+      "title": "Bulletfall Survival",
+      "genre": "arena_survival",
+      "premise": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe en",
+      "theme": "sci_fi",
+      "arena_layout": "open",
+      "visual_overrides": null,
+      "player": {
+        "move_speed": 220.0,
+        "max_health": 3,
+        "attack_mode": "avoid_only"
+      },
+      "enemies": [
+        {
+          "type": "chaser",
+          "count": 1,
+          "speed": 80.0
+        },
+        {
+          "type": "shooter",
+          "count": 1,
+          "speed": 80.0
+        }
+      ],
+      "collectibles": [],
+      "objective": {
+        "type": "survive_endless",
+        "target": 0
+      },
+      "difficulty": 2,
+      "controls": {
+        "movement": "WASD / arrows",
+        "restart": "R"
+      },
+      "seed": null,
+      "survival_stream": {
+        "spawn_interval_ms": 1500,
+        "selection": "random",
+        "max_active": 18,
+        "safe_radius": 200,
+        "warning_ms": 500,
+        "chaser_lifetime_ms": 30000,
+        "shooter_shots": 5,
+        "shot_interval_ms": 1000,
+        "expire_after_burst": true,
+        "bullet_speed": 140,
+        "bullet_lifetime_ms": 5000
+      },
+      "unsupported": []
+    },
+    "provider.json": {
+      "provider": "fixture",
+      "model": null,
+      "live": false
+    },
+    "game_design.json": {
+      "schema_version": "2.3",
+      "title": "Bulletfall Survival",
+      "genre": "arena_survival",
+      "premise": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe en",
+      "theme": "sci_fi",
+      "arena_layout": "open",
+      "visual_overrides": null,
+      "player": {
+        "move_speed": 220.0,
+        "max_health": 3,
+        "attack_mode": "avoid_only"
+      },
+      "enemies": [
+        {
+          "type": "chaser",
+          "count": 1,
+          "speed": 80.0
+        },
+        {
+          "type": "shooter",
+          "count": 1,
+          "speed": 80.0
+        }
+      ],
+      "collectibles": [],
+      "objective": {
+        "type": "survive_endless",
+        "target": 0
+      },
+      "difficulty": 2,
+      "controls": {
+        "movement": "WASD / arrows",
+        "restart": "R"
+      },
+      "seed": null,
+      "survival_stream": {
+        "spawn_interval_ms": 1500,
+        "selection": "random",
+        "max_active": 18,
+        "safe_radius": 200,
+        "warning_ms": 500,
+        "chaser_lifetime_ms": 30000,
+        "shooter_shots": 5,
+        "shot_interval_ms": 1000,
+        "expire_after_burst": true,
+        "bullet_speed": 140,
+        "bullet_lifetime_ms": 5000
+      },
+      "unsupported": []
+    },
+    "final_design.json": {
+      "schema_version": "2.3",
+      "title": "Bulletfall Survival",
+      "genre": "arena_survival",
+      "premise": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe en",
+      "theme": "sci_fi",
+      "arena_layout": "open",
+      "visual_overrides": null,
+      "player": {
+        "move_speed": 220.0,
+        "max_health": 3,
+        "attack_mode": "avoid_only"
+      },
+      "enemies": [
+        {
+          "type": "chaser",
+          "count": 1,
+          "speed": 80.0
+        },
+        {
+          "type": "shooter",
+          "count": 1,
+          "speed": 80.0
+        }
+      ],
+      "collectibles": [],
+      "objective": {
+        "type": "survive_endless",
+        "target": 0
+      },
+      "difficulty": 2,
+      "controls": {
+        "movement": "WASD / arrows",
+        "restart": "R"
+      },
+      "seed": null,
+      "survival_stream": {
+        "spawn_interval_ms": 1500,
+        "selection": "random",
+        "max_active": 18,
+        "safe_radius": 200,
+        "warning_ms": 500,
+        "chaser_lifetime_ms": 30000,
+        "shooter_shots": 5,
+        "shot_interval_ms": 1000,
+        "expire_after_burst": true,
+        "bullet_speed": 140,
+        "bullet_lifetime_ms": 5000
+      },
+      "unsupported": []
+    },
+    "game_intent.json": {
+      "original_prompt": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe enemy spawned will have its type(chaser , or bullet shooting ) at random \n\nthe enemy type can shoot will shoot 5 bullets after 1 second each and then die",
+      "genre": "arena_survival",
+      "semantic": {
+        "genre": "arena_survival",
+        "loop": "Deterministic fixture interpretation",
+        "control": "top_down",
+        "requirements": []
+      }
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "typed_survival_contract",
+          "passed": true
+        }
+      ],
+      "scope": "Strict typed contract; runtime checks follow"
+    },
+    "game_ir_v2.json": {
+      "schema_version": "2.3",
+      "title": "Bulletfall Survival",
+      "genre": "arena_survival",
+      "premise": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe en",
+      "theme": "sci_fi",
+      "arena_layout": "open",
+      "visual_overrides": null,
+      "player": {
+        "move_speed": 220.0,
+        "max_health": 3,
+        "attack_mode": "avoid_only"
+      },
+      "enemies": [
+        {
+          "type": "chaser",
+          "count": 1,
+          "speed": 80.0
+        },
+        {
+          "type": "shooter",
+          "count": 1,
+          "speed": 80.0
+        }
+      ],
+      "collectibles": [],
+      "objective": {
+        "type": "survive_endless",
+        "target": 0
+      },
+      "difficulty": 2,
+      "controls": {
+        "movement": "WASD / arrows",
+        "restart": "R"
+      },
+      "seed": 7,
+      "survival_stream": {
+        "spawn_interval_ms": 1500,
+        "selection": "random",
+        "max_active": 18,
+        "safe_radius": 200,
+        "warning_ms": 500,
+        "chaser_lifetime_ms": 30000,
+        "shooter_shots": 5,
+        "shot_interval_ms": 1000,
+        "expire_after_burst": true,
+        "bullet_speed": 140,
+        "bullet_lifetime_ms": 5000
+      },
+      "unsupported": [],
+      "requirements": [
+        {
+          "source": "Endless evasion, randomized spawns, emitter lifecycle and restart",
+          "status": "verified"
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "adapter": "SurvivalCanvas",
+      "runtime": "ArenaScene",
+      "schema_version": "2.3",
+      "original_primitive_art": true
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "survival_movement",
+          "passed": true,
+          "critical": true,
+          "details": [
+            {
+              "status": "playing",
+              "hp": 3,
+              "maxHp": 3,
+              "score": 0,
+              "target": 0,
+              "objectiveType": "survive_endless",
+              "timeElapsed": 0,
+              "timeLeft": null,
+              "attackMode": "avoid_only",
+              "attacksPerformed": 0,
+              "player": {
+                "x": 480,
+                "y": 270
+              },
+              "enemyCount": 1,
+              "collectibleCount": 0,
+              "projectileCount": 0,
+              "hud": {
+                "health": "HP: 3 / 3",
+                "objective": "Survived: 0s \u00b7 Dodge chasers & shooters",
+                "controls": "Controls: WASD / arrows"
+              }
+            },
+            {
+              "status": "playing",
+              "hp": 3,
+              "maxHp": 3,
+              "score": 0,
+              "target": 0,
+              "objectiveType": "survive_endless",
+              "timeElapsed": 0,
+              "timeLeft": null,
+              "attackMode": "avoid_only",
+              "attacksPerformed": 0,
+              "player": {
+                "x": 517,
+                "y": 270
+              },
+              "enemyCount": 1,
+              "collectibleCount": 0,
+              "projectileCount": 0,
+              "hud": {
+                "health": "HP: 3 / 3",
+                "objective": "Survived: 0s \u00b7 Dodge chasers & shooters",
+                "controls": "Controls: WASD / arrows"
+              }
+            }
+          ]
+        },
+        {
+          "id": "no_quest_template",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "objective": {
+              "type": "survive_endless",
+              "target": 0
+            },
+            "collectibles": []
+          }
+        },
+        {
+          "id": "random_enemy_spawns",
+          "passed": true,
+          "critical": true,
+          "details": [
+            {
+              "id": 0,
+              "type": "shooter",
+              "x": 42.48745882511139,
+              "y": 92.26163333281875,
+              "at": 2748.7
+            },
+            {
+              "id": 1,
+              "type": "shooter",
+              "x": 263.002742677927,
+              "y": 133.6172801349312,
+              "at": 3248.7
+            },
+            {
+              "id": 2,
+              "type": "chaser",
+              "x": 202.9493715763092,
+              "y": 128.20924987085164,
+              "at": 3248.7
+            },
+            {
+              "id": 3,
+              "type": "shooter",
+              "x": 98.76820874214172,
+              "y": 466.6939115151763,
+              "at": 3248.7
+            },
+            {
+              "id": 4,
+              "type": "chaser",
+              "x": 773.5551218688488,
+              "y": 82.59052852168679,
+              "at": 3248.7
+            },
+            {
+              "id": 5,
+              "type": "shooter",
+              "x": 451.9217148721218,
+              "y": 481.337315114215,
+              "at": 3248.7
+            },
+            {
+              "id": 6,
+              "type": "chaser",
+              "x": 850.0792419016361,
+              "y": 206.86786357313395,
+              "at": 3248.7
+            },
+            {
+              "id": 7,
+              "type": "chaser",
+              "x": 619.0989661514759,
+              "y": 469.74632498808205,
+              "at": 3248.7
+            },
+            {
+              "id": 8,
+              "type": "shooter",
+              "x": 564.4341848790646,
+              "y": 489.10314907319844,
+              "at": 3248.7
+            },
+            {
+              "id": 9,
+              "type": "shooter",
+              "x": 708.8530520796776,
+              "y": 494.85094172880054,
+              "at": 3248.7
+            },
+            {
+              "id": 10,
+              "type": "chaser",
+              "x": 311.89590924978256,
+              "y": 169.2074786219746,
+              "at": 3248.7
+            },
+            {
+              "id": 11,
+              "type": "shooter",
+              "x": 597.018859654665,
+              "y": 71.33653455413878,
+              "at": 3248.7
+            },
+            {
+              "id": 12,
+              "type": "shooter",
+              "x": 156.60148605704308,
+              "y": 502.44739283807576,
+              "at": 3248.7
+            },
+            {
+              "id": 13,
+              "type": "shooter",
+              "x": 621.9758602678776,
+              "y": 500.70687491446733,
+              "at": 3248.7
+            },
+            {
+              "id": 14,
+              "type": "shooter",
+              "x": 237.87692248821259,
+              "y": 321.96338973008096,
+              "at": 3248.7
+            },
+            {
+              "id": 15,
+              "type": "chaser",
+              "x": 193.4644759595394,
+              "y": 175.27828690595925,
+              "at": 3248.7
+            },
+            {
+              "id": 16,
+              "type": "shooter",
+              "x": 128.07659190893173,
+              "y": 450.5742311105132,
+              "at": 3248.7
+            },
+            {
+              "id": 17,
+              "type": "shooter",
+              "x": 741.2072653472424,
+              "y": 377.72304941900074,
+              "at": 3248.7
+            },
+            {
+              "id": 18,
+              "type": "shooter",
+              "x": 103.6920916736126,
+              "y": 175.9670433588326,
+              "at": 3248.7
+            }
+          ]
+        },
+        {
+          "id": "enemy_chaser",
+          "passed": true,
+          "critical": true,
+          "details": [
+            "chaser",
+            "shooter"
+          ]
+        },
+        {
+          "id": "enemy_shooter",
+          "passed": true,
+          "critical": true,
+          "details": [
+            "chaser",
+            "shooter"
+          ]
+        },
+        {
+          "id": "shot_interval",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "before_interval": 0,
+            "after_interval": 1,
+            "after_120ms": 1,
+            "measured_spacing_ms": 1000,
+            "required_interval_ms": 1000
+          }
+        },
+        {
+          "id": "emitter_lifecycle",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "shots": 5,
+            "expired": 1,
+            "active": 0,
+            "bullets": 5
+          }
+        },
+        {
+          "id": "survival_damage",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "before": 3,
+            "after": 2
+          }
+        },
+        {
+          "id": "survival_loss",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "collision_hits": [
+              {
+                "before": 3,
+                "after": 2
+              },
+              {
+                "before": 2,
+                "after": 1
+              },
+              {
+                "before": 1,
+                "after": 0
+              }
+            ],
+            "state": {
+              "status": "lost",
+              "hp": 0,
+              "maxHp": 3,
+              "score": 1,
+              "target": 0,
+              "objectiveType": "survive_endless",
+              "timeElapsed": 1,
+              "timeLeft": null,
+              "attackMode": "avoid_only",
+              "attacksPerformed": 0,
+              "player": {
+                "x": 850,
+                "y": 440
+              },
+              "enemyCount": 0,
+              "collectibleCount": 0,
+              "projectileCount": 0,
+              "hud": {
+                "health": "HP: 0 / 3",
+                "objective": "Survived: 1s \u00b7 Dodge chasers & shooters",
+                "controls": "Controls: WASD / arrows"
+              }
+            }
+          }
+        },
+        {
+          "id": "survival_restart",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "status": "playing",
+            "hp": 3,
+            "maxHp": 3,
+            "score": 0,
+            "target": 0,
+            "objectiveType": "survive_endless",
+            "timeElapsed": 0,
+            "timeLeft": null,
+            "attackMode": "avoid_only",
+            "attacksPerformed": 0,
+            "player": {
+              "x": 480,
+              "y": 270
+            },
+            "enemyCount": 0,
+            "collectibleCount": 0,
+            "projectileCount": 0,
+            "hud": {
+              "health": "HP: 3 / 3",
+              "objective": "Survived: 0s \u00b7 Dodge chasers & shooters",
+              "controls": "Controls: WASD / arrows"
+            }
+          }
+        },
+        {
+          "id": "endless_survival",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "status": "playing",
+            "hp": 3,
+            "maxHp": 3,
+            "score": 240,
+            "target": 0,
+            "objectiveType": "survive_endless",
+            "timeElapsed": 240,
+            "timeLeft": null,
+            "attackMode": "avoid_only",
+            "attacksPerformed": 0,
+            "player": {
+              "x": 480,
+              "y": 270
+            },
+            "enemyCount": 0,
+            "collectibleCount": 0,
+            "projectileCount": 0,
+            "hud": {
+              "health": "HP: 3 / 3",
+              "objective": "Survived: 0s \u00b7 Dodge chasers & shooters",
+              "controls": "Controls: WASD / arrows"
+            }
+          }
+        },
+        {
+          "id": "survival_score",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "status": "playing",
+            "hp": 3,
+            "maxHp": 3,
+            "score": 240,
+            "target": 0,
+            "objectiveType": "survive_endless",
+            "timeElapsed": 240,
+            "timeLeft": null,
+            "attackMode": "avoid_only",
+            "attacksPerformed": 0,
+            "player": {
+              "x": 480,
+              "y": 270
+            },
+            "enemyCount": 0,
+            "collectibleCount": 0,
+            "projectileCount": 0,
+            "hud": {
+              "health": "HP: 3 / 3",
+              "objective": "Survived: 0s \u00b7 Dodge chasers & shooters",
+              "controls": "Controls: WASD / arrows"
+            }
+          }
+        },
+        {
+          "id": "bounded_stream",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "active": 18,
+            "trace": 18,
+            "max": 18
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "details": []
+        }
+      ],
+      "scope": "Real keyboard/Phaser movement, two real firing intervals, controlled spawn/emitter clocks and projectile positioning; not autonomous survival."
+    },
+    "semantic_requirement_report.json": {
+      "control_preserved": true,
+      "overall": "PASS",
+      "requirements": [],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "source": "Endless evasion, randomized spawns, emitter lifecycle and restart",
+          "status": "verified"
+        }
+      ],
+      "scope": "Runtime checks and separate semantic bindings; not arbitrary prompt certification"
+    }
+  }
+}

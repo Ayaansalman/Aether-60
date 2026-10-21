@@ -1,0 +1,10 @@
+make a top down game 
+GAMELOOP:
+player has to evade enemy bullets and survive for as long as player can 
+
+player has 3 health 
+each enemy spawn at random places 
+enemies have different types (enemies can chase player, shoot bullets )
+the enemy spawned will have its type(chaser , or bullet shooting ) at random 
+
+the enemy type can shoot will shoot 5 bullets after 1 second each and then die

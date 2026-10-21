@@ -1,0 +1,57 @@
+{
+  "schema_version": "2.3",
+  "title": "Bulletfall Survival",
+  "genre": "arena_survival",
+  "premise": "make a top down game \nGAMELOOP:\nplayer has to evade enemy bullets and survive for as long as player can \n\nplayer has 3 health \neach enemy spawn at random places \nenemies have different types (enemies can chase player, shoot bullets )\nthe en",
+  "theme": "sci_fi",
+  "arena_layout": "open",
+  "visual_overrides": null,
+  "player": {
+    "move_speed": 220.0,
+    "max_health": 3,
+    "attack_mode": "avoid_only"
+  },
+  "enemies": [
+    {
+      "type": "chaser",
+      "count": 1,
+      "speed": 80.0
+    },
+    {
+      "type": "shooter",
+      "count": 1,
+      "speed": 80.0
+    }
+  ],
+  "collectibles": [],
+  "objective": {
+    "type": "survive_endless",
+    "target": 0
+  },
+  "difficulty": 2,
+  "controls": {
+    "movement": "WASD / arrows",
+    "restart": "R"
+  },
+  "seed": 7,
+  "survival_stream": {
+    "spawn_interval_ms": 1500,
+    "selection": "random",
+    "max_active": 18,
+    "safe_radius": 200,
+    "warning_ms": 500,
+    "chaser_lifetime_ms": 30000,
+    "shooter_shots": 5,
+    "shot_interval_ms": 1000,
+    "expire_after_burst": true,
+    "bullet_speed": 140,
+    "bullet_lifetime_ms": 5000
+  },
+  "unsupported": [],
+  "requirements": [
+    {
+      "source": "Endless evasion, randomized spawns, emitter lifecycle and restart",
+      "status": "constructed_unverified"
+    }
+  ]
+}
