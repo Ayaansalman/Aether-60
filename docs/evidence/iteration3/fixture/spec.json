@@ -1,0 +1,1226 @@
+{
+  "title": "The Frostbound Vault",
+  "width": 1764,
+  "height": 684,
+  "spawn": {
+    "x": 90.0,
+    "y": 476.0
+  },
+  "objective": {
+    "type": "reach_exit",
+    "required": 0,
+    "total": 14
+  },
+  "platforms": [
+    {
+      "x": 0,
+      "y": 14,
+      "width": 8,
+      "kind": "journey",
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 9,
+      "y": 14,
+      "width": 7,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 17,
+      "y": 14,
+      "width": 8,
+      "kind": "ruins",
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 18,
+      "y": 12,
+      "width": 4,
+      "kind": "bridge",
+      "moving": false,
+      "route": "optional"
+    },
+    {
+      "x": 26,
+      "y": 14,
+      "width": 8,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 35,
+      "y": 14,
+      "width": 4,
+      "kind": "bridge",
+      "moving": false,
+      "route": "main"
+    },
+    {
+      "x": 40,
+      "y": 14,
+      "width": 7,
+      "kind": "cavern",
+      "moving": false,
+      "route": "main"
+    }
+  ],
+  "entities": [
+    {
+      "x": 378.0,
+      "y": 442.2857142857143,
+      "kind": "crystal",
+      "platform": 1,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 450.0,
+      "y": 430.85714285714283,
+      "kind": "crystal",
+      "platform": 1,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 522.0,
+      "y": 436.57142857142856,
+      "kind": "crystal",
+      "platform": 1,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 666.0,
+      "y": 443.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 738.0,
+      "y": 433.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 810.0,
+      "y": 433.0,
+      "kind": "crystal",
+      "platform": 2,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 540.0,
+      "y": 474.0,
+      "kind": "checkpoint",
+      "platform": 1,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 720.0,
+      "y": 387.0,
+      "kind": "crystal",
+      "platform": 3,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 990.0,
+      "y": 443.0,
+      "kind": "crystal",
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1062.0,
+      "y": 433.0,
+      "kind": "crystal",
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1134.0,
+      "y": 433.0,
+      "kind": "crystal",
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1350.0,
+      "y": 428.0,
+      "kind": "crystal",
+      "platform": 5,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1188.0,
+      "y": 474.0,
+      "kind": "checkpoint",
+      "platform": 4,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1494.0,
+      "y": 442.2857142857143,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1566.0,
+      "y": 430.85714285714283,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1638.0,
+      "y": 436.57142857142856,
+      "kind": "crystal",
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    },
+    {
+      "x": 1656.0,
+      "y": 468.0,
+      "kind": "exit",
+      "platform": 6,
+      "behavior": "patrol",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    }
+  ],
+  "camera_mode": "follow",
+  "theme": "ice",
+  "slippery": true,
+  "exit_style": "gate",
+  "exit_indicator": "none",
+  "collectible": "crystals",
+  "difficulty": "relaxed",
+  "briefing": "Learn the terrain and explore the upper paths.",
+  "topology": "journey",
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "seed": 314159,
+  "tile_size": 36,
+  "player": {
+    "speed": 250,
+    "jump": 490,
+    "gravity": 1100,
+    "health": 3,
+    "abilities": []
+  },
+  "levels": [
+    {
+      "title": "The Frostbound Vault \u00b7 Foothills",
+      "width": 1764,
+      "height": 684,
+      "spawn": {
+        "x": 90.0,
+        "y": 476.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 14
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "journey",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 9,
+          "y": 14,
+          "width": 7,
+          "kind": "cavern",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 17,
+          "y": 14,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 18,
+          "y": 12,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional"
+        },
+        {
+          "x": 26,
+          "y": 14,
+          "width": 8,
+          "kind": "cavern",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 35,
+          "y": 14,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 40,
+          "y": 14,
+          "width": 7,
+          "kind": "cavern",
+          "moving": false,
+          "route": "main"
+        }
+      ],
+      "entities": [
+        {
+          "x": 378.0,
+          "y": 442.2857142857143,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 450.0,
+          "y": 430.85714285714283,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 522.0,
+          "y": 436.57142857142856,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 666.0,
+          "y": 443.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 738.0,
+          "y": 433.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 810.0,
+          "y": 433.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 540.0,
+          "y": 474.0,
+          "kind": "checkpoint",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 720.0,
+          "y": 387.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 990.0,
+          "y": 443.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1062.0,
+          "y": 433.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1134.0,
+          "y": 433.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1350.0,
+          "y": 428.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1188.0,
+          "y": 474.0,
+          "kind": "checkpoint",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1494.0,
+          "y": 442.2857142857143,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1566.0,
+          "y": 430.85714285714283,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1638.0,
+          "y": 436.57142857142856,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1656.0,
+          "y": 468.0,
+          "kind": "exit",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow",
+      "theme": "ice",
+      "slippery": true,
+      "exit_style": "gate",
+      "exit_indicator": "none",
+      "collectible": "crystals",
+      "difficulty": "relaxed",
+      "briefing": "Learn the terrain and explore the upper paths.",
+      "topology": "journey"
+    },
+    {
+      "title": "The Frostbound Vault \u00b7 Heights",
+      "width": 2088,
+      "height": 756,
+      "spawn": {
+        "x": 90.0,
+        "y": 548.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 15
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 16,
+          "width": 8,
+          "kind": "ascent",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 10,
+          "y": 14,
+          "width": 7,
+          "kind": "cavern",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 19,
+          "y": 13,
+          "width": 6,
+          "kind": "cavern",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 27,
+          "y": 11,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 28,
+          "y": 9,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional"
+        },
+        {
+          "x": 37,
+          "y": 10,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 43,
+          "y": 8,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 49,
+          "y": 7,
+          "width": 7,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 50,
+          "y": 5,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional"
+        }
+      ],
+      "entities": [
+        {
+          "x": 414.0,
+          "y": 438.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 486.0,
+          "y": 448.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 558.0,
+          "y": 428.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 738.0,
+          "y": 402.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 810.0,
+          "y": 412.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 824.4,
+          "y": 248.0,
+          "kind": "icicle",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 576.0,
+          "y": 474.0,
+          "kind": "checkpoint",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1026.0,
+          "y": 330.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1098.0,
+          "y": 340.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1170.0,
+          "y": 320.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 864.0,
+          "y": 438.0,
+          "kind": "checkpoint",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1080.0,
+          "y": 279.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1422.0,
+          "y": 284.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1425.6000000000001,
+          "y": 140.0,
+          "kind": "icicle",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "timer",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1638.0,
+          "y": 212.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1818.0,
+          "y": 186.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1890.0,
+          "y": 196.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1962.0,
+          "y": 176.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1927.8,
+          "y": 32.0,
+          "kind": "icicle",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1872.0,
+          "y": 135.0,
+          "kind": "crystal",
+          "platform": 8,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1980.0,
+          "y": 216.0,
+          "kind": "exit",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "vertical",
+      "theme": "ice",
+      "slippery": false,
+      "exit_style": "gate",
+      "exit_indicator": "none",
+      "collectible": "crystals",
+      "difficulty": "balanced",
+      "briefing": "Climb through the new hazards.",
+      "topology": "ascent"
+    },
+    {
+      "title": "The Frostbound Vault \u00b7 Summit",
+      "width": 2340,
+      "height": 828,
+      "spawn": {
+        "x": 90.0,
+        "y": 620.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 16
+      },
+      "platforms": [
+        {
+          "x": 0,
+          "y": 18,
+          "width": 8,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 10,
+          "y": 16,
+          "width": 7,
+          "kind": "cavern",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 19,
+          "y": 15,
+          "width": 8,
+          "kind": "cavern",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 29,
+          "y": 13,
+          "width": 6,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 30,
+          "y": 11,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional"
+        },
+        {
+          "x": 37,
+          "y": 12,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 43,
+          "y": 10,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 49,
+          "y": 9,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main"
+        },
+        {
+          "x": 50,
+          "y": 7,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "optional"
+        },
+        {
+          "x": 59,
+          "y": 7,
+          "width": 4,
+          "kind": "bridge",
+          "moving": false,
+          "route": "main"
+        }
+      ],
+      "entities": [
+        {
+          "x": 414.0,
+          "y": 510.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 486.0,
+          "y": 520.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 558.0,
+          "y": 500.0,
+          "kind": "crystal",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 738.0,
+          "y": 474.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 810.0,
+          "y": 484.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 882.0,
+          "y": 464.0,
+          "kind": "crystal",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 871.1999999999999,
+          "y": 320.0,
+          "kind": "icicle",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 576.0,
+          "y": 546.0,
+          "kind": "checkpoint",
+          "platform": 1,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1098.0,
+          "y": 402.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1170.0,
+          "y": 412.0,
+          "kind": "crystal",
+          "platform": 3,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 936.0,
+          "y": 510.0,
+          "kind": "checkpoint",
+          "platform": 2,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1152.0,
+          "y": 351.0,
+          "kind": "crystal",
+          "platform": 4,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1422.0,
+          "y": 356.0,
+          "kind": "crystal",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1425.6000000000001,
+          "y": 212.0,
+          "kind": "icicle",
+          "platform": 5,
+          "behavior": "patrol",
+          "trigger": "timer",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1638.0,
+          "y": 284.0,
+          "kind": "crystal",
+          "platform": 6,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1818.0,
+          "y": 258.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1890.0,
+          "y": 268.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1962.0,
+          "y": 248.0,
+          "kind": "crystal",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1951.2,
+          "y": 104.0,
+          "kind": "icicle",
+          "platform": 7,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 1872.0,
+          "y": 207.0,
+          "kind": "crystal",
+          "platform": 8,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2214.0,
+          "y": 176.0,
+          "kind": "crystal",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "x": 2232.0,
+          "y": 216.0,
+          "kind": "exit",
+          "platform": 9,
+          "behavior": "patrol",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow",
+      "theme": "ice",
+      "slippery": true,
+      "exit_style": "gate",
+      "exit_indicator": "none",
+      "collectible": "crystals",
+      "difficulty": "challenging",
+      "briefing": "Combine your skills on the final crossing.",
+      "topology": "terraces"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "ice_environment",
+      "source": "ice",
+      "span": [
+        21,
+        24
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "ice_composition",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "ice_environment",
+        "qa": null
+      }
+    },
+    {
+      "id": "slippery",
+      "source": "slippery",
+      "span": [
+        64,
+        72
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "slippery_momentum",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "slippery",
+        "qa": null
+      }
+    },
+    {
+      "id": "falling_icicles",
+      "source": "falling icicles",
+      "span": [
+        104,
+        119
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "falling_icicle_cycle",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "falling_icicles",
+        "qa": null
+      }
+    },
+    {
+      "id": "multiple_levels",
+      "source": "three-level",
+      "span": [
+        9,
+        20
+      ],
+      "supported": true,
+      "status": "implemented_unverified",
+      "runtime_check": "level_transitions",
+      "constructed": true,
+      "verified": false,
+      "evidence": {
+        "spec": "multiple_levels",
+        "qa": null
+      }
+    }
+  ],
+  "asset_pack": "kenney_pixel_platformer"
+}

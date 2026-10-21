@@ -1,0 +1,111 @@
+{
+  "title": "The Copperworks",
+  "premise": "Create two levels of industrial platforming with robot enemies, moving platforms, dangerous machinery, collectible crystals, checkpoints and dash.",
+  "genre": "platformer",
+  "theme": "industrial",
+  "difficulty": "balanced",
+  "objective": "collect_and_exit",
+  "abilities": [
+    "dash"
+  ],
+  "checkpoints": true,
+  "moving_platforms": true,
+  "slippery": false,
+  "falling_icicles": false,
+  "icicle_trigger": "mixed",
+  "hazard_period_ms": 2200,
+  "timed_hazards": true,
+  "exit_indicator": "none",
+  "exit_style": "gate",
+  "collectible": "crystals",
+  "level_count": 2,
+  "levels": [],
+  "topology": "terraces",
+  "sections": [
+    {
+      "kind": "terraces",
+      "length": 5,
+      "elevation": -1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "challenge": "traversal"
+    },
+    {
+      "kind": "terraces",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "chase",
+      "challenge": "traversal"
+    },
+    {
+      "kind": "terraces",
+      "length": 7,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": true,
+      "encounter": "shooter",
+      "challenge": "traversal"
+    },
+    {
+      "kind": "terraces",
+      "length": 5,
+      "elevation": -1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "challenge": "traversal"
+    },
+    {
+      "kind": "terraces",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "chase",
+      "challenge": "traversal"
+    },
+    {
+      "kind": "terraces",
+      "length": 7,
+      "elevation": 1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": true,
+      "encounter": "shooter",
+      "challenge": "traversal"
+    },
+    {
+      "kind": "terraces",
+      "length": 5,
+      "elevation": -1,
+      "gap": 2,
+      "enemies": false,
+      "hazards": false,
+      "encounter": "patrol",
+      "challenge": "traversal"
+    },
+    {
+      "kind": "terraces",
+      "length": 6,
+      "elevation": 0,
+      "gap": 2,
+      "enemies": true,
+      "hazards": false,
+      "encounter": "chase",
+      "challenge": "traversal"
+    }
+  ],
+  "unsupported": [],
+  "design_notes": [
+    "Offline fixture: keyword interpretation and seeded construction; no model was called."
+  ],
+  "requested_features": []
+}

@@ -1,0 +1,150 @@
+{
+  "requirements": [
+    {
+      "id": "factory_environment",
+      "source": "industrial",
+      "span": [
+        21,
+        31
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "environment_composition",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "factory_environment",
+        "qa": "environment_composition"
+      }
+    },
+    {
+      "id": "collectibles",
+      "source": "collectible",
+      "span": [
+        103,
+        114
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "collectible_overlap",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "collectibles",
+        "qa": "collectible_overlap"
+      }
+    },
+    {
+      "id": "robots",
+      "source": "robot enemies",
+      "span": [
+        49,
+        62
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "enemy_behaviors",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "robots",
+        "qa": "enemy_behaviors"
+      }
+    },
+    {
+      "id": "moving_platforms",
+      "source": "moving platforms",
+      "span": [
+        64,
+        80
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "moving_platform_motion",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "moving_platforms",
+        "qa": "moving_platform_motion"
+      }
+    },
+    {
+      "id": "timed_hazards",
+      "source": "dangerous machinery",
+      "span": [
+        82,
+        101
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "timed_hazard_cycle",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "timed_hazards",
+        "qa": "timed_hazard_cycle"
+      }
+    },
+    {
+      "id": "checkpoints",
+      "source": "checkpoints",
+      "span": [
+        125,
+        136
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "checkpoint_respawn",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "checkpoints",
+        "qa": "checkpoint_respawn"
+      }
+    },
+    {
+      "id": "multiple_levels",
+      "source": "two levels",
+      "span": [
+        7,
+        17
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "level_transitions",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "multiple_levels",
+        "qa": "level_transitions"
+      }
+    },
+    {
+      "id": "dash",
+      "source": "dash",
+      "span": [
+        141,
+        145
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "dash",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "dash",
+        "qa": "dash"
+      }
+    }
+  ],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

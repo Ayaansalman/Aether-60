@@ -4,7 +4,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 
-def run_browser_qa(url: str, directory: Path) -> dict:
+def run_browser_qa(url: str, directory: Path, fixture: dict | None = None) -> dict:
     directory.mkdir(parents=True, exist_ok=True)
     checks, errors, failed_assets = [], [], []
     def record(name, passed, detail, category="gameplay", critical=True):
@@ -13,6 +13,9 @@ def run_browser_qa(url: str, directory: Path) -> dict:
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True)
         page = browser.new_page(viewport={"width":1440,"height":1000}, device_scale_factor=1)
+        if fixture is not None:
+            # Exercise the real preview/runtime with a deterministic local specification.
+            page.route('**/fixtures/*.json', lambda route: route.fulfill(json=fixture))
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.on('response', lambda response: failed_assets.append(response.url) if response.status>=400 and '/assets/' in response.url else None)
         try:
@@ -39,7 +42,9 @@ def run_browser_qa(url: str, directory: Path) -> dict:
             page.locator('canvas').click()
             page.wait_for_timeout(400)
             record('canvas_and_assets',not snap()['missingAssets'] and not failed_assets,{'missing':snap()['missingAssets'],'http_failures':failed_assets},'runtime')
-            before=snap();page.keyboard.down('ArrowRight');page.wait_for_timeout(280);page.keyboard.up('ArrowRight');after=snap()
+            before=snap();page.keyboard.down('ArrowRight')
+            page.wait_for_function('(x)=>window.__AETHER_PLATFORMER__.snapshot().x>x+25',arg=before['x'],timeout=2500)
+            page.keyboard.up('ArrowRight');after=snap()
             record('horizontal_movement',after['x']>before['x']+20,{'before':before,'after':after})
             restart();page.wait_for_timeout(150);before=snap()
             press('Space');page.wait_for_timeout(180);apex=snap();wait_grounded();landed=snap()
@@ -86,7 +91,10 @@ def run_browser_qa(url: str, directory: Path) -> dict:
                         after=next(e for e in snap()['enemies'] if e['behavior']=='chase')
                         passed=before['vx']<0 and after['vx']>=0
                     else:
-                        teleport(enemy['x']-100,enemy['y']);before=snap();page.wait_for_timeout(1900);after=snap()
+                        platform=stage_spec['platforms'][enemy['platform']]
+                        player_x=max(platform['x']*36+25,enemy['x']-100)
+                        if enemy['x']-player_x<60: player_x=min((platform['x']+platform['width'])*36-25,enemy['x']+100)
+                        teleport(player_x,platform['y']*36-28);before=snap();page.wait_for_timeout(1900);after=snap()
                         passed=after['shotsFired']>before['shotsFired'] and after['health']<before['health']
                     record('enemy_'+behavior,passed,{'method':'Controlled player positioning; real enemy simulation and projectile collisions','before':before,'after':after},'fidelity')
                 if any(e['kind']=='enemy' for e in stage_spec['entities']):
@@ -144,6 +152,12 @@ def run_browser_qa(url: str, directory: Path) -> dict:
                         page.wait_for_timeout(40)
                         if snap()['x']>=target:break
                     page.keyboard.up('ArrowRight')
+                    if (stage_spec.get('slippery') if stage_spec.get('slippery') is not None else spec.get('slippery')):
+                        # Ice requires active braking; releasing right alone intentionally
+                        # preserves momentum and can overshoot precision landings.
+                        page.keyboard.down('ArrowLeft')
+                        page.wait_for_function('window.__AETHER_PLATFORMER__.snapshot().vx<=20',timeout=1500)
+                        page.keyboard.up('ArrowLeft')
                     platform_index=stage_spec['platforms'].index(b)
                     # Optional moving routes can catch a jump above the destination's static floor.
                     # Accept only a settled, physically observed landing on that section's registered route.
@@ -180,6 +194,7 @@ def run_browser_qa(url: str, directory: Path) -> dict:
             if spec['objective']['required']:
                 teleport(gate['x'],gate['y']);page.wait_for_timeout(80)
                 record('locked_exit',snap()['state']=='playing',{'method':'Controlled exit overlap without required crystals','snapshot':snap()})
+                restart()
             transitions=[]
             levels=spec.get('levels') or [spec]
             for stage, level in enumerate(levels):
@@ -187,6 +202,39 @@ def run_browser_qa(url: str, directory: Path) -> dict:
                     page.screenshot(path=str(directory/f'stage-{stage+1}.png'),full_page=True)
                     verify_encounters(level,stage)
                     verify_route(level,stage)
+                    restart(stage)
+                resolved = {**spec, **{key: value for key, value in level.items() if value is not None}}
+                current = snap()
+                record('level_settings', current['levelIndex'] == stage and current['environment'] == resolved['theme'] and current['slippery'] == bool(resolved.get('slippery')) and current['objective'] == level['objective'] and current['checkpoint'] == -1 and current['crystals'] == 0,
+                       {'stage': stage, 'snapshot': current}, 'fidelity')
+                if stage and any(e['kind']=='icicle' for e in level['entities']):
+                    trap=next((e for e in level['entities'] if e['kind']=='icicle' and e.get('trigger')=='proximity'),next(e for e in level['entities'] if e['kind']=='icicle'))
+                    teleport(trap['x'],level['platforms'][trap['platform']]['y']*36-28)
+                    before=snap()
+                    trap_index=[e for e in level['entities'] if e['kind']=='icicle'].index(trap)
+                    page.wait_for_function('(i)=>window.__AETHER_PLATFORMER__.snapshot().icicles[i].state==="warning"',arg=trap_index,timeout=trap.get('period_ms',2200)+2500)
+                    samples=[snap()]
+                    for _ in range(22):
+                        page.wait_for_timeout(130);samples.append(snap())
+                    states={sample['icicles'][trap_index]['state'] for sample in samples}
+                    record('falling_icicle_cycle',{'warning','falling','spent'}<=states and any(sample['health']<before['health'] for sample in samples),
+                           {'stage':stage,'method':'Controlled positioning under a later-level icicle; real warning, fall, terrain collision and damage','states':sorted(states),'before':before,'after':snap()},'fidelity')
+                    restart(stage)
+                if stage and any(e['kind']=='timed_hazard' for e in level['entities']):
+                    hazard=next(e for e in level['entities'] if e['kind']=='timed_hazard')
+                    values=[]
+                    for _ in range(14):
+                        values.append(snap()['machines'][0]['active']);page.wait_for_timeout(hazard.get('period_ms',2200)/12)
+                    record('timed_hazard_cycle',len(set(values))==2,{'stage':stage,'observed_active':values},'fidelity')
+                    restart(stage)
+                checkpoint=next((e for e in level['entities'] if e['kind']=='checkpoint'),None)
+                if stage and checkpoint:
+                    teleport(checkpoint['x'],checkpoint['y']);page.wait_for_timeout(100)
+                    activated=snap()
+                    teleport(20,level['height']+10);page.wait_for_timeout(250)
+                    respawn=snap()
+                    record('later_checkpoint_respawn',activated['checkpoint']==checkpoint['platform'] and respawn['levelIndex']==stage and abs(respawn['x']-checkpoint['x'])<10,
+                           {'method':'Actual later-level checkpoint overlap and fall, controlled positions','activated':activated,'respawn':respawn})
                     restart(stage)
                 for entity in level['entities']:
                     if entity['kind']=='crystal':
@@ -197,20 +245,28 @@ def run_browser_qa(url: str, directory: Path) -> dict:
                     page.wait_for_function('(i)=>window.__AETHER_PLATFORMER__?.snapshot().levelIndex===i',arg=stage+1,timeout=4000)
                     transitions.append({'from':stage,'to':snap()['levelIndex'],'snapshot':snap()})
                     wait_grounded()
+                    record('transition_reset',snap()['crystals']==0 and snap()['checkpoint']==-1 and snap()['health']==spec['player']['health'],snap())
                 else:
                     page.wait_for_timeout(180)
             record('win_condition',snap()['state']=='won',{'method':'Controlled collection and gate overlaps through all stages, not an autonomous completion','snapshot':snap()})
             if len(levels)>1:
                 record('level_transitions',len(transitions)==len(levels)-1 and snap()['state']=='won',{'transitions':transitions,'method':'Real exit collision, scene transition and final-stage win'},'fidelity')
+            generation=snap()['generation']
+            press('r')
+            page.wait_for_function('(n)=>window.__AETHER_PLATFORMER__?.snapshot().generation>n',arg=generation,timeout=4000)
+            record('restart_after_victory',snap()['levelIndex']==0 and snap()['crystals']==0 and snap()['checkpoint']==-1 and snap()['state']=='playing',snap())
             restart()
             hazard=next((e for e in spec['entities'] if e['kind'] in ('spikes','enemy')),None)
             if hazard:
                 teleport(hazard['x'],hazard['y']);page.wait_for_timeout(180)
                 record('hazard_damage',snap()['health']<spec['player']['health'],{'method':'Controlled overlap with real hazard or enemy','snapshot':snap()})
+            restart(len(levels)-1)
             for _ in range(spec['player']['health']):page.evaluate('window.__AETHER_PLATFORMER__.damage()')
-            record('loss_condition',snap()['state']=='lost',{'method':'Test hook invokes damage to exercise health exhaustion','snapshot':snap()})
-            restart();reset=snap()
-            record('restart_reset',reset['health']==spec['player']['health'] and reset['crystals']==0 and reset['checkpoint']==-1 and reset['state']=='playing',reset)
+            record('loss_condition',snap()['state']=='lost' and snap()['levelIndex']==len(levels)-1,{'method':'Test hook invokes damage on final level to exercise health exhaustion','snapshot':snap()})
+            generation=snap()['generation'];press('r')
+            page.wait_for_function('(n)=>window.__AETHER_PLATFORMER__?.snapshot().generation>n',arg=generation,timeout=4000)
+            wait_grounded();reset=snap()
+            record('restart_reset',reset['levelIndex']==0 and reset['health']==spec['player']['health'] and reset['crystals']==0 and reset['checkpoint']==-1 and reset['state']=='playing',reset)
             page.screenshot(path=str(directory/'gameplay.png'),full_page=True)
             record('no_runtime_exceptions',not errors,errors,'runtime')
         except Exception as exc:
@@ -226,4 +282,4 @@ def run_browser_qa(url: str, directory: Path) -> dict:
 
 if __name__=='__main__':
     import sys
-    report=run_browser_qa(sys.argv[1],Path(sys.argv[2]));print(json.dumps(report));sys.exit(0 if report['overall']=='PASS' else 1)
+    report=run_browser_qa(sys.argv[1],Path(sys.argv[2]),json.loads(Path(sys.argv[3]).read_text(encoding='utf-8')) if len(sys.argv)>3 else None);print(json.dumps(report));sys.exit(0 if report['overall']=='PASS' else 1)

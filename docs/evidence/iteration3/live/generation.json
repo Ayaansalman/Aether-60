@@ -1,0 +1,391 @@
+{
+  "prompt": "Create a three-level ice platformer. The first level introduces slippery terrain, the second introduces falling icicles, and the final level combines both mechanics with difficult platforming.",
+  "provider": {
+    "provider": "saved_design_rebuild",
+    "live": false,
+    "original_source": "live"
+  },
+  "guard": {
+    "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+    "requirements": [
+      {
+        "id": "ice_environment",
+        "source": "ice",
+        "span": [
+          21,
+          24
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "ice_composition"
+      },
+      {
+        "id": "slippery",
+        "source": "slippery",
+        "span": [
+          64,
+          72
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "slippery_momentum"
+      },
+      {
+        "id": "falling_icicles",
+        "source": "falling icicles",
+        "span": [
+          104,
+          119
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "falling_icicle_cycle"
+      },
+      {
+        "id": "multiple_levels",
+        "source": "three-level",
+        "span": [
+          9,
+          20
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "level_transitions"
+      }
+    ],
+    "changes": [
+      {
+        "field": "topology",
+        "before": "ascent",
+        "after": "cavern",
+        "reason": "Explicit requested capability"
+      }
+    ],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "Frozen Odyssey",
+    "premise": "A perilous three-level journey across frozen peaks, where the terrain itself grows increasingly treacherous and deadly.",
+    "genre": "platformer",
+    "theme": "ice",
+    "difficulty": "challenging",
+    "objective": "collect_and_exit",
+    "abilities": [
+      "double_jump",
+      "dash"
+    ],
+    "checkpoints": true,
+    "moving_platforms": true,
+    "slippery": true,
+    "falling_icicles": true,
+    "icicle_trigger": "proximity",
+    "hazard_period_ms": 2000,
+    "timed_hazards": false,
+    "exit_indicator": "glow",
+    "exit_style": "shrine",
+    "collectible": "crystals",
+    "level_count": 3,
+    "levels": [
+      {
+        "title": "Glacial Foothills",
+        "theme": "ice",
+        "topology": "journey",
+        "difficulty": "relaxed",
+        "objective": "collect_and_exit",
+        "slippery": true,
+        "falling_icicles": false,
+        "timed_hazards": false,
+        "moving_platforms": false,
+        "checkpoints": true,
+        "icicle_trigger": "proximity",
+        "hazard_period_ms": 2000,
+        "exit_style": "shrine",
+        "exit_indicator": "glow",
+        "collectible": "crystals",
+        "briefing": "Master the slippery ice terrain as you navigate the lower frozen foothills.",
+        "sections": [
+          {
+            "kind": "meadow",
+            "length": 6,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "ascent",
+            "length": 6,
+            "elevation": 1,
+            "gap": 1,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "terraces",
+            "length": 6,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "bridge",
+            "length": 6,
+            "elevation": 0,
+            "gap": 2,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "exploration"
+          },
+          {
+            "kind": "meadow",
+            "length": 6,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          }
+        ]
+      },
+      {
+        "title": "Icicle Cavern",
+        "theme": "ice",
+        "topology": "cavern",
+        "difficulty": "balanced",
+        "objective": "collect_and_exit",
+        "slippery": false,
+        "falling_icicles": true,
+        "timed_hazards": false,
+        "moving_platforms": true,
+        "checkpoints": true,
+        "icicle_trigger": "proximity",
+        "hazard_period_ms": 2000,
+        "exit_style": "gate",
+        "exit_indicator": "pulse",
+        "collectible": "crystals",
+        "briefing": "Watch the ceiling carefully. Falling icicles threaten explorers in these dark caverns.",
+        "sections": [
+          {
+            "kind": "cavern",
+            "length": 6,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": true,
+            "encounter": "patrol",
+            "challenge": "hazards"
+          },
+          {
+            "kind": "ascent",
+            "length": 6,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "chase",
+            "challenge": "moving"
+          },
+          {
+            "kind": "ruins",
+            "length": 6,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "shooter",
+            "challenge": "combat"
+          },
+          {
+            "kind": "terraces",
+            "length": 6,
+            "elevation": 0,
+            "gap": 2,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "chase",
+            "challenge": "hazards"
+          },
+          {
+            "kind": "cavern",
+            "length": 6,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "exploration"
+          }
+        ]
+      },
+      {
+        "title": "Summit of Frost",
+        "theme": "ice",
+        "topology": "ascent",
+        "difficulty": "challenging",
+        "objective": "collect_and_exit",
+        "slippery": true,
+        "falling_icicles": true,
+        "timed_hazards": false,
+        "moving_platforms": true,
+        "checkpoints": true,
+        "icicle_trigger": "proximity",
+        "hazard_period_ms": 1800,
+        "exit_style": "beacon",
+        "exit_indicator": "flash",
+        "collectible": "crystals",
+        "briefing": "The final test. Combine slippery terrain mastery with lightning-fast reflexes against falling icicles.",
+        "sections": [
+          {
+            "kind": "ascent",
+            "length": 6,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "gauntlet",
+            "length": 6,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "chase",
+            "challenge": "combat"
+          },
+          {
+            "kind": "terraces",
+            "length": 6,
+            "elevation": 1,
+            "gap": 3,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "shooter",
+            "challenge": "moving"
+          },
+          {
+            "kind": "ascent",
+            "length": 6,
+            "elevation": 2,
+            "gap": 3,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "chase",
+            "challenge": "precision"
+          },
+          {
+            "kind": "bridge",
+            "length": 6,
+            "elevation": 0,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          }
+        ]
+      }
+    ],
+    "topology": "cavern",
+    "sections": [
+      {
+        "kind": "meadow",
+        "length": 6,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "ascent",
+        "length": 6,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": true,
+        "encounter": "patrol",
+        "challenge": "precision"
+      },
+      {
+        "kind": "gauntlet",
+        "length": 6,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": true,
+        "encounter": "chase",
+        "challenge": "combat"
+      },
+      {
+        "kind": "terraces",
+        "length": 6,
+        "elevation": 1,
+        "gap": 3,
+        "enemies": true,
+        "hazards": true,
+        "encounter": "shooter",
+        "challenge": "moving"
+      },
+      {
+        "kind": "bridge",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Progression carefully introduces slippery terrain in level 1, falling icicles in level 2, and combines both with demanding platforming in level 3."
+    ],
+    "requested_features": [
+      {
+        "source": "three-level ice platformer",
+        "capability": "ice_environment",
+        "description": "Ice themed environment across all levels."
+      },
+      {
+        "source": "three-level ice platformer",
+        "capability": "multiple_levels",
+        "description": "Campaign consists of three distinct connected levels."
+      },
+      {
+        "source": "The first level introduces slippery terrain",
+        "capability": "slippery",
+        "description": "Slippery ice terrain featured in the first level."
+      },
+      {
+        "source": "the second introduces falling icicles",
+        "capability": "falling_icicles",
+        "description": "Falling icicles hazard featured in the second level."
+      },
+      {
+        "source": "the final level combines both mechanics with difficult platforming",
+        "capability": "slippery",
+        "description": "Slippery terrain combined in the final level."
+      },
+      {
+        "source": "the final level combines both mechanics with difficult platforming",
+        "capability": "falling_icicles",
+        "description": "Falling icicles combined in the final level."
+      }
+    ]
+  }
+}

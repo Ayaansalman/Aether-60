@@ -67,3 +67,31 @@ def test_reverify_retains_initial_report_and_is_bounded(client,monkeypatch):
     assert client.post(f'/api/v2/games/{gid}/verify').status_code==409
     artifacts=client.get(f'/api/v2/games/{gid}').json()['artifacts']
     assert 'qa_report_initial.json' in artifacts and 'qa_retest_3.json' in artifacts
+
+
+def test_campaign_intent_and_spec_survive_api_storage(client,monkeypatch):
+    from tests.test_campaign import ICE
+    monkeypatch.setattr(platformer,'browser_report',lambda *args:{'overall':'UNAVAILABLE','checks':[]})
+    gid=submit(client,ICE)
+    result=client.get(f'/api/v2/games/{gid}').json()
+    assert result['job']['status']=='READY_WITH_WARNINGS'
+    intent=result['artifacts']['game_intent.json']
+    assert intent['level_count']==len(intent['progression'])==3
+    spec=client.get(f'/api/v2/games/{gid}/spec').json()
+    assert len(spec['levels'])==3
+    assert [level['slippery'] for level in spec['levels']]==[True,False,True]
+    assert result['artifacts']['validation.json']['overall']=='PASS'
+
+
+def test_browser_repair_updates_level_sections(client,monkeypatch):
+    reports=iter([
+        {'overall':'FAIL','checks':[{'id':'mandatory_route_edges','passed':False,'critical':True}]},
+        {'overall':'PASS','checks':[{'id':'mandatory_route_edges','passed':True}]},
+    ])
+    monkeypatch.setattr(platformer,'browser_report',lambda *args:next(reports))
+    gid=submit(client,'Create two levels of precision forest platforming with crystals')
+    result=client.get(f'/api/v2/games/{gid}').json()
+    assert result['job']['status']=='READY_WITH_WARNINGS'
+    artifacts=result['artifacts']
+    assert len(artifacts['repair_report.json']['attempts'])==1
+    assert all(section['gap']==1 for level in artifacts['final_design.json']['levels'] for section in level['sections'])

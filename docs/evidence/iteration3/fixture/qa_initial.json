@@ -1,0 +1,4165 @@
+{
+  "overall": "FAIL",
+  "checks": [
+    {
+      "id": "canvas_and_assets",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": {
+        "missing": [],
+        "http_failures": []
+      }
+    },
+    {
+      "id": "horizontal_movement",
+      "passed": false,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 805.9166666666653,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1309.9166666666695,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 3758.6
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 791.8333333333314,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1295.8333333333371,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 102.83333333333333,
+          "y": 480,
+          "vx": 128.33333333333334,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 4108.6
+        }
+      }
+    },
+    {
+      "id": "jump_gravity_landing",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 831.9166666666662,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1335.9166666666677,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 4658.6
+        },
+        "airborne": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 815.6666666666656,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1319.6666666666688,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 401.6388888888889,
+          "vx": 0,
+          "vy": -251.66666666666688,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 5025.3
+        },
+        "landed": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 772.3333333333308,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1276.3333333333385,
+              "y": 485.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 5958.6
+        }
+      }
+    },
+    {
+      "id": "environment_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "theme": "ice",
+        "method": "Runtime theme/asset witness; screenshots require human visual review"
+      }
+    },
+    {
+      "id": "ice_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 3,
+        "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 14
+        },
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "behavior": "chase",
+            "x": 771.2499999999974,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1277.4166666666717,
+            "y": 485.3,
+            "vx": 65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 720,
+            "y": 441
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": true,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 2,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 5991.9
+      }
+    },
+    {
+      "id": "slippery_momentum",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "released": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 811.3333333333321,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1315.3333333333358,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 3,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 151.5833333333333,
+          "y": 480,
+          "vx": 250,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 6591.8
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 799.416666666665,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1303.41666666667,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 3,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 194.11666666666665,
+          "y": 480,
+          "vx": 217,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 6775.2
+        }
+      }
+    },
+    {
+      "id": "enemy_chase",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "chase",
+          "x": 810.2499999999992,
+          "y": 485.3,
+          "vx": -125
+        },
+        "after": {
+          "behavior": "chase",
+          "x": 820.6666666666661,
+          "y": 485.3,
+          "vx": 125
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 1343.5000000000005,
+          "y": 485.3,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 1316.416666666669,
+          "y": 485.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "chase",
+          "patrol"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": false,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 9,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 14
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 745.2499999999965,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1301.2500000000034,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 720,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 8,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 477.616666666667,
+              "y": 480,
+              "vx": 166,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 10275.1
+            }
+          },
+          {
+            "from": 9,
+            "to": 17,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 14
+              },
+              "respawn": {
+                "x": 540,
+                "y": 449
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 738.1666666666636,
+                  "y": 485.3,
+                  "vx": -125
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1289.3333333333376,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 720,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 9,
+              "landedPlatforms": [
+                0,
+                1,
+                3
+              ],
+              "x": 725.749999999999,
+              "y": 408,
+              "vx": 205,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 11708.3
+            }
+          },
+          {
+            "from": 17,
+            "to": 26,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 14
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 887.8333333333342,
+                  "y": 485.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1343.5000000000005,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 720,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                2,
+                4
+              ],
+              "x": 1091.7944444444422,
+              "y": 480,
+              "vx": 175,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 13974.9
+            }
+          },
+          {
+            "from": 26,
+            "to": 35,
+            "landed": false,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 14
+              },
+              "respawn": {
+                "x": 1188,
+                "y": 449
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 744.1666666666631,
+                  "y": 485.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1308.8333333333362,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 720,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 11,
+              "landedPlatforms": [
+                0,
+                4
+              ],
+              "x": 1188,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 4,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 19224.7
+            }
+          },
+          {
+            "from": 35,
+            "to": 40,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 14
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 702.999999999995,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1343.5000000000005,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 720,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                5,
+                6
+              ],
+              "x": 1593.1444444444478,
+              "y": 480,
+              "vx": 169,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 21491.3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "collectible_overlap",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled placement into a real crystal overlap",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 825.416666666666,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1329.416666666668,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 13,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 378,
+          "y": 462.4523809523809,
+          "vx": 0,
+          "vy": 201.66666666666669,
+          "grounded": false,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 21891.3
+        }
+      }
+    },
+    {
+      "id": "checkpoint_respawn",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+        "activated": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 540,
+            "y": 449
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 812.4166666666655,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1316.416666666669,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 13,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 540,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 22091.3
+        },
+        "respawn": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 540,
+            "y": 449
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 792.9166666666648,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1296.9166666666704,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 13,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 540,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 22391.2
+        }
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 835.1666666666663,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1339.1666666666674,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 15,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 24357.8
+        }
+      }
+    },
+    {
+      "id": "transition_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 1,
+        "levelCount": 3,
+        "levelTitle": "The Frostbound Vault \u00b7 Heights",
+        "topology": "ascent",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 17
+        },
+        "respawn": {
+          "x": 90,
+          "y": 548
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "behavior": "shooter",
+            "x": 846,
+            "y": 449.3,
+            "vx": 0
+          },
+          {
+            "behavior": "chase",
+            "x": 1554.0833333333342,
+            "y": 341.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 2094.0833333333317,
+            "y": 233.29999999999998,
+            "vx": -65
+          }
+        ],
+        "icicles": [
+          {
+            "state": "waiting",
+            "x": 824.4,
+            "y": 248,
+            "activations": 0,
+            "trigger": "proximity"
+          },
+          {
+            "state": "waiting",
+            "x": 1519.2,
+            "y": 140,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "waiting",
+            "x": 2071.7999999999997,
+            "y": 32,
+            "activations": 0,
+            "trigger": "proximity"
+          }
+        ],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 1080,
+            "y": 333
+          },
+          {
+            "x": 2016,
+            "y": 189
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 16,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 552,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 26174.4
+      }
+    },
+    {
+      "id": "enemy_chase",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "chase",
+          "x": 1530.2500000000016,
+          "y": 341.3,
+          "vx": -125
+        },
+        "after": {
+          "behavior": "chase",
+          "x": 1538.5833333333346,
+          "y": 341.3,
+          "vx": 125
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 2099.499999999999,
+          "y": 233.29999999999998,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 2071.3333333333285,
+          "y": 233.29999999999998,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_shooter",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 17
+          },
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "shooter",
+              "x": 846,
+              "y": 449.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1557.333333333334,
+              "y": 341.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2097.333333333332,
+              "y": 233.29999999999998,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "warning",
+              "x": 824.4,
+              "y": 248,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 140,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2071.7999999999997,
+              "y": 32,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 333
+            },
+            {
+              "x": 2016,
+              "y": 189
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 19,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 746,
+          "y": 444,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 27924.4
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 17
+          },
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "shooter",
+              "x": 846,
+              "y": 449.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1428.4166666666763,
+              "y": 341.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1968.416666666666,
+              "y": 233.29999999999998,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "spent",
+              "x": 824.4,
+              "y": 440.88888888888886,
+              "activations": 1,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 140,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2071.7999999999997,
+              "y": 32,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 333
+            },
+            {
+              "x": 2016,
+              "y": 189
+            }
+          ],
+          "shotsFired": 1,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 19,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 740.8888888888889,
+          "y": 436.25,
+          "vx": 0,
+          "vy": 129.99999999999997,
+          "grounded": false,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 29890.9
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "chase",
+          "patrol",
+          "shooter"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": false,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 10,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 17
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "shooter",
+                  "x": 846,
+                  "y": 449.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1482.5833333333392,
+                  "y": 341.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2022.5833333333292,
+                  "y": 233.29999999999998,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 824.4,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 140,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2071.7999999999997,
+                  "y": 32,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1080,
+                  "y": 333
+                },
+                {
+                  "x": 2016,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 20,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 439.44444444444497,
+              "y": 480,
+              "vx": 49.99999999999995,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 31290.8
+            }
+          },
+          {
+            "from": 10,
+            "to": 19,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 17
+              },
+              "respawn": {
+                "x": 576,
+                "y": 449
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "shooter",
+                  "x": 846,
+                  "y": 449.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1478.2500000000061,
+                  "y": 341.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2018.2499999999961,
+                  "y": 233.29999999999998,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "warning",
+                  "x": 824.4,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 140,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2071.7999999999997,
+                  "y": 32,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1080,
+                  "y": 333
+                },
+                {
+                  "x": 2016,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 21,
+              "landedPlatforms": [
+                0,
+                1,
+                2
+              ],
+              "x": 767.8888888888871,
+              "y": 444,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 32707.5
+            }
+          },
+          {
+            "from": 19,
+            "to": 27,
+            "landed": false,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 17
+              },
+              "respawn": {
+                "x": 864,
+                "y": 413
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 1492.3333333333385,
+                  "y": 341.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2103.8333333333335,
+                  "y": 233.29999999999998,
+                  "vx": 65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "spent",
+                  "x": 824.4,
+                  "y": 430.08333333333337,
+                  "activations": 2,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 140,
+                  "activations": 1,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2071.7999999999997,
+                  "y": 32,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1080,
+                  "y": 333
+                },
+                {
+                  "x": 2016,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 22,
+              "landedPlatforms": [
+                0,
+                2
+              ],
+              "x": 866.2222222222222,
+              "y": 444,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 1,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 2,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 38340.6
+            }
+          },
+          {
+            "from": 27,
+            "to": 37,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 17
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "shooter",
+                  "x": 846,
+                  "y": 449.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1445.4166666666727,
+                  "y": 341.3,
+                  "vx": -125
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2020.4166666666636,
+                  "y": 233.29999999999998,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 824.4,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 140,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2071.7999999999997,
+                  "y": 32,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1080,
+                  "y": 333
+                },
+                {
+                  "x": 2016,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 23,
+              "landedPlatforms": [
+                0,
+                3,
+                5
+              ],
+              "x": 1403.3888888888926,
+              "y": 336,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 39740.5
+            }
+          },
+          {
+            "from": 37,
+            "to": 47,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 17
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "shooter",
+                  "x": 846,
+                  "y": 449.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1975.999999999999,
+                  "y": 233.29999999999998,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 824.4,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 140,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2071.7999999999997,
+                  "y": 32,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1080,
+                  "y": 333
+                },
+                {
+                  "x": 2016,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 24,
+              "landedPlatforms": [
+                0,
+                5,
+                6
+              ],
+              "x": 1762.1666666666704,
+              "y": 264,
+              "vx": 49.99999999999995,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 41823.7
+            }
+          },
+          {
+            "from": 47,
+            "to": 53,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 17
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "shooter",
+                  "x": 846,
+                  "y": 449.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1573.7500000000011,
+                  "y": 341.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2030.1666666666626,
+                  "y": 233.29999999999998,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 824.4,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 140,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "warning",
+                  "x": 2071.7999999999997,
+                  "y": 32,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1080,
+                  "y": 333
+                },
+                {
+                  "x": 2016,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 25,
+              "landedPlatforms": [
+                0,
+                6,
+                8
+              ],
+              "x": 1970.7777777777815,
+              "y": 156,
+              "vx": 149.99999999999997,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 43057.1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 17
+          },
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "shooter",
+              "x": 846,
+              "y": 449.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1559.5000000000005,
+              "y": 341.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2099.499999999999,
+              "y": 233.29999999999998,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 824.4,
+              "y": 248,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 140,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2071.7999999999997,
+              "y": 32,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 333
+            },
+            {
+              "x": 2016,
+              "y": 189
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 26,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 552,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 43240.4
+        }
+      }
+    },
+    {
+      "id": "later_level_icicles",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 17
+          },
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "shooter",
+              "x": 846,
+              "y": 449.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1522.6666666666697,
+              "y": 341.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 2062.6666666666606,
+              "y": 233.29999999999998,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "falling",
+              "x": 824.4,
+              "y": 251.58333333333334,
+              "activations": 1,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 140,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2071.7999999999997,
+              "y": 32,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1080,
+              "y": 333
+            },
+            {
+              "x": 2016,
+              "y": 189
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 26,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 819.2888888888889,
+          "y": 444,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 43790.3
+        }
+      }
+    },
+    {
+      "id": "transition_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 2,
+        "levelCount": 3,
+        "levelTitle": "The Frostbound Vault \u00b7 Summit",
+        "topology": "terraces",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 18
+        },
+        "respawn": {
+          "x": 90,
+          "y": 620
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "behavior": "patrol",
+            "x": 906.0833333333329,
+            "y": 521.3,
+            "vx": -65
+          },
+          {
+            "behavior": "shooter",
+            "x": 1566,
+            "y": 413.3,
+            "vx": 0
+          },
+          {
+            "behavior": "chase",
+            "x": 2130.0833333333317,
+            "y": 305.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [
+          {
+            "state": "waiting",
+            "x": 871.1999999999999,
+            "y": 320,
+            "activations": 0,
+            "trigger": "proximity"
+          },
+          {
+            "state": "waiting",
+            "x": 1519.2,
+            "y": 212,
+            "activations": 0,
+            "trigger": "timer"
+          },
+          {
+            "state": "waiting",
+            "x": 2095.2000000000003,
+            "y": 104,
+            "activations": 0,
+            "trigger": "proximity"
+          }
+        ],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 1152,
+            "y": 405
+          },
+          {
+            "x": 2016,
+            "y": 261
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": true,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 28,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 624,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 45956.9
+      }
+    },
+    {
+      "id": "enemy_chase",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "chase",
+          "x": 2110.416666666664,
+          "y": 305.3,
+          "vx": -125
+        },
+        "after": {
+          "behavior": "chase",
+          "x": 2118.7499999999977,
+          "y": 305.3,
+          "vx": 125
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 911.4999999999998,
+          "y": 521.3,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 885.4999999999989,
+          "y": 521.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_shooter",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Summit",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 18
+          },
+          "respawn": {
+            "x": 90,
+            "y": 620
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 910.4166666666664,
+              "y": 521.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1566,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 2134.4166666666656,
+              "y": 305.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 871.1999999999999,
+              "y": 320,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2095.2000000000003,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1152,
+              "y": 405
+            },
+            {
+              "x": 2016,
+              "y": 261
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 31,
+          "landedPlatforms": [
+            0,
+            5
+          ],
+          "x": 1466,
+          "y": 408,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 47640.2
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Summit",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 18
+          },
+          "respawn": {
+            "x": 90,
+            "y": 620
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 781.4999999999952,
+              "y": 521.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1566,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 2005.4999999999927,
+              "y": 305.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 871.1999999999999,
+              "y": 320,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2095.2000000000003,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1152,
+              "y": 405
+            },
+            {
+              "x": 2016,
+              "y": 261
+            }
+          ],
+          "shotsFired": 1,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 31,
+          "landedPlatforms": [
+            0,
+            5
+          ],
+          "x": 1428.316666666667,
+          "y": 398.0833333333333,
+          "vx": -109,
+          "vy": 111.66666666666664,
+          "grounded": false,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 49590.2
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "chase",
+          "patrol",
+          "shooter"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": true,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 10,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 90,
+                "y": 620
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 831.3333333333303,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2055.333333333322,
+                  "y": 305.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 871.1999999999999,
+                  "y": 320,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2095.2000000000003,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 32,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 443.2500000000007,
+              "y": 552,
+              "vx": 238,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 51023.4
+            }
+          },
+          {
+            "from": 10,
+            "to": 19,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 576,
+                "y": 521
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 821.58333333333,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2045.5833333333223,
+                  "y": 305.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "warning",
+                  "x": 871.1999999999999,
+                  "y": 320,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2095.2000000000003,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 33,
+              "landedPlatforms": [
+                0,
+                1,
+                2
+              ],
+              "x": 796.5333333333319,
+              "y": 516,
+              "vx": 211,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 52590
+            }
+          },
+          {
+            "from": 19,
+            "to": 29,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 936,
+                "y": 485
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 786.9166666666621,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2010.916666666658,
+                  "y": 305.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "spent",
+                  "x": 871.1999999999999,
+                  "y": 502.08333333333337,
+                  "activations": 1,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2095.2000000000003,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 34,
+              "landedPlatforms": [
+                0,
+                2,
+                3
+              ],
+              "x": 1131.4611111111103,
+              "y": 444,
+              "vx": 220,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 2,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 54673.2
+            }
+          },
+          {
+            "from": 29,
+            "to": 37,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 90,
+                "y": 620
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 822.6666666666633,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2046.666666666656,
+                  "y": 305.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 871.1999999999999,
+                  "y": 320,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2095.2000000000003,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 1,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 35,
+              "landedPlatforms": [
+                0,
+                3,
+                5
+              ],
+              "x": 1440.3666666666693,
+              "y": 408,
+              "vx": 211,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 3,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 56223.2
+            }
+          },
+          {
+            "from": 37,
+            "to": 47,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 90,
+                "y": 620
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 804.249999999996,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2028.2499999999907,
+                  "y": 305.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 871.1999999999999,
+                  "y": 320,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2095.2000000000003,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 1,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 36,
+              "landedPlatforms": [
+                0,
+                5,
+                6
+              ],
+              "x": 1776.5833333333367,
+              "y": 336,
+              "vx": 238,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 58056.4
+            }
+          },
+          {
+            "from": 47,
+            "to": 53,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 90,
+                "y": 620
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 830.2499999999969,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2025.249999999992,
+                  "y": 305.3,
+                  "vx": -125
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 871.1999999999999,
+                  "y": 320,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2095.2000000000003,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 37,
+              "landedPlatforms": [
+                0,
+                6,
+                8
+              ],
+              "x": 1987.2833333333363,
+              "y": 228,
+              "vx": 241,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 59473.1
+            }
+          },
+          {
+            "from": 53,
+            "to": 63,
+            "landed": true,
+            "route": "exit collision",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 90,
+                "y": 620
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 794.4999999999957,
+                  "y": 521.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2176.5000000000027,
+                  "y": 305.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 871.1999999999999,
+                  "y": 320,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "spent",
+                  "x": 2095.2000000000003,
+                  "y": 296.88888888888886,
+                  "activations": 1,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 38,
+              "landedPlatforms": [
+                0,
+                7
+              ],
+              "x": 2329.0444444444347,
+              "y": 206.66666666666657,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 1,
+              "state": "won",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 314159,
+              "time": 61506.3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 2,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Summit",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 18
+          },
+          "respawn": {
+            "x": 90,
+            "y": 620
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 911.4999999999998,
+              "y": 521.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1566,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 2135.499999999999,
+              "y": 305.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 871.1999999999999,
+              "y": 320,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2095.2000000000003,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1152,
+              "y": 405
+            },
+            {
+              "x": 2016,
+              "y": 261
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 39,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 624,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 61722.9
+        }
+      }
+    },
+    {
+      "id": "later_level_icicles",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 2,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Summit",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 18
+          },
+          "respawn": {
+            "x": 90,
+            "y": 620
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 874.6666666666652,
+              "y": 521.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1566,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 2098.6666666666606,
+              "y": 305.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "falling",
+              "x": 871.1999999999999,
+              "y": 321.6388888888889,
+              "activations": 1,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "waiting",
+              "x": 2095.2000000000003,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1152,
+              "y": 405
+            },
+            {
+              "x": 2016,
+              "y": 261
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 39,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 831.7499999999998,
+          "y": 508.24999999999994,
+          "vx": -106,
+          "vy": 129.99999999999997,
+          "grounded": false,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 62272.9
+        }
+      }
+    },
+    {
+      "id": "win_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled collection and gate overlaps through all stages, not an autonomous completion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Summit",
+          "topology": "terraces",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 18
+          },
+          "respawn": {
+            "x": 576,
+            "y": 521
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 806.4166666666628,
+              "y": 521.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1566,
+              "y": 413.3,
+              "vx": 0
+            }
+          ],
+          "icicles": [
+            {
+              "state": "spent",
+              "x": 871.1999999999999,
+              "y": 512.8888888888889,
+              "activations": 1,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1519.2,
+              "y": 212,
+              "activations": 0,
+              "trigger": "timer"
+            },
+            {
+              "state": "warning",
+              "x": 2095.2000000000003,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 1152,
+              "y": 405
+            },
+            {
+              "x": 2016,
+              "y": 261
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 40,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 2376,
+          "y": 216,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 18,
+          "state": "won",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 64406.2
+        }
+      }
+    },
+    {
+      "id": "level_transitions",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "transitions": [
+          {
+            "from": 0,
+            "to": 1,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 17
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "shooter",
+                  "x": 846,
+                  "y": 446.91666666666663,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1564.9166666666667,
+                  "y": 338.91666666666663,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 2104.9166666666665,
+                  "y": 230.91666666666666,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 824.4,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 140,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2071.7999999999997,
+                  "y": 32,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1080,
+                  "y": 333
+                },
+                {
+                  "x": 2016,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 16,
+              "landedPlatforms": [],
+              "x": 90,
+              "y": 548.9166666666666,
+              "vx": 0,
+              "vy": 36.666666666666664,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 314159,
+              "time": 26024.4
+            }
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "The Frostbound Vault \u00b7 Summit",
+              "topology": "terraces",
+              "objective": {
+                "type": "reach_exit",
+                "required": 0,
+                "total": 18
+              },
+              "respawn": {
+                "x": 90,
+                "y": 620
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 916.9166666666666,
+                  "y": 518.9166666666666,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1566,
+                  "y": 410.91666666666663,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 2140.9166666666665,
+                  "y": 302.91666666666663,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 871.1999999999999,
+                  "y": 320,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1519.2,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "timer"
+                },
+                {
+                  "state": "waiting",
+                  "x": 2095.2000000000003,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 1152,
+                  "y": 405
+                },
+                {
+                  "x": 2016,
+                  "y": 261
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 28,
+              "landedPlatforms": [],
+              "x": 90,
+              "y": 620.9166666666666,
+              "vx": 0,
+              "vy": 36.666666666666664,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 314159,
+              "time": 45773.6
+            }
+          }
+        ],
+        "method": "Real exit collision, scene transition and final-stage win"
+      }
+    },
+    {
+      "id": "hazard_damage",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap with real hazard or enemy",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 821.7499999999994,
+              "y": 485.3,
+              "vx": -125
+            },
+            {
+              "behavior": "patrol",
+              "x": 1327.2500000000016,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 41,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 813.9166666666665,
+          "y": 465.4166666666667,
+          "vx": -118,
+          "vy": 56.66666666666666,
+          "grounded": false,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 64906.2
+        }
+      }
+    },
+    {
+      "id": "loss_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Test hook invokes damage to exercise health exhaustion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 1322.9166666666686,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 720,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 41,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 805.6999999999998,
+          "y": 454.55555555555554,
+          "vx": 0,
+          "vy": 0,
+          "grounded": false,
+          "health": 0,
+          "crystals": 1,
+          "state": "lost",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 65056.1
+        }
+      }
+    },
+    {
+      "id": "restart_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 3,
+        "levelTitle": "The Frostbound Vault \u00b7 Foothills",
+        "topology": "journey",
+        "objective": {
+          "type": "reach_exit",
+          "required": 0,
+          "total": 14
+        },
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "behavior": "chase",
+            "x": 839.4999999999998,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1343.5000000000005,
+            "y": 485.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 720,
+            "y": 441
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": true,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 42,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 65272.8
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "screenshot": "gameplay.png",
+  "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+}

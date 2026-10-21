@@ -30,6 +30,8 @@
 
 ## Phase 4.5 Verification & Audit Summary
 
+Latest platformer milestone: Iteration 3 (2026-10-20) adds explicit multi-level planning, progressive challenge composition and verified campaign transitions/restart. Backend: 190 tests; frontend build/lint and six runtime decision tests pass. Full milestone details and bounded browser evidence are in [ITERATION3_RESULTS.md](ITERATION3_RESULTS.md) and [DEVELOPMENT_PROGRESS.md](DEVELOPMENT_PROGRESS.md).
+
 ### 1. Real Artifact E2E Verification Table (3x Repair Demo + 3x Spooky Wizard)
 Extracted directly from `artifacts/<game_id>/qa_report_attempt_N.json` and SQLite `data/app.db` (`games` table):
 

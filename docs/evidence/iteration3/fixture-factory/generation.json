@@ -1,0 +1,371 @@
+{
+  "prompt": "Create two levels of industrial platforming with robot enemies, moving platforms, dangerous machinery, collectible crystals, checkpoints and dash.",
+  "provider": {
+    "provider": "fixture",
+    "model": null,
+    "live": false
+  },
+  "guard": {
+    "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+    "requirements": [
+      {
+        "id": "factory_environment",
+        "source": "industrial",
+        "span": [
+          21,
+          31
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "environment_composition"
+      },
+      {
+        "id": "collectibles",
+        "source": "collectible",
+        "span": [
+          103,
+          114
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "collectible_overlap"
+      },
+      {
+        "id": "robots",
+        "source": "robot enemies",
+        "span": [
+          49,
+          62
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "enemy_behaviors"
+      },
+      {
+        "id": "moving_platforms",
+        "source": "moving platforms",
+        "span": [
+          64,
+          80
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "moving_platform_motion"
+      },
+      {
+        "id": "timed_hazards",
+        "source": "dangerous machinery",
+        "span": [
+          82,
+          101
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "timed_hazard_cycle"
+      },
+      {
+        "id": "checkpoints",
+        "source": "checkpoints",
+        "span": [
+          125,
+          136
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "checkpoint_respawn"
+      },
+      {
+        "id": "multiple_levels",
+        "source": "two levels",
+        "span": [
+          7,
+          17
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "level_transitions"
+      },
+      {
+        "id": "dash",
+        "source": "dash",
+        "span": [
+          141,
+          145
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "dash"
+      }
+    ],
+    "changes": [
+      {
+        "field": "levels",
+        "reason": "Expanded campaign defaults into explicit progressive level specifications"
+      }
+    ],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "The Copperworks",
+    "premise": "Create two levels of industrial platforming with robot enemies, moving platforms, dangerous machinery, collectible crystals, checkpoints and dash.",
+    "genre": "platformer",
+    "theme": "industrial",
+    "difficulty": "balanced",
+    "objective": "collect_and_exit",
+    "abilities": [
+      "dash"
+    ],
+    "checkpoints": true,
+    "moving_platforms": true,
+    "slippery": false,
+    "falling_icicles": false,
+    "icicle_trigger": "mixed",
+    "hazard_period_ms": 2200,
+    "timed_hazards": true,
+    "exit_indicator": "none",
+    "exit_style": "gate",
+    "collectible": "crystals",
+    "level_count": 2,
+    "levels": [
+      {
+        "title": "The Copperworks \u00b7 Foothills",
+        "theme": "industrial",
+        "topology": "journey",
+        "difficulty": "relaxed",
+        "objective": "collect_and_exit",
+        "slippery": false,
+        "falling_icicles": false,
+        "timed_hazards": false,
+        "moving_platforms": null,
+        "checkpoints": null,
+        "icicle_trigger": null,
+        "hazard_period_ms": null,
+        "exit_style": null,
+        "exit_indicator": null,
+        "collectible": null,
+        "briefing": "Learn the terrain and explore the upper paths.",
+        "sections": [
+          {
+            "kind": "terraces",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "ruins",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "chase",
+            "challenge": "exploration"
+          },
+          {
+            "kind": "terraces",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "shooter",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "bridge",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "terraces",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "chase",
+            "challenge": "traversal"
+          }
+        ]
+      },
+      {
+        "title": "The Copperworks \u00b7 Heights",
+        "theme": "industrial",
+        "topology": "ascent",
+        "difficulty": "balanced",
+        "objective": "collect_and_exit",
+        "slippery": false,
+        "falling_icicles": false,
+        "timed_hazards": true,
+        "moving_platforms": null,
+        "checkpoints": null,
+        "icicle_trigger": null,
+        "hazard_period_ms": null,
+        "exit_style": null,
+        "exit_indicator": null,
+        "collectible": null,
+        "briefing": "Climb through the new hazards.",
+        "sections": [
+          {
+            "kind": "terraces",
+            "length": 7,
+            "elevation": 2,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "terraces",
+            "length": 7,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "chase",
+            "challenge": "hazards"
+          },
+          {
+            "kind": "ruins",
+            "length": 7,
+            "elevation": 2,
+            "gap": 2,
+            "enemies": false,
+            "hazards": true,
+            "encounter": "shooter",
+            "challenge": "exploration"
+          },
+          {
+            "kind": "terraces",
+            "length": 7,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "combat"
+          },
+          {
+            "kind": "bridge",
+            "length": 4,
+            "elevation": 2,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "chase",
+            "challenge": "precision"
+          },
+          {
+            "kind": "terraces",
+            "length": 7,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "shooter",
+            "challenge": "moving"
+          }
+        ]
+      }
+    ],
+    "topology": "terraces",
+    "sections": [
+      {
+        "kind": "terraces",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "chase",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "shooter",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "chase",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": true,
+        "hazards": true,
+        "encounter": "shooter",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "terraces",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "chase",
+        "challenge": "traversal"
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ],
+    "requested_features": []
+  }
+}

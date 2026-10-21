@@ -1,0 +1,78 @@
+{
+  "requirements": [
+    {
+      "id": "ice_environment",
+      "source": "ice",
+      "span": [
+        21,
+        24
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "ice_composition",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "ice_environment",
+        "qa": "ice_composition"
+      }
+    },
+    {
+      "id": "slippery",
+      "source": "slippery",
+      "span": [
+        64,
+        72
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "slippery_momentum",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "slippery",
+        "qa": "slippery_momentum"
+      }
+    },
+    {
+      "id": "falling_icicles",
+      "source": "falling icicles",
+      "span": [
+        104,
+        119
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "falling_icicle_cycle",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "falling_icicles",
+        "qa": "falling_icicle_cycle"
+      }
+    },
+    {
+      "id": "multiple_levels",
+      "source": "three-level",
+      "span": [
+        9,
+        20
+      ],
+      "supported": true,
+      "status": "implemented_verified",
+      "runtime_check": "level_transitions",
+      "model_sources": [],
+      "constructed": true,
+      "verified": true,
+      "evidence": {
+        "spec": "multiple_levels",
+        "qa": "level_transitions"
+      }
+    }
+  ],
+  "overall": "PASS",
+  "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review."
+}

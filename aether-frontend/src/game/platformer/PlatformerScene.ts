@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import type { PlatformerIR, Platform, Entity } from "./types";
-import { iciclePhase, enemyDecision, indicatorAnimation, exitDecision } from "./behaviors";
+import { iciclePhase, enemyDecision, indicatorAnimation, exitDecision, resolveLevel } from "./behaviors";
 import type { IcicleState } from "./behaviors";
 import registry from "../../../public/assets/registry.json";
 
@@ -53,7 +53,7 @@ export class PlatformerScene extends Phaser.Scene {
   init(data: { spec: PlatformerIR; levelIndex?: number }) {
     this.campaign = data.spec;
     this.levelIndex = data.levelIndex || 0;
-    this.spec = { ...data.spec, ...(data.spec.levels?.[this.levelIndex] || {}) };
+    this.spec = resolveLevel(data.spec, this.levelIndex);
     this.exits = [];
     this.traps = [];
     this.machines = [];
@@ -90,6 +90,7 @@ export class PlatformerScene extends Phaser.Scene {
     );
   }
   create() {
+    this.physics.resume();
     const s = this.spec,
       industrial = s.theme === "industrial",
       ice = s.theme === "ice",
@@ -145,10 +146,10 @@ export class PlatformerScene extends Phaser.Scene {
     if (s.theme === "twilight") background.setTint(0x8a8ebd);
     if (ice) {
       background.setVisible(false);
-      camera.setBackgroundColor("#101d37");
+      camera.setBackgroundColor(s.topology === 'journey' ? '#244b65' : s.topology === 'ascent' ? '#142b49' : '#101d37');
       const cave = this.add.graphics().setDepth(-8).setScrollFactor(.35, .45);
       for (let x = 0; x < s.width; x += 170) {
-        const height = 70 + (x * 7 % 150);
+        const height = 70 + ((x * 7 + this.levelIndex * 53) % 150);
         cave.fillStyle(0x213f64).fillTriangle(x,0,x+160,0,x+80,height+120);
         cave.fillStyle(0x315b7c).fillTriangle(x+30,500,x+100,500,x+75,300-height/3);
         cave.fillStyle(0x83d3e5,.45).fillTriangle(x+60,460,x+95,460,x+80,390);
@@ -379,6 +380,9 @@ export class PlatformerScene extends Phaser.Scene {
           if (action !== "locked") {
             if (action === "next") {
               this.state = "transitioning";
+              this.hero.setVelocity(0);
+              this.physics.pause();
+              this.message.setText(`Level ${this.levelIndex+1} complete!\nNext: ${this.campaign.levels?.[this.levelIndex+1].title}`).setVisible(true);
               this.cameras.main.fadeOut(250);
               this.time.delayedCall(260,()=>this.scene.restart({spec:this.campaign,levelIndex:this.levelIndex+1}));
             } else this.finish("won");
@@ -425,6 +429,7 @@ export class PlatformerScene extends Phaser.Scene {
         fontSize: "25px",
         color: "#ffffff",
         align: "center",
+        wordWrap: { width: 780, useAdvancedWrap: true },
         backgroundColor: "#18333e",
         padding: { x: 24, y: 18 },
       })
@@ -432,6 +437,9 @@ export class PlatformerScene extends Phaser.Scene {
       .setScrollFactor(0)
       .setDepth(60)
       .setVisible(false);
+    this.message.setText(`Level ${this.levelIndex+1}: ${s.title}\n${s.briefing || (s.objective.required ? `Collect ${s.objective.required} ${s.collectible || 'crystals'}, then find the exit.` : 'Find the exit.')}`).setVisible(true);
+    this.messageUntil = this.time.now + 2400;
+    camera.fadeIn(250);
     camera.startFollow(this.hero, true, 0.1, 0.1, s.camera_mode === "vertical" ? 0 : -150, 55);
     if (new URLSearchParams(location.search).has("test")) {
       Object.assign(window, {
@@ -488,8 +496,8 @@ export class PlatformerScene extends Phaser.Scene {
     this.message
       .setText(
         state === "won"
-          ? "Passage complete!\nPress R to play again"
-          : "One more adventure?\nPress R to retry",
+          ? `All ${this.campaign.levels?.length || 1} levels complete!\nPress R to play again`
+          : `Journey ended at level ${this.levelIndex+1}\nPress R to restart the journey`,
       )
       .setVisible(true);
   }
@@ -500,6 +508,10 @@ export class PlatformerScene extends Phaser.Scene {
       ready: true,
       levelIndex: this.levelIndex,
       levelCount: this.campaign.levels?.length || 1,
+      levelTitle: this.spec.title,
+      topology: this.spec.topology,
+      objective: this.spec.objective,
+      respawn: this.spawn,
       exitAlpha: this.exits[0]?.alpha,
       exitStyle: this.spec.exit_style || "gate",
       enemies: this.enemies.filter(e=>e.sprite.active).map(e=>({behavior:e.behavior,x:e.sprite.x,y:e.sprite.y,vx:(e.sprite.body as Phaser.Physics.Arcade.Body).velocity.x})),
@@ -669,10 +681,12 @@ export class PlatformerScene extends Phaser.Scene {
       if (this.state === "playing") {
         this.hero.setPosition(this.spawn.x, this.spawn.y);
         this.hero.setVelocity(0);
+        this.jumps = 0;
+        this.groundedAt = -1000;
       }
     }
     this.hud.setText(
-      `${"♥ ".repeat(Math.max(0, this.health))}  Stage ${this.levelIndex+1}/${this.campaign.levels?.length || 1}\n${this.crystals} collected · ${this.spec.objective.required} needed · ${this.spec.objective.total} ${this.spec.collectible || "crystals"}\n${this.crystals < this.spec.objective.required ? "Collect items, then reach the exit" : this.levelIndex+1 < (this.campaign.levels?.length || 1) ? "Reach the exit to the next stage" : "Reach the exit"}${this.checkpoint >= 0 ? " · Saved" : ""}`,
+      `${"♥ ".repeat(Math.max(0, this.health))}  Level ${this.levelIndex+1}/${this.campaign.levels?.length || 1}\n${this.crystals} collected · ${this.spec.objective.required} needed · ${this.spec.objective.total} ${this.spec.collectible || "crystals"}\n${this.crystals < this.spec.objective.required ? "Collect items, then reach the exit" : this.levelIndex+1 < (this.campaign.levels?.length || 1) ? "Reach the exit to the next level" : "Reach the exit"}${this.checkpoint >= 0 ? " · Saved" : ""}`,
     );
   }
 }

@@ -1,6 +1,6 @@
 """Versioned design contracts. Genre dispatch is explicit; v1 remains supported."""
 from typing import Literal
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class Contract(BaseModel):
@@ -15,6 +15,7 @@ class Section(Contract):
     enemies: bool = True
     hazards: bool = False
     encounter: Literal["patrol", "chase", "shooter"] = "patrol"
+    challenge: Literal['traversal', 'precision', 'combat', 'hazards', 'exploration', 'moving'] = 'traversal'
 
 
 class RequestedFeature(Contract):
@@ -24,6 +25,27 @@ class RequestedFeature(Contract):
                         'ranged', 'moving_platforms', 'timed_hazards', 'checkpoints', 'multiple_levels',
                         'double_jump', 'dash', 'unsupported']
     description: str = Field(min_length=1, max_length=300)
+
+
+class LevelDesign(Contract):
+    """A playable level; omitted settings inherit campaign defaults."""
+    title: str = Field(min_length=1, max_length=80)
+    theme: Literal['forest', 'industrial', 'twilight', 'ice'] | None = None
+    topology: Literal['journey', 'ascent', 'terraces', 'cavern'] | None = None
+    difficulty: Literal['relaxed', 'balanced', 'challenging'] | None = None
+    objective: Literal['reach_exit', 'collect_and_exit'] | None = None
+    slippery: bool | None = None
+    falling_icicles: bool | None = None
+    timed_hazards: bool | None = None
+    moving_platforms: bool | None = None
+    checkpoints: bool | None = None
+    icicle_trigger: Literal['mixed', 'proximity', 'timer'] | None = None
+    hazard_period_ms: int | None = Field(default=None, ge=800, le=10000)
+    exit_style: Literal['shrine', 'gate', 'beacon'] | None = None
+    exit_indicator: Literal['none', 'glow', 'pulse', 'flash'] | None = None
+    collectible: Literal['crystals', 'relics'] | None = None
+    briefing: str = Field(default='', max_length=200)
+    sections: list[Section] = Field(min_length=5, max_length=14)
 
 
 class GameDesign(Contract):
@@ -45,11 +67,18 @@ class GameDesign(Contract):
     exit_style: Literal['shrine', 'gate', 'beacon'] = 'gate'
     collectible: Literal["crystals", "relics"] = "crystals"
     level_count: int = Field(default=1, ge=1, le=3)
+    levels: list[LevelDesign] = Field(default_factory=list, max_length=3)
     topology: Literal["journey", "ascent", "terraces", "cavern"] = "journey"
     sections: list[Section] = Field(min_length=5, max_length=14)
     unsupported: list[str] = Field(default_factory=list, max_length=20)
     design_notes: list[str] = Field(default_factory=list, max_length=20)
     requested_features: list[RequestedFeature] = Field(default_factory=list, max_length=40)
+
+    @model_validator(mode='after')
+    def consistent_levels(self):
+        if self.levels and len(self.levels) != self.level_count:
+            raise ValueError('levels must contain exactly level_count level specifications')
+        return self
 
 
 class Platform(Contract):
@@ -89,6 +118,14 @@ class LevelIR(Contract):
     platforms: list[Platform]
     entities: list[Entity]
     camera_mode: Literal["follow", "vertical"] = "follow"
+    theme: str | None = None
+    slippery: bool | None = None
+    exit_style: Literal['shrine', 'gate', 'beacon'] | None = None
+    exit_indicator: Literal['none', 'glow', 'pulse', 'flash'] | None = None
+    collectible: Literal['crystals', 'relics'] | None = None
+    difficulty: Literal['relaxed', 'balanced', 'challenging'] = 'balanced'
+    briefing: str = ''
+    topology: Literal['journey', 'ascent', 'terraces', 'cavern'] = 'journey'
 
 
 class PlatformerIR(LevelIR):

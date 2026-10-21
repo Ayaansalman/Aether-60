@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import {iciclePhase, enemyDecision, indicatorAnimation, exitDecision} from '../src/game/platformer/behaviors.ts';
+import {iciclePhase, enemyDecision, indicatorAnimation, exitDecision, resolveLevel} from '../src/game/platformer/behaviors.ts';
 
 test('proximity icicle warns before falling and only resets after collision cooldown',()=>{
   assert.equal(iciclePhase('waiting',9000,false,'proximity',2200),'waiting');
@@ -40,4 +40,19 @@ test('exit collection gate precedes transition; only last level completes campai
   assert.equal(exitDecision(1,3,0,0),'next');
   assert.equal(exitDecision(2,3,4,3),'won');
   assert.equal(exitDecision(0,1,0,0),'won');
+});
+
+test('level settings preserve false and old saved levels inherit omitted or null settings',()=>{
+  const campaign = {title:'Journey', theme:'ice', slippery:true, exit_style:'gate', levels:[
+    {title:'Learn', slippery:false, theme:'forest', objective:{required:0}},
+    {title:'Climb', theme:null, slippery:null},
+    {title:'Combine', slippery:true, theme:'ice'},
+  ]};
+  assert.equal(resolveLevel(campaign,0).slippery,false);
+  assert.equal(resolveLevel(campaign,0).theme,'forest');
+  assert.equal(resolveLevel(campaign,1).theme,'ice');
+  assert.equal(resolveLevel(campaign,1).slippery,true);
+  assert.equal(resolveLevel(campaign,2).slippery,true);
+  assert.equal(campaign.title,'Journey');
+  assert.equal(resolveLevel(campaign,0).exit_style,'gate');
 });

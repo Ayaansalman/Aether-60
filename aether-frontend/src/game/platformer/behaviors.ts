@@ -1,4 +1,12 @@
 /** Pure decisions shared by runtime components and regression tests. Physics remains Phaser-owned. */
+import type { PlatformerIR } from './types';
+
+export function resolveLevel(campaign: PlatformerIR, index: number): PlatformerIR {
+  const level = campaign.levels?.[index];
+  // Old saved levels omit settings (or serialize them as null). Explicit false is
+  // significant: an introduction may disable a campaign mechanic.
+  return { ...campaign, ...Object.fromEntries(Object.entries(level || {}).filter(([, value]) => value != null)) };
+}
 export type IcicleState = "waiting" | "warning" | "falling" | "spent";
 export function iciclePhase(state: IcicleState, elapsed: number, near: boolean, trigger: string, period: number): IcicleState {
   if (state === "waiting" && (trigger === "timer" ? elapsed >= period : near)) return "warning";

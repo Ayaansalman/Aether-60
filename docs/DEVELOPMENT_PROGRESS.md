@@ -95,3 +95,11 @@ Verification:
 - Initial runtime failures and a genuine intermediate bounded layout repair are retained. A QA false failure caused by successful midair exit collision was corrected with explicit exit-collision evidence, not an invented landing.
 
 Full report and reproduction: docs/ITERATION2_RESULTS.md. Evidence: docs/evidence/iteration2/. No push, external deployment, new genre, credential disclosure or destructive cleanup. Full autonomous unassisted completion, arbitrary natural-language coverage, nonlinear worlds, authored animation/audio, and production hardening remain limitations; parameter repair does not invent new runtime mechanics.
+
+## Iteration 3 — 2026-10-20
+
+Implemented explicit per-level design specifications and model planning instructions, persisted count/progression intent, backward-compatible per-level IR/runtime settings, progressive deterministic fallback designs and reusable precision/combat/exploration/moving section components. Fixed optional collectible support references, kept collection objectives achievable on the mandatory route, reserved enemy departure space and placed checkpoints before challenges. Level transitions, local respawn, health/collection/checkpoint resets, final victory and whole-campaign keyboard restart are verified. Briefings wrap and the HUD shows level progress. Bounded layout repair now updates all level specifications.
+
+Verification: backend 190 tests pass; frontend build, lint and six shared runtime tests pass. Real Chromium checks pass for the three-level ice fixture (26), saved Gemini design (40) and two-level industrial fixture (30). Evidence includes actual keyboard jumps with active ice braking, later-level hazards/checkpoints, objectives, transitions, final-level loss and keyboard restart after victory/loss. Two live planning invocations: HTTP 503 followed by a successful Gemini design; subsequent rebuilds made no further provider calls. Initial failures and screenshots are retained. Tests use isolated launch positions/controlled overlaps, not full autonomous playthroughs.
+
+Full report and reproduction: docs/ITERATION3_RESULTS.md. Evidence: docs/evidence/iteration3/. Creator UI and asset library preserved; no push, deployment, new genre or asset download.

@@ -4,8 +4,61 @@ import json
 import math
 import random
 import re
-from schemas.platformer import GameDesign, PlatformerIR, LevelIR, Platform, Player, Entity, Section
+from schemas.platformer import GameDesign, LevelDesign, PlatformerIR, LevelIR, Platform, Player, Entity, Section
 from services.capabilities import extract_requirements, requirement_evidence
+
+
+def requested_level_count(prompt: str) -> int | None:
+    match = re.search(r'\b(two|three|2|3)[ -]+(?:(?:connected|ice|forest|industrial|twilight|platformer)[ -]+)*(?:levels?|stages?)\b', prompt, re.I)
+    if match:
+        return {'two': 2, 'three': 3, '2': 2, '3': 3}[match.group(1).lower()]
+    return 3 if re.search(r'\b(?:multiple|multi)[ -](?:levels?|stages?)\b', prompt, re.I) else None
+
+
+def progression_specs(design: GameDesign, prompt: str) -> list[LevelDesign]:
+    """Deterministic compatibility planner for fixtures and older saved designs.
+
+    Explicit model level specifications bypass this planner entirely.
+    """
+    result = []
+    for stage in range(design.level_count):
+        sections = []
+        for j in range(5 + stage):
+            source = design.sections[j % len(design.sections)]
+            challenge = ('traversal', 'exploration', 'traversal', 'precision', 'traversal')[j % 5] if stage == 0 else ('traversal', 'hazards', 'exploration', 'combat', 'precision', 'moving', 'precision')[j % 7]
+            if challenge == 'combat' and not any(s.enemies for s in design.sections): challenge = 'precision'
+            if challenge == 'moving' and not design.moving_platforms: challenge = 'exploration'
+            sections.append(source.model_copy(update={
+                'challenge': challenge,
+                'kind': 'bridge' if challenge == 'precision' else 'ruins' if challenge == 'exploration' else source.kind,
+                'length': 8 if stage == 0 else 4 if challenge == 'precision' else 7,
+                'gap': 1 if stage == 0 else 2 if stage == 1 else 3,
+                'elevation': 0 if stage == 0 else 1 if j % 2 else 2,
+                'enemies': any(s.enemies for s in design.sections) and j > 0 and j % 2 == 1,
+                'encounter': source.encounter,
+                'hazards': source.hazards and j > 0 and stage > 0,
+            }))
+        result.append(LevelDesign(
+            title=f'{design.title[:55]} · {("Foothills", "Heights", "Summit")[stage]}',
+            theme=design.theme, topology=('journey', 'ascent', 'terraces')[stage],
+            difficulty='relaxed' if design.difficulty == 'relaxed' else ('relaxed', 'balanced', 'challenging')[stage],
+            slippery=design.slippery,
+            falling_icicles=(stage > 0 and design.falling_icicles),
+            timed_hazards=stage > 0 and design.timed_hazards,
+            objective=design.objective, sections=sections,
+            briefing=('Learn the terrain and explore the upper paths.', 'Climb through the new hazards.', 'Combine your skills on the final crossing.')[stage]))
+    # Bounded, inspectable fixture interpretation of explicit introduction clauses.
+    markers = list(re.finditer(r'\b(first|second|third|final|last)\s+(?:(?:level|stage)\b|(?=introduces?\b|combines?\b))', prompt, re.I))
+    patterns = {'slippery': r'slippery|sliding terrain', 'falling_icicles': r'icicles?',
+                'timed_hazards': r'timed hazards?|machinery', 'moving_platforms': r'moving platforms?'}
+    clauses = [(marker.group(1).lower(), prompt[marker.end():markers[i+1].start() if i+1 < len(markers) else len(prompt)]) for i, marker in enumerate(markers)]
+    scoped = {key for key, pattern in patterns.items() if any(re.search(pattern, text, re.I) for _, text in clauses)}
+    for label, text in clauses:
+        index = {'first': 0, 'second': 1, 'third': 2, 'final': len(result)-1, 'last': len(result)-1}[label]
+        if index >= len(result): continue
+        for key in scoped:
+            setattr(result[index], key, bool(re.search(patterns[key], text, re.I) or re.search(r'both mechanics|combine.*both', text, re.I) and getattr(design, key)))
+    return result
 
 
 def fixture_design(prompt: str) -> GameDesign:
@@ -24,7 +77,7 @@ def fixture_design(prompt: str) -> GameDesign:
         timed_hazards=industry and not calm,
         exit_indicator="flash" if "flashing" in p else "glow" if "glowing" in p else "none",
         collectible="relics" if "relic" in p else "crystals",
-        level_count=3 if "multiple" in p else 1,
+        level_count=requested_level_count(prompt) or 1,
         premise=prompt[:500], theme=theme, difficulty="relaxed" if calm else "challenging" if tower else "balanced",
         abilities=[a for a, words in [("double_jump", ("double jump", "double-jump")), ("dash", ("dash",))] if any(w in p for w in words)],
         objective="collect_and_exit" if any(w in p for w in ("collect", "crystal", "gem")) else "reach_exit",
@@ -32,7 +85,7 @@ def fixture_design(prompt: str) -> GameDesign:
         sections=[Section(kind="ascent" if tower else "terraces" if industry else "cavern" if ice else "ruins" if i % 3 == 2 else "meadow",
                           encounter=("patrol", "chase", "shooter")[i % 3] if industry else "patrol",
                           length=5 + i % 3, elevation=2 if tower else i % 3 - 1,
-                          gap=1 if calm else 2 + (i % 2 if tower else 0), enemies=not calm and i % 3 == 1,
+                          gap=1 if calm else 2 + (i % 2 if tower else 0), enemies=not calm and (not ice or any(w in p for w in ('enemies', 'monsters', 'creatures', 'robots'))) and i % 3 == 1,
                           hazards=not calm and i % 3 == 2) for i in range(9 if tower else 8)],
         unsupported=unsupported, design_notes=["Offline fixture: keyword interpretation and seeded construction; no model was called."])
 
@@ -52,6 +105,13 @@ patrol, chase and shooter enemies (section.encounter); proximity or timed fallin
 terrain; timed machinery; checkpoints; double_jump; dash; moving platforms; exit_indicator
 none/glow/pulse/flash and exit_style shrine/gate/beacon; 1-3 connected levels. Choose topology journey/ascent/terraces/cavern.
 Set falling_icicles/slippery/timed_hazards/level_count/collectible explicitly to match requests.
+For multiple levels, populate levels with exactly level_count LevelDesign objects. Each has its own
+title, theme, topology, difficulty, objective, briefing and 5-14 sections. Explicitly set per-level
+mechanic booleans, including false when a mechanic has not been introduced yet. Follow first/second/final
+level instructions precisely. Introduce, develop, then combine requested mechanics; never clone stages.
+Use section.challenge traversal/precision/combat/hazards/exploration/moving to compose encounters,
+optional collectible shelves and moving alternate paths. Combat/hazards still require their corresponding
+enemies/hazards flags. Do not introduce unrequested mechanics merely for variety.
 Enumerate each concrete user request in requested_features, with an exact substring of the user's
 prompt as source, a registered capability and a description. Unavailable behavior must use
 capability=unsupported and also appear in unsupported. Do not drop a request to fit the engine.
@@ -84,70 +144,74 @@ def construct(design: GameDesign, prompt: str, seed: int | None = None) -> Platf
     seed = seed if seed is not None else int(hashlib.sha256(prompt.encode()).hexdigest()[:8], 16)
     rng = random.Random(seed)
     # Leave enough vertical room for every requested ascent.
-    start_y = max(14, 4 + (2 * len(design.sections) if design.topology == 'ascent' else sum(max(s.elevation, 0) for s in design.sections)))
+    start_y = max(14, 4 + 2 * len(design.sections))
     platforms = [Platform(x=0, y=start_y, width=8, kind=design.topology)]
     entities = []
     x, y = 8, start_y
     for i, section in enumerate(design.sections):
-        x += section.gap
+        # Reusable components vary geometry as well as encounters. Mandatory gaps stay
+        # within a single jump; moving platforms and exploration shelves are optional.
+        precision = section.challenge == 'precision'
+        gap = min(section.gap, 2) if design.slippery else section.gap
+        x += gap
         rise = section.elevation
         if design.topology == "ascent":
             rise = max(1, section.elevation)
-        elif design.topology == "terraces":
-            rise = (1, 2, -1, 1, -1)[i % 5]
-        elif design.topology == "cavern":
-            rise = (-1, 1, 0, 2, -1)[i % 5]
         y = max(5, min(start_y + 2, y - rise))
         length = max(4, min(10, section.length + rng.choice([-1, 0, 1])))
+        if precision: length = 6 if section.enemies else 4
+        if section.challenge == 'combat': length = max(8, length)
         platform = Platform(x=x, y=y, width=length, kind=section.kind)
         platforms.append(platform)
+        main_index = len(platforms) - 1
         offsets = range(1, length - 1, 2) if section.kind not in ('bridge', 'gauntlet') else [length // 2]
         for offset in offsets:
             lift = 20 * (1 - abs(offset - length/2) / (length/2)) if design.topology == 'journey' else (offset % 3)*10
-            entities.append(Entity(x=(x + offset + .5) * 36, y=y * 36 - 56 - lift, kind="crystal", platform=i + 1))
+            entities.append(Entity(x=(x + offset + .5) * 36, y=y * 36 - 56 - lift, kind="crystal", platform=main_index))
         if section.enemies:
-            entities.append(Entity(x=(x + length - 1.5) * 36, y=y * 36 - 22, kind="enemy", platform=i + 1, behavior=section.encounter))
+            # Reserve a run-up at the departure edge; encounters belong within the
+            # platform, away from the narrow landing and checkpoint zones.
+            entities.append(Entity(x=(x + length * .4) * 36, y=y * 36 - 22, kind="enemy", platform=main_index, behavior=section.encounter))
         if design.falling_icicles and i % 2 == 1:
             trigger = ('proximity' if i % 4 == 1 else 'timer') if design.icicle_trigger == 'mixed' else design.icicle_trigger
             entities.append(Entity(x=(x + length * .65) * 36, y=y * 36 - 220, kind="icicle", platform=len(platforms)-1, trigger=trigger, period_ms=design.hazard_period_ms))
         if design.timed_hazards and i % 3 == 2:
             entities.append(Entity(x=(x + length * .65) * 36, y=y*36 - 16, kind="timed_hazard", platform=len(platforms)-1, period_ms=design.hazard_period_ms))
         if section.hazards and not design.falling_icicles and not design.timed_hazards:
-            entities.append(Entity(x=(x + length // 2 + .5) * 36, y=y * 36 - 10, kind="spikes", platform=i + 1))
-        if design.checkpoints and i in (len(design.sections)//2 - 1,):
-            entities.append(Entity(x=(x + .8) * 36, y=y * 36 - 30, kind="checkpoint", platform=i + 1))
-        if design.moving_platforms and i % 2 == 0:
+            entities.append(Entity(x=(x + length // 2 + .5) * 36, y=y * 36 - 10, kind="spikes", platform=main_index))
+        if design.checkpoints and (i == len(design.sections)//2 - 1 or (i > 0 and section.challenge in ('precision', 'hazards', 'combat') and design.sections[i-1].challenge == 'traversal')):
+            previous_index = next(j for j in range(main_index-1, -1, -1) if not platforms[j].moving and platforms[j].route == 'main')
+            previous = platforms[previous_index]
+            entities.append(Entity(x=(previous.x + previous.width - 1)*36, y=previous.y*36-30, kind='checkpoint', platform=previous_index))
+        moving = design.moving_platforms and (i % 2 == 0 or section.challenge == 'moving')
+        if moving:
             # Optional elevated route; mandatory route is static and independently reachable.
-            platforms.append(Platform(x=x + 1, y=y - 3, width=4, kind=section.kind, moving=True))
-            # Entity references are corrected below using coordinates (optional platforms interleave).
-        if section.kind in ('ruins', 'terraces') and i % 3 == 2 and not (design.moving_platforms and i % 2 == 0):
+            platforms.append(Platform(x=x + 1, y=y - 2, width=4, kind='bridge', moving=True, route='optional'))
+        if (section.challenge == 'exploration' or section.kind in ('ruins', 'terraces') and i % 3 == 2) and not moving:
             # An optional suspended shelf creates an alternate collectible route, not a mandatory jump.
-            platforms.append(Platform(x=x+1, y=y-3, width=4, kind='bridge', route='optional'))
-            entities.append(Entity(x=(x+3)*36, y=(y-3)*36-45, kind='crystal', platform=len(platforms)-1))
+            platforms.append(Platform(x=x+1, y=y-2, width=4, kind='bridge', route='optional'))
+            entities.append(Entity(x=(x+3)*36, y=(y-2)*36-45, kind='crystal', platform=len(platforms)-1))
         x += length
-    for e in entities:
-        e.platform = next(i for i, p in enumerate(platforms) if not p.moving and p.x * 36 <= e.x <= (p.x+p.width)*36 and abs(e.y-p.y*36) < (250 if e.kind == "icicle" else 90))
     end = next(p for p in reversed(platforms) if not p.moving and p.route == 'main')
     entities.append(Entity(x=(end.x + end.width - 1) * 36, y=end.y * 36 - 36, kind="exit", platform=platforms.index(end)))
     count = sum(e.kind == "crystal" for e in entities)
     ir = PlatformerIR(title=design.title, theme=design.theme, seed=seed, width=(x+2)*36, height=(start_y+5)*36,
         spawn={"x": 90, "y": start_y*36-28}, player=Player(abilities=design.abilities, health=5 if design.difficulty=="relaxed" else 3),
         slippery=design.slippery, exit_indicator=design.exit_indicator, exit_style=design.exit_style, collectible=design.collectible,
+        difficulty=design.difficulty, topology=design.topology,
         camera_mode="vertical" if design.topology=="ascent" else "follow",
-        objective={"type":design.objective,"required":math.ceil(count*.6) if design.objective=="collect_and_exit" else 0,"total":count}, platforms=platforms, entities=entities)
+        objective={"type":design.objective,"required":math.ceil(sum(e.kind=='crystal' and platforms[e.platform].route=='main' for e in entities)*.6) if design.objective=="collect_and_exit" else 0,"total":count}, platforms=platforms, entities=entities)
 
-    if design.level_count > 1:
-        for stage in range(design.level_count):
+    if design.level_count > 1 or design.levels:
+        for stage, specification in enumerate(design.levels or progression_specs(design, prompt)):
             child = design.model_copy(deep=True)
             child.level_count = 1
-            child.title = f"{design.title} · Stage {stage + 1}"
-            child.topology = [design.topology, "ascent", "terraces"][stage]
-            child.sections = child.sections[:5 + stage]
-            for j, section in enumerate(child.sections):
-                section.enemies = section.enemies or (any(s.enemies for s in design.sections) and stage > 0 and j % 2 == 1)
-                if stage > 0:
-                    section.encounter = ["patrol", "chase", "shooter"][(stage+j) % 3]
+            child.levels = []
+            for key, value in specification.model_dump(exclude_none=True).items():
+                if key != 'briefing': setattr(child, key, value)
+            child.sections = [Section.model_validate(s) for s in specification.model_dump()['sections']]
             level = construct(child, prompt, (seed + stage * 7919) % 4294967296)
+            level.briefing = specification.briefing
             ir.levels.append(LevelIR.model_validate({k: getattr(level, k) for k in LevelIR.model_fields}))
         for field in LevelIR.model_fields:
             if field != 'title':
@@ -160,7 +224,7 @@ def validate_route(ir: PlatformerIR) -> dict:
     if ir.levels:
         checks = []
         for index, level in enumerate(ir.levels):
-            child = PlatformerIR.model_validate({**ir.model_dump(), **level.model_dump(), 'levels': []})
+            child = PlatformerIR.model_validate({**ir.model_dump(), **level.model_dump(exclude_none=True), 'levels': []})
             report = validate_route(child)
             checks.extend([{**c, 'id': f"stage_{index+1}_{c['id']}"} for c in report['checks']])
         return {'overall': 'PASS' if all(c['passed'] for c in checks) else 'FAIL', 'checks': checks}
@@ -176,6 +240,9 @@ def validate_route(ir: PlatformerIR) -> dict:
         checks.append({"id":f"route_{i}_{i+1}","passed":passed,"category":"level_layout","critical":True,
                        "details":{"gap_with_margin":distance,"safe_range":round(ir.player.speed*flight*.85,1),"rise":rise}})
     checks.append({"id":"objective_consistent","passed":0 <= ir.objective['required'] <= sum(e.kind=='crystal' for e in ir.entities),"category":"specification","critical":True})
+    checks.append({'id': 'objective_on_main_route', 'passed': ir.objective['required'] <= sum(e.kind == 'crystal' and 0 <= e.platform < len(ir.platforms) and ir.platforms[e.platform].route == 'main' for e in ir.entities), 'category': 'specification', 'critical': True})
+    checks.append({'id': 'entry_exit', 'passed': bool(path) and path[0].x*36 <= ir.spawn['x'] <= (path[0].x+path[0].width)*36 and sum(e.kind == 'exit' for e in ir.entities) == 1 and any(e.kind == 'exit' and e.platform == ir.platforms.index(path[-1]) for e in ir.entities), 'category': 'specification', 'critical': True})
+    checks.append({'id': 'entity_supports', 'passed': all(0 <= e.platform < len(ir.platforms) and ir.platforms[e.platform].x*36 <= e.x <= (ir.platforms[e.platform].x+ir.platforms[e.platform].width)*36 for e in ir.entities), 'category': 'specification', 'critical': True})
     return {"overall":"PASS" if all(c['passed'] for c in checks) else "FAIL", "checks":checks,
             "scope":"Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."}
 
@@ -183,6 +250,9 @@ def validate_route(ir: PlatformerIR) -> dict:
 def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
     """Capability guard after model interpretation; modifications are inspectable, not silent."""
     p = prompt.lower()
+    # Exclusions inside a level clause belong to that level's model specification.
+    # Campaign-wide exclusions occur before the first scoped instruction.
+    exclusions = re.split(r'\b(?:first|second|third|final|last)\s+(?:level|stage)\b', p, maxsplit=1)[0]
     changes = []
     for ability, phrases in [('double_jump', ('double jump', 'double-jump')), ('dash', ('dash',))]:
         excluded=any(prefix+phrase in p for phrase in phrases for prefix in ('no ','without '))
@@ -191,13 +261,13 @@ def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
         elif not excluded and any(re.search(r'\b'+re.escape(word)+r'\b',p) for word in phrases) and ability not in design.abilities:
             design.abilities.append(ability); changes.append({'field':'abilities','added':ability,'reason':'Explicit supported user requirement'})
     for field, words in [('enemies',('no enemies','without enemies','peaceful')),('hazards',('no hazards','without hazards','peaceful'))]:
-        if any(word in p for word in words):
+        if any(word in exclusions for word in words):
             for i,section in enumerate(design.sections):
                 if getattr(section,field):
                     setattr(section,field,False);changes.append({'field':f'sections.{i}.{field}','before':True,'after':False,'reason':'Explicit exclusion in prompt'})
-    if 'no checkpoint' in p and design.checkpoints:
+    if 'no checkpoint' in exclusions and design.checkpoints:
         design.checkpoints=False;changes.append({'field':'checkpoints','before':True,'after':False,'reason':'Explicit exclusion'})
-    excluded_moving=any(word in p for word in ('no moving platform','without moving platform','no moving machinery','without moving machinery'))
+    excluded_moving=any(word in exclusions for word in ('no moving platform','without moving platform','no moving machinery','without moving machinery'))
     if excluded_moving and design.moving_platforms:
         design.moving_platforms=False;changes.append({'field':'moving_platforms','before':True,'after':False,'reason':'Explicit exclusion'})
     elif not excluded_moving and any(word in p for word in ('moving platform','moving machinery')) and not design.moving_platforms:
@@ -213,7 +283,7 @@ def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
     elif 'forest_environment' in features: overrides.update(theme='forest')
     for key in ('slippery', 'falling_icicles', 'timed_hazards', 'moving_platforms'):
         if key in features: overrides[key] = True
-    if 'multiple_levels' in features: overrides['level_count'] = 3 if 'three' in p or 'multiple' in p else 2
+    if requested_level_count(prompt): overrides['level_count'] = requested_level_count(prompt)
     if 'exit_indicator' in features:
         overrides['exit_indicator'] = 'flash' if any(w in p for w in ('flash', 'blink')) else 'pulse' if 'puls' in p else 'glow' if 'glow' in p else design.exit_indicator if design.exit_indicator != 'none' else 'pulse'
     interval=re.search(r'every\s+(\d+(?:\.\d+)?)\s*(?:seconds?|s\b)',p)
@@ -234,13 +304,13 @@ def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
         if getattr(design, key) != value:
             changes.append({'field': key, 'before': getattr(design, key), 'after': value, 'reason': 'Explicit requested capability'})
             setattr(design, key, value)
-    if not any(w in p for w in ('no enemies', 'without enemies', 'peaceful')):
+    if not any(w in exclusions for w in ('no enemies', 'without enemies', 'peaceful')):
         if features & {'patrol', 'robots', 'chase', 'ranged'}:
             for i, section in enumerate(design.sections):
                 section.enemies = i % 2 == 1
                 section.encounter = ('shooter' if 'ranged' in features else 'chase' if 'chase' in features else
                                      ('patrol', 'chase', 'shooter')[i % 3] if 'robots' in features else 'patrol')
-    if any(w in p for w in ('peaceful', 'no hazards', 'without hazards')):
+    if any(w in exclusions for w in ('peaceful', 'no hazards', 'without hazards')):
         design.falling_icicles = False
         design.timed_hazards = False
     supported={'dash','double_jump','double jump','moving platforms','checkpoints'}
@@ -252,6 +322,22 @@ def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
     for word in ('multiplayer','3d','rpg','dialogue','crafting','boss','underwater'):
         if re.search(r'\b'+word+r'\b',p) and not any(word in v.lower() for v in design.unsupported):
             design.unsupported.append('Unsupported request: '+word)
+    if design.levels and len(design.levels) != design.level_count:
+        raise ValueError('Explicit level count does not match the planned level specifications')
+    if not design.levels and design.level_count > 1:
+        design.levels = progression_specs(design, prompt)
+        changes.append({'field': 'levels', 'reason': 'Expanded campaign defaults into explicit progressive level specifications'})
+    # Global exclusions apply to every explicit level. Positive requests stay scoped
+    # to their specified levels rather than being forced onto the introductory stage.
+    for index, level in enumerate(design.levels):
+        for field, words in [('enemies', ('no enemies', 'without enemies', 'peaceful')), ('hazards', ('no hazards', 'without hazards', 'peaceful'))]:
+            if any(word in exclusions for word in words):
+                for section in level.sections: setattr(section, field, False)
+                if field == 'hazards': level.falling_icicles = level.timed_hazards = False
+        for field, excluded in [('checkpoints', 'no checkpoint' in exclusions), ('moving_platforms', excluded_moving)]:
+            if excluded and getattr(level, field) is not False:
+                setattr(level, field, False)
+                changes.append({'field': f'levels.{index}.{field}', 'after': False, 'reason': 'Explicit exclusion'})
     return {'scope':'Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.',
             'requirements':extract_requirements(prompt),'changes':changes,'unsupported':design.unsupported,'overall':'WARN' if design.unsupported else 'PASS'}
 

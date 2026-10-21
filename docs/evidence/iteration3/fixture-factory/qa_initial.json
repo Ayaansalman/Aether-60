@@ -1,0 +1,3030 @@
+{
+  "overall": "FAIL",
+  "checks": [
+    {
+      "id": "canvas_and_assets",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": {
+        "missing": [],
+        "http_failures": []
+      }
+    },
+    {
+      "id": "horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 690.3666666666653,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1309.566666666669,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 465.546486763718,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1043.6491640089512,
+              "y": 441
+            },
+            {
+              "x": 1610.3189473532573,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 2900
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 676.2833333333315,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1295.4833333333368,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 472.2429073297211,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1053.5706503426145,
+              "y": 441
+            },
+            {
+              "x": 1597.9946656219884,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 121.44444444444446,
+          "y": 480,
+          "vx": 250,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 3316.6
+        }
+      }
+    },
+    {
+      "id": "jump_gravity_landing",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 716.3666666666662,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1335.5666666666673,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 431.492886831444,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1054.4831622089332,
+              "y": 441
+            },
+            {
+              "x": 1609.2487355664082,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 3733.2
+        },
+        "airborne": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 702.2833333333324,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1321.483333333335,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 425.2367649378923,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1068.2076852698126,
+              "y": 441
+            },
+            {
+              "x": 1596.847876149804,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 410.33333333333337,
+          "vx": 0,
+          "vy": -288.33333333333354,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 4116.6
+        },
+        "landed": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 656.7833333333308,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1275.9833333333381,
+              "y": 485.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 384.16421081495884,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1084.7338438790152,
+              "y": 441
+            },
+            {
+              "x": 1591.9593909195492,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 5383.2
+        }
+      }
+    },
+    {
+      "id": "dash",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 655.6999999999974,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1277.0666666666714,
+              "y": 485.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 383.2858025951008,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1084.365982581994,
+              "y": 441
+            },
+            {
+              "x": 1592.6050401113682,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 5416.6
+        },
+        "peak": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 650.2833333333306,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1282.4833333333377,
+              "y": 485.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 379.17270452965715,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1082.1156139618158,
+              "y": 441
+            },
+            {
+              "x": 1596.1772824739162,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 110.66666666666666,
+          "y": 480,
+          "vx": 620,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 5533.1
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 631.8666666666633,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1300.900000000003,
+              "y": 485.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 368.86968108378767,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1070.3857421171751,
+              "y": 441
+            },
+            {
+              "x": 1611.4624405077777,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 180.11111111111111,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 5833.1
+        }
+      }
+    },
+    {
+      "id": "environment_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "theme": "industrial",
+        "method": "Runtime theme/asset witness; screenshots require human visual review"
+      }
+    },
+    {
+      "id": "moving_platform_motion",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "before": [
+          {
+            "x": 429.7911628792627,
+            "y": 441
+          },
+          {
+            "x": 720,
+            "y": 441
+          },
+          {
+            "x": 1035.4906613843277,
+            "y": 441
+          },
+          {
+            "x": 1629.511695436853,
+            "y": 441
+          }
+        ],
+        "after": [
+          {
+            "x": 435.10167457010573,
+            "y": 441
+          },
+          {
+            "x": 720,
+            "y": 441
+          },
+          {
+            "x": 1002.638122611845,
+            "y": 441
+          },
+          {
+            "x": 1662.0900300890721,
+            "y": 441
+          }
+        ]
+      }
+    },
+    {
+      "id": "enemy_chase",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "chase",
+          "x": 693.4499999999991,
+          "y": 485.3,
+          "vx": -125
+        },
+        "after": {
+          "behavior": "chase",
+          "x": 699.6999999999992,
+          "y": 485.3,
+          "vx": 125
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 1337.7333333333338,
+          "y": 485.3,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 1310.6500000000024,
+          "y": 485.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "chase",
+          "patrol"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": true,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 9,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 14
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 641.6166666666636,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1288.9833333333372,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 407.2550211370692,
+                  "y": 441
+                },
+                {
+                  "x": 720,
+                  "y": 441
+                },
+                {
+                  "x": 1121.3881902053454,
+                  "y": 441
+                },
+                {
+                  "x": 1546.9217900748195,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 7,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 400.32211015712403,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 9799.6
+            }
+          },
+          {
+            "from": 9,
+            "to": 17,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 14
+              },
+              "respawn": {
+                "x": 540,
+                "y": 449
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 652.4499999999987,
+                  "y": 485.3,
+                  "vx": 125
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1286.8166666666707,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 361.74868218373234,
+                  "y": 441
+                },
+                {
+                  "x": 720,
+                  "y": 441
+                },
+                {
+                  "x": 1036.259078982922,
+                  "y": 441
+                },
+                {
+                  "x": 1649.088723830402,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 8,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 681.8888888888877,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 11183
+            }
+          },
+          {
+            "from": 17,
+            "to": 26,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 14
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 842.0333333333355,
+                  "y": 485.3,
+                  "vx": 125
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1285.7333333333374,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 464.29728029826714,
+                  "y": 441
+                },
+                {
+                  "x": 720,
+                  "y": 441
+                },
+                {
+                  "x": 968.3218433696865,
+                  "y": 441
+                },
+                {
+                  "x": 1689.0380334972724,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 9,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 1008.6821487548233,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 12549.6
+            }
+          },
+          {
+            "from": 26,
+            "to": 35,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 14
+              },
+              "respawn": {
+                "x": 1188,
+                "y": 449
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 629.6999999999965,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1298.7333333333365,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 502.0380639580462,
+                  "y": 441
+                },
+                {
+                  "x": 720,
+                  "y": 441
+                },
+                {
+                  "x": 1071.4672553339217,
+                  "y": 441
+                },
+                {
+                  "x": 1570.4585505146379,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                5,
+                7
+              ],
+              "x": 1329.8888888888919,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": 5,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 14132.9
+            }
+          },
+          {
+            "from": 35,
+            "to": 42,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 14
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 642.699999999997,
+                  "y": 485.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1285.7333333333374,
+                  "y": 485.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 377.726659582771,
+                  "y": 441
+                },
+                {
+                  "x": 720,
+                  "y": 441
+                },
+                {
+                  "x": 1110.881360193316,
+                  "y": 441
+                },
+                {
+                  "x": 1566.6921944381252,
+                  "y": 441
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 11,
+              "landedPlatforms": [
+                0,
+                7
+              ],
+              "x": 1586.026884684699,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 15532.8
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "collectible_overlap",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled placement into a real crystal overlap",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 703.3666666666658,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1322.5666666666682,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 409.4437456500543,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1043.3100142342605,
+              "y": 441
+            },
+            {
+              "x": 1627.4723987216917,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 12,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 378,
+          "y": 466.1190476190476,
+          "vx": 0,
+          "vy": 220.00000000000003,
+          "grounded": false,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 15982.8
+        }
+      }
+    },
+    {
+      "id": "checkpoint_respawn",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+        "activated": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 540,
+            "y": 449
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 687.6166666666654,
+              "y": 485.3,
+              "vx": -125
+            },
+            {
+              "behavior": "patrol",
+              "x": 1312.8166666666689,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 401.4748383260384,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1040.1281602556255,
+              "y": 441
+            },
+            {
+              "x": 1633.168116076271,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 12,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 540,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 16132.8
+        },
+        "respawn": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 540,
+            "y": 449
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 650.0333333333314,
+              "y": 485.3,
+              "vx": -125
+            },
+            {
+              "behavior": "patrol",
+              "x": 1292.233333333337,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 388.493240336132,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1028.5134106632427,
+              "y": 441
+            },
+            {
+              "x": 1649.1356748812084,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 12,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 540,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 16466.1
+        }
+      }
+    },
+    {
+      "id": "locked_exit",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled exit overlap without required crystals",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 708.7833333333326,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1327.9833333333345,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 448.6102091541409,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1046.8851473705165,
+              "y": 441
+            },
+            {
+              "x": 1612.025122340475,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 14,
+          "landedPlatforms": [
+            0,
+            8
+          ],
+          "x": 1728,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 18732.6
+        }
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": false,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 706.6166666666659,
+              "y": 485.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1325.816666666668,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 450.37055266425045,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1047.6151878184187,
+              "y": 441
+            },
+            {
+              "x": 1610.7386775060625,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 14,
+          "landedPlatforms": [
+            0,
+            8
+          ],
+          "x": 1728,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 18766
+        }
+      }
+    },
+    {
+      "id": "transition_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 1,
+        "levelCount": 2,
+        "levelTitle": "The Copperworks \u00b7 Heights",
+        "topology": "ascent",
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 9,
+          "total": 15
+        },
+        "respawn": {
+          "x": 90,
+          "y": 548
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "behavior": "chase",
+            "x": 755.2333333333328,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1432.0333333333344,
+            "y": 341.3,
+            "vx": -65
+          },
+          {
+            "behavior": "shooter",
+            "x": 2008.8,
+            "y": 233.29999999999998,
+            "vx": 0
+          }
+        ],
+        "icicles": [],
+        "machines": [
+          {
+            "active": true,
+            "x": 1159.2,
+            "y": 380
+          },
+          {
+            "active": true,
+            "x": 2071.7999999999997,
+            "y": 236
+          }
+        ],
+        "movingPlatforms": [
+          {
+            "x": 455.12870571299504,
+            "y": 441
+          },
+          {
+            "x": 1075.892390338618,
+            "y": 333
+          },
+          {
+            "x": 1785.0278468940642,
+            "y": 225
+          },
+          {
+            "x": 2002.2369932230513,
+            "y": 189
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "industrial",
+        "terrainTexture": "industrial",
+        "generation": 15,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 552,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 20615.9
+      }
+    },
+    {
+      "id": "enemy_chase",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "chase",
+          "x": 734.5666666666658,
+          "y": 449.3,
+          "vx": -125
+        },
+        "after": {
+          "behavior": "chase",
+          "x": 740.8166666666659,
+          "y": 449.3,
+          "vx": 125
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 1438.533333333334,
+          "y": 341.3,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 1412.5333333333358,
+          "y": 341.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_shooter",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 9,
+            "total": 15
+          },
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 759.5666666666663,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1436.3666666666675,
+              "y": 341.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 2008.8,
+              "y": 233.29999999999998,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1159.2,
+              "y": 380
+            },
+            {
+              "active": true,
+              "x": 2071.7999999999997,
+              "y": 236
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 478.09742442135655,
+              "y": 441
+            },
+            {
+              "x": 1073.492737320089,
+              "y": 333
+            },
+            {
+              "x": 1805.2327201123958,
+              "y": 225
+            },
+            {
+              "x": 2018.3791403650462,
+              "y": 189
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 18,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 1933,
+          "y": 224.91666666666666,
+          "vx": 0,
+          "vy": 36.666666666666664,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 22482.5
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 9,
+            "total": 15
+          },
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 761.733333333333,
+              "y": 449.3,
+              "vx": 65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1384.366666666671,
+              "y": 341.3,
+              "vx": 65
+            },
+            {
+              "behavior": "shooter",
+              "x": 2008.8,
+              "y": 233.29999999999998,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1159.2,
+              "y": 380
+            },
+            {
+              "active": true,
+              "x": 2071.7999999999997,
+              "y": 236
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 543.951696876305,
+              "y": 441
+            },
+            {
+              "x": 1128.1127669621874,
+              "y": 333
+            },
+            {
+              "x": 1904.3295224260676,
+              "y": 225
+            },
+            {
+              "x": 2117.868991198373,
+              "y": 189
+            }
+          ],
+          "shotsFired": 1,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 18,
+          "landedPlatforms": [
+            0,
+            9
+          ],
+          "x": 1927.888888888889,
+          "y": 228,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 24415.8
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "chase",
+          "patrol",
+          "shooter"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": true,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 10,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 9,
+                "total": 15
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 711.8999999999979,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1362.700000000006,
+                  "y": 341.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 2008.8,
+                  "y": 233.29999999999998,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": false,
+                  "x": 1159.2,
+                  "y": 380
+                },
+                {
+                  "active": false,
+                  "x": 2071.7999999999997,
+                  "y": 236
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 394.1831113689741,
+                  "y": 441
+                },
+                {
+                  "x": 1119.8587764260612,
+                  "y": 333
+                },
+                {
+                  "x": 1756.5838940993488,
+                  "y": 225
+                },
+                {
+                  "x": 1991.9348563878705,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 19,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 435.2777777777783,
+              "y": 480,
+              "vx": 49.99999999999995,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 25799
+            }
+          },
+          {
+            "from": 10,
+            "to": 19,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 9,
+                "total": 15
+              },
+              "respawn": {
+                "x": 576,
+                "y": 449
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 1375.700000000005,
+                  "y": 341.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 2008.8,
+                  "y": 233.29999999999998,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": false,
+                  "x": 1159.2,
+                  "y": 380
+                },
+                {
+                  "active": false,
+                  "x": 2071.7999999999997,
+                  "y": 236
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 485.77406252119323,
+                  "y": 441
+                },
+                {
+                  "x": 979.069095256718,
+                  "y": 333
+                },
+                {
+                  "x": 1749.3173838259088,
+                  "y": 225
+                },
+                {
+                  "x": 1942.775328273846,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 20,
+              "landedPlatforms": [
+                0,
+                1,
+                3
+              ],
+              "x": 763.7222222222205,
+              "y": 444,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 27849
+            }
+          },
+          {
+            "from": 19,
+            "to": 27,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 9,
+                "total": 15
+              },
+              "respawn": {
+                "x": 864,
+                "y": 413
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 886.3166666666689,
+                  "y": 449.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1361.6166666666727,
+                  "y": 341.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 2008.8,
+                  "y": 233.29999999999998,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 1159.2,
+                  "y": 380
+                },
+                {
+                  "active": true,
+                  "x": 2071.7999999999997,
+                  "y": 236
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 529.8985069128939,
+                  "y": 441
+                },
+                {
+                  "x": 1107.6634770011444,
+                  "y": 333
+                },
+                {
+                  "x": 1877.2962805628456,
+                  "y": 225
+                },
+                {
+                  "x": 2089.0301582585507,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 21,
+              "landedPlatforms": [
+                0,
+                3,
+                4
+              ],
+              "x": 1051.7222222222204,
+              "y": 372,
+              "vx": 16.666666666666615,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 3,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 29265.6
+            }
+          },
+          {
+            "from": 27,
+            "to": 37,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 9,
+                "total": 15
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 738.9833333333322,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1361.6166666666727,
+                  "y": 341.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 2008.8,
+                  "y": 233.29999999999998,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 1159.2,
+                  "y": 380
+                },
+                {
+                  "active": true,
+                  "x": 2071.7999999999997,
+                  "y": 236
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 389.3662729040193,
+                  "y": 441
+                },
+                {
+                  "x": 1152.4727698327151,
+                  "y": 333
+                },
+                {
+                  "x": 1773.8408963052698,
+                  "y": 225
+                },
+                {
+                  "x": 2016.3309831657837,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 22,
+              "landedPlatforms": [
+                0,
+                4,
+                6
+              ],
+              "x": 1410.7777777777817,
+              "y": 336,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 31082.2
+            }
+          },
+          {
+            "from": 37,
+            "to": 47,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 9,
+                "total": 15
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 710.8166666666646,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1363.7833333333392,
+                  "y": 341.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 2008.8,
+                  "y": 233.29999999999998,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": false,
+                  "x": 1159.2,
+                  "y": 380
+                },
+                {
+                  "active": false,
+                  "x": 2071.7999999999997,
+                  "y": 236
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 447.4436344637954,
+                  "y": 441
+                },
+                {
+                  "x": 1015.5444010625489,
+                  "y": 333
+                },
+                {
+                  "x": 1737.334481708153,
+                  "y": 225
+                },
+                {
+                  "x": 1943.929945674718,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 23,
+              "landedPlatforms": [
+                0,
+                6,
+                7
+              ],
+              "x": 1770.611111111115,
+              "y": 264,
+              "vx": 83.33333333333329,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 32465.5
+            }
+          },
+          {
+            "from": 47,
+            "to": 53,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 9,
+                "total": 15
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 719.4833333333315,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1352.9500000000066,
+                  "y": 341.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 2008.8,
+                  "y": 233.29999999999998,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 1159.2,
+                  "y": 380
+                },
+                {
+                  "active": true,
+                  "x": 2071.7999999999997,
+                  "y": 236
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 550.8123218218426,
+                  "y": 441
+                },
+                {
+                  "x": 1046.8076212982642,
+                  "y": 333
+                },
+                {
+                  "x": 1856.4205283826361,
+                  "y": 225
+                },
+                {
+                  "x": 2052.967699476449,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 1,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 24,
+              "landedPlatforms": [
+                0,
+                7,
+                9
+              ],
+              "x": 1983.5555555555593,
+              "y": 228,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 33998.7
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 9,
+            "total": 15
+          },
+          "respawn": {
+            "x": 90,
+            "y": 548
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 761.733333333333,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1438.533333333334,
+              "y": 341.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 2008.8,
+              "y": 233.29999999999998,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [
+            {
+              "active": false,
+              "x": 1159.2,
+              "y": 380
+            },
+            {
+              "active": false,
+              "x": 2071.7999999999997,
+              "y": 236
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 473.3838841171905,
+              "y": 441
+            },
+            {
+              "x": 1085.0372014738784,
+              "y": 333
+            },
+            {
+              "x": 1808.4843394516802,
+              "y": 225
+            },
+            {
+              "x": 2024.6284220205862,
+              "y": 189
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 25,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 552,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 34215.4
+        }
+      }
+    },
+    {
+      "id": "win_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled collection and gate overlaps through all stages, not an autonomous completion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Heights",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 9,
+            "total": 15
+          },
+          "respawn": {
+            "x": 576,
+            "y": 449
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 804.8166666666677,
+              "y": 449.3,
+              "vx": 65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1350.7833333333401,
+              "y": 341.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 2008.8,
+              "y": 233.29999999999998,
+              "vx": 0
+            }
+          ],
+          "icicles": [],
+          "machines": [
+            {
+              "active": true,
+              "x": 1159.2,
+              "y": 380
+            },
+            {
+              "active": true,
+              "x": 2071.7999999999997,
+              "y": 236
+            }
+          ],
+          "movingPlatforms": [
+            {
+              "x": 457.9317504681405,
+              "y": 441
+            },
+            {
+              "x": 1163.6793849021024,
+              "y": 333
+            },
+            {
+              "x": 1846.4522894477277,
+              "y": 225
+            },
+            {
+              "x": 2080.41120410783,
+              "y": 189
+            }
+          ],
+          "shotsFired": 1,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 25,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 2124,
+          "y": 216,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 15,
+          "state": "won",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 35898.6
+        }
+      }
+    },
+    {
+      "id": "level_transitions",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "transitions": [
+          {
+            "from": 0,
+            "to": 1,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 2,
+              "levelTitle": "The Copperworks \u00b7 Heights",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 9,
+                "total": 15
+              },
+              "respawn": {
+                "x": 90,
+                "y": 548
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 768.2333333333332,
+                  "y": 447.8333333333333,
+                  "vx": -65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1445.0333333333335,
+                  "y": 339.8333333333333,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 2008.8,
+                  "y": 231.83333333333331,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [
+                {
+                  "active": true,
+                  "x": 1159.2,
+                  "y": 380
+                },
+                {
+                  "active": true,
+                  "x": 2071.7999999999997,
+                  "y": 236
+                }
+              ],
+              "movingPlatforms": [
+                {
+                  "x": 466.04112793282536,
+                  "y": 441
+                },
+                {
+                  "x": 1079.648865410852,
+                  "y": 333
+                },
+                {
+                  "x": 1797.9048089207831,
+                  "y": 225
+                },
+                {
+                  "x": 2014.142475567252,
+                  "y": 189
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "industrial",
+              "terrainTexture": "industrial",
+              "generation": 15,
+              "landedPlatforms": [],
+              "x": 90,
+              "y": 549.8333333333333,
+              "vx": 0,
+              "vy": 55,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 314159,
+              "time": 20449.3
+            }
+          }
+        ],
+        "method": "Real exit collision, scene transition and final-stage win"
+      }
+    },
+    {
+      "id": "hazard_damage",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap with real hazard or enemy",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 718.4499999999996,
+              "y": 485.3,
+              "vx": 125
+            },
+            {
+              "behavior": "patrol",
+              "x": 1321.483333333335,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 415.19258680786385,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1066.0472094207914,
+              "y": 441
+            },
+            {
+              "x": 1602.1027656875794,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 26,
+          "landedPlatforms": [
+            0,
+            3
+          ],
+          "x": 722.0888888888888,
+          "y": 465.4166666666667,
+          "vx": 0,
+          "vy": 56.66666666666666,
+          "grounded": false,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 36398.6
+        }
+      }
+    },
+    {
+      "id": "loss_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Test hook invokes damage to exercise health exhaustion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 2,
+          "levelTitle": "The Copperworks \u00b7 Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 1,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 1318.2333333333352,
+              "y": 485.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 412.4603420041162,
+              "y": 441
+            },
+            {
+              "x": 720,
+              "y": 441
+            },
+            {
+              "x": 1068.4907666096822,
+              "y": 441
+            },
+            {
+              "x": 1600.3795247939056,
+              "y": 441
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "industrial",
+          "terrainTexture": "industrial",
+          "generation": 26,
+          "landedPlatforms": [
+            0,
+            3
+          ],
+          "x": 718.4222222222222,
+          "y": 460.9166666666667,
+          "vx": 0,
+          "vy": 0,
+          "grounded": false,
+          "health": 0,
+          "crystals": 1,
+          "state": "lost",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 36548.6
+        }
+      }
+    },
+    {
+      "id": "restart_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 2,
+        "levelTitle": "The Copperworks \u00b7 Foothills",
+        "topology": "journey",
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 8,
+          "total": 14
+        },
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 1,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "behavior": "chase",
+            "x": 718.533333333333,
+            "y": 485.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1337.7333333333338,
+            "y": 485.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 423.5866882783223,
+            "y": 441
+          },
+          {
+            "x": 720,
+            "y": 441
+          },
+          {
+            "x": 1048.2698357511872,
+            "y": 441
+          },
+          {
+            "x": 1618.0785896831262,
+            "y": 441
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "industrial",
+        "terrainTexture": "industrial",
+        "generation": 27,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 36782
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "screenshot": "gameplay.png",
+  "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+}

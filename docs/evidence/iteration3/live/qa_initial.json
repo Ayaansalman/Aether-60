@@ -1,0 +1,4528 @@
+{
+  "overall": "FAIL",
+  "checks": [
+    {
+      "id": "canvas_and_assets",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": {
+        "missing": [],
+        "http_failures": []
+      }
+    },
+    {
+      "id": "horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.5000017075420702,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 577.6499999999983,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 865.6499999999983,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1139.2500000000034,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 2951.5
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.6914140670552638,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 557.0666666666642,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 845.0666666666642,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1146.8333333333362,
+              "y": 413.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 1,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 119.75,
+          "y": 480,
+          "vx": 198.3333333333333,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 3318.2
+        }
+      }
+    },
+    {
+      "id": "jump_gravity_landing",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9050454502616667,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 611.2333333333328,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 899.2333333333328,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1172.8333333333344,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 3651.5
+        },
+        "airborne": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.5942307727721478,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 590.6499999999987,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 878.6499999999987,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1152.2500000000025,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 387.9166666666667,
+          "vx": 0,
+          "vy": -178.3333333333335,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 4018.1
+        },
+        "landed": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.727853121818971,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 560.3166666666643,
+              "y": 449.3,
+              "vx": 65
+            },
+            {
+              "behavior": "patrol",
+              "x": 848.3166666666643,
+              "y": 413.3,
+              "vx": 65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1152.2500000000025,
+              "y": 413.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 2,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 4651.5
+        }
+      }
+    },
+    {
+      "id": "double_jump",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before_second_jump": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.7968453286464312,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 600.3999999999991,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 888.3999999999991,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1162.0000000000018,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 3,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 385.25,
+          "vx": 0,
+          "vy": -160.00000000000017,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 5118
+        },
+        "after_second_jump": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.6485972876718161,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 589.5666666666654,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 877.5666666666654,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1151.1666666666692,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 3,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 326.50000000000006,
+          "vx": 0,
+          "vy": -343.3333333333335,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 5284.8
+        }
+      }
+    },
+    {
+      "id": "dash",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "before": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9955718126821722,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 622.0666666666665,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 910.0666666666665,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1183.666666666667,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 4,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 5418
+        },
+        "peak": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9721189816940106,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 617.733333333333,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 905.733333333333,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1179.333333333334,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 4,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 110.66666666666666,
+          "y": 480,
+          "vx": 620,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 5501.4
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.7656976298823284,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 599.3166666666657,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 887.3166666666657,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1160.9166666666686,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 4,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 222.4166666666667,
+          "y": 480,
+          "vx": 223,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 5768.1
+        }
+      }
+    },
+    {
+      "id": "environment_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "theme": "ice",
+        "method": "Runtime theme/asset witness; screenshots require human visual review"
+      }
+    },
+    {
+      "id": "ice_composition",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 3,
+        "levelTitle": "Glacial Foothills",
+        "topology": "journey",
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 6,
+          "total": 11
+        },
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.9953969958497576,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "behavior": "patrol",
+            "x": 620.9833333333331,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 908.9833333333331,
+            "y": 413.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1182.5833333333337,
+            "y": 413.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 369
+          },
+          {
+            "x": 1224,
+            "y": 369
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": true,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 5,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 5901.4
+      }
+    },
+    {
+      "id": "exit_indicator_animation",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "mode": "glow",
+        "style": "shrine",
+        "observed_alpha": [
+          0.9916796010672968,
+          0.9359921570673359,
+          0.8428896190910335,
+          0.7343023701176716,
+          0.6231375250252287,
+          0.5419402920056743,
+          0.5016391554386705,
+          0.5162207446108722
+        ]
+      }
+    },
+    {
+      "id": "slippery_momentum",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "released": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.6941124172092983,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 592.8166666666655,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 880.8166666666655,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1154.416666666669,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 6,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 151.5833333333333,
+          "y": 480,
+          "vx": 250,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 7517.9
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.5504956931799401,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 580.8999999999984,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 868.8999999999984,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1142.5000000000032,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 6,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 194.11666666666665,
+          "y": 480,
+          "vx": 217,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "run",
+          "seed": 314159,
+          "time": 7718
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 622.0666666666665,
+          "y": 449.3,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 596.0666666666656,
+          "y": 449.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "patrol"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": true,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 9,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "Glacial Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 6,
+                "total": 11
+              },
+              "respawn": {
+                "x": 468,
+                "y": 449
+              },
+              "exitAlpha": 0.9156742343327474,
+              "exitStyle": "shrine",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 584.1499999999985,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 872.1499999999985,
+                  "y": 413.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1173.9166666666677,
+                  "y": 413.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 936,
+                  "y": 369
+                },
+                {
+                  "x": 1224,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 10,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 476.2000000000004,
+              "y": 480,
+              "vx": 172,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 10351.2
+            }
+          },
+          {
+            "from": 9,
+            "to": 15,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "Glacial Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 6,
+                "total": 11
+              },
+              "respawn": {
+                "x": 468,
+                "y": 449
+              },
+              "exitAlpha": 0.8488628017176357,
+              "exitStyle": "shrine",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 576.5666666666649,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 864.5666666666649,
+                  "y": 413.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1168.5000000000014,
+                  "y": 413.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 936,
+                  "y": 369
+                },
+                {
+                  "x": 1224,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 11,
+              "landedPlatforms": [
+                0,
+                1,
+                2
+              ],
+              "x": 672.1,
+              "y": 444,
+              "vx": 184,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 11817.8
+            }
+          },
+          {
+            "from": 15,
+            "to": 23,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "Glacial Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 6,
+                "total": 11
+              },
+              "respawn": {
+                "x": 720,
+                "y": 413
+              },
+              "exitAlpha": 0.7049711972582102,
+              "exitStyle": "shrine",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 566.8166666666646,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 854.8166666666646,
+                  "y": 413.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1158.750000000002,
+                  "y": 413.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 936,
+                  "y": 369
+                },
+                {
+                  "x": 1224,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 12,
+              "landedPlatforms": [
+                0,
+                2,
+                4
+              ],
+              "x": 899.0999999999985,
+              "y": 336,
+              "vx": 244,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 2,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 13117.7
+            }
+          },
+          {
+            "from": 23,
+            "to": 31,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "Glacial Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 6,
+                "total": 11
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.7555435326500296,
+              "exitStyle": "shrine",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 571.149999999998,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 859.149999999998,
+                  "y": 413.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1163.083333333335,
+                  "y": 413.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 936,
+                  "y": 369
+                },
+                {
+                  "x": 1224,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 13,
+              "landedPlatforms": [
+                0,
+                3,
+                6
+              ],
+              "x": 1198.700000000002,
+              "y": 336,
+              "vx": 232,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 14484.3
+            }
+          },
+          {
+            "from": 31,
+            "to": 37,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 3,
+              "levelTitle": "Glacial Foothills",
+              "topology": "journey",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 6,
+                "total": 11
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.9064908763339681,
+              "exitStyle": "shrine",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 581.9833333333318,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 869.9833333333318,
+                  "y": 413.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "patrol",
+                  "x": 1173.9166666666677,
+                  "y": 413.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 936,
+                  "y": 369
+                },
+                {
+                  "x": 1224,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 14,
+              "landedPlatforms": [
+                0,
+                5,
+                7
+              ],
+              "x": 1477.283333333335,
+              "y": 408,
+              "vx": 166,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 16017.6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "collectible_overlap",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled placement into a real crystal overlap",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9231469114462,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 611.2333333333328,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 899.2333333333328,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1172.8333333333344,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 15,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 378,
+          "y": 453.75,
+          "vx": 0,
+          "vy": 165,
+          "grounded": false,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 16317.6
+        }
+      }
+    },
+    {
+      "id": "checkpoint_respawn",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap and fall; actual checkpoint/respawn logic",
+        "activated": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 468,
+            "y": 449
+          },
+          "exitAlpha": 0.8022791519382769,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 601.4833333333324,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 889.4833333333324,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1163.083333333335,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 15,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 468,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 16467.6
+        },
+        "respawn": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 468,
+            "y": 449
+          },
+          "exitAlpha": 0.563391685898964,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 583.0666666666651,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 871.0666666666651,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1144.6666666666697,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 15,
+          "landedPlatforms": [
+            0,
+            1
+          ],
+          "x": 468,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 2,
+          "state": "playing",
+          "checkpoint": 1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 16750.9
+        }
+      }
+    },
+    {
+      "id": "locked_exit",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled exit overlap without required crystals",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9414451019258359,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 612.3166666666662,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 900.3166666666662,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1173.9166666666677,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 17,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 1476,
+          "y": 407,
+          "vx": 0,
+          "vy": 146.66666666666666,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 18450.9
+        }
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 0,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9303334329974389,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 611.2333333333328,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 899.2333333333328,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1172.8333333333344,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 17,
+          "landedPlatforms": [
+            0,
+            7
+          ],
+          "x": 1476,
+          "y": 408,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 18467.5
+        }
+      }
+    },
+    {
+      "id": "transition_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 1,
+        "levelCount": 3,
+        "levelTitle": "Icicle Cavern",
+        "topology": "cavern",
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 8,
+          "total": 12
+        },
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.9799855733100992,
+        "exitStyle": "gate",
+        "enemies": [
+          {
+            "behavior": "chase",
+            "x": 675.333333333333,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "shooter",
+            "x": 979.1999999999999,
+            "y": 413.3,
+            "vx": 0
+          },
+          {
+            "behavior": "chase",
+            "x": 1316.133333333334,
+            "y": 413.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [
+          {
+            "state": "waiting",
+            "x": 729,
+            "y": 248,
+            "activations": 0,
+            "trigger": "proximity"
+          },
+          {
+            "state": "waiting",
+            "x": 1387.8,
+            "y": 212,
+            "activations": 0,
+            "trigger": "proximity"
+          }
+        ],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 430.6307696077551,
+            "y": 441
+          },
+          {
+            "x": 711.7424777838085,
+            "y": 405
+          },
+          {
+            "x": 967.481717280864,
+            "y": 369
+          },
+          {
+            "x": 1611.4712244360744,
+            "y": 369
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": false,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 18,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 19750.8
+      }
+    },
+    {
+      "id": "enemy_chase",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "chase",
+          "x": 651.4999999999993,
+          "y": 449.3,
+          "vx": -125
+        },
+        "after": {
+          "behavior": "chase",
+          "x": 661.9166666666662,
+          "y": 449.3,
+          "vx": 125
+        }
+      }
+    },
+    {
+      "id": "enemy_shooter",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "Icicle Cavern",
+          "topology": "cavern",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 12
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9921457902821578,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 677.4999999999998,
+              "y": 449.3,
+              "vx": 125
+            },
+            {
+              "behavior": "shooter",
+              "x": 979.1999999999999,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1318.3000000000004,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 729,
+              "y": 248,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1387.8,
+              "y": 212,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 425.86429872130094,
+              "y": 441
+            },
+            {
+              "x": 718.783449210205,
+              "y": 405
+            },
+            {
+              "x": 975.2748151029898,
+              "y": 369
+            },
+            {
+              "x": 1617.9496664910062,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 20,
+          "landedPlatforms": [
+            0,
+            5
+          ],
+          "x": 879.1999999999999,
+          "y": 408,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 20650.8
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "Icicle Cavern",
+          "topology": "cavern",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 12
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.8556080395172778,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 777.5000000000016,
+              "y": 449.3,
+              "vx": 0
+            },
+            {
+              "behavior": "shooter",
+              "x": 979.1999999999999,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1287.9666666666692,
+              "y": 413.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 729,
+              "y": 248,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1387.8,
+              "y": 212,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 360.76562366837925,
+              "y": 441
+            },
+            {
+              "x": 803.7181226782693,
+              "y": 405
+            },
+            {
+              "x": 1074.329877111708,
+              "y": 369
+            },
+            {
+              "x": 1695.0817508731816,
+              "y": 369
+            }
+          ],
+          "shotsFired": 1,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 20,
+          "landedPlatforms": [
+            0,
+            5
+          ],
+          "x": 874.0888888888888,
+          "y": 391.8333333333333,
+          "vx": 0,
+          "vy": 19.999999999999996,
+          "grounded": false,
+          "health": 2,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 22584.1
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "chase",
+          "shooter"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": true,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 9,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "Icicle Cavern",
+              "topology": "cavern",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 12
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.8201913118052485,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 662.3333333333326,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 979.1999999999999,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1244.633333333339,
+                  "y": 413.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 729,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1387.8,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 508.9150061421929,
+                  "y": 441
+                },
+                {
+                  "x": 729.4196947979234,
+                  "y": 405
+                },
+                {
+                  "x": 927.1157374568113,
+                  "y": 369
+                },
+                {
+                  "x": 1639.8095081186448,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 21,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 389.7222222222225,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 24017.3
+            }
+          },
+          {
+            "from": 9,
+            "to": 17,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "Icicle Cavern",
+              "topology": "cavern",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 12
+              },
+              "respawn": {
+                "x": 504,
+                "y": 449
+              },
+              "exitAlpha": 0.6239345813297892,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 653.5833333333327,
+                  "y": 449.3,
+                  "vx": 125
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 979.1999999999999,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1250.0500000000052,
+                  "y": 413.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "warning",
+                  "x": 729,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1387.8,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 451.10606151079287,
+                  "y": 441
+                },
+                {
+                  "x": 651.3808367119944,
+                  "y": 405
+                },
+                {
+                  "x": 914.2103832964779,
+                  "y": 369
+                },
+                {
+                  "x": 1553.204787295778,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 22,
+              "landedPlatforms": [
+                0,
+                1
+              ],
+              "x": 670.9224366445261,
+              "y": 372,
+              "vx": 183.33333333333331,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 25234
+            }
+          },
+          {
+            "from": 17,
+            "to": 24,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "Icicle Cavern",
+              "topology": "cavern",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 12
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.7583144470489587,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "shooter",
+                  "x": 979.1999999999999,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1292.3000000000022,
+                  "y": 413.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "spent",
+                  "x": 729,
+                  "y": 440.8888888888889,
+                  "activations": 1,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1387.8,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 328.3020967699456,
+                  "y": 441
+                },
+                {
+                  "x": 751.7122613535663,
+                  "y": 405
+                },
+                {
+                  "x": 1061.7048475437396,
+                  "y": 369
+                },
+                {
+                  "x": 1638.1783164244753,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 1,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 23,
+              "landedPlatforms": [
+                0,
+                3,
+                5
+              ],
+              "x": 930.2777777777761,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 27433.9
+            }
+          },
+          {
+            "from": 24,
+            "to": 34,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "Icicle Cavern",
+              "topology": "cavern",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 12
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.9296922532585081,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 697.0000000000005,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 979.1999999999999,
+                  "y": 413.3,
+                  "vx": 0
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 729,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "falling",
+                  "x": 1387.8,
+                  "y": 326.99999999999994,
+                  "activations": 1,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 519.4707864411608,
+                  "y": 441
+                },
+                {
+                  "x": 755.5225701116088,
+                  "y": 405
+                },
+                {
+                  "x": 937.2630993941561,
+                  "y": 369
+                },
+                {
+                  "x": 1667.6029294593154,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 1,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 24,
+              "landedPlatforms": [
+                0,
+                5,
+                7
+              ],
+              "x": 1295.3888888888926,
+              "y": 408,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 29417.1
+            }
+          },
+          {
+            "from": 34,
+            "to": 42,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "Icicle Cavern",
+              "topology": "cavern",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 12
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.6519865515899732,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 650.4166666666655,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 979.1999999999999,
+                  "y": 413.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1439.8833333333287,
+                  "y": 413.3,
+                  "vx": 125
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 729,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "spent",
+                  "x": 1387.8,
+                  "y": 404.88888888888886,
+                  "activations": 1,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 444.71199995321155,
+                  "y": 441
+                },
+                {
+                  "x": 649.1851755923586,
+                  "y": 405
+                },
+                {
+                  "x": 917.0132113286633,
+                  "y": 369
+                },
+                {
+                  "x": 1550.1303369214477,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 25,
+              "landedPlatforms": [
+                0,
+                7
+              ],
+              "x": 1580.948407203595,
+              "y": 336,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 30667.1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "Icicle Cavern",
+          "topology": "cavern",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 12
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.9957432749209755,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 679.6666666666665,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 979.1999999999999,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1320.466666666667,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 729,
+              "y": 248,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1387.8,
+              "y": 212,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 429.4525507924439,
+              "y": 441
+            },
+            {
+              "x": 716.9047168322925,
+              "y": 405
+            },
+            {
+              "x": 971.6571666363728,
+              "y": 369
+            },
+            {
+              "x": 1616.5309131223191,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 26,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 30800.4
+        }
+      }
+    },
+    {
+      "id": "later_level_icicles",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 1,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 1,
+          "levelCount": 3,
+          "levelTitle": "Icicle Cavern",
+          "topology": "cavern",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 12
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.6393932992367408,
+          "exitStyle": "gate",
+          "enemies": [
+            {
+              "behavior": "chase",
+              "x": 723.3333333333339,
+              "y": 449.3,
+              "vx": 125
+            },
+            {
+              "behavior": "shooter",
+              "x": 979.1999999999999,
+              "y": 413.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1287.9666666666692,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "falling",
+              "x": 729,
+              "y": 249.63888888888889,
+              "activations": 1,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1387.8,
+              "y": 212,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 403.08370546899795,
+              "y": 441
+            },
+            {
+              "x": 702.7454466129713,
+              "y": 405
+            },
+            {
+              "x": 979.8608449094048,
+              "y": 369
+            },
+            {
+              "x": 1598.6931024914277,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": false,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 26,
+          "landedPlatforms": [
+            0,
+            3
+          ],
+          "x": 723.8888888888889,
+          "y": 429.4166666666667,
+          "vx": 0,
+          "vy": 56.66666666666666,
+          "grounded": false,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 31300.3
+        }
+      }
+    },
+    {
+      "id": "transition_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 2,
+        "levelCount": 3,
+        "levelTitle": "Summit of Frost",
+        "topology": "ascent",
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 5,
+          "total": 8
+        },
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.5871363215873209,
+        "exitStyle": "beacon",
+        "enemies": [
+          {
+            "behavior": "patrol",
+            "x": 438.81666666666683,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "chase",
+            "x": 755.6166666666663,
+            "y": 413.3,
+            "vx": -65
+          },
+          {
+            "behavior": "shooter",
+            "x": 1080,
+            "y": 377.3,
+            "vx": 0
+          },
+          {
+            "behavior": "chase",
+            "x": 1338.816666666667,
+            "y": 305.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [
+          {
+            "state": "waiting",
+            "x": 835.1999999999999,
+            "y": 212,
+            "activations": 0,
+            "trigger": "proximity"
+          },
+          {
+            "state": "waiting",
+            "x": 1400.3999999999999,
+            "y": 104,
+            "activations": 0,
+            "trigger": "proximity"
+          }
+        ],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 473.83795812112317,
+            "y": 405
+          },
+          {
+            "x": 1116.2298110454444,
+            "y": 333
+          },
+          {
+            "x": 1660.7491650529637,
+            "y": 225
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": true,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 28,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 32867
+      }
+    },
+    {
+      "id": "enemy_chase",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "chase",
+          "x": 732.7833333333326,
+          "y": 413.3,
+          "vx": -125
+        },
+        "after": {
+          "behavior": "chase",
+          "x": 743.1999999999995,
+          "y": 413.3,
+          "vx": 125
+        }
+      }
+    },
+    {
+      "id": "enemy_patrol",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "behavior": "patrol",
+          "x": 442.0666666666668,
+          "y": 449.3,
+          "vx": -65
+        },
+        "after": {
+          "behavior": "patrol",
+          "x": 416.06666666666723,
+          "y": 449.3,
+          "vx": -65
+        }
+      }
+    },
+    {
+      "id": "enemy_shooter",
+      "passed": false,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "method": "Controlled player positioning; real enemy simulation and projectile collisions",
+        "before": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "Summit of Frost",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 5,
+            "total": 8
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.8098543027564336,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 440.98333333333346,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "chase",
+              "x": 757.7833333333331,
+              "y": 413.3,
+              "vx": 125
+            },
+            {
+              "behavior": "shooter",
+              "x": 1080,
+              "y": 377.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1340.9833333333336,
+              "y": 305.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 835.1999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1400.3999999999999,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 470.9720990988719,
+              "y": 405
+            },
+            {
+              "x": 1121.3614672382616,
+              "y": 333
+            },
+            {
+              "x": 1651.434976039722,
+              "y": 225
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 31,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 980,
+          "y": 374.30555555555554,
+          "vx": 0,
+          "vy": 18.333333333333332,
+          "grounded": false,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 34266.9
+        },
+        "after": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "Summit of Frost",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 5,
+            "total": 8
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.17679636687510136,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 437.7333333333335,
+              "y": 449.3,
+              "vx": 65
+            },
+            {
+              "behavior": "chase",
+              "x": 914.5333333333375,
+              "y": 413.3,
+              "vx": 65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1080,
+              "y": 377.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1337.7333333333338,
+              "y": 305.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 835.1999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1400.3999999999999,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 412.22418887776934,
+              "y": 405
+            },
+            {
+              "x": 1144.0890487984266,
+              "y": 333
+            },
+            {
+              "x": 1570.303598287428,
+              "y": 225
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 31,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 2,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 36216.9
+        }
+      }
+    },
+    {
+      "id": "enemy_behaviors",
+      "passed": false,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "behaviors": [
+          "chase",
+          "patrol",
+          "shooter"
+        ]
+      }
+    },
+    {
+      "id": "mandatory_route_edges",
+      "passed": false,
+      "critical": true,
+      "category": "level_layout",
+      "details": {
+        "method": "Isolated launch positions; actual keyboard jumps, physics, observed landings or an actual destination exit collision. Registered alternate surfaces are included. This is not a full autonomous playthrough.",
+        "edges": [
+          {
+            "from": 0,
+            "to": 10,
+            "landed": true,
+            "route": "registered alternate",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "Summit of Frost",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 5,
+                "total": 8
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.7733336123709114,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 387.90000000000106,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 680.8666666666637,
+                  "y": 413.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1080,
+                  "y": 377.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1287.900000000004,
+                  "y": 305.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 835.1999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1400.3999999999999,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 428.2613158920575,
+                  "y": 405
+                },
+                {
+                  "x": 1042.128548709984,
+                  "y": 333
+                },
+                {
+                  "x": 1719.9469676954218,
+                  "y": 225
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 32,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 431.941801508755,
+              "y": 372,
+              "vx": 244,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 37550.1
+            }
+          },
+          {
+            "from": 10,
+            "to": 18,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "Summit of Frost",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 5,
+                "total": 8
+              },
+              "respawn": {
+                "x": 540,
+                "y": 413
+              },
+              "exitAlpha": 0.9115584545169665,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 396.5666666666676,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 706.9499999999985,
+                  "y": 413.3,
+                  "vx": 125
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1080,
+                  "y": 377.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1296.56666666667,
+                  "y": 305.3,
+                  "vx": 65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "warning",
+                  "x": 835.1999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1400.3999999999999,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 539.6645894823685,
+                  "y": 405
+                },
+                {
+                  "x": 1134.5917537182654,
+                  "y": 333
+                },
+                {
+                  "x": 1693.300894505955,
+                  "y": 225
+                }
+              ],
+              "shotsFired": 1,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 33,
+              "landedPlatforms": [
+                0,
+                1,
+                3
+              ],
+              "x": 753.4499999999986,
+              "y": 408,
+              "vx": 217,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": 1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 39000.1
+            }
+          },
+          {
+            "from": 18,
+            "to": 28,
+            "landed": false,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "Summit of Frost",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 5,
+                "total": 8
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.925825556209182,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 473.4833333333329,
+                  "y": 449.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 678.4499999999946,
+                  "y": 413.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1447.4833333333258,
+                  "y": 305.3,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 835.1999999999999,
+                  "y": 212,
+                  "activations": 1,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1400.3999999999999,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 462.44655297278814,
+                  "y": 405
+                },
+                {
+                  "x": 1110.8209760816508,
+                  "y": 333
+                },
+                {
+                  "x": 1658.086890787721,
+                  "y": 225
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 34,
+              "landedPlatforms": [
+                0,
+                3
+              ],
+              "x": 90,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 2,
+              "crystals": 2,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 314159,
+              "time": 44316.5
+            }
+          },
+          {
+            "from": 28,
+            "to": 35,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "Summit of Frost",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 5,
+                "total": 8
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.8248087322243,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 482.1499999999994,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 742.6166666666659,
+                  "y": 413.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1292.900000000004,
+                  "y": 305.3,
+                  "vx": 125
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 835.1999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "warning",
+                  "x": 1400.3999999999999,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 425.00947630456596,
+                  "y": 405
+                },
+                {
+                  "x": 1163.8975591182457,
+                  "y": 333
+                },
+                {
+                  "x": 1555.0002126404834,
+                  "y": 225
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 35,
+              "landedPlatforms": [
+                0,
+                4,
+                6
+              ],
+              "x": 1317.277777777782,
+              "y": 300,
+              "vx": 244,
+              "vy": 0,
+              "grounded": true,
+              "health": 1,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 47099.7
+            }
+          },
+          {
+            "from": 35,
+            "to": 43,
+            "landed": true,
+            "route": "static floor",
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "Summit of Frost",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 5,
+                "total": 8
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 0.848700958123763,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 397.6500000000009,
+                  "y": 449.3,
+                  "vx": 65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 671.1166666666634,
+                  "y": 413.3,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1080,
+                  "y": 377.3,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1460.1499999999955,
+                  "y": 305.3,
+                  "vx": 0
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 835.1999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "spent",
+                  "x": 1400.3999999999999,
+                  "y": 296.8888888888888,
+                  "activations": 1,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 447.7014584963224,
+                  "y": 405
+                },
+                {
+                  "x": 1043.1143663949383,
+                  "y": 333
+                },
+                {
+                  "x": 1735.4678138902045,
+                  "y": 225
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 36,
+              "landedPlatforms": [
+                0,
+                6,
+                7
+              ],
+              "x": 1650.7500000000025,
+              "y": 264,
+              "vx": 205,
+              "vy": 0,
+              "grounded": true,
+              "health": 3,
+              "crystals": 1,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "run",
+              "seed": 314159,
+              "time": 48566.4
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "level_settings",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 2,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "Summit of Frost",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 5,
+            "total": 8
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.892186615741805,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 440.98333333333346,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "chase",
+              "x": 757.7833333333331,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1080,
+              "y": 377.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1340.9833333333336,
+              "y": 305.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "waiting",
+              "x": 835.1999999999999,
+              "y": 212,
+              "activations": 0,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1400.3999999999999,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 471.5140017863316,
+              "y": 405
+            },
+            {
+              "x": 1115.227309035394,
+              "y": 333
+            },
+            {
+              "x": 1660.0716210625326,
+              "y": 225
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 37,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 90,
+          "y": 480,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "idle",
+          "seed": 314159,
+          "time": 48716.4
+        }
+      }
+    },
+    {
+      "id": "later_level_icicles",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "stage": 2,
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "Summit of Frost",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 5,
+            "total": 8
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.5145161937338538,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 408.48333333333403,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "chase",
+              "x": 813.9500000000007,
+              "y": 413.3,
+              "vx": 125
+            },
+            {
+              "behavior": "shooter",
+              "x": 1080,
+              "y": 377.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1308.4833333333358,
+              "y": 305.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "falling",
+              "x": 835.1999999999999,
+              "y": 213.63888888888889,
+              "activations": 1,
+              "trigger": "proximity"
+            },
+            {
+              "state": "waiting",
+              "x": 1400.3999999999999,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 499.3150527184129,
+              "y": 405
+            },
+            {
+              "x": 1121.6479041423006,
+              "y": 333
+            },
+            {
+              "x": 1675.5960606831752,
+              "y": 225
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 37,
+          "landedPlatforms": [
+            0,
+            3
+          ],
+          "x": 832.5833333333333,
+          "y": 404.97222222222223,
+          "vx": -157,
+          "vy": -181.66666666666666,
+          "grounded": false,
+          "health": 2,
+          "crystals": 0,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 49216.3
+        }
+      }
+    },
+    {
+      "id": "win_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled collection and gate overlaps through all stages, not an autonomous completion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 2,
+          "levelCount": 3,
+          "levelTitle": "Summit of Frost",
+          "topology": "ascent",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 5,
+            "total": 8
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.7679459623893073,
+          "exitStyle": "beacon",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 397.6500000000009,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "chase",
+              "x": 782.2833333333338,
+              "y": 413.3,
+              "vx": 65
+            },
+            {
+              "behavior": "shooter",
+              "x": 1080,
+              "y": 377.3,
+              "vx": 0
+            },
+            {
+              "behavior": "chase",
+              "x": 1331.9833333333345,
+              "y": 305.3,
+              "vx": 65
+            }
+          ],
+          "icicles": [
+            {
+              "state": "falling",
+              "x": 835.1999999999999,
+              "y": 215.58333333333334,
+              "activations": 1,
+              "trigger": "proximity"
+            },
+            {
+              "state": "warning",
+              "x": 1400.3999999999999,
+              "y": 104,
+              "activations": 0,
+              "trigger": "proximity"
+            }
+          ],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 513.128987273324,
+              "y": 405
+            },
+            {
+              "x": 1156.2244086659748,
+              "y": 333
+            },
+            {
+              "x": 1641.5203511441682,
+              "y": 225
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 38,
+          "landedPlatforms": [
+            0
+          ],
+          "x": 1728,
+          "y": 252.30555555555554,
+          "vx": 0,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "crystals": 8,
+          "state": "won",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 50266.3
+        }
+      }
+    },
+    {
+      "id": "level_transitions",
+      "passed": true,
+      "critical": true,
+      "category": "fidelity",
+      "details": {
+        "transitions": [
+          {
+            "from": 0,
+            "to": 1,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 1,
+              "levelCount": 3,
+              "levelTitle": "Icicle Cavern",
+              "topology": "cavern",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 8,
+                "total": 12
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "behavior": "chase",
+                  "x": 681.8333333333333,
+                  "y": 446.91666666666663,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 979.1999999999999,
+                  "y": 410.91666666666663,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1322.6333333333334,
+                  "y": 410.91666666666663,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 729,
+                  "y": 248,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1387.8,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 431.7997152883904,
+                  "y": 441
+                },
+                {
+                  "x": 717.8947101045017,
+                  "y": 405
+                },
+                {
+                  "x": 970.7492295618742,
+                  "y": 369
+                },
+                {
+                  "x": 1617.8454595442581,
+                  "y": 369
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": false,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 18,
+              "landedPlatforms": [],
+              "x": 90,
+              "y": 476.91666666666663,
+              "vx": 0,
+              "vy": 36.666666666666664,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 314159,
+              "time": 19650.8
+            }
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 2,
+              "levelCount": 3,
+              "levelTitle": "Summit of Frost",
+              "topology": "ascent",
+              "objective": {
+                "type": "collect_and_exit",
+                "required": 5,
+                "total": 8
+              },
+              "respawn": {
+                "x": 90,
+                "y": 476
+              },
+              "exitAlpha": 1,
+              "exitStyle": "beacon",
+              "enemies": [
+                {
+                  "behavior": "patrol",
+                  "x": 445.3166666666667,
+                  "y": 446.91666666666663,
+                  "vx": -65
+                },
+                {
+                  "behavior": "chase",
+                  "x": 762.1166666666666,
+                  "y": 410.91666666666663,
+                  "vx": -65
+                },
+                {
+                  "behavior": "shooter",
+                  "x": 1080,
+                  "y": 374.91666666666663,
+                  "vx": 0
+                },
+                {
+                  "behavior": "chase",
+                  "x": 1345.3166666666666,
+                  "y": 302.91666666666663,
+                  "vx": -65
+                }
+              ],
+              "icicles": [
+                {
+                  "state": "waiting",
+                  "x": 835.1999999999999,
+                  "y": 212,
+                  "activations": 0,
+                  "trigger": "proximity"
+                },
+                {
+                  "state": "waiting",
+                  "x": 1400.3999999999999,
+                  "y": 104,
+                  "activations": 0,
+                  "trigger": "proximity"
+                }
+              ],
+              "machines": [],
+              "movingPlatforms": [
+                {
+                  "x": 468.7887773212774,
+                  "y": 405
+                },
+                {
+                  "x": 1115.9631664458093,
+                  "y": 333
+                },
+                {
+                  "x": 1656.732053188209,
+                  "y": 225
+                }
+              ],
+              "shotsFired": 0,
+              "slippery": true,
+              "environment": "ice",
+              "terrainTexture": "ice",
+              "generation": 28,
+              "landedPlatforms": [],
+              "x": 90,
+              "y": 476.91666666666663,
+              "vx": 0,
+              "vy": 36.666666666666664,
+              "grounded": false,
+              "health": 3,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "fall",
+              "seed": 314159,
+              "time": 32750.3
+            }
+          }
+        ],
+        "method": "Real exit collision, scene transition and final-stage win"
+      }
+    },
+    {
+      "id": "hazard_damage",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Controlled overlap with real hazard or enemy",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.8696278922753216,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 605.8166666666659,
+              "y": 449.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 893.8166666666659,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1167.416666666668,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 39,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 596.2833333333332,
+          "y": 428.47222222222223,
+          "vx": -121,
+          "vy": 38.33333333333333,
+          "grounded": false,
+          "health": 2,
+          "crystals": 1,
+          "state": "playing",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "fall",
+          "seed": 314159,
+          "time": 50649.6
+        }
+      }
+    },
+    {
+      "id": "loss_condition",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "method": "Test hook invokes damage to exercise health exhaustion",
+        "snapshot": {
+          "ready": true,
+          "levelIndex": 0,
+          "levelCount": 3,
+          "levelTitle": "Glacial Foothills",
+          "topology": "journey",
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          },
+          "respawn": {
+            "x": 90,
+            "y": 476
+          },
+          "exitAlpha": 0.7776631704728751,
+          "exitStyle": "shrine",
+          "enemies": [
+            {
+              "behavior": "patrol",
+              "x": 890.5666666666658,
+              "y": 413.3,
+              "vx": -65
+            },
+            {
+              "behavior": "patrol",
+              "x": 1164.1666666666683,
+              "y": 413.3,
+              "vx": -65
+            }
+          ],
+          "icicles": [],
+          "machines": [],
+          "movingPlatforms": [
+            {
+              "x": 936,
+              "y": 369
+            },
+            {
+              "x": 1224,
+              "y": 369
+            }
+          ],
+          "shotsFired": 0,
+          "slippery": true,
+          "environment": "ice",
+          "terrainTexture": "ice",
+          "generation": 39,
+          "landedPlatforms": [
+            0,
+            2
+          ],
+          "x": 589.7833333333332,
+          "y": 427.6388888888889,
+          "vx": 0,
+          "vy": 0,
+          "grounded": false,
+          "health": 0,
+          "crystals": 1,
+          "state": "lost",
+          "checkpoint": -1,
+          "missingAssets": [],
+          "animation": "jump",
+          "seed": 314159,
+          "time": 50749.6
+        }
+      }
+    },
+    {
+      "id": "restart_reset",
+      "passed": true,
+      "critical": true,
+      "category": "gameplay",
+      "details": {
+        "ready": true,
+        "levelIndex": 0,
+        "levelCount": 3,
+        "levelTitle": "Glacial Foothills",
+        "topology": "journey",
+        "objective": {
+          "type": "collect_and_exit",
+          "required": 6,
+          "total": 11
+        },
+        "respawn": {
+          "x": 90,
+          "y": 476
+        },
+        "exitAlpha": 0.9955718126821722,
+        "exitStyle": "shrine",
+        "enemies": [
+          {
+            "behavior": "patrol",
+            "x": 622.0666666666665,
+            "y": 449.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 910.0666666666665,
+            "y": 413.3,
+            "vx": -65
+          },
+          {
+            "behavior": "patrol",
+            "x": 1183.666666666667,
+            "y": 413.3,
+            "vx": -65
+          }
+        ],
+        "icicles": [],
+        "machines": [],
+        "movingPlatforms": [
+          {
+            "x": 936,
+            "y": 369
+          },
+          {
+            "x": 1224,
+            "y": 369
+          }
+        ],
+        "shotsFired": 0,
+        "slippery": true,
+        "environment": "ice",
+        "terrainTexture": "ice",
+        "generation": 40,
+        "landedPlatforms": [
+          0
+        ],
+        "x": 90,
+        "y": 480,
+        "vx": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "crystals": 0,
+        "state": "playing",
+        "checkpoint": -1,
+        "missingAssets": [],
+        "animation": "idle",
+        "seed": 314159,
+        "time": 50899.6
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "runtime",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "screenshot": "gameplay.png",
+  "scope": "Functional browser verification; visual coherence and game quality require screenshot/play review."
+}

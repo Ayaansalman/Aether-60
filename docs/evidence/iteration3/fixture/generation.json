@@ -1,0 +1,415 @@
+{
+  "prompt": "Create a three-level ice platformer. The first level introduces slippery terrain, the second introduces falling icicles, and the final level combines both mechanics with difficult platforming.",
+  "provider": {
+    "provider": "fixture",
+    "model": null,
+    "live": false
+  },
+  "guard": {
+    "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+    "requirements": [
+      {
+        "id": "ice_environment",
+        "source": "ice",
+        "span": [
+          21,
+          24
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "ice_composition"
+      },
+      {
+        "id": "slippery",
+        "source": "slippery",
+        "span": [
+          64,
+          72
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "slippery_momentum"
+      },
+      {
+        "id": "falling_icicles",
+        "source": "falling icicles",
+        "span": [
+          104,
+          119
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "falling_icicle_cycle"
+      },
+      {
+        "id": "multiple_levels",
+        "source": "three-level",
+        "span": [
+          9,
+          20
+        ],
+        "supported": true,
+        "status": "pending",
+        "runtime_check": "level_transitions"
+      }
+    ],
+    "changes": [
+      {
+        "field": "levels",
+        "reason": "Expanded campaign defaults into explicit progressive level specifications"
+      }
+    ],
+    "unsupported": [],
+    "overall": "PASS"
+  },
+  "design": {
+    "title": "The Frostbound Vault",
+    "premise": "Create a three-level ice platformer. The first level introduces slippery terrain, the second introduces falling icicles, and the final level combines both mechanics with difficult platforming.",
+    "genre": "platformer",
+    "theme": "ice",
+    "difficulty": "balanced",
+    "objective": "reach_exit",
+    "abilities": [],
+    "checkpoints": true,
+    "moving_platforms": false,
+    "slippery": true,
+    "falling_icicles": true,
+    "icicle_trigger": "mixed",
+    "hazard_period_ms": 2200,
+    "timed_hazards": false,
+    "exit_indicator": "none",
+    "exit_style": "gate",
+    "collectible": "crystals",
+    "level_count": 3,
+    "levels": [
+      {
+        "title": "The Frostbound Vault \u00b7 Foothills",
+        "theme": "ice",
+        "topology": "journey",
+        "difficulty": "relaxed",
+        "objective": "reach_exit",
+        "slippery": true,
+        "falling_icicles": false,
+        "timed_hazards": false,
+        "moving_platforms": null,
+        "checkpoints": null,
+        "icicle_trigger": null,
+        "hazard_period_ms": null,
+        "exit_style": null,
+        "exit_indicator": null,
+        "collectible": null,
+        "briefing": "Learn the terrain and explore the upper paths.",
+        "sections": [
+          {
+            "kind": "cavern",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "ruins",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "exploration"
+          },
+          {
+            "kind": "cavern",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "bridge",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "cavern",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          }
+        ]
+      },
+      {
+        "title": "The Frostbound Vault \u00b7 Heights",
+        "theme": "ice",
+        "topology": "ascent",
+        "difficulty": "balanced",
+        "objective": "reach_exit",
+        "slippery": false,
+        "falling_icicles": true,
+        "timed_hazards": false,
+        "moving_platforms": null,
+        "checkpoints": null,
+        "icicle_trigger": null,
+        "hazard_period_ms": null,
+        "exit_style": null,
+        "exit_indicator": null,
+        "collectible": null,
+        "briefing": "Climb through the new hazards.",
+        "sections": [
+          {
+            "kind": "cavern",
+            "length": 7,
+            "elevation": 2,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "cavern",
+            "length": 7,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "hazards"
+          },
+          {
+            "kind": "ruins",
+            "length": 7,
+            "elevation": 2,
+            "gap": 2,
+            "enemies": false,
+            "hazards": true,
+            "encounter": "patrol",
+            "challenge": "exploration"
+          },
+          {
+            "kind": "bridge",
+            "length": 4,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "bridge",
+            "length": 4,
+            "elevation": 2,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "ruins",
+            "length": 7,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": false,
+            "hazards": true,
+            "encounter": "patrol",
+            "challenge": "exploration"
+          }
+        ]
+      },
+      {
+        "title": "The Frostbound Vault \u00b7 Summit",
+        "theme": "ice",
+        "topology": "terraces",
+        "difficulty": "challenging",
+        "objective": "reach_exit",
+        "slippery": true,
+        "falling_icicles": true,
+        "timed_hazards": false,
+        "moving_platforms": null,
+        "checkpoints": null,
+        "icicle_trigger": null,
+        "hazard_period_ms": null,
+        "exit_style": null,
+        "exit_indicator": null,
+        "collectible": null,
+        "briefing": "Combine your skills on the final crossing.",
+        "sections": [
+          {
+            "kind": "cavern",
+            "length": 7,
+            "elevation": 2,
+            "gap": 3,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "traversal"
+          },
+          {
+            "kind": "cavern",
+            "length": 7,
+            "elevation": 1,
+            "gap": 3,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "hazards"
+          },
+          {
+            "kind": "ruins",
+            "length": 7,
+            "elevation": 2,
+            "gap": 3,
+            "enemies": false,
+            "hazards": true,
+            "encounter": "patrol",
+            "challenge": "exploration"
+          },
+          {
+            "kind": "bridge",
+            "length": 4,
+            "elevation": 1,
+            "gap": 3,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "bridge",
+            "length": 4,
+            "elevation": 2,
+            "gap": 3,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          },
+          {
+            "kind": "ruins",
+            "length": 7,
+            "elevation": 1,
+            "gap": 3,
+            "enemies": false,
+            "hazards": true,
+            "encounter": "patrol",
+            "challenge": "exploration"
+          },
+          {
+            "kind": "bridge",
+            "length": 4,
+            "elevation": 2,
+            "gap": 3,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "challenge": "precision"
+          }
+        ]
+      }
+    ],
+    "topology": "cavern",
+    "sections": [
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "cavern",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "cavern",
+        "length": 7,
+        "elevation": 1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": true,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "cavern",
+        "length": 5,
+        "elevation": -1,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      },
+      {
+        "kind": "cavern",
+        "length": 6,
+        "elevation": 0,
+        "gap": 2,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "patrol",
+        "challenge": "traversal"
+      }
+    ],
+    "unsupported": [],
+    "design_notes": [
+      "Offline fixture: keyword interpretation and seeded construction; no model was called."
+    ],
+    "requested_features": []
+  }
+}

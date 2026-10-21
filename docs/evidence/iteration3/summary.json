@@ -1,0 +1,195 @@
+{
+  "backend_tests": 190,
+  "frontend_behavior_tests": 6,
+  "frontend_build": "PASS",
+  "frontend_lint": "PASS",
+  "campaigns": [
+    {
+      "case": "fixture",
+      "overall": "PASS",
+      "checks": 26,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "The Frostbound Vault \u00b7 Foothills",
+          "theme": "ice",
+          "topology": "journey",
+          "difficulty": "relaxed",
+          "slippery": true,
+          "platforms": 7,
+          "geometry_hash": "50650f32ff068bfd56cccd3ef47efe322386062f9ddc9a326cb6c883b2d8e3c7",
+          "entities": {
+            "checkpoint": 2,
+            "crystal": 14,
+            "exit": 1
+          },
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 14
+          }
+        },
+        {
+          "title": "The Frostbound Vault \u00b7 Heights",
+          "theme": "ice",
+          "topology": "ascent",
+          "difficulty": "balanced",
+          "slippery": false,
+          "platforms": 9,
+          "geometry_hash": "c8c3488da19bc252c26753b469483a25fdd864f720c725c0bca5d4308efbe4df",
+          "entities": {
+            "checkpoint": 2,
+            "crystal": 15,
+            "exit": 1,
+            "icicle": 3
+          },
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 15
+          }
+        },
+        {
+          "title": "The Frostbound Vault \u00b7 Summit",
+          "theme": "ice",
+          "topology": "terraces",
+          "difficulty": "challenging",
+          "slippery": true,
+          "platforms": 10,
+          "geometry_hash": "d919608438efa49689be5e21b9adf44e5663d6f2d046122225136aefb4dcd431",
+          "entities": {
+            "checkpoint": 2,
+            "crystal": 16,
+            "exit": 1,
+            "icicle": 3
+          },
+          "objective": {
+            "type": "reach_exit",
+            "required": 0,
+            "total": 16
+          }
+        }
+      ]
+    },
+    {
+      "case": "live",
+      "overall": "PASS",
+      "checks": 40,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "Glacial Foothills",
+          "theme": "ice",
+          "topology": "journey",
+          "difficulty": "relaxed",
+          "slippery": true,
+          "platforms": 8,
+          "geometry_hash": "483d77cb93d38f708949366c2e3d0a9e5a5055d76d60349659f0ebafea111334",
+          "entities": {
+            "checkpoint": 2,
+            "crystal": 11,
+            "enemy": 3,
+            "exit": 1
+          },
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 6,
+            "total": 11
+          }
+        },
+        {
+          "title": "Icicle Cavern",
+          "theme": "ice",
+          "topology": "cavern",
+          "difficulty": "balanced",
+          "slippery": false,
+          "platforms": 10,
+          "geometry_hash": "f6679f54712264d6d974a62917eb6443eaf2b67b2497ed6925147a53f7623b09",
+          "entities": {
+            "checkpoint": 1,
+            "crystal": 12,
+            "enemy": 3,
+            "exit": 1,
+            "icicle": 2
+          },
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 12
+          }
+        },
+        {
+          "title": "Summit of Frost",
+          "theme": "ice",
+          "topology": "ascent",
+          "difficulty": "challenging",
+          "slippery": true,
+          "platforms": 9,
+          "geometry_hash": "49f42fad2e01cb8f70dc9989ac5d4c82e1502cd49f828baa88ff8a273c61c48c",
+          "entities": {
+            "checkpoint": 1,
+            "crystal": 8,
+            "enemy": 4,
+            "exit": 1,
+            "icicle": 2
+          },
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 5,
+            "total": 8
+          }
+        }
+      ]
+    },
+    {
+      "case": "fixture-factory",
+      "overall": "PASS",
+      "checks": 30,
+      "requirements": "PASS",
+      "levels": [
+        {
+          "title": "The Copperworks \u00b7 Foothills",
+          "theme": "industrial",
+          "topology": "journey",
+          "difficulty": "relaxed",
+          "slippery": false,
+          "platforms": 10,
+          "geometry_hash": "a718dbd41253a177e080175de98d2bbca6a9dc7415220d1522d7c7c79bf7ec1e",
+          "entities": {
+            "checkpoint": 2,
+            "crystal": 14,
+            "enemy": 2,
+            "exit": 1
+          },
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 8,
+            "total": 14
+          }
+        },
+        {
+          "title": "The Copperworks \u00b7 Heights",
+          "theme": "industrial",
+          "topology": "ascent",
+          "difficulty": "balanced",
+          "slippery": false,
+          "platforms": 11,
+          "geometry_hash": "4739cfb104739636ec99e2d7ef222d9e3517afaf4437f7932b42a66f19f2fc4c",
+          "entities": {
+            "checkpoint": 2,
+            "crystal": 15,
+            "enemy": 3,
+            "exit": 1,
+            "timed_hazard": 2
+          },
+          "objective": {
+            "type": "collect_and_exit",
+            "required": 9,
+            "total": 15
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Observed local commands; browser route edges use isolated launch positions and actual keyboard physics. Objectives use controlled overlaps. Not autonomous playthroughs."
+}

@@ -6,7 +6,7 @@ The model's unsupported list is retained for requests outside this vocabulary.
 import re
 
 FEATURES = {
-    'ice_environment': (r'ice[ -]cavern|frozen|ice terrain', 'ice_composition'),
+    'ice_environment': (r'\bice\b|frozen', 'ice_composition'),
     'forest_environment': (r'forest', 'environment_composition'),
     'factory_environment': (r'industrial|factory', 'environment_composition'),
     'slippery': (r'slippery|sliding terrain', 'slippery_momentum'),
@@ -20,7 +20,7 @@ FEATURES = {
     'moving_platforms': (r'moving platforms?|moving machinery', 'moving_platform_motion'),
     'timed_hazards': (r'dangerous machinery|timed hazards?', 'timed_hazard_cycle'),
     'checkpoints': (r'checkpoints?', 'checkpoint_respawn'),
-    'multiple_levels': (r'multiple stages|multiple levels|multi[ -]stage|three levels|two levels', 'level_transitions'),
+    'multiple_levels': (r'(?:multiple|multi|three|two|2|3)[ -]+(?:(?:connected|ice|forest|industrial|twilight|platformer)[ -]+)*(?:levels?|stages?)', 'level_transitions'),
     'double_jump': (r'double[ -]jump', 'double_jump'),
     'dash': (r'\bdash\b', 'dash'),
 }
@@ -45,11 +45,11 @@ def requirement_evidence(ir, prompt, unsupported=(), qa=None, requested=()):
     entities = [e for level in levels for e in level.entities]
     platforms = [p for level in levels for p in level.platforms]
     witnesses = {
-        'ice_environment': ir.theme == 'ice', 'forest_environment': ir.theme == 'forest',
-        'factory_environment': ir.theme == 'industrial', 'slippery': ir.slippery,
+        'ice_environment': any((level.theme or ir.theme) == 'ice' for level in levels), 'forest_environment': any((level.theme or ir.theme) == 'forest' for level in levels),
+        'factory_environment': any((level.theme or ir.theme) == 'industrial' for level in levels), 'slippery': any(level.slippery if level.slippery is not None else ir.slippery for level in levels),
         'falling_icicles': any(e.kind == 'icicle' for e in entities),
-        'exit_indicator': ir.exit_indicator != 'none', 'collectibles': any(e.kind == 'crystal' for e in entities),
-        'robots': ir.theme == 'industrial' and any(e.kind == 'enemy' for e in entities),
+        'exit_indicator': any((level.exit_indicator or ir.exit_indicator) != 'none' for level in levels), 'collectibles': any(e.kind == 'crystal' for e in entities),
+        'robots': any((level.theme or ir.theme) == 'industrial' and any(e.kind == 'enemy' for e in level.entities) for level in levels),
         'moving_platforms': any(p.moving for p in platforms),
         'timed_hazards': any(e.kind == 'timed_hazard' for e in entities),
         'checkpoints': any(e.kind == 'checkpoint' for e in entities), 'multiple_levels': len(levels) > 1,

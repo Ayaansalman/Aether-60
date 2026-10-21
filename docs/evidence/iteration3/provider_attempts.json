@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-20",
+  "configured_provider": "Gemini OpenAI-compatible endpoint",
+  "configured_model": "gemini-3.5-flash-lite",
+  "planning_invocations": [
+    {"attempt": 1, "result": "HTTP 503", "reason": "Model experiencing high demand"},
+    {"attempt": 2, "result": "Typed three-level design accepted", "artifact": "live/model_design.json"}
+  ],
+  "subsequent_verification": "Saved-design rebuilds only; no additional live planning invocations",
+  "scope": "Observed top-level planning invocations; no credentials or raw HTTP headers retained"
+}

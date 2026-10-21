@@ -41,7 +41,11 @@ export interface PlatformerIR {
   exit_style?: "shrine" | "gate" | "beacon";
   collectible?: "crystals" | "relics";
   camera_mode?: "follow" | "vertical";
-  levels?: Pick<PlatformerIR, "title" | "width" | "height" | "spawn" | "objective" | "platforms" | "entities" | "camera_mode">[];
+  difficulty?: "relaxed" | "balanced" | "challenging";
+  briefing?: string;
+  topology?: "journey" | "ascent" | "terraces" | "cavern";
+  levels?: (Pick<PlatformerIR, "title" | "width" | "height" | "spawn" | "objective" | "platforms" | "entities" | "camera_mode"> &
+    Partial<Pick<PlatformerIR, "theme" | "slippery" | "exit_style" | "exit_indicator" | "collectible" | "difficulty" | "briefing" | "topology">>)[];
   requirements?: { id: string; source: string; status: string; verified?: boolean }[];
 }
 export interface StudioJob {

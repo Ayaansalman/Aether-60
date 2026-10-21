@@ -65,6 +65,7 @@ async def run(gid: str, request: Generate):
             requirements = enforce_explicit_requirements(design, request.prompt)
             artifact("requirement_report.json", requirements)
             artifact("game_intent.json", {"original_prompt":request.prompt,"genre":design.genre,"setting":design.theme,
+                "level_count": design.level_count, "progression": [level.model_dump(exclude_none=True) for level in design.levels],
                 "requested_mechanics":requirements['requirements'],"model_requests":[f.model_dump() for f in design.requested_features],"unsupported":design.unsupported,"interpretation_source":provenance})
             artifact("game_design.json", design.model_dump())
             artifact("provider.json", provenance)
@@ -79,7 +80,7 @@ async def run(gid: str, request: Generate):
                     break
                 before = design.model_dump()
                 failed_validation = validation
-                for section in design.sections:
+                for section in [*design.sections, *(section for level in design.levels for section in level.sections)]:
                     section.gap = max(1, section.gap - 1)
                     section.elevation = min(section.elevation, 1)
                 stage("REPAIRING", "Reducing unreachable gaps and rises; rebuilding from the same seed")
@@ -119,7 +120,7 @@ async def run(gid: str, request: Generate):
                 if not failed or any(c['id']!='mandatory_route_edges' for c in failed):
                     break
                 before=ir.model_dump()
-                for section in design.sections:
+                for section in [*design.sections, *(section for level in design.levels for section in level.sections)]:
                     section.gap=1;section.elevation=min(section.elevation,1)
                 ir=construct(design,request.prompt,ir.seed)
                 if ir.model_dump()==before:
