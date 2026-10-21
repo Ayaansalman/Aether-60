@@ -1,4 +1,4 @@
-export type BiomeRegion={id:string;name:string;biome:'forest'|'snow'|'frozen_lake'|'icy_ruins';x:number;y:number;width:number;height:number;slippery:boolean};
+export type BiomeRegion={id:string;name:string;biome:'forest'|'garden'|'dark'|'snow'|'frozen_lake'|'icy_ruins';x:number;y:number;width:number;height:number;slippery:boolean};
 export type Dialogue = { greeting: string[]; active: string[]; completed: string[] };
 export type Actor = {
   id: string; kind: 'npc'|'item'|'door'|'switch'|'enemy'|'landmark'|'treasure';

@@ -5,6 +5,7 @@ The same grammar accepts arbitrary validated actors, quantities and quest order.
 """
 import random
 import re
+from collections import deque
 from schemas.adventure import AreaIR, PlacedActor
 
 
@@ -22,7 +23,24 @@ def build_area(design, index, seed):
                 if 0 < px < w - 1 and 0 < py < h - 1:
                     tiles[py][px] = value
 
+    chamber = None
     def path(a, b, radius=0):
+        # Regional sealed rooms must never cut off a prerequisite route.
+        # Carve a bounded shortest corridor around the reserved room footprint.
+        if chamber and not (chamber[0]<a[0]<chamber[2] and chamber[1]<a[1]<chamber[3]):
+            todo=deque([a]);parents={a:None}
+            while todo and b not in parents:
+                cx,cy=todo.popleft()
+                for nxt in ((cx+1,cy),(cx-1,cy),(cx,cy+1),(cx,cy-1)):
+                    nx,ny=nxt
+                    if not (0<nx<w-1 and 0<ny<h-1) or nxt in parents:continue
+                    if chamber[0]<=nx<=chamber[2] and chamber[1]<=ny<=chamber[3]:continue
+                    parents[nxt]=(cx,cy);todo.append(nxt)
+            if b not in parents:raise ValueError('No corridor around the reserved final chamber')
+            point=b
+            while point is not None:
+                px,py=point;tiles[py][px]=2;protected.add(point);point=parents[point]
+            return
         x, y = a
         tx, ty = b
         while True:
@@ -83,11 +101,36 @@ def build_area(design, index, seed):
     door = next((a for a in actors if a.kind == 'door'), None)
     door_order = next((i for i, q in enumerate(design.quests) if door and q.target == door.id), len(design.quests))
     door_x, door_y = (31, 23) if not outdoor else (32, 17)
+    if door and area.regions:
+        later=[a for a in actors if any(q.target==a.id for q in design.quests[door_order+1:])]
+        region_id=next((a.region for a in later if a.region),door.region)
+        room_region=next((r for r in area.regions if r.id==region_id),area.regions[-1])
+        room_width=min(9,room_region.width-2);room_height=min(9,room_region.height-2)
+        if room_width<5 or room_height<5:raise ValueError('Final chamber region needs at least 7 by 7 tiles')
+        left=room_region.x+room_region.width-room_width-1
+        top=room_region.y+(room_region.height-room_height)//2
+        chamber=(left,top,left+room_width-1,top+room_height-1)
+        if chamber[0]<=spawn[0]<=chamber[2] and chamber[1]<=spawn[1]<=chamber[3]:
+            spawn=(max(2,left-2),top+room_height//2)
+        door_x,door_y=left,top+room_height//2
+        rect(left+1,top+1,room_width-2,room_height-2)
+        # The exit belongs to the final room; reaching it requires opening the real door.
+        exit=(chamber[2]-1,door_y)
+        used.add(exit)
+        for ry in range(top,top+room_height):
+            for rx in range(left,left+room_width):protected.add((rx,ry))
 
     region=None
+    beyond=False
+    def chamber_allows(x,y):
+        if not chamber:return True
+        left,top,right,bottom=chamber
+        return left<x<right and top<y<bottom if beyond else not (left<=x<=right and top<=y<=bottom)
+
     def reserve(center, bounds):
         candidates = [(x, y) for y in range(bounds[1], bounds[3]) for x in range(bounds[0], bounds[2])
                       if tiles[y][x] < 10 and tiles[y][x] != 1 and
+                      chamber_allows(x,y) and
                       (region is None or next((r.id for r in reversed(area.regions) if r.x<=x<r.x+r.width and r.y<=y<r.y+r.height),None)==region.id) and
                       all(abs(x-u)+abs(y-v) >= 3 for u, v in used)]
         if not candidates: raise ValueError('Spatial zone exhausted by adventure actors')
@@ -119,6 +162,14 @@ def build_area(design, index, seed):
         if region:
             bounds=(region.x+1,region.y+1,region.x+region.width-1,region.y+region.height-1)
             center=(region.x+region.width//2,region.y+region.height//2)
+        if chamber:
+            if beyond:
+                if not region:bounds=(2,2,w-2,h-2)
+                bounds=(max(bounds[0],chamber[0]+1),max(bounds[1],chamber[1]+1),min(bounds[2],chamber[2]),min(bounds[3],chamber[3]))
+                center=(chamber[0]+2,door_y)
+            else:
+                # Region placement may range across the map, excluding only the sealed room.
+                if not region:bounds=(2,2,w-2,h-2)
         x, y = reserve(center, bounds)
         pickups = []
         if actor.kind == 'item':
@@ -129,7 +180,8 @@ def build_area(design, index, seed):
         for p in pickups or [dict(x=x, y=y)]:
             anchor = (29, 17) if outdoor else min(centers, key=lambda c: abs(c[0]-p['x'])+abs(c[1]-p['y']))
             if outdoor and settlement: anchor = hub
-            if beyond: anchor = (39, door_y)
+            if chamber: anchor=(chamber[0]+1,door_y) if beyond else spawn
+            elif beyond: anchor = (39, door_y)
             path(anchor, (p['x'], p['y']))
         placed.append(PlacedActor(**actor.model_dump(), x=x, y=y, pickups=pickups))
 
@@ -153,13 +205,22 @@ def build_area(design, index, seed):
                 if tiles[y][x] == 0 and (x,y) not in protected: tiles[y][x] = 3
     # Deliberate biome clearings preserve all routes and remove incompatible tree modules.
     for region in area.regions:
-        if region.biome=='forest': continue
+        if region.biome in ('forest','garden','dark'): continue
         for ry in range(region.y,region.y+region.height):
             for rx in range(region.x,region.x+region.width):
-                if tiles[ry][rx] in (1,3,4): tiles[ry][rx]=0
+                if tiles[ry][rx] in ((1,3,4) if outdoor else (3,)): tiles[ry][rx]=0
         trees=[t for t in trees if not (region.x<=t['x']<region.x+region.width and region.y<=t['y']<region.y+region.height)]
         zones.append(dict(name=region.name,x=region.x+region.width//2,y=region.y+2))
-    if door:
+    if chamber:
+        left,top,right,bottom=chamber
+        for ry in range(top,bottom+1):
+            for rx in range(left,right+1):
+                if rx in (left,right) or ry in (top,bottom): tiles[ry][rx]=1
+        tiles[door_y][door_x]=2
+        path(spawn,(door_x-1,door_y))
+        tiles[door_y][door_x+1]=2
+        trees=[t for t in trees if not (left<=t['x']<=right and top<=t['y']<=bottom)]
+    elif door:
         for y in range(1, h-1): tiles[y][door_x] = 1
         tiles[door_y][door_x] = 2
         tiles[door_y][door_x-1] = tiles[door_y][door_x+1] = 2

@@ -50,7 +50,26 @@ export class AdventureScene extends Phaser.Scene {
     if(this.spec.theme==='dark')layer.setTint(0xb7a8c2);
     for(const region of area.regions||[]) {
       if(region.biome==='forest')continue;
-      const palette=region.biome==='frozen_lake'?0x73cde5:region.biome==='icy_ruins'?0xc4cfee:0xe2efff;
+      if(region.biome==='garden'||region.biome==='dark'){
+        const garden=region.biome==='garden',detail=this.add.graphics().setDepth(1);
+        layer.forEachTile(tile=>{
+          if(tile.x<region.x||tile.x>=region.x+region.width||tile.y<region.y||tile.y>=region.y+region.height)return;
+          const value=area.tiles[tile.y][tile.x],solid=value===1||value===4||value>=10;
+          tile.tint=garden?(solid?0x75936e:0xa9d77d):(solid?0x827399:0x75648f);
+          if(!solid&&garden){
+            if(art)tile.index=value===2?art.terrain.path:art.terrain.ground[(tile.x*7+tile.y*13)%art.terrain.ground.length];
+            if(value!==2&&(tile.x*7+tile.y*13)%5===0){
+              const x=tile.x*32+16,y=tile.y*32+18;
+              detail.lineStyle(2,0x3d743d).lineBetween(x,y,x,y+8);
+              detail.fillStyle((tile.x+tile.y)%2?0xf0a4cd:0xffe09b);
+              for(const [dx,dy] of [[-3,0],[3,0],[0,-3],[0,3]])detail.fillCircle(x+dx,y+dy,3);
+              detail.fillStyle(0xfff0bb).fillCircle(x,y,2);
+            }
+          }
+        });
+        continue;
+      }
+      const palette=region.biome==='frozen_lake' ?0x73cde5:region.biome==='icy_ruins'?0xc4cfee:0xe2efff;
       layer.forEachTile(tile=>{if(tile.x>=region.x&&tile.x<region.x+region.width&&tile.y>=region.y&&tile.y<region.y+region.height)tile.tint=palette;});
       const terrain=this.add.graphics().setDepth(1);
       terrain.fillStyle(palette,.72);terrain.fillRect(region.x*32,region.y*32,region.width*32,region.height*32);

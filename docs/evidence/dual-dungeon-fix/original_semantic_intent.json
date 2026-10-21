@@ -1,0 +1,102 @@
+{
+  "genre": "adventure",
+  "loop": "Explore dual-themed dungeon halves, defeat monsters, collect key, activate magical switch, unlock final chamber, and claim treasure.",
+  "control": "top_down",
+  "requirements": [
+    {
+      "source": "top-down dungeon adventure",
+      "meaning": "The game is an adventure game played from a top-down perspective.",
+      "capability": "top_down_movement",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "Verify that the player moves in 4 or 8 directions from an overhead camera angle.",
+      "biomes": [],
+      "count": null,
+      "scope": "game"
+    },
+    {
+      "source": "one half of the dungeon in dark themed and the other half in flower greenish garden themed area",
+      "meaning": "The dungeon is split into distinct biomes or visual theme regions.",
+      "capability": "visual_theme",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "Check that the dungeon layout features two contrasting thematic halves (dark theme and flower garden theme).",
+      "biomes": [
+        "forest"
+      ],
+      "count": 2,
+      "scope": "same_level"
+    },
+    {
+      "source": "explore ancient ruins",
+      "meaning": "The setting is styled as ancient ruins with exploratory navigation.",
+      "capability": "top_down_movement",
+      "status": "planned",
+      "depends_on": [
+        "top_down_movement"
+      ],
+      "verification": "Verify that ruins structures, walls, and pathways exist for the player to navigate.",
+      "biomes": [],
+      "count": null,
+      "scope": "game"
+    },
+    {
+      "source": "fight monsters",
+      "meaning": "Encounter and defeat hostile creatures using combat mechanics.",
+      "capability": "projectile_attack",
+      "status": "approximated",
+      "depends_on": [
+        "top_down_movement"
+      ],
+      "verification": "Confirm that monsters exist in the dungeon and can be defeated using ranged attacks/projectiles.",
+      "biomes": [],
+      "count": null,
+      "scope": "game"
+    },
+    {
+      "source": "collect a key",
+      "meaning": "Find and pick up a key item required for progression.",
+      "capability": "quest_delivery",
+      "status": "planned",
+      "depends_on": [
+        "top_down_movement"
+      ],
+      "verification": "Verify that collecting the key adds it to inventory or enables door unlocking.",
+      "biomes": [],
+      "count": null,
+      "scope": "game"
+    },
+    {
+      "source": "activate a magical switch",
+      "meaning": "Interact with a switch to trigger environmental changes or unlock paths.",
+      "capability": "quest_delivery",
+      "status": "planned",
+      "depends_on": [
+        "top_down_movement"
+      ],
+      "verification": "Confirm that interacting with the switch changes its state and opens passage.",
+      "biomes": [],
+      "count": null,
+      "scope": "game"
+    },
+    {
+      "source": "unlock the final chamber containing a treasure",
+      "meaning": "Use collected items/switches to open the final chamber and win by grabbing the treasure.",
+      "capability": "finite_finish",
+      "status": "planned",
+      "depends_on": [
+        "collect a key",
+        "activate a magical switch"
+      ],
+      "verification": "Verify that the final chamber door opens upon requirements and touching the treasure completes the game loop.",
+      "biomes": [],
+      "count": null,
+      "scope": "game"
+    }
+  ],
+  "provenance": {
+    "provider": "OpenAICompatProvider",
+    "model": "gemini-3.5-flash-lite",
+    "live": true
+  }
+}

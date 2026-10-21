@@ -30,7 +30,9 @@ async def run_adventure(gid, request, artifact, stage, browser_report, intent=No
     stage('VALIDATING_SPEC','Checking destination connectivity, dialogue references and quest prerequisites')
     validation=adventure.validate_world(ir);artifact('validation.json',validation)
     artifact('repair_report.json',{'attempts':[],'maximum':0,'scope':'Connected paths are constructed directly. Invalid resource/quest designs fail validation; no speculative runtime repair.'})
-    if validation['overall']!='PASS':raise ValueError('Adventure prerequisites or destinations are unreachable. Inspect validation.json.')
+    if validation['overall']!='PASS':
+        blocked=[check['id'] for check in validation['checks'] if not check['passed']]
+        raise ValueError('The generated world blocks these objectives: '+ '; '.join(blocked[:3])+'. Details are saved in validation.json.')
     manifest=adventure.asset_manifest(ir.art);asset_check=adventure.validate_assets()
     if ir.art:
         from services.adventure_assets import redistribution_manifest

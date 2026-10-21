@@ -109,7 +109,7 @@ def plan(prompt, mode, raw_callback=None, intent=None):
         raise ValueError('Live mode requires a configured model provider. Fixture mode is available offline.')
     system='''Biome regions and localized slippery momentum are implemented runtime capabilities. Do not list them as unsupported.
 Biome regions are spatial rectangles within one 48x32 area (interior x=1..46,y=1..30).
-Use AreaDesign.regions for same-world forest, snow, frozen_lake and icy_ruins. Later regions override earlier regions, so a large forest may surround a smaller lake. Give each an id/name/biome/x/y/width/height. slippery=true ONLY when requested. Set actor.region to the requested location (crystal in icy ruins, villager in forest). Preserve same-level constraints with exactly one area; use separate areas only for explicit separate levels.
+Use AreaDesign.regions for same-world forest, flower garden, dark crypt, snow, frozen_lake and icy_ruins (biome IDs forest/garden/dark/snow/frozen_lake/icy_ruins). Dark and garden halves MUST use dark and garden, never icy_ruins as a proxy for dark. Regions change local appearance while preserving dungeon walls and corridors. Later regions override earlier regions, so a large forest may surround a smaller lake. Give each an id/name/biome/x/y/width/height. slippery=true ONLY when requested. Set actor.region to the requested location (crystal in icy ruins, villager in forest). Preserve same-level constraints with exactly one area; use separate areas only for explicit separate levels.
 You design Aether top-down adventures. Return ONLY JSON matching the schema below.
 Use supported event-driven sequential quests: talk to NPC, collect item, deliver inventory to NPC,
 explore landmark, defeat enemy, activate switch, unlock door. All targets are actor IDs.
@@ -119,7 +119,7 @@ are connected zones of that map. Never put their herbs in a second area then ret
 Door requires contains inventory item IDs or switch actor IDs; these are latched, keys are retained.
 Every collect target must have enough quantity; every deliver needs item (inventory ID) and count,
 or delivery_items mapping every requested item ID to its quantity when returning multiple different items.
-Use at most one sealed door per area. A door creates a real blocking passage; later targets are beyond it.
+Use at most one sealed door per area. A regional final chamber needs a region at least 7x7 tiles. The builder reserves a sealed room there, with prerequisites outside and post-unlock targets inside. For maps without regions, a door creates a blocking passage with later targets beyond it.
 An item quantity is distributed as separate pickups. Never reuse an item pickup for later collect goals.
 Avoid delivering keys needed later. All areas must be meaningful. Compose only mechanics requested.
 Peaceful/no-combat requests MUST have combat=false and no enemies. Use combat=true when fighting is requested.
@@ -151,6 +151,12 @@ Schema: '''+json.dumps(AdventureDesign.model_json_schema())
 def enforce_requirements(design, prompt):
     """Small explicit corrections with preserved raw output; no extra provider request."""
     changes=[]
+    for area in design.areas:
+        for region in area.regions:
+            before=region.biome
+            if before=='forest' and re.search(r'garden',prompt,re.I) and re.search(r'garden',region.name,re.I):region.biome='garden'
+            if before=='icy_ruins' and re.search(r'dark|crypt',region.name,re.I) and not re.search(r'\bice|icy|frozen|snow',prompt,re.I):region.biome='dark'
+            if region.biome!=before:changes.append({'field':region.id+'.biome','before':before,'after':region.biome,'reason':'Registered local theme matches the named region; no ice was requested'})
     words={'multiplayer':r'multiplayer|co-op|online','crafting':r'craft','equipment':r'equipment|equip|armor|stats',
            '3d':r'\b3d\b','boss':r'\bboss\b','time of day':r'day.?night|time of day','inventory management':r'complex inventory|inventory management'}
     registered = {
@@ -223,27 +229,36 @@ def validate_world(ir):
                 if 0<=nx<area.width and 0<=ny<area.height and (nx,ny) not in blocked and (nx,ny) not in seen and area.tiles[ny][nx] not in (1,4) and area.tiles[ny][nx]<10:
                     seen.add((nx,ny));todo.append((nx,ny))
         return seen
+    prior_ok=True
     for q in ir.quests:
         a=actors[q.target];ok=True
         seen=reachable(ir.areas[a.area])
         if q.kind=='unlock':
             ok=any((a.x+dx,a.y+dy) in seen for dx,dy in [(1,0),(-1,0),(0,1),(0,-1)])
         else:ok=(a.x,a.y) in seen
+        target_reachable=ok
+        ok=ok and prior_ok
+        missing=[]
         if q.kind=='collect':
-            ok=ok and a.id not in picked and all((p['x'],p['y']) in seen for p in a.pickups);picked.add(a.id)
-            if a.item: inventory[a.item]=inventory.get(a.item,0)+a.quantity
+            ok=ok and a.id not in picked and all((p['x'],p['y']) in seen for p in a.pickups)
+            if ok:picked.add(a.id)
+            if ok and a.item: inventory[a.item]=inventory.get(a.item,0)+a.quantity
         elif q.kind=='deliver':
             for item,count in (q.delivery_items or {q.item:q.count}).items():
-                ok=ok and inventory.get(item,0)>=count;inventory[item]=inventory.get(item,0)-count
-        elif q.kind=='activate':activated.add(a.id)
+                ok=ok and inventory.get(item,0)>=count
+            if ok:
+                for item,count in (q.delivery_items or {q.item:q.count}).items():inventory[item]-=count
+        elif q.kind=='activate' and ok:activated.add(a.id)
         elif q.kind=='unlock':
             # Non-objective keys may be freely collected en route.
             for item in actors.values():
                 if item.kind=='item' and item.id not in picked and item.area==a.area and all((p['x'],p['y']) in seen for p in item.pickups):
                     inventory[item.item]=inventory.get(item.item,0)+item.quantity;picked.add(item.id)
-            ok=ok and all(inventory.get(ref,0)>0 or ref in activated for ref in a.requires)
+            missing=[ref for ref in a.requires if not (inventory.get(ref,0)>0 or ref in activated)]
+            ok=ok and not missing
             if ok:unlocked.add(a.id)
-        checks.append({'id':q.text,'passed':ok})
+        checks.append({'id':q.text,'passed':ok,'target':a.id,'target_reachable':target_reachable,'prior_objectives_valid':prior_ok,'missing_resources':missing})
+        prior_ok=prior_ok and ok
     return {'overall':'PASS' if all(c['passed'] for c in checks) else 'FAIL','checks':checks,
             'scope':'Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay.'}
 

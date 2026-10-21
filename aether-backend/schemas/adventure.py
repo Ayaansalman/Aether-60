@@ -17,7 +17,7 @@ class Dialogue(Contract):
 class BiomeRegion(Contract):
     id: str = Field(pattern=r'^[a-z][a-z0-9_]{0,39}$')
     name: str = Field(max_length=60)
-    biome: Literal['forest','snow','frozen_lake','icy_ruins']
+    biome: Literal['forest','garden','dark','snow','frozen_lake','icy_ruins']
     x: int = Field(ge=1,le=44)
     y: int = Field(ge=1,le=28)
     width: int = Field(ge=3,le=46)

@@ -1,0 +1,262 @@
+{
+  "genre": "adventure",
+  "title": "Dual Realms of the Ancient Ruin",
+  "premise": "Explore a mystical dungeon split between a dark cursed crypt and a lush flourishing garden, defeat monsters, collect the ancient key, activate the magical switch, and unlock the final chamber to claim the legendary treasure.",
+  "theme": "fantasy",
+  "art_style": "ninja_adventure",
+  "areas": [
+    {
+      "regions": [
+        {
+          "id": "garden_half",
+          "name": "Green Garden",
+          "biome": "forest",
+          "x": 2,
+          "y": 2,
+          "width": 22,
+          "height": 26,
+          "slippery": false
+        },
+        {
+          "id": "dark_half",
+          "name": "Dark Crypt",
+          "biome": "icy_ruins",
+          "x": 24,
+          "y": 2,
+          "width": 22,
+          "height": 26,
+          "slippery": false
+        }
+      ],
+      "name": "Dual Sanctuary Ruins",
+      "environment": "ruins"
+    }
+  ],
+  "actors": [
+    {
+      "region": "garden_half",
+      "id": "guardian_elena",
+      "kind": "npc",
+      "name": "Elena",
+      "area": 0,
+      "role": "Ruins Warden",
+      "item": "",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the Dual Realms, traveler.",
+          "Seek the ancient key in the dark crypt and activate our switch."
+        ],
+        "active": [
+          "Have you found the key and triggered the switch yet?"
+        ],
+        "completed": [
+          "You have conquered both realms! The treasure is yours."
+        ]
+      }
+    },
+    {
+      "region": "dark_half",
+      "id": "ruin_slime",
+      "kind": "enemy",
+      "name": "Crypt Slime",
+      "area": 0,
+      "role": "",
+      "item": "",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    },
+    {
+      "region": "dark_half",
+      "id": "ruin_bat",
+      "kind": "enemy",
+      "name": "Shadow Bat",
+      "area": 0,
+      "role": "",
+      "item": "",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "patrol",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    },
+    {
+      "region": "dark_half",
+      "id": "ancient_key",
+      "kind": "item",
+      "name": "Ancient Key",
+      "area": 0,
+      "role": "",
+      "item": "ancient_key",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    },
+    {
+      "region": "garden_half",
+      "id": "magical_switch",
+      "kind": "switch",
+      "name": "Magical Switch",
+      "area": 0,
+      "role": "",
+      "item": "",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    },
+    {
+      "region": "dark_half",
+      "id": "chamber_door",
+      "kind": "door",
+      "name": "Final Chamber Door",
+      "area": 0,
+      "role": "",
+      "item": "",
+      "quantity": 1,
+      "requires": [
+        "ancient_key",
+        "magical_switch"
+      ],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    },
+    {
+      "region": "dark_half",
+      "id": "ultimate_treasure",
+      "kind": "treasure",
+      "name": "Relic of the Dual Realms",
+      "area": 0,
+      "role": "",
+      "item": "ultimate_treasure",
+      "quantity": 1,
+      "requires": [],
+      "behavior": "chase",
+      "dialogue": {
+        "greeting": [
+          "Welcome, traveler."
+        ],
+        "active": [
+          "Your journey is still ahead."
+        ],
+        "completed": [
+          "Thank you for your help!"
+        ]
+      }
+    }
+  ],
+  "quests": [
+    {
+      "kind": "talk",
+      "target": "guardian_elena",
+      "count": 1,
+      "text": "Speak with Elena in the green garden area to learn about the trial.",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "defeat",
+      "target": "ruin_slime",
+      "count": 1,
+      "text": "Defeat the crypt slime lurking in the dark ruins.",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "defeat",
+      "target": "ruin_bat",
+      "count": 1,
+      "text": "Defeat the shadow bat in the dark ruins.",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "collect",
+      "target": "ancient_key",
+      "count": 1,
+      "text": "Collect the ancient key hidden within the dark crypt.",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "activate",
+      "target": "magical_switch",
+      "count": 1,
+      "text": "Activate the magical switch located in the green garden half.",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "unlock",
+      "target": "chamber_door",
+      "count": 1,
+      "text": "Use the key and switch power to unlock the final chamber door.",
+      "item": "",
+      "delivery_items": {}
+    },
+    {
+      "kind": "collect",
+      "target": "ultimate_treasure",
+      "count": 1,
+      "text": "Claim the ultimate treasure inside the final chamber to win!",
+      "item": "",
+      "delivery_items": {}
+    }
+  ],
+  "combat": true,
+  "unsupported": []
+}

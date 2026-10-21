@@ -1,0 +1,40 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "Dual Sanctuary Ruins",
+      "passed": true,
+      "reachable_tiles": 538,
+      "destinations": 9
+    },
+    {
+      "id": "Speak with Elena in the green garden area to learn about the trial.",
+      "passed": true
+    },
+    {
+      "id": "Defeat the crypt slime lurking in the dark ruins.",
+      "passed": true
+    },
+    {
+      "id": "Defeat the shadow bat in the dark ruins.",
+      "passed": true
+    },
+    {
+      "id": "Collect the ancient key hidden within the dark crypt.",
+      "passed": true
+    },
+    {
+      "id": "Activate the magical switch located in the green garden half.",
+      "passed": true
+    },
+    {
+      "id": "Use the key and switch power to unlock the final chamber door.",
+      "passed": true
+    },
+    {
+      "id": "Claim the ultimate treasure inside the final chamber to win!",
+      "passed": true
+    }
+  ],
+  "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+}

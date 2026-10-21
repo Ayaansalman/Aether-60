@@ -140,6 +140,11 @@ def run_browser_qa(url, directory, fixture=None):
                     old=snap()['area'];exit=spec['areas'][old]['exit'];teleport(exit['x']*32+16,exit['y']*32+16);press('e')
                     page.wait_for_function('(a)=>window.__AETHER_ADVENTURE__.snapshot().area>a',arg=old,timeout=4000)
                     record('area_transition',snap()['area']==next_area,snap())
+            for kind in ('collect','activate','unlock','explore'):
+                matching=[c for c in checks if c['id'].startswith('quest_') and c['id'].endswith('_'+kind)]
+                if matching:record('quest_'+kind,all(c['passed'] for c in matching),{'checks':[c['id'] for c in matching]})
+            combat=[c for c in checks if c['id'].startswith('combat_') and c['id']!='combat_health_loss']
+            if combat:record('adventure_combat',all(c['passed'] for c in combat),{'checks':[c['id'] for c in combat]})
             exit=spec['areas'][snap()['area']]['exit'];teleport(exit['x']*32+16,exit['y']*32+16);press('e')
             record('adventure_completion',snap()['won'] and all(s=='COMPLETED' for s in snap()['quests']),snap())
             page.screenshot(path=str(directory/'completed.png'),full_page=True)

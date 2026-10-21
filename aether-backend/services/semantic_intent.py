@@ -7,11 +7,11 @@ class Requirement(BaseModel):
     model_config=ConfigDict(extra='forbid')
     source: str
     meaning: str
-    capability: Literal['platform_movement','top_down_movement','auto_run','flap','endless_obstacles','finite_finish','distance_score','gap_score','restart','boss_duel','boss_health_bar','boss_patterns','boss_defeat','no_ordinary_enemies','no_collectibles','no_combat','single_level','biome_regions','slippery_region','quest_delivery','projectile_attack','sword_melee','visual_theme','unsupported']
+    capability: Literal['platform_movement','top_down_movement','auto_run','flap','endless_obstacles','finite_finish','distance_score','gap_score','restart','boss_duel','boss_health_bar','boss_patterns','boss_defeat','no_ordinary_enemies','no_collectibles','no_combat','single_level','biome_regions','slippery_region','quest_delivery','quest_collect','quest_activate','quest_unlock','quest_explore','adventure_combat','treasure_finish','projectile_attack','sword_melee','visual_theme','unsupported']
     status: Literal['planned','approximated','unsupported']='planned'
     depends_on: list[str]=Field(default_factory=list)
     verification: str
-    biomes: list[Literal['forest','snow','frozen_lake','icy_ruins']]=Field(default_factory=list)
+    biomes: list[Literal['forest','garden','dark','snow','frozen_lake','icy_ruins']]=Field(default_factory=list)
     count: int | None = Field(default=None,ge=0,le=100)
     scope: Literal['game','same_level','separate_levels']='game'
 
@@ -32,7 +32,7 @@ def interpret(prompt, mode):
     from providers.mock import MockModelProvider
     provider=get_provider()
     if isinstance(provider,MockModelProvider): raise ValueError('Live interpretation requires configured provider')
-    result=provider.complete('Interpret the requested game semantically. Return JSON only, no code. Select platformer for manual run/jump or boss arenas; adventure for top-down exploration/quests; runner for automatic horizontal scrolling survival, including gravity plus flap impulse. Unsupported genres must be explicit. Enumerate important constraints with verbatim source substrings, intended meaning, runtime capability, dependencies, and concrete verification. Preserve exact counts in count, biome names in biomes, and same_level versus separate_levels in scope. Preserve exclusions, win conditions, control model and environmental physics. Sword combat is approximated by platformer projectiles; never claim implemented melee. Schema: '+json.dumps(Intent.model_json_schema()),prompt)
+    result=provider.complete('Interpret the requested game semantically. Return JSON only, no code. Select platformer for manual run/jump or boss arenas; adventure for top-down exploration/quests; runner for automatic horizontal scrolling survival, including gravity plus flap impulse. Unsupported genres must be explicit. Enumerate important constraints with verbatim source substrings, intended meaning, runtime capability, dependencies, and concrete verification. Preserve exact counts in count, biome names in biomes, and same_level versus separate_levels in scope. Preserve exclusions, win conditions, control model and environmental physics. For adventure requests use quest_collect for keys/items, quest_activate for switches, quest_unlock for doors, adventure_combat for monsters, and treasure_finish for final treasure. quest_delivery is ONLY an item return to an NPC; finite_finish is ONLY a finite runner. Dark and flower garden regions use dark/garden biome IDs. Sword combat is approximated by platformer projectiles; never claim implemented melee. Schema: '+json.dumps(Intent.model_json_schema()),prompt)
     intent=Intent.model_validate_json(re.sub(r'^```(?:json)?\s*|\s*```$','',result.text.strip()))
     if any(r.source.lower() not in prompt.lower() for r in intent.requirements): raise ValueError('Intent sources must quote original prompt')
     return intent, {'provider':type(provider).__name__,'model':result.model,'live':True}
@@ -57,6 +57,8 @@ CAPABILITY_MAP = {
     'biome_regions': ('areas.regions', 'biome_regions'),
     'slippery_region': ('areas.regions.slippery', 'localized_slippery'),
     'quest_delivery': ('quests', 'adventure_completion'),
+    **{cap:('quests',cap) for cap in ['quest_collect','quest_activate','quest_unlock','quest_explore','adventure_combat']},
+    'treasure_finish':('quests','adventure_completion'),
     'projectile_attack': ('player_attack', 'player_attack_damage'),
     'sword_melee': ('player_attack', 'player_attack_damage'),
     'visual_theme': ('theme', None),
@@ -74,7 +76,7 @@ def fidelity(ir, intent, qa=None):
     witnesses={
         'platform_movement':genre=='platformer','top_down_movement':genre=='adventure',
         'auto_run':genre=='runner' and data['mode']=='ground','flap':genre=='runner' and data['mode']=='flap',
-        'endless_obstacles':genre=='runner' and data['endless'],'finite_finish':genre=='runner' and not data['endless'],
+        'endless_obstacles':genre=='runner' and data['endless'],'finite_finish':(genre=='runner' and not data['endless']) or (genre=='adventure' and bool(data['quests'])),
         'distance_score':data.get('scoring')=='distance','gap_score':data.get('scoring')=='gaps','restart':True,
         'boss_duel':bool(boss) and sum(bool(e.get('boss')) for e in entities)==1 and no_enemies,
         'boss_health_bar':bool(boss),'boss_patterns':bool(boss) and set(boss['patterns'])=={'charge','volley'},
@@ -84,18 +86,32 @@ def fidelity(ir, intent, qa=None):
         'single_level':len(data.get('areas') or data.get('levels') or [data])==1,
         'biome_regions':len(regions)>=2,'slippery_region':any(r['slippery'] for r in regions),
         'quest_delivery':any(q['kind']=='deliver' for q in data.get('quests',[])),
-        'projectile_attack':data.get('player_attack')=='projectile','sword_melee':data.get('player_attack')=='projectile',
+        'projectile_attack':data.get('player_attack')=='projectile' or (genre=='adventure' and data['combat']),'sword_melee':data.get('player_attack')=='projectile',
         'visual_theme':bool(data.get('theme')),'unsupported':False,
     }
+    witnesses.update({cap:any(q['kind']==kind for q in data.get('quests',[])) for cap,kind in [('quest_collect','collect'),('quest_activate','activate'),('quest_unlock','unlock'),('quest_explore','explore')]})
+    witnesses['adventure_combat']=genre=='adventure' and data['combat'] and any(a['kind']=='enemy' for a in actors)
+    witnesses['treasure_finish']=genre=='adventure' and any(q['kind']=='collect' and any(a['id']==q['target'] and a['kind']=='treasure' for a in actors) for q in data.get('quests',[]))
     expected_control='flap' if genre=='runner' and data['mode']=='flap' else 'auto_jump' if genre=='runner' else 'top_down' if genre=='adventure' else 'platform'
     root_ok=intent.get('genre',genre)==genre and intent.get('control',expected_control)==expected_control
     checks={c['id']:c['passed'] for c in (qa or {}).get('checks',[])}
     result=[]
     for req in intent.get('requirements',[]):
-        cap=req['capability'];path,check=CAPABILITY_MAP.get(cap,('unsupported',None))
+        cap=req['capability']
+        # Backward-compatible binding for saved intents from the narrower registry.
+        # Keep the original ID in the report; do not broaden NPC delivery semantics.
+        if genre=='adventure':
+            if cap=='quest_delivery' and not witnesses['quest_delivery']:
+                if re.search(r'activat|switch',req['source'],re.I):cap='quest_activate'
+                elif re.search(r'collect|key|pick up',req['source'],re.I):cap='quest_collect'
+            if cap=='finite_finish':cap='treasure_finish'
+        path,check=CAPABILITY_MAP.get(cap,('unsupported',None))
+        if genre=='adventure' and cap=='projectile_attack':check='adventure_combat'
         if cap=='restart':check={'adventure':'whole_game_restart','platformer':'boss_restart' if boss else 'whole_campaign_restart','runner':'rapid_restart'}[genre]
         built=witnesses.get(cap,False)
         requested_biomes=set(req.get('biomes',[]))
+        if 'forest' in requested_biomes and 'garden' in {r['biome'] for r in regions} and re.search(r'garden',req['source'],re.I):
+            requested_biomes.discard('forest');requested_biomes.add('garden')
         if requested_biomes:
             built=built and requested_biomes.issubset({r['biome'] for r in regions})
             if req.get('scope')=='same_level': built=built and any(requested_biomes.issubset({r['biome'] for r in area.get('regions',[])}) for area in data.get('areas',[]))
@@ -105,5 +121,5 @@ def fidelity(ir, intent, qa=None):
 
         status='unsupported' if cap=='unsupported' or req.get('status')=='unsupported' else 'failed' if not built else 'approximated' if cap in ('sword_melee','visual_theme') or req.get('status')=='approximated' else 'verified' if check and checks.get(check) else 'constructed_unverified' if check else 'validated_constraint'
         if check in checks and not checks[check]:status='failed'
-        result.append({**req,'constructed':built,'status':status,'ir_path':path,'runtime_check':check,'runtime_verified':bool(check and checks.get(check))})
+        result.append({**req,'requested_capability':req['capability'],'capability':cap,'bound_biomes':sorted(requested_biomes),'constructed':built,'status':status,'ir_path':path,'runtime_check':check,'runtime_verified':bool(check and checks.get(check))})
     return {'control_preserved':root_ok,'overall':'FAIL' if not root_ok or any(r['status']=='failed' for r in result) else 'WARN' if any(r['status'] in ('approximated','unsupported','constructed_unverified') for r in result) else 'PASS','requirements':result,'scope':'Structured construction witnesses plus specific runtime checks; visual style needs human review.'}

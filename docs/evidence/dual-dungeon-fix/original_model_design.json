@@ -1,0 +1,151 @@
+{
+  "genre": "adventure",
+  "title": "Dual Realms of the Ancient Ruin",
+  "premise": "Explore a mystical dungeon split between a dark cursed crypt and a lush flourishing garden, defeat monsters, collect the ancient key, activate the magical switch, and unlock the final chamber to claim the legendary treasure.",
+  "theme": "fantasy",
+  "art_style": "ninja_adventure",
+  "combat": true,
+  "areas": [
+    {
+      "name": "Dual Sanctuary Ruins",
+      "environment": "ruins",
+      "regions": [
+        {
+          "id": "garden_half",
+          "name": "Green Garden",
+          "biome": "forest",
+          "x": 2,
+          "y": 2,
+          "width": 22,
+          "height": 26,
+          "slippery": false
+        },
+        {
+          "id": "dark_half",
+          "name": "Dark Crypt",
+          "biome": "icy_ruins",
+          "x": 24,
+          "y": 2,
+          "width": 22,
+          "height": 26,
+          "slippery": false
+        }
+      ]
+    }
+  ],
+  "actors": [
+    {
+      "id": "guardian_elena",
+      "kind": "npc",
+      "name": "Elena",
+      "area": 0,
+      "region": "garden_half",
+      "role": "Ruins Warden",
+      "dialogue": {
+        "greeting": [
+          "Welcome to the Dual Realms, traveler.",
+          "Seek the ancient key in the dark crypt and activate our switch."
+        ],
+        "active": [
+          "Have you found the key and triggered the switch yet?"
+        ],
+        "completed": [
+          "You have conquered both realms! The treasure is yours."
+        ]
+      }
+    },
+    {
+      "id": "ruin_slime",
+      "kind": "enemy",
+      "name": "Crypt Slime",
+      "area": 0,
+      "region": "dark_half",
+      "behavior": "chase"
+    },
+    {
+      "id": "ruin_bat",
+      "kind": "enemy",
+      "name": "Shadow Bat",
+      "area": 0,
+      "region": "dark_half",
+      "behavior": "patrol"
+    },
+    {
+      "id": "ancient_key",
+      "kind": "item",
+      "name": "Ancient Key",
+      "area": 0,
+      "region": "dark_half",
+      "item": "ancient_key",
+      "quantity": 1
+    },
+    {
+      "id": "magical_switch",
+      "kind": "switch",
+      "name": "Magical Switch",
+      "area": 0,
+      "region": "garden_half"
+    },
+    {
+      "id": "chamber_door",
+      "kind": "door",
+      "name": "Final Chamber Door",
+      "area": 0,
+      "region": "dark_half",
+      "requires": [
+        "ancient_key",
+        "magical_switch"
+      ]
+    },
+    {
+      "id": "ultimate_treasure",
+      "kind": "treasure",
+      "name": "Relic of the Dual Realms",
+      "area": 0,
+      "region": "dark_half",
+      "item": "ultimate_treasure"
+    }
+  ],
+  "quests": [
+    {
+      "kind": "talk",
+      "target": "guardian_elena",
+      "text": "Speak with Elena in the green garden area to learn about the trial."
+    },
+    {
+      "kind": "defeat",
+      "target": "ruin_slime",
+      "count": 1,
+      "text": "Defeat the crypt slime lurking in the dark ruins."
+    },
+    {
+      "kind": "defeat",
+      "target": "ruin_bat",
+      "count": 1,
+      "text": "Defeat the shadow bat in the dark ruins."
+    },
+    {
+      "kind": "collect",
+      "target": "ancient_key",
+      "count": 1,
+      "text": "Collect the ancient key hidden within the dark crypt."
+    },
+    {
+      "kind": "activate",
+      "target": "magical_switch",
+      "text": "Activate the magical switch located in the green garden half."
+    },
+    {
+      "kind": "unlock",
+      "target": "chamber_door",
+      "text": "Use the key and switch power to unlock the final chamber door."
+    },
+    {
+      "kind": "collect",
+      "target": "ultimate_treasure",
+      "count": 1,
+      "text": "Claim the ultimate treasure inside the final chamber to win!"
+    }
+  ],
+  "unsupported": []
+}
