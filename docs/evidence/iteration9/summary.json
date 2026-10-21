@@ -95,5 +95,12 @@
     "build": "PASS",
     "lint": "PASS",
     "scope": "Focused selection, not exhaustive audit"
+  },
+  "local_server_http_smoke": {
+    "status": "READY",
+    "runtime": "PASS",
+    "passed": 7,
+    "capability_compatibility": "PASS",
+    "source": "Actual HTTP fixture generation after restarting the idle local server with current code; no model call"
   }
 }

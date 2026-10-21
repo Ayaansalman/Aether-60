@@ -59,7 +59,7 @@ Local playable captures with Inspector artifacts:
 - Survival: `http://localhost:5173/studio/play/5c220870-0d7c-465f-94b6-f4cc4b57ca61`
 - Factory: `http://localhost:5173/studio/play/584b2fc0-95b3-4fac-addb-93d9271a2cdc`
 
-Evidence summary: `evidence/iteration9/summary.json`. Initial semantic failures, the factory's raw invalid design, the secondary-label API failure, corrected designs, runtime reports and representative screenshots are retained. Earlier iteration evidence is preserved. Local DB jobs are not part of the source checkpoint.
+Evidence summary: `evidence/iteration9/summary.json`. Initial semantic failures, the factory's raw invalid design, the secondary-label API failure, corrected designs, runtime reports and representative screenshots are retained. Earlier iteration evidence is preserved. Local DB jobs are not part of the source checkpoint. The idle Aether backend was restarted with current code; both saved game endpoints still load. A fresh actual HTTP offline runner job reached READY with compatibility PASS and 7/7 Chromium checks (`local-http-smoke.json`), without a provider call.
 
 ## Limits and next architectural step
 
