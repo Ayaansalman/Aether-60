@@ -1,0 +1,9 @@
+{
+  "behavior_preserved": true,
+  "control_preserved": true,
+  "arcade_constraints": {},
+  "unsupported_core": [],
+  "overall": "PASS",
+  "requirements": [],
+  "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+}

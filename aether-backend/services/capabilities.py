@@ -78,13 +78,15 @@ def requirement_evidence(ir, prompt, unsupported=(), qa=None, requested=()):
            for name, behavior in [('patrol', 'patrol'), ('chase', 'chase'), ('ranged', 'shooter'), ('turret','turret'), ('ambusher','ambusher')]},
         **{ability: ability in ir.player.abilities for ability in ['double_jump', 'dash']},
     }
+    if ir.boss:
+        witnesses['ranged'] = 'volley' in ir.boss.patterns
     checks = {}
     for check in (qa or {}).get('checks', []):
         prior = checks.get(check['id'])
         checks[check['id']] = {**check, 'passed': check['passed'] and (prior is None or prior['passed'])}
     requirements = extract_requirements(prompt)
     # Retain model-enumerated requests across construction, polling and re-verification.
-    prior = [dict(r) for r in ir.requirements if r.get('id') != 'unsupported']
+    prior = [dict(r) for r in ir.requirements if r.get('id') != 'unsupported' and 'capability' not in r]
     prior.extend({'id': f.capability, 'source': f.source, 'description': f.description,
                   'supported': f.capability != 'unsupported',
                   'runtime_check': FEATURES.get(f.capability, ('', None))[1]}

@@ -1,0 +1,30 @@
+{
+  "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+  "requirements": [
+    {
+      "id": "boss_duel",
+      "source": "boss",
+      "span": [
+        171,
+        175
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "boss_duel"
+    },
+    {
+      "id": "ranged",
+      "source": "ranged",
+      "span": [
+        268,
+        274
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "enemy_shooter"
+    }
+  ],
+  "changes": [],
+  "unsupported": [],
+  "overall": "PASS"
+}

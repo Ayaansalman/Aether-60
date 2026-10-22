@@ -1,0 +1,169 @@
+{
+  "provider": "Replay",
+  "model": "captured-gemini",
+  "live": true,
+  "initial_latency_ms": 0,
+  "fallbacks": [],
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "model": "captured-gemini",
+      "candidate": {
+        "boss": {
+          "name": "Knight Sentinel",
+          "health": 20,
+          "telegraph_ms": 700,
+          "cooldown_ms": 1500,
+          "patterns": [
+            "charge",
+            "volley"
+          ],
+          "victory": "boss_defeat",
+          "ordinary_enemies": 0
+        },
+        "collectibles_enabled": false,
+        "title": "The Last Knight",
+        "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+        "genre": "platformer",
+        "theme": "twilight",
+        "difficulty": "challenging",
+        "objective": "reach_exit",
+        "abilities": [
+          "double_jump",
+          "dash"
+        ],
+        "checkpoints": false,
+        "moving_platforms": false,
+        "platform_motion": {
+          "axis": "horizontal",
+          "pattern": "sine",
+          "distance": 54,
+          "period_ms": 3000
+        },
+        "player_attack": "projectile",
+        "interactions": [],
+        "objectives": [],
+        "campaign_objectives": [],
+        "slippery": false,
+        "falling_icicles": false,
+        "icicle_trigger": "mixed",
+        "hazard_period_ms": 2200,
+        "timed_hazards": false,
+        "exit_indicator": "none",
+        "exit_style": "gate",
+        "collectible": "crystals",
+        "level_count": 1,
+        "levels": [],
+        "topology": "journey",
+        "sections": [
+          {
+            "kind": "ruins",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "shooter",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "combat"
+          },
+          {
+            "kind": "ruins",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "shooter",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "combat"
+          },
+          {
+            "kind": "ruins",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "shooter",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "combat"
+          },
+          {
+            "kind": "ruins",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "shooter",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "combat"
+          },
+          {
+            "kind": "ruins",
+            "length": 8,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "shooter",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "combat"
+          }
+        ],
+        "unsupported": [
+          "no quests"
+        ],
+        "design_notes": [
+          "Sword melee attacks are approximated using the projectile combat capability.",
+          "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+        ],
+        "requested_features": []
+      }
+    }
+  ],
+  "requirement_authority": "semantic_intent.json",
+  "advisory_designer_requirements": [],
+  "normalizations": [
+    {
+      "field": "boss.patterns",
+      "before": [
+        "charge",
+        "volley"
+      ],
+      "after": [
+        "charge",
+        "volley",
+        "slam"
+      ],
+      "reason": "Preserved requested three distinct attacks using registered charge, volley and slam"
+    }
+  ]
+}

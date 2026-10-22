@@ -38,7 +38,7 @@ export function actorVisual(art:AdventureArt,actor:Actor) {
 }
 
 export function terrainFrames(art:AdventureArt,area:Area,seed:number) {
-  const t=art.terrain,outdoor=['village','forest'].includes(area.environment);
+  const t=art.terrain,outdoor=area.layout!=='chambers'&&['village','forest'].includes(area.environment);
   const path=(x:number,y:number)=>area.tiles[y]?.[x]===2;
   return area.tiles.map((row,y)=>row.map((v,x)=>{
     if(v>=10)return t.ground[0]; // Complete building modules are drawn above the ground layer.

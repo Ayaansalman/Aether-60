@@ -1,0 +1,701 @@
+{
+  "overall": "PASS",
+  "issues": [],
+  "decision_source": "deterministic capability compatibility",
+  "catalog": {
+    "platform_movement": {
+      "ir_path": "player",
+      "verification": "mandatory_route_edges",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "player"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "top_down_movement": {
+      "ir_path": "areas",
+      "verification": "top_down_horizontal_movement",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "areas"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "auto_run": {
+      "ir_path": "mode",
+      "verification": "runner_input",
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "mode"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "flap": {
+      "ir_path": "mode",
+      "verification": "repeatable_flap",
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "mode"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "endless_obstacles": {
+      "ir_path": "endless",
+      "verification": "endless_bounded_state",
+      "controls": [
+        "auto_jump",
+        "flap"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "endless"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "finite_finish": {
+      "ir_path": "finish_distance",
+      "verification": null,
+      "controls": [
+        "auto_jump",
+        "flap"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "finish_distance"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "distance_score": {
+      "ir_path": "scoring",
+      "verification": "score_once",
+      "controls": [
+        "auto_jump",
+        "flap"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "scoring"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "gap_score": {
+      "ir_path": "scoring",
+      "verification": "score_once",
+      "controls": [
+        "auto_jump",
+        "flap"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "scoring"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "restart": {
+      "ir_path": "genre",
+      "verification": "rapid_restart",
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "genre"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "boss_duel": {
+      "ir_path": "boss",
+      "verification": "boss_duel",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "boss"
+      ],
+      "behavior_types": [],
+      "conflicts": [
+        "no_combat"
+      ],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "boss_health_bar": {
+      "ir_path": "boss.health",
+      "verification": "boss_arena",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "boss.health"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "boss_patterns": {
+      "ir_path": "boss.patterns",
+      "verification": "boss_volley",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "boss.patterns"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "boss_defeat": {
+      "ir_path": "boss.victory",
+      "verification": "boss_duel",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "boss.victory"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "no_ordinary_enemies": {
+      "ir_path": "entities",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "entities"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "no_collectibles": {
+      "ir_path": "entities",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "entities"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "no_combat": {
+      "ir_path": "combat",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "combat"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "single_level": {
+      "ir_path": "areas/levels",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "areas/levels"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "biome_regions": {
+      "ir_path": "areas.regions",
+      "verification": "biome_regions",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "areas.regions"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "slippery_region": {
+      "ir_path": "areas.regions.slippery",
+      "verification": "localized_slippery",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "areas.regions.slippery"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "quest_delivery": {
+      "ir_path": "quests",
+      "verification": "adventure_completion",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "quests"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "quest_collect": {
+      "ir_path": "quests",
+      "verification": "quest_collect",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "quests"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "quest_activate": {
+      "ir_path": "quests",
+      "verification": "quest_activate",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "quests"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "quest_unlock": {
+      "ir_path": "quests",
+      "verification": "quest_unlock",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "quests"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "quest_explore": {
+      "ir_path": "quests",
+      "verification": "quest_explore",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "quests"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "adventure_combat": {
+      "ir_path": "quests",
+      "verification": "adventure_combat",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "quests"
+      ],
+      "behavior_types": [],
+      "conflicts": [
+        "no_combat"
+      ],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "treasure_finish": {
+      "ir_path": "quests",
+      "verification": "adventure_completion",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "quests"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "projectile_attack": {
+      "ir_path": "player_attack",
+      "verification": "player_attack_damage",
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "player_attack"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "sword_melee": {
+      "ir_path": "player_attack",
+      "verification": "player_attack_damage",
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "player_attack"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "visual_theme": {
+      "ir_path": "theme",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "theme"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "unsupported": {
+      "ir_path": "unsupported",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "unsupported"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "slippery_platforms": {
+      "ir_path": "slippery",
+      "verification": "slippery_momentum",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "slippery"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "falling_icicles": {
+      "ir_path": "entities",
+      "verification": "falling_icicle_cycle",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "entities"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "boss_shield": {
+      "ir_path": "boss.shield",
+      "verification": null,
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "boss.shield"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "switch_gate": {
+      "ir_path": "links",
+      "verification": "shared_gate_dependency",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "links"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "moving_platforms": {
+      "ir_path": "platforms.moving",
+      "verification": "moving_platform_motion",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "platforms.moving"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "patrol_enemies": {
+      "ir_path": "entities.behavior",
+      "verification": "enemy_patrol",
+      "controls": [
+        "platform"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "entities.behavior"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "health_damage": {
+      "ir_path": "gameplay.health",
+      "verification": "composition_health_loss",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "gameplay",
+        "gameplay.health"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "AdventureScene + BehaviorWorld",
+      "limitation": null
+    },
+    "enemy_spawning": {
+      "ir_path": "gameplay.spawns",
+      "verification": "composition_safe_spawning",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [
+        "top_down_movement",
+        "health_damage"
+      ],
+      "required_configuration": [
+        "gameplay",
+        "gameplay.spawns"
+      ],
+      "behavior_types": [
+        "chase",
+        "patrol",
+        "shooter"
+      ],
+      "conflicts": [
+        "no_combat"
+      ],
+      "runtime": "AdventureScene + BehaviorWorld",
+      "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+    },
+    "enemy_roles": {
+      "ir_path": "gameplay.archetypes",
+      "verification": "composition_enemy_roles",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [],
+      "required_configuration": [
+        "gameplay",
+        "gameplay.archetypes"
+      ],
+      "behavior_types": [
+        "chase",
+        "patrol",
+        "shooter"
+      ],
+      "conflicts": [
+        "no_combat"
+      ],
+      "runtime": "AdventureScene + BehaviorWorld",
+      "limitation": null
+    },
+    "attack_sequence": {
+      "ir_path": "gameplay.archetypes.attack",
+      "verification": "composition_attack_sequence",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [
+        "enemy_roles",
+        "health_damage"
+      ],
+      "required_configuration": [
+        "gameplay",
+        "gameplay.archetypes.attack"
+      ],
+      "behavior_types": [
+        "timed_projectile_sequence"
+      ],
+      "conflicts": [
+        "no_combat"
+      ],
+      "runtime": "AdventureScene + BehaviorWorld",
+      "limitation": null
+    },
+    "survival_time": {
+      "ir_path": "gameplay.scoring",
+      "verification": "composition_survival_score",
+      "controls": [
+        "top_down"
+      ],
+      "dependencies": [
+        "health_damage"
+      ],
+      "required_configuration": [
+        "gameplay",
+        "gameplay.scoring"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "AdventureScene + BehaviorWorld",
+      "limitation": null
+    },
+    "no_inventory": {
+      "ir_path": "gameplay",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "gameplay"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "no_quests": {
+      "ir_path": "gameplay",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "gameplay"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "no_npcs": {
+      "ir_path": "gameplay",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "gameplay"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    },
+    "no_exit": {
+      "ir_path": "gameplay",
+      "verification": null,
+      "controls": [],
+      "dependencies": [],
+      "required_configuration": [
+        "gameplay"
+      ],
+      "behavior_types": [],
+      "conflicts": [],
+      "runtime": "existing family adapter",
+      "limitation": null
+    }
+  },
+  "relationships": {
+    "feedback": "clear",
+    "health": 1,
+    "invulnerability_ms": 1000,
+    "player_attack": false,
+    "outcome": "quests",
+    "duration_seconds": null,
+    "scoring": "none",
+    "archetypes": [],
+    "spawns": []
+  },
+  "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+}

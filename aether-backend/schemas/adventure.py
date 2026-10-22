@@ -54,6 +54,7 @@ class Goal(Contract):
 
 
 class AreaDesign(Contract):
+    layout: Literal['auto','open','chambers','cover','woodland'] = 'auto'
     regions: list[BiomeRegion] = Field(default_factory=list,max_length=8)
     name: str = Field(min_length=1, max_length=60)
     environment: Literal['village', 'forest', 'ruins', 'dungeon', 'cave']

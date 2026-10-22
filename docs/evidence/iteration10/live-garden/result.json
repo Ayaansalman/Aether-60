@@ -1,0 +1,170 @@
+{
+  "job": {
+    "game_id": "93f0ea71-2aca-4cea-ba88-86a2d79c51f8",
+    "prompt": "Create a peaceful top-down fantasy adventure called The Frozen Garden.\n\nThe entire adventure takes place on ONE continuous map.\n\nHalf of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.\n\nThere should be a beautiful natural transition between the two environments, not an abrupt straight line.\n\nA healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.\n\nWalking on ice should feel slippery, while walking through the forest should have normal movement.\n\nAdd animated environmental details, NPC dialogue, an understandable quest system, and appropriate interactions.\n\nNo enemies or combat. The game ends when I return the flowers to the healer.",
+    "status": "FAILED",
+    "stage": "FAILED",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-22T03:25:46.653474+00:00",
+    "updated_at": "2026-10-22T03:25:53.773763+00:00",
+    "error_code": "DESIGN_INVALID",
+    "artifact_paths": [
+      "design_validation.json"
+    ],
+    "limitations": [],
+    "qa_summary": null,
+    "game_url": null
+  },
+  "events": [
+    {
+      "id": 1948,
+      "game_id": "93f0ea71-2aca-4cea-ba88-86a2d79c51f8",
+      "ts": "2026-10-22T03:25:46.676528+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1949,
+      "game_id": "93f0ea71-2aca-4cea-ba88-86a2d79c51f8",
+      "ts": "2026-10-22T03:25:46.758100+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.08s; language model",
+      "diff": null
+    },
+    {
+      "id": 1950,
+      "game_id": "93f0ea71-2aca-4cea-ba88-86a2d79c51f8",
+      "ts": "2026-10-22T03:25:53.756669+00:00",
+      "stage": "FAILED",
+      "result": "FAILED",
+      "detail": "The design could not satisfy the requested mechanics after one correction. Inspect design_validation.json for fields and constraints.",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "design_validation.json": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "valid": false,
+          "model": "gemini-3.5-flash-lite",
+          "errors": [
+            {
+              "loc": [],
+              "msg": "Expecting property name enclosed in double quotes: line 47 column 7 (char 1421)"
+            }
+          ],
+          "candidate": null
+        },
+        {
+          "attempt": 2,
+          "valid": false,
+          "model": "gemini-3.5-flash-lite",
+          "errors": [
+            {
+              "loc": [],
+              "msg": "requirements.2.source must quote an exact contiguous substring of the original prompt; invalid source: 'Half of the world is a lush magical forest... The other half is a frozen landscape...'"
+            }
+          ],
+          "candidate": {
+            "genre": "adventure",
+            "loop": "Peaceful top-down fantasy adventure exploring a dual-biome map and returning quest items.",
+            "control": "top_down",
+            "perspective": "top_down",
+            "structure": "connected_levels",
+            "loops": [
+              "exploration",
+              "quest",
+              "interaction"
+            ],
+            "requirements": [
+              {
+                "source": "peaceful top-down fantasy adventure called The Frozen Garden",
+                "meaning": "Top-down movement across a single contiguous magical adventure map",
+                "capability": "top_down_movement",
+                "status": "planned",
+                "mandatory": true,
+                "category": "mechanic"
+              },
+              {
+                "source": "The entire adventure takes place on ONE continuous map.",
+                "meaning": "Single level adventure with no separate levels or loading zones",
+                "capability": "single_level",
+                "scope": "game",
+                "status": "planned",
+                "mandatory": true,
+                "category": "mechanic"
+              },
+              {
+                "source": "Half of the world is a lush magical forest... The other half is a frozen landscape...",
+                "meaning": "Biomes representing forest and frozen regions on the map",
+                "capability": "biome_regions",
+                "biomes": [
+                  "forest",
+                  "garden",
+                  "snow",
+                  "icy_ruins"
+                ],
+                "count": 2,
+                "status": "planned",
+                "mandatory": true,
+                "category": "presentation"
+              },
+              {
+                "source": "Walking on ice should feel slippery",
+                "meaning": "Localized slippery momentum physics on ice tiles",
+                "capability": "slippery_region",
+                "status": "planned",
+                "mandatory": true,
+                "category": "mechanic"
+              },
+              {
+                "source": "A healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.",
+                "meaning": "Quest to collect two magical flower items from the snowy ruins",
+                "capability": "quest_collect",
+                "count": 2,
+                "status": "planned",
+                "mandatory": true,
+                "category": "mechanic"
+              },
+              {
+                "source": "The game ends when I return the flowers to the healer.",
+                "meaning": "Quest delivery and completion returning the flowers to the healer NPC",
+                "capability": "quest_delivery",
+                "status": "planned",
+                "mandatory": true,
+                "category": "mechanic"
+              },
+              {
+                "source": "No enemies or combat.",
+                "meaning": "Explicit exclusion of all ordinary enemies and combat encounters",
+                "capability": "no_combat",
+                "status": "planned",
+                "mandatory": true,
+                "category": "exclusion"
+              }
+            ],
+            "arcade": null,
+            "gameplay": null
+          }
+        }
+      ],
+      "maximum_corrections": 1,
+      "original_prompt": "Create a peaceful top-down fantasy adventure called The Frozen Garden.\n\nThe entire adventure takes place on ONE continuous map.\n\nHalf of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.\n\nThere should be a beautiful natural transition between the two environments, not an abrupt straight line.\n\nA healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.\n\nWalking on ice should feel slippery, while walking through the forest should have normal movement.\n\nAdd animated environmental details, NPC dialogue, an understandable quest system, and appropriate interactions.\n\nNo enemies or combat. The game ends when I return the flowers to the healer."
+    }
+  },
+  "verification_provenance": "Fresh configured Gemini interpretation/design; actual persisted HTTP pipeline and Chromium QA",
+  "completion_calls": 2
+}

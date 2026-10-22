@@ -1,0 +1,3783 @@
+{
+  "job": {
+    "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+    "prompt": "Create a single-level 2D platformer called The Last Knight.\n\nThe entire game takes place in a ruined medieval castle arena.\n\nThere is exactly ONE enemy: a powerful knight boss. No smaller enemies.\n\nThe boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.\n\nWhen the boss falls below half health, increase the attack intensity.\n\nGive the boss a large visible health bar. Give my character a usable combat ability, responsive movement, and clear attack and damage animations.\n\nI win only by defeating the boss.\n\nNo collectibles, no quests, no exit gate to reach, and no additional levels.\n\nMake the fight dramatic, challenging, and visually cohesive.",
+    "status": "READY_WITH_WARNINGS",
+    "stage": "READY_WITH_WARNINGS",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "captured-gemini-replay",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-22T03:31:09.124922+00:00",
+    "updated_at": "2026-10-22T03:31:22.079388+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "semantic_intent.json",
+      "capability_compatibility.json",
+      "game_intent.json",
+      "model_design.json",
+      "requirement_report.json",
+      "game_design.json",
+      "provider.json",
+      "design_validation.json",
+      "design_normalization.json",
+      "repair_report.json",
+      "final_design.json",
+      "validation.json",
+      "game_ir_v2.json",
+      "semantic_requirement_report.json",
+      "asset_manifest.json",
+      "asset_validation.json",
+      "build_manifest.json",
+      "qa_report_initial.json",
+      "diagnosis.json",
+      "qa_report.json",
+      "outcome.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 12,
+      "failed": 0,
+      "critical_failed": []
+    },
+    "game_url": "http://localhost:5173/studio/play/233e0260-9f49-4b98-a811-19caea4bf08c"
+  },
+  "events": [
+    {
+      "id": 1974,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:09.178282+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1975,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:09.280837+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.09s; language model",
+      "diff": null
+    },
+    {
+      "id": 1976,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:09.405488+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting prompt with Gemini",
+      "attempt": 1,
+      "rationale": "Elapsed 0.22s; language model",
+      "diff": null
+    },
+    {
+      "id": 1977,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:09.665425+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Validated typed design; composing sections and registered mechanics",
+      "attempt": 1,
+      "rationale": "Elapsed 0.48s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1978,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:09.703373+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking jump trajectories, landing margins and objective consistency",
+      "attempt": 1,
+      "rationale": "Elapsed 0.51s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1979,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:09.947770+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Runtime specification and asset dependencies persisted",
+      "attempt": 1,
+      "rationale": "Elapsed 0.76s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1980,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:09.978725+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running real Chromium gameplay checks",
+      "attempt": 1,
+      "rationale": "Elapsed 0.80s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1981,
+      "game_id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "ts": "2026-10-22T03:31:22.060686+00:00",
+      "stage": "READY_WITH_WARNINGS",
+      "result": "SUCCESS",
+      "detail": "Browser checks passed",
+      "attempt": 1,
+      "rationale": "Elapsed 12.88s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "platformer",
+      "loop": "Boss battle against a single powerful knight enemy in a ruined medieval castle arena.",
+      "control": "platform",
+      "requirements": [
+        {
+          "source": "The entire game takes place in a ruined medieval castle arena.",
+          "id": "req_649bcd5702ab",
+          "meaning": "Single level castle arena",
+          "capability": "single_level",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "single_level",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+          "id": "req_52ab21f8d01b",
+          "meaning": "Boss duel with no ordinary minions",
+          "capability": "boss_duel",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "boss_duel",
+          "biomes": [],
+          "count": 1,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "No smaller enemies.",
+          "id": "req_6eaddcdc2d9a",
+          "meaning": "Exclude ordinary enemies",
+          "capability": "no_ordinary_enemies",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_ordinary_enemies",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion"
+        },
+        {
+          "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+          "id": "req_7e74dbd67a3a",
+          "meaning": "Boss attack patterns",
+          "capability": "boss_patterns",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "boss_volley",
+          "biomes": [],
+          "count": 3,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "Give the boss a large visible health bar.",
+          "id": "req_87117b5efd09",
+          "meaning": "Boss health bar display",
+          "capability": "boss_health_bar",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "boss_arena",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "I win only by defeating the boss.",
+          "id": "req_17c495fdf3d2",
+          "meaning": "Boss defeat victory condition",
+          "capability": "boss_defeat",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "boss_duel",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "Give my character a usable combat ability",
+          "id": "req_a5a84af74132",
+          "meaning": "Player projectile attack capability",
+          "capability": "projectile_attack",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "player_attack_damage",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "No collectibles",
+          "id": "req_c81c250a8daf",
+          "meaning": "No collectible items in the arena",
+          "capability": "no_collectibles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_collectibles",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion"
+        },
+        {
+          "source": "no quests",
+          "id": "req_96c6b4d4a45f",
+          "meaning": "No quests assigned",
+          "capability": "no_quests",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_quests",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion"
+        },
+        {
+          "source": "no exit gate to reach",
+          "id": "req_55aa21a2a68b",
+          "meaning": "No exit portal or door",
+          "capability": "no_exit",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "no_exit",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion"
+        },
+        {
+          "source": "no additional levels",
+          "id": "req_ac371f2780e4",
+          "meaning": "Only one arena level",
+          "capability": "single_level",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "single_level",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        }
+      ],
+      "arcade": null,
+      "perspective": "side_scrolling",
+      "structure": "arena",
+      "loops": [
+        "combat",
+        "boss",
+        "survival"
+      ],
+      "gameplay": null,
+      "provenance": {
+        "provider": "Provider",
+        "model": "captured-gemini-replay",
+        "live": true,
+        "validation_attempts": [
+          {
+            "attempt": 1,
+            "valid": true,
+            "model": "captured-gemini-replay",
+            "candidate": {
+              "genre": "platformer",
+              "loop": "Boss battle against a single powerful knight enemy in a ruined medieval castle arena.",
+              "control": "platform",
+              "requirements": [
+                {
+                  "source": "The entire game takes place in a ruined medieval castle arena.",
+                  "meaning": "Single level castle arena",
+                  "capability": "single_level",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "single_level",
+                  "biomes": [
+                    "dark"
+                  ],
+                  "count": 1,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+                  "meaning": "Boss duel with no ordinary minions",
+                  "capability": "boss_duel",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "boss_duel",
+                  "biomes": [],
+                  "count": 1,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "No smaller enemies.",
+                  "meaning": "Exclude ordinary enemies",
+                  "capability": "no_ordinary_enemies",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "no_ordinary_enemies",
+                  "biomes": [],
+                  "count": 0,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+                  "meaning": "Boss attack patterns",
+                  "capability": "boss_patterns",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "boss_volley",
+                  "biomes": [],
+                  "count": 3,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "Give the boss a large visible health bar.",
+                  "meaning": "Boss health bar display",
+                  "capability": "boss_health_bar",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "boss_arena",
+                  "biomes": [],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "I win only by defeating the boss.",
+                  "meaning": "Boss defeat victory condition",
+                  "capability": "boss_defeat",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "boss_duel",
+                  "biomes": [],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "Give my character a usable combat ability",
+                  "meaning": "Player projectile attack capability",
+                  "capability": "projectile_attack",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "player_attack_damage",
+                  "biomes": [],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "No collectibles",
+                  "meaning": "No collectible items in the arena",
+                  "capability": "no_collectibles",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "no_collectibles",
+                  "biomes": [],
+                  "count": 0,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "no quests",
+                  "meaning": "No quests assigned",
+                  "capability": "unsupported",
+                  "status": "unsupported",
+                  "depends_on": [],
+                  "verification": "no_quests",
+                  "biomes": [],
+                  "count": 0,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "no exit gate to reach",
+                  "meaning": "No exit portal or door",
+                  "capability": "no_exit",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "no_exit",
+                  "biomes": [],
+                  "count": 0,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "no additional levels",
+                  "meaning": "Only one arena level",
+                  "capability": "single_level",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "single_level",
+                  "biomes": [],
+                  "count": 1,
+                  "scope": "game",
+                  "mandatory": true
+                }
+              ],
+              "arcade": null,
+              "perspective": "side_scrolling",
+              "structure": "arena",
+              "loops": [
+                "combat",
+                "boss",
+                "survival"
+              ],
+              "gameplay": null
+            }
+          }
+        ],
+        "source_grounding": [
+          {
+            "field": "requirements.0",
+            "before": {
+              "source": "The entire game takes place in a ruined medieval castle arena.",
+              "meaning": "Single level castle arena",
+              "capability": "single_level",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "single_level",
+              "biomes": [
+                "dark"
+              ],
+              "count": 1,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "The entire game takes place in a ruined medieval castle arena.",
+              "meaning": "Single level castle arena",
+              "capability": "single_level",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "single_level",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_649bcd5702ab",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.1",
+            "before": {
+              "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+              "meaning": "Boss duel with no ordinary minions",
+              "capability": "boss_duel",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_duel",
+              "biomes": [],
+              "count": 1,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+              "meaning": "Boss duel with no ordinary minions",
+              "capability": "boss_duel",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_duel",
+              "biomes": [],
+              "count": 1,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_52ab21f8d01b",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.2",
+            "before": {
+              "source": "No smaller enemies.",
+              "meaning": "Exclude ordinary enemies",
+              "capability": "no_ordinary_enemies",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "no_ordinary_enemies",
+              "biomes": [],
+              "count": 0,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "No smaller enemies.",
+              "meaning": "Exclude ordinary enemies",
+              "capability": "no_ordinary_enemies",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "no_ordinary_enemies",
+              "biomes": [],
+              "count": 0,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_6eaddcdc2d9a",
+              "category": "exclusion"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.3",
+            "before": {
+              "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+              "meaning": "Boss attack patterns",
+              "capability": "boss_patterns",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_volley",
+              "biomes": [],
+              "count": 3,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+              "meaning": "Boss attack patterns",
+              "capability": "boss_patterns",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_volley",
+              "biomes": [],
+              "count": 3,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_7e74dbd67a3a",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.4",
+            "before": {
+              "source": "Give the boss a large visible health bar.",
+              "meaning": "Boss health bar display",
+              "capability": "boss_health_bar",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_arena",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "Give the boss a large visible health bar.",
+              "meaning": "Boss health bar display",
+              "capability": "boss_health_bar",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_arena",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_87117b5efd09",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.5",
+            "before": {
+              "source": "I win only by defeating the boss.",
+              "meaning": "Boss defeat victory condition",
+              "capability": "boss_defeat",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_duel",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "I win only by defeating the boss.",
+              "meaning": "Boss defeat victory condition",
+              "capability": "boss_defeat",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "boss_duel",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_17c495fdf3d2",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.6",
+            "before": {
+              "source": "Give my character a usable combat ability",
+              "meaning": "Player projectile attack capability",
+              "capability": "projectile_attack",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "player_attack_damage",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "Give my character a usable combat ability",
+              "meaning": "Player projectile attack capability",
+              "capability": "projectile_attack",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "player_attack_damage",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_a5a84af74132",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.7",
+            "before": {
+              "source": "No collectibles",
+              "meaning": "No collectible items in the arena",
+              "capability": "no_collectibles",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "no_collectibles",
+              "biomes": [],
+              "count": 0,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "No collectibles",
+              "meaning": "No collectible items in the arena",
+              "capability": "no_collectibles",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "no_collectibles",
+              "biomes": [],
+              "count": 0,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_c81c250a8daf",
+              "category": "exclusion"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.8",
+            "before": {
+              "source": "no quests",
+              "meaning": "No quests assigned",
+              "capability": "unsupported",
+              "status": "unsupported",
+              "depends_on": [],
+              "verification": "no_quests",
+              "biomes": [],
+              "count": 0,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "no quests",
+              "meaning": "No quests assigned",
+              "capability": "no_quests",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "no_quests",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_96c6b4d4a45f",
+              "category": "exclusion"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.9",
+            "before": {
+              "source": "no exit gate to reach",
+              "meaning": "No exit portal or door",
+              "capability": "no_exit",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "no_exit",
+              "biomes": [],
+              "count": 0,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "no exit gate to reach",
+              "meaning": "No exit portal or door",
+              "capability": "no_exit",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "no_exit",
+              "biomes": [],
+              "count": 0,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_55aa21a2a68b",
+              "category": "exclusion"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.10",
+            "before": {
+              "source": "no additional levels",
+              "meaning": "Only one arena level",
+              "capability": "single_level",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "single_level",
+              "biomes": [],
+              "count": 1,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "no additional levels",
+              "meaning": "Only one arena level",
+              "capability": "single_level",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "single_level",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_ac371f2780e4",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          }
+        ]
+      }
+    },
+    "capability_compatibility.json": {
+      "overall": "PASS",
+      "issues": [],
+      "decision_source": "deterministic capability compatibility",
+      "catalog": {
+        "platform_movement": {
+          "ir_path": "player",
+          "verification": "mandatory_route_edges",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "player"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "top_down_movement": {
+          "ir_path": "areas",
+          "verification": "top_down_horizontal_movement",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "auto_run": {
+          "ir_path": "mode",
+          "verification": "runner_input",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "flap": {
+          "ir_path": "mode",
+          "verification": "repeatable_flap",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "endless_obstacles": {
+          "ir_path": "endless",
+          "verification": "endless_bounded_state",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "endless"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "finite_finish": {
+          "ir_path": "finish_distance",
+          "verification": null,
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "finish_distance"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "distance_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "gap_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "restart": {
+          "ir_path": "genre",
+          "verification": "rapid_restart",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "genre"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_duel": {
+          "ir_path": "boss",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_health_bar": {
+          "ir_path": "boss.health",
+          "verification": "boss_arena",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_patterns": {
+          "ir_path": "boss.patterns",
+          "verification": "boss_volley",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.patterns"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_defeat": {
+          "ir_path": "boss.victory",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.victory"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_ordinary_enemies": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_collectibles": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_combat": {
+          "ir_path": "combat",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "combat"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "single_level": {
+          "ir_path": "areas/levels",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "areas/levels"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "biome_regions": {
+          "ir_path": "areas.regions",
+          "verification": "biome_regions",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "slippery_region": {
+          "ir_path": "areas.regions.slippery",
+          "verification": "localized_slippery",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions.slippery"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_delivery": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_collect": {
+          "ir_path": "quests",
+          "verification": "quest_collect",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_activate": {
+          "ir_path": "quests",
+          "verification": "quest_activate",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_unlock": {
+          "ir_path": "quests",
+          "verification": "quest_unlock",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_explore": {
+          "ir_path": "quests",
+          "verification": "quest_explore",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "adventure_combat": {
+          "ir_path": "quests",
+          "verification": "adventure_combat",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "treasure_finish": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "projectile_attack": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "sword_melee": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "visual_theme": {
+          "ir_path": "theme",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "theme"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "unsupported": {
+          "ir_path": "unsupported",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "unsupported"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "slippery_platforms": {
+          "ir_path": "slippery",
+          "verification": "slippery_momentum",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "slippery"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "falling_icicles": {
+          "ir_path": "entities",
+          "verification": "falling_icicle_cycle",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_shield": {
+          "ir_path": "boss.shield",
+          "verification": null,
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.shield"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "switch_gate": {
+          "ir_path": "links",
+          "verification": "shared_gate_dependency",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "links"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "moving_platforms": {
+          "ir_path": "platforms.moving",
+          "verification": "moving_platform_motion",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "platforms.moving"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "patrol_enemies": {
+          "ir_path": "entities.behavior",
+          "verification": "enemy_patrol",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "entities.behavior"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "health_damage": {
+          "ir_path": "gameplay.health",
+          "verification": "composition_health_loss",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "enemy_spawning": {
+          "ir_path": "gameplay.spawns",
+          "verification": "composition_safe_spawning",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "top_down_movement",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.spawns"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+        },
+        "enemy_roles": {
+          "ir_path": "gameplay.archetypes",
+          "verification": "composition_enemy_roles",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "attack_sequence": {
+          "ir_path": "gameplay.archetypes.attack",
+          "verification": "composition_attack_sequence",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "enemy_roles",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes.attack"
+          ],
+          "behavior_types": [
+            "timed_projectile_sequence"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "survival_time": {
+          "ir_path": "gameplay.scoring",
+          "verification": "composition_survival_score",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "no_inventory": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_quests": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_npcs": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_exit": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        }
+      },
+      "relationships": null,
+      "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+    },
+    "game_intent.json": {
+      "original_prompt": "Create a single-level 2D platformer called The Last Knight.\n\nThe entire game takes place in a ruined medieval castle arena.\n\nThere is exactly ONE enemy: a powerful knight boss. No smaller enemies.\n\nThe boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.\n\nWhen the boss falls below half health, increase the attack intensity.\n\nGive the boss a large visible health bar. Give my character a usable combat ability, responsive movement, and clear attack and damage animations.\n\nI win only by defeating the boss.\n\nNo collectibles, no quests, no exit gate to reach, and no additional levels.\n\nMake the fight dramatic, challenging, and visually cohesive.",
+      "genre": "platformer",
+      "setting": "twilight",
+      "gameplay": {
+        "objectives": [],
+        "campaign_objectives": [],
+        "interactions": [],
+        "player_attack": "projectile"
+      },
+      "level_count": 1,
+      "progression": [],
+      "requested_mechanics": [
+        {
+          "id": "boss_duel",
+          "source": "boss",
+          "span": [
+            171,
+            175
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "boss_duel"
+        },
+        {
+          "id": "ranged",
+          "source": "ranged",
+          "span": [
+            268,
+            274
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "enemy_shooter"
+        }
+      ],
+      "model_requests": [],
+      "unsupported": [],
+      "interpretation_source": {
+        "provider": "Provider",
+        "model": "captured-gemini-replay",
+        "live": true,
+        "initial_latency_ms": 0,
+        "fallbacks": [],
+        "validation_attempts": [
+          {
+            "attempt": 1,
+            "valid": true,
+            "model": "captured-gemini-replay",
+            "candidate": {
+              "boss": {
+                "name": "Knight Sentinel",
+                "health": 20,
+                "telegraph_ms": 700,
+                "cooldown_ms": 1500,
+                "patterns": [
+                  "charge",
+                  "volley"
+                ],
+                "victory": "boss_defeat",
+                "ordinary_enemies": 0
+              },
+              "collectibles_enabled": false,
+              "title": "The Last Knight",
+              "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+              "genre": "platformer",
+              "theme": "twilight",
+              "difficulty": "challenging",
+              "objective": "reach_exit",
+              "abilities": [
+                "double_jump",
+                "dash"
+              ],
+              "checkpoints": false,
+              "moving_platforms": false,
+              "platform_motion": {
+                "axis": "horizontal",
+                "pattern": "sine",
+                "distance": 54,
+                "period_ms": 3000
+              },
+              "player_attack": "projectile",
+              "interactions": [],
+              "objectives": [],
+              "campaign_objectives": [],
+              "slippery": false,
+              "falling_icicles": false,
+              "icicle_trigger": "mixed",
+              "hazard_period_ms": 2200,
+              "timed_hazards": false,
+              "exit_indicator": "none",
+              "exit_style": "gate",
+              "collectible": "crystals",
+              "level_count": 1,
+              "levels": [],
+              "topology": "journey",
+              "sections": [
+                {
+                  "kind": "ruins",
+                  "length": 8,
+                  "elevation": 0,
+                  "gap": 1,
+                  "enemies": false,
+                  "hazards": false,
+                  "encounter": "shooter",
+                  "ai": {
+                    "health": 1,
+                    "cooldown_ms": 1400,
+                    "telegraph_ms": 450,
+                    "radius": 300
+                  },
+                  "challenge": "combat"
+                },
+                {
+                  "kind": "ruins",
+                  "length": 8,
+                  "elevation": 0,
+                  "gap": 1,
+                  "enemies": true,
+                  "hazards": false,
+                  "encounter": "shooter",
+                  "ai": {
+                    "health": 1,
+                    "cooldown_ms": 1400,
+                    "telegraph_ms": 450,
+                    "radius": 300
+                  },
+                  "challenge": "combat"
+                },
+                {
+                  "kind": "ruins",
+                  "length": 8,
+                  "elevation": 0,
+                  "gap": 1,
+                  "enemies": false,
+                  "hazards": false,
+                  "encounter": "shooter",
+                  "ai": {
+                    "health": 1,
+                    "cooldown_ms": 1400,
+                    "telegraph_ms": 450,
+                    "radius": 300
+                  },
+                  "challenge": "combat"
+                },
+                {
+                  "kind": "ruins",
+                  "length": 8,
+                  "elevation": 0,
+                  "gap": 1,
+                  "enemies": true,
+                  "hazards": false,
+                  "encounter": "shooter",
+                  "ai": {
+                    "health": 1,
+                    "cooldown_ms": 1400,
+                    "telegraph_ms": 450,
+                    "radius": 300
+                  },
+                  "challenge": "combat"
+                },
+                {
+                  "kind": "ruins",
+                  "length": 8,
+                  "elevation": 0,
+                  "gap": 1,
+                  "enemies": false,
+                  "hazards": false,
+                  "encounter": "shooter",
+                  "ai": {
+                    "health": 1,
+                    "cooldown_ms": 1400,
+                    "telegraph_ms": 450,
+                    "radius": 300
+                  },
+                  "challenge": "combat"
+                }
+              ],
+              "unsupported": [
+                "no quests"
+              ],
+              "design_notes": [
+                "Sword melee attacks are approximated using the projectile combat capability.",
+                "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+              ],
+              "requested_features": []
+            }
+          }
+        ],
+        "requirement_authority": "semantic_intent.json",
+        "advisory_designer_requirements": [],
+        "normalizations": [
+          {
+            "field": "boss.patterns",
+            "before": [
+              "charge",
+              "volley"
+            ],
+            "after": [
+              "charge",
+              "volley",
+              "slam"
+            ],
+            "reason": "Preserved requested three distinct attacks using registered charge, volley and slam"
+          }
+        ]
+      }
+    },
+    "model_design.json": {
+      "boss": {
+        "name": "Knight Sentinel",
+        "health": 20,
+        "telegraph_ms": 700,
+        "cooldown_ms": 1500,
+        "patterns": [
+          "charge",
+          "volley",
+          "slam"
+        ],
+        "victory": "boss_defeat",
+        "ordinary_enemies": 0
+      },
+      "collectibles_enabled": false,
+      "title": "The Last Knight",
+      "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+      "genre": "platformer",
+      "theme": "twilight",
+      "difficulty": "challenging",
+      "objective": "reach_exit",
+      "abilities": [
+        "double_jump",
+        "dash"
+      ],
+      "checkpoints": false,
+      "moving_platforms": false,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      },
+      "player_attack": "projectile",
+      "interactions": [],
+      "objectives": [],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2200,
+      "timed_hazards": false,
+      "exit_indicator": "none",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "journey",
+      "sections": [
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        }
+      ],
+      "unsupported": [
+        "no quests"
+      ],
+      "design_notes": [
+        "Sword melee attacks are approximated using the projectile combat capability.",
+        "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+      ],
+      "requested_features": []
+    },
+    "requirement_report.json": {
+      "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.",
+      "requirements": [
+        {
+          "id": "boss_duel",
+          "source": "boss",
+          "span": [
+            171,
+            175
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "boss_duel",
+          "model_sources": [
+            "Boss duel"
+          ],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "boss_duel",
+            "qa": "boss_duel"
+          }
+        },
+        {
+          "id": "ranged",
+          "source": "ranged",
+          "span": [
+            268,
+            274
+          ],
+          "supported": true,
+          "status": "implemented_unverified",
+          "runtime_check": "enemy_shooter",
+          "constructed": true,
+          "verified": false,
+          "evidence": {
+            "spec": "ranged",
+            "qa": null
+          }
+        }
+      ],
+      "changes": [],
+      "unsupported": [],
+      "overall": "WARN"
+    },
+    "game_design.json": {
+      "boss": {
+        "name": "Knight Sentinel",
+        "health": 20,
+        "telegraph_ms": 700,
+        "cooldown_ms": 1500,
+        "patterns": [
+          "charge",
+          "volley",
+          "slam"
+        ],
+        "victory": "boss_defeat",
+        "ordinary_enemies": 0
+      },
+      "collectibles_enabled": false,
+      "title": "The Last Knight",
+      "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+      "genre": "platformer",
+      "theme": "twilight",
+      "difficulty": "challenging",
+      "objective": "reach_exit",
+      "abilities": [
+        "double_jump",
+        "dash"
+      ],
+      "checkpoints": false,
+      "moving_platforms": false,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      },
+      "player_attack": "projectile",
+      "interactions": [],
+      "objectives": [],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2200,
+      "timed_hazards": false,
+      "exit_indicator": "none",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "journey",
+      "sections": [
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+      ],
+      "requested_features": []
+    },
+    "provider.json": {
+      "provider": "Provider",
+      "model": "captured-gemini-replay",
+      "live": true,
+      "initial_latency_ms": 0,
+      "fallbacks": [],
+      "validation_attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "captured-gemini-replay",
+          "candidate": {
+            "boss": {
+              "name": "Knight Sentinel",
+              "health": 20,
+              "telegraph_ms": 700,
+              "cooldown_ms": 1500,
+              "patterns": [
+                "charge",
+                "volley"
+              ],
+              "victory": "boss_defeat",
+              "ordinary_enemies": 0
+            },
+            "collectibles_enabled": false,
+            "title": "The Last Knight",
+            "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+            "genre": "platformer",
+            "theme": "twilight",
+            "difficulty": "challenging",
+            "objective": "reach_exit",
+            "abilities": [
+              "double_jump",
+              "dash"
+            ],
+            "checkpoints": false,
+            "moving_platforms": false,
+            "platform_motion": {
+              "axis": "horizontal",
+              "pattern": "sine",
+              "distance": 54,
+              "period_ms": 3000
+            },
+            "player_attack": "projectile",
+            "interactions": [],
+            "objectives": [],
+            "campaign_objectives": [],
+            "slippery": false,
+            "falling_icicles": false,
+            "icicle_trigger": "mixed",
+            "hazard_period_ms": 2200,
+            "timed_hazards": false,
+            "exit_indicator": "none",
+            "exit_style": "gate",
+            "collectible": "crystals",
+            "level_count": 1,
+            "levels": [],
+            "topology": "journey",
+            "sections": [
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": true,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": true,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              }
+            ],
+            "unsupported": [
+              "no quests"
+            ],
+            "design_notes": [
+              "Sword melee attacks are approximated using the projectile combat capability.",
+              "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+            ],
+            "requested_features": []
+          }
+        }
+      ],
+      "requirement_authority": "semantic_intent.json",
+      "advisory_designer_requirements": [],
+      "normalizations": [
+        {
+          "field": "boss.patterns",
+          "before": [
+            "charge",
+            "volley"
+          ],
+          "after": [
+            "charge",
+            "volley",
+            "slam"
+          ],
+          "reason": "Preserved requested three distinct attacks using registered charge, volley and slam"
+        }
+      ]
+    },
+    "design_validation.json": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "captured-gemini-replay",
+          "candidate": {
+            "boss": {
+              "name": "Knight Sentinel",
+              "health": 20,
+              "telegraph_ms": 700,
+              "cooldown_ms": 1500,
+              "patterns": [
+                "charge",
+                "volley"
+              ],
+              "victory": "boss_defeat",
+              "ordinary_enemies": 0
+            },
+            "collectibles_enabled": false,
+            "title": "The Last Knight",
+            "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+            "genre": "platformer",
+            "theme": "twilight",
+            "difficulty": "challenging",
+            "objective": "reach_exit",
+            "abilities": [
+              "double_jump",
+              "dash"
+            ],
+            "checkpoints": false,
+            "moving_platforms": false,
+            "platform_motion": {
+              "axis": "horizontal",
+              "pattern": "sine",
+              "distance": 54,
+              "period_ms": 3000
+            },
+            "player_attack": "projectile",
+            "interactions": [],
+            "objectives": [],
+            "campaign_objectives": [],
+            "slippery": false,
+            "falling_icicles": false,
+            "icicle_trigger": "mixed",
+            "hazard_period_ms": 2200,
+            "timed_hazards": false,
+            "exit_indicator": "none",
+            "exit_style": "gate",
+            "collectible": "crystals",
+            "level_count": 1,
+            "levels": [],
+            "topology": "journey",
+            "sections": [
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": true,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": true,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "ruins",
+                "length": 8,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "shooter",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              }
+            ],
+            "unsupported": [
+              "no quests"
+            ],
+            "design_notes": [
+              "Sword melee attacks are approximated using the projectile combat capability.",
+              "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+            ],
+            "requested_features": []
+          }
+        }
+      ],
+      "maximum_corrections": 1
+    },
+    "design_normalization.json": {
+      "changes": [
+        {
+          "field": "boss.patterns",
+          "before": [
+            "charge",
+            "volley"
+          ],
+          "after": [
+            "charge",
+            "volley",
+            "slam"
+          ],
+          "reason": "Preserved requested three distinct attacks using registered charge, volley and slam"
+        }
+      ],
+      "original_prompt": "Create a single-level 2D platformer called The Last Knight.\n\nThe entire game takes place in a ruined medieval castle arena.\n\nThere is exactly ONE enemy: a powerful knight boss. No smaller enemies.\n\nThe boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.\n\nWhen the boss falls below half health, increase the attack intensity.\n\nGive the boss a large visible health bar. Give my character a usable combat ability, responsive movement, and clear attack and damage animations.\n\nI win only by defeating the boss.\n\nNo collectibles, no quests, no exit gate to reach, and no additional levels.\n\nMake the fight dramatic, challenging, and visually cohesive."
+    },
+    "repair_report.json": {
+      "attempts": [
+        {
+          "category": "dependency_order",
+          "changes": [
+            {
+              "field": "boss.patterns",
+              "before": [
+                "charge",
+                "volley"
+              ],
+              "after": [
+                "charge",
+                "volley",
+                "slam"
+              ],
+              "reason": "Preserved requested three distinct attacks using registered charge, volley and slam"
+            }
+          ]
+        }
+      ],
+      "maximum": 2
+    },
+    "final_design.json": {
+      "boss": {
+        "name": "Knight Sentinel",
+        "health": 20,
+        "telegraph_ms": 700,
+        "cooldown_ms": 1500,
+        "patterns": [
+          "charge",
+          "volley",
+          "slam"
+        ],
+        "victory": "boss_defeat",
+        "ordinary_enemies": 0
+      },
+      "collectibles_enabled": false,
+      "title": "The Last Knight",
+      "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+      "genre": "platformer",
+      "theme": "twilight",
+      "difficulty": "challenging",
+      "objective": "reach_exit",
+      "abilities": [
+        "double_jump",
+        "dash"
+      ],
+      "checkpoints": false,
+      "moving_platforms": false,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      },
+      "player_attack": "projectile",
+      "interactions": [],
+      "objectives": [],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2200,
+      "timed_hazards": false,
+      "exit_indicator": "none",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "journey",
+      "sections": [
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": true,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "ruins",
+          "length": 8,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "shooter",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "combat"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+      ],
+      "requested_features": []
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "goal_defeat_boss",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 36,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 36,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 36,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "objective_on_main_route",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "entry_exit",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "entity_supports",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    },
+    "game_ir_v2.json": {
+      "boss": {
+        "name": "Knight Sentinel",
+        "health": 20,
+        "telegraph_ms": 700,
+        "cooldown_ms": 1500,
+        "patterns": [
+          "charge",
+          "volley",
+          "slam"
+        ],
+        "victory": "boss_defeat",
+        "ordinary_enemies": 0
+      },
+      "title": "The Last Knight",
+      "width": 1080,
+      "height": 648,
+      "spawn": {
+        "x": 160.0,
+        "y": 475.0
+      },
+      "objective": {
+        "type": "boss_defeat",
+        "required": 0,
+        "total": 0
+      },
+      "platforms": [
+        {
+          "activation_sources": [],
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 8,
+          "y": 14,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 16,
+          "y": 14,
+          "width": 8,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 24,
+          "y": 14,
+          "width": 6,
+          "kind": "ruins",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        }
+      ],
+      "entities": [
+        {
+          "disabled_by": [],
+          "boss": {
+            "name": "Knight Sentinel",
+            "health": 20,
+            "telegraph_ms": 700,
+            "cooldown_ms": 1500,
+            "patterns": [
+              "charge",
+              "volley",
+              "slam"
+            ],
+            "victory": "boss_defeat",
+            "ordinary_enemies": 0
+          },
+          "id": "arena_boss",
+          "x": 832.0,
+          "y": 470.0,
+          "kind": "enemy",
+          "platform": 2,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow",
+      "theme": "twilight",
+      "slippery": false,
+      "exit_style": "gate",
+      "exit_indicator": "none",
+      "collectible": "crystals",
+      "difficulty": "balanced",
+      "briefing": "F / X attacks. Dodge charges and volleys; jump over the ground slam.",
+      "topology": "journey",
+      "goals": [
+        {
+          "kind": "defeat",
+          "count": 1,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "defeat_boss",
+          "targets": [
+            "arena_boss"
+          ]
+        }
+      ],
+      "links": [],
+      "player_attack": "projectile",
+      "schema_version": "2.0",
+      "genre": "platformer",
+      "seed": 7,
+      "tile_size": 36,
+      "player": {
+        "speed": 250,
+        "jump": 490,
+        "gravity": 1100,
+        "health": 5,
+        "abilities": [
+          "double_jump",
+          "dash"
+        ]
+      },
+      "levels": [],
+      "campaign_goals": [],
+      "requirements": [
+        {
+          "id": "boss_duel",
+          "source": "boss",
+          "span": [
+            171,
+            175
+          ],
+          "supported": true,
+          "status": "implemented_verified",
+          "runtime_check": "boss_duel",
+          "model_sources": [
+            "Boss duel"
+          ],
+          "constructed": true,
+          "verified": true,
+          "evidence": {
+            "spec": "boss_duel",
+            "qa": "boss_duel"
+          }
+        },
+        {
+          "id": "ranged",
+          "source": "ranged",
+          "span": [
+            268,
+            274
+          ],
+          "supported": true,
+          "status": "implemented_unverified",
+          "runtime_check": "enemy_shooter",
+          "constructed": true,
+          "verified": false,
+          "evidence": {
+            "spec": "ranged",
+            "qa": null
+          }
+        },
+        {
+          "source": "The entire game takes place in a ruined medieval castle arena.",
+          "id": "req_649bcd5702ab",
+          "meaning": "Single level castle arena",
+          "capability": "single_level",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "single_level",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "single_level",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "areas/levels",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+          "id": "req_52ab21f8d01b",
+          "meaning": "Boss duel with no ordinary minions",
+          "capability": "boss_duel",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_duel",
+          "biomes": [],
+          "count": 1,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_duel",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss",
+          "runtime_check": "boss_duel",
+          "runtime_verified": true
+        },
+        {
+          "source": "No smaller enemies.",
+          "id": "req_6eaddcdc2d9a",
+          "meaning": "Exclude ordinary enemies",
+          "capability": "no_ordinary_enemies",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_ordinary_enemies",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_ordinary_enemies",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "entities",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+          "id": "req_7e74dbd67a3a",
+          "meaning": "Boss attack patterns",
+          "capability": "boss_patterns",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_volley",
+          "biomes": [],
+          "count": 3,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_patterns",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss.patterns",
+          "runtime_check": "boss_volley",
+          "runtime_verified": true
+        },
+        {
+          "source": "Give the boss a large visible health bar.",
+          "id": "req_87117b5efd09",
+          "meaning": "Boss health bar display",
+          "capability": "boss_health_bar",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_arena",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_health_bar",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss.health",
+          "runtime_check": "boss_arena",
+          "runtime_verified": true
+        },
+        {
+          "source": "I win only by defeating the boss.",
+          "id": "req_17c495fdf3d2",
+          "meaning": "Boss defeat victory condition",
+          "capability": "boss_defeat",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_duel",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_defeat",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss.victory",
+          "runtime_check": "boss_duel",
+          "runtime_verified": true
+        },
+        {
+          "source": "Give my character a usable combat ability",
+          "id": "req_a5a84af74132",
+          "meaning": "Player projectile attack capability",
+          "capability": "projectile_attack",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "player_attack_damage",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "projectile_attack",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "player_attack",
+          "runtime_check": "player_attack_damage",
+          "runtime_verified": true
+        },
+        {
+          "source": "No collectibles",
+          "id": "req_c81c250a8daf",
+          "meaning": "No collectible items in the arena",
+          "capability": "no_collectibles",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_collectibles",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_collectibles",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "entities",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "no quests",
+          "id": "req_96c6b4d4a45f",
+          "meaning": "No quests assigned",
+          "capability": "no_quests",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_quests",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_quests",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "gameplay",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "no exit gate to reach",
+          "id": "req_55aa21a2a68b",
+          "meaning": "No exit portal or door",
+          "capability": "no_exit",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_exit",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_exit",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "gameplay",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "no additional levels",
+          "id": "req_ac371f2780e4",
+          "meaning": "Only one arena level",
+          "capability": "single_level",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "single_level",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "single_level",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "areas/levels",
+          "runtime_check": null,
+          "runtime_verified": false
+        }
+      ],
+      "asset_pack": "kenney_pixel_platformer"
+    },
+    "semantic_requirement_report.json": {
+      "behavior_preserved": true,
+      "control_preserved": true,
+      "arcade_constraints": {},
+      "unsupported_core": [],
+      "overall": "PASS",
+      "requirements": [
+        {
+          "source": "The entire game takes place in a ruined medieval castle arena.",
+          "id": "req_649bcd5702ab",
+          "meaning": "Single level castle arena",
+          "capability": "single_level",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "single_level",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "single_level",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "areas/levels",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+          "id": "req_52ab21f8d01b",
+          "meaning": "Boss duel with no ordinary minions",
+          "capability": "boss_duel",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_duel",
+          "biomes": [],
+          "count": 1,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_duel",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss",
+          "runtime_check": "boss_duel",
+          "runtime_verified": true
+        },
+        {
+          "source": "No smaller enemies.",
+          "id": "req_6eaddcdc2d9a",
+          "meaning": "Exclude ordinary enemies",
+          "capability": "no_ordinary_enemies",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_ordinary_enemies",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_ordinary_enemies",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "entities",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+          "id": "req_7e74dbd67a3a",
+          "meaning": "Boss attack patterns",
+          "capability": "boss_patterns",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_volley",
+          "biomes": [],
+          "count": 3,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_patterns",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss.patterns",
+          "runtime_check": "boss_volley",
+          "runtime_verified": true
+        },
+        {
+          "source": "Give the boss a large visible health bar.",
+          "id": "req_87117b5efd09",
+          "meaning": "Boss health bar display",
+          "capability": "boss_health_bar",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_arena",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_health_bar",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss.health",
+          "runtime_check": "boss_arena",
+          "runtime_verified": true
+        },
+        {
+          "source": "I win only by defeating the boss.",
+          "id": "req_17c495fdf3d2",
+          "meaning": "Boss defeat victory condition",
+          "capability": "boss_defeat",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "boss_duel",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "boss_defeat",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "boss.victory",
+          "runtime_check": "boss_duel",
+          "runtime_verified": true
+        },
+        {
+          "source": "Give my character a usable combat ability",
+          "id": "req_a5a84af74132",
+          "meaning": "Player projectile attack capability",
+          "capability": "projectile_attack",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "player_attack_damage",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "projectile_attack",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "player_attack",
+          "runtime_check": "player_attack_damage",
+          "runtime_verified": true
+        },
+        {
+          "source": "No collectibles",
+          "id": "req_c81c250a8daf",
+          "meaning": "No collectible items in the arena",
+          "capability": "no_collectibles",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_collectibles",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_collectibles",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "entities",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "no quests",
+          "id": "req_96c6b4d4a45f",
+          "meaning": "No quests assigned",
+          "capability": "no_quests",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_quests",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_quests",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "gameplay",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "no exit gate to reach",
+          "id": "req_55aa21a2a68b",
+          "meaning": "No exit portal or door",
+          "capability": "no_exit",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "no_exit",
+          "biomes": [],
+          "count": 0,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "no_exit",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "gameplay",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "no additional levels",
+          "id": "req_ac371f2780e4",
+          "meaning": "Only one arena level",
+          "capability": "single_level",
+          "status": "validated_constraint",
+          "depends_on": [],
+          "verification": "single_level",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "single_level",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "areas/levels",
+          "runtime_check": null,
+          "runtime_verified": false
+        }
+      ],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    },
+    "asset_manifest.json": {
+      "id": "kenney_pixel_platformer",
+      "license": "CC0-1.0",
+      "author": "Kenney",
+      "sources": [
+        "https://kenney.nl/assets/pixel-platformer",
+        "https://kenney.nl/assets/pixel-platformer-industrial-expansion"
+      ],
+      "textures": {
+        "terrain": {
+          "url": "/assets/platformer/terrain.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 20
+        },
+        "characters": {
+          "url": "/assets/platformer/characters.png",
+          "frameWidth": 24,
+          "frameHeight": 24,
+          "columns": 9
+        },
+        "industrial": {
+          "url": "/assets/platformer/industrial.png",
+          "frameWidth": 18,
+          "frameHeight": 18,
+          "columns": 16
+        }
+      },
+      "backgrounds": {
+        "forest": "/assets/platformer/background-forest.png",
+        "industrial": "/assets/platformer/background-industrial.png",
+        "twilight": "/assets/platformer/background-twilight.png"
+      },
+      "animations": {
+        "idle": [
+          0
+        ],
+        "run": [
+          0,
+          1
+        ],
+        "jump": [
+          0
+        ],
+        "fall": [
+          1
+        ],
+        "damage": "tint and invulnerability blink; no dedicated damage frames in pack"
+      },
+      "roles": {
+        "forest_ground": 0,
+        "forest_fill": 4,
+        "industrial_ground": 0,
+        "industrial_fill": 11,
+        "crystal": 67,
+        "spikes": 68,
+        "checkpoint": 112,
+        "exit": 10,
+        "enemy_forest": [
+          12,
+          13
+        ],
+        "enemy_industrial": [
+          22,
+          23
+        ],
+        "moving_industrial": 25,
+        "moving_forest": 49,
+        "forest_ruins": 129,
+        "forest_props": [
+          124,
+          125,
+          126
+        ],
+        "tree_trunk": 116,
+        "tree_crown": 16,
+        "industrial_prop": 75,
+        "industrial_sign": 41
+      },
+      "files": {
+        "background-forest.png": "f8d264a826b90b85f66ff0eba79b5bc0e5d88a12cb9056b54f427fa3b8bf26a6",
+        "background-industrial.png": "d9c2f01ded10e4b61b59917833c4735d3593673c55406d73afe0be100e08ef6e",
+        "background-twilight.png": "3cdc2da58bd4b6733e78ae0f5be84581cc1c09b232d8c46bcc446b892f42ab20",
+        "characters.png": "22622d54dfc9d85346c9b75b999c8604e6eb336e42c4708bcf8b21094d8a2dad",
+        "industrial.png": "b54ba09f1564228f43921c33e2652f14e168565159d3624a1eb8b68bc633b872",
+        "terrain.png": "a3bbff36594baa36c803a67e9152a20a80f2faeb3c22ca84ac06e0a70f56553d"
+      },
+      "procedural": {
+        "source": "src/game/platformer/PlatformerScene.ts",
+        "author": "Aether project",
+        "license": "Project source terms; not attributed to Kenney",
+        "roles": [
+          "ice terrain",
+          "cavern silhouettes",
+          "ice crystals",
+          "falling icicles",
+          "relic medallion",
+          "shrine exit",
+          "industrial gate",
+          "exit beacon",
+          "animated exit halo"
+        ]
+      }
+    },
+    "asset_validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "background-forest.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "background-twilight.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "characters.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "industrial.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        },
+        {
+          "id": "terrain.png",
+          "passed": true,
+          "category": "asset",
+          "critical": true
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "runtime": "Phaser 3 Arcade",
+      "genre": "platformer",
+      "schema_version": "2.0",
+      "seed": 7,
+      "game_url": "http://localhost:5173/studio/play/233e0260-9f49-4b98-a811-19caea4bf08c",
+      "capabilities": [
+        "boss_duel",
+        "ranged"
+      ],
+      "moving_platforms": false,
+      "level_count": 1,
+      "topology": "journey",
+      "exit_style": "gate",
+      "exit_indicator": "none"
+    },
+    "qa_report_initial.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "boss_arena",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "count": 1,
+            "health": 20,
+            "bar": true,
+            "entities": 1
+          }
+        },
+        {
+          "id": "boss_attack_feedback",
+          "passed": true,
+          "critical": true,
+          "details": "Observed procedural warning on a natural boss state transition"
+        },
+        {
+          "id": "boss_volley",
+          "passed": true,
+          "critical": true,
+          "details": true
+        },
+        {
+          "id": "boss_charge",
+          "passed": true,
+          "critical": true,
+          "details": "Controlled attack clock, real runtime charge"
+        },
+        {
+          "id": "boss_slam",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "warning": "Knight Sentinel  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 20/20 \u00b7 SLAM \u2014 JUMP!",
+            "waves": [
+              {
+                "vx": -240,
+                "scaleY": 0.6
+              },
+              {
+                "vx": 240,
+                "scaleY": 0.6
+              }
+            ],
+            "method": "Controlled attack clock; real low shockwave projectiles"
+          }
+        },
+        {
+          "id": "boss_phase_change",
+          "passed": true,
+          "critical": true,
+          "details": "Half-health boss begins its next attack before the full-health cooldown"
+        },
+        {
+          "id": "player_attack_damage",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "before": 20,
+            "after": 19,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "The Last Knight",
+              "topology": "journey",
+              "objective": {
+                "type": "boss_defeat",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "defeat_boss",
+                  "kind": "defeat",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [],
+              "doors": [],
+              "feedback": {
+                "windup": 2,
+                "impact": 2
+              },
+              "playerShotsFired": 1,
+              "playerAttack": "projectile",
+              "respawn": {
+                "x": 160,
+                "y": 475
+              },
+              "exitAlpha": null,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "arena_boss",
+                  "behavior": "patrol",
+                  "phase": "recover",
+                  "health": 19,
+                  "x": 500,
+                  "y": 483,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 1,
+              "slippery": false,
+              "environment": "twilight",
+              "terrainTexture": "terrain",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 240,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 5,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 6196
+            }
+          }
+        },
+        {
+          "id": "boss_player_damage",
+          "passed": true,
+          "critical": true,
+          "details": "Controlled overlap, real collision damage"
+        },
+        {
+          "id": "boss_duel",
+          "passed": true,
+          "critical": true,
+          "details": "Final health set to one; real projectile collision triggers victory without exit"
+        },
+        {
+          "id": "boss_hit_defeat_feedback",
+          "passed": true,
+          "critical": true,
+          "details": "Real projectile hits and defeat emitted shared event effects"
+        },
+        {
+          "id": "boss_restart",
+          "passed": true,
+          "critical": true,
+          "details": "Real R restart"
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "details": []
+        }
+      ],
+      "scope": "Controlled positions, boss clock and final HP; real Phaser collisions, projectiles and keyboard. Not an autonomous duel."
+    },
+    "diagnosis.json": {
+      "failures": [],
+      "repairs_applied": 1
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "boss_arena",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "count": 1,
+            "health": 20,
+            "bar": true,
+            "entities": 1
+          }
+        },
+        {
+          "id": "boss_attack_feedback",
+          "passed": true,
+          "critical": true,
+          "details": "Observed procedural warning on a natural boss state transition"
+        },
+        {
+          "id": "boss_volley",
+          "passed": true,
+          "critical": true,
+          "details": true
+        },
+        {
+          "id": "boss_charge",
+          "passed": true,
+          "critical": true,
+          "details": "Controlled attack clock, real runtime charge"
+        },
+        {
+          "id": "boss_slam",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "warning": "Knight Sentinel  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 20/20 \u00b7 SLAM \u2014 JUMP!",
+            "waves": [
+              {
+                "vx": -240,
+                "scaleY": 0.6
+              },
+              {
+                "vx": 240,
+                "scaleY": 0.6
+              }
+            ],
+            "method": "Controlled attack clock; real low shockwave projectiles"
+          }
+        },
+        {
+          "id": "boss_phase_change",
+          "passed": true,
+          "critical": true,
+          "details": "Half-health boss begins its next attack before the full-health cooldown"
+        },
+        {
+          "id": "player_attack_damage",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "before": 20,
+            "after": 19,
+            "snapshot": {
+              "ready": true,
+              "levelIndex": 0,
+              "levelCount": 1,
+              "levelTitle": "The Last Knight",
+              "topology": "journey",
+              "objective": {
+                "type": "boss_defeat",
+                "required": 0,
+                "total": 0
+              },
+              "goals": [
+                {
+                  "id": "defeat_boss",
+                  "kind": "defeat",
+                  "amount": 0,
+                  "needed": 1,
+                  "complete": false,
+                  "failed": false
+                }
+              ],
+              "progress": {
+                "defeat": [],
+                "activate": [],
+                "unlock": [],
+                "collect": []
+              },
+              "triggers": [],
+              "doors": [],
+              "feedback": {
+                "windup": 2,
+                "impact": 2
+              },
+              "playerShotsFired": 1,
+              "playerAttack": "projectile",
+              "respawn": {
+                "x": 160,
+                "y": 475
+              },
+              "exitAlpha": null,
+              "exitStyle": "gate",
+              "enemies": [
+                {
+                  "id": "arena_boss",
+                  "behavior": "patrol",
+                  "phase": "recover",
+                  "health": 19,
+                  "x": 500,
+                  "y": 483,
+                  "vx": 0
+                }
+              ],
+              "icicles": [],
+              "machines": [],
+              "movingPlatforms": [],
+              "shotsFired": 1,
+              "slippery": false,
+              "environment": "twilight",
+              "terrainTexture": "terrain",
+              "generation": 1,
+              "landedPlatforms": [
+                0
+              ],
+              "x": 240,
+              "y": 480,
+              "vx": 0,
+              "vy": 0,
+              "grounded": true,
+              "health": 5,
+              "crystals": 0,
+              "state": "playing",
+              "checkpoint": -1,
+              "missingAssets": [],
+              "animation": "idle",
+              "seed": 7,
+              "time": 6196
+            }
+          }
+        },
+        {
+          "id": "boss_player_damage",
+          "passed": true,
+          "critical": true,
+          "details": "Controlled overlap, real collision damage"
+        },
+        {
+          "id": "boss_duel",
+          "passed": true,
+          "critical": true,
+          "details": "Final health set to one; real projectile collision triggers victory without exit"
+        },
+        {
+          "id": "boss_hit_defeat_feedback",
+          "passed": true,
+          "critical": true,
+          "details": "Real projectile hits and defeat emitted shared event effects"
+        },
+        {
+          "id": "boss_restart",
+          "passed": true,
+          "critical": true,
+          "details": "Real R restart"
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "details": []
+        }
+      ],
+      "scope": "Controlled positions, boss clock and final HP; real Phaser collisions, projectiles and keyboard. Not an autonomous duel."
+    },
+    "outcome.json": {
+      "status": "READY_WITH_WARNINGS",
+      "elapsed_seconds": 12.88,
+      "visual_quality": "Requires human screenshot review; functional checks are not an aesthetic score."
+    }
+  },
+  "verification_provenance": "Captured Gemini decisions; zero fresh provider calls",
+  "completion_calls": 2
+}

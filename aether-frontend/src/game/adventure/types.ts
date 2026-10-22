@@ -7,7 +7,7 @@ export type Actor = {
   behavior: 'patrol'|'chase'; dialogue: Dialogue; x: number; y: number; area: number; pickups:{x:number;y:number}[];
 };
 export type Goal = { kind: 'talk'|'collect'|'deliver'|'explore'|'defeat'|'activate'|'unlock'; target: string; count: number; text: string; item: string; delivery_items?:Record<string,number> };
-export type Area = { regions?:BiomeRegion[]; name: string; environment: string; width: number; height: number; tiles: number[][]; spawn: {x:number;y:number}; exit:{x:number;y:number}; actors: Actor[]; zones?:{name:string;x:number;y:number}[]; trees?:{x:number;y:number}[]; buildings?:{x:number;y:number;variant:number}[] };
+export type Area = { layout?:'auto'|'open'|'chambers'|'cover'|'woodland'; regions?:BiomeRegion[]; name: string; environment: string; width: number; height: number; tiles: number[][]; spawn: {x:number;y:number}; exit:{x:number;y:number}; actors: Actor[]; zones?:{name:string;x:number;y:number}[]; trees?:{x:number;y:number}[]; buildings?:{x:number;y:number;variant:number}[] };
 export type AdventureIR = {
   schema_version:'2.1'; genre:'adventure'; title:string; premise:string; theme:string; seed:number;
   tile_size:32; combat:boolean; areas:Area[]; quests:Goal[]; unsupported:string[];

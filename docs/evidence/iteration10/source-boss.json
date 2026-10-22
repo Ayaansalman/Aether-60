@@ -1,0 +1,1023 @@
+{
+  "game_id": "751b349e-9abc-4261-99c8-87957c97ba86",
+  "prompt": "Create a single-level 2D platformer called The Last Knight.\n\nThe entire game takes place in a ruined medieval castle arena.\n\nThere is exactly ONE enemy: a powerful knight boss. No smaller enemies.\n\nThe boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.\n\nWhen the boss falls below half health, increase the attack intensity.\n\nGive the boss a large visible health bar. Give my character a usable combat ability, responsive movement, and clear attack and damage animations.\n\nI win only by defeating the boss.\n\nNo collectibles, no quests, no exit gate to reach, and no additional levels.\n\nMake the fight dramatic, challenging, and visually cohesive.",
+  "status": "FAILED",
+  "error_code": "GENERATION_FAILED",
+  "semantic_intent.json": {
+    "genre": "platformer",
+    "loop": "Boss battle against a single powerful knight enemy in a ruined medieval castle arena.",
+    "control": "platform",
+    "requirements": [
+      {
+        "source": "The entire game takes place in a ruined medieval castle arena.",
+        "meaning": "Single level castle arena",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "single_level",
+        "biomes": [
+          "dark"
+        ],
+        "count": 1,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+        "meaning": "Boss duel with no ordinary minions",
+        "capability": "boss_duel",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": 1,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "No smaller enemies.",
+        "meaning": "Exclude ordinary enemies",
+        "capability": "no_ordinary_enemies",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_ordinary_enemies",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+        "meaning": "Boss attack patterns",
+        "capability": "boss_patterns",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_volley",
+        "biomes": [],
+        "count": 3,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "Give the boss a large visible health bar.",
+        "meaning": "Boss health bar display",
+        "capability": "boss_health_bar",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_arena",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "I win only by defeating the boss.",
+        "meaning": "Boss defeat victory condition",
+        "capability": "boss_defeat",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "Give my character a usable combat ability",
+        "meaning": "Player projectile attack capability",
+        "capability": "projectile_attack",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "player_attack_damage",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "No collectibles",
+        "meaning": "No collectible items in the arena",
+        "capability": "no_collectibles",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_collectibles",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "no quests",
+        "meaning": "No quests assigned",
+        "capability": "unsupported",
+        "status": "unsupported",
+        "depends_on": [],
+        "verification": "no_quests",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "no exit gate to reach",
+        "meaning": "No exit portal or door",
+        "capability": "no_exit",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_exit",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "no additional levels",
+        "meaning": "Only one arena level",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "single_level",
+        "biomes": [],
+        "count": 1,
+        "scope": "game",
+        "mandatory": true
+      }
+    ],
+    "arcade": null,
+    "perspective": "side_scrolling",
+    "structure": "arena",
+    "loops": [
+      "combat",
+      "boss",
+      "survival"
+    ],
+    "gameplay": null,
+    "provenance": {
+      "provider": "OpenAICompatProvider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "validation_attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "gemini-3.5-flash-lite"
+        }
+      ],
+      "source_grounding": []
+    }
+  },
+  "game_design.json": {
+    "boss": {
+      "name": "Knight Sentinel",
+      "health": 20,
+      "telegraph_ms": 700,
+      "cooldown_ms": 1500,
+      "patterns": [
+        "charge",
+        "volley"
+      ],
+      "victory": "boss_defeat",
+      "ordinary_enemies": 0
+    },
+    "collectibles_enabled": false,
+    "title": "The Last Knight",
+    "premise": "Engage in a desperate duel against a fallen knight boss within a ruined medieval castle arena.",
+    "genre": "platformer",
+    "theme": "twilight",
+    "difficulty": "challenging",
+    "objective": "reach_exit",
+    "abilities": [
+      "double_jump",
+      "dash"
+    ],
+    "checkpoints": false,
+    "moving_platforms": false,
+    "platform_motion": {
+      "axis": "horizontal",
+      "pattern": "sine",
+      "distance": 54,
+      "period_ms": 3000
+    },
+    "player_attack": "projectile",
+    "interactions": [],
+    "objectives": [],
+    "campaign_objectives": [],
+    "slippery": false,
+    "falling_icicles": false,
+    "icicle_trigger": "mixed",
+    "hazard_period_ms": 2200,
+    "timed_hazards": false,
+    "exit_indicator": "none",
+    "exit_style": "gate",
+    "collectible": "crystals",
+    "level_count": 1,
+    "levels": [],
+    "topology": "journey",
+    "sections": [
+      {
+        "kind": "ruins",
+        "length": 8,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "shooter",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "combat"
+      },
+      {
+        "kind": "ruins",
+        "length": 8,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "shooter",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "combat"
+      },
+      {
+        "kind": "ruins",
+        "length": 8,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "shooter",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "combat"
+      },
+      {
+        "kind": "ruins",
+        "length": 8,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": true,
+        "hazards": false,
+        "encounter": "shooter",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "combat"
+      },
+      {
+        "kind": "ruins",
+        "length": 8,
+        "elevation": 0,
+        "gap": 1,
+        "enemies": false,
+        "hazards": false,
+        "encounter": "shooter",
+        "ai": {
+          "health": 1,
+          "cooldown_ms": 1400,
+          "telegraph_ms": 450,
+          "radius": 300
+        },
+        "challenge": "combat"
+      }
+    ],
+    "unsupported": [
+      "no quests"
+    ],
+    "design_notes": [
+      "Sword melee attacks are approximated using the projectile combat capability.",
+      "Arena format isolates the player and boss into a single enclosed battle space without standard platforming traversal or exit gates."
+    ],
+    "requested_features": []
+  },
+  "design_validation.json": {
+    "attempts": [
+      {
+        "attempt": 1,
+        "valid": true,
+        "model": "gemini-3.5-flash-lite"
+      }
+    ],
+    "maximum_corrections": 1
+  },
+  "requirement_report.json": {
+    "scope": "Explicit phrase extraction plus model-reported unsupported requests. Construction and runtime verification are separate; unrecognized wording can require review.",
+    "requirements": [
+      {
+        "id": "boss_duel",
+        "source": "boss",
+        "span": [
+          171,
+          175
+        ],
+        "supported": true,
+        "status": "implemented_unverified",
+        "runtime_check": "boss_duel",
+        "model_sources": [
+          "Boss duel"
+        ],
+        "constructed": true,
+        "verified": false,
+        "evidence": {
+          "spec": "boss_duel",
+          "qa": null
+        }
+      },
+      {
+        "id": "ranged",
+        "source": "ranged",
+        "span": [
+          268,
+          274
+        ],
+        "supported": true,
+        "status": "construction_failed",
+        "runtime_check": "enemy_shooter",
+        "constructed": false,
+        "verified": false,
+        "evidence": {
+          "spec": "ranged",
+          "qa": null
+        }
+      },
+      {
+        "id": "unsupported",
+        "source": "no quests",
+        "supported": false,
+        "status": "unsupported",
+        "verified": false
+      }
+    ],
+    "changes": [],
+    "unsupported": [
+      "no quests"
+    ],
+    "overall": "FAIL"
+  },
+  "capability_compatibility.json": {
+    "overall": "PASS",
+    "issues": [],
+    "decision_source": "deterministic capability compatibility",
+    "catalog": {
+      "platform_movement": {
+        "ir_path": "player",
+        "verification": "mandatory_route_edges",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "player"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "top_down_movement": {
+        "ir_path": "areas",
+        "verification": "top_down_horizontal_movement",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "auto_run": {
+        "ir_path": "mode",
+        "verification": "runner_input",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "mode"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "flap": {
+        "ir_path": "mode",
+        "verification": "repeatable_flap",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "mode"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "endless_obstacles": {
+        "ir_path": "endless",
+        "verification": "endless_bounded_state",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "endless"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "finite_finish": {
+        "ir_path": "finish_distance",
+        "verification": null,
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "finish_distance"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "distance_score": {
+        "ir_path": "scoring",
+        "verification": "score_once",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "gap_score": {
+        "ir_path": "scoring",
+        "verification": "score_once",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "restart": {
+        "ir_path": "genre",
+        "verification": "rapid_restart",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "genre"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_duel": {
+        "ir_path": "boss",
+        "verification": "boss_duel",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss"
+        ],
+        "behavior_types": [],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_health_bar": {
+        "ir_path": "boss.health",
+        "verification": "boss_arena",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.health"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_patterns": {
+        "ir_path": "boss.patterns",
+        "verification": "boss_volley",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.patterns"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_defeat": {
+        "ir_path": "boss.victory",
+        "verification": "boss_duel",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.victory"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_ordinary_enemies": {
+        "ir_path": "entities",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "entities"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_collectibles": {
+        "ir_path": "entities",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "entities"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_combat": {
+        "ir_path": "combat",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "combat"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "single_level": {
+        "ir_path": "areas/levels",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "areas/levels"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "biome_regions": {
+        "ir_path": "areas.regions",
+        "verification": "biome_regions",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas.regions"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "slippery_region": {
+        "ir_path": "areas.regions.slippery",
+        "verification": "localized_slippery",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas.regions.slippery"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_delivery": {
+        "ir_path": "quests",
+        "verification": "adventure_completion",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_collect": {
+        "ir_path": "quests",
+        "verification": "quest_collect",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_activate": {
+        "ir_path": "quests",
+        "verification": "quest_activate",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_unlock": {
+        "ir_path": "quests",
+        "verification": "quest_unlock",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_explore": {
+        "ir_path": "quests",
+        "verification": "quest_explore",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "adventure_combat": {
+        "ir_path": "quests",
+        "verification": "adventure_combat",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "treasure_finish": {
+        "ir_path": "quests",
+        "verification": "adventure_completion",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "projectile_attack": {
+        "ir_path": "player_attack",
+        "verification": "player_attack_damage",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "player_attack"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "sword_melee": {
+        "ir_path": "player_attack",
+        "verification": "player_attack_damage",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "player_attack"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "visual_theme": {
+        "ir_path": "theme",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "theme"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "unsupported": {
+        "ir_path": "unsupported",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "unsupported"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "switch_gate": {
+        "ir_path": "links",
+        "verification": "shared_gate_dependency",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "links"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "moving_platforms": {
+        "ir_path": "platforms.moving",
+        "verification": "moving_platform_motion",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "platforms.moving"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "patrol_enemies": {
+        "ir_path": "entities.behavior",
+        "verification": "enemy_patrol",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "entities.behavior"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "health_damage": {
+        "ir_path": "gameplay.health",
+        "verification": "composition_health_loss",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.health"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "enemy_spawning": {
+        "ir_path": "gameplay.spawns",
+        "verification": "composition_safe_spawning",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "top_down_movement",
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.spawns"
+        ],
+        "behavior_types": [
+          "chase",
+          "patrol",
+          "shooter"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+      },
+      "enemy_roles": {
+        "ir_path": "gameplay.archetypes",
+        "verification": "composition_enemy_roles",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.archetypes"
+        ],
+        "behavior_types": [
+          "chase",
+          "patrol",
+          "shooter"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "attack_sequence": {
+        "ir_path": "gameplay.archetypes.attack",
+        "verification": "composition_attack_sequence",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "enemy_roles",
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.archetypes.attack"
+        ],
+        "behavior_types": [
+          "timed_projectile_sequence"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "survival_time": {
+        "ir_path": "gameplay.scoring",
+        "verification": "composition_survival_score",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "no_inventory": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_quests": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_npcs": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_exit": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      }
+    },
+    "relationships": null,
+    "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+  },
+  "failure_events": [
+    {
+      "stage": "FAILED",
+      "detail": "Requested supported capabilities are missing from the constructed specification. Inspect requirement_report.json."
+    }
+  ]
+}

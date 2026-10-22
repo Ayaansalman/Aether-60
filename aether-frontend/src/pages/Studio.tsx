@@ -248,7 +248,7 @@ function Workspace() {
   );
   const [spec, setSpec] = useState<GeneratedIR | null>(null);
   const [job, setJob] = useState<StudioJob | null>(null);
-  const semanticReport = job?.artifacts['semantic_requirement_report.json'] as {overall:string;requirements:{source:string;status:string;ir_path:string}[]}|undefined;
+  const semanticReport = job?.artifacts['semantic_requirement_report.json'] as {overall:string;requirements:{id?:string;source:string;status:string;category?:string;failure_stage?:string;ir_path:string}[]}|undefined;
   const [activeId, setActiveId] = useState(id || "");
   const [busy, setBusy] = useState(false),
     [error, setError] = useState("");
@@ -728,7 +728,7 @@ function Workspace() {
             </div>
             {semanticReport && <details className="capabilities requirement-coverage">
               <summary>Prompt fidelity · {semanticReport.overall}</summary>
-              {semanticReport.requirements.map((req,i)=><p key={i}><strong>{req.source}</strong> — {req.status.replaceAll('_',' ')}<br/><small>{req.ir_path}</small></p>)}
+              {semanticReport.requirements.map((req,i)=><p key={req.id??i}><strong>{req.source}</strong> — {req.category==='presentation'?'Visual presentation · ':''}{req.status.replaceAll('_',' ')}{req.failure_stage&&req.status==='failed'?` (${req.failure_stage})`:''}<br/><small>{req.id?req.id+' · ':''}{req.ir_path}</small></p>)}
               <p>Source phrases, structured requirements and runtime evidence: semantic_requirement_report.json in the Inspector.</p>
             </details>}
             {spec?.requirements?.length ? <details className="capabilities requirement-coverage">

@@ -1,0 +1,175 @@
+{
+  "provider": "Replay",
+  "model": "captured-gemini",
+  "live": true,
+  "initial_latency_ms": 0,
+  "normalizations": [],
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "model": "captured-gemini",
+      "candidate": {
+        "genre": "adventure",
+        "title": "The Frozen Garden",
+        "premise": "Explore a continuous magical world transitioning from a lush forest to icy snowy ruins. A healer needs two magical flowers retrieved from the frozen half to complete your peaceful quest.",
+        "theme": "fantasy",
+        "art_style": "ninja_adventure",
+        "areas": [
+          {
+            "regions": [
+              {
+                "id": "mystic_forest",
+                "name": "Mystic Forest",
+                "biome": "forest",
+                "x": 1,
+                "y": 1,
+                "width": 24,
+                "height": 30,
+                "slippery": false
+              },
+              {
+                "id": "icy_ruins",
+                "name": "Icy Ruins",
+                "biome": "icy_ruins",
+                "x": 25,
+                "y": 1,
+                "width": 22,
+                "height": 30,
+                "slippery": true
+              }
+            ],
+            "name": "The Continuous Realm",
+            "environment": "forest"
+          }
+        ],
+        "actors": [
+          {
+            "region": "mystic_forest",
+            "id": "healer_elena",
+            "kind": "npc",
+            "name": "Elena",
+            "area": 0,
+            "role": "Village Healer",
+            "item": "",
+            "quantity": 1,
+            "requires": [],
+            "behavior": "chase",
+            "dialogue": {
+              "greeting": [
+                "Welcome to the forest wanderer. The northern winds bring a chill.",
+                "Could you help me gather ingredients from the ancient ruins?"
+              ],
+              "active": [
+                "Have you found the two magical flowers in the icy ruins yet?",
+                "Be careful on the slippery ice near the ruins."
+              ],
+              "completed": [
+                "Oh thank you so much! These magical flowers are radiant.",
+                "The realm is at peace, and our remedies are secured."
+              ]
+            }
+          },
+          {
+            "region": "icy_ruins",
+            "id": "magical_flower_one",
+            "kind": "item",
+            "name": "Frost Blossom",
+            "area": 0,
+            "role": "",
+            "item": "frost_blossom",
+            "quantity": 1,
+            "requires": [],
+            "behavior": "chase",
+            "dialogue": {
+              "greeting": [
+                "Welcome, traveler."
+              ],
+              "active": [
+                "Your journey is still ahead."
+              ],
+              "completed": [
+                "Thank you for your help!"
+              ]
+            }
+          },
+          {
+            "region": "icy_ruins",
+            "id": "magical_flower_two",
+            "kind": "item",
+            "name": "Ice Petal",
+            "area": 0,
+            "role": "",
+            "item": "ice_petal",
+            "quantity": 1,
+            "requires": [],
+            "behavior": "chase",
+            "dialogue": {
+              "greeting": [
+                "Welcome, traveler."
+              ],
+              "active": [
+                "Your journey is still ahead."
+              ],
+              "completed": [
+                "Thank you for your help!"
+              ]
+            }
+          }
+        ],
+        "quests": [
+          {
+            "kind": "talk",
+            "target": "healer_elena",
+            "count": 1,
+            "text": "Speak with Elena the Healer in the forest.",
+            "item": "",
+            "delivery_items": {}
+          },
+          {
+            "kind": "collect",
+            "target": "magical_flower_one",
+            "count": 1,
+            "text": "Collect the Frost Blossom from the icy ruins.",
+            "item": "frost_blossom",
+            "delivery_items": {}
+          },
+          {
+            "kind": "collect",
+            "target": "magical_flower_two",
+            "count": 1,
+            "text": "Collect the Ice Petal from the icy ruins.",
+            "item": "ice_petal",
+            "delivery_items": {}
+          },
+          {
+            "kind": "deliver",
+            "target": "healer_elena",
+            "count": 2,
+            "text": "Return both magical flowers to Elena the Healer.",
+            "item": "",
+            "delivery_items": {
+              "frost_blossom": 1,
+              "ice_petal": 1
+            }
+          }
+        ],
+        "gameplay": {
+          "feedback": "clear",
+          "health": 1,
+          "invulnerability_ms": 1000,
+          "player_attack": false,
+          "outcome": "quests",
+          "duration_seconds": null,
+          "scoring": "none",
+          "archetypes": [],
+          "spawns": []
+        },
+        "combat": false,
+        "unsupported": [
+          "Animated environmental transition effects beyond biome rendering"
+        ]
+      }
+    }
+  ]
+}

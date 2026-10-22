@@ -1,0 +1,44 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "The Continuous Realm",
+      "passed": true,
+      "reachable_tiles": 1370,
+      "destinations": 6
+    },
+    {
+      "id": "Speak with Elena the Healer in the forest.",
+      "passed": true,
+      "target": "healer_elena",
+      "target_reachable": true,
+      "prior_objectives_valid": true,
+      "missing_resources": []
+    },
+    {
+      "id": "Collect the Frost Blossom from the icy ruins.",
+      "passed": true,
+      "target": "magical_flower_one",
+      "target_reachable": true,
+      "prior_objectives_valid": true,
+      "missing_resources": []
+    },
+    {
+      "id": "Collect the Ice Petal from the icy ruins.",
+      "passed": true,
+      "target": "magical_flower_two",
+      "target_reachable": true,
+      "prior_objectives_valid": true,
+      "missing_resources": []
+    },
+    {
+      "id": "Return both magical flowers to Elena the Healer.",
+      "passed": true,
+      "target": "healer_elena",
+      "target_reachable": true,
+      "prior_objectives_valid": true,
+      "missing_resources": []
+    }
+  ],
+  "scope": "Flood-fill destinations and ordered resource prerequisites; browser verifies actual gameplay."
+}

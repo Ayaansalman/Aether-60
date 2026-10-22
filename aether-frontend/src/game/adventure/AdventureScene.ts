@@ -30,6 +30,7 @@ export class AdventureScene extends Phaser.Scene {
   lastAttack=0;
   lastDamage=0;
   generation=0;
+  restartRequested=false;
   behavior?:BehaviorWorld;
   enemies!:Phaser.Physics.Arcade.Group;
   hostileShots!:Phaser.Physics.Arcade.Group;
@@ -41,6 +42,7 @@ export class AdventureScene extends Phaser.Scene {
   init(data:{spec:AdventureIR;state?:AdventureState;generation?:number}) {
     this.spec=data.spec;this.state=data.state||new AdventureState(this.spec);
     this.generation=(data.generation||0)+1;
+    this.restartRequested=false;
     this.actors=[];this.dialogue=[];this.touch={};this.touched=new Set();this.lastAttack=-Infinity;this.lastDamage=-Infinity;this.behavior=undefined;this.feedbackEvents={};this.accumulator=0;
   }
   preload() {
@@ -49,7 +51,7 @@ export class AdventureScene extends Phaser.Scene {
       if (!this.textures.exists(name)) this.load.spritesheet(name,`/assets/adventure/${name}.png`,{frameWidth:16,frameHeight:16});
   }
   create() {
-    const area=this.spec.areas[this.state.area],size=32,outdoor=['forest','village'].includes(area.environment);
+    const area=this.spec.areas[this.state.area],size=32,outdoor=area.layout!=='chambers'&&['forest','village'].includes(area.environment);
     const art=this.spec.art;
     if(art)registerAnimations(this,art);
     this.cameras.main.setBackgroundColor(outdoor?'#5c8e55':'#211e30');
@@ -179,6 +181,10 @@ export class AdventureScene extends Phaser.Scene {
     this.objectiveMarker=this.add.text(0,0,'◆',{fontSize:'22px',color:'#ffe09a',stroke:'#172231',strokeThickness:4}).setOrigin(.5).setDepth(2200);
     this.compass=this.add.text(20,116,'',{fontFamily:'monospace',fontSize:'14px',color:'#ffe09a',backgroundColor:'#172231dd',padding:{x:8,y:6}}).setScrollFactor(0).setDepth(3000);
     this.keys=this.input.keyboard!.addKeys('UP,DOWN,LEFT,RIGHT,W,A,S,D,E,F,X,R,SPACE') as typeof this.keys;
+    const restartKey=this.keys.R;
+    const requestRestart=()=>{if(this.game.canvas.parentElement?.contains(document.activeElement))this.restartRequested=true;};
+    restartKey.on('down',requestRestart);
+    this.events.once('shutdown',()=>restartKey.off('down',requestRestart));
     this.events.on('touch-control',(key:string,pressed:boolean)=>{this.touch[key]=pressed;if(!pressed)this.touched.delete(key);});
     this.events.once(Phaser.Scenes.Events.SHUTDOWN,()=>this.events.removeAllListeners('touch-control'));
     if(new URLSearchParams(location.search).get('test')==='1') {
@@ -301,7 +307,7 @@ export class AdventureScene extends Phaser.Scene {
     this.compass.setVisible(this.questMode).setText(`${my<-30?'↑ ':my>30?'↓ ':''}${mx<-30?'← ':mx>30?'→ ':''}${Math.round(Math.hypot(mx,my)/32)} tiles to ${target?.data.name||'exit'}`);
     const focused=this.game.canvas.parentElement?.contains(document.activeElement);
     if(!focused){this.physics.world.pause();this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));return;}
-    if(this.pressed('R','restart')){this.scene.restart({spec:this.spec,generation:this.generation});return;}
+    if(this.restartRequested||this.pressed('R','restart')){this.restartRequested=false;this.scene.restart({spec:this.spec,generation:this.generation});return;}
     this.physics.world.resume();
     const use=this.pressed('E','interact');
     if(this.state.won||this.state.lost){this.physics.world.pause();this.player.setVelocity(0);this.actors.filter(a=>a.data.kind==='enemy'&&a.sprite.active).forEach(a=>a.sprite.setVelocity(0));return;}

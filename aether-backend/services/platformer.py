@@ -161,12 +161,21 @@ GameDesign JSON Schema:\n""" + json.dumps(GameDesign.model_json_schema())
     from services.design_validation import validated_response
     result=provider.complete(system,prompt)
     secondary_requirements=[]
+    normalizations=[]
     def grounded(raw):
         if intent:
             # Interpretation owns the requirement contract. A second classifier
             # in the designer previously relabeled gate objectives as combat.
             secondary_requirements.extend(raw.get('requested_features',[]))
             raw={**raw,'requested_features':[]}
+        from services.design_repair import repair_dependencies
+        raw, changes = repair_dependencies(raw)
+        normalizations.extend(changes)
+        if raw.get('boss') and any(r['capability']=='boss_patterns' and r.get('count')==3 for r in (intent or {}).get('requirements',[])):
+            before=raw['boss'].get('patterns')
+            if before!=['charge','volley','slam']:
+                raw['boss']['patterns']=['charge','volley','slam']
+                normalizations.append({'field':'boss.patterns','before':before,'after':raw['boss']['patterns'],'reason':'Preserved requested three distinct attacks using registered charge, volley and slam'})
         design=GameDesign.model_validate(raw)
         if any(feature.source.lower() not in prompt.lower() for feature in design.requested_features):
             raise ValueError('requested_features.source must quote the original prompt exactly')
@@ -175,7 +184,7 @@ GameDesign JSON Schema:\n""" + json.dumps(GameDesign.model_json_schema())
     return design, {"provider":type(provider).__name__,"model":attempts[-1]['model'],"live":True,
         "initial_latency_ms":result.latency_ms,"fallbacks":getattr(result,'fallback_events',[]),"validation_attempts":attempts,
         "requirement_authority":"semantic_intent.json" if intent else "designer requested_features and deterministic extraction",
-        "advisory_designer_requirements":secondary_requirements}
+        "advisory_designer_requirements":secondary_requirements,"normalizations":normalizations}
 
 
 
@@ -301,6 +310,9 @@ def validate_route(ir: PlatformerIR) -> dict:
 def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
     """Capability guard after model interpretation; modifications are inspectable, not silent."""
     p = prompt.lower()
+    if 'sword' not in p:
+        design.design_notes=[n for n in design.design_notes if not ('sword' in n.lower() and 'approximat' in n.lower())]
+    design.unsupported=[v for v in design.unsupported if v.lower().strip() not in ('no quests','no collectibles','no exit gate','no ordinary enemies')]
     if re.search(r'no (?:ordinary |regular )?collectibl|do not add.*collectible',p):
         design.collectibles_enabled=False
         design.objective='reach_exit'
@@ -394,14 +406,26 @@ def enforce_explicit_requirements(design: GameDesign, prompt: str) -> dict:
         changes.append({'field': 'levels', 'reason': 'Expanded campaign defaults into explicit progressive level specifications'})
     else:
         changes.extend(compose_intent(design, prompt))
-    for path, owner in [('game',design), *[(f'levels.{index}',level) for index,level in enumerate(design.levels)]]:
-        for index, interaction in enumerate(owner.interactions or []):
-            if interaction.door_section == len(owner.sections):
-                before = interaction.model_dump()
-                interaction.door_section -= 1
-                if interaction.section > 0: interaction.section -= 1
-                changes.append({'field':f'{path}.interactions.{index}','before':before,'after':interaction.model_dump(),
-                                'reason':'Converted out-of-range one-based interaction indices into existing zero-based sections; preserved trigger and door'})
+    from services.design_repair import repair_dependencies
+    repaired, dependency_changes = repair_dependencies(design.model_dump())
+    if dependency_changes:
+        checked = GameDesign.model_validate(repaired)
+        design.interactions = checked.interactions
+        design.levels = checked.levels
+        changes.extend(dependency_changes)
+    # Explicit ordinal switch instructions bind existing components without
+    # regenerating encounters or reducing the required switch count.
+    for path, owner in [('game',design), *[(f'levels.{i}',level) for i,level in enumerate(design.levels)]]:
+        interactions=owner.interactions if owner.interactions is not None else design.interactions
+        for pattern,index,field in [(r'(?:first|1st) switch (?:activates?|enables?).*moving platforms',0,'enable_platforms'),
+                                    (r'(?:second|2nd) switch disables?.*(?:laser|barrier|machinery)',1,'disable_hazards')]:
+            if re.search(pattern,p) and len(interactions)>index and not getattr(interactions[index],field):
+                setattr(interactions[index],field,True)
+                changes.append({'field':f'{path}.interactions.{index}.{field}','before':False,'after':True,'reason':'Explicit switch-to-world relationship'})
+                if field=='disable_hazards':owner.timed_hazards=True
+    if any(i.enable_platforms for i in design.interactions):
+        note='Approximation: switches enable moving alternate paths; the static main route remains traversable. Timed machinery represents the requested security barrier.'
+        if note not in design.design_notes:design.design_notes.append(note)
     # Global exclusions apply to every explicit level. Positive requests stay scoped
     # to their specified levels rather than being forced onto the introductory stage.
     for index, level in enumerate(design.levels):

@@ -1,0 +1,118 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "runner_input",
+      "passed": true,
+      "critical": true,
+      "details": [
+        {
+          "mode": "ground",
+          "state": "playing",
+          "score": 1,
+          "distance": 17,
+          "y": 430,
+          "vy": 0,
+          "active": 1,
+          "serial": 7,
+          "generation": 2
+        },
+        {
+          "mode": "ground",
+          "state": "playing",
+          "score": 5,
+          "distance": 59.500000000000014,
+          "y": 371.40972222222223,
+          "vy": -455.8333333333336,
+          "active": 1,
+          "serial": 7,
+          "generation": 2
+        }
+      ]
+    },
+    {
+      "id": "bounds_death",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "mode": "ground",
+        "state": "lost",
+        "score": 0,
+        "distance": 2.8333333333333335,
+        "y": 10.118055555555555,
+        "vy": 14.166666666666666,
+        "active": 0,
+        "serial": 7,
+        "generation": 3
+      }
+    },
+    {
+      "id": "rapid_restart",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "mode": "ground",
+        "state": "playing",
+        "score": 0,
+        "distance": 2.8333333333333335,
+        "y": 430,
+        "vy": 0,
+        "active": 1,
+        "serial": 7,
+        "generation": 4
+      }
+    },
+    {
+      "id": "toolbar_restart_focus",
+      "passed": true,
+      "critical": true,
+      "details": "Actual toolbar remount restores canvas focus and real Space input"
+    },
+    {
+      "id": "typing_isolation",
+      "passed": true,
+      "critical": true,
+      "details": "Typing R in the prompt does not restart the game"
+    },
+    {
+      "id": "body_focus_restart",
+      "passed": true,
+      "critical": true,
+      "details": "After engagement, R recovers from canvas focus loss to the page body"
+    },
+    {
+      "id": "score_once",
+      "passed": true,
+      "critical": true,
+      "details": [
+        34,
+        34
+      ]
+    },
+    {
+      "id": "obstacle_collision",
+      "passed": true,
+      "critical": true,
+      "details": "lost"
+    },
+    {
+      "id": "endless_bounded_state",
+      "passed": true,
+      "critical": true,
+      "details": {
+        "active": 2,
+        "serial": 1476,
+        "endless": true,
+        "stopped": true,
+        "pending": 2
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "details": []
+    }
+  ],
+  "scope": "Real keyboard/pointer input plus disclosed controlled state for collision/scoring and accelerated generation; not autonomous survival."
+}

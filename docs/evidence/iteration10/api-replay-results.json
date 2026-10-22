@@ -1,0 +1,31 @@
+[
+  {
+    "case": "factory",
+    "id": "0e5fe401-0241-4d3c-96b9-db2bd14b7d71",
+    "status": "READY_WITH_WARNINGS",
+    "calls": 2,
+    "runtime": "PASS",
+    "semantic": "WARN",
+    "failures": []
+  },
+  {
+    "case": "garden",
+    "id": "1d14eb4b-d7a4-4d0f-8084-0050569a14db",
+    "status": "READY_WITH_WARNINGS",
+    "calls": 2,
+    "runtime": "PASS",
+    "semantic": "PASS",
+    "failures": []
+  },
+  {
+    "case": "guardian",
+    "id": "e4c454e1-12ca-4ef7-9545-a1f59500547c",
+    "status": "FAILED",
+    "calls": 1,
+    "runtime": null,
+    "semantic": null,
+    "failures": [
+      "Requested behaviors cannot be constructed: Boss damage shields controlled by switches are not implemented; door links cannot target boss immunity; Boss adapter constructs a dedicated single arena and cannot preserve a preceding traversal route or switch puzzle. See capability_compatibility.json."
+    ]
+  }
+]

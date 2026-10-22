@@ -1,0 +1,88 @@
+{
+  "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+  "requirements": [
+    {
+      "id": "factory_environment",
+      "source": "industrial",
+      "span": [
+        12,
+        22
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "environment_composition"
+    },
+    {
+      "id": "patrol",
+      "source": "patrolling",
+      "span": [
+        458,
+        468
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "enemy_patrol"
+    },
+    {
+      "id": "moving_platforms",
+      "source": "moving platforms",
+      "span": [
+        272,
+        288
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "moving_platform_motion"
+    },
+    {
+      "id": "timed_hazards",
+      "source": "dangerous machinery",
+      "span": [
+        309,
+        328
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "timed_hazard_cycle"
+    },
+    {
+      "id": "switches",
+      "source": "switches",
+      "span": [
+        194,
+        202
+      ],
+      "supported": true,
+      "status": "pending",
+      "runtime_check": "switch_door"
+    }
+  ],
+  "changes": [
+    {
+      "field": "game.interactions.0.enable_platforms",
+      "before": false,
+      "after": true,
+      "reason": "Explicit switch-to-world relationship"
+    },
+    {
+      "field": "game.interactions.1.disable_hazards",
+      "before": false,
+      "after": true,
+      "reason": "Explicit switch-to-world relationship"
+    },
+    {
+      "field": "levels.0.interactions.0.enable_platforms",
+      "before": false,
+      "after": true,
+      "reason": "Explicit switch-to-world relationship"
+    },
+    {
+      "field": "levels.0.interactions.1.disable_hazards",
+      "before": false,
+      "after": true,
+      "reason": "Explicit switch-to-world relationship"
+    }
+  ],
+  "unsupported": [],
+  "overall": "PASS"
+}

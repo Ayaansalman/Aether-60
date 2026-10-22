@@ -1,0 +1,496 @@
+{
+  "provider": "Replay",
+  "model": "captured-gemini",
+  "live": true,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "model": "captured-gemini",
+      "candidate": {
+        "genre": "platformer",
+        "loop": "Boss battle against a single powerful knight enemy in a ruined medieval castle arena.",
+        "control": "platform",
+        "requirements": [
+          {
+            "source": "The entire game takes place in a ruined medieval castle arena.",
+            "meaning": "Single level castle arena",
+            "capability": "single_level",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "single_level",
+            "biomes": [
+              "dark"
+            ],
+            "count": 1,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+            "meaning": "Boss duel with no ordinary minions",
+            "capability": "boss_duel",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "boss_duel",
+            "biomes": [],
+            "count": 1,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "No smaller enemies.",
+            "meaning": "Exclude ordinary enemies",
+            "capability": "no_ordinary_enemies",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "no_ordinary_enemies",
+            "biomes": [],
+            "count": 0,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+            "meaning": "Boss attack patterns",
+            "capability": "boss_patterns",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "boss_volley",
+            "biomes": [],
+            "count": 3,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "Give the boss a large visible health bar.",
+            "meaning": "Boss health bar display",
+            "capability": "boss_health_bar",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "boss_arena",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "I win only by defeating the boss.",
+            "meaning": "Boss defeat victory condition",
+            "capability": "boss_defeat",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "boss_duel",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "Give my character a usable combat ability",
+            "meaning": "Player projectile attack capability",
+            "capability": "projectile_attack",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "player_attack_damage",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "No collectibles",
+            "meaning": "No collectible items in the arena",
+            "capability": "no_collectibles",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "no_collectibles",
+            "biomes": [],
+            "count": 0,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "no quests",
+            "meaning": "No quests assigned",
+            "capability": "unsupported",
+            "status": "unsupported",
+            "depends_on": [],
+            "verification": "no_quests",
+            "biomes": [],
+            "count": 0,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "no exit gate to reach",
+            "meaning": "No exit portal or door",
+            "capability": "no_exit",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "no_exit",
+            "biomes": [],
+            "count": 0,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "no additional levels",
+            "meaning": "Only one arena level",
+            "capability": "single_level",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "single_level",
+            "biomes": [],
+            "count": 1,
+            "scope": "game",
+            "mandatory": true
+          }
+        ],
+        "arcade": null,
+        "perspective": "side_scrolling",
+        "structure": "arena",
+        "loops": [
+          "combat",
+          "boss",
+          "survival"
+        ],
+        "gameplay": null
+      }
+    }
+  ],
+  "source_grounding": [
+    {
+      "field": "requirements.0",
+      "before": {
+        "source": "The entire game takes place in a ruined medieval castle arena.",
+        "meaning": "Single level castle arena",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "single_level",
+        "biomes": [
+          "dark"
+        ],
+        "count": 1,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "The entire game takes place in a ruined medieval castle arena.",
+        "meaning": "Single level castle arena",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "single_level",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_649bcd5702ab",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.1",
+      "before": {
+        "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+        "meaning": "Boss duel with no ordinary minions",
+        "capability": "boss_duel",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": 1,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "There is exactly ONE enemy: a powerful knight boss. No smaller enemies.",
+        "meaning": "Boss duel with no ordinary minions",
+        "capability": "boss_duel",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": 1,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_52ab21f8d01b",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.2",
+      "before": {
+        "source": "No smaller enemies.",
+        "meaning": "Exclude ordinary enemies",
+        "capability": "no_ordinary_enemies",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_ordinary_enemies",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "No smaller enemies.",
+        "meaning": "Exclude ordinary enemies",
+        "capability": "no_ordinary_enemies",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_ordinary_enemies",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_6eaddcdc2d9a",
+        "category": "exclusion"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.3",
+      "before": {
+        "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+        "meaning": "Boss attack patterns",
+        "capability": "boss_patterns",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_volley",
+        "biomes": [],
+        "count": 3,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "The boss should have three recognizable attacks: a charging attack, a ranged attack, and a powerful attack with a clear warning before it happens.",
+        "meaning": "Boss attack patterns",
+        "capability": "boss_patterns",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_volley",
+        "biomes": [],
+        "count": 3,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_7e74dbd67a3a",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.4",
+      "before": {
+        "source": "Give the boss a large visible health bar.",
+        "meaning": "Boss health bar display",
+        "capability": "boss_health_bar",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_arena",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "Give the boss a large visible health bar.",
+        "meaning": "Boss health bar display",
+        "capability": "boss_health_bar",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_arena",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_87117b5efd09",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.5",
+      "before": {
+        "source": "I win only by defeating the boss.",
+        "meaning": "Boss defeat victory condition",
+        "capability": "boss_defeat",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "I win only by defeating the boss.",
+        "meaning": "Boss defeat victory condition",
+        "capability": "boss_defeat",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_17c495fdf3d2",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.6",
+      "before": {
+        "source": "Give my character a usable combat ability",
+        "meaning": "Player projectile attack capability",
+        "capability": "projectile_attack",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "player_attack_damage",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "Give my character a usable combat ability",
+        "meaning": "Player projectile attack capability",
+        "capability": "projectile_attack",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "player_attack_damage",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_a5a84af74132",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.7",
+      "before": {
+        "source": "No collectibles",
+        "meaning": "No collectible items in the arena",
+        "capability": "no_collectibles",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_collectibles",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "No collectibles",
+        "meaning": "No collectible items in the arena",
+        "capability": "no_collectibles",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_collectibles",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_c81c250a8daf",
+        "category": "exclusion"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.8",
+      "before": {
+        "source": "no quests",
+        "meaning": "No quests assigned",
+        "capability": "unsupported",
+        "status": "unsupported",
+        "depends_on": [],
+        "verification": "no_quests",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "no quests",
+        "meaning": "No quests assigned",
+        "capability": "no_quests",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_quests",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_96c6b4d4a45f",
+        "category": "exclusion"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.9",
+      "before": {
+        "source": "no exit gate to reach",
+        "meaning": "No exit portal or door",
+        "capability": "no_exit",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_exit",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "no exit gate to reach",
+        "meaning": "No exit portal or door",
+        "capability": "no_exit",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_exit",
+        "biomes": [],
+        "count": 0,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_55aa21a2a68b",
+        "category": "exclusion"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.10",
+      "before": {
+        "source": "no additional levels",
+        "meaning": "Only one arena level",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "single_level",
+        "biomes": [],
+        "count": 1,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "no additional levels",
+        "meaning": "Only one arena level",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "single_level",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_ac371f2780e4",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    }
+  ]
+}

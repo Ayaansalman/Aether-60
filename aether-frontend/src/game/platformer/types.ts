@@ -1,5 +1,6 @@
-export interface BossEncounter {name:string;health:number;telegraph_ms:number;cooldown_ms:number;patterns:('charge'|'volley')[];victory:'boss_defeat';ordinary_enemies:0}
+export interface BossEncounter {name:string;health:number;telegraph_ms:number;cooldown_ms:number;patterns:('charge'|'volley'|'slam')[];victory:'boss_defeat';ordinary_enemies:0}
 export interface Platform {
+  activation_sources?: string[];
   x: number;
   y: number;
   width: number;
@@ -13,6 +14,7 @@ export interface EnemyConfig { health: number; cooldown_ms: number; telegraph_ms
 export interface Goal { id: string; kind: 'defeat' | 'activate' | 'unlock' | 'collect' | 'survive' | 'time_limit'; count: number; seconds: number; targets: string[]; enemy_behavior?: Entity['behavior'] | null }
 export interface BehaviorLink { sources: string[]; target: string; condition: 'all' | 'any'; action: 'open_door' }
 export interface Entity {
+  disabled_by?: string[];
   boss?: BossEncounter | null;
   id?: string;
   x: number;

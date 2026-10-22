@@ -1,0 +1,2132 @@
+{
+  "job": {
+    "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+    "prompt": "Create an extremely difficult endless 2D runner through a colorful enchanted forest.\n\nI control a little woodland fox who automatically sprints forward. Pressing Space makes the fox jump.\n\nI want an intense precision-based experience with fast movement, short reaction windows, dangerous combinations of gaps and spikes, rapid consecutive jumps, and challenging obstacle patterns.\n\nDifficulty should escalate significantly as I survive, but every obstacle sequence must remain physically possible.\n\nUse detailed animated forest scenery and parallax backgrounds.\n\nTrack my distance and allow instant restart when I crash.",
+    "status": "READY_WITH_WARNINGS",
+    "stage": "READY_WITH_WARNINGS",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "captured-gemini-replay",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-22T03:34:10.639300+00:00",
+    "updated_at": "2026-10-22T03:34:16.535181+00:00",
+    "error_code": null,
+    "artifact_paths": [
+      "semantic_intent.json",
+      "capability_compatibility.json",
+      "model_design.json",
+      "provider.json",
+      "design_validation.json",
+      "final_design.json",
+      "game_design.json",
+      "game_intent.json",
+      "validation.json",
+      "game_ir_v2.json",
+      "build_manifest.json",
+      "qa_report.json",
+      "requirement_report.json",
+      "semantic_requirement_report.json"
+    ],
+    "limitations": [],
+    "qa_summary": {
+      "passed": 10,
+      "failed": 0
+    },
+    "game_url": "http://localhost:5173/studio/play/00650aae-0bfc-4aed-a5ba-1799bd7b1dd1"
+  },
+  "events": [
+    {
+      "id": 1990,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:10.691523+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1991,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:10.752338+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.05s; language model",
+      "diff": null
+    },
+    {
+      "id": 1992,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:10.905148+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Planning validated arcade controls and survival loop",
+      "attempt": 1,
+      "rationale": "Elapsed 0.20s; language model",
+      "diff": null
+    },
+    {
+      "id": 1993,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:11.056900+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Composing seeded obstacle stream and selected movement controller",
+      "attempt": 1,
+      "rationale": "Elapsed 0.36s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1994,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:11.087510+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking typed movement bounds, scoring and obstacle configuration",
+      "attempt": 1,
+      "rationale": "Elapsed 0.39s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1995,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:11.156073+00:00",
+      "stage": "BUILDING",
+      "result": "SUCCESS",
+      "detail": "Registered canvas runtime and bounded procedural stream ready",
+      "attempt": 1,
+      "rationale": "Elapsed 0.45s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1996,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:11.222468+00:00",
+      "stage": "TESTING",
+      "result": "START",
+      "detail": "Running Chromium arcade checks",
+      "attempt": 1,
+      "rationale": "Elapsed 0.52s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1997,
+      "game_id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "ts": "2026-10-22T03:34:16.556365+00:00",
+      "stage": "READY_WITH_WARNINGS",
+      "result": "SUCCESS",
+      "detail": "Arcade checks PASS",
+      "attempt": 1,
+      "rationale": "Elapsed 5.86s; deterministic service",
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "runner",
+      "loop": "Survive the endless forest runner by avoiding gaps and spikes with precise jumps while distance increases.",
+      "control": "auto_jump",
+      "requirements": [
+        {
+          "source": "automatically sprints forward",
+          "id": "req_09af0f5eb369",
+          "meaning": "Player runs continuously without manual movement input",
+          "capability": "auto_run",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "runner_input",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "Pressing Space makes the fox jump",
+          "id": "req_a1d499acc32b",
+          "meaning": "Pressing Space triggers a jump action",
+          "capability": "endless_obstacles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "endless_bounded_state",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "dangerous combinations of gaps and spikes",
+          "id": "req_813f67060cc8",
+          "meaning": "Endless obstacle generation spawns gaps and spikes",
+          "capability": "endless_obstacles",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "endless_bounded_state",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "Track my distance",
+          "id": "req_3a9ed62d92ee",
+          "meaning": "Score based on distance traveled in the endless run",
+          "capability": "distance_score",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "score_once",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "allow instant restart when I crash",
+          "id": "req_26592b40d56b",
+          "meaning": "Quick restart upon death/collision",
+          "capability": "restart",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "rapid_restart",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "animated forest scenery and parallax backgrounds",
+          "id": "req_4ea0437bce3d",
+          "meaning": "Visual theme applied to the runner",
+          "capability": "visual_theme",
+          "status": "planned",
+          "depends_on": [],
+          "verification": "runner_input",
+          "biomes": [
+            "forest"
+          ],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "presentation"
+        }
+      ],
+      "arcade": {
+        "difficulty": "extreme",
+        "progression": "surge",
+        "theme": "forest",
+        "player": "creature",
+        "endless": true,
+        "exclusions": [
+          "laser",
+          "barrier"
+        ]
+      },
+      "perspective": "side_scrolling",
+      "structure": "endless",
+      "loops": [
+        "survival",
+        "avoidance"
+      ],
+      "gameplay": null,
+      "provenance": {
+        "provider": "Provider",
+        "model": "captured-gemini-replay",
+        "live": true,
+        "validation_attempts": [
+          {
+            "attempt": 1,
+            "valid": true,
+            "model": "captured-gemini-replay",
+            "candidate": {
+              "genre": "runner",
+              "loop": "Survive the endless forest runner by avoiding gaps and spikes with precise jumps while distance increases.",
+              "control": "auto_jump",
+              "requirements": [
+                {
+                  "source": "automatically sprints forward",
+                  "meaning": "Player runs continuously without manual movement input",
+                  "capability": "auto_run",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "runner_input",
+                  "biomes": [],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "Pressing Space makes the fox jump",
+                  "meaning": "Pressing Space triggers a jump action",
+                  "capability": "endless_obstacles",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "endless_bounded_state",
+                  "biomes": [],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "dangerous combinations of gaps and spikes",
+                  "meaning": "Endless obstacle generation spawns gaps and spikes",
+                  "capability": "endless_obstacles",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "endless_bounded_state",
+                  "biomes": [
+                    "forest"
+                  ],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "Track my distance",
+                  "meaning": "Score based on distance traveled in the endless run",
+                  "capability": "distance_score",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "score_once",
+                  "biomes": [],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "allow instant restart when I crash",
+                  "meaning": "Quick restart upon death/collision",
+                  "capability": "restart",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "rapid_restart",
+                  "biomes": [],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                },
+                {
+                  "source": "animated forest scenery and parallax backgrounds",
+                  "meaning": "Visual theme applied to the runner",
+                  "capability": "visual_theme",
+                  "status": "planned",
+                  "depends_on": [],
+                  "verification": "runner_input",
+                  "biomes": [
+                    "forest"
+                  ],
+                  "count": null,
+                  "scope": "game",
+                  "mandatory": true
+                }
+              ],
+              "arcade": {
+                "difficulty": "extreme",
+                "progression": "surge",
+                "theme": "forest",
+                "player": "creature",
+                "endless": true,
+                "exclusions": [
+                  "laser",
+                  "barrier"
+                ]
+              },
+              "perspective": "side_scrolling",
+              "structure": "endless",
+              "loops": [
+                "survival",
+                "avoidance"
+              ],
+              "gameplay": null
+            }
+          }
+        ],
+        "source_grounding": [
+          {
+            "field": "requirements.0",
+            "before": {
+              "source": "automatically sprints forward",
+              "meaning": "Player runs continuously without manual movement input",
+              "capability": "auto_run",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "runner_input",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "automatically sprints forward",
+              "meaning": "Player runs continuously without manual movement input",
+              "capability": "auto_run",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "runner_input",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_09af0f5eb369",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.1",
+            "before": {
+              "source": "Pressing Space makes the fox jump",
+              "meaning": "Pressing Space triggers a jump action",
+              "capability": "endless_obstacles",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "endless_bounded_state",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "Pressing Space makes the fox jump",
+              "meaning": "Pressing Space triggers a jump action",
+              "capability": "endless_obstacles",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "endless_bounded_state",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_a1d499acc32b",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.2",
+            "before": {
+              "source": "dangerous combinations of gaps and spikes",
+              "meaning": "Endless obstacle generation spawns gaps and spikes",
+              "capability": "endless_obstacles",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "endless_bounded_state",
+              "biomes": [
+                "forest"
+              ],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "dangerous combinations of gaps and spikes",
+              "meaning": "Endless obstacle generation spawns gaps and spikes",
+              "capability": "endless_obstacles",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "endless_bounded_state",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_813f67060cc8",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.3",
+            "before": {
+              "source": "Track my distance",
+              "meaning": "Score based on distance traveled in the endless run",
+              "capability": "distance_score",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "score_once",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "Track my distance",
+              "meaning": "Score based on distance traveled in the endless run",
+              "capability": "distance_score",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "score_once",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_3a9ed62d92ee",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.4",
+            "before": {
+              "source": "allow instant restart when I crash",
+              "meaning": "Quick restart upon death/collision",
+              "capability": "restart",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "rapid_restart",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "allow instant restart when I crash",
+              "meaning": "Quick restart upon death/collision",
+              "capability": "restart",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "rapid_restart",
+              "biomes": [],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_26592b40d56b",
+              "category": "mechanic"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.5",
+            "before": {
+              "source": "animated forest scenery and parallax backgrounds",
+              "meaning": "Visual theme applied to the runner",
+              "capability": "visual_theme",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "runner_input",
+              "biomes": [
+                "forest"
+              ],
+              "count": null,
+              "scope": "game",
+              "mandatory": true
+            },
+            "after": {
+              "source": "animated forest scenery and parallax backgrounds",
+              "meaning": "Visual theme applied to the runner",
+              "capability": "visual_theme",
+              "status": "planned",
+              "depends_on": [],
+              "verification": "runner_input",
+              "biomes": [
+                "forest"
+              ],
+              "count": null,
+              "scope": "game",
+              "mandatory": true,
+              "id": "req_4ea0437bce3d",
+              "category": "presentation"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          }
+        ]
+      }
+    },
+    "capability_compatibility.json": {
+      "overall": "PASS",
+      "issues": [],
+      "decision_source": "deterministic capability compatibility",
+      "catalog": {
+        "platform_movement": {
+          "ir_path": "player",
+          "verification": "mandatory_route_edges",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "player"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "top_down_movement": {
+          "ir_path": "areas",
+          "verification": "top_down_horizontal_movement",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "auto_run": {
+          "ir_path": "mode",
+          "verification": "runner_input",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "flap": {
+          "ir_path": "mode",
+          "verification": "repeatable_flap",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "endless_obstacles": {
+          "ir_path": "endless",
+          "verification": "endless_bounded_state",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "endless"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "finite_finish": {
+          "ir_path": "finish_distance",
+          "verification": null,
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "finish_distance"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "distance_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "gap_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "restart": {
+          "ir_path": "genre",
+          "verification": "rapid_restart",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "genre"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_duel": {
+          "ir_path": "boss",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_health_bar": {
+          "ir_path": "boss.health",
+          "verification": "boss_arena",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_patterns": {
+          "ir_path": "boss.patterns",
+          "verification": "boss_volley",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.patterns"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_defeat": {
+          "ir_path": "boss.victory",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.victory"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_ordinary_enemies": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_collectibles": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_combat": {
+          "ir_path": "combat",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "combat"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "single_level": {
+          "ir_path": "areas/levels",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "areas/levels"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "biome_regions": {
+          "ir_path": "areas.regions",
+          "verification": "biome_regions",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "slippery_region": {
+          "ir_path": "areas.regions.slippery",
+          "verification": "localized_slippery",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions.slippery"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_delivery": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_collect": {
+          "ir_path": "quests",
+          "verification": "quest_collect",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_activate": {
+          "ir_path": "quests",
+          "verification": "quest_activate",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_unlock": {
+          "ir_path": "quests",
+          "verification": "quest_unlock",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_explore": {
+          "ir_path": "quests",
+          "verification": "quest_explore",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "adventure_combat": {
+          "ir_path": "quests",
+          "verification": "adventure_combat",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "treasure_finish": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "projectile_attack": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "sword_melee": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "visual_theme": {
+          "ir_path": "theme",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "theme"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "unsupported": {
+          "ir_path": "unsupported",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "unsupported"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "slippery_platforms": {
+          "ir_path": "slippery",
+          "verification": "slippery_momentum",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "slippery"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "falling_icicles": {
+          "ir_path": "entities",
+          "verification": "falling_icicle_cycle",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_shield": {
+          "ir_path": "boss.shield",
+          "verification": null,
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.shield"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "switch_gate": {
+          "ir_path": "links",
+          "verification": "shared_gate_dependency",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "links"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "moving_platforms": {
+          "ir_path": "platforms.moving",
+          "verification": "moving_platform_motion",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "platforms.moving"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "patrol_enemies": {
+          "ir_path": "entities.behavior",
+          "verification": "enemy_patrol",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "entities.behavior"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "health_damage": {
+          "ir_path": "gameplay.health",
+          "verification": "composition_health_loss",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "enemy_spawning": {
+          "ir_path": "gameplay.spawns",
+          "verification": "composition_safe_spawning",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "top_down_movement",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.spawns"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+        },
+        "enemy_roles": {
+          "ir_path": "gameplay.archetypes",
+          "verification": "composition_enemy_roles",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "attack_sequence": {
+          "ir_path": "gameplay.archetypes.attack",
+          "verification": "composition_attack_sequence",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "enemy_roles",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes.attack"
+          ],
+          "behavior_types": [
+            "timed_projectile_sequence"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "survival_time": {
+          "ir_path": "gameplay.scoring",
+          "verification": "composition_survival_score",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "no_inventory": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_quests": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_npcs": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_exit": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        }
+      },
+      "relationships": null,
+      "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+    },
+    "model_design.json": {
+      "genre": "runner",
+      "title": "Enchanted Forest Sprint",
+      "mode": "ground",
+      "theme": "forest",
+      "player": "creature",
+      "visual_style": "pixel",
+      "difficulty": "extreme",
+      "progression": "surge",
+      "challenge": {
+        "patterns": [
+          "single",
+          "rhythm",
+          "escalation",
+          "mixed",
+          "recovery"
+        ],
+        "recovery": 0.25,
+        "spacing": 0.9,
+        "precision": 0.75,
+        "transition": 30.0,
+        "sequence_length": 6,
+        "rest_every": 3
+      },
+      "exclusions": [
+        "laser",
+        "barrier"
+      ],
+      "endless": true,
+      "finish_distance": 10000.0,
+      "speed": 340.0,
+      "max_speed": 480.0,
+      "acceleration": 3.0,
+      "gravity": 1700.0,
+      "jump_impulse": 640.0,
+      "flap_impulse": 310.0,
+      "gap_height": 180.0,
+      "obstacles": [
+        "spike",
+        "gap"
+      ],
+      "scoring": "distance",
+      "unsupported": []
+    },
+    "provider.json": {
+      "provider": "Provider",
+      "model": "captured-gemini-replay",
+      "live": true,
+      "intent_bindings": [
+        {
+          "field": "unsupported",
+          "removed": [
+            "instant_restart"
+          ],
+          "reason": "Existing runner input/presentation implements these registered capabilities"
+        }
+      ],
+      "validation_attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "captured-gemini-replay",
+          "candidate": {
+            "genre": "runner",
+            "title": "Enchanted Forest Sprint",
+            "mode": "ground",
+            "theme": "forest",
+            "player": "creature",
+            "visual_style": "pixel",
+            "difficulty": "extreme",
+            "progression": "surge",
+            "challenge": {
+              "patterns": [
+                "single",
+                "rhythm",
+                "escalation",
+                "mixed",
+                "recovery"
+              ],
+              "recovery": 0.25,
+              "spacing": 0.9,
+              "precision": 0.75,
+              "transition": 30.0,
+              "sequence_length": 6,
+              "rest_every": 3
+            },
+            "exclusions": [
+              "laser",
+              "barrier"
+            ],
+            "endless": true,
+            "finish_distance": 10000.0,
+            "speed": 340.0,
+            "max_speed": 480.0,
+            "acceleration": 3.0,
+            "gravity": 1700.0,
+            "jump_impulse": 640.0,
+            "flap_impulse": 310.0,
+            "gap_height": 180.0,
+            "obstacles": [
+              "spike",
+              "gap"
+            ],
+            "scoring": "distance",
+            "unsupported": [
+              "instant_restart"
+            ]
+          }
+        }
+      ]
+    },
+    "design_validation.json": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "captured-gemini-replay",
+          "candidate": {
+            "genre": "runner",
+            "title": "Enchanted Forest Sprint",
+            "mode": "ground",
+            "theme": "forest",
+            "player": "creature",
+            "visual_style": "pixel",
+            "difficulty": "extreme",
+            "progression": "surge",
+            "challenge": {
+              "patterns": [
+                "single",
+                "rhythm",
+                "escalation",
+                "mixed",
+                "recovery"
+              ],
+              "recovery": 0.25,
+              "spacing": 0.9,
+              "precision": 0.75,
+              "transition": 30.0,
+              "sequence_length": 6,
+              "rest_every": 3
+            },
+            "exclusions": [
+              "laser",
+              "barrier"
+            ],
+            "endless": true,
+            "finish_distance": 10000.0,
+            "speed": 340.0,
+            "max_speed": 480.0,
+            "acceleration": 3.0,
+            "gravity": 1700.0,
+            "jump_impulse": 640.0,
+            "flap_impulse": 310.0,
+            "gap_height": 180.0,
+            "obstacles": [
+              "spike",
+              "gap"
+            ],
+            "scoring": "distance",
+            "unsupported": [
+              "instant_restart"
+            ]
+          }
+        }
+      ],
+      "maximum_corrections": 1
+    },
+    "final_design.json": {
+      "genre": "runner",
+      "title": "Enchanted Forest Sprint",
+      "mode": "ground",
+      "theme": "forest",
+      "player": "creature",
+      "visual_style": "pixel",
+      "difficulty": "extreme",
+      "progression": "surge",
+      "challenge": {
+        "patterns": [
+          "single",
+          "rhythm",
+          "escalation",
+          "mixed",
+          "recovery"
+        ],
+        "recovery": 0.25,
+        "spacing": 0.9,
+        "precision": 0.75,
+        "transition": 30.0,
+        "sequence_length": 6,
+        "rest_every": 3
+      },
+      "exclusions": [
+        "laser",
+        "barrier"
+      ],
+      "endless": true,
+      "finish_distance": 10000.0,
+      "speed": 340.0,
+      "max_speed": 480.0,
+      "acceleration": 3.0,
+      "gravity": 1700.0,
+      "jump_impulse": 640.0,
+      "flap_impulse": 310.0,
+      "gap_height": 180.0,
+      "obstacles": [
+        "spike",
+        "gap"
+      ],
+      "scoring": "distance",
+      "unsupported": []
+    },
+    "game_design.json": {
+      "genre": "runner",
+      "title": "Enchanted Forest Sprint",
+      "mode": "ground",
+      "theme": "forest",
+      "player": "creature",
+      "visual_style": "pixel",
+      "difficulty": "extreme",
+      "progression": "surge",
+      "challenge": {
+        "patterns": [
+          "single",
+          "rhythm",
+          "escalation",
+          "mixed",
+          "recovery"
+        ],
+        "recovery": 0.25,
+        "spacing": 0.9,
+        "precision": 0.75,
+        "transition": 30.0,
+        "sequence_length": 6,
+        "rest_every": 3
+      },
+      "exclusions": [
+        "laser",
+        "barrier"
+      ],
+      "endless": true,
+      "finish_distance": 10000.0,
+      "speed": 340.0,
+      "max_speed": 480.0,
+      "acceleration": 3.0,
+      "gravity": 1700.0,
+      "jump_impulse": 640.0,
+      "flap_impulse": 310.0,
+      "gap_height": 180.0,
+      "obstacles": [
+        "spike",
+        "gap"
+      ],
+      "scoring": "distance",
+      "unsupported": []
+    },
+    "game_intent.json": {
+      "original_prompt": "Create an extremely difficult endless 2D runner through a colorful enchanted forest.\n\nI control a little woodland fox who automatically sprints forward. Pressing Space makes the fox jump.\n\nI want an intense precision-based experience with fast movement, short reaction windows, dangerous combinations of gaps and spikes, rapid consecutive jumps, and challenging obstacle patterns.\n\nDifficulty should escalate significantly as I survive, but every obstacle sequence must remain physically possible.\n\nUse detailed animated forest scenery and parallax backgrounds.\n\nTrack my distance and allow instant restart when I crash.",
+      "genre": "runner",
+      "control": "ground",
+      "endless": true,
+      "semantic": {
+        "genre": "runner",
+        "loop": "Survive the endless forest runner by avoiding gaps and spikes with precise jumps while distance increases.",
+        "control": "auto_jump",
+        "requirements": [
+          {
+            "source": "automatically sprints forward",
+            "id": "req_09af0f5eb369",
+            "meaning": "Player runs continuously without manual movement input",
+            "capability": "auto_run",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "runner_input",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true,
+            "category": "mechanic"
+          },
+          {
+            "source": "Pressing Space makes the fox jump",
+            "id": "req_a1d499acc32b",
+            "meaning": "Pressing Space triggers a jump action",
+            "capability": "endless_obstacles",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "endless_bounded_state",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true,
+            "category": "mechanic"
+          },
+          {
+            "source": "dangerous combinations of gaps and spikes",
+            "id": "req_813f67060cc8",
+            "meaning": "Endless obstacle generation spawns gaps and spikes",
+            "capability": "endless_obstacles",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "endless_bounded_state",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true,
+            "category": "mechanic"
+          },
+          {
+            "source": "Track my distance",
+            "id": "req_3a9ed62d92ee",
+            "meaning": "Score based on distance traveled in the endless run",
+            "capability": "distance_score",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "score_once",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true,
+            "category": "mechanic"
+          },
+          {
+            "source": "allow instant restart when I crash",
+            "id": "req_26592b40d56b",
+            "meaning": "Quick restart upon death/collision",
+            "capability": "restart",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "rapid_restart",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true,
+            "category": "mechanic"
+          },
+          {
+            "source": "animated forest scenery and parallax backgrounds",
+            "id": "req_4ea0437bce3d",
+            "meaning": "Visual theme applied to the runner",
+            "capability": "visual_theme",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "runner_input",
+            "biomes": [
+              "forest"
+            ],
+            "count": null,
+            "scope": "game",
+            "mandatory": true,
+            "category": "presentation"
+          }
+        ],
+        "arcade": {
+          "difficulty": "extreme",
+          "progression": "surge",
+          "theme": "forest",
+          "player": "creature",
+          "endless": true,
+          "exclusions": [
+            "laser",
+            "barrier"
+          ]
+        },
+        "perspective": "side_scrolling",
+        "structure": "endless",
+        "loops": [
+          "survival",
+          "avoidance"
+        ],
+        "gameplay": null
+      }
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "typed_runner_configuration",
+          "passed": true
+        }
+      ],
+      "scope": "Schema and physics constraints; obstacle spacing is calculated at runtime and tested separately"
+    },
+    "game_ir_v2.json": {
+      "genre": "runner",
+      "title": "Enchanted Forest Sprint",
+      "mode": "ground",
+      "theme": "forest",
+      "player": "creature",
+      "visual_style": "pixel",
+      "difficulty": "extreme",
+      "progression": "surge",
+      "challenge": {
+        "patterns": [
+          "single",
+          "rhythm",
+          "escalation",
+          "mixed",
+          "recovery"
+        ],
+        "recovery": 0.25,
+        "spacing": 0.9,
+        "precision": 0.75,
+        "transition": 30.0,
+        "sequence_length": 6,
+        "rest_every": 3
+      },
+      "exclusions": [
+        "laser",
+        "barrier"
+      ],
+      "endless": true,
+      "finish_distance": 10000.0,
+      "speed": 340.0,
+      "max_speed": 480.0,
+      "acceleration": 3.0,
+      "gravity": 1700.0,
+      "jump_impulse": 640.0,
+      "flap_impulse": 310.0,
+      "gap_height": 180.0,
+      "obstacles": [
+        "spike",
+        "gap"
+      ],
+      "scoring": "distance",
+      "unsupported": [],
+      "schema_version": "2.2",
+      "seed": 7,
+      "requirements": [
+        {
+          "source": "Runner control, procedural obstacles, score and restart",
+          "status": "verified"
+        },
+        {
+          "source": "automatically sprints forward",
+          "id": "req_09af0f5eb369",
+          "meaning": "Player runs continuously without manual movement input",
+          "capability": "auto_run",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "runner_input",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "auto_run",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "mode",
+          "runtime_check": "runner_input",
+          "runtime_verified": true
+        },
+        {
+          "source": "Pressing Space makes the fox jump",
+          "id": "req_a1d499acc32b",
+          "meaning": "Pressing Space triggers a jump action",
+          "capability": "endless_obstacles",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "endless_bounded_state",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "endless_obstacles",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "endless",
+          "runtime_check": "endless_bounded_state",
+          "runtime_verified": true
+        },
+        {
+          "source": "dangerous combinations of gaps and spikes",
+          "id": "req_813f67060cc8",
+          "meaning": "Endless obstacle generation spawns gaps and spikes",
+          "capability": "endless_obstacles",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "endless_bounded_state",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "endless_obstacles",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "endless",
+          "runtime_check": "endless_bounded_state",
+          "runtime_verified": true
+        },
+        {
+          "source": "Track my distance",
+          "id": "req_3a9ed62d92ee",
+          "meaning": "Score based on distance traveled in the endless run",
+          "capability": "distance_score",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "score_once",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "distance_score",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "scoring",
+          "runtime_check": "score_once",
+          "runtime_verified": true
+        },
+        {
+          "source": "allow instant restart when I crash",
+          "id": "req_26592b40d56b",
+          "meaning": "Quick restart upon death/collision",
+          "capability": "restart",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "rapid_restart",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "restart",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "genre",
+          "runtime_check": "rapid_restart",
+          "runtime_verified": true
+        },
+        {
+          "source": "animated forest scenery and parallax backgrounds",
+          "id": "req_4ea0437bce3d",
+          "meaning": "Visual theme applied to the runner",
+          "capability": "visual_theme",
+          "status": "approximated",
+          "depends_on": [],
+          "verification": "runner_input",
+          "biomes": [
+            "forest"
+          ],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "presentation",
+          "requested_capability": "visual_theme",
+          "bound_biomes": [
+            "forest"
+          ],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "theme",
+          "runtime_check": null,
+          "runtime_verified": false
+        }
+      ]
+    },
+    "build_manifest.json": {
+      "adapter": "RunnerCanvas",
+      "genre": "runner",
+      "mode": "ground",
+      "art": "selected bundled Kenney CC0 pixel atlases and original pixel compositions",
+      "theme": "forest",
+      "challenge": {
+        "patterns": [
+          "single",
+          "rhythm",
+          "escalation",
+          "mixed",
+          "recovery"
+        ],
+        "recovery": 0.25,
+        "spacing": 0.9,
+        "precision": 0.75,
+        "transition": 30.0,
+        "sequence_length": 6,
+        "rest_every": 3
+      },
+      "difficulty": "extreme",
+      "physics": "ballistic jump envelope and bounded flap reachability at speed endpoints",
+      "bounded_active_world": true
+    },
+    "qa_report.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "runner_input",
+          "passed": true,
+          "critical": true,
+          "details": [
+            {
+              "mode": "ground",
+              "state": "playing",
+              "score": 0,
+              "distance": 5.666666666666667,
+              "y": 430,
+              "vy": 0,
+              "active": 1,
+              "serial": 7,
+              "generation": 2
+            },
+            {
+              "mode": "ground",
+              "state": "playing",
+              "score": 4,
+              "distance": 48.16666666666667,
+              "y": 367.7291666666667,
+              "vy": -441.6666666666669,
+              "active": 1,
+              "serial": 7,
+              "generation": 2
+            }
+          ]
+        },
+        {
+          "id": "bounds_death",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "mode": "ground",
+            "state": "lost",
+            "score": 0,
+            "distance": 2.8333333333333335,
+            "y": 10.118055555555555,
+            "vy": 14.166666666666666,
+            "active": 0,
+            "serial": 7,
+            "generation": 3
+          }
+        },
+        {
+          "id": "rapid_restart",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "mode": "ground",
+            "state": "playing",
+            "score": 0,
+            "distance": 2.8333333333333335,
+            "y": 430,
+            "vy": 0,
+            "active": 1,
+            "serial": 7,
+            "generation": 4
+          }
+        },
+        {
+          "id": "toolbar_restart_focus",
+          "passed": true,
+          "critical": true,
+          "details": "Actual toolbar remount restores canvas focus and real Space input"
+        },
+        {
+          "id": "typing_isolation",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "method": "Real R in a focused native textarea; temporary field only when the creator prompt is disabled during generation",
+            "temporary_field": true
+          }
+        },
+        {
+          "id": "body_focus_restart",
+          "passed": true,
+          "critical": true,
+          "details": "After engagement, R recovers from canvas focus loss to the page body"
+        },
+        {
+          "id": "score_once",
+          "passed": true,
+          "critical": true,
+          "details": [
+            34,
+            34
+          ]
+        },
+        {
+          "id": "obstacle_collision",
+          "passed": true,
+          "critical": true,
+          "details": "lost"
+        },
+        {
+          "id": "endless_bounded_state",
+          "passed": true,
+          "critical": true,
+          "details": {
+            "active": 2,
+            "serial": 1476,
+            "endless": true,
+            "stopped": true,
+            "pending": 2
+          }
+        },
+        {
+          "id": "no_runtime_exceptions",
+          "passed": true,
+          "critical": true,
+          "details": []
+        }
+      ],
+      "scope": "Real keyboard/pointer input plus disclosed controlled state for collision/scoring and accelerated generation; not autonomous survival."
+    },
+    "requirement_report.json": {
+      "overall": "PASS",
+      "requirements": [
+        {
+          "source": "Runner control, procedural obstacles, score and restart",
+          "status": "verified"
+        }
+      ],
+      "unsupported": [],
+      "scope": "Runtime checks; arbitrary semantic coverage is not certified"
+    },
+    "semantic_requirement_report.json": {
+      "behavior_preserved": true,
+      "control_preserved": true,
+      "arcade_constraints": {
+        "difficulty": {
+          "requested": "extreme",
+          "actual": "extreme",
+          "preserved": true
+        },
+        "progression": {
+          "requested": "surge",
+          "actual": "surge",
+          "preserved": true
+        },
+        "theme": {
+          "requested": "forest",
+          "actual": "forest",
+          "preserved": true
+        },
+        "player": {
+          "requested": "creature",
+          "actual": "creature",
+          "preserved": true
+        },
+        "endless": {
+          "requested": true,
+          "actual": true,
+          "preserved": true
+        },
+        "exclusions": {
+          "requested": [
+            "laser",
+            "barrier"
+          ],
+          "actual": [
+            "laser",
+            "barrier"
+          ],
+          "preserved": true
+        }
+      },
+      "unsupported_core": [],
+      "overall": "WARN",
+      "requirements": [
+        {
+          "source": "automatically sprints forward",
+          "id": "req_09af0f5eb369",
+          "meaning": "Player runs continuously without manual movement input",
+          "capability": "auto_run",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "runner_input",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "auto_run",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "mode",
+          "runtime_check": "runner_input",
+          "runtime_verified": true
+        },
+        {
+          "source": "Pressing Space makes the fox jump",
+          "id": "req_a1d499acc32b",
+          "meaning": "Pressing Space triggers a jump action",
+          "capability": "endless_obstacles",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "endless_bounded_state",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "endless_obstacles",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "endless",
+          "runtime_check": "endless_bounded_state",
+          "runtime_verified": true
+        },
+        {
+          "source": "dangerous combinations of gaps and spikes",
+          "id": "req_813f67060cc8",
+          "meaning": "Endless obstacle generation spawns gaps and spikes",
+          "capability": "endless_obstacles",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "endless_bounded_state",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "endless_obstacles",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "endless",
+          "runtime_check": "endless_bounded_state",
+          "runtime_verified": true
+        },
+        {
+          "source": "Track my distance",
+          "id": "req_3a9ed62d92ee",
+          "meaning": "Score based on distance traveled in the endless run",
+          "capability": "distance_score",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "score_once",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "distance_score",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "scoring",
+          "runtime_check": "score_once",
+          "runtime_verified": true
+        },
+        {
+          "source": "allow instant restart when I crash",
+          "id": "req_26592b40d56b",
+          "meaning": "Quick restart upon death/collision",
+          "capability": "restart",
+          "status": "verified",
+          "depends_on": [],
+          "verification": "rapid_restart",
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "restart",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "genre",
+          "runtime_check": "rapid_restart",
+          "runtime_verified": true
+        },
+        {
+          "source": "animated forest scenery and parallax backgrounds",
+          "id": "req_4ea0437bce3d",
+          "meaning": "Visual theme applied to the runner",
+          "capability": "visual_theme",
+          "status": "approximated",
+          "depends_on": [],
+          "verification": "runner_input",
+          "biomes": [
+            "forest"
+          ],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "presentation",
+          "requested_capability": "visual_theme",
+          "bound_biomes": [
+            "forest"
+          ],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "theme",
+          "runtime_check": null,
+          "runtime_verified": false
+        }
+      ],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    }
+  },
+  "verification_provenance": "Captured Gemini decisions; zero fresh provider calls",
+  "completion_calls": 2
+}

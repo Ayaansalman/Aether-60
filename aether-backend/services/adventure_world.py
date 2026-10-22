@@ -54,7 +54,38 @@ def build_area(design, index, seed):
             elif y != ty: y += 1 if ty > y else -1
             else: break
 
-    if outdoor:
+    survival = bool(design.gameplay and design.gameplay.outcome!='quests')
+    if survival:
+        rect(1,1,w-2,h-2)
+        spawn=(rng.randint(6,10),rng.randint(13,19));exit=(43,16);hub=spawn
+        protected.update((x,y) for x in range(spawn[0]-4,spawn[0]+5) for y in range(spawn[1]-4,spawn[1]+5))
+        if area.layout=='chambers':
+            exit=(43,24)
+            # Connected room grid with wide, independently placed passages.
+            for divider in (16,32):
+                for y in range(1,h-1):tiles[y][divider]=1
+                for cy in (rng.randint(6,10),rng.randint(21,25)):
+                    rect(divider,cy-2,1,5,2)
+            for x in range(1,w-1):tiles[16][x]=1
+            for cx in (8,24,40):rect(cx-2,16,5,1,2)
+            # Safe spawn clearing and one room center per independently usable zone.
+            for x,y in protected:
+                if 0<x<w-1 and 0<y<h-1:tiles[y][x]=0
+            zones=[dict(name=f'Chamber {i+1}',x=x,y=y) for i,(x,y) in enumerate(( (8,8),(24,8),(40,8),(8,24),(24,24),(40,24) ))]
+        else:
+            count=4 if area.layout=='open' else 12 if area.layout=='cover' else 18
+            for _ in range(count*4):
+                if count<=0:break
+                x,y=rng.randint(3,w-5),rng.randint(3,h-5)
+                # Keep broad horizontal/vertical escape lanes and an empty start.
+                if abs(x-spawn[0])<4 or abs(y-spawn[1])<3 or any((x+dx,y+dy) in protected for dx in range(-2,4) for dy in range(-2,4)):continue
+                size=1 if area.layout=='woodland' else 2
+                rect(x,y,size,size,1)
+                if area.layout=='woodland':trees.append(dict(x=x,y=y))
+                protected.update((x+dx,y+dy) for dx in range(-2,size+2) for dy in range(-2,size+2))
+                count-=1
+            zones=[dict(name=area.layout.title()+' survival field',x=spawn[0],y=spawn[1])]
+    elif outdoor:
         rect(1, 1, w - 2, h - 2)
         spawn, exit = (12, 17), (43, 16)
         hub = (13, 17)
@@ -96,6 +127,7 @@ def build_area(design, index, seed):
             path(centers[a], centers[b], 0 if b == len(centers)-1 else 1)
 
     used.update([spawn, exit])
+    if survival:centers=[(z['x'],z['y']) for z in zones]
     placed = []
     actors = [a for a in design.actors if a.area == index]
     door = next((a for a in actors if a.kind == 'door'), None)
@@ -185,7 +217,7 @@ def build_area(design, index, seed):
             path(anchor, (p['x'], p['y']))
         placed.append(PlacedActor(**actor.model_dump(), x=x, y=y, pickups=pickups))
 
-    if outdoor:
+    if outdoor and not survival:
         # Clustered tree lines frame clearings and leave the settlement readable.
         for y in range(2, h-2, 2):
             for x in range(2, w-2, 2):
@@ -197,7 +229,7 @@ def build_area(design, index, seed):
         for y in range(2, h-2):
             for x in range(2, w-2):
                 if tiles[y][x] == 0 and (x,y) not in protected and rng.random() < (.055 if x>25 else .018): tiles[y][x] = 3
-    else:
+    elif not survival:
         # Urns/statues frame the rooms rather than littering the walking route.
         for zone in zones:
             for dx, dy in [(-3,-2),(3,-2),(-3,2),(3,2)]:

@@ -85,6 +85,14 @@ def compile_interactions(design, platforms, entities, prefix):
         gate_key = ('named',interaction.gate) if interaction.gate else ('isolated',index)
         entities.append(Entity(id=switch_id, kind='pressure_plate' if interaction.trigger == 'pressure' else 'switch',
                    activation=interaction.trigger, x=(source.x+(2.1 if interaction.trigger=='projectile' else 1.1))*36, y=source.y*36-(6 if interaction.trigger == 'pressure' else 24), platform=platforms.index(source)))
+        if interaction.enable_platforms:
+            targets=[p for p in platforms if p.moving]
+            if not targets:raise ValueError('Switch activation needs existing moving platforms')
+            for platform in targets:platform.activation_sources.append(switch_id)
+        if interaction.disable_hazards:
+            targets=[e for e in entities if e.kind=='timed_hazard']
+            if not targets:raise ValueError('Switch deactivation needs existing timed machinery hazards')
+            for hazard in targets:hazard.disabled_by.append(switch_id)
         if gate_key in gates:
             link, section = gates[gate_key]
             if section != interaction.door_section:raise ValueError('Shared gate switches must reference the same door section')

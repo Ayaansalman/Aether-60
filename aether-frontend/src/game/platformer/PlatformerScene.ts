@@ -62,6 +62,7 @@ export class PlatformerScene extends Phaser.Scene {
     dash: false,
   };
   generation = 0;
+  restartRequested = false;
   landedPlatforms = new Set<number>();
   constructor() {
     super("Platformer");
@@ -85,6 +86,7 @@ export class PlatformerScene extends Phaser.Scene {
     this.crystals = 0;
     this.state = "playing";
     this.generation++;
+    this.restartRequested = false;
     this.landedPlatforms = new Set<number>();
     this.checkpoint = -1;
     this.spawn = { ...this.spec.spawn };
@@ -314,7 +316,18 @@ export class PlatformerScene extends Phaser.Scene {
           repeat: -1,
         });
     }
-    if(s.boss)layer.setTint(0x9c9aaf);
+    if(s.boss){
+      layer.setTint(0x9c9aaf);
+      // An arena pavement keeps castle masonry coherent with its collision floor.
+      const stone=this.add.graphics().setDepth(1);
+      stone.fillStyle(ice?0x8dbacb:0x62657a).fillRect(0,14*36,s.width,36);
+      stone.lineStyle(2,ice?0xd9f7ff:0x9695a9,.8).lineBetween(0,14*36,s.width,14*36);
+      for(let x=0;x<s.width;x+=48+(s.seed%3)*12)stone.lineBetween(x,14*36+3,x+8,15*36);
+      for(const x of [80,s.width-80]){
+        const glow=this.add.circle(x,400,14,ice?0x9aefff:0xffba6a,.7).setDepth(2);
+        this.tweens.add({targets:glow,alpha:.3,scale:1.3,duration:400+(s.seed%5)*45,yoyo:true,repeat:-1});
+      }
+    }
     this.projectiles = this.physics.add.group({allowGravity:false});
     this.playerProjectiles = this.physics.add.group({allowGravity:false});
     for (const group of [this.projectiles, this.playerProjectiles]) this.physics.add.collider(group, layer, (bullet) => {
@@ -464,6 +477,10 @@ export class PlatformerScene extends Phaser.Scene {
     this.keys = this.input.keyboard!.addKeys(
       "LEFT,RIGHT,UP,A,D,W,SPACE,SHIFT,R,E,F,X",
     ) as Record<string, Phaser.Input.Keyboard.Key>;
+    const restartKey=this.keys.R;
+    const requestRestart=()=>{if(this.game.canvas.parentElement?.contains(document.activeElement))this.restartRequested=true;};
+    restartKey.on('down',requestRestart);
+    this.events.once('shutdown',()=>restartKey.off('down',requestRestart));
     this.events.on("touch-control", (key: string, pressed: boolean) => {
       this.touch[key] = pressed;
     });
@@ -473,7 +490,7 @@ export class PlatformerScene extends Phaser.Scene {
       Math.max(1, 960 / (this.game.canvas.parentElement?.clientWidth || 960)),
     );
     this.add
-      .rectangle(18, 18, 360 * hudScale, ((s.goals?.length || this.campaign.campaign_goals?.length) ? 124 : 96) * hudScale, 0x162d37, 0.9)
+      .rectangle(18, 18, (s.boss?330:360) * hudScale, (s.boss?60:(s.goals?.length || this.campaign.campaign_goals?.length)?88:66) * hudScale, 0x162d37, 0.88)
       .setOrigin(0)
       .setScrollFactor(0)
       .setDepth(50);
@@ -482,26 +499,26 @@ export class PlatformerScene extends Phaser.Scene {
         fontFamily: "monospace",
         fontSize: `${Math.round(14 * hudScale)}px`,
         color: "#f0f5e6",
-        lineSpacing: 10 * hudScale,
+        lineSpacing: 4 * hudScale,
       })
       .setScrollFactor(0)
       .setDepth(51);
     this.message = this.add
-      .text(480, 245, "", {
+      .text(480, 155, "", {
         fontFamily: "sans-serif",
-        fontSize: "25px",
+        fontSize: "17px",
         color: "#ffffff",
         align: "center",
-        wordWrap: { width: 780, useAdvancedWrap: true },
+        wordWrap: { width: 620, useAdvancedWrap: true },
         backgroundColor: "#18333e",
-        padding: { x: 24, y: 18 },
+        padding: { x: 14, y: 8 },
       })
       .setOrigin(0.5)
       .setScrollFactor(0)
       .setDepth(60)
       .setVisible(false);
-    this.message.setText(`Level ${this.levelIndex+1}: ${s.title}\n${s.briefing || (s.goals?.length ? 'Complete your objectives, then find the exit.' : s.objective.required ? `Collect ${s.objective.required} ${s.collectible || 'crystals'}, then find the exit.` : 'Find the exit.')}`).setVisible(true);
-    this.messageUntil = this.time.now + 2400;
+    this.message.setText(s.boss?s.title:`Level ${this.levelIndex+1}: ${s.title}\n${s.briefing || (s.goals?.length ? 'Complete your objectives, then find the exit.' : s.objective.required ? `Collect ${s.objective.required} ${s.collectible || 'crystals'}, then find the exit.` : 'Find the exit.')}`).setVisible(true);
+    this.messageUntil = this.time.now + 1600;
     camera.fadeIn(250);
     camera.startFollow(this.hero, true, 0.1, 0.1, s.camera_mode === "vertical" ? 0 : -150, 55);
     if (new URLSearchParams(location.search).has("test")) {
@@ -548,7 +565,7 @@ export class PlatformerScene extends Phaser.Scene {
     }
     const hint=pending ? pending.kind==='time_limit' ? `Time left: ${Math.max(0,Math.ceil(pending.needed-pending.amount))}s` : `${pending.kind}: ${Math.min(pending.needed,Math.floor(pending.amount))}/${pending.needed}${pending.kind==='survive'?'s':''}` : 'Reach the exit';
     if(this.spec.boss){
-      this.hud.setText(`${'♥ '.repeat(Math.max(0,this.health))}  BOSS DUEL\nF / X · combat ability   Space · jump\nDefeat ${this.spec.boss.name} to win`);
+      this.hud.setText(`${'♥ '.repeat(Math.max(0,this.health))}  BOSS DUEL\nF / X · attack   Space · jump`);
       return;
     }
     this.hud.setText(
@@ -566,6 +583,9 @@ export class PlatformerScene extends Phaser.Scene {
     for (const platform of this.moving) {
       if (!platform.motion) continue;
       const body=platform.sprite.body as Phaser.Physics.Arcade.Body;
+      const enabled=(platform.spec.activation_sources||[]).every(id=>this.gameplay.progress.activate.includes(id));
+      platform.sprite.setTint(enabled?0xffffff:0x697889);
+      if(!enabled){body.setVelocity(0,0);continue;}
       const target=platformPosition(platform.x,platform.y,platform.spec.motion || {axis:'horizontal',pattern:'sine',distance:54,period_ms:3000},this.platformElapsed);
       // Arcade can take several fixed physics steps per render. Use body centers
       // and the actual step duration; render-time feedback can amplify velocity.
@@ -682,6 +702,7 @@ export class PlatformerScene extends Phaser.Scene {
     this.hero.setVelocity(0);
     this.physics.pause();
     this.message
+      .setPosition(480,245)
       .setText(
         state === "won"
           ? this.spec.boss ? `${this.spec.boss.name} defeated!\nPress R to duel again` : `All ${this.campaign.levels?.length || 1} levels complete!\nPress R to play again`
@@ -746,7 +767,8 @@ export class PlatformerScene extends Phaser.Scene {
       this.hero.setAccelerationX(0);
       this.touch = {left:false,right:false,jump:false,dash:false};
     }
-    if (Phaser.Input.Keyboard.JustDown(this.keys.R)) {
+    if (this.restartRequested || Phaser.Input.Keyboard.JustDown(this.keys.R)) {
+      this.restartRequested = false;
       this.scene.restart({ spec: this.campaign });
       return;
     }
@@ -838,7 +860,7 @@ export class PlatformerScene extends Phaser.Scene {
       const low = (e.platform.x + 0.5) * 36,
         high = (e.platform.x + e.platform.width - 0.5) * 36;
       const boss=e.spec.boss;
-      const decision=boss ? bossStep(e.memory,time,e.health,boss.health,this.hero.x,e.sprite.x,40,this.spec.width-40,boss.telegraph_ms,boss.cooldown_ms) : enemyStep(e.behavior,e.memory,{x:e.sprite.x,y:e.sprite.y,low,high,playerX:this.hero.x,playerY:this.hero.y},time,
+      const decision=boss ? bossStep(e.memory,time,e.health,boss.health,this.hero.x,e.sprite.x,40,this.spec.width-40,boss.telegraph_ms,boss.cooldown_ms,boss.patterns) : enemyStep(e.behavior,e.memory,{x:e.sprite.x,y:e.sprite.y,low,high,playerX:this.hero.x,playerY:this.hero.y},time,
         e.spec.ai || {health:1,cooldown_ms:1400,telegraph_ms:450,radius:300});
       if(decision.memory.phase==='windup'&&e.memory.phase!=='windup')feedback(this,e.sprite.x,e.sprite.y,'windup',boss?.telegraph_ms??e.spec.ai?.telegraph_ms??450);
       e.memory=decision.memory;
@@ -846,9 +868,22 @@ export class PlatformerScene extends Phaser.Scene {
       e.sprite.setVelocityX(decision.vx);
       e.sprite.setTint(e.memory.phase==='windup' ? (Math.floor(time/80)%2?0xffffff:0xff6755) : e.memory.phase==='hurt'?0xffffff:e.behavior==='turret'?0xffb56a:e.behavior==='ambusher'?0xeaa0db:0xffffff);
       if (boss) {
+        const pattern=boss.patterns[((e.memory.cycle||1)-1)%boss.patterns.length];
+        // Procedural poses use the registered texture, never invented sprite frames.
+        e.sprite.setAngle(e.memory.phase==='attack'&&pattern==='charge'?e.direction*14:e.memory.phase==='windup'?Math.sin(time/45)*3:0);
+        e.sprite.setScale(e.memory.phase==='windup'?3.1:3,e.memory.phase==='windup'?2.9:3);
         const bar=this.children.getByName('boss-health') as Phaser.GameObjects.Text | null;
-        if(bar)bar.setText(`${boss.name}  ${'█'.repeat(Math.ceil(20*e.health/boss.health))} ${e.health}/${boss.health} · ${e.memory.phase==='windup'?'ATTACK INCOMING':e.health<=boss.health/2?'ENRAGED':''}`);
-        else this.add.text(280,95,'',{fontSize:'18px',color:'#ffb0b0',backgroundColor:'#21182bee',padding:{x:12,y:6}}).setName('boss-health').setScrollFactor(0).setDepth(3000);
+        if(bar)bar.setText(`${boss.name}  ${'█'.repeat(Math.ceil(20*e.health/boss.health))} ${e.health}/${boss.health} · ${e.memory.phase==='windup'?pattern.toUpperCase()+' — '+(pattern==='slam'?'JUMP!':pattern==='charge'?'DODGE!':'VOLLEY!'):e.health<=boss.health/2?'ENRAGED':''}`);
+        else this.add.text(220,95,'',{fontSize:'16px',color:'#ffb0b0',backgroundColor:'#21182bee',padding:{x:10,y:5}}).setName('boss-health').setScrollFactor(0).setDepth(3000);
+        if ('slam' in decision && decision.slam) {
+          this.cameras.main.shake(130,.004);
+          feedback(this,e.sprite.x,e.sprite.y,'impact');
+          for(const direction of [-1,1]){
+            const wave=this.projectiles!.create(e.sprite.x,e.sprite.y+23,'terrain',registry.roles.crystal) as Phaser.Physics.Arcade.Sprite;
+            wave.setScale(2,.6).setTint(0xffcd75).setVelocityX(direction*(e.health<=boss.health/2?310:240));
+            this.time.delayedCall(2600,()=>{if(wave.active)wave.destroy();});
+          }
+        }
       }
       if (decision.fire) {
         e.shotAt=time; this.shotsFired++;
@@ -887,7 +922,7 @@ export class PlatformerScene extends Phaser.Scene {
       }
     }
     for(const machine of this.machines){
-      machine.active=((time-this.levelStartedAt) % (machine.spec.period_ms || 2200))<(machine.spec.period_ms || 2200)*.5;
+      machine.active=!(machine.spec.disabled_by||[]).some(id=>this.gameplay.progress.activate.includes(id))&&((time-this.levelStartedAt) % (machine.spec.period_ms || 2200))<(machine.spec.period_ms || 2200)*.5;
       machine.sprite.setTint(machine.active?0xff6655:0x668899).setAlpha(machine.active?1:.4);
       if(machine.active)machine.sprite.rotation=time/100;
     }

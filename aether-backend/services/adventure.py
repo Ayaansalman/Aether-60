@@ -157,6 +157,9 @@ Schema: '''+json.dumps(AdventureDesign.model_json_schema())
     def prepare(data):
         normalized,normalizations=normalize_outdoor_return(data)
         changes.extend(normalizations)
+        from services.design_repair import repair_quest_order
+        normalized,repairs=repair_quest_order(normalized)
+        changes.extend(repairs)
         if intent and intent.get('gameplay') is not None:
             if normalized.get('gameplay') != intent['gameplay']:
                 changes.append({'field':'gameplay','before':normalized.get('gameplay'),'after':intent['gameplay'],'reason':'Typed semantic behavior contract binds construction'})
@@ -232,6 +235,12 @@ def enforce_requirements(design, prompt):
 
 def construct(design, prompt, seed=None):
     seed=seed if seed is not None else int(hashlib.sha256(prompt.encode()).hexdigest()[:8],16)
+    if design.gameplay and design.gameplay.outcome!='quests':
+        design=design.model_copy(deep=True)
+        # Spatial intent uses reusable grammars; explicit model layout wins.
+        for area in design.areas:
+            if area.layout=='auto':
+                area.layout='chambers' if re.search(r'laborator|chambers?|connecting passages|corridors?',prompt,re.I) else 'cover' if re.search(r'cover|barricade|obstacles',prompt,re.I) else 'open' if re.search(r'open|arena',prompt,re.I) else 'woodland' if area.environment=='forest' else 'cover'
     from services.adventure_world import build_area
     areas=[build_area(design,index,seed) for index in range(len(design.areas))]
     from services.adventure_assets import choose_art

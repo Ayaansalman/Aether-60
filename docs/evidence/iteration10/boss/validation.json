@@ -1,0 +1,69 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "goal_defeat_boss",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "route_0_1",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 36,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "route_1_2",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 36,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "route_2_3",
+      "passed": true,
+      "category": "level_layout",
+      "critical": true,
+      "details": {
+        "gap_with_margin": 36,
+        "safe_range": 189.3,
+        "rise": 0
+      }
+    },
+    {
+      "id": "objective_consistent",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "objective_on_main_route",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "entry_exit",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    },
+    {
+      "id": "entity_supports",
+      "passed": true,
+      "category": "specification",
+      "critical": true
+    }
+  ],
+  "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+}

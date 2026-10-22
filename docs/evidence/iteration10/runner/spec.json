@@ -1,0 +1,52 @@
+{
+  "genre": "runner",
+  "title": "Enchanted Forest Sprint",
+  "mode": "ground",
+  "theme": "forest",
+  "player": "creature",
+  "visual_style": "pixel",
+  "difficulty": "extreme",
+  "progression": "surge",
+  "challenge": {
+    "patterns": [
+      "single",
+      "rhythm",
+      "escalation",
+      "mixed",
+      "recovery"
+    ],
+    "recovery": 0.25,
+    "spacing": 0.9,
+    "precision": 0.75,
+    "transition": 30.0,
+    "sequence_length": 6,
+    "rest_every": 3
+  },
+  "exclusions": [
+    "laser",
+    "barrier"
+  ],
+  "endless": true,
+  "finish_distance": 10000.0,
+  "speed": 340.0,
+  "max_speed": 480.0,
+  "acceleration": 3.0,
+  "gravity": 1700.0,
+  "jump_impulse": 640.0,
+  "flap_impulse": 310.0,
+  "gap_height": 180.0,
+  "obstacles": [
+    "spike",
+    "gap"
+  ],
+  "scoring": "distance",
+  "unsupported": [],
+  "schema_version": "2.2",
+  "seed": 7,
+  "requirements": [
+    {
+      "source": "Runner control, procedural obstacles, score and restart",
+      "status": "constructed_unverified"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "case": "factory",
+    "runtime": "PASS",
+    "passed": 17,
+    "failed": [],
+    "semantic": "WARN"
+  },
+  {
+    "case": "garden",
+    "runtime": "PASS",
+    "passed": 22,
+    "failed": [],
+    "semantic": "PASS"
+  },
+  {
+    "case": "boss",
+    "runtime": "PASS",
+    "passed": 12,
+    "failed": [],
+    "semantic": "PASS"
+  },
+  {
+    "case": "runner",
+    "runtime": "PASS",
+    "passed": 10,
+    "failed": [],
+    "semantic": "WARN"
+  },
+  {
+    "case": "laboratory",
+    "runtime": "PASS",
+    "passed": 12,
+    "failed": [],
+    "semantic": "PASS"
+  },
+  {
+    "case": "open",
+    "runtime": "PASS",
+    "passed": 12,
+    "failed": [],
+    "semantic": "PASS"
+  },
+  {
+    "case": "easy",
+    "runtime": "PASS",
+    "passed": 10,
+    "failed": [],
+    "semantic": "PASS"
+  },
+  {
+    "case": "guardian",
+    "status": "BLOCKED",
+    "issues": [
+      {
+        "capability": "boss_shield",
+        "requirement_id": "req_0100e1aee08e",
+        "code": "RUNTIME_UNSUPPORTED",
+        "reason": "Boss damage shields controlled by switches are not implemented; door links cannot target boss immunity"
+      },
+      {
+        "capability": "boss_duel",
+        "code": "RUNTIME_UNSUPPORTED",
+        "reason": "Boss adapter constructs a dedicated single arena and cannot preserve a preceding traversal route or switch puzzle"
+      }
+    ]
+  }
+]

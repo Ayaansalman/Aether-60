@@ -1,0 +1,111 @@
+{
+  "genre": "runner",
+  "loop": "Survive the endless forest runner by avoiding gaps and spikes with precise jumps while distance increases.",
+  "control": "auto_jump",
+  "requirements": [
+    {
+      "source": "automatically sprints forward",
+      "id": "req_09af0f5eb369",
+      "meaning": "Player runs continuously without manual movement input",
+      "capability": "auto_run",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "runner_input",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true,
+      "category": "mechanic"
+    },
+    {
+      "source": "Pressing Space makes the fox jump",
+      "id": "req_a1d499acc32b",
+      "meaning": "Pressing Space triggers a jump action",
+      "capability": "endless_obstacles",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "endless_bounded_state",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true,
+      "category": "mechanic"
+    },
+    {
+      "source": "dangerous combinations of gaps and spikes",
+      "id": "req_813f67060cc8",
+      "meaning": "Endless obstacle generation spawns gaps and spikes",
+      "capability": "endless_obstacles",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "endless_bounded_state",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true,
+      "category": "mechanic"
+    },
+    {
+      "source": "Track my distance",
+      "id": "req_3a9ed62d92ee",
+      "meaning": "Score based on distance traveled in the endless run",
+      "capability": "distance_score",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "score_once",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true,
+      "category": "mechanic"
+    },
+    {
+      "source": "allow instant restart when I crash",
+      "id": "req_26592b40d56b",
+      "meaning": "Quick restart upon death/collision",
+      "capability": "restart",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "rapid_restart",
+      "biomes": [],
+      "count": null,
+      "scope": "game",
+      "mandatory": true,
+      "category": "mechanic"
+    },
+    {
+      "source": "animated forest scenery and parallax backgrounds",
+      "id": "req_4ea0437bce3d",
+      "meaning": "Visual theme applied to the runner",
+      "capability": "visual_theme",
+      "status": "planned",
+      "depends_on": [],
+      "verification": "runner_input",
+      "biomes": [
+        "forest"
+      ],
+      "count": null,
+      "scope": "game",
+      "mandatory": true,
+      "category": "presentation"
+    }
+  ],
+  "arcade": {
+    "difficulty": "extreme",
+    "progression": "surge",
+    "theme": "forest",
+    "player": "creature",
+    "endless": true,
+    "exclusions": [
+      "laser",
+      "barrier"
+    ]
+  },
+  "perspective": "side_scrolling",
+  "structure": "endless",
+  "loops": [
+    "survival",
+    "avoidance"
+  ],
+  "gameplay": null
+}

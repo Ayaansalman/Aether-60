@@ -15,10 +15,19 @@ def plan(prompt,mode,intent=None):
     arcade=(intent or {}).get('arcade') or {}
     bindings=[]
     def prepare(raw):
+        control=(intent or {}).get('control')
+        if control in ('auto_jump','flap'):
+            expected='ground' if control=='auto_jump' else 'flap'
+            if raw.get('mode')!=expected:bindings.append({'field':'mode','model_value':raw.get('mode'),'semantic_value':expected})
+            raw['mode']=expected
         for key,value in arcade.items():
             if value is not None:
                 if raw.get(key)!=value:bindings.append({'field':key,'model_value':raw.get(key),'semantic_value':value})
                 raw[key]=value
+        supported={'instant_restart','instant restart','restart','parallax backgrounds','animated scenery'}
+        removed=[item for item in raw.get('unsupported',[]) if item.lower().strip() in supported]
+        if removed:bindings.append({'field':'unsupported','removed':removed,'reason':'Existing runner input/presentation implements these registered capabilities'})
+        raw['unsupported']=[item for item in raw.get('unsupported',[]) if item not in removed]
         return raw
     design,attempts=validated_response(provider,system,prompt,result,RunnerDesign,prepare)
     return design,{'provider':type(provider).__name__,'model':attempts[-1]['model'],'live':True,'intent_bindings':bindings,'validation_attempts':attempts}
@@ -52,6 +61,11 @@ async def run_runner(gid,request,artifact,stage,browser_report,intent=None):
     artifact('game_intent.json',{'original_prompt':request.prompt,'genre':'runner','control':design.mode,'endless':design.endless,'semantic':intent})
     stage('DESIGNING','Composing seeded obstacle stream and selected movement controller')
     ir=construct(design,request.prompt,request.seed)
+    from services.semantic_intent import fidelity
+    preliminary=fidelity(ir,intent)
+    artifact('semantic_requirement_report.json',preliminary)
+    if preliminary['overall']=='FAIL':raise ValueError('Runner construction lost mandatory requirements. Inspect semantic_requirement_report.json.')
+    ir.requirements.extend(preliminary['requirements'])
     stage('VALIDATING_SPEC','Checking typed movement bounds, scoring and obstacle configuration')
     RunnerIR.model_validate(ir.model_dump())
     artifact('validation.json',{'overall':'PASS','checks':[{'id':'typed_runner_configuration','passed':True}],'scope':'Schema and physics constraints; obstacle spacing is calculated at runtime and tested separately'})
@@ -69,4 +83,5 @@ async def run_runner(gid,request,artifact,stage,browser_report,intent=None):
     job_store.update_job(gid,spec_json=ir.model_dump_json(),latest_qa_json=json.dumps(report),qa_summary={'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks'])})
     from services.semantic_intent import fidelity
     semantic=fidelity(ir,intent,report);artifact('semantic_requirement_report.json',semantic)
+    ir.requirements=[ir.requirements[0],*semantic['requirements']];artifact('game_ir_v2.json',ir.model_dump());job_store.update_job(gid,spec_json=ir.model_dump_json())
     stage('FAILED' if report['overall']=='FAIL' or semantic['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and semantic['overall']=='PASS' and not ir.unsupported else 'READY_WITH_WARNINGS','Arcade checks '+report['overall'])

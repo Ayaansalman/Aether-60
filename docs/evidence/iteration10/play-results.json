@@ -1,0 +1,70 @@
+{
+  "results": [
+    {
+      "case": "easy",
+      "duration": 12.0,
+      "jumps": 5,
+      "final": {
+        "state": "playing",
+        "distance": 2547.025347222222,
+        "speed": 215.97916666666666,
+        "y": 430,
+        "vy": 0,
+        "score": 254,
+        "next": {
+          "id": 5,
+          "x": 3026.848452662935,
+          "width": 18.204185324420724,
+          "kind": "barrier",
+          "center": 250,
+          "gap": 240,
+          "passed": false,
+          "pattern": "rhythm",
+          "section": 1,
+          "height": 50
+        }
+      },
+      "passed": true,
+      "method": "Actual Space/R inputs, reading live obstacles for jump timing; no state overrides"
+    },
+    {
+      "case": "runner",
+      "duration": 12.01,
+      "jumps": 6,
+      "final": {
+        "state": "playing",
+        "distance": 4077.1666666667534,
+        "speed": 340,
+        "y": 430,
+        "vy": 0,
+        "score": 407,
+        "next": {
+          "id": 6,
+          "x": 4416.58965706422,
+          "width": 94.6443065350386,
+          "kind": "spike",
+          "center": 250,
+          "gap": 180,
+          "passed": false,
+          "pattern": "mixed",
+          "section": 0,
+          "height": 33
+        }
+      },
+      "passed": true,
+      "method": "Actual Space/R inputs, reading live obstacles for jump timing; no state overrides"
+    },
+    {
+      "case": "laboratory-60-seconds",
+      "wall_seconds": 61.56,
+      "score": 60.00000000000602,
+      "won": true,
+      "lost": false,
+      "score_stopped": true,
+      "restart": true,
+      "passed": true,
+      "method": "Actual elapsed 60-second scheduler, unchanged health and attack clocks; controlled evasion teleports only"
+    }
+  ],
+  "page_errors": []
+}

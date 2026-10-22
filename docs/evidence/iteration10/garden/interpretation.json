@@ -1,0 +1,311 @@
+{
+  "provider": "Replay",
+  "model": "captured-gemini",
+  "live": true,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "model": "captured-gemini",
+      "candidate": {
+        "genre": "adventure",
+        "loop": "Explore the forest and snowy ruins, collect two magical flowers, and return them to the healer to complete the quest.",
+        "control": "top_down",
+        "requirements": [
+          {
+            "source": "The entire adventure takes place on ONE continuous map.",
+            "meaning": "Single connected level with no separate zone loading.",
+            "capability": "single_level",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "verify_single_level_continuity",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "Half of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.",
+            "meaning": "World features distinct forest and dark/garden/snow biomes.",
+            "capability": "biome_regions",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "verify_biome_regions_present",
+            "biomes": [
+              "forest",
+              "garden",
+              "dark",
+              "snow",
+              "frozen_lake",
+              "icy_ruins"
+            ],
+            "count": 2,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "Walking on ice should feel slippery, while walking through the forest should have normal movement.",
+            "meaning": "Icy terrain applies reduced friction for slippery movement.",
+            "capability": "slippery_region",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "verify_localized_slippery_physics",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "A healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.",
+            "meaning": "Quest to collect specific items from a designated area.",
+            "capability": "quest_collect",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "verify_quest_item_collection",
+            "biomes": [],
+            "count": 2,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "The game ends when I return the flowers to the healer.",
+            "meaning": "Quest completion and item delivery ends the game successfully.",
+            "capability": "quest_delivery",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "verify_quest_delivery_completion",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "No enemies or combat.",
+            "meaning": "Exclusion of all combat elements and enemies.",
+            "capability": "no_combat",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "verify_absence_of_combat",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          }
+        ],
+        "arcade": null,
+        "perspective": "top_down",
+        "structure": "connected_levels",
+        "loops": [
+          "exploration",
+          "quest",
+          "collection",
+          "interaction"
+        ],
+        "gameplay": {
+          "feedback": "clear",
+          "health": 1,
+          "invulnerability_ms": 1000,
+          "player_attack": false,
+          "outcome": "quests",
+          "duration_seconds": null,
+          "scoring": "none",
+          "archetypes": [],
+          "spawns": []
+        }
+      }
+    }
+  ],
+  "source_grounding": [
+    {
+      "field": "requirements.0",
+      "before": {
+        "source": "The entire adventure takes place on ONE continuous map.",
+        "meaning": "Single connected level with no separate zone loading.",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_single_level_continuity",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "The entire adventure takes place on ONE continuous map.",
+        "meaning": "Single connected level with no separate zone loading.",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_single_level_continuity",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_5a34245c6100",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.1",
+      "before": {
+        "source": "Half of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.",
+        "meaning": "World features distinct forest and dark/garden/snow biomes.",
+        "capability": "biome_regions",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_biome_regions_present",
+        "biomes": [
+          "forest",
+          "garden",
+          "dark",
+          "snow",
+          "frozen_lake",
+          "icy_ruins"
+        ],
+        "count": 2,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "Half of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.",
+        "meaning": "World features distinct forest and dark/garden/snow biomes.",
+        "capability": "biome_regions",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_biome_regions_present",
+        "biomes": [
+          "forest",
+          "snow",
+          "icy_ruins"
+        ],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_5093f2ac8b4e",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.2",
+      "before": {
+        "source": "Walking on ice should feel slippery, while walking through the forest should have normal movement.",
+        "meaning": "Icy terrain applies reduced friction for slippery movement.",
+        "capability": "slippery_region",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_localized_slippery_physics",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "Walking on ice should feel slippery, while walking through the forest should have normal movement.",
+        "meaning": "Icy terrain applies reduced friction for slippery movement.",
+        "capability": "slippery_region",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_localized_slippery_physics",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_fff0a8f4bda6",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.3",
+      "before": {
+        "source": "A healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.",
+        "meaning": "Quest to collect specific items from a designated area.",
+        "capability": "quest_collect",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_quest_item_collection",
+        "biomes": [],
+        "count": 2,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "A healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.",
+        "meaning": "Quest to collect specific items from a designated area.",
+        "capability": "quest_collect",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_quest_item_collection",
+        "biomes": [],
+        "count": 2,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_c25926d5c9ab",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.4",
+      "before": {
+        "source": "The game ends when I return the flowers to the healer.",
+        "meaning": "Quest completion and item delivery ends the game successfully.",
+        "capability": "quest_delivery",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_quest_delivery_completion",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "The game ends when I return the flowers to the healer.",
+        "meaning": "Quest completion and item delivery ends the game successfully.",
+        "capability": "quest_delivery",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_quest_delivery_completion",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_4aa4f447291b",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.5",
+      "before": {
+        "source": "No enemies or combat.",
+        "meaning": "Exclusion of all combat elements and enemies.",
+        "capability": "no_combat",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_absence_of_combat",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "No enemies or combat.",
+        "meaning": "Exclusion of all combat elements and enemies.",
+        "capability": "no_combat",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_absence_of_combat",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_a9e8a45c6b9c",
+        "category": "exclusion"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    }
+  ]
+}

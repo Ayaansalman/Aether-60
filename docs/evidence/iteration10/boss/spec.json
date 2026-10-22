@@ -1,0 +1,170 @@
+{
+  "boss": {
+    "name": "Knight Sentinel",
+    "health": 20,
+    "telegraph_ms": 700,
+    "cooldown_ms": 1500,
+    "patterns": [
+      "charge",
+      "volley",
+      "slam"
+    ],
+    "victory": "boss_defeat",
+    "ordinary_enemies": 0
+  },
+  "title": "The Last Knight",
+  "width": 1080,
+  "height": 648,
+  "spawn": {
+    "x": 160.0,
+    "y": 475.0
+  },
+  "objective": {
+    "type": "boss_defeat",
+    "required": 0,
+    "total": 0
+  },
+  "platforms": [
+    {
+      "activation_sources": [],
+      "x": 0,
+      "y": 14,
+      "width": 8,
+      "kind": "ruins",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "activation_sources": [],
+      "x": 8,
+      "y": 14,
+      "width": 8,
+      "kind": "ruins",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "activation_sources": [],
+      "x": 16,
+      "y": 14,
+      "width": 8,
+      "kind": "ruins",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    },
+    {
+      "activation_sources": [],
+      "x": 24,
+      "y": 14,
+      "width": 6,
+      "kind": "ruins",
+      "moving": false,
+      "route": "main",
+      "motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 54,
+        "period_ms": 3000
+      }
+    }
+  ],
+  "entities": [
+    {
+      "disabled_by": [],
+      "boss": {
+        "name": "Knight Sentinel",
+        "health": 20,
+        "telegraph_ms": 700,
+        "cooldown_ms": 1500,
+        "patterns": [
+          "charge",
+          "volley",
+          "slam"
+        ],
+        "victory": "boss_defeat",
+        "ordinary_enemies": 0
+      },
+      "id": "arena_boss",
+      "x": 832.0,
+      "y": 470.0,
+      "kind": "enemy",
+      "platform": 2,
+      "behavior": "patrol",
+      "ai": {
+        "health": 1,
+        "cooldown_ms": 1400,
+        "telegraph_ms": 450,
+        "radius": 300
+      },
+      "activation": "interact",
+      "trigger": "proximity",
+      "period_ms": 2200,
+      "radius": 110
+    }
+  ],
+  "camera_mode": "follow",
+  "theme": "twilight",
+  "slippery": false,
+  "exit_style": "gate",
+  "exit_indicator": "none",
+  "collectible": "crystals",
+  "difficulty": "balanced",
+  "briefing": "F / X attacks. Dodge charges and volleys; jump over the ground slam.",
+  "topology": "journey",
+  "goals": [
+    {
+      "kind": "defeat",
+      "count": 1,
+      "seconds": 30,
+      "enemy_behavior": null,
+      "id": "defeat_boss",
+      "targets": [
+        "arena_boss"
+      ]
+    }
+  ],
+  "links": [],
+  "player_attack": "projectile",
+  "schema_version": "2.0",
+  "genre": "platformer",
+  "seed": 7,
+  "tile_size": 36,
+  "player": {
+    "speed": 250,
+    "jump": 490,
+    "gravity": 1100,
+    "health": 5,
+    "abilities": [
+      "double_jump",
+      "dash"
+    ]
+  },
+  "levels": [],
+  "campaign_goals": [],
+  "requirements": [
+    {
+      "id": "boss_duel",
+      "source": "Boss duel",
+      "status": "constructed_unverified"
+    }
+  ],
+  "asset_pack": "kenney_pixel_platformer"
+}

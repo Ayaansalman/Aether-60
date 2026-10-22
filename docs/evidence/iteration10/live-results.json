@@ -1,0 +1,24 @@
+[
+  {
+    "case": "garden",
+    "id": "93f0ea71-2aca-4cea-ba88-86a2d79c51f8",
+    "status": "FAILED",
+    "calls": 2,
+    "runtime": null,
+    "semantic": null,
+    "failures": [
+      "The design could not satisfy the requested mechanics after one correction. Inspect design_validation.json for fields and constraints."
+    ]
+  },
+  {
+    "case": "factory",
+    "id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+    "status": "FAILED",
+    "calls": 3,
+    "runtime": null,
+    "semantic": "FAIL",
+    "failures": [
+      "Constructed mechanics do not satisfy mandatory semantic requirements. Inspect semantic_requirement_report.json."
+    ]
+  }
+]

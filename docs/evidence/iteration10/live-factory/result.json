@@ -1,0 +1,3410 @@
+{
+  "job": {
+    "game_id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+    "prompt": "Create a 2D industrial puzzle-platformer called Factory Lockdown.\n\nI am trapped inside a dangerous automated factory.\n\nThe final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.\n\nThe first switch activates moving platforms that let me cross a dangerous machinery pit.\n\nThe second switch disables a laser barrier.\n\nThe final gate should open ONLY after both switches have been activated.\n\nAdd patrolling robot guards and environmental hazards, but keep combat optional. I should be able to avoid enemies instead of fighting them.\n\nInclude industrial machinery, animated warning lights, moving parts, distinct environmental areas, and clear visual feedback whenever a switch changes something.\n\nNo collectible requirements. My objective is to solve the factory mechanisms and escape.",
+    "status": "FAILED",
+    "stage": "FAILED",
+    "attempt": 1,
+    "max_attempts": 3,
+    "model_id": "gemini-3.5-flash-lite",
+    "prompt_version": "2.0",
+    "created_at": "2026-10-22T03:25:53.840600+00:00",
+    "updated_at": "2026-10-22T03:26:06.643139+00:00",
+    "error_code": "GENERATION_FAILED",
+    "artifact_paths": [
+      "semantic_intent.json",
+      "capability_compatibility.json",
+      "game_intent.json",
+      "model_design.json",
+      "requirement_report.json",
+      "game_design.json",
+      "provider.json",
+      "design_validation.json",
+      "design_normalization.json",
+      "repair_report.json",
+      "final_design.json",
+      "validation.json",
+      "game_ir_v2.json",
+      "semantic_requirement_report.json"
+    ],
+    "limitations": [
+      "Approximation: switches enable moving alternate paths; the static main route remains traversable. Timed machinery represents the requested security barrier."
+    ],
+    "qa_summary": null,
+    "game_url": null
+  },
+  "events": [
+    {
+      "id": 1951,
+      "game_id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+      "ts": "2026-10-22T03:25:53.864515+00:00",
+      "stage": "QUEUED",
+      "result": "START",
+      "detail": "Accepted live generation request",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    },
+    {
+      "id": 1952,
+      "game_id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+      "ts": "2026-10-22T03:25:53.902315+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting central loop, controls and constraints",
+      "attempt": 1,
+      "rationale": "Elapsed 0.03s; language model",
+      "diff": null
+    },
+    {
+      "id": 1953,
+      "game_id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+      "ts": "2026-10-22T03:26:01.779363+00:00",
+      "stage": "PLANNING",
+      "result": "START",
+      "detail": "Interpreting prompt with Gemini",
+      "attempt": 1,
+      "rationale": "Elapsed 7.91s; language model",
+      "diff": null
+    },
+    {
+      "id": 1954,
+      "game_id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+      "ts": "2026-10-22T03:26:06.367469+00:00",
+      "stage": "DESIGNING",
+      "result": "SUCCESS",
+      "detail": "Validated typed design; composing sections and registered mechanics",
+      "attempt": 1,
+      "rationale": "Elapsed 12.50s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1955,
+      "game_id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+      "ts": "2026-10-22T03:26:06.425104+00:00",
+      "stage": "VALIDATING_SPEC",
+      "result": "SUCCESS",
+      "detail": "Checking jump trajectories, landing margins and objective consistency",
+      "attempt": 1,
+      "rationale": "Elapsed 12.55s; deterministic service",
+      "diff": null
+    },
+    {
+      "id": 1956,
+      "game_id": "da9f93c6-14f7-44b9-89cc-7abd7565f1ea",
+      "ts": "2026-10-22T03:26:06.623578+00:00",
+      "stage": "FAILED",
+      "result": "FAILED",
+      "detail": "Constructed mechanics do not satisfy mandatory semantic requirements. Inspect semantic_requirement_report.json.",
+      "attempt": 1,
+      "rationale": null,
+      "diff": null
+    }
+  ],
+  "artifacts": {
+    "semantic_intent.json": {
+      "genre": "platformer",
+      "loop": "Activate two switches to open the security gate and escape the factory.",
+      "control": "platform",
+      "requirements": [
+        {
+          "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+          "id": "req_24e7416fc4c7",
+          "meaning": "Manual run and jump controls for platformer gameplay.",
+          "capability": "platform_movement",
+          "status": "planned",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+          "id": "req_e0b3a058c24f",
+          "meaning": "Two switches required to open the security gate.",
+          "capability": "switch_gate",
+          "status": "planned",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": 2,
+          "scope": "same_level",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+          "id": "req_3a45c7622833",
+          "meaning": "Moving platforms activated by the first switch.",
+          "capability": "moving_platforms",
+          "status": "planned",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "same_level",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "Add patrolling robot guards",
+          "id": "req_79682ec99a3e",
+          "meaning": "Patrolling robot guards in the factory level.",
+          "capability": "patrol_enemies",
+          "status": "planned",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "same_level",
+          "mandatory": true,
+          "category": "mechanic"
+        },
+        {
+          "source": "No collectible requirements.",
+          "id": "req_2af3da2214d2",
+          "meaning": "No collectibles in the game.",
+          "capability": "unsupported",
+          "status": "unsupported",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion"
+        },
+        {
+          "source": "industrial",
+          "id": "req_ad0b67452b01",
+          "meaning": "Industrial theme for the factory setting.",
+          "capability": "visual_theme",
+          "status": "planned",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": false,
+          "category": "presentation"
+        }
+      ],
+      "arcade": null,
+      "perspective": "side_scrolling",
+      "structure": "connected_levels",
+      "loops": [
+        "exploration",
+        "interaction",
+        "avoidance"
+      ],
+      "gameplay": null,
+      "provenance": {
+        "provider": "Provider",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "validation_attempts": [
+          {
+            "attempt": 1,
+            "valid": false,
+            "model": "gemini-3.5-flash-lite",
+            "errors": [
+              {
+                "loc": [],
+                "msg": "requirements.0.source must quote an exact contiguous substring of the original prompt; invalid source: 'manual run/jump or boss arenas'"
+              }
+            ],
+            "candidate": {
+              "genre": "platformer",
+              "loop": "Activate two switches to open the security gate and escape the factory.",
+              "control": "platform",
+              "perspective": "side_scrolling",
+              "structure": "connected_levels",
+              "loops": [
+                "exploration",
+                "interaction",
+                "avoidance"
+              ],
+              "gameplay": null,
+              "requirements": [
+                {
+                  "source": "manual run/jump or boss arenas",
+                  "meaning": "Manual run and jump controls for platformer gameplay.",
+                  "capability": "platform_movement",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "game"
+                },
+                {
+                  "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+                  "meaning": "Two switches required to open the security gate.",
+                  "capability": "switch_gate",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "same_level",
+                  "count": 2
+                },
+                {
+                  "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+                  "meaning": "Moving platforms activated by the first switch.",
+                  "capability": "moving_platforms",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "same_level",
+                  "count": 1
+                },
+                {
+                  "source": "Add patrolling robot guards",
+                  "meaning": "Patrolling robot guards in the factory level.",
+                  "capability": "patrol_enemies",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "same_level"
+                },
+                {
+                  "source": "No collectible requirements.",
+                  "meaning": "No collectibles in the game.",
+                  "capability": "unsupported",
+                  "status": "unsupported",
+                  "category": "exclusion",
+                  "mandatory": true,
+                  "scope": "game"
+                },
+                {
+                  "source": "industrial",
+                  "meaning": "Industrial theme for the factory setting.",
+                  "capability": "visual_theme",
+                  "status": "planned",
+                  "category": "presentation",
+                  "mandatory": false,
+                  "scope": "game",
+                  "biomes": []
+                }
+              ],
+              "arcade": null
+            }
+          },
+          {
+            "attempt": 2,
+            "valid": true,
+            "model": "gemini-3.5-flash-lite",
+            "candidate": {
+              "genre": "platformer",
+              "loop": "Activate two switches to open the security gate and escape the factory.",
+              "control": "platform",
+              "perspective": "side_scrolling",
+              "structure": "connected_levels",
+              "loops": [
+                "exploration",
+                "interaction",
+                "avoidance"
+              ],
+              "gameplay": null,
+              "requirements": [
+                {
+                  "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+                  "meaning": "Manual run and jump controls for platformer gameplay.",
+                  "capability": "platform_movement",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "game"
+                },
+                {
+                  "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+                  "meaning": "Two switches required to open the security gate.",
+                  "capability": "switch_gate",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "same_level",
+                  "count": 2
+                },
+                {
+                  "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+                  "meaning": "Moving platforms activated by the first switch.",
+                  "capability": "moving_platforms",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "same_level",
+                  "count": 1
+                },
+                {
+                  "source": "Add patrolling robot guards",
+                  "meaning": "Patrolling robot guards in the factory level.",
+                  "capability": "patrol_enemies",
+                  "status": "planned",
+                  "category": "mechanic",
+                  "mandatory": true,
+                  "scope": "same_level"
+                },
+                {
+                  "source": "No collectible requirements.",
+                  "meaning": "No collectibles in the game.",
+                  "capability": "unsupported",
+                  "status": "unsupported",
+                  "category": "exclusion",
+                  "mandatory": true,
+                  "scope": "game"
+                },
+                {
+                  "source": "industrial",
+                  "meaning": "Industrial theme for the factory setting.",
+                  "capability": "visual_theme",
+                  "status": "planned",
+                  "category": "presentation",
+                  "mandatory": false,
+                  "scope": "game",
+                  "biomes": []
+                }
+              ],
+              "arcade": null
+            }
+          }
+        ],
+        "source_grounding": [
+          {
+            "field": "requirements.0",
+            "before": {
+              "source": "manual run/jump or boss arenas",
+              "meaning": "Manual run and jump controls for platformer gameplay.",
+              "capability": "platform_movement",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "game"
+            },
+            "after": {
+              "source": "manual run/jump or boss arenas",
+              "meaning": "Manual run and jump controls for platformer gameplay.",
+              "capability": "platform_movement",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "game",
+              "id": "req_2a4bcf00b553",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.1",
+            "before": {
+              "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+              "meaning": "Two switches required to open the security gate.",
+              "capability": "switch_gate",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": 2
+            },
+            "after": {
+              "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+              "meaning": "Two switches required to open the security gate.",
+              "capability": "switch_gate",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": 2,
+              "id": "req_e0b3a058c24f",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.2",
+            "before": {
+              "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+              "meaning": "Moving platforms activated by the first switch.",
+              "capability": "moving_platforms",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": 1
+            },
+            "after": {
+              "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+              "meaning": "Moving platforms activated by the first switch.",
+              "capability": "moving_platforms",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": null,
+              "id": "req_3a45c7622833",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.3",
+            "before": {
+              "source": "Add patrolling robot guards",
+              "meaning": "Patrolling robot guards in the factory level.",
+              "capability": "patrol_enemies",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level"
+            },
+            "after": {
+              "source": "Add patrolling robot guards",
+              "meaning": "Patrolling robot guards in the factory level.",
+              "capability": "patrol_enemies",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "id": "req_79682ec99a3e",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.4",
+            "before": {
+              "source": "No collectible requirements.",
+              "meaning": "No collectibles in the game.",
+              "capability": "unsupported",
+              "status": "unsupported",
+              "category": "exclusion",
+              "mandatory": true,
+              "scope": "game"
+            },
+            "after": {
+              "source": "No collectible requirements.",
+              "meaning": "No collectibles in the game.",
+              "capability": "unsupported",
+              "status": "unsupported",
+              "category": "exclusion",
+              "mandatory": true,
+              "scope": "game",
+              "id": "req_2af3da2214d2",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.5",
+            "before": {
+              "source": "industrial",
+              "meaning": "Industrial theme for the factory setting.",
+              "capability": "visual_theme",
+              "status": "planned",
+              "category": "presentation",
+              "mandatory": false,
+              "scope": "game",
+              "biomes": []
+            },
+            "after": {
+              "source": "industrial",
+              "meaning": "Industrial theme for the factory setting.",
+              "capability": "visual_theme",
+              "status": "planned",
+              "category": "presentation",
+              "mandatory": false,
+              "scope": "game",
+              "biomes": [],
+              "id": "req_ad0b67452b01"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.0",
+            "before": {
+              "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+              "meaning": "Manual run and jump controls for platformer gameplay.",
+              "capability": "platform_movement",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "game"
+            },
+            "after": {
+              "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+              "meaning": "Manual run and jump controls for platformer gameplay.",
+              "capability": "platform_movement",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "game",
+              "id": "req_24e7416fc4c7",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.1",
+            "before": {
+              "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+              "meaning": "Two switches required to open the security gate.",
+              "capability": "switch_gate",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": 2
+            },
+            "after": {
+              "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+              "meaning": "Two switches required to open the security gate.",
+              "capability": "switch_gate",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": 2,
+              "id": "req_e0b3a058c24f",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.2",
+            "before": {
+              "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+              "meaning": "Moving platforms activated by the first switch.",
+              "capability": "moving_platforms",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": 1
+            },
+            "after": {
+              "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+              "meaning": "Moving platforms activated by the first switch.",
+              "capability": "moving_platforms",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "count": null,
+              "id": "req_3a45c7622833",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.3",
+            "before": {
+              "source": "Add patrolling robot guards",
+              "meaning": "Patrolling robot guards in the factory level.",
+              "capability": "patrol_enemies",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level"
+            },
+            "after": {
+              "source": "Add patrolling robot guards",
+              "meaning": "Patrolling robot guards in the factory level.",
+              "capability": "patrol_enemies",
+              "status": "planned",
+              "category": "mechanic",
+              "mandatory": true,
+              "scope": "same_level",
+              "id": "req_79682ec99a3e",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.4",
+            "before": {
+              "source": "No collectible requirements.",
+              "meaning": "No collectibles in the game.",
+              "capability": "unsupported",
+              "status": "unsupported",
+              "category": "exclusion",
+              "mandatory": true,
+              "scope": "game"
+            },
+            "after": {
+              "source": "No collectible requirements.",
+              "meaning": "No collectibles in the game.",
+              "capability": "unsupported",
+              "status": "unsupported",
+              "category": "exclusion",
+              "mandatory": true,
+              "scope": "game",
+              "id": "req_2af3da2214d2",
+              "biomes": []
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          },
+          {
+            "field": "requirements.5",
+            "before": {
+              "source": "industrial",
+              "meaning": "Industrial theme for the factory setting.",
+              "capability": "visual_theme",
+              "status": "planned",
+              "category": "presentation",
+              "mandatory": false,
+              "scope": "game",
+              "biomes": []
+            },
+            "after": {
+              "source": "industrial",
+              "meaning": "Industrial theme for the factory setting.",
+              "capability": "visual_theme",
+              "status": "planned",
+              "category": "presentation",
+              "mandatory": false,
+              "scope": "game",
+              "biomes": [],
+              "id": "req_ad0b67452b01"
+            },
+            "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+          }
+        ]
+      }
+    },
+    "capability_compatibility.json": {
+      "overall": "PASS",
+      "issues": [],
+      "decision_source": "deterministic capability compatibility",
+      "catalog": {
+        "platform_movement": {
+          "ir_path": "player",
+          "verification": "mandatory_route_edges",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "player"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "top_down_movement": {
+          "ir_path": "areas",
+          "verification": "top_down_horizontal_movement",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "auto_run": {
+          "ir_path": "mode",
+          "verification": "runner_input",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "flap": {
+          "ir_path": "mode",
+          "verification": "repeatable_flap",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "mode"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "endless_obstacles": {
+          "ir_path": "endless",
+          "verification": "endless_bounded_state",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "endless"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "finite_finish": {
+          "ir_path": "finish_distance",
+          "verification": null,
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "finish_distance"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "distance_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "gap_score": {
+          "ir_path": "scoring",
+          "verification": "score_once",
+          "controls": [
+            "auto_jump",
+            "flap"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "restart": {
+          "ir_path": "genre",
+          "verification": "rapid_restart",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "genre"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_duel": {
+          "ir_path": "boss",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_health_bar": {
+          "ir_path": "boss.health",
+          "verification": "boss_arena",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_patterns": {
+          "ir_path": "boss.patterns",
+          "verification": "boss_volley",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.patterns"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_defeat": {
+          "ir_path": "boss.victory",
+          "verification": "boss_duel",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.victory"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_ordinary_enemies": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_collectibles": {
+          "ir_path": "entities",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_combat": {
+          "ir_path": "combat",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "combat"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "single_level": {
+          "ir_path": "areas/levels",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "areas/levels"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "biome_regions": {
+          "ir_path": "areas.regions",
+          "verification": "biome_regions",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "slippery_region": {
+          "ir_path": "areas.regions.slippery",
+          "verification": "localized_slippery",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "areas.regions.slippery"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_delivery": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_collect": {
+          "ir_path": "quests",
+          "verification": "quest_collect",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_activate": {
+          "ir_path": "quests",
+          "verification": "quest_activate",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_unlock": {
+          "ir_path": "quests",
+          "verification": "quest_unlock",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "quest_explore": {
+          "ir_path": "quests",
+          "verification": "quest_explore",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "adventure_combat": {
+          "ir_path": "quests",
+          "verification": "adventure_combat",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "treasure_finish": {
+          "ir_path": "quests",
+          "verification": "adventure_completion",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "quests"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "projectile_attack": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "sword_melee": {
+          "ir_path": "player_attack",
+          "verification": "player_attack_damage",
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "player_attack"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "visual_theme": {
+          "ir_path": "theme",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "theme"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "unsupported": {
+          "ir_path": "unsupported",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "unsupported"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "slippery_platforms": {
+          "ir_path": "slippery",
+          "verification": "slippery_momentum",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "slippery"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "falling_icicles": {
+          "ir_path": "entities",
+          "verification": "falling_icicle_cycle",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "entities"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "boss_shield": {
+          "ir_path": "boss.shield",
+          "verification": null,
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "boss.shield"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "switch_gate": {
+          "ir_path": "links",
+          "verification": "shared_gate_dependency",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "links"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "moving_platforms": {
+          "ir_path": "platforms.moving",
+          "verification": "moving_platform_motion",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "platforms.moving"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "patrol_enemies": {
+          "ir_path": "entities.behavior",
+          "verification": "enemy_patrol",
+          "controls": [
+            "platform"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "entities.behavior"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "health_damage": {
+          "ir_path": "gameplay.health",
+          "verification": "composition_health_loss",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.health"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "enemy_spawning": {
+          "ir_path": "gameplay.spawns",
+          "verification": "composition_safe_spawning",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "top_down_movement",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.spawns"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+        },
+        "enemy_roles": {
+          "ir_path": "gameplay.archetypes",
+          "verification": "composition_enemy_roles",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes"
+          ],
+          "behavior_types": [
+            "chase",
+            "patrol",
+            "shooter"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "attack_sequence": {
+          "ir_path": "gameplay.archetypes.attack",
+          "verification": "composition_attack_sequence",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "enemy_roles",
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.archetypes.attack"
+          ],
+          "behavior_types": [
+            "timed_projectile_sequence"
+          ],
+          "conflicts": [
+            "no_combat"
+          ],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "survival_time": {
+          "ir_path": "gameplay.scoring",
+          "verification": "composition_survival_score",
+          "controls": [
+            "top_down"
+          ],
+          "dependencies": [
+            "health_damage"
+          ],
+          "required_configuration": [
+            "gameplay",
+            "gameplay.scoring"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "AdventureScene + BehaviorWorld",
+          "limitation": null
+        },
+        "no_inventory": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_quests": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_npcs": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        },
+        "no_exit": {
+          "ir_path": "gameplay",
+          "verification": null,
+          "controls": [],
+          "dependencies": [],
+          "required_configuration": [
+            "gameplay"
+          ],
+          "behavior_types": [],
+          "conflicts": [],
+          "runtime": "existing family adapter",
+          "limitation": null
+        }
+      },
+      "relationships": null,
+      "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+    },
+    "game_intent.json": {
+      "original_prompt": "Create a 2D industrial puzzle-platformer called Factory Lockdown.\n\nI am trapped inside a dangerous automated factory.\n\nThe final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.\n\nThe first switch activates moving platforms that let me cross a dangerous machinery pit.\n\nThe second switch disables a laser barrier.\n\nThe final gate should open ONLY after both switches have been activated.\n\nAdd patrolling robot guards and environmental hazards, but keep combat optional. I should be able to avoid enemies instead of fighting them.\n\nInclude industrial machinery, animated warning lights, moving parts, distinct environmental areas, and clear visual feedback whenever a switch changes something.\n\nNo collectible requirements. My objective is to solve the factory mechanisms and escape.",
+      "genre": "platformer",
+      "setting": "industrial",
+      "gameplay": {
+        "objectives": [
+          {
+            "kind": "activate",
+            "count": 2,
+            "seconds": 30,
+            "enemy_behavior": null
+          },
+          {
+            "kind": "unlock",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          }
+        ],
+        "campaign_objectives": [],
+        "interactions": [
+          {
+            "enable_platforms": true,
+            "disable_hazards": false,
+            "trigger": "interact",
+            "section": 1,
+            "door_section": 4,
+            "gate": "sec_gate"
+          },
+          {
+            "enable_platforms": false,
+            "disable_hazards": true,
+            "trigger": "interact",
+            "section": 3,
+            "door_section": 4,
+            "gate": "sec_gate"
+          }
+        ],
+        "player_attack": "stomp"
+      },
+      "level_count": 1,
+      "progression": [],
+      "requested_mechanics": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "span": [
+            12,
+            22
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "environment_composition"
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            458,
+            468
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "enemy_patrol"
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving platforms",
+          "span": [
+            272,
+            288
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "moving_platform_motion"
+        },
+        {
+          "id": "timed_hazards",
+          "source": "dangerous machinery",
+          "span": [
+            309,
+            328
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "timed_hazard_cycle"
+        },
+        {
+          "id": "switches",
+          "source": "switches",
+          "span": [
+            194,
+            202
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "switch_door"
+        }
+      ],
+      "model_requests": [],
+      "unsupported": [],
+      "interpretation_source": {
+        "provider": "Provider",
+        "model": "gemini-3.5-flash-lite",
+        "live": true,
+        "initial_latency_ms": 4144,
+        "fallbacks": [],
+        "validation_attempts": [
+          {
+            "attempt": 1,
+            "valid": true,
+            "model": "gemini-3.5-flash-lite",
+            "candidate": {
+              "title": "Factory Lockdown",
+              "premise": "Trapped inside a dangerous automated factory, you must navigate industrial hazards, avoid patrolling robot guards, and activate two separate switches to unlock the final security gate.",
+              "genre": "platformer",
+              "theme": "industrial",
+              "difficulty": "balanced",
+              "objective": "reach_exit",
+              "abilities": [],
+              "checkpoints": true,
+              "moving_platforms": true,
+              "platform_motion": {
+                "axis": "horizontal",
+                "pattern": "sine",
+                "distance": 64,
+                "period_ms": 3000
+              },
+              "player_attack": "stomp",
+              "interactions": [
+                {
+                  "trigger": "interact",
+                  "section": 1,
+                  "door_section": 4,
+                  "gate": "sec_gate",
+                  "enable_platforms": true,
+                  "disable_hazards": false
+                },
+                {
+                  "trigger": "interact",
+                  "section": 3,
+                  "door_section": 4,
+                  "gate": "sec_gate",
+                  "enable_platforms": false,
+                  "disable_hazards": true
+                }
+              ],
+              "objectives": [
+                {
+                  "kind": "activate",
+                  "count": 2
+                }
+              ],
+              "slippery": false,
+              "falling_icicles": false,
+              "icicle_trigger": "mixed",
+              "hazard_period_ms": 2000,
+              "timed_hazards": true,
+              "exit_indicator": "glow",
+              "exit_style": "gate",
+              "collectible": "crystals",
+              "collectibles_enabled": false,
+              "level_count": 1,
+              "topology": "journey",
+              "sections": [
+                {
+                  "kind": "factory",
+                  "length": 6,
+                  "elevation": 0,
+                  "gap": 1,
+                  "enemies": false,
+                  "hazards": false,
+                  "challenge": "traversal"
+                },
+                {
+                  "kind": "factory",
+                  "length": 6,
+                  "elevation": 1,
+                  "gap": 2,
+                  "enemies": true,
+                  "hazards": true,
+                  "encounter": "patrol",
+                  "ai": {
+                    "health": 1,
+                    "cooldown_ms": 2000,
+                    "telegraph_ms": 500,
+                    "radius": 250
+                  },
+                  "challenge": "combat"
+                },
+                {
+                  "kind": "factory",
+                  "length": 6,
+                  "elevation": 0,
+                  "gap": 2,
+                  "enemies": true,
+                  "hazards": true,
+                  "encounter": "patrol",
+                  "ai": {
+                    "health": 1,
+                    "cooldown_ms": 2000,
+                    "telegraph_ms": 500,
+                    "radius": 250
+                  },
+                  "challenge": "hazards"
+                },
+                {
+                  "kind": "factory",
+                  "length": 6,
+                  "elevation": 1,
+                  "gap": 2,
+                  "enemies": false,
+                  "hazards": true,
+                  "challenge": "moving"
+                },
+                {
+                  "kind": "factory",
+                  "length": 6,
+                  "elevation": 0,
+                  "gap": 1,
+                  "enemies": false,
+                  "hazards": false,
+                  "challenge": "exploration"
+                }
+              ],
+              "unsupported": [],
+              "design_notes": [
+                "Combat is optional; enemies can be entirely avoided through careful timing and platforming.",
+                "Two independent switches link to the shared security gate using the 'sec_gate' ID, requiring both activations to open the exit."
+              ],
+              "requested_features": [
+                {
+                  "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+                  "capability": "factory_environment",
+                  "description": "Industrial theme for the factory setting."
+                },
+                {
+                  "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+                  "capability": "switches",
+                  "description": "Two separate switches required to open the security gate."
+                },
+                {
+                  "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+                  "capability": "moving_platforms",
+                  "description": "Moving platforms activated by the first switch."
+                },
+                {
+                  "source": "The second switch disables a laser barrier.",
+                  "capability": "timed_hazards",
+                  "description": "Disable hazards interaction controlled by the second switch."
+                },
+                {
+                  "source": "Add patrolling robot guards and environmental hazards, but keep combat optional.",
+                  "capability": "patrol",
+                  "description": "Patrolling robot guards that can be avoided."
+                },
+                {
+                  "source": "No collectible requirements.",
+                  "capability": "collectibles",
+                  "description": "Collectibles disabled as requested."
+                }
+              ]
+            }
+          }
+        ],
+        "requirement_authority": "semantic_intent.json",
+        "advisory_designer_requirements": [
+          {
+            "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+            "capability": "factory_environment",
+            "description": "Industrial theme for the factory setting."
+          },
+          {
+            "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+            "capability": "switches",
+            "description": "Two separate switches required to open the security gate."
+          },
+          {
+            "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+            "capability": "moving_platforms",
+            "description": "Moving platforms activated by the first switch."
+          },
+          {
+            "source": "The second switch disables a laser barrier.",
+            "capability": "timed_hazards",
+            "description": "Disable hazards interaction controlled by the second switch."
+          },
+          {
+            "source": "Add patrolling robot guards and environmental hazards, but keep combat optional.",
+            "capability": "patrol",
+            "description": "Patrolling robot guards that can be avoided."
+          },
+          {
+            "source": "No collectible requirements.",
+            "capability": "collectibles",
+            "description": "Collectibles disabled as requested."
+          }
+        ],
+        "normalizations": []
+      }
+    },
+    "model_design.json": {
+      "boss": null,
+      "collectibles_enabled": false,
+      "title": "Factory Lockdown",
+      "premise": "Trapped inside a dangerous automated factory, you must navigate industrial hazards, avoid patrolling robot guards, and activate two separate switches to unlock the final security gate.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "balanced",
+      "objective": "reach_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 64,
+        "period_ms": 3000
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "enable_platforms": true,
+          "disable_hazards": false,
+          "trigger": "interact",
+          "section": 1,
+          "door_section": 4,
+          "gate": "sec_gate"
+        },
+        {
+          "enable_platforms": false,
+          "disable_hazards": true,
+          "trigger": "interact",
+          "section": 3,
+          "door_section": 4,
+          "gate": "sec_gate"
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "activate",
+          "count": 2,
+          "seconds": 30,
+          "enemy_behavior": null
+        }
+      ],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2000,
+      "timed_hazards": true,
+      "exit_indicator": "glow",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "journey",
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 2000,
+            "telegraph_ms": 500,
+            "radius": 250
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 2000,
+            "telegraph_ms": 500,
+            "radius": 250
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Combat is optional; enemies can be entirely avoided through careful timing and platforming.",
+        "Two independent switches link to the shared security gate using the 'sec_gate' ID, requiring both activations to open the exit."
+      ],
+      "requested_features": []
+    },
+    "requirement_report.json": {
+      "scope": "Explicit phrase extraction plus model-enumerated requests; subjective style requires human review.",
+      "requirements": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "span": [
+            12,
+            22
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "environment_composition"
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            458,
+            468
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "enemy_patrol"
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving platforms",
+          "span": [
+            272,
+            288
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "moving_platform_motion"
+        },
+        {
+          "id": "timed_hazards",
+          "source": "dangerous machinery",
+          "span": [
+            309,
+            328
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "timed_hazard_cycle"
+        },
+        {
+          "id": "switches",
+          "source": "switches",
+          "span": [
+            194,
+            202
+          ],
+          "supported": true,
+          "status": "pending",
+          "runtime_check": "switch_door"
+        }
+      ],
+      "changes": [
+        {
+          "field": "topology",
+          "before": "journey",
+          "after": "terraces",
+          "reason": "Explicit requested capability"
+        },
+        {
+          "field": "gameplay",
+          "before": {
+            "objectives": [
+              {
+                "kind": "activate",
+                "count": 2,
+                "seconds": 30,
+                "enemy_behavior": null
+              }
+            ],
+            "interactions": [
+              {
+                "enable_platforms": true,
+                "disable_hazards": false,
+                "trigger": "interact",
+                "section": 1,
+                "door_section": 4,
+                "gate": "sec_gate"
+              },
+              {
+                "enable_platforms": false,
+                "disable_hazards": true,
+                "trigger": "interact",
+                "section": 3,
+                "door_section": 4,
+                "gate": "sec_gate"
+              }
+            ],
+            "player_attack": "stomp"
+          },
+          "after": {
+            "objectives": [
+              {
+                "kind": "activate",
+                "count": 2,
+                "seconds": 30,
+                "enemy_behavior": null
+              },
+              {
+                "kind": "unlock",
+                "count": 0,
+                "seconds": 30,
+                "enemy_behavior": null
+              }
+            ],
+            "interactions": [
+              {
+                "enable_platforms": true,
+                "disable_hazards": false,
+                "trigger": "interact",
+                "section": 1,
+                "door_section": 4,
+                "gate": "sec_gate"
+              },
+              {
+                "enable_platforms": false,
+                "disable_hazards": true,
+                "trigger": "interact",
+                "section": 3,
+                "door_section": 4,
+                "gate": "sec_gate"
+              }
+            ],
+            "player_attack": "stomp"
+          },
+          "reason": "Explicit gameplay requirements composed into registered components"
+        }
+      ],
+      "unsupported": [],
+      "overall": "PASS"
+    },
+    "game_design.json": {
+      "boss": null,
+      "collectibles_enabled": false,
+      "title": "Factory Lockdown",
+      "premise": "Trapped inside a dangerous automated factory, you must navigate industrial hazards, avoid patrolling robot guards, and activate two separate switches to unlock the final security gate.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "balanced",
+      "objective": "reach_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 64,
+        "period_ms": 3000
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "enable_platforms": true,
+          "disable_hazards": false,
+          "trigger": "interact",
+          "section": 1,
+          "door_section": 4,
+          "gate": "sec_gate"
+        },
+        {
+          "enable_platforms": false,
+          "disable_hazards": true,
+          "trigger": "interact",
+          "section": 3,
+          "door_section": 4,
+          "gate": "sec_gate"
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "activate",
+          "count": 2,
+          "seconds": 30,
+          "enemy_behavior": null
+        },
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        }
+      ],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2000,
+      "timed_hazards": true,
+      "exit_indicator": "glow",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "terraces",
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 2000,
+            "telegraph_ms": 500,
+            "radius": 250
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 2000,
+            "telegraph_ms": 500,
+            "radius": 250
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Combat is optional; enemies can be entirely avoided through careful timing and platforming.",
+        "Two independent switches link to the shared security gate using the 'sec_gate' ID, requiring both activations to open the exit.",
+        "Approximation: switches enable moving alternate paths; the static main route remains traversable. Timed machinery represents the requested security barrier."
+      ],
+      "requested_features": []
+    },
+    "provider.json": {
+      "provider": "Provider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "initial_latency_ms": 4144,
+      "fallbacks": [],
+      "validation_attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "gemini-3.5-flash-lite",
+          "candidate": {
+            "title": "Factory Lockdown",
+            "premise": "Trapped inside a dangerous automated factory, you must navigate industrial hazards, avoid patrolling robot guards, and activate two separate switches to unlock the final security gate.",
+            "genre": "platformer",
+            "theme": "industrial",
+            "difficulty": "balanced",
+            "objective": "reach_exit",
+            "abilities": [],
+            "checkpoints": true,
+            "moving_platforms": true,
+            "platform_motion": {
+              "axis": "horizontal",
+              "pattern": "sine",
+              "distance": 64,
+              "period_ms": 3000
+            },
+            "player_attack": "stomp",
+            "interactions": [
+              {
+                "trigger": "interact",
+                "section": 1,
+                "door_section": 4,
+                "gate": "sec_gate",
+                "enable_platforms": true,
+                "disable_hazards": false
+              },
+              {
+                "trigger": "interact",
+                "section": 3,
+                "door_section": 4,
+                "gate": "sec_gate",
+                "enable_platforms": false,
+                "disable_hazards": true
+              }
+            ],
+            "objectives": [
+              {
+                "kind": "activate",
+                "count": 2
+              }
+            ],
+            "slippery": false,
+            "falling_icicles": false,
+            "icicle_trigger": "mixed",
+            "hazard_period_ms": 2000,
+            "timed_hazards": true,
+            "exit_indicator": "glow",
+            "exit_style": "gate",
+            "collectible": "crystals",
+            "collectibles_enabled": false,
+            "level_count": 1,
+            "topology": "journey",
+            "sections": [
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "challenge": "traversal"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 1,
+                "gap": 2,
+                "enemies": true,
+                "hazards": true,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 2000,
+                  "telegraph_ms": 500,
+                  "radius": 250
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 2,
+                "enemies": true,
+                "hazards": true,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 2000,
+                  "telegraph_ms": 500,
+                  "radius": 250
+                },
+                "challenge": "hazards"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 1,
+                "gap": 2,
+                "enemies": false,
+                "hazards": true,
+                "challenge": "moving"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "challenge": "exploration"
+              }
+            ],
+            "unsupported": [],
+            "design_notes": [
+              "Combat is optional; enemies can be entirely avoided through careful timing and platforming.",
+              "Two independent switches link to the shared security gate using the 'sec_gate' ID, requiring both activations to open the exit."
+            ],
+            "requested_features": [
+              {
+                "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+                "capability": "factory_environment",
+                "description": "Industrial theme for the factory setting."
+              },
+              {
+                "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+                "capability": "switches",
+                "description": "Two separate switches required to open the security gate."
+              },
+              {
+                "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+                "capability": "moving_platforms",
+                "description": "Moving platforms activated by the first switch."
+              },
+              {
+                "source": "The second switch disables a laser barrier.",
+                "capability": "timed_hazards",
+                "description": "Disable hazards interaction controlled by the second switch."
+              },
+              {
+                "source": "Add patrolling robot guards and environmental hazards, but keep combat optional.",
+                "capability": "patrol",
+                "description": "Patrolling robot guards that can be avoided."
+              },
+              {
+                "source": "No collectible requirements.",
+                "capability": "collectibles",
+                "description": "Collectibles disabled as requested."
+              }
+            ]
+          }
+        }
+      ],
+      "requirement_authority": "semantic_intent.json",
+      "advisory_designer_requirements": [
+        {
+          "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+          "capability": "factory_environment",
+          "description": "Industrial theme for the factory setting."
+        },
+        {
+          "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+          "capability": "switches",
+          "description": "Two separate switches required to open the security gate."
+        },
+        {
+          "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+          "capability": "moving_platforms",
+          "description": "Moving platforms activated by the first switch."
+        },
+        {
+          "source": "The second switch disables a laser barrier.",
+          "capability": "timed_hazards",
+          "description": "Disable hazards interaction controlled by the second switch."
+        },
+        {
+          "source": "Add patrolling robot guards and environmental hazards, but keep combat optional.",
+          "capability": "patrol",
+          "description": "Patrolling robot guards that can be avoided."
+        },
+        {
+          "source": "No collectible requirements.",
+          "capability": "collectibles",
+          "description": "Collectibles disabled as requested."
+        }
+      ],
+      "normalizations": []
+    },
+    "design_validation.json": {
+      "attempts": [
+        {
+          "attempt": 1,
+          "valid": true,
+          "model": "gemini-3.5-flash-lite",
+          "candidate": {
+            "title": "Factory Lockdown",
+            "premise": "Trapped inside a dangerous automated factory, you must navigate industrial hazards, avoid patrolling robot guards, and activate two separate switches to unlock the final security gate.",
+            "genre": "platformer",
+            "theme": "industrial",
+            "difficulty": "balanced",
+            "objective": "reach_exit",
+            "abilities": [],
+            "checkpoints": true,
+            "moving_platforms": true,
+            "platform_motion": {
+              "axis": "horizontal",
+              "pattern": "sine",
+              "distance": 64,
+              "period_ms": 3000
+            },
+            "player_attack": "stomp",
+            "interactions": [
+              {
+                "trigger": "interact",
+                "section": 1,
+                "door_section": 4,
+                "gate": "sec_gate",
+                "enable_platforms": true,
+                "disable_hazards": false
+              },
+              {
+                "trigger": "interact",
+                "section": 3,
+                "door_section": 4,
+                "gate": "sec_gate",
+                "enable_platforms": false,
+                "disable_hazards": true
+              }
+            ],
+            "objectives": [
+              {
+                "kind": "activate",
+                "count": 2
+              }
+            ],
+            "slippery": false,
+            "falling_icicles": false,
+            "icicle_trigger": "mixed",
+            "hazard_period_ms": 2000,
+            "timed_hazards": true,
+            "exit_indicator": "glow",
+            "exit_style": "gate",
+            "collectible": "crystals",
+            "collectibles_enabled": false,
+            "level_count": 1,
+            "topology": "journey",
+            "sections": [
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "challenge": "traversal"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 1,
+                "gap": 2,
+                "enemies": true,
+                "hazards": true,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 2000,
+                  "telegraph_ms": 500,
+                  "radius": 250
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 2,
+                "enemies": true,
+                "hazards": true,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 2000,
+                  "telegraph_ms": 500,
+                  "radius": 250
+                },
+                "challenge": "hazards"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 1,
+                "gap": 2,
+                "enemies": false,
+                "hazards": true,
+                "challenge": "moving"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "challenge": "exploration"
+              }
+            ],
+            "unsupported": [],
+            "design_notes": [
+              "Combat is optional; enemies can be entirely avoided through careful timing and platforming.",
+              "Two independent switches link to the shared security gate using the 'sec_gate' ID, requiring both activations to open the exit."
+            ],
+            "requested_features": [
+              {
+                "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+                "capability": "factory_environment",
+                "description": "Industrial theme for the factory setting."
+              },
+              {
+                "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+                "capability": "switches",
+                "description": "Two separate switches required to open the security gate."
+              },
+              {
+                "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+                "capability": "moving_platforms",
+                "description": "Moving platforms activated by the first switch."
+              },
+              {
+                "source": "The second switch disables a laser barrier.",
+                "capability": "timed_hazards",
+                "description": "Disable hazards interaction controlled by the second switch."
+              },
+              {
+                "source": "Add patrolling robot guards and environmental hazards, but keep combat optional.",
+                "capability": "patrol",
+                "description": "Patrolling robot guards that can be avoided."
+              },
+              {
+                "source": "No collectible requirements.",
+                "capability": "collectibles",
+                "description": "Collectibles disabled as requested."
+              }
+            ]
+          }
+        }
+      ],
+      "maximum_corrections": 1
+    },
+    "design_normalization.json": {
+      "changes": [
+        {
+          "field": "topology",
+          "before": "journey",
+          "after": "terraces",
+          "reason": "Explicit requested capability"
+        },
+        {
+          "field": "gameplay",
+          "before": {
+            "objectives": [
+              {
+                "kind": "activate",
+                "count": 2,
+                "seconds": 30,
+                "enemy_behavior": null
+              }
+            ],
+            "interactions": [
+              {
+                "enable_platforms": true,
+                "disable_hazards": false,
+                "trigger": "interact",
+                "section": 1,
+                "door_section": 4,
+                "gate": "sec_gate"
+              },
+              {
+                "enable_platforms": false,
+                "disable_hazards": true,
+                "trigger": "interact",
+                "section": 3,
+                "door_section": 4,
+                "gate": "sec_gate"
+              }
+            ],
+            "player_attack": "stomp"
+          },
+          "after": {
+            "objectives": [
+              {
+                "kind": "activate",
+                "count": 2,
+                "seconds": 30,
+                "enemy_behavior": null
+              },
+              {
+                "kind": "unlock",
+                "count": 0,
+                "seconds": 30,
+                "enemy_behavior": null
+              }
+            ],
+            "interactions": [
+              {
+                "enable_platforms": true,
+                "disable_hazards": false,
+                "trigger": "interact",
+                "section": 1,
+                "door_section": 4,
+                "gate": "sec_gate"
+              },
+              {
+                "enable_platforms": false,
+                "disable_hazards": true,
+                "trigger": "interact",
+                "section": 3,
+                "door_section": 4,
+                "gate": "sec_gate"
+              }
+            ],
+            "player_attack": "stomp"
+          },
+          "reason": "Explicit gameplay requirements composed into registered components"
+        }
+      ],
+      "original_prompt": "Create a 2D industrial puzzle-platformer called Factory Lockdown.\n\nI am trapped inside a dangerous automated factory.\n\nThe final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.\n\nThe first switch activates moving platforms that let me cross a dangerous machinery pit.\n\nThe second switch disables a laser barrier.\n\nThe final gate should open ONLY after both switches have been activated.\n\nAdd patrolling robot guards and environmental hazards, but keep combat optional. I should be able to avoid enemies instead of fighting them.\n\nInclude industrial machinery, animated warning lights, moving parts, distinct environmental areas, and clear visual feedback whenever a switch changes something.\n\nNo collectible requirements. My objective is to solve the factory mechanisms and escape."
+    },
+    "repair_report.json": {
+      "attempts": [],
+      "maximum": 2
+    },
+    "final_design.json": {
+      "boss": null,
+      "collectibles_enabled": false,
+      "title": "Factory Lockdown",
+      "premise": "Trapped inside a dangerous automated factory, you must navigate industrial hazards, avoid patrolling robot guards, and activate two separate switches to unlock the final security gate.",
+      "genre": "platformer",
+      "theme": "industrial",
+      "difficulty": "balanced",
+      "objective": "reach_exit",
+      "abilities": [],
+      "checkpoints": true,
+      "moving_platforms": true,
+      "platform_motion": {
+        "axis": "horizontal",
+        "pattern": "sine",
+        "distance": 64,
+        "period_ms": 3000
+      },
+      "player_attack": "stomp",
+      "interactions": [
+        {
+          "enable_platforms": true,
+          "disable_hazards": false,
+          "trigger": "interact",
+          "section": 1,
+          "door_section": 4,
+          "gate": "sec_gate"
+        },
+        {
+          "enable_platforms": false,
+          "disable_hazards": true,
+          "trigger": "interact",
+          "section": 3,
+          "door_section": 4,
+          "gate": "sec_gate"
+        }
+      ],
+      "objectives": [
+        {
+          "kind": "activate",
+          "count": 2,
+          "seconds": 30,
+          "enemy_behavior": null
+        },
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null
+        }
+      ],
+      "campaign_objectives": [],
+      "slippery": false,
+      "falling_icicles": false,
+      "icicle_trigger": "mixed",
+      "hazard_period_ms": 2000,
+      "timed_hazards": true,
+      "exit_indicator": "glow",
+      "exit_style": "gate",
+      "collectible": "crystals",
+      "level_count": 1,
+      "levels": [],
+      "topology": "terraces",
+      "sections": [
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "traversal"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 2000,
+            "telegraph_ms": 500,
+            "radius": 250
+          },
+          "challenge": "combat"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 2,
+          "enemies": false,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 2000,
+            "telegraph_ms": 500,
+            "radius": 250
+          },
+          "challenge": "hazards"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 1,
+          "gap": 2,
+          "enemies": true,
+          "hazards": true,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "moving"
+        },
+        {
+          "kind": "factory",
+          "length": 6,
+          "elevation": 0,
+          "gap": 1,
+          "enemies": false,
+          "hazards": false,
+          "encounter": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "challenge": "exploration"
+        }
+      ],
+      "unsupported": [],
+      "design_notes": [
+        "Combat is optional; enemies can be entirely avoided through careful timing and platforming.",
+        "Two independent switches link to the shared security gate using the 'sec_gate' ID, requiring both activations to open the exit.",
+        "Approximation: switches enable moving alternate paths; the static main route remains traversable. Timed machinery represents the requested security barrier."
+      ],
+      "requested_features": []
+    },
+    "validation.json": {
+      "overall": "PASS",
+      "checks": [
+        {
+          "id": "goal_L1_goal_0",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "goal_L1_goal_1",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "link_L1_door_0",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "route_0_1",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_1_2",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_2_3",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "route_3_4",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 108,
+            "safe_range": 172.1,
+            "rise": 36
+          }
+        },
+        {
+          "id": "route_4_5",
+          "passed": true,
+          "category": "level_layout",
+          "critical": true,
+          "details": {
+            "gap_with_margin": 72,
+            "safe_range": 189.3,
+            "rise": 0
+          }
+        },
+        {
+          "id": "objective_consistent",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "objective_on_main_route",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "entry_exit",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        },
+        {
+          "id": "entity_supports",
+          "passed": true,
+          "category": "specification",
+          "critical": true
+        }
+      ],
+      "scope": "Conservative ballistic route checks; does not certify gameplay difficulty or visual quality."
+    },
+    "game_ir_v2.json": {
+      "boss": null,
+      "title": "Factory Lockdown",
+      "width": 1800,
+      "height": 684,
+      "spawn": {
+        "x": 90.0,
+        "y": 476.0
+      },
+      "objective": {
+        "type": "reach_exit",
+        "required": 0,
+        "total": 0
+      },
+      "platforms": [
+        {
+          "activation_sources": [],
+          "x": 0,
+          "y": 14,
+          "width": 8,
+          "kind": "terraces",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 9,
+          "y": 14,
+          "width": 6,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [
+            "L1_trigger_0"
+          ],
+          "x": 10,
+          "y": 12,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 64,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 17,
+          "y": 13,
+          "width": 8,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 27,
+          "y": 13,
+          "width": 6,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [
+            "L1_trigger_0"
+          ],
+          "x": 28,
+          "y": 11,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 64,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 35,
+          "y": 12,
+          "width": 7,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [],
+          "x": 43,
+          "y": 12,
+          "width": 5,
+          "kind": "factory",
+          "moving": false,
+          "route": "main",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 54,
+            "period_ms": 3000
+          }
+        },
+        {
+          "activation_sources": [
+            "L1_trigger_0"
+          ],
+          "x": 44,
+          "y": 10,
+          "width": 4,
+          "kind": "bridge",
+          "moving": true,
+          "route": "optional",
+          "motion": {
+            "axis": "horizontal",
+            "pattern": "sine",
+            "distance": 64,
+            "period_ms": 3000
+          }
+        }
+      ],
+      "entities": [
+        {
+          "disabled_by": [],
+          "boss": null,
+          "id": "L1_enemy_0",
+          "x": 727.1999999999999,
+          "y": 446.0,
+          "kind": "enemy",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 2000,
+            "telegraph_ms": 500,
+            "radius": 250
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "disabled_by": [],
+          "boss": null,
+          "id": "L1_checkpoint_1",
+          "x": 504.0,
+          "y": 474.0,
+          "kind": "checkpoint",
+          "platform": 1,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "disabled_by": [
+            "L1_trigger_1"
+          ],
+          "boss": null,
+          "id": "L1_timed_hazard_2",
+          "x": 1112.3999999999999,
+          "y": 452.0,
+          "kind": "timed_hazard",
+          "platform": 4,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2000,
+          "radius": 110
+        },
+        {
+          "disabled_by": [],
+          "boss": null,
+          "id": "L1_enemy_3",
+          "x": 1360.8,
+          "y": 410.0,
+          "kind": "enemy",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "disabled_by": [],
+          "boss": null,
+          "id": "L1_exit_4",
+          "x": 1692.0,
+          "y": 396.0,
+          "kind": "exit",
+          "platform": 7,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "disabled_by": [],
+          "boss": null,
+          "id": "L1_trigger_0",
+          "x": 651.6,
+          "y": 444.0,
+          "kind": "switch",
+          "platform": 3,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "disabled_by": [],
+          "boss": null,
+          "id": "L1_door_0",
+          "x": 1674.0,
+          "y": 342.0,
+          "kind": "door",
+          "platform": 7,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        },
+        {
+          "disabled_by": [],
+          "boss": null,
+          "id": "L1_trigger_1",
+          "x": 1299.6000000000001,
+          "y": 408.0,
+          "kind": "switch",
+          "platform": 6,
+          "behavior": "patrol",
+          "ai": {
+            "health": 1,
+            "cooldown_ms": 1400,
+            "telegraph_ms": 450,
+            "radius": 300
+          },
+          "activation": "interact",
+          "trigger": "proximity",
+          "period_ms": 2200,
+          "radius": 110
+        }
+      ],
+      "camera_mode": "follow",
+      "theme": "industrial",
+      "slippery": false,
+      "exit_style": "gate",
+      "exit_indicator": "glow",
+      "collectible": "crystals",
+      "difficulty": "balanced",
+      "briefing": "",
+      "topology": "terraces",
+      "goals": [
+        {
+          "kind": "activate",
+          "count": 2,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L1_goal_0",
+          "targets": [
+            "L1_trigger_0",
+            "L1_trigger_1"
+          ]
+        },
+        {
+          "kind": "unlock",
+          "count": 0,
+          "seconds": 30,
+          "enemy_behavior": null,
+          "id": "L1_goal_1",
+          "targets": [
+            "L1_door_0"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "sources": [
+            "L1_trigger_0",
+            "L1_trigger_1"
+          ],
+          "target": "L1_door_0",
+          "condition": "all",
+          "action": "open_door"
+        }
+      ],
+      "player_attack": "stomp",
+      "schema_version": "2.0",
+      "genre": "platformer",
+      "seed": 7,
+      "tile_size": 36,
+      "player": {
+        "speed": 250,
+        "jump": 490,
+        "gravity": 1100,
+        "health": 3,
+        "abilities": []
+      },
+      "levels": [],
+      "campaign_goals": [],
+      "requirements": [
+        {
+          "id": "factory_environment",
+          "source": "industrial",
+          "span": [
+            12,
+            22
+          ],
+          "supported": true,
+          "status": "implemented_unverified",
+          "runtime_check": "environment_composition",
+          "constructed": true,
+          "verified": false,
+          "evidence": {
+            "spec": "factory_environment",
+            "qa": null
+          }
+        },
+        {
+          "id": "patrol",
+          "source": "patrolling",
+          "span": [
+            458,
+            468
+          ],
+          "supported": true,
+          "status": "implemented_unverified",
+          "runtime_check": "enemy_patrol",
+          "constructed": true,
+          "verified": false,
+          "evidence": {
+            "spec": "patrol",
+            "qa": null
+          }
+        },
+        {
+          "id": "moving_platforms",
+          "source": "moving platforms",
+          "span": [
+            272,
+            288
+          ],
+          "supported": true,
+          "status": "implemented_unverified",
+          "runtime_check": "moving_platform_motion",
+          "constructed": true,
+          "verified": false,
+          "evidence": {
+            "spec": "moving_platforms",
+            "qa": null
+          }
+        },
+        {
+          "id": "timed_hazards",
+          "source": "dangerous machinery",
+          "span": [
+            309,
+            328
+          ],
+          "supported": true,
+          "status": "implemented_unverified",
+          "runtime_check": "timed_hazard_cycle",
+          "constructed": true,
+          "verified": false,
+          "evidence": {
+            "spec": "timed_hazards",
+            "qa": null
+          }
+        },
+        {
+          "id": "switches",
+          "source": "switches",
+          "span": [
+            194,
+            202
+          ],
+          "supported": true,
+          "status": "implemented_unverified",
+          "runtime_check": "switch_door",
+          "constructed": true,
+          "verified": false,
+          "evidence": {
+            "spec": "switches",
+            "qa": null
+          }
+        }
+      ],
+      "asset_pack": "kenney_pixel_platformer"
+    },
+    "semantic_requirement_report.json": {
+      "behavior_preserved": true,
+      "control_preserved": true,
+      "arcade_constraints": {},
+      "unsupported_core": [
+        "req_2af3da2214d2"
+      ],
+      "overall": "FAIL",
+      "requirements": [
+        {
+          "source": "Create a 2D industrial puzzle-platformer called Factory Lockdown.",
+          "id": "req_24e7416fc4c7",
+          "meaning": "Manual run and jump controls for platformer gameplay.",
+          "capability": "platform_movement",
+          "status": "constructed_unverified",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "platform_movement",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "player",
+          "runtime_check": "mandatory_route_edges",
+          "runtime_verified": false
+        },
+        {
+          "source": "The final security gate is locked. To escape, I must activate TWO separate switches located in different parts of the level.",
+          "id": "req_e0b3a058c24f",
+          "meaning": "Two switches required to open the security gate.",
+          "capability": "switch_gate",
+          "status": "constructed_unverified",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": 2,
+          "scope": "same_level",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "switch_gate",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "links",
+          "runtime_check": "shared_gate_dependency",
+          "runtime_verified": false
+        },
+        {
+          "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+          "id": "req_3a45c7622833",
+          "meaning": "Moving platforms activated by the first switch.",
+          "capability": "moving_platforms",
+          "status": "approximated",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "same_level",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "moving_platforms",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "platforms.moving",
+          "runtime_check": "switch_world_effects",
+          "runtime_verified": false
+        },
+        {
+          "source": "Add patrolling robot guards",
+          "id": "req_79682ec99a3e",
+          "meaning": "Patrolling robot guards in the factory level.",
+          "capability": "patrol_enemies",
+          "status": "constructed_unverified",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "same_level",
+          "mandatory": true,
+          "category": "mechanic",
+          "requested_capability": "patrol_enemies",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "entities.behavior",
+          "runtime_check": "enemy_patrol",
+          "runtime_verified": false
+        },
+        {
+          "source": "No collectible requirements.",
+          "id": "req_2af3da2214d2",
+          "meaning": "No collectibles in the game.",
+          "capability": "unsupported",
+          "status": "unsupported",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": true,
+          "category": "exclusion",
+          "requested_capability": "unsupported",
+          "bound_biomes": [],
+          "constructed": false,
+          "failure_stage": "construction",
+          "ir_path": "unsupported",
+          "runtime_check": null,
+          "runtime_verified": false
+        },
+        {
+          "source": "industrial",
+          "id": "req_ad0b67452b01",
+          "meaning": "Industrial theme for the factory setting.",
+          "capability": "visual_theme",
+          "status": "approximated",
+          "depends_on": [],
+          "verification": null,
+          "biomes": [],
+          "count": null,
+          "scope": "game",
+          "mandatory": false,
+          "category": "presentation",
+          "requested_capability": "visual_theme",
+          "bound_biomes": [],
+          "constructed": true,
+          "failure_stage": null,
+          "ir_path": "theme",
+          "runtime_check": null,
+          "runtime_verified": false
+        }
+      ],
+      "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+    }
+  },
+  "verification_provenance": "Fresh configured Gemini interpretation/design; actual persisted HTTP pipeline and Chromium QA",
+  "completion_calls": 3
+}

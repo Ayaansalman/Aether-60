@@ -1,0 +1,198 @@
+{
+  "provider": "Replay",
+  "model": "captured-gemini",
+  "live": true,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "model": "captured-gemini",
+      "candidate": {
+        "genre": "platformer",
+        "loop": "platformer_switch_gate_escape",
+        "control": "platform",
+        "requirements": [
+          {
+            "source": "I am trapped inside a dangerous automated factory.",
+            "meaning": "Visual industrial factory theme for the platformer environment",
+            "capability": "visual_theme",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "Factory visual theme applied to platforms and background",
+            "biomes": [],
+            "count": null,
+            "scope": "game",
+            "mandatory": true
+          },
+          {
+            "source": "To escape, I must activate TWO separate switches located in different parts of the level.",
+            "meaning": "Two switches must be activated to progress",
+            "capability": "switch_gate",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "Both switches must be toggled to open the gate",
+            "biomes": [],
+            "count": 2,
+            "scope": "same_level",
+            "mandatory": true
+          },
+          {
+            "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+            "meaning": "Moving platforms span across pits when activated by the first switch",
+            "capability": "moving_platforms",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "Moving platforms appear or activate upon triggering switch 1",
+            "biomes": [],
+            "count": null,
+            "scope": "same_level",
+            "mandatory": true
+          },
+          {
+            "source": "Add patrolling robot guards and environmental hazards, but keep combat optional. I should be able to avoid enemies instead of fighting them.",
+            "meaning": "Patrolling enemy guards roam the platforms",
+            "capability": "patrol_enemies",
+            "status": "planned",
+            "depends_on": [],
+            "verification": "Enemies patrol back and forth on platforms, avoidable without combat",
+            "biomes": [],
+            "count": null,
+            "scope": "same_level",
+            "mandatory": true
+          }
+        ],
+        "arcade": null,
+        "perspective": "side_scrolling",
+        "structure": "connected_levels",
+        "loops": [
+          "exploration",
+          "avoidance",
+          "interaction"
+        ],
+        "gameplay": null
+      }
+    }
+  ],
+  "source_grounding": [
+    {
+      "field": "requirements.0",
+      "before": {
+        "source": "I am trapped inside a dangerous automated factory.",
+        "meaning": "Visual industrial factory theme for the platformer environment",
+        "capability": "visual_theme",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Factory visual theme applied to platforms and background",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      "after": {
+        "source": "I am trapped inside a dangerous automated factory.",
+        "meaning": "Visual industrial factory theme for the platformer environment",
+        "capability": "visual_theme",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Factory visual theme applied to platforms and background",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "id": "req_2a8a592e7797",
+        "category": "presentation"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.1",
+      "before": {
+        "source": "To escape, I must activate TWO separate switches located in different parts of the level.",
+        "meaning": "Two switches must be activated to progress",
+        "capability": "switch_gate",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Both switches must be toggled to open the gate",
+        "biomes": [],
+        "count": 2,
+        "scope": "same_level",
+        "mandatory": true
+      },
+      "after": {
+        "source": "To escape, I must activate TWO separate switches located in different parts of the level.",
+        "meaning": "Two switches must be activated to progress",
+        "capability": "switch_gate",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Both switches must be toggled to open the gate",
+        "biomes": [],
+        "count": 2,
+        "scope": "same_level",
+        "mandatory": true,
+        "id": "req_e7251c35a7d7",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.2",
+      "before": {
+        "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+        "meaning": "Moving platforms span across pits when activated by the first switch",
+        "capability": "moving_platforms",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Moving platforms appear or activate upon triggering switch 1",
+        "biomes": [],
+        "count": null,
+        "scope": "same_level",
+        "mandatory": true
+      },
+      "after": {
+        "source": "The first switch activates moving platforms that let me cross a dangerous machinery pit.",
+        "meaning": "Moving platforms span across pits when activated by the first switch",
+        "capability": "moving_platforms",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Moving platforms appear or activate upon triggering switch 1",
+        "biomes": [],
+        "count": null,
+        "scope": "same_level",
+        "mandatory": true,
+        "id": "req_3a45c7622833",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    },
+    {
+      "field": "requirements.3",
+      "before": {
+        "source": "Add patrolling robot guards and environmental hazards, but keep combat optional. I should be able to avoid enemies instead of fighting them.",
+        "meaning": "Patrolling enemy guards roam the platforms",
+        "capability": "patrol_enemies",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Enemies patrol back and forth on platforms, avoidable without combat",
+        "biomes": [],
+        "count": null,
+        "scope": "same_level",
+        "mandatory": true
+      },
+      "after": {
+        "source": "Add patrolling robot guards and environmental hazards, but keep combat optional. I should be able to avoid enemies instead of fighting them.",
+        "meaning": "Patrolling enemy guards roam the platforms",
+        "capability": "patrol_enemies",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "Enemies patrol back and forth on platforms, avoidable without combat",
+        "biomes": [],
+        "count": null,
+        "scope": "same_level",
+        "mandatory": true,
+        "id": "req_b2f24efd4fa2",
+        "category": "mechanic"
+      },
+      "reason": "Source-grounded capability and biome metadata; stable requirement identity"
+    }
+  ]
+}

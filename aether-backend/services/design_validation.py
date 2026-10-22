@@ -1,6 +1,7 @@
 """One bounded model correction, preserving original prompt and exact diagnostics."""
 import json
 import re
+from copy import deepcopy
 from pydantic import ValidationError
 
 
@@ -23,12 +24,13 @@ def validated_response(provider, system, prompt, first, contract, prepare=lambda
         try:
             raw=decode(result.text)
             if not isinstance(raw,dict):raise ValueError('Expected one JSON object matching the contract, not an array or scalar')
+            original=deepcopy(raw)
             value=contract.model_validate(prepare(raw))
-            attempts.append({'attempt':attempt+1,'valid':True,'model':result.model})
+            attempts.append({'attempt':attempt+1,'valid':True,'model':result.model,'candidate':original})
             return value, attempts
         except (ValidationError, ValueError, TypeError) as exc:
             errors=exc.errors(include_url=False, include_context=False, include_input=False) if isinstance(exc,ValidationError) else [{'loc':[], 'msg':str(exc)[:500]}]
-            attempts.append({'attempt':attempt+1,'valid':False,'model':result.model,'errors':errors,'candidate':raw})
+            attempts.append({'attempt':attempt+1,'valid':False,'model':result.model,'errors':errors,'candidate':raw,**({'response_text':result.text} if raw is None else {})})
             if attempt:
                 raise DesignFailure(attempts) from exc
             # The user's original request remains an unchanged prefix. No fallback family.

@@ -1,0 +1,1096 @@
+{
+  "game_id": "ffaaa295-1fd1-49b6-8aa3-fce2da7a064f",
+  "prompt": "Create a 2D fantasy platformer called The Frozen Guardian.\n\nI am a warrior exploring a frozen temple surrounded by enchanted forest ruins.\n\nThe level begins with a platforming section featuring slippery ice, moving platforms, and dangerous falling icicles.\n\nEventually I enter a sealed arena containing one powerful ice guardian.\n\nThe guardian initially has a magical shield that prevents me from damaging it.\n\nInside the arena there are TWO magical switches. I must activate both switches to disable the guardian's shield.\n\nOnce the shield is disabled, I must fight the guardian. It should use projectile attacks and a charging attack.\n\nThe boss becomes more aggressive when its health drops below half.\n\nI win only after defeating the guardian.\n\nDo not add collectibles or ordinary enemies.\n\nUse appropriate ice and forest artwork, animated attacks, a visible boss health bar, shield-breaking effects, and clear visual feedback.",
+  "status": "FAILED",
+  "error_code": "GENERATION_FAILED",
+  "semantic_intent.json": {
+    "genre": "platformer",
+    "loop": "Explore the frozen temple ruins, traverse platforms and hazards, activate two switches to drop the ice guardian's shield, defeat the boss in combat to win.",
+    "control": "platform",
+    "requirements": [
+      {
+        "source": "2D fantasy platformer",
+        "meaning": "Manual platformer controls and physics",
+        "capability": "platform_movement",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "mandatory_route_edges",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "slippery ice",
+        "meaning": "Slippery ice terrain region",
+        "capability": "slippery_region",
+        "status": "planned",
+        "depends_on": [
+          "platform_movement"
+        ],
+        "verification": "localized_slippery",
+        "biomes": [
+          "frozen_lake",
+          "snow"
+        ],
+        "count": 1,
+        "scope": "same_level",
+        "mandatory": true
+      },
+      {
+        "source": "moving platforms",
+        "meaning": "Moving platforms in the level",
+        "capability": "moving_platforms",
+        "status": "planned",
+        "depends_on": [
+          "platform_movement"
+        ],
+        "verification": "moving_platform_motion",
+        "biomes": [
+          "icy_ruins"
+        ],
+        "count": 3,
+        "scope": "same_level",
+        "mandatory": true
+      },
+      {
+        "source": "dangerous falling icicles",
+        "meaning": "Patrolling or hazard entities representing falling icicles",
+        "capability": "patrol_enemies",
+        "status": "planned",
+        "depends_on": [
+          "platform_movement"
+        ],
+        "verification": "enemy_patrol",
+        "biomes": [
+          "dark"
+        ],
+        "count": 4,
+        "scope": "same_level",
+        "mandatory": true
+      },
+      {
+        "source": "sealed arena containing one powerful ice guardian",
+        "meaning": "Boss duel in an arena",
+        "capability": "boss_duel",
+        "status": "planned",
+        "depends_on": [
+          "platform_movement"
+        ],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "Use appropriate ice and forest artwork, animated attacks, a visible boss health bar, shield-breaking effects, and clear visual feedback.",
+        "meaning": "Boss health bar display",
+        "capability": "boss_health_bar",
+        "status": "planned",
+        "depends_on": [
+          "boss_duel"
+        ],
+        "verification": "boss_arena",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "It should use projectile attacks and a charging attack",
+        "meaning": "Boss attack patterns",
+        "capability": "boss_patterns",
+        "status": "planned",
+        "depends_on": [
+          "boss_duel"
+        ],
+        "verification": "boss_volley",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "I win only after defeating the guardian",
+        "meaning": "Boss defeat victory condition",
+        "capability": "boss_defeat",
+        "status": "planned",
+        "depends_on": [
+          "boss_duel"
+        ],
+        "verification": "boss_duel",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "TWO magical switches. I must activate both switches to disable the guardian's shield",
+        "meaning": "Two switches linked to the gate/shield",
+        "capability": "switch_gate",
+        "status": "planned",
+        "depends_on": [
+          "platform_movement"
+        ],
+        "verification": "shared_gate_dependency",
+        "biomes": [],
+        "count": 2,
+        "scope": "same_level",
+        "mandatory": true
+      },
+      {
+        "source": "Do not add collectibles",
+        "meaning": "No collectible items in the game",
+        "capability": "no_collectibles",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_collectibles",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "Do not add collectibles or ordinary enemies.",
+        "meaning": "No ordinary enemies outside the boss",
+        "capability": "no_ordinary_enemies",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "no_ordinary_enemies",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "Use appropriate ice and forest artwork",
+        "meaning": "Visual theme applied",
+        "capability": "visual_theme",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "visual_theme",
+        "biomes": [
+          "frozen_lake",
+          "forest",
+          "icy_ruins"
+        ],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "I am a warrior exploring a frozen temple",
+        "meaning": "Player attack capability",
+        "capability": "projectile_attack",
+        "status": "planned",
+        "depends_on": [
+          "platform_movement"
+        ],
+        "verification": "player_attack_damage",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      }
+    ],
+    "arcade": null,
+    "perspective": "side_scrolling",
+    "structure": "connected_levels",
+    "loops": [
+      "exploration",
+      "combat",
+      "boss",
+      "interaction"
+    ],
+    "gameplay": null,
+    "provenance": {
+      "provider": "OpenAICompatProvider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "validation_attempts": [
+        {
+          "attempt": 1,
+          "valid": false,
+          "model": "gemini-3.5-flash-lite",
+          "errors": [
+            {
+              "type": "string_type",
+              "loc": [
+                "requirements",
+                9,
+                "verification"
+              ],
+              "msg": "Input should be a valid string"
+            },
+            {
+              "type": "string_type",
+              "loc": [
+                "requirements",
+                10,
+                "verification"
+              ],
+              "msg": "Input should be a valid string"
+            },
+            {
+              "type": "string_type",
+              "loc": [
+                "requirements",
+                11,
+                "verification"
+              ],
+              "msg": "Input should be a valid string"
+            }
+          ],
+          "candidate": {
+            "genre": "platformer",
+            "loop": "Explore the frozen temple ruins, traverse platforms and hazards, activate two switches to drop the ice guardian's shield, defeat the boss in combat to win.",
+            "control": "platform",
+            "perspective": "side_scrolling",
+            "structure": "connected_levels",
+            "loops": [
+              "exploration",
+              "combat",
+              "boss",
+              "interaction"
+            ],
+            "requirements": [
+              {
+                "source": "2D fantasy platformer",
+                "meaning": "Manual platformer controls and physics",
+                "capability": "platform_movement",
+                "status": "planned",
+                "verification": "mandatory_route_edges",
+                "mandatory": true
+              },
+              {
+                "source": "slippery ice",
+                "meaning": "Slippery ice terrain region",
+                "capability": "slippery_region",
+                "status": "planned",
+                "depends_on": [
+                  "platform_movement"
+                ],
+                "verification": "localized_slippery",
+                "biomes": [
+                  "frozen_lake",
+                  "snow"
+                ],
+                "count": 1,
+                "scope": "same_level",
+                "mandatory": true
+              },
+              {
+                "source": "moving platforms",
+                "meaning": "Moving platforms in the level",
+                "capability": "moving_platforms",
+                "status": "planned",
+                "depends_on": [
+                  "platform_movement"
+                ],
+                "verification": "moving_platform_motion",
+                "biomes": [
+                  "icy_ruins"
+                ],
+                "count": 3,
+                "scope": "same_level",
+                "mandatory": true
+              },
+              {
+                "source": "dangerous falling icicles",
+                "meaning": "Patrolling or hazard entities representing falling icicles",
+                "capability": "patrol_enemies",
+                "status": "planned",
+                "depends_on": [
+                  "platform_movement"
+                ],
+                "verification": "enemy_patrol",
+                "biomes": [
+                  "dark"
+                ],
+                "count": 4,
+                "scope": "same_level",
+                "mandatory": true
+              },
+              {
+                "source": "sealed arena containing one powerful ice guardian",
+                "meaning": "Boss duel in an arena",
+                "capability": "boss_duel",
+                "status": "planned",
+                "depends_on": [
+                  "platform_movement"
+                ],
+                "verification": "boss_duel",
+                "mandatory": true
+              },
+              {
+                "source": "shield-breaking effects and clear visual feedback",
+                "meaning": "Boss health bar display",
+                "capability": "boss_health_bar",
+                "status": "planned",
+                "depends_on": [
+                  "boss_duel"
+                ],
+                "verification": "boss_arena",
+                "mandatory": true
+              },
+              {
+                "source": "It should use projectile attacks and a charging attack",
+                "meaning": "Boss attack patterns",
+                "capability": "boss_patterns",
+                "status": "planned",
+                "depends_on": [
+                  "boss_duel"
+                ],
+                "verification": "boss_volley",
+                "mandatory": true
+              },
+              {
+                "source": "I win only after defeating the guardian",
+                "meaning": "Boss defeat victory condition",
+                "capability": "boss_defeat",
+                "status": "planned",
+                "depends_on": [
+                  "boss_duel"
+                ],
+                "verification": "boss_duel",
+                "mandatory": true
+              },
+              {
+                "source": "TWO magical switches. I must activate both switches to disable the guardian's shield",
+                "meaning": "Two switches linked to the gate/shield",
+                "capability": "switch_gate",
+                "status": "planned",
+                "depends_on": [
+                  "platform_movement"
+                ],
+                "verification": "shared_gate_dependency",
+                "count": 2,
+                "scope": "same_level",
+                "mandatory": true
+              },
+              {
+                "source": "Do not add collectibles",
+                "meaning": "No collectible items in the game",
+                "capability": "no_collectibles",
+                "status": "planned",
+                "verification": null,
+                "mandatory": true
+              },
+              {
+                "source": "Do not add ordinary enemies",
+                "meaning": "No ordinary enemies outside the boss",
+                "capability": "no_ordinary_enemies",
+                "status": "planned",
+                "verification": null,
+                "mandatory": true
+              },
+              {
+                "source": "Use appropriate ice and forest artwork",
+                "meaning": "Visual theme applied",
+                "capability": "visual_theme",
+                "status": "planned",
+                "verification": null,
+                "biomes": [
+                  "frozen_lake",
+                  "forest",
+                  "icy_ruins"
+                ],
+                "mandatory": true
+              },
+              {
+                "source": "I am a warrior exploring a frozen temple",
+                "meaning": "Player attack capability",
+                "capability": "projectile_attack",
+                "status": "planned",
+                "depends_on": [
+                  "platform_movement"
+                ],
+                "verification": "player_attack_damage",
+                "mandatory": true
+              }
+            ],
+            "arcade": null,
+            "gameplay": null
+          }
+        },
+        {
+          "attempt": 2,
+          "valid": true,
+          "model": "gemini-3.5-flash-lite"
+        }
+      ],
+      "source_grounding": [
+        {
+          "field": "requirements.5.source",
+          "before": "shield-breaking effects and clear visual feedback",
+          "after": "Use appropriate ice and forest artwork, animated attacks, a visible boss health bar, shield-breaking effects, and clear visual feedback.",
+          "reason": "Expanded ordered quote tokens to their original source sentence"
+        },
+        {
+          "field": "requirements.10.source",
+          "before": "Do not add ordinary enemies",
+          "after": "Do not add collectibles or ordinary enemies.",
+          "reason": "Expanded ordered quote tokens to their original source sentence"
+        }
+      ]
+    }
+  },
+  "capability_compatibility.json": {
+    "overall": "FAIL",
+    "issues": [
+      {
+        "capability": "slippery_region",
+        "reason": "Capability requires controls top_down"
+      }
+    ],
+    "decision_source": "deterministic capability compatibility",
+    "catalog": {
+      "platform_movement": {
+        "ir_path": "player",
+        "verification": "mandatory_route_edges",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "player"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "top_down_movement": {
+        "ir_path": "areas",
+        "verification": "top_down_horizontal_movement",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "auto_run": {
+        "ir_path": "mode",
+        "verification": "runner_input",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "mode"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "flap": {
+        "ir_path": "mode",
+        "verification": "repeatable_flap",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "mode"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "endless_obstacles": {
+        "ir_path": "endless",
+        "verification": "endless_bounded_state",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "endless"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "finite_finish": {
+        "ir_path": "finish_distance",
+        "verification": null,
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "finish_distance"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "distance_score": {
+        "ir_path": "scoring",
+        "verification": "score_once",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "gap_score": {
+        "ir_path": "scoring",
+        "verification": "score_once",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "restart": {
+        "ir_path": "genre",
+        "verification": "rapid_restart",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "genre"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_duel": {
+        "ir_path": "boss",
+        "verification": "boss_duel",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss"
+        ],
+        "behavior_types": [],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_health_bar": {
+        "ir_path": "boss.health",
+        "verification": "boss_arena",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.health"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_patterns": {
+        "ir_path": "boss.patterns",
+        "verification": "boss_volley",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.patterns"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_defeat": {
+        "ir_path": "boss.victory",
+        "verification": "boss_duel",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.victory"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_ordinary_enemies": {
+        "ir_path": "entities",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "entities"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_collectibles": {
+        "ir_path": "entities",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "entities"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_combat": {
+        "ir_path": "combat",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "combat"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "single_level": {
+        "ir_path": "areas/levels",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "areas/levels"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "biome_regions": {
+        "ir_path": "areas.regions",
+        "verification": "biome_regions",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas.regions"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "slippery_region": {
+        "ir_path": "areas.regions.slippery",
+        "verification": "localized_slippery",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas.regions.slippery"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_delivery": {
+        "ir_path": "quests",
+        "verification": "adventure_completion",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_collect": {
+        "ir_path": "quests",
+        "verification": "quest_collect",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_activate": {
+        "ir_path": "quests",
+        "verification": "quest_activate",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_unlock": {
+        "ir_path": "quests",
+        "verification": "quest_unlock",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_explore": {
+        "ir_path": "quests",
+        "verification": "quest_explore",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "adventure_combat": {
+        "ir_path": "quests",
+        "verification": "adventure_combat",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "treasure_finish": {
+        "ir_path": "quests",
+        "verification": "adventure_completion",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "projectile_attack": {
+        "ir_path": "player_attack",
+        "verification": "player_attack_damage",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "player_attack"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "sword_melee": {
+        "ir_path": "player_attack",
+        "verification": "player_attack_damage",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "player_attack"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "visual_theme": {
+        "ir_path": "theme",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "theme"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "unsupported": {
+        "ir_path": "unsupported",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "unsupported"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "switch_gate": {
+        "ir_path": "links",
+        "verification": "shared_gate_dependency",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "links"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "moving_platforms": {
+        "ir_path": "platforms.moving",
+        "verification": "moving_platform_motion",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "platforms.moving"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "patrol_enemies": {
+        "ir_path": "entities.behavior",
+        "verification": "enemy_patrol",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "entities.behavior"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "health_damage": {
+        "ir_path": "gameplay.health",
+        "verification": "composition_health_loss",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.health"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "enemy_spawning": {
+        "ir_path": "gameplay.spawns",
+        "verification": "composition_safe_spawning",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "top_down_movement",
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.spawns"
+        ],
+        "behavior_types": [
+          "chase",
+          "patrol",
+          "shooter"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+      },
+      "enemy_roles": {
+        "ir_path": "gameplay.archetypes",
+        "verification": "composition_enemy_roles",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.archetypes"
+        ],
+        "behavior_types": [
+          "chase",
+          "patrol",
+          "shooter"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "attack_sequence": {
+        "ir_path": "gameplay.archetypes.attack",
+        "verification": "composition_attack_sequence",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "enemy_roles",
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.archetypes.attack"
+        ],
+        "behavior_types": [
+          "timed_projectile_sequence"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "survival_time": {
+        "ir_path": "gameplay.scoring",
+        "verification": "composition_survival_score",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "no_inventory": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_quests": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_npcs": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_exit": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      }
+    },
+    "relationships": null,
+    "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+  },
+  "failure_events": [
+    {
+      "stage": "FAILED",
+      "detail": "Requested behavior is incompatible with the selected controls. See capability_compatibility.json."
+    }
+  ]
+}

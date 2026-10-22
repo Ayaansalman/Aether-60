@@ -1,0 +1,397 @@
+{
+  "provider": "Replay",
+  "model": "captured-gemini",
+  "live": true,
+  "initial_latency_ms": 0,
+  "fallbacks": [],
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "model": "captured-gemini",
+      "candidate": {
+        "boss": null,
+        "collectibles_enabled": false,
+        "title": "Factory Lockdown",
+        "premise": "Trapped inside a dangerous automated factory, you must navigate hazardous machinery, bypass patrolling robot guards, and activate two separate switches to unlock the final security gate and escape.",
+        "genre": "platformer",
+        "theme": "industrial",
+        "difficulty": "balanced",
+        "objective": "reach_exit",
+        "abilities": [
+          "double_jump"
+        ],
+        "checkpoints": true,
+        "moving_platforms": true,
+        "platform_motion": {
+          "axis": "horizontal",
+          "pattern": "sine",
+          "distance": 64,
+          "period_ms": 3000
+        },
+        "player_attack": "stomp",
+        "interactions": [
+          {
+            "trigger": "interact",
+            "section": 2,
+            "door_section": 5,
+            "gate": "factory_gate"
+          },
+          {
+            "trigger": "interact",
+            "section": 6,
+            "door_section": 5,
+            "gate": "factory_gate"
+          }
+        ],
+        "objectives": [
+          {
+            "kind": "unlock",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          },
+          {
+            "kind": "activate",
+            "count": 0,
+            "seconds": 30,
+            "enemy_behavior": null
+          }
+        ],
+        "campaign_objectives": [],
+        "slippery": false,
+        "falling_icicles": false,
+        "icicle_trigger": "mixed",
+        "hazard_period_ms": 2000,
+        "timed_hazards": true,
+        "exit_indicator": "pulse",
+        "exit_style": "gate",
+        "collectible": "crystals",
+        "level_count": 1,
+        "levels": [
+          {
+            "title": "Automated Assembly Wing",
+            "theme": "industrial",
+            "topology": "journey",
+            "difficulty": "balanced",
+            "objective": "reach_exit",
+            "slippery": false,
+            "falling_icicles": false,
+            "timed_hazards": true,
+            "moving_platforms": true,
+            "platform_motion": {
+              "axis": "horizontal",
+              "pattern": "sine",
+              "distance": 64,
+              "period_ms": 3000
+            },
+            "player_attack": "stomp",
+            "interactions": [
+              {
+                "trigger": "interact",
+                "section": 2,
+                "door_section": 5,
+                "gate": "factory_gate"
+              },
+              {
+                "trigger": "interact",
+                "section": 6,
+                "door_section": 5,
+                "gate": "factory_gate"
+              }
+            ],
+            "objectives": [
+              {
+                "kind": "unlock",
+                "count": 0,
+                "seconds": 30,
+                "enemy_behavior": null
+              }
+            ],
+            "checkpoints": true,
+            "icicle_trigger": null,
+            "hazard_period_ms": 2000,
+            "exit_style": "gate",
+            "exit_indicator": "pulse",
+            "collectible": null,
+            "briefing": "Navigate the automated assembly wing, evade robot guards, and trigger both control switches to open the security gate.",
+            "sections": [
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "traversal"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 1,
+                "gap": 2,
+                "enemies": true,
+                "hazards": false,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "combat"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 2,
+                "enemies": false,
+                "hazards": true,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "hazards"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 1,
+                "gap": 3,
+                "enemies": true,
+                "hazards": true,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "moving"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 2,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "exploration"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 1,
+                "gap": 2,
+                "enemies": true,
+                "hazards": false,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "precision"
+              },
+              {
+                "kind": "factory",
+                "length": 6,
+                "elevation": 0,
+                "gap": 1,
+                "enemies": false,
+                "hazards": false,
+                "encounter": "patrol",
+                "ai": {
+                  "health": 1,
+                  "cooldown_ms": 1400,
+                  "telegraph_ms": 450,
+                  "radius": 300
+                },
+                "challenge": "traversal"
+              }
+            ]
+          }
+        ],
+        "topology": "terraces",
+        "sections": [
+          {
+            "kind": "factory",
+            "length": 6,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "traversal"
+          },
+          {
+            "kind": "factory",
+            "length": 6,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "patrol",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "combat"
+          },
+          {
+            "kind": "factory",
+            "length": 6,
+            "elevation": 0,
+            "gap": 2,
+            "enemies": false,
+            "hazards": true,
+            "encounter": "patrol",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "hazards"
+          },
+          {
+            "kind": "factory",
+            "length": 6,
+            "elevation": 1,
+            "gap": 3,
+            "enemies": true,
+            "hazards": true,
+            "encounter": "patrol",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "moving"
+          },
+          {
+            "kind": "factory",
+            "length": 6,
+            "elevation": 0,
+            "gap": 2,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "exploration"
+          },
+          {
+            "kind": "factory",
+            "length": 6,
+            "elevation": 1,
+            "gap": 2,
+            "enemies": true,
+            "hazards": false,
+            "encounter": "patrol",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "precision"
+          },
+          {
+            "kind": "factory",
+            "length": 6,
+            "elevation": 0,
+            "gap": 1,
+            "enemies": false,
+            "hazards": false,
+            "encounter": "patrol",
+            "ai": {
+              "health": 1,
+              "cooldown_ms": 1400,
+              "telegraph_ms": 450,
+              "radius": 300
+            },
+            "challenge": "traversal"
+          }
+        ],
+        "unsupported": [],
+        "design_notes": [
+          "Combat is entirely optional; patrolling robot guards can be bypassed via stealth and platforming timing.",
+          "Two switches (in section 2 and section 6) are linked via a shared gate ID 'factory_gate' to unlock the final security door in section 5.",
+          "Sword melee approximation used for player combat; player_attack configured to stomp."
+        ],
+        "requested_features": []
+      }
+    }
+  ],
+  "requirement_authority": "semantic_intent.json",
+  "advisory_designer_requirements": [],
+  "normalizations": [
+    {
+      "field": "game.interactions.1",
+      "before": {
+        "trigger": "interact",
+        "section": 6,
+        "door_section": 5,
+        "gate": "factory_gate"
+      },
+      "after": {
+        "trigger": "interact",
+        "section": 4,
+        "door_section": 5,
+        "gate": "factory_gate"
+      },
+      "invariant": "0 <= switch.section < shared door.section < section count",
+      "reason": "Relocated prerequisite before its gate on the forward traversal route"
+    },
+    {
+      "field": "levels.0.interactions.1",
+      "before": {
+        "trigger": "interact",
+        "section": 6,
+        "door_section": 5,
+        "gate": "factory_gate"
+      },
+      "after": {
+        "trigger": "interact",
+        "section": 4,
+        "door_section": 5,
+        "gate": "factory_gate"
+      },
+      "invariant": "0 <= switch.section < shared door.section < section count",
+      "reason": "Relocated prerequisite before its gate on the forward traversal route"
+    }
+  ]
+}

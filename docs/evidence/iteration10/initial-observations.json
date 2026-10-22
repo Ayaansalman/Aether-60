@@ -1,0 +1,20 @@
+{
+  "factory_probe": {
+    "runtime": "FAIL",
+    "passed": 15,
+    "failed": [
+      "moving_platform_motion",
+      "switch_world_effects"
+    ],
+    "cause": "Two endpoint samples 485.0584 and 482.4327 fell near the same sine-cycle position; dormant x=432, actual motion occurred. Final probe samples the range of six points."
+  },
+  "laboratory_probe": {
+    "runtime": "FAIL",
+    "passed": 10,
+    "failure": "Short R press was missed by Phaser polling between render frames. Restart now queues Key down until consumed; retest passes."
+  },
+  "api_runner_probe": {
+    "job_id": "b2d1d718-10d4-41a6-accb-4640ccde75a0",
+    "failure": "Typing isolation attempted focus on the disabled prompt during TESTING. Retest uses an actual temporary native textarea while the creator field is disabled, then removes it."
+  }
+}

@@ -38,6 +38,13 @@ export class ChallengeStream {
   world:RunnerWorld;pending:Obstacle[]=[];section=0;previous='';lastEnd=180;bag:string[]=[];
   low:FlightState[]=[{y:250,v:0}];high:FlightState[]=[{y:250,v:0}];repairs=0;
   constructor(world:RunnerWorld){this.world=world;}
+  speedBound(x:number){
+    const s=this.world.spec;
+    // Acceleration by distance bounds gradual and stepwise surge progression.
+    // Using the eventual maximum from the very first obstacle made early
+    // extreme courses much sparser than the requested reaction windows.
+    return Math.min(s.max_speed,Math.sqrt(s.speed*s.speed+2*s.acceleration*Math.max(0,x))+s.acceleration*2);
+  }
   populate(){
     const w=this.world;
     while(w.nextX<w.distance+1250){
@@ -51,7 +58,7 @@ export class ChallengeStream {
   restDistance(o:Obstacle){
     const w=this.world,c=w.spec.challenge!;
     const recovery=o.pattern==='recovery'?1.7:1;
-    return w.spec.max_speed*(w.spec.mode==='ground'?jumpEnvelope(w.spec).flight+c.recovery*recovery:c.spacing*recovery);
+    return (w.spec.mode==='ground'?this.speedBound(o.x):w.spec.max_speed)*(w.spec.mode==='ground'?jumpEnvelope(w.spec).flight+c.recovery*recovery:c.spacing*recovery);
   }
   phrase(){
     const w=this.world,s=w.spec,c=s.challenge!,r=()=>w.random();
@@ -80,7 +87,7 @@ export class ChallengeStream {
         // Independent grounded jumps. Separation uses MAX speed (shortest recovery)
         // while widths use MIN speed (shortest jump travel).
         const recovery=c.recovery+(1-progress)*.35+(pattern==='recovery'?.85:0)+(pattern==='rhythm'?i%2*.14:r()*.22);
-        x+=o.width+s.max_speed*(envelope.flight+recovery);
+        x+=o.width+this.speedBound(x)*(envelope.flight+recovery);
       }else{
         o.kind='gate';o.width=36+Math.floor(r()*25);
         o.gap=Math.min(260,s.gap_height+(1-progress)*30+(pattern==='recovery'?25:0));

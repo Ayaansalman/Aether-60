@@ -12,12 +12,12 @@ class BossEncounter(Contract):
     health: int = Field(default=12,ge=4,le=30)
     telegraph_ms: int = Field(default=700,ge=500,le=1500)
     cooldown_ms: int = Field(default=1700,ge=900,le=4000)
-    patterns: list[Literal['charge','volley']] = Field(default_factory=lambda:['charge','volley'],min_length=2,max_length=2)
+    patterns: list[Literal['charge','volley','slam']] = Field(default_factory=lambda:['charge','volley'],min_length=2,max_length=3)
     victory: Literal['boss_defeat']='boss_defeat'
     ordinary_enemies: Literal[0]=0
     @model_validator(mode='after')
     def distinct_patterns(self):
-        if set(self.patterns)!={'charge','volley'}: raise ValueError('Boss needs distinct charge and volley patterns')
+        if not {'charge','volley'} <= set(self.patterns) or len(set(self.patterns))!=len(self.patterns): raise ValueError('Boss needs distinct charge and volley patterns, optionally slam')
         return self
 
 
@@ -54,6 +54,8 @@ class Goal(GoalDesign):
 
 
 class InteractionDesign(Contract):
+    enable_platforms: bool = False
+    disable_hazards: bool = False
     trigger: Literal['interact', 'touch', 'pressure', 'proximity', 'projectile'] = 'interact'
     section: int = Field(default=0, ge=0, le=13)
     door_section: int = Field(default=1, ge=0, le=13)
@@ -152,8 +154,11 @@ class GameDesign(Contract):
         if self.levels and len(self.levels) != self.level_count:
             raise ValueError('levels must contain exactly level_count level specifications')
         for owner in [self,*self.levels]:
-            interactions=owner.interactions or []
+            interactions=owner.interactions if owner.interactions is not None else self.interactions
             if not interactions:continue
+            for interaction in interactions:
+                if not 0 <= interaction.section < interaction.door_section < len(owner.sections):
+                    raise ValueError('Switch must precede its door on existing level sections; repair dependency fields before construction')
             gates={('named',i.gate) if i.gate else ('isolated',index) for index,i in enumerate(interactions)}
             for goal in owner.objectives or []:
                 if goal.kind=='unlock' and goal.count>len(gates):
@@ -167,6 +172,7 @@ class GameDesign(Contract):
 
 
 class Platform(Contract):
+    activation_sources: list[str] = Field(default_factory=list,max_length=4)
     x: int
     y: int
     width: int = Field(ge=4, le=10)
@@ -177,6 +183,7 @@ class Platform(Contract):
 
 
 class Entity(Contract):
+    disabled_by: list[str] = Field(default_factory=list,max_length=4)
     boss: BossEncounter | None = None
     id: str = Field(default='', max_length=80)
     x: float
@@ -227,6 +234,9 @@ class LevelIR(Contract):
         if len(identified) != len(set(identified)):
             raise ValueError('Entity IDs must be unique within a level')
         entities = {e.id:e for e in self.entities if e.id}
+        for references in [*(p.activation_sources for p in self.platforms),*(e.disabled_by for e in self.entities)]:
+            if any(ref not in entities or entities[ref].kind not in ('switch','pressure_plate') for ref in references):
+                raise ValueError('World effects must reference existing switches')
         for link in self.links:
             if link.target not in entities or entities[link.target].kind != 'door':
                 raise ValueError('Behavior links must target an existing door')

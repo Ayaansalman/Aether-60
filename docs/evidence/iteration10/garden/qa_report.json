@@ -1,0 +1,1391 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "genre_assets_gravity",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "behavior": {
+            "elapsed": 91.66666666666666,
+            "totalShots": 0,
+            "completedSequences": 0,
+            "events": [],
+            "active": 0
+          },
+          "feedback": {},
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "mystic_forest",
+          "regions": [
+            {
+              "id": "mystic_forest",
+              "name": "Mystic Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 24,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "icy_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 25,
+              "y": 1,
+              "width": 22,
+              "height": 30,
+              "slippery": true
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 400,
+          "y": 560,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak with Elena the Healer in the forest.",
+          "health": 1,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "healer_elena",
+              "kind": "npc",
+              "x": 432,
+              "y": 496,
+              "health": 2,
+              "role": "Village Healer",
+              "behavior": "chase",
+              "animation": "ninja_woman:down:idle",
+              "body": {
+                "x": 422,
+                "y": 487,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "magical_flower_one",
+              "kind": "item",
+              "x": 1168,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1152,
+                "y": 512,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            },
+            {
+              "id": "magical_flower_two",
+              "kind": "item",
+              "x": 1168,
+              "y": 624,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1152,
+                "y": 608,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjablue",
+          "playerFrame": 0,
+          "animation": "ninja_ninjablue:down:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjablue",
+            "ninja_terrain",
+            "ninja_tree",
+            "ninja_woman"
+          ],
+          "missingAssets": []
+        },
+        "asset_http_failures": []
+      }
+    },
+    {
+      "id": "biome_regions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "same_scene": true
+      }
+    },
+    {
+      "id": "connected_biome_crossing",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "snapshot": {
+          "behavior": {
+            "elapsed": 625,
+            "totalShots": 0,
+            "completedSequences": 0,
+            "events": [],
+            "active": 0
+          },
+          "feedback": {},
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "icy_ruins",
+          "regions": [
+            {
+              "id": "mystic_forest",
+              "name": "Mystic Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 24,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "icy_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 25,
+              "y": 1,
+              "width": 22,
+              "height": 30,
+              "slippery": true
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 840.0143527474852,
+          "y": 528,
+          "vx": 131.22216248000842,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak with Elena the Healer in the forest.",
+          "health": 1,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "healer_elena",
+              "kind": "npc",
+              "x": 432,
+              "y": 496,
+              "health": 2,
+              "role": "Village Healer",
+              "behavior": "chase",
+              "animation": "ninja_woman:down:idle",
+              "body": {
+                "x": 422,
+                "y": 487,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "magical_flower_one",
+              "kind": "item",
+              "x": 1168,
+              "y": 528,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1152,
+                "y": 512,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            },
+            {
+              "id": "magical_flower_two",
+              "kind": "item",
+              "x": 1168,
+              "y": 624,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1152,
+                "y": 608,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjablue",
+          "playerFrame": 3,
+          "animation": "ninja_ninjablue:right:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjablue",
+            "ninja_terrain",
+            "ninja_tree",
+            "ninja_woman"
+          ],
+          "missingAssets": []
+        },
+        "method": "Controlled launch just outside lake; real rightward keyboard movement across boundary"
+      }
+    },
+    {
+      "id": "localized_slippery",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "released": {
+          "behavior": {
+            "elapsed": 875.0000000000011,
+            "totalShots": 0,
+            "completedSequences": 0,
+            "events": [],
+            "active": 0
+          },
+          "feedback": {
+            "collect": 1
+          },
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "icy_ruins",
+          "regions": [
+            {
+              "id": "mystic_forest",
+              "name": "Mystic Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 24,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "icy_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 25,
+              "y": 1,
+              "width": 22,
+              "height": 30,
+              "slippery": true
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 1172.7694946984823,
+          "y": 528,
+          "vx": 36.34478782571706,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {
+            "frost_blossom": 1
+          },
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak with Elena the Healer in the forest.",
+          "health": 1,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "healer_elena",
+              "kind": "npc",
+              "x": 432,
+              "y": 496,
+              "health": 2,
+              "role": "Village Healer",
+              "behavior": "chase",
+              "animation": "ninja_woman:down:idle",
+              "body": {
+                "x": 422,
+                "y": 487,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "magical_flower_two",
+              "kind": "item",
+              "x": 1168,
+              "y": 624,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1152,
+                "y": 608,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjablue",
+          "playerFrame": 3,
+          "animation": "ninja_ninjablue:right:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjablue",
+            "ninja_terrain",
+            "ninja_tree",
+            "ninja_woman"
+          ],
+          "missingAssets": []
+        },
+        "coasting": {
+          "behavior": {
+            "elapsed": 975.0000000000016,
+            "totalShots": 0,
+            "completedSequences": 0,
+            "events": [],
+            "active": 0
+          },
+          "feedback": {
+            "collect": 1
+          },
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": true,
+          "score": 0,
+          "localBiome": "icy_ruins",
+          "regions": [
+            {
+              "id": "mystic_forest",
+              "name": "Mystic Forest",
+              "biome": "forest",
+              "x": 1,
+              "y": 1,
+              "width": 24,
+              "height": 30,
+              "slippery": false
+            },
+            {
+              "id": "icy_ruins",
+              "name": "Icy Ruins",
+              "biome": "icy_ruins",
+              "x": 25,
+              "y": 1,
+              "width": 22,
+              "height": 30,
+              "slippery": true
+            }
+          ],
+          "ready": true,
+          "generation": 1,
+          "genre": "adventure",
+          "area": 0,
+          "x": 1176.118983312132,
+          "y": 528,
+          "vx": 29.761356943194652,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {
+            "frost_blossom": 1
+          },
+          "quests": [
+            "ACTIVE",
+            "NOT_STARTED",
+            "NOT_STARTED",
+            "NOT_STARTED"
+          ],
+          "objective": "Speak with Elena the Healer in the forest.",
+          "health": 1,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "healer_elena",
+              "kind": "npc",
+              "x": 432,
+              "y": 496,
+              "health": 2,
+              "role": "Village Healer",
+              "behavior": "chase",
+              "animation": "ninja_woman:down:idle",
+              "body": {
+                "x": 422,
+                "y": 487,
+                "width": 18,
+                "height": 18,
+                "enabled": true
+              }
+            },
+            {
+              "id": "magical_flower_two",
+              "kind": "item",
+              "x": 1168,
+              "y": 624,
+              "health": 2,
+              "role": "",
+              "behavior": "chase",
+              "animation": null,
+              "body": {
+                "x": 1152,
+                "y": 608,
+                "width": 32,
+                "height": 32,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_ninjablue",
+          "playerFrame": 3,
+          "animation": "ninja_ninjablue:right:idle",
+          "selectedAssets": [
+            "ninja_gem",
+            "ninja_herb",
+            "ninja_key",
+            "ninja_ninjablue",
+            "ninja_terrain",
+            "ninja_tree",
+            "ninja_woman"
+          ],
+          "missingAssets": []
+        }
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before": 400,
+        "after": 428.41666666666646
+      }
+    },
+    {
+      "id": "top_down_vertical_movement",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "before_y": 80,
+        "after_y": 43.833333333333314
+      }
+    },
+    {
+      "id": "registered_animation_frames",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "observed_frames": [
+          7,
+          15,
+          7,
+          11,
+          15,
+          7,
+          15
+        ],
+        "asset": "ninja_ninjablue"
+      }
+    },
+    {
+      "id": "directional_art_and_pack",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "directions": [
+          "ninja_ninjablue:left:idle",
+          "ninja_ninjablue:up:idle",
+          "ninja_ninjablue:down:idle"
+        ],
+        "selected_assets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ]
+      }
+    },
+    {
+      "id": "environment_collision",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "adjacent_wall": [
+          1,
+          1,
+          -1,
+          0,
+          "ArrowLeft"
+        ],
+        "after": [
+          42,
+          48
+        ]
+      }
+    },
+    {
+      "id": "dialogue_0",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Elena\nWelcome to the forest wanderer. The northern winds bring a chill.",
+        "Could you help me gather ingredients from the ancient ruins?"
+      ]
+    },
+    {
+      "id": "quest_0_talk",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": {
+          "elapsed": 583.3333333333331,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "mystic_forest",
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 399,
+        "y": 496,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Collect the Frost Blossom from the icy ruins. (0/1)",
+        "health": 1,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "role": "Village Healer",
+            "behavior": "chase",
+            "animation": "ninja_woman:down:idle",
+            "body": {
+              "x": 422,
+              "y": 487,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "magical_flower_one",
+            "kind": "item",
+            "x": 1168,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": null,
+            "body": {
+              "x": 1152,
+              "y": 512,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "magical_flower_two",
+            "kind": "item",
+            "x": 1168,
+            "y": 624,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": null,
+            "body": {
+              "x": 1152,
+              "y": 608,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_1",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "frost_blossom": 1
+      }
+    },
+    {
+      "id": "quest_1_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": {
+          "elapsed": 1774.999999999995,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {
+          "collect": 1
+        },
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "icy_ruins",
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1168,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "frost_blossom": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE",
+          "NOT_STARTED"
+        ],
+        "objective": "Collect the Ice Petal from the icy ruins. (0/1)",
+        "health": 1,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "role": "Village Healer",
+            "behavior": "chase",
+            "animation": "ninja_woman:down:idle",
+            "body": {
+              "x": 422,
+              "y": 487,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "magical_flower_two",
+            "kind": "item",
+            "x": 1168,
+            "y": 624,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": null,
+            "body": {
+              "x": 1152,
+              "y": 608,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "inventory_2",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "frost_blossom": 1,
+        "ice_petal": 1
+      }
+    },
+    {
+      "id": "quest_2_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": {
+          "elapsed": 3066.666666666678,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {
+          "collect": 2
+        },
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "icy_ruins",
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1168,
+        "y": 624,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "frost_blossom": 1,
+          "ice_petal": 1
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "ACTIVE"
+        ],
+        "objective": "Return both magical flowers to Elena the Healer.",
+        "health": 1,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "role": "Village Healer",
+            "behavior": "chase",
+            "animation": "ninja_woman:down:idle",
+            "body": {
+              "x": 422,
+              "y": 487,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "dialogue_3",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": [
+        "Elena\nOh thank you so much! These magical flowers are radiant.",
+        "The realm is at peace, and our remedies are secured."
+      ]
+    },
+    {
+      "id": "inventory_delivery_consumed",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "frost_blossom": 0,
+        "ice_petal": 0
+      }
+    },
+    {
+      "id": "quest_3_deliver",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": {
+          "elapsed": 3591.6666666666874,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {
+          "collect": 2
+        },
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "mystic_forest",
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 399,
+        "y": 496,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "frost_blossom": 0,
+          "ice_petal": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 1,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "role": "Village Healer",
+            "behavior": "chase",
+            "animation": "ninja_woman:down:idle",
+            "body": {
+              "x": 422,
+              "y": 487,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "quest_collect",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "checks": [
+          "quest_1_collect",
+          "quest_2_collect"
+        ]
+      }
+    },
+    {
+      "id": "adventure_completion",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": {
+          "elapsed": 3741.66666666669,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {
+          "collect": 2
+        },
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "icy_ruins",
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 1392,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {
+          "frost_blossom": 0,
+          "ice_petal": 0
+        },
+        "quests": [
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED",
+          "COMPLETED"
+        ],
+        "objective": "All quests complete \u2014 use the glowing exit.",
+        "health": 1,
+        "won": true,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "role": "Village Healer",
+            "behavior": "chase",
+            "animation": "ninja_woman:down:idle",
+            "body": {
+              "x": 422,
+              "y": 487,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": {
+        "behavior": {
+          "elapsed": 349.9999999999999,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": true,
+        "score": 0,
+        "localBiome": "mystic_forest",
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 400,
+        "y": 560,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [
+          "ACTIVE",
+          "NOT_STARTED",
+          "NOT_STARTED",
+          "NOT_STARTED"
+        ],
+        "objective": "Speak with Elena the Healer in the forest.",
+        "health": 1,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "healer_elena",
+            "kind": "npc",
+            "x": 432,
+            "y": 496,
+            "health": 2,
+            "role": "Village Healer",
+            "behavior": "chase",
+            "animation": "ninja_woman:down:idle",
+            "body": {
+              "x": 422,
+              "y": 487,
+              "width": 18,
+              "height": 18,
+              "enabled": true
+            }
+          },
+          {
+            "id": "magical_flower_one",
+            "kind": "item",
+            "x": 1168,
+            "y": 528,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": null,
+            "body": {
+              "x": 1152,
+              "y": 512,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          },
+          {
+            "id": "magical_flower_two",
+            "kind": "item",
+            "x": 1168,
+            "y": 624,
+            "health": 2,
+            "role": "",
+            "behavior": "chase",
+            "animation": null,
+            "body": {
+              "x": 1152,
+              "y": 608,
+              "width": 32,
+              "height": 32,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_ninjablue",
+        "playerFrame": 0,
+        "animation": "ninja_ninjablue:down:idle",
+        "selectedAssets": [
+          "ninja_gem",
+          "ninja_herb",
+          "ninja_key",
+          "ninja_ninjablue",
+          "ninja_terrain",
+          "ninja_tree",
+          "ninja_woman"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "adventure",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Controlled placement, real keyboard movement/collision/interactions/projectiles. Not autonomous navigation or arbitrary prompt fidelity certification."
+}

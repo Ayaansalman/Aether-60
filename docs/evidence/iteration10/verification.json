@@ -1,0 +1,226 @@
+{
+  "backend": {
+    "passed": 142,
+    "failed": 0,
+    "scope": "iteration10/9/8/7, gameplay systems, regional dungeon, adventure, iteration6, platformer fidelity and platformer; not full legacy suite",
+    "latest_followup": 49
+  },
+  "frontend": {
+    "tests_passed": 38,
+    "tests_failed": 0,
+    "lint": "PASS",
+    "build": "PASS",
+    "advisory": "Existing Phaser chunk size and Python dependency deprecations"
+  },
+  "browser": [
+    {
+      "case": "factory",
+      "runtime": "PASS",
+      "passed": 17,
+      "failed": [],
+      "semantic": "WARN"
+    },
+    {
+      "case": "garden",
+      "runtime": "PASS",
+      "passed": 22,
+      "failed": [],
+      "semantic": "PASS"
+    },
+    {
+      "case": "boss",
+      "runtime": "PASS",
+      "passed": 12,
+      "failed": [],
+      "semantic": "PASS"
+    },
+    {
+      "case": "runner",
+      "runtime": "PASS",
+      "passed": 10,
+      "failed": [],
+      "semantic": "WARN"
+    },
+    {
+      "case": "laboratory",
+      "runtime": "PASS",
+      "passed": 12,
+      "failed": [],
+      "semantic": "PASS"
+    },
+    {
+      "case": "open",
+      "runtime": "PASS",
+      "passed": 12,
+      "failed": [],
+      "semantic": "PASS"
+    },
+    {
+      "case": "easy",
+      "runtime": "PASS",
+      "passed": 10,
+      "failed": [],
+      "semantic": "PASS"
+    },
+    {
+      "case": "guardian",
+      "status": "BLOCKED",
+      "issues": [
+        {
+          "capability": "boss_shield",
+          "requirement_id": "req_0100e1aee08e",
+          "code": "RUNTIME_UNSUPPORTED",
+          "reason": "Boss damage shields controlled by switches are not implemented; door links cannot target boss immunity"
+        },
+        {
+          "capability": "boss_duel",
+          "code": "RUNTIME_UNSUPPORTED",
+          "reason": "Boss adapter constructs a dedicated single arena and cannot preserve a preceding traversal route or switch puzzle"
+        }
+      ]
+    }
+  ],
+  "platformer_regression": "PASS",
+  "provider_usage": {
+    "fresh_completions": 6,
+    "breakdown": "Garden initial interpretation + correction (2), Factory interpretation + design + one correction (3), recovered Garden design (1)",
+    "transport_retries": "Not independently counted",
+    "initial_fresh_jobs_both_failed": true,
+    "recovery": "Saved Gemini decisions through current full HTTP pipeline; one new design completion for Garden, zero for Factory"
+  },
+  "persisted_jobs": [
+    {
+      "source": "api-replay",
+      "case": "factory",
+      "id": "0e5fe401-0241-4d3c-96b9-db2bd14b7d71",
+      "status": "READY_WITH_WARNINGS",
+      "runtime": "PASS",
+      "checks": 17,
+      "semantic": "WARN"
+    },
+    {
+      "source": "api-replay",
+      "case": "garden",
+      "id": "1d14eb4b-d7a4-4d0f-8084-0050569a14db",
+      "status": "READY_WITH_WARNINGS",
+      "runtime": "PASS",
+      "checks": 22,
+      "semantic": "PASS"
+    },
+    {
+      "source": "api-replay",
+      "case": "boss",
+      "id": "233e0260-9f49-4b98-a811-19caea4bf08c",
+      "status": "READY_WITH_WARNINGS",
+      "runtime": "PASS",
+      "checks": 12,
+      "semantic": "PASS"
+    },
+    {
+      "source": "api-replay",
+      "case": "runner",
+      "id": "00650aae-0bfc-4aed-a5ba-1799bd7b1dd1",
+      "status": "READY_WITH_WARNINGS",
+      "runtime": "PASS",
+      "checks": 10,
+      "semantic": "WARN"
+    },
+    {
+      "source": "api-replay",
+      "case": "guardian",
+      "id": "e4c454e1-12ca-4ef7-9545-a1f59500547c",
+      "status": "FAILED",
+      "runtime": null,
+      "checks": 0,
+      "semantic": null
+    },
+    {
+      "source": "live-recovered",
+      "case": "factory",
+      "id": "66483172-ae69-41c6-b8e5-509985a7a738",
+      "status": "READY_WITH_WARNINGS",
+      "runtime": "PASS",
+      "checks": 17,
+      "semantic": "WARN"
+    },
+    {
+      "source": "live-recovered",
+      "case": "garden",
+      "id": "89d9b78e-15eb-4000-bfe4-fe69eb64a1e1",
+      "status": "READY_WITH_WARNINGS",
+      "runtime": "PASS",
+      "checks": 22,
+      "semantic": "PASS"
+    }
+  ],
+  "real_time_play": {
+    "results": [
+      {
+        "case": "easy",
+        "duration": 12.0,
+        "jumps": 5,
+        "final": {
+          "state": "playing",
+          "distance": 2547.025347222222,
+          "speed": 215.97916666666666,
+          "y": 430,
+          "vy": 0,
+          "score": 254,
+          "next": {
+            "id": 5,
+            "x": 3026.848452662935,
+            "width": 18.204185324420724,
+            "kind": "barrier",
+            "center": 250,
+            "gap": 240,
+            "passed": false,
+            "pattern": "rhythm",
+            "section": 1,
+            "height": 50
+          }
+        },
+        "passed": true,
+        "method": "Actual Space/R inputs, reading live obstacles for jump timing; no state overrides"
+      },
+      {
+        "case": "runner",
+        "duration": 12.01,
+        "jumps": 6,
+        "final": {
+          "state": "playing",
+          "distance": 4077.1666666667534,
+          "speed": 340,
+          "y": 430,
+          "vy": 0,
+          "score": 407,
+          "next": {
+            "id": 6,
+            "x": 4416.58965706422,
+            "width": 94.6443065350386,
+            "kind": "spike",
+            "center": 250,
+            "gap": 180,
+            "passed": false,
+            "pattern": "mixed",
+            "section": 0,
+            "height": 33
+          }
+        },
+        "passed": true,
+        "method": "Actual Space/R inputs, reading live obstacles for jump timing; no state overrides"
+      },
+      {
+        "case": "laboratory-60-seconds",
+        "wall_seconds": 61.56,
+        "score": 60.00000000000602,
+        "won": true,
+        "lost": false,
+        "score_stopped": true,
+        "restart": true,
+        "passed": true,
+        "method": "Actual elapsed 60-second scheduler, unchanged health and attack clocks; controlled evasion teleports only"
+      }
+    ],
+    "page_errors": []
+  }
+}

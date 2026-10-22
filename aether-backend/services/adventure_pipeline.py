@@ -23,12 +23,15 @@ async def run_adventure(gid, request, artifact, stage, browser_report, intent=No
     stage('DESIGNING','Constructing validated world, requested actors and typed gameplay relationships')
     stage('SELECTING_ASSETS','Selecting one coherent registered visual family and semantic actor/quest resources')
     ir=adventure.construct(design,request.prompt,request.seed)
+    # Save rejected construction too, so the first incorrect representation is inspectable.
+    artifact('game_ir_v2.json',ir.model_dump())
     from services.semantic_intent import fidelity
     preliminary=fidelity(ir,intent)
     artifact('semantic_requirement_report.json',preliminary)
     if preliminary['overall']=='FAIL':raise ValueError('Construction did not preserve required controls or mechanics. See semantic_requirement_report.json.')
+    ir.requirements.extend(preliminary['requirements'])
     artifact('world_plan.json',{'seed':ir.seed,'areas':[
-        {'name':a.name,'method':'settlement and woodland zones' if a.environment in ('village','forest') else 'connected room graph',
+        {'name':a.name,'layout':a.layout,'method':a.layout+' survival grammar' if a.layout!='auto' else 'settlement and woodland zones' if a.environment in ('village','forest') else 'connected room graph',
          'zones':a.zones,'buildings':len(a.buildings),'trees':len(a.trees),
          'relationships':[{'actor':actor.id,'role':actor.kind,'location':{'x':actor.x,'y':actor.y},'requires':actor.requires} for actor in a.actors]}
         for a in ir.areas]})
@@ -59,7 +62,7 @@ async def run_adventure(gid, request, artifact, stage, browser_report, intent=No
     # Construction evidence is intentionally distinct from semantic prompt fidelity.
     ir.requirements=[{'id':f'quest_{i}','source':q.text,'constructed':True,
         'status':'verified' if report['overall']=='PASS' else 'constructed_unverified'} for i,q in enumerate(ir.quests)]
-    if ir.gameplay:ir.requirements.extend(fidelity(ir,intent,report)['requirements'])
+    ir.requirements.extend(fidelity(ir,intent,report)['requirements'])
     artifact('requirement_report.json',{'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED','requirements':ir.requirements,
         'scope':'Validated planned quest coverage; browser replays each planned goal. Arbitrary prompt semantic coverage is not certified.','unsupported':design.unsupported})
     artifact('game_ir_v2.json',ir.model_dump())

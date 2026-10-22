@@ -23,6 +23,18 @@ def run_browser_qa(url,directory,fixture=None):
             record('boss_volley',page.evaluate('window.__bossScene.shotsFired')>0,patterns)
             page.evaluate('''()=>{const s=window.__bossScene,e=s.enemies[0];e.memory={phase:'windup',at:s.time.now-1000,direction:-1,cycle:1};}''');page.wait_for_timeout(60)
             record('boss_charge',abs(page.evaluate('window.__bossScene.enemies[0].sprite.body.velocity.x'))>=260,'Controlled attack clock, real runtime charge')
+            if page.evaluate("window.__bossScene.spec.boss.patterns.includes('slam')"):
+                page.evaluate("()=>{const s=window.__bossScene,e=s.enemies[0];s.projectiles.clear(true,true);e.memory={phase:'windup',at:s.time.now,direction:-1,cycle:s.spec.boss.patterns.indexOf('slam')+1};}")
+                page.wait_for_timeout(80)
+                warning=page.evaluate("window.__bossScene.children.getByName('boss-health').text")
+                page.evaluate("()=>{const s=window.__bossScene;s.enemies[0].memory.at=s.time.now-s.spec.boss.telegraph_ms;}")
+                page.wait_for_timeout(60)
+                waves=page.evaluate("window.__bossScene.projectiles.getChildren().map(p=>({vx:p.body.velocity.x,scaleY:p.scaleY}))")
+                record('boss_slam','SLAM' in warning and 'JUMP' in warning and len(waves)==2 and waves[0]['vx']*waves[1]['vx']<0,{'warning':warning,'waves':waves,'method':'Controlled attack clock; real low shockwave projectiles'})
+            phase=page.evaluate("()=>{const s=window.__bossScene,e=s.enemies[0];e.health=Math.floor(s.spec.boss.health/2);e.memory={phase:'recover',at:s.time.now-s.spec.boss.cooldown_ms*.8,direction:-1,cycle:1};}")
+            page.wait_for_timeout(60)
+            record('boss_phase_change',page.evaluate("window.__bossScene.enemies[0].memory.phase==='windup'"),'Half-health boss begins its next attack before the full-health cooldown')
+            page.evaluate('(hp)=>window.__bossScene.enemies[0].health=hp',init['health'])
             # Isolate boss at a known projectile lane and use the real player attack input.
             page.evaluate('''()=>{const s=window.__bossScene,e=s.enemies[0];s.projectiles.clear(true,true);s.hurtAt=s.time.now+60000;s.hero.setPosition(240,470);e.sprite.setPosition(500,470);e.sprite.setVelocity(0);e.memory={phase:'recover',at:s.time.now+60000,direction:-1};s.facing=1;}''');page.wait_for_timeout(500);page.keyboard.down('f');page.wait_for_timeout(90);page.keyboard.up('f');page.wait_for_function('(hp)=>window.__bossScene.enemies[0].health<hp',arg=init['health'],timeout=4000)
             health=page.evaluate('window.__bossScene.enemies[0].health');record('player_attack_damage',health<init['health'],{'before':init['health'],'after':health,'snapshot':page.evaluate('window.__bossScene.snapshot()')})

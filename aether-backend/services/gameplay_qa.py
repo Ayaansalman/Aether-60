@@ -81,8 +81,16 @@ def verify_gameplay(page, spec, directory, record):
                 passed=(a is not None and abs(a['x']-old['x'])>15) if behavior=='ambusher' else after['shotsFired']>before['shotsFired'] and any(e['phase']=='windup' for e in before['enemies'])
             record('enemy_'+behavior,passed,{'stage':stage,'method':'Actual decision state, motion or telegraphed projectile attack; controlled player placement','before':before,'after':after},'fidelity')
         if any(p['moving'] for p in level['platforms']):
-            restart(stage);before=snap()['movingPlatforms'];page.wait_for_timeout(550);after=snap()['movingPlatforms']
-            record('moving_platform_motion',any(abs(a['x']-b['x'])+abs(a['y']-b['y'])>8 for a,b in zip(before,after)),{'stage':stage,'before':before,'after':after},'fidelity')
+            restart(stage)
+            sources={s for p in level['platforms'] for s in p.get('activation_sources',[])}
+            dormant=snap()['movingPlatforms'];page.wait_for_timeout(200);still=snap()['movingPlatforms']
+            for source in sources:activate(next(e for e in level['entities'] if e['id']==source),level)
+            before=snap()['movingPlatforms'];samples=[before]
+            for _ in range(5):page.wait_for_timeout(150);samples.append(snap()['movingPlatforms'])
+            after=samples[-1]
+            moved=any(max(s[i]['x'] for s in samples)-min(s[i]['x'] for s in samples)+max(s[i]['y'] for s in samples)-min(s[i]['y'] for s in samples)>8 for i in range(len(before)))
+            record('moving_platform_motion',moved,{'stage':stage,'samples':samples},'fidelity')
+            if sources:record('switch_world_effects',dormant==still and moved,{'sources':sorted(sources),'dormant':dormant,'still':still,'samples':samples},'fidelity')
             sprites=[p for p in level['platforms'] if p['moving'] or p.get('route')=='optional']
             vertical=next((i for i,p in enumerate(sprites) if p['moving'] and p.get('motion',{}).get('axis')=='vertical'),None)
             if vertical is not None:
@@ -106,6 +114,12 @@ def verify_gameplay(page, spec, directory, record):
             for _ in range(14):
                 values.append(snap()['machines'][0]['active']);page.wait_for_timeout(hazard.get('period_ms',2200)/12)
             record('timed_hazard_cycle',len(set(values))==2,{'stage':stage,'active_samples':values},'fidelity')
+            for source in {s for e in level['entities'] for s in e.get('disabled_by',[])}:
+                activate(next(e for e in level['entities'] if e['id']==source),level)
+                disabled=[]
+                for _ in range(5):
+                    page.wait_for_timeout(hazard.get('period_ms',2200)/4);disabled.append(any(m['active'] for m in snap()['machines']))
+                record('switch_world_effects',not any(disabled),{'source':source,'disabled_samples':disabled},'fidelity')
         if resolved.get('player_attack')=='projectile' and any(e['kind']=='enemy' for e in level['entities']):
             restart(stage)
             enemy=max((e for e in level['entities'] if e['kind']=='enemy'),key=lambda e:e.get('ai',{}).get('health',1))

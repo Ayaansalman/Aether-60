@@ -35,7 +35,8 @@ def test_peaceful_excludes_combat():
 
 def test_unsupported_and_unreachable():
     design=fixture_design('multiplayer rpg forest boss')
-    assert len(design.unsupported)==3
+    assert set(design.unsupported)=={'Unsupported request: multiplayer','Unsupported request: rpg'}
+    assert design.boss is not None  # Dedicated boss arenas have been supported since Iteration 7.
     ir=construct(design,'forest')
     ir.platforms[1].x+=30
     assert validate_route(ir)['overall']=='FAIL'

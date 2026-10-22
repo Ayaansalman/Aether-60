@@ -87,18 +87,19 @@ export function enemyStep(behavior: string, memory: EnemyMemory, sensor: {x:numb
 }
 
 /** Boss cycles between a committed charge and a three-shot volley, with a readable windup. */
-export function bossStep(memory:EnemyMemory,now:number,health:number,maxHealth:number,playerX:number,x:number,low:number,high:number,telegraph:number,cooldown:number) {
-  const elapsed=now-memory.at;let next={...memory};let vx=0,fire=false;
+export function bossStep(memory:EnemyMemory,now:number,health:number,maxHealth:number,playerX:number,x:number,low:number,high:number,telegraph:number,cooldown:number,patterns:string[]=['charge','volley']) {
+  const elapsed=now-memory.at;let next={...memory};let vx=0,fire=false,slam=false;
+  const pattern=patterns[((memory.cycle||1)-1)%patterns.length];
   const phase2=health<=maxHealth/2;
   if(memory.phase==='hurt'){if(elapsed>=250)next={...next,phase:'recover',at:now};}
   else if(memory.phase==='idle'||memory.phase==='recover'){
     if(elapsed>=cooldown*(phase2?.7:1))next={phase:'windup',at:now,direction:Math.sign(playerX-x)||-1,cycle:(memory.cycle||0)+1};
   }else if(memory.phase==='windup'){
-    if(elapsed>=telegraph){next={...next,phase:'attack',at:now};fire=(memory.cycle||0)%2===0;}
+    if(elapsed>=telegraph){next={...next,phase:'attack',at:now};fire=pattern==='volley';slam=pattern==='slam';}
   }else if(memory.phase==='attack'){
-    if(elapsed<480&&(memory.cycle||0)%2===1)vx=memory.direction*(phase2?340:270);
+    if(elapsed<480&&pattern==='charge')vx=memory.direction*(phase2?340:270);
     else next={...next,phase:'recover',at:now};
   }
   if(x<=low&&vx<0||x>=high&&vx>0)vx=0;
-  return {memory:next,vx,fire};
+  return {memory:next,vx,fire,slam,pattern};
 }

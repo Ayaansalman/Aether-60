@@ -6,8 +6,12 @@ declare global {interface Window {__runner?:{world:RunnerWorld;action:()=>void;r
 export function RunnerCanvas({spec,restart=0}:{spec:RunnerIR;restart?:number}){
  const canvas=useRef<HTMLCanvasElement>(null);const bests=useRef(new Map<string,number>());
  useEffect(()=>{const el=canvas.current!;const ctx=el.getContext('2d')!;const world=new RunnerWorld(spec);const bestKey=JSON.stringify(spec);world.best=bests.current.get(bestKey)??0;const sessionBests=bests.current;const painter=new ArcadePainter(spec.theme,spec.player);let frame=0,last=0,lostAt=0;
- const action=()=>world.action();const key=(e:KeyboardEvent)=>{if(document.activeElement!==el)return;if(['Space','ArrowUp','KeyW','KeyR','Enter'].includes(e.code)){e.preventDefault();if(!e.repeat){if(e.code==='KeyR')world.restart();else action();}}};
- const pointer=()=>{el.focus();action();};el.addEventListener('pointerdown',pointer);window.addEventListener('keydown',key);
+ const action=()=>world.action();let engaged=restart>0;
+ // Toolbar restart remounts this effect while focus is on the toolbar button.
+ // Restore game focus so keyboard retry and simulation resume immediately.
+ if(restart>0)el.focus({preventScroll:true});
+ const key=(e:KeyboardEvent)=>{const target=document.activeElement;const editable=target instanceof HTMLElement&&(target.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(target.tagName));if(editable)return;if(target!==el&&!(engaged&&(target===document.body||target===null)))return;if(['Space','ArrowUp','KeyW','KeyR','Enter'].includes(e.code)){e.preventDefault();if(!e.repeat){el.focus({preventScroll:true});if(e.code==='KeyR')world.restart();else action();}}};
+ const pointer=()=>{engaged=true;el.focus();action();};el.addEventListener('pointerdown',pointer);window.addEventListener('keydown',key);
  const hook={world,action,restart:()=>world.restart(),snapshot:()=>({mode:spec.mode,state:world.state,score:world.score,distance:world.distance,y:world.y,vy:world.vy,active:world.obstacles.length,serial:world.serial,generation:world.generation})};window.__runner=hook;
  const draw=(now:number)=>{const dt=last?(now-last)/1000:0;last=now;if(document.activeElement===el)world.tick(dt);
  if(world.state==='playing')lostAt=0;else if(!lostAt)lostAt=now;

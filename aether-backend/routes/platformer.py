@@ -64,7 +64,7 @@ async def run(gid: str, request: Generate):
             from services.semantic_intent import feasibility
             compatibility=feasibility(intent.model_dump())
             artifact('capability_compatibility.json',compatibility)
-            if compatibility['overall']=='FAIL':raise ValueError('Requested behavior is incompatible with the selected controls. See capability_compatibility.json.')
+            if compatibility['overall']=='FAIL':raise ValueError('Requested behaviors cannot be constructed: '+'; '.join(issue['reason'] for issue in compatibility['issues'])+'. See capability_compatibility.json.')
             if intent.genre=='unsupported': raise ValueError('Requested game family is unsupported; see semantic_intent.json')
             if intent.genre=='runner':
                 from services.runner import run_runner
@@ -90,6 +90,7 @@ async def run(gid: str, request: Generate):
             artifact("game_design.json", design.model_dump())
             artifact("provider.json", provenance)
             artifact("design_validation.json", {"attempts":provenance.get("validation_attempts",[]),"maximum_corrections":1})
+            artifact("design_normalization.json", {"changes":provenance.get("normalizations",[]) + requirements.get('changes',[]),"original_prompt":request.prompt})
             job_store.update_job(gid, model_id=provenance['model'] or "fixture", limitations=design.unsupported + [note for note in design.design_notes if 'approximat' in note.lower()])
             stage("DESIGNING", "Validated typed design; composing sections and registered mechanics")
             ir = construct(design, request.prompt, request.seed)
@@ -108,12 +109,19 @@ async def run(gid: str, request: Generate):
                 ir = construct(design, request.prompt, ir.seed)
                 validation = validate_route(ir)
                 repairs.append({"attempt":attempt+1,"category":"level_layout","evidence":failed_validation,"before":before,"after":design.model_dump(),"validation":validation})
-            artifact("repair_report.json", {"attempts":repairs,"maximum":2})
+            artifact("repair_report.json", {"attempts":repairs,"maximum":2,"design_dependency_repairs":provenance.get('normalizations',[]),"maximum_design_passes":1})
             artifact("final_design.json", design.model_dump())
             artifact("validation.json", validation)
             if validation['overall'] != 'PASS':
                 raise ValueError("Route remains unreachable after bounded layout repair")
             artifact("game_ir_v2.json", ir.model_dump())
+            from services.semantic_intent import fidelity
+            preliminary=fidelity(ir,intent.model_dump())
+            artifact('semantic_requirement_report.json',preliminary)
+            if preliminary['overall']=='FAIL':
+                raise ValueError('Constructed mechanics do not satisfy mandatory semantic requirements. Inspect semantic_requirement_report.json.')
+            ir.requirements.extend(preliminary['requirements'])
+            artifact('game_ir_v2.json',ir.model_dump())
             coverage = requirement_evidence(ir, request.prompt, design.unsupported)
             artifact("requirement_report.json", {**requirements, **coverage})
             if coverage['overall'] == 'FAIL':
@@ -151,7 +159,7 @@ async def run(gid: str, request: Generate):
                 if repaired_validation['overall']!='PASS':
                     break
                 repairs.append({'attempt':len(repairs)+1,'category':'level_layout','evidence':failed,'before':before,'after':ir.model_dump()})
-                artifact('repair_report.json',{'attempts':repairs,'maximum':2})
+                artifact('repair_report.json',{'attempts':repairs,'maximum':2,'design_dependency_repairs':provenance.get('normalizations',[]),'maximum_design_passes':1})
                 save(gid,'game_ir_v2.json',ir.model_dump())
                 save(gid,'final_design.json',design.model_dump())
                 save(gid,'validation.json',repaired_validation)
@@ -165,7 +173,7 @@ async def run(gid: str, request: Generate):
             artifact("qa_report.json", report)
             coverage = requirement_evidence(ir, request.prompt, design.unsupported, report)
             artifact("requirement_report.json", {**requirements, **coverage})
-            ir.requirements = coverage['requirements']
+            ir.requirements = coverage['requirements'] + fidelity(ir,intent.model_dump(),report)['requirements']
             artifact("game_ir_v2.json", ir.model_dump())
             job_store.update_job(gid, spec_json=ir.model_dump_json())
             job_store.update_job(gid, latest_qa_json=json.dumps(report), qa_summary={"passed":sum(c['passed'] for c in report['checks']),"failed":sum(not c['passed'] for c in report['checks']),"critical_failed":[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
@@ -256,6 +264,8 @@ async def reverify_job(gid: str):
         if intent_path.is_file():
             save(gid,'semantic_requirement_report.json',semantic)
             if 'semantic_requirement_report.json' not in paths: paths.append('semantic_requirement_report.json')
+            ir.requirements=[r for r in coverage['requirements'] if 'capability' not in r]+semantic.get('requirements',[])
+            save(gid,'game_ir_v2.json',ir.model_dump())
         final='FAILED' if report['overall']=='FAIL' or coverage['overall']=='FAIL' or semantic['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and coverage['overall']=='PASS' and semantic['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
         job_store.update_job(gid,status=final,stage=final,spec_json=ir.model_dump_json(),latest_qa_json=json.dumps(report),artifact_paths=paths,
             qa_summary={'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks']),

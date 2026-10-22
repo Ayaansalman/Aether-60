@@ -1,0 +1,1179 @@
+{
+  "game_id": "8f4b3d57-c1af-412b-80fa-ab5253b23d3e",
+  "prompt": "Create a peaceful top-down fantasy adventure called The Frozen Garden.\n\nThe entire adventure takes place on ONE continuous map.\n\nHalf of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.\n\nThere should be a beautiful natural transition between the two environments, not an abrupt straight line.\n\nA healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.\n\nWalking on ice should feel slippery, while walking through the forest should have normal movement.\n\nAdd animated environmental details, NPC dialogue, an understandable quest system, and appropriate interactions.\n\nNo enemies or combat. The game ends when I return the flowers to the healer.",
+  "status": "FAILED",
+  "error_code": "GENERATION_FAILED",
+  "semantic_intent.json": {
+    "genre": "adventure",
+    "loop": "Explore the forest and snowy ruins, collect two magical flowers, and return them to the healer to complete the quest.",
+    "control": "top_down",
+    "requirements": [
+      {
+        "source": "The entire adventure takes place on ONE continuous map.",
+        "meaning": "Single connected level with no separate zone loading.",
+        "capability": "single_level",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_single_level_continuity",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "Half of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.",
+        "meaning": "World features distinct forest and dark/garden/snow biomes.",
+        "capability": "biome_regions",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_biome_regions_present",
+        "biomes": [
+          "forest",
+          "garden",
+          "dark",
+          "snow",
+          "frozen_lake",
+          "icy_ruins"
+        ],
+        "count": 2,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "Walking on ice should feel slippery, while walking through the forest should have normal movement.",
+        "meaning": "Icy terrain applies reduced friction for slippery movement.",
+        "capability": "slippery_region",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_localized_slippery_physics",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "A healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.",
+        "meaning": "Quest to collect specific items from a designated area.",
+        "capability": "quest_collect",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_quest_item_collection",
+        "biomes": [],
+        "count": 2,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "The game ends when I return the flowers to the healer.",
+        "meaning": "Quest completion and item delivery ends the game successfully.",
+        "capability": "quest_delivery",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_quest_delivery_completion",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      },
+      {
+        "source": "No enemies or combat.",
+        "meaning": "Exclusion of all combat elements and enemies.",
+        "capability": "no_combat",
+        "status": "planned",
+        "depends_on": [],
+        "verification": "verify_absence_of_combat",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true
+      }
+    ],
+    "arcade": null,
+    "perspective": "top_down",
+    "structure": "connected_levels",
+    "loops": [
+      "exploration",
+      "quest",
+      "collection",
+      "interaction"
+    ],
+    "gameplay": {
+      "feedback": "clear",
+      "health": 1,
+      "invulnerability_ms": 1000,
+      "player_attack": false,
+      "outcome": "quests",
+      "duration_seconds": null,
+      "scoring": "none",
+      "archetypes": [],
+      "spawns": []
+    },
+    "provenance": {
+      "provider": "OpenAICompatProvider",
+      "model": "gemini-3.5-flash-lite",
+      "live": true,
+      "validation_attempts": [
+        {
+          "attempt": 1,
+          "valid": false,
+          "model": "gemini-3.5-flash-lite",
+          "errors": [
+            {
+              "loc": [],
+              "msg": "requirements.1.source must quote an exact contiguous substring of the original prompt; invalid source: 'Half of the world is a lush magical forest... The other half is a frozen landscape...'"
+            }
+          ],
+          "candidate": {
+            "genre": "adventure",
+            "loop": "Explore the forest and snowy ruins, collect two magical flowers, and return them to the healer to complete the quest.",
+            "control": "top_down",
+            "perspective": "top_down",
+            "structure": "connected_levels",
+            "loops": [
+              "exploration",
+              "quest",
+              "collection",
+              "interaction"
+            ],
+            "requirements": [
+              {
+                "source": "The entire adventure takes place on ONE continuous map.",
+                "meaning": "Single connected level with no separate zone loading.",
+                "capability": "single_level",
+                "status": "planned",
+                "verification": "verify_single_level_continuity"
+              },
+              {
+                "source": "Half of the world is a lush magical forest... The other half is a frozen landscape...",
+                "meaning": "World features distinct forest and dark/garden/snow biomes.",
+                "capability": "biome_regions",
+                "status": "planned",
+                "biomes": [
+                  "forest",
+                  "garden",
+                  "dark",
+                  "snow",
+                  "frozen_lake",
+                  "icy_ruins"
+                ],
+                "count": 2,
+                "verification": "verify_biome_regions_present"
+              },
+              {
+                "source": "Walking on ice should feel slippery, while walking through the forest should have normal movement.",
+                "meaning": "Icy terrain applies reduced friction for slippery movement.",
+                "capability": "slippery_region",
+                "status": "planned",
+                "verification": "verify_localized_slippery_physics"
+              },
+              {
+                "source": "A healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.",
+                "meaning": "Quest to collect specific items from a designated area.",
+                "capability": "quest_collect",
+                "status": "planned",
+                "count": 2,
+                "verification": "verify_quest_item_collection"
+              },
+              {
+                "source": "The game ends when I return the flowers to the healer.",
+                "meaning": "Quest completion and item delivery ends the game successfully.",
+                "capability": "quest_delivery",
+                "status": "planned",
+                "verification": "verify_quest_delivery_completion"
+              },
+              {
+                "source": "No enemies or combat.",
+                "meaning": "Exclusion of all combat elements and enemies.",
+                "capability": "no_combat",
+                "status": "planned",
+                "verification": "verify_absence_of_combat"
+              }
+            ],
+            "gameplay": {
+              "feedback": "clear",
+              "health": 1,
+              "invulnerability_ms": 1000,
+              "player_attack": false,
+              "outcome": "quests",
+              "duration_seconds": null,
+              "scoring": "none",
+              "archetypes": [],
+              "spawns": []
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "valid": true,
+          "model": "gemini-3.5-flash-lite"
+        }
+      ],
+      "source_grounding": []
+    }
+  },
+  "game_design.json": {
+    "genre": "adventure",
+    "title": "The Frozen Garden",
+    "premise": "Explore a continuous magical world transitioning from a lush forest to icy snowy ruins. A healer needs two magical flowers retrieved from the frozen half to complete your peaceful quest.",
+    "theme": "fantasy",
+    "art_style": "ninja_adventure",
+    "areas": [
+      {
+        "regions": [
+          {
+            "id": "mystic_forest",
+            "name": "Mystic Forest",
+            "biome": "forest",
+            "x": 1,
+            "y": 1,
+            "width": 24,
+            "height": 30,
+            "slippery": false
+          },
+          {
+            "id": "icy_ruins",
+            "name": "Icy Ruins",
+            "biome": "icy_ruins",
+            "x": 25,
+            "y": 1,
+            "width": 22,
+            "height": 30,
+            "slippery": true
+          }
+        ],
+        "name": "The Continuous Realm",
+        "environment": "forest"
+      }
+    ],
+    "actors": [
+      {
+        "region": "mystic_forest",
+        "id": "healer_elena",
+        "kind": "npc",
+        "name": "Elena",
+        "area": 0,
+        "role": "Village Healer",
+        "item": "",
+        "quantity": 1,
+        "requires": [],
+        "behavior": "chase",
+        "dialogue": {
+          "greeting": [
+            "Welcome to the forest wanderer. The northern winds bring a chill.",
+            "Could you help me gather ingredients from the ancient ruins?"
+          ],
+          "active": [
+            "Have you found the two magical flowers in the icy ruins yet?",
+            "Be careful on the slippery ice near the ruins."
+          ],
+          "completed": [
+            "Oh thank you so much! These magical flowers are radiant.",
+            "The realm is at peace, and our remedies are secured."
+          ]
+        }
+      },
+      {
+        "region": "icy_ruins",
+        "id": "magical_flower_one",
+        "kind": "item",
+        "name": "Frost Blossom",
+        "area": 0,
+        "role": "",
+        "item": "frost_blossom",
+        "quantity": 1,
+        "requires": [],
+        "behavior": "chase",
+        "dialogue": {
+          "greeting": [
+            "Welcome, traveler."
+          ],
+          "active": [
+            "Your journey is still ahead."
+          ],
+          "completed": [
+            "Thank you for your help!"
+          ]
+        }
+      },
+      {
+        "region": "icy_ruins",
+        "id": "magical_flower_two",
+        "kind": "item",
+        "name": "Ice Petal",
+        "area": 0,
+        "role": "",
+        "item": "ice_petal",
+        "quantity": 1,
+        "requires": [],
+        "behavior": "chase",
+        "dialogue": {
+          "greeting": [
+            "Welcome, traveler."
+          ],
+          "active": [
+            "Your journey is still ahead."
+          ],
+          "completed": [
+            "Thank you for your help!"
+          ]
+        }
+      }
+    ],
+    "quests": [
+      {
+        "kind": "talk",
+        "target": "healer_elena",
+        "count": 1,
+        "text": "Speak with Elena the Healer in the forest.",
+        "item": "",
+        "delivery_items": {}
+      },
+      {
+        "kind": "collect",
+        "target": "magical_flower_one",
+        "count": 1,
+        "text": "Collect the Frost Blossom from the icy ruins.",
+        "item": "frost_blossom",
+        "delivery_items": {}
+      },
+      {
+        "kind": "collect",
+        "target": "magical_flower_two",
+        "count": 1,
+        "text": "Collect the Ice Petal from the icy ruins.",
+        "item": "ice_petal",
+        "delivery_items": {}
+      },
+      {
+        "kind": "deliver",
+        "target": "healer_elena",
+        "count": 2,
+        "text": "Return both magical flowers to Elena the Healer.",
+        "item": "",
+        "delivery_items": {
+          "frost_blossom": 1,
+          "ice_petal": 1
+        }
+      }
+    ],
+    "gameplay": {
+      "feedback": "clear",
+      "health": 1,
+      "invulnerability_ms": 1000,
+      "player_attack": false,
+      "outcome": "quests",
+      "duration_seconds": null,
+      "scoring": "none",
+      "archetypes": [],
+      "spawns": []
+    },
+    "combat": false,
+    "unsupported": [
+      "Animated environmental transition effects beyond biome rendering"
+    ]
+  },
+  "design_validation.json": {
+    "attempts": [
+      {
+        "attempt": 1,
+        "valid": true,
+        "model": "gemini-3.5-flash-lite"
+      }
+    ],
+    "maximum_corrections": 1,
+    "original_prompt": "Create a peaceful top-down fantasy adventure called The Frozen Garden.\n\nThe entire adventure takes place on ONE continuous map.\n\nHalf of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.\n\nThere should be a beautiful natural transition between the two environments, not an abrupt straight line.\n\nA healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.\n\nWalking on ice should feel slippery, while walking through the forest should have normal movement.\n\nAdd animated environmental details, NPC dialogue, an understandable quest system, and appropriate interactions.\n\nNo enemies or combat. The game ends when I return the flowers to the healer."
+  },
+  "semantic_requirement_report.json": {
+    "behavior_preserved": true,
+    "control_preserved": true,
+    "arcade_constraints": {},
+    "overall": "FAIL",
+    "requirements": [
+      {
+        "source": "The entire adventure takes place on ONE continuous map.",
+        "meaning": "Single connected level with no separate zone loading.",
+        "capability": "single_level",
+        "status": "validated_constraint",
+        "depends_on": [],
+        "verification": "verify_single_level_continuity",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "requested_capability": "single_level",
+        "bound_biomes": [],
+        "constructed": true,
+        "ir_path": "areas/levels",
+        "runtime_check": null,
+        "runtime_verified": false
+      },
+      {
+        "source": "Half of the world is a lush magical forest full of trees, flowers, small ponds, and wooden pathways. The other half is a frozen landscape with snowy trees, slippery ice, and ancient ruins.",
+        "meaning": "World features distinct forest and dark/garden/snow biomes.",
+        "capability": "biome_regions",
+        "status": "failed",
+        "depends_on": [],
+        "verification": "verify_biome_regions_present",
+        "biomes": [
+          "forest",
+          "garden",
+          "dark",
+          "snow",
+          "frozen_lake",
+          "icy_ruins"
+        ],
+        "count": 2,
+        "scope": "game",
+        "mandatory": true,
+        "requested_capability": "biome_regions",
+        "bound_biomes": [
+          "dark",
+          "forest",
+          "frozen_lake",
+          "garden",
+          "icy_ruins",
+          "snow"
+        ],
+        "constructed": false,
+        "ir_path": "areas.regions",
+        "runtime_check": "biome_regions",
+        "runtime_verified": false
+      },
+      {
+        "source": "Walking on ice should feel slippery, while walking through the forest should have normal movement.",
+        "meaning": "Icy terrain applies reduced friction for slippery movement.",
+        "capability": "slippery_region",
+        "status": "constructed_unverified",
+        "depends_on": [],
+        "verification": "verify_localized_slippery_physics",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "requested_capability": "slippery_region",
+        "bound_biomes": [],
+        "constructed": true,
+        "ir_path": "areas.regions.slippery",
+        "runtime_check": "localized_slippery",
+        "runtime_verified": false
+      },
+      {
+        "source": "A healer living in the forest asks me to retrieve two magical flowers from the snowy ruins.",
+        "meaning": "Quest to collect specific items from a designated area.",
+        "capability": "quest_collect",
+        "status": "constructed_unverified",
+        "depends_on": [],
+        "verification": "verify_quest_item_collection",
+        "biomes": [],
+        "count": 2,
+        "scope": "game",
+        "mandatory": true,
+        "requested_capability": "quest_collect",
+        "bound_biomes": [],
+        "constructed": true,
+        "ir_path": "quests",
+        "runtime_check": "quest_collect",
+        "runtime_verified": false
+      },
+      {
+        "source": "The game ends when I return the flowers to the healer.",
+        "meaning": "Quest completion and item delivery ends the game successfully.",
+        "capability": "quest_delivery",
+        "status": "constructed_unverified",
+        "depends_on": [],
+        "verification": "verify_quest_delivery_completion",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "requested_capability": "quest_delivery",
+        "bound_biomes": [],
+        "constructed": true,
+        "ir_path": "quests",
+        "runtime_check": "adventure_completion",
+        "runtime_verified": false
+      },
+      {
+        "source": "No enemies or combat.",
+        "meaning": "Exclusion of all combat elements and enemies.",
+        "capability": "no_combat",
+        "status": "validated_constraint",
+        "depends_on": [],
+        "verification": "verify_absence_of_combat",
+        "biomes": [],
+        "count": null,
+        "scope": "game",
+        "mandatory": true,
+        "requested_capability": "no_combat",
+        "bound_biomes": [],
+        "constructed": true,
+        "ir_path": "combat",
+        "runtime_check": null,
+        "runtime_verified": false
+      }
+    ],
+    "scope": "Structured construction witnesses plus specific runtime checks; visual style needs human review."
+  },
+  "capability_compatibility.json": {
+    "overall": "PASS",
+    "issues": [],
+    "decision_source": "deterministic capability compatibility",
+    "catalog": {
+      "platform_movement": {
+        "ir_path": "player",
+        "verification": "mandatory_route_edges",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "player"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "top_down_movement": {
+        "ir_path": "areas",
+        "verification": "top_down_horizontal_movement",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "auto_run": {
+        "ir_path": "mode",
+        "verification": "runner_input",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "mode"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "flap": {
+        "ir_path": "mode",
+        "verification": "repeatable_flap",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "mode"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "endless_obstacles": {
+        "ir_path": "endless",
+        "verification": "endless_bounded_state",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "endless"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "finite_finish": {
+        "ir_path": "finish_distance",
+        "verification": null,
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "finish_distance"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "distance_score": {
+        "ir_path": "scoring",
+        "verification": "score_once",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "gap_score": {
+        "ir_path": "scoring",
+        "verification": "score_once",
+        "controls": [
+          "auto_jump",
+          "flap"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "restart": {
+        "ir_path": "genre",
+        "verification": "rapid_restart",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "genre"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_duel": {
+        "ir_path": "boss",
+        "verification": "boss_duel",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss"
+        ],
+        "behavior_types": [],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_health_bar": {
+        "ir_path": "boss.health",
+        "verification": "boss_arena",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.health"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_patterns": {
+        "ir_path": "boss.patterns",
+        "verification": "boss_volley",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.patterns"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "boss_defeat": {
+        "ir_path": "boss.victory",
+        "verification": "boss_duel",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "boss.victory"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_ordinary_enemies": {
+        "ir_path": "entities",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "entities"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_collectibles": {
+        "ir_path": "entities",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "entities"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_combat": {
+        "ir_path": "combat",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "combat"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "single_level": {
+        "ir_path": "areas/levels",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "areas/levels"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "biome_regions": {
+        "ir_path": "areas.regions",
+        "verification": "biome_regions",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas.regions"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "slippery_region": {
+        "ir_path": "areas.regions.slippery",
+        "verification": "localized_slippery",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "areas.regions.slippery"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_delivery": {
+        "ir_path": "quests",
+        "verification": "adventure_completion",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_collect": {
+        "ir_path": "quests",
+        "verification": "quest_collect",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_activate": {
+        "ir_path": "quests",
+        "verification": "quest_activate",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_unlock": {
+        "ir_path": "quests",
+        "verification": "quest_unlock",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "quest_explore": {
+        "ir_path": "quests",
+        "verification": "quest_explore",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "adventure_combat": {
+        "ir_path": "quests",
+        "verification": "adventure_combat",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "treasure_finish": {
+        "ir_path": "quests",
+        "verification": "adventure_completion",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "quests"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "projectile_attack": {
+        "ir_path": "player_attack",
+        "verification": "player_attack_damage",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "player_attack"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "sword_melee": {
+        "ir_path": "player_attack",
+        "verification": "player_attack_damage",
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "player_attack"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "visual_theme": {
+        "ir_path": "theme",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "theme"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "unsupported": {
+        "ir_path": "unsupported",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "unsupported"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "switch_gate": {
+        "ir_path": "links",
+        "verification": "shared_gate_dependency",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "links"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "moving_platforms": {
+        "ir_path": "platforms.moving",
+        "verification": "moving_platform_motion",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "platforms.moving"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "patrol_enemies": {
+        "ir_path": "entities.behavior",
+        "verification": "enemy_patrol",
+        "controls": [
+          "platform"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "entities.behavior"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "health_damage": {
+        "ir_path": "gameplay.health",
+        "verification": "composition_health_loss",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.health"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "enemy_spawning": {
+        "ir_path": "gameplay.spawns",
+        "verification": "composition_safe_spawning",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "top_down_movement",
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.spawns"
+        ],
+        "behavior_types": [
+          "chase",
+          "patrol",
+          "shooter"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": "One connected area; safe spawns may defer when no valid tile exists; uniform archetype choice"
+      },
+      "enemy_roles": {
+        "ir_path": "gameplay.archetypes",
+        "verification": "composition_enemy_roles",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.archetypes"
+        ],
+        "behavior_types": [
+          "chase",
+          "patrol",
+          "shooter"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "attack_sequence": {
+        "ir_path": "gameplay.archetypes.attack",
+        "verification": "composition_attack_sequence",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "enemy_roles",
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.archetypes.attack"
+        ],
+        "behavior_types": [
+          "timed_projectile_sequence"
+        ],
+        "conflicts": [
+          "no_combat"
+        ],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "survival_time": {
+        "ir_path": "gameplay.scoring",
+        "verification": "composition_survival_score",
+        "controls": [
+          "top_down"
+        ],
+        "dependencies": [
+          "health_damage"
+        ],
+        "required_configuration": [
+          "gameplay",
+          "gameplay.scoring"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "AdventureScene + BehaviorWorld",
+        "limitation": null
+      },
+      "no_inventory": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_quests": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_npcs": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      },
+      "no_exit": {
+        "ir_path": "gameplay",
+        "verification": null,
+        "controls": [],
+        "dependencies": [],
+        "required_configuration": [
+          "gameplay"
+        ],
+        "behavior_types": [],
+        "conflicts": [],
+        "runtime": "existing family adapter",
+        "limitation": null
+      }
+    },
+    "relationships": {
+      "feedback": "clear",
+      "health": 1,
+      "invulnerability_ms": 1000,
+      "player_attack": false,
+      "outcome": "quests",
+      "duration_seconds": null,
+      "scoring": "none",
+      "archetypes": [],
+      "spawns": []
+    },
+    "scope": "Control compatibility and typed component dependencies; construction and runtime verification follow."
+  },
+  "failure_events": [
+    {
+      "stage": "FAILED",
+      "detail": "Construction did not preserve required controls or mechanics. See semantic_requirement_report.json."
+    }
+  ]
+}
