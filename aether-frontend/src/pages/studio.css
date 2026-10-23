@@ -1548,6 +1548,26 @@
 .theme-dot.ice { background: #72c4d8; }
 .build-progress { display:flex; align-items:center; gap:10px; padding:12px 16px; margin-bottom:18px; border:1px solid #c3d3bc; border-radius:6px; font-size:12px; line-height:1.6; background:#edf4e8; }
 .build-progress svg { flex-shrink:0; }
+.generation-canvas { min-height:470px; padding:30px 34px; color:#dce7d9; background:radial-gradient(ellipse at top right,#28473f,transparent 70%),#132a2c; }
+.generation-canvas-heading { display:flex; gap:16px; align-items:flex-start; margin-bottom:24px; }
+.generation-canvas-heading>svg { flex-shrink:0; margin-top:3px; color:#b9d68b; }
+.generation-canvas h3 { margin:0 0 8px; color:#f2f6e9; font-family:var(--serif); font-size:28px; font-weight:500; }
+.generation-canvas-heading p { margin:0; max-width:590px; font-size:13px; line-height:1.7; color:#adbfad; }
+.generation-timeline { margin:0; padding:0; list-style:none; display:grid; gap:4px; }
+.generation-timeline li { display:flex; gap:12px; padding:10px 12px; border-radius:5px; align-items:flex-start; }
+.generation-timeline li.active { background:#ffffff0b; box-shadow:inset 2px 0 #bdd68c; }
+.generation-step-icon { display:flex; margin-top:2px; color:#9ab29e; flex-shrink:0; }
+.generation-timeline strong { font-size:12px; font-weight:600; }
+.generation-timeline p { margin:4px 0 0; color:#9db2aa; font-size:11px; line-height:1.6; overflow-wrap:anywhere; }
+.generation-timeline small { margin-left:auto; white-space:nowrap; font-size:10px; color:#9db29c; padding-top:3px; }
+.generation-timeline .failed .generation-step-icon,.generation-canvas.failed .generation-canvas-heading>svg { color:#f4ad92; }
+.generation-timeline .info { color:#e2c98c; }
+.generation-outcome { max-width:1152px; margin:18px auto; padding:18px 20px; }
+.generation-outcome p { line-height:1.7; overflow-wrap:anywhere; }
+.generation-actions { display:flex; gap:18px; flex-wrap:wrap; margin-top:14px; }
+.model-fallback-note { max-width:1152px; margin:16px auto; border-left:3px solid #b9a26b; padding:8px 16px; font-size:12px; background:#f4f0e5; color:#655c46; }
+.model-fallback-note p { line-height:1.6; margin:6px 0; }
+@media(max-width:700px){.generation-canvas{min-height:410px;padding:24px 18px}.generation-canvas h3{font-size:23px}.generation-timeline small{display:none}.generation-timeline li{padding:8px 4px}.generation-canvas-heading{gap:12px}}
 /* The legacy app fixes body to one screen. Studio uses normal page scrolling on mobile. */
 body:has(.studio-theme) { height:auto; min-height:100%; overflow:visible; background:#f7f8f3; }
 html:has(.studio-theme) { overflow-x:clip; overflow-y:auto; }

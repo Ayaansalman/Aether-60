@@ -1,0 +1,88 @@
+[
+  {
+    "case": "runner",
+    "game_id": "4e6c3c48-e221-4e33-b549-6c32c22ccf3a",
+    "status": "READY",
+    "qa": "PASS",
+    "checks": 10,
+    "failed": [],
+    "observed_testing": true,
+    "public_canvas_held_during_qa": true,
+    "public_game_playable": true,
+    "public_url_preserved": true,
+    "stages": [
+      "TESTING",
+      "READY"
+    ],
+    "page_errors": []
+  },
+  {
+    "case": "platformer",
+    "game_id": "ab750e4e-a600-4dea-b0ea-3180d8856d6e",
+    "status": "READY",
+    "qa": "PASS",
+    "checks": 13,
+    "failed": [],
+    "observed_testing": true,
+    "public_canvas_held_during_qa": true,
+    "public_game_playable": true,
+    "public_url_preserved": true,
+    "stages": [
+      "PLANNING",
+      "TESTING",
+      "READY"
+    ],
+    "page_errors": []
+  },
+  {
+    "case": "adventure",
+    "game_id": "0834f838-68e2-497c-be5d-59564e6c9def",
+    "status": "READY",
+    "qa": "PASS",
+    "checks": 17,
+    "failed": [],
+    "observed_testing": true,
+    "public_canvas_held_during_qa": true,
+    "public_game_playable": true,
+    "public_url_preserved": true,
+    "stages": [
+      "TESTING",
+      "READY"
+    ],
+    "page_errors": []
+  },
+  {
+    "case": "boss",
+    "game_id": "c1292734-21c9-4003-8b37-0c92c4f77e99",
+    "status": "READY",
+    "qa": "PASS",
+    "checks": 11,
+    "failed": [],
+    "observed_testing": true,
+    "public_canvas_held_during_qa": true,
+    "public_game_playable": true,
+    "public_url_preserved": true,
+    "stages": [
+      "TESTING",
+      "READY"
+    ],
+    "page_errors": []
+  },
+  {
+    "case": "survival",
+    "game_id": "7fe93c86-5b45-4141-be1e-71c2f4674075",
+    "status": "READY",
+    "qa": "PASS",
+    "checks": 11,
+    "failed": [],
+    "observed_testing": true,
+    "public_canvas_held_during_qa": true,
+    "public_game_playable": true,
+    "public_url_preserved": true,
+    "stages": [
+      "TESTING",
+      "READY"
+    ],
+    "page_errors": []
+  }
+]

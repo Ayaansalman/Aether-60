@@ -1,0 +1,110 @@
+[
+  {
+    "case": "platformer",
+    "game_id": "0ad48c71-8e36-4451-ba71-4616b791fbb5",
+    "overall": "FAIL",
+    "failures": [
+      {
+        "id": "exit_indicator_animation",
+        "details": {
+          "mode": "glow",
+          "style": "gate",
+          "observed_alpha": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      {
+        "id": "browser_execution",
+        "details": {
+          "error": "StopIteration: ",
+          "snapshot": {
+            "ready": true,
+            "levelIndex": 0,
+            "levelCount": 1,
+            "levelTitle": "The Verdant Passage",
+            "topology": "journey",
+            "objective": {
+              "type": "reach_exit",
+              "required": 0,
+              "total": 19
+            },
+            "goals": [],
+            "progress": {
+              "defeat": [],
+              "activate": [],
+              "unlock": [],
+              "collect": []
+            },
+            "triggers": [],
+            "doors": [],
+            "feedback": {},
+            "playerShotsFired": 0,
+            "playerAttack": "stomp",
+            "respawn": {
+              "x": 90,
+              "y": 692
+            },
+            "exitAlpha": 1,
+            "exitStyle": "gate",
+            "enemies": [],
+            "icicles": [],
+            "machines": [],
+            "movingPlatforms": [
+              {
+                "x": 864,
+                "y": 657
+              },
+              {
+                "x": 1620,
+                "y": 657
+              }
+            ],
+            "shotsFired": 0,
+            "slippery": false,
+            "environment": "forest",
+            "terrainTexture": "terrain",
+            "generation": 3,
+            "landedPlatforms": [
+              0
+            ],
+            "x": 90,
+            "y": 696,
+            "vx": 0,
+            "vy": 0,
+            "grounded": true,
+            "health": 5,
+            "crystals": 0,
+            "state": "playing",
+            "checkpoint": -1,
+            "missingAssets": [],
+            "animation": "idle",
+            "seed": 7,
+            "time": 8413.2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "case": "adventure",
+    "game_id": "323709e8-e107-4787-ba9d-f238e8813549",
+    "overall": "FAIL",
+    "failures": [
+      {
+        "id": "browser_execution",
+        "details": {
+          "error": "'example'",
+          "page_errors": []
+        }
+      }
+    ]
+  }
+]

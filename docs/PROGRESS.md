@@ -62,3 +62,7 @@ Semantic game/control/requirement planning, two distinct arcade runner modes, on
 ## Iteration 10 (2026-10-21)
 
 Production-artifact-driven dependency repair and semantic fidelity corrections are implemented. Factory and Garden saved decisions now construct and pass real browser checks; Guardian remains explicitly unsupported for shield/traversal composition. Added modern survival layout grammars, configured third boss attack/feedback, compact HUD and reliable arcade focus/restart. 142 distinct focused backend tests, 38 frontend tests, build/lint and targeted Chromium checks pass. Six fresh Gemini completions exposed two initial failures; saved-decision recovery succeeds with disclosed warnings, without claiming a clean fresh-generation success rate. Details and remaining approximations: [ITERATION10_RESULTS.md](ITERATION10_RESULTS.md).
+
+## Presentation readiness (2026-10-22)
+
+Added backend-event progress in the preview, playback held until QA PASS, actionable errors/reconnect/recheck and visible provider fallback events. Five fixture HTTP/browser pipelines pass (62 runtime checks); 66 focused backend tests, 43 frontend tests, build/lint and 12 UI checks pass. Live tiny probes verify 3.5 Flash responds; 3.8 Flash timed out and remains last fallback. Social/auth/database expansion deferred. Details: [PRESENTATION_READY_RESULTS.md](PRESENTATION_READY_RESULTS.md).

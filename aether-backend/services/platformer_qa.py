@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from services.qa_urls import playback_job_id
 
 
 def run_browser_qa(url: str, directory: Path, fixture: dict | None = None) -> dict:
@@ -37,8 +38,7 @@ def run_browser_qa(url: str, directory: Path, fixture: dict | None = None) -> di
                 page.evaluate('(level)=>window.__AETHER_PLATFORMER__.restart(level)',level)
                 page.wait_for_function('(n)=>window.__AETHER_PLATFORMER__?.snapshot().ready && window.__AETHER_PLATFORMER__.snapshot().generation>n',arg=generation,timeout=4000)
                 wait_grounded()
-            if '/studio/play/' in url:
-                gid=url.split('/studio/play/')[1].split('?')[0]
+            if (gid:=playback_job_id(url)):
                 spec=page.evaluate('(id)=>fetch(`/api/v2/games/${id}/spec`).then(r=>r.json())',gid)
             else:
                 from urllib.parse import parse_qs,urlparse

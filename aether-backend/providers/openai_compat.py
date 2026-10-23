@@ -20,6 +20,7 @@ except ImportError:
         pass
 
 from providers.base import (
+    fallback_listener,
     CompletionResult,
     ModelHttpError,
     ModelOutputInvalidError,
@@ -270,6 +271,12 @@ class OpenAICompatProvider:
         self.fallback_history.append(event)
         self.recent_fallbacks.append(event)
         _PROCESS_FALLBACK_HISTORY.append(event)
+        listener=fallback_listener.get()
+        if listener:
+            # Observability must never turn a successful model fallback into a
+            # failed generation if its event sink is temporarily unavailable.
+            try:listener(event)
+            except Exception:pass
         return True
 
     def complete(self, system: str, user: str) -> CompletionResult:

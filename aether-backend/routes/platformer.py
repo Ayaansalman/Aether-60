@@ -6,6 +6,7 @@ import subprocess
 import sys
 import time
 import uuid
+from urllib.parse import urlsplit,urlunsplit
 from pathlib import Path
 from typing import Literal
 from fastapi import APIRouter, BackgroundTasks, HTTPException
@@ -17,11 +18,22 @@ from services.capabilities import extract_requirements, requirement_evidence
 
 router = APIRouter()
 _worker = asyncio.Lock()
+PROVIDER_FAILURE_MESSAGES={
+    'MODEL_HTTP_ERROR':'The API provider could not complete this request. Check model availability, API credentials or quota, then try again. Any model fallback attempts are recorded above.',
+    'MODEL_TIMEOUT':'The model API timed out after bounded retry attempts. Please try again; your request and diagnostics are saved.',
+    'MODEL_OUTPUT_INVALID':'The model API returned an empty or malformed response after retry. Please try generating again.',
+}
+
+
+def qa_player_url(game_url):
+    parts=urlsplit(game_url)
+    path=parts.path.replace('/studio/play/','/studio/verify/',1)
+    return urlunsplit((parts.scheme,parts.netloc,path,parts.query,parts.fragment))
 
 
 def browser_report(game_url, directory, genre="platformer"):
     try:
-        proc = subprocess.run([sys.executable,"-m",("services.composition_qa" if genre=="composition" else "services.boss_qa" if genre=="boss" else "services.runner_qa" if genre=="runner" else "services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),game_url,str(directory)],
+        proc = subprocess.run([sys.executable,"-m",("services.composition_qa" if genre=="composition" else "services.boss_qa" if genre=="boss" else "services.runner_qa" if genre=="runner" else "services.adventure_qa" if genre=="adventure" else "services.platformer_qa"),qa_player_url(game_url),str(directory)],
             cwd=str(Path(__file__).resolve().parents[1]),capture_output=True,text=True,timeout=240)
         return json.loads(proc.stdout.strip())
     except Exception as exc:
@@ -56,6 +68,18 @@ async def run(gid: str, request: Generate):
                 artifacts.append(name)
             job_store.update_job(gid, artifact_paths=artifacts)
 
+        fallback_events=[]
+        def record_fallback(event):
+            reason=str(event.get('reason','')).lower()
+            why='quota or rate limit' if '429' in reason or 'quota' in reason else 'request timeout' if 'timeout' in reason else 'provider unavailable' if '503' in reason or 'network' in reason else 'provider request failure'
+            safe={'from_model':event['from_model'],'to_model':event['to_model'],'reason':why,'timestamp':event.get('timestamp')}
+            fallback_events.append(safe)
+            artifact('model_fallbacks.json',{'events':fallback_events})
+            job_store.update_job(gid,model_id=safe['to_model'])
+            event_store.add_event(gid,stage='MODEL_FALLBACK',result='START',detail=f"{safe['from_model']} → {safe['to_model']}: {why}. Continuing the same request.")
+
+        from providers.base import fallback_listener
+        listener_token=fallback_listener.set(record_fallback)
         try:
             from services.semantic_intent import interpret
             stage('PLANNING','Interpreting central loop, controls and constraints','START')
@@ -194,9 +218,11 @@ async def run(gid: str, request: Generate):
             from pydantic import ValidationError
             if hasattr(exc,'attempts'):artifact('design_validation.json',{'attempts':exc.attempts,'maximum_corrections':1,'original_prompt':request.prompt})
             elif isinstance(exc,ValidationError):artifact('design_validation.json',{'errors':exc.errors(include_url=False,include_context=False,include_input=False)})
-            safe = 'The generated design contains inconsistent fields. See design_validation.json in the Inspector.' if isinstance(exc,ValidationError) else str(exc)[:500] if isinstance(exc, ValueError) else f"{code}: {type(exc).__name__}. Check provider configuration or retry later."
+            safe = PROVIDER_FAILURE_MESSAGES.get(code) or ('The generated design contains inconsistent fields. See design_validation.json in the Inspector.' if isinstance(exc,ValidationError) else str(exc)[:500] if isinstance(exc, ValueError) else f"{code}: {type(exc).__name__}. Check provider configuration or retry later.")
             event_store.add_event(gid, stage="FAILED", result="FAILED", detail=safe)
             job_store.update_job(gid, status="FAILED", stage="FAILED", error_code=code)
+        finally:
+            fallback_listener.reset(listener_token)
 
 
 @router.post("/games", status_code=202)

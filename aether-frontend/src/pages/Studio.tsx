@@ -1,4 +1,6 @@
 import {RunnerCanvas} from '../components/RunnerCanvas';
+import {GenerationProgress} from '../components/GenerationProgress';
+import {generationView} from '../game/generation';
 import type {RunnerIR} from '../game/runner/world';
 import { useEffect, useState } from "react";
 import { Link, Route, Routes, useParams, useNavigate } from "react-router-dom";
@@ -11,7 +13,6 @@ import {
   Code2,
   Expand,
   Flag,
-  Gamepad2,
   Layers3,
   Loader2,
   Play,
@@ -235,7 +236,7 @@ function Landing() {
   );
 }
 
-function Workspace() {
+function Workspace({qaPlayback=false}:{qaPlayback?:boolean}) {
   const { id } = useParams();
   const navigate = useNavigate();
   const query = new URLSearchParams(location.search).get("example");
@@ -306,6 +307,7 @@ function Workspace() {
         const data = await request<StudioJob>(`/api/v2/games/${activeId}`);
         if (!current) return;
         setJob(data);
+        setError("");
         setPrompt(data.job.prompt);
         const ir = data.artifacts["game_ir_v2.json"] as
           | GeneratedIR
@@ -351,6 +353,7 @@ function Workspace() {
       setError(e instanceof Error ? e.message : String(e)); setBusy(false);
     }
   }
+  function reconnect(){setError('');setBusy(true);setPollVersion(v=>v+1);}
   async function generate() {
     if (busy || prompt.trim().length < 10) return;
     setBusy(true);
@@ -385,6 +388,9 @@ function Workspace() {
       .catch((e) => setError(String(e)));
   }
   const status = job?.job.status;
+  const view=generationView(job,busy,error,!!activeId);
+  const showGame=!!spec&&(qaPlayback||preview&&!busy&&!error||view.ready);
+  const fallbackEvents=job?.events.filter(e=>e.stage==='MODEL_FALLBACK')??[];
   return (
     <div className={`workspace studio-theme ${spec ? "has-game" : ""}`}>
       <header className="studio-header">
@@ -538,7 +544,7 @@ function Workspace() {
                 title="Restart game (R)"
                 aria-label="Restart game"
                 onClick={() => setRestart((v) => v + 1)}
-                disabled={!spec}
+                disabled={!showGame}
               >
                 <RotateCcw size={16} />
               </button>
@@ -550,7 +556,7 @@ function Workspace() {
                   setTab("game");
                   setExpanded(true);
                 }}
-                disabled={!spec}
+                disabled={!showGame}
               >
                 <Expand size={16} />
               </button>
@@ -576,13 +582,9 @@ function Workspace() {
                 <span className="status-dot" />
                 {preview
                   ? "Offline example"
-                  : status?.replaceAll("_", " ").toLowerCase() || (busy ? "Preparing" : "Ready for your idea")}
+                  : qaPlayback?'QA test playback':status?.replaceAll("_", " ").toLowerCase() || (busy ? "Preparing" : "Ready for your idea")}
               </span>
             </div>
-            {busy && <div className="build-progress" role="status" aria-live="polite">
-              <Loader2 size={16} className="spin" />
-              <span><strong>{job?.events.at(-1)?.stage.replaceAll("_", " ") || "QUEUED"}</strong> · {job?.events.at(-1)?.detail || "Sending your idea to the backend…"}</span>
-            </div>}
             {tab === "game" ? (
               <>
                 <div
@@ -600,14 +602,10 @@ function Workspace() {
                       <X size={18} /> Back to studio <kbd>ESC</kbd>
                     </button>
                   )}
-                  {spec ? (
+                  {showGame&&spec ? (
                     spec.genre === "runner" ? <RunnerCanvas spec={spec} restart={restart} /> : spec.genre === "adventure" ? <AdventureCanvas spec={spec} restart={restart} /> : <PlatformerCanvas spec={spec} restart={restart} />
                   ) : (
-                    <div className="empty-preview">
-                      <Gamepad2 size={40} />
-                      <h3>{busy ? job?.events.at(-1)?.stage.replaceAll("_", " ") || "QUEUED" : error ? "Your game could not be built" : "Your next world belongs here."}</h3>
-                      <p role="status" aria-live="polite">{busy ? job?.events.at(-1)?.detail || "Waiting for backend progress…" : error ? "Review the message beside your prompt, then retry. The Inspector contains recorded diagnostics." : "Describe a platformer, adventure or arcade runner, then select Generate game. Inspiration buttons open clearly labeled sample games."}</p>
-                    </div>
+                    <GenerationProgress view={view}/>
                   )}
                   <div className="preview-frame-footer">
                     <span>
@@ -622,7 +620,7 @@ function Workspace() {
                     </span>
                   </div>
                 </div>
-                {spec && <div className="game-controls">
+                {showGame&&spec && <div className="game-controls">
                   {spec.genre !== "runner" && <div>
                     <kbd>←</kbd>
                     <kbd>→</kbd>
@@ -695,6 +693,16 @@ function Workspace() {
                 )}
               </div>
             )}
+            {(view.phase==='failed'||view.phase==='connection'||view.phase==='unverified')&&<div className="generation-outcome error-message" role="alert" data-testid="generation-outcome">
+              <strong>{view.title}</strong>
+              {view.failures.length?view.failures.map((failure,i)=><p key={i}>{failure}</p>):<p>{view.message}</p>}
+              <div className="generation-actions">
+                {view.phase==='connection'&&activeId?<button className="text-link" onClick={reconnect}>Reconnect</button>:<button className="text-link" onClick={generate} disabled={busy||prompt.trim().length<10}>Try generating again</button>}
+                {spec&&!!job?.artifacts['qa_report.json']&&<button className="text-link" onClick={reverify} disabled={busy}>Run QA again</button>}
+                <button className="text-link" onClick={()=>setInspector(true)}>View diagnostics</button>
+              </div>
+            </div>}
+            {!!fallbackEvents.length&&<div className="model-fallback-note" role="status"><strong>API model fallback</strong>{fallbackEvents.map(event=><p key={event.id}>{event.detail}</p>)}</div>}
             <div className="generation-summary">
               <div className="summary-icon">
                 {busy ? (
@@ -709,8 +717,8 @@ function Workspace() {
                     ? "Building, one stage at a time."
                     : preview
                       ? "A starting point for your imagination."
-                      : status === "FAILED"
-                        ? "The pipeline needs attention."
+                      : ['failed','connection','unverified'].includes(view.phase)
+                        ? view.title
                         : !spec ? "Describe it. Generate it. Play it." : "Your world, with the process included."}
                 </strong>
                 <p>
@@ -719,7 +727,7 @@ function Workspace() {
                       "Request accepted. Waiting for the backend."
                     : preview
                       ? "This is a saved deterministic example. Generate a game to create your own design."
-                      : !spec ? "No game has been generated. Choose an example or enter your own idea." : "Open the Inspector for actual events, specifications, validation and QA evidence."}
+                      : ['failed','connection','unverified'].includes(view.phase)?view.message:!spec ? "No game has been generated. Choose an example or enter your own idea." : "Gameplay QA passed. Any reported limitations are listed below; open the Inspector for the recorded checks."}
                 </p>
               </div>
               <button onClick={() => setInspector(true)} className="text-link">
@@ -870,7 +878,7 @@ function Workspace() {
           <span className="status-dot" /> AETHER STUDIO
         </span>
         <span>
-          {busy ? "GENERATION IN PROGRESS" : "READY TO EXPLORE"}{" "}
+          {busy ? "GENERATION IN PROGRESS" : showGame?"READY TO EXPLORE":view.phase==='failed'?"GENERATION STOPPED":view.phase==='unverified'?"QA NOT VERIFIED":view.phase==='connection'?"CONNECTION INTERRUPTED":"READY FOR YOUR IDEA"}{" "}
           <span className="footer-divider">/</span> PLATFORMER / ADVENTURE
         </span>
         <span>Artwork · {spec?.genre==='runner' ? 'Original procedural art' : spec?.genre==='adventure' && spec.art ? spec.art.pack_id==='ninja_adventure' ? 'Pixel-Boy & AAA' : 'Ansimuz' : 'Kenney'} · CC0</span>
@@ -885,6 +893,7 @@ export default function Studio() {
       <Route path="/forge" element={<Workspace />} />
       <Route path="/studio" element={<Workspace />} />
       <Route path="/studio/play/:id" element={<Workspace />} />
+      <Route path="/studio/verify/:id" element={<Workspace qaPlayback />} />
     </Routes>
   );
 }

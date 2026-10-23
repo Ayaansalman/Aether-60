@@ -3,10 +3,15 @@ Base Protocol and Result types for AETHER LLM Model Providers.
 """
 
 from dataclasses import dataclass, field
+from contextvars import ContextVar
 from typing import Any, Dict, List, Optional, Protocol, runtime_checkable
 
 # Present in the repair agent's system prompt; lets the labeled mock provider detect repair requests.
 REPAIR_AGENT_MARKER = "AETHER_REPAIR_AGENT_V1"
+
+# The v2 job installs a listener in its async context; asyncio.to_thread copies
+# that context into each interpretation/design call. Other jobs stay isolated.
+fallback_listener: ContextVar = ContextVar('aether_model_fallback_listener',default=None)
 
 # Process-level counter of model requests
 _MODEL_REQUEST_COUNT: int = 0

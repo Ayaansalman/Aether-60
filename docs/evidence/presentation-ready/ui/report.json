@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "id": "intent_progress_no_canvas",
+      "passed": true,
+      "details": "Actual Studio DOM, even though an IR is already present"
+    },
+    {
+      "id": "qa_pending_no_canvas",
+      "passed": true,
+      "details": "Public preview remains unmounted throughout TESTING"
+    },
+    {
+      "id": "fallback_visible",
+      "passed": true,
+      "details": "Recorded model transition appears below the frame"
+    },
+    {
+      "id": "repair_keeps_game_hidden",
+      "passed": true,
+      "details": "Repair progress from backend events"
+    },
+    {
+      "id": "qa_pass_unlocks_play",
+      "passed": true,
+      "details": "READY_WITH_WARNINGS plus QA PASS mounts the runtime and retains limitations"
+    },
+    {
+      "id": "failure_under_canvas",
+      "passed": true,
+      "details": "Specific failure and invariant are displayed below the held preview"
+    },
+    {
+      "id": "unavailable_qa_is_blocked",
+      "passed": true,
+      "details": "Terminal warning status alone cannot unlock play"
+    },
+    {
+      "id": "reconnect_without_regeneration",
+      "passed": true,
+      "details": "Reconnect polls the same saved job and makes no generation POST"
+    },
+    {
+      "id": "qa_route_runs_before_public_ready",
+      "passed": true,
+      "details": "Dedicated backend verification route mounts the same runtime during TESTING"
+    },
+    {
+      "id": "offline_samples_preserved",
+      "passed": true,
+      "details": "Existing saved examples still play immediately"
+    },
+    {
+      "id": "mobile_progress_fits",
+      "passed": true,
+      "details": "390px viewport, no horizontal overflow"
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "page_errors": []
+}

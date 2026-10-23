@@ -3,6 +3,7 @@ import json
 import time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from services.qa_urls import playback_job_id
 
 
 def run_browser_qa(url,directory,fixture=None):
@@ -24,7 +25,8 @@ def run_browser_qa(url,directory,fixture=None):
             page.locator('.game-surface').click()
             spec=fixture
             if spec is None:
-                gid=url.split('/studio/play/')[1].split('?')[0]
+                gid=playback_job_id(url)
+                if not gid:raise ValueError('QA URL does not identify a saved game')
                 spec=page.evaluate('(id)=>fetch(`/api/v2/games/${id}/spec`).then(r=>r.json())',gid)
             config=spec['gameplay'];area=spec['areas'][0]
             record('composition_contract',snap()['health']==config['health'] and not snap()['questMode'] and not snap()['inventory'] and not snap()['quests'] and not snap()['missingAssets'],snap())
