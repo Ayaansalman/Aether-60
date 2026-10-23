@@ -53,6 +53,15 @@ with sync_playwright() as pw:
     record('failure_under_canvas',page.locator('canvas').count()==0 and 'missing one required switch' in page.get_by_test_id('generation-outcome').inner_text(),'Specific failure and invariant are displayed below the held preview')
     page.screenshot(path=str(OUT/'failed.png'),full_page=True)
 
+    set_job('READY_WITH_WARNINGS',events+[event(10,'FAILED','Historical projectile check failed','FAILED')],{'overall':'FAIL','checks':[{'id':'projectile_damage','passed':False}]})
+    payload['artifacts']['qa_retest_1.json']={'overall':'PASS','checks':[{'id':'projectile_damage','passed':True}]}
+    page.reload();page.wait_for_function('window.__runner')
+    record('passed_recheck_releases_historical_failure',page.locator('canvas').count()==1 and page.get_by_test_id('generation-outcome').count()==0,'Immutable passing recheck supersedes old failing qa_report.json, as in the saved Last Stand job')
+
+    set_job('TESTING',events,{'overall':'FAIL','checks':[]},{'overall':'FAIL','requirements':[]})
+    page.reload();page.get_by_text('Running gameplay QA',exact=True).wait_for()
+    record('recheck_progress_ignores_previous_failure',page.locator('canvas').count()==0 and page.locator('.generation-timeline li.active').count()==1,'Previous failed reports do not mark a currently running recheck as stopped')
+
     set_job('READY_WITH_WARNINGS',events,{'overall':'UNAVAILABLE','checks':[]})
     page.reload();page.get_by_text('Gameplay verification is incomplete',exact=True).first.wait_for()
     record('unavailable_qa_is_blocked',page.locator('canvas').count()==0 and page.get_by_role('button',name='Run QA again',exact=True).is_enabled(),'Terminal warning status alone cannot unlock play')

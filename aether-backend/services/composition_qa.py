@@ -68,14 +68,19 @@ def run_browser_qa(url,directory,fixture=None):
             record('composition_survival_score',state['score']>2 and abs(state['score']-state['behavior']['elapsed']/1000)<.001,state['score'])
             page.screenshot(path=str(directory/'gameplay.png'),full_page=True)
             # Observe an actual emitted projectile and use controlled overlap to verify its damage.
+            # The preceding scheduling/evasion probe can legitimately exhaust
+            # health. Start a fresh real run rather than testing a dead player.
+            restart()
             deadline=time.monotonic()+8;projectile_damage=False
             while time.monotonic()<deadline and not snap()['lost']:
                 state=snap()
-                if state['projectiles']:
-                    bullet=state['projectiles'][0];old_health=state['health'];teleport(bullet['x'],bullet['y']);page.wait_for_timeout(80)
+                bullet=next((p for p in state['projectiles'] if all(
+                    (p['x']-a['x'])**2+(p['y']-a['y'])**2>80**2 for a in state['actors'] if a['kind']=='enemy')),None)
+                if bullet:
+                    old_health=state['health'];teleport(bullet['x'],bullet['y']);page.wait_for_timeout(80)
                     if snap()['health']<old_health:projectile_damage=True;break
                 page.wait_for_timeout(50)
-            record('composition_projectile_damage',projectile_damage,{'method':'Controlled player overlap with actual emitted projectile', 'snapshot':snap()})
+            record('composition_projectile_damage',projectile_damage,{'method':'Fresh real run; controlled player overlap with an emitted projectile at least 80px from enemies, excluding contact damage', 'snapshot':snap()})
             # Force actual collision by repositioning the player onto a live enemy, one invulnerability window apart.
             for _ in range(config['health']+3):
                 state=snap()

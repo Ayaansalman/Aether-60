@@ -261,44 +261,68 @@ async def spec(gid: str):
 
 async def reverify_job(gid: str):
     async with _worker:
-        job=job_store.get_job(gid)
-        paths=job['artifact_paths']
-        attempt=1+sum(name.startswith('qa_retest_') for name in paths)
-        genre=json.loads(job['spec_json']).get('genre','platformer')
-        data=json.loads(job['spec_json'])
-        qa_genre='composition' if data.get('gameplay') and data['gameplay']['outcome']!='quests' else 'boss' if data.get('boss') else genre
-        report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}',qa_genre)
-        name=f'qa_retest_{attempt}.json';save(gid,name,report);paths.append(name)
-        from services.game_factory import parse_ir
-        ir=parse_ir(json.loads(job['spec_json']))
-        if genre=='adventure':
-            from services import adventure
-            save(gid,'asset_manifest.json',adventure.asset_manifest(ir.art))
-            save(gid,'asset_validation.json',adventure.validate_assets())
-            save(gid,'validation.json',adventure.validate_world(ir))
-            coverage={'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED', 'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
-        elif genre=='runner':
-            coverage={'overall':report['overall'],'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
-        else:
-            coverage=requirement_evidence(ir,job['prompt'],job['limitations'],report)
-        previous=json.loads((get_artifacts_dir()/gid/'requirement_report.json').read_text(encoding='utf-8'))
-        save(gid,'requirement_report.json',{**previous,**coverage})
-        ir.requirements=coverage['requirements'];save(gid,'game_ir_v2.json',ir.model_dump())
-        from services.semantic_intent import fidelity
-        intent_path=get_artifacts_dir()/gid/'semantic_intent.json'
-        semantic=fidelity(ir,json.loads(intent_path.read_text(encoding='utf-8')),report) if intent_path.is_file() else {'overall':'PASS'}
-        if intent_path.is_file():
-            save(gid,'semantic_requirement_report.json',semantic)
-            if 'semantic_requirement_report.json' not in paths: paths.append('semantic_requirement_report.json')
-            ir.requirements=[r for r in coverage['requirements'] if 'capability' not in r]+semantic.get('requirements',[])
-            save(gid,'game_ir_v2.json',ir.model_dump())
-        final='FAILED' if report['overall']=='FAIL' or coverage['overall']=='FAIL' or semantic['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and coverage['overall']=='PASS' and semantic['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
-        job_store.update_job(gid,status=final,stage=final,spec_json=ir.model_dump_json(),latest_qa_json=json.dumps(report),artifact_paths=paths,
-            qa_summary={'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks']),
-                'critical_failed':[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
-        event_store.add_event(gid,stage='TESTING',result='SUCCESS' if report['overall']=='PASS' else 'FAILED',
-            detail=f"Runtime re-verification {attempt}: {report['overall']}. Original report preserved; no new model call.",attempt=attempt+1)
-        save(gid,'outcome.json',{'status':final,'verification':attempt,'visual_quality':'Requires screenshot review; QA is functional evidence.'})
+        try:
+            await reverify_built_job(gid)
+        except Exception as exc:
+            # A metadata/audit error after Chromium must not strand the public
+            # preview in TESTING forever. Keep all prior QA evidence available.
+            detail=f'Runtime re-verification could not finish ({type(exc).__name__}). See verification_error.json and retry QA.'
+            save(gid,'verification_error.json',{'error_type':type(exc).__name__,'stage':'reverification'})
+            job=job_store.get_job(gid)
+            paths=list(job['artifact_paths'])
+            if 'verification_error.json' not in paths:paths.append('verification_error.json')
+            job_store.update_job(gid,status='FAILED',stage='FAILED',error_code='QA_RECHECK_ERROR',artifact_paths=paths)
+            event_store.add_event(gid,stage='FAILED',result='FAILED',detail=detail)
+
+
+async def reverify_built_job(gid: str):
+    job=job_store.get_job(gid)
+    paths=job['artifact_paths']
+    attempt=1+sum(name.startswith('qa_retest_') for name in paths)
+    genre=json.loads(job['spec_json']).get('genre','platformer')
+    data=json.loads(job['spec_json'])
+    qa_genre='composition' if data.get('gameplay') and data['gameplay']['outcome']!='quests' else 'boss' if data.get('boss') else genre
+    report=await asyncio.to_thread(browser_report,job['game_url'],get_artifacts_dir()/gid/f'verification-{attempt}',qa_genre)
+    name=f'qa_retest_{attempt}.json';save(gid,name,report);paths.append(name)
+    original=get_artifacts_dir()/gid/'qa_report.json'
+    if original.is_file() and not (get_artifacts_dir()/gid/'qa_report_initial.json').is_file():
+        save(gid,'qa_report_initial.json',json.loads(original.read_text(encoding='utf-8')))
+        paths.append('qa_report_initial.json')
+    save(gid,'qa_report.json',report)
+    if 'qa_report.json' not in paths:paths.append('qa_report.json')
+    from services.game_factory import parse_ir
+    ir=parse_ir(json.loads(job['spec_json']))
+    if genre=='adventure':
+        from services import adventure
+        save(gid,'asset_manifest.json',adventure.asset_manifest(ir.art))
+        save(gid,'asset_validation.json',adventure.validate_assets())
+        save(gid,'validation.json',adventure.validate_world(ir))
+        coverage={'overall':'PASS' if report['overall']=='PASS' else 'UNVERIFIED', 'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
+    elif genre=='runner':
+        coverage={'overall':report['overall'],'requirements':[dict(r,status='verified' if report['overall']=='PASS' else 'constructed_unverified') for r in ir.requirements]}
+    else:
+        coverage=requirement_evidence(ir,job['prompt'],job['limitations'],report)
+    previous_path=get_artifacts_dir()/gid/'requirement_report.json'
+    previous=json.loads(previous_path.read_text(encoding='utf-8')) if previous_path.is_file() else {}
+    save(gid,'requirement_report.json',{**previous,**coverage})
+    ir.requirements=coverage['requirements'];save(gid,'game_ir_v2.json',ir.model_dump())
+    from services.semantic_intent import fidelity
+    intent_path=get_artifacts_dir()/gid/'semantic_intent.json'
+    semantic=fidelity(ir,json.loads(intent_path.read_text(encoding='utf-8')),report) if intent_path.is_file() else {'overall':'PASS'}
+    if intent_path.is_file():
+        save(gid,'semantic_requirement_report.json',semantic)
+        if 'semantic_requirement_report.json' not in paths: paths.append('semantic_requirement_report.json')
+        ir.requirements=[r for r in coverage['requirements'] if 'capability' not in r]+semantic.get('requirements',[])
+        save(gid,'game_ir_v2.json',ir.model_dump())
+    final='FAILED' if report['overall']=='FAIL' or coverage['overall']=='FAIL' or semantic['overall']=='FAIL' else 'READY' if report['overall']=='PASS' and coverage['overall']=='PASS' and semantic['overall']=='PASS' and not job['limitations'] else 'READY_WITH_WARNINGS'
+    job_store.update_job(gid,status=final,stage=final,error_code=None,spec_json=ir.model_dump_json(),latest_qa_json=json.dumps(report),artifact_paths=paths,
+        qa_summary={'passed':sum(c['passed'] for c in report['checks']),'failed':sum(not c['passed'] for c in report['checks']),
+            'critical_failed':[c['id'] for c in report['checks'] if not c['passed'] and c.get('critical',True)]})
+    event_store.add_event(gid,stage='TESTING',result='SUCCESS' if report['overall']=='PASS' else 'FAILED',
+        detail=f"Runtime re-verification {attempt}: {report['overall']}. Original report preserved; no new model call.",attempt=attempt+1)
+    event_store.add_event(gid,stage=final,result='FAILED' if final=='FAILED' else 'SUCCESS',
+        detail=f'Re-verification complete: QA {report["overall"]}; requirement audit {coverage["overall"]}; semantic audit {semantic["overall"]}.',attempt=attempt+1)
+    save(gid,'outcome.json',{'status':final,'verification':attempt,'visual_quality':'Requires screenshot review; QA is functional evidence.'})
 
 
 @router.post('/games/{gid}/verify',status_code=202)

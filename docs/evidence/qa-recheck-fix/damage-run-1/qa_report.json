@@ -1,0 +1,647 @@
+{
+  "overall": "PASS",
+  "checks": [
+    {
+      "id": "composition_contract",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "behavior": {
+          "elapsed": 241.66666666666677,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": false,
+        "score": 0.24166666666666678,
+        "localBiome": null,
+        "regions": [],
+        "ready": true,
+        "generation": 1,
+        "genre": "adventure",
+        "area": 0,
+        "x": 336,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [],
+        "objective": "Dodge and survive",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_sorcererorange",
+        "playerFrame": 0,
+        "animation": "ninja_sorcererorange:down:idle",
+        "selectedAssets": [
+          "ninja_hearts",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_sorcererorange",
+          "ninja_spirit",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "top_down_horizontal_movement",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "before": 336,
+        "after": 366.9999999999998
+      }
+    },
+    {
+      "id": "composition_safe_spawning",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "spawns": [
+          {
+            "type": "spawn",
+            "id": "spawn_1",
+            "at": 1808.333333333328,
+            "distance": 396.7883566840138
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_2",
+            "at": 3608.3333333333544,
+            "distance": 295.02542263337244
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_3",
+            "at": 5416.666666666649,
+            "distance": 1052.6005890175059
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_4",
+            "at": 7224.999999999916,
+            "distance": 224
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_5",
+            "at": 9024.999999999942,
+            "distance": 934.5972394566551
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_6",
+            "at": 10825.000000000073,
+            "distance": 384
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_7",
+            "at": 12625.000000000204,
+            "distance": 802.5559170550049
+          },
+          {
+            "type": "spawn",
+            "id": "spawn_8",
+            "at": 14425.000000000335,
+            "distance": 611.3591415853696
+          }
+        ],
+        "world_validation": "PASS"
+      }
+    },
+    {
+      "id": "composition_enemy_roles",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "roles": [
+          "chaser",
+          "shooter"
+        ],
+        "chaser_moved": true
+      }
+    },
+    {
+      "id": "composition_attack_sequence",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "completed_sequences": [
+          [
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 2158.333333333328,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 3158.333333333328,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 4158.3333333333285,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 5158.3333333333285,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 6158.3333333333285,
+              "shot": 5
+            }
+          ],
+          [
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 3958.3333333333544,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 4958.333333333354,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 5958.333333333354,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 6958.333333333354,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 7958.333333333354,
+              "shot": 5
+            }
+          ],
+          [
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 5766.666666666649,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 6766.666666666649,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 7766.666666666649,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 8766.66666666665,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_3",
+              "at": 9766.66666666665,
+              "shot": 5
+            }
+          ],
+          [
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 9374.999999999942,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 10374.999999999942,
+              "shot": 2
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 11374.999999999942,
+              "shot": 3
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 12374.999999999942,
+              "shot": 4
+            },
+            {
+              "type": "shot",
+              "id": "spawn_5",
+              "at": 13374.999999999942,
+              "shot": 5
+            }
+          ]
+        ],
+        "expected": [
+          {
+            "interval_ms": 1000,
+            "shots": 5,
+            "windup_ms": 350,
+            "projectile_speed": 180,
+            "after": "despawn"
+          }
+        ],
+        "method": "Real-time scheduler; player teleports to evade. No attack clocks/counters changed."
+      }
+    },
+    {
+      "id": "composition_feedback",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "events": {
+          "windup": 22,
+          "impact": 10,
+          "defeat": 4
+        },
+        "asset_attack_animation_observed": false
+      }
+    },
+    {
+      "id": "composition_survival_score",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": 14.508333333333674
+    },
+    {
+      "id": "composition_projectile_damage",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "method": "Fresh real run; controlled player overlap with an emitted projectile at least 80px from enemies, excluding contact damage",
+        "snapshot": {
+          "behavior": {
+            "elapsed": 2841.666666666674,
+            "totalShots": 1,
+            "completedSequences": 0,
+            "events": [
+              {
+                "type": "spawn",
+                "id": "spawn_1",
+                "at": 1808.333333333328,
+                "distance": 426.9332500520427
+              },
+              {
+                "type": "windup",
+                "id": "spawn_1",
+                "at": 1808.333333333328
+              },
+              {
+                "type": "shot",
+                "id": "spawn_1",
+                "at": 2158.333333333328,
+                "shot": 1
+              },
+              {
+                "type": "windup",
+                "id": "spawn_1",
+                "at": 2808.33333333334
+              }
+            ],
+            "active": 1
+          },
+          "feedback": {
+            "windup": 2,
+            "impact": 1
+          },
+          "projectiles": [],
+          "hostileProjectiles": 0,
+          "questMode": false,
+          "score": 2.841666666666674,
+          "localBiome": null,
+          "regions": [],
+          "ready": true,
+          "generation": 2,
+          "genre": "adventure",
+          "area": 0,
+          "x": 661.3816188004006,
+          "y": 603.0880658770163,
+          "vx": 0,
+          "vy": 0,
+          "gravity": 0,
+          "inventory": {},
+          "quests": [],
+          "objective": "Dodge and survive",
+          "health": 2,
+          "won": false,
+          "lost": false,
+          "dialogue": [],
+          "unlocked": [],
+          "activated": [],
+          "actors": [
+            {
+              "id": "spawn_1",
+              "kind": "enemy",
+              "x": 752,
+              "y": 624,
+              "health": 1,
+              "role": "shooter",
+              "behavior": "shooter",
+              "animation": "ninja_spirit:down:idle",
+              "body": {
+                "x": 742,
+                "y": 614,
+                "width": 20,
+                "height": 20,
+                "enabled": true
+              }
+            }
+          ],
+          "assetPack": "ninja_adventure",
+          "playerTexture": "ninja_sorcererorange",
+          "playerFrame": 0,
+          "animation": "ninja_sorcererorange:down:idle",
+          "selectedAssets": [
+            "ninja_hearts",
+            "ninja_projectile",
+            "ninja_skull",
+            "ninja_smoke",
+            "ninja_sorcererorange",
+            "ninja_spirit",
+            "ninja_terrain"
+          ],
+          "missingAssets": []
+        }
+      }
+    },
+    {
+      "id": "composition_health_loss",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "behavior": {
+          "elapsed": 4725.000000000007,
+          "totalShots": 4,
+          "completedSequences": 0,
+          "events": [
+            {
+              "type": "spawn",
+              "id": "spawn_1",
+              "at": 1808.333333333328,
+              "distance": 426.9332500520427
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 1808.333333333328
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 2158.333333333328,
+              "shot": 1
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 2808.33333333334
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 3158.333333333328,
+              "shot": 2
+            },
+            {
+              "type": "spawn",
+              "id": "spawn_2",
+              "at": 3608.3333333333544,
+              "distance": 730.4135814728529
+            },
+            {
+              "type": "windup",
+              "id": "spawn_2",
+              "at": 3608.3333333333544
+            },
+            {
+              "type": "windup",
+              "id": "spawn_1",
+              "at": 3808.333333333358
+            },
+            {
+              "type": "shot",
+              "id": "spawn_2",
+              "at": 3958.3333333333544,
+              "shot": 1
+            },
+            {
+              "type": "shot",
+              "id": "spawn_1",
+              "at": 4158.3333333333285,
+              "shot": 3
+            },
+            {
+              "type": "windup",
+              "id": "spawn_2",
+              "at": 4616.666666666678
+            }
+          ],
+          "active": 2
+        },
+        "feedback": {
+          "windup": 5,
+          "impact": 3
+        },
+        "projectiles": [
+          {
+            "x": 1268.4535568765975,
+            "y": 339.95054371787296
+          }
+        ],
+        "hostileProjectiles": 1,
+        "questMode": false,
+        "score": 4.725000000000008,
+        "localBiome": null,
+        "regions": [],
+        "ready": true,
+        "generation": 2,
+        "genre": "adventure",
+        "area": 0,
+        "x": 752,
+        "y": 624,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [],
+        "objective": "Dodge and survive",
+        "health": 0,
+        "won": false,
+        "lost": true,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [
+          {
+            "id": "spawn_1",
+            "kind": "enemy",
+            "x": 752,
+            "y": 624,
+            "health": 1,
+            "role": "shooter",
+            "behavior": "shooter",
+            "animation": "ninja_spirit:down:idle",
+            "body": {
+              "x": 742,
+              "y": 614,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          },
+          {
+            "id": "spawn_2",
+            "kind": "enemy",
+            "x": 1392,
+            "y": 272,
+            "health": 1,
+            "role": "shooter",
+            "behavior": "shooter",
+            "animation": "ninja_spirit:down:idle",
+            "body": {
+              "x": 1382,
+              "y": 262,
+              "width": 20,
+              "height": 20,
+              "enabled": true
+            }
+          }
+        ],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_sorcererorange",
+        "playerFrame": 0,
+        "animation": "ninja_sorcererorange:down:idle",
+        "selectedAssets": [
+          "ninja_hearts",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_sorcererorange",
+          "ninja_spirit",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "composition_score_stops",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "at_loss": 4.725000000000008,
+        "later": 4.725000000000008
+      }
+    },
+    {
+      "id": "whole_game_restart",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": {
+        "behavior": {
+          "elapsed": 58.33333333333334,
+          "totalShots": 0,
+          "completedSequences": 0,
+          "events": [],
+          "active": 0
+        },
+        "feedback": {},
+        "projectiles": [],
+        "hostileProjectiles": 0,
+        "questMode": false,
+        "score": 0.05833333333333334,
+        "localBiome": null,
+        "regions": [],
+        "ready": true,
+        "generation": 3,
+        "genre": "adventure",
+        "area": 0,
+        "x": 336,
+        "y": 528,
+        "vx": 0,
+        "vy": 0,
+        "gravity": 0,
+        "inventory": {},
+        "quests": [],
+        "objective": "Dodge and survive",
+        "health": 3,
+        "won": false,
+        "lost": false,
+        "dialogue": [],
+        "unlocked": [],
+        "activated": [],
+        "actors": [],
+        "assetPack": "ninja_adventure",
+        "playerTexture": "ninja_sorcererorange",
+        "playerFrame": 0,
+        "animation": "ninja_sorcererorange:down:idle",
+        "selectedAssets": [
+          "ninja_hearts",
+          "ninja_projectile",
+          "ninja_skull",
+          "ninja_smoke",
+          "ninja_sorcererorange",
+          "ninja_spirit",
+          "ninja_terrain"
+        ],
+        "missingAssets": []
+      }
+    },
+    {
+      "id": "no_runtime_exceptions",
+      "passed": true,
+      "critical": true,
+      "category": "composition",
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "scope": "Actual Phaser timers/AI/projectiles and collision. Controlled player repositioning for evasion and damage; not autonomous full playthrough or subjective quality assessment."
+}

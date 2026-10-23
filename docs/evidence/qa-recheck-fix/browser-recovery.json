@@ -1,0 +1,16 @@
+{
+  "game_id": "f7251922-96c7-4e47-8f64-53a981bb943c",
+  "historical_recheck_opens": true,
+  "status": "READY_WITH_WARNINGS",
+  "observed_testing": true,
+  "public_canvas_held_during_qa": true,
+  "current_qa": "PASS",
+  "latest_retest": "qa_retest_3.json",
+  "latest_retest_matches_current": true,
+  "original_qa_preserved": "FAIL",
+  "qa_checks": 12,
+  "real_keyboard_movement": true,
+  "no_stale_failure_panel": true,
+  "terminal_event": "READY_WITH_WARNINGS",
+  "page_errors": []
+}

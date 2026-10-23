@@ -39,3 +39,19 @@ test('connection failure hides stale playable output and can recover without a n
  assert.equal(generationView(data,false,'').ready,true);
  assert.equal(generationView(null,false,'Network disconnected',true).title,'Connection interrupted');
 });
+
+test('a passing recheck replaces stale original failure, but the newest failing recheck blocks play',()=>{
+ const data=job('READY_WITH_WARNINGS',{'qa_report.json':{overall:'FAIL'},'qa_retest_1.json':{overall:'PASS'}});
+ data.events.push({id:3,stage:'FAILED',detail:'Historical failure',result:'FAILED'});
+ assert.equal(generationView(data,false,'').ready,true);
+ data.artifacts['qa_retest_2.json']={overall:'FAIL'};
+ assert.equal(generationView(data,false,'').ready,false);
+ data.artifacts['qa_retest_10.json']={overall:'PASS'};
+ assert.equal(generationView(data,false,'').ready,true);
+ data.artifacts['semantic_requirement_report.json']={overall:'FAIL'};
+ assert.equal(generationView(data,false,'').ready,false);
+ data.job.status='TESTING';
+ const running=generationView(data,true,'');
+ assert.equal(running.ready,false);assert.equal(running.phase,'building');
+ assert.equal(running.progress.at(-1).state,'active');
+});

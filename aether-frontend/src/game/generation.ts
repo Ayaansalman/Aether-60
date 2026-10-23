@@ -8,12 +8,16 @@ export function stageLabel(stage:string,detail=''){
 }
 
 export function generationView(job:StudioJob|null,busy:boolean,error:string,hasSavedJob=!!job){
-  const qa=job?.artifacts['qa_report.json'] as Report|undefined;
+  // Explicit rechecks are immutable numbered reports. Older backends left the
+  // original canonical filename unchanged, so use the newest completed recheck.
+  const latest=Object.keys(job?.artifacts??{}).filter(name=>/^qa_retest_\d+\.json$/.test(name))
+    .sort((a,b)=>Number(b.match(/\d+/)?.[0])-Number(a.match(/\d+/)?.[0]))[0];
+  const qa=job?.artifacts[latest??'qa_report.json'] as Report|undefined;
   const semantic=job?.artifacts['semantic_requirement_report.json'] as Report|undefined;
   const requirements=job?.artifacts['requirement_report.json'] as Report|undefined;
   const status=job?.job.status;
   const finished=!!status&&terminal.has(status);
-  const failed=status==='FAILED'||semantic?.overall==='FAIL'||requirements?.overall==='FAIL'||(finished&&qa?.overall==='FAIL');
+  const failed=status==='FAILED'||(finished&&(semantic?.overall==='FAIL'||requirements?.overall==='FAIL'||qa?.overall==='FAIL'));
   const ready=!!status&&['READY','READY_WITH_WARNINGS'].includes(status)&&qa?.overall==='PASS'&&!failed&&!error&&!busy;
   const phase=error&&!failed?'connection':busy?'building':failed?'failed':ready?'ready':finished?'unverified':job?'building':'idle';
   const failures:string[]=[];

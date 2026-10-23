@@ -31,6 +31,16 @@
       "details": "Specific failure and invariant are displayed below the held preview"
     },
     {
+      "id": "passed_recheck_releases_historical_failure",
+      "passed": true,
+      "details": "Immutable passing recheck supersedes old failing qa_report.json, as in the saved Last Stand job"
+    },
+    {
+      "id": "recheck_progress_ignores_previous_failure",
+      "passed": true,
+      "details": "Previous failed reports do not mark a currently running recheck as stopped"
+    },
+    {
       "id": "unavailable_qa_is_blocked",
       "passed": true,
       "details": "Terminal warning status alone cannot unlock play"

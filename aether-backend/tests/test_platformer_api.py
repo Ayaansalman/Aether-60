@@ -69,6 +69,46 @@ def test_reverify_retains_initial_report_and_is_bounded(client,monkeypatch):
     assert 'qa_report_initial.json' in artifacts and 'qa_retest_3.json' in artifacts
 
 
+@pytest.mark.parametrize('prompt',[
+    'An easy forest platformer with checkpoints',
+    'An easy automatic forest runner with distance scoring',
+    'A peaceful top-down village adventure collecting herbs for a healer. No combat.',
+])
+def test_recheck_replaces_current_report_and_preserves_original_failure(client,monkeypatch,prompt):
+    fail={'overall':'FAIL','checks':[{'id':'isolated_damage_probe','passed':False,'critical':True}]}
+    passed={'overall':'PASS','checks':[{'id':'isolated_damage_probe','passed':True,'critical':True}]}
+    reports=iter([fail,passed,fail])
+    monkeypatch.setattr(platformer,'browser_report',lambda *args:next(reports))
+    gid=submit(client,prompt)
+    assert client.get(f'/api/v2/games/{gid}').json()['job']['status']=='FAILED'
+    assert client.post(f'/api/v2/games/{gid}/verify').status_code==202
+    result=client.get(f'/api/v2/games/{gid}').json()
+    assert result['job']['status'] in ('READY','READY_WITH_WARNINGS')
+    assert result['artifacts']['qa_report.json']==passed
+    assert result['artifacts']['qa_report_initial.json']==fail
+    assert result['artifacts']['qa_retest_1.json']==passed
+    assert result['events'][-1]['stage']==result['job']['status']
+    assert result['job']['error_code'] is None
+    assert client.post(f'/api/v2/games/{gid}/verify').status_code==202
+    result=client.get(f'/api/v2/games/{gid}').json()
+    assert result['job']['status']=='FAILED'
+    assert result['artifacts']['qa_report.json']==fail
+    assert result['artifacts']['qa_retest_1.json']==passed
+    assert result['artifacts']['qa_retest_2.json']==fail
+
+
+def test_recheck_processing_exception_becomes_terminal_failure(client,monkeypatch):
+    monkeypatch.setattr(platformer,'browser_report',lambda *args:{'overall':'PASS','checks':[]})
+    gid=submit(client)
+    async def crash(*args):raise ValueError('Do not echo arbitrary internal details')
+    monkeypatch.setattr(platformer,'reverify_built_job',crash)
+    assert client.post(f'/api/v2/games/{gid}/verify').status_code==202
+    result=client.get(f'/api/v2/games/{gid}').json()
+    assert result['job']['status']=='FAILED' and result['job']['error_code']=='QA_RECHECK_ERROR'
+    assert result['events'][-1]['stage']=='FAILED'
+    assert 'Do not echo' not in result['events'][-1]['detail']
+
+
 def test_campaign_intent_and_spec_survive_api_storage(client,monkeypatch):
     from tests.test_campaign import ICE
     monkeypatch.setattr(platformer,'browser_report',lambda *args:{'overall':'UNAVAILABLE','checks':[]})
